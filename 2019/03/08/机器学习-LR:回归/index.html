@@ -79,25 +79,25 @@
 
 
 
-<meta name="description" content="回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，如  y = 10x + 5相关关系：非确定性关系使用相关系数去衡量线性相关的强弱：  区间范围是[-1,1]，绝对值越接近1，表示线性程度越高 一元线性回归推导： 回归方法擅长内推插值">
+<meta name="description" content="[TOC] 回归分析：线性回归：基本假设，DW检验，多重共线性，参数估计值方差 线性回归，非线性回归non-Linear regression，logistic回归，岭回归，主成分回归 回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-LR&#x2F;回归">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，如  y = 10x + 5相关关系：非确定性关系使用相关系数去衡量线性相关的强弱：  区间范围是[-1,1]，绝对值越接近1，表示线性程度越高 一元线性回归推导： 回归方法擅长内推插值">
+<meta property="og:description" content="[TOC] 回归分析：线性回归：基本假设，DW检验，多重共线性，参数估计值方差 线性回归，非线性回归non-Linear regression，logistic回归，岭回归，主成分回归 回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/7.png">
-<meta property="og:updated_time" content="2019-03-08T15:35:44.645Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/7.png">
+<meta property="og:updated_time" content="2019-03-30T13:26:46.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-LR&#x2F;回归">
-<meta name="twitter:description" content="回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，如  y = 10x + 5相关关系：非确定性关系使用相关系数去衡量线性相关的强弱：  区间范围是[-1,1]，绝对值越接近1，表示线性程度越高 一元线性回归推导： 回归方法擅长内推插值">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/1.png">
+<meta name="twitter:description" content="[TOC] 回归分析：线性回归：基本假设，DW检验，多重共线性，参数估计值方差 线性回归，非线性回归non-Linear regression，logistic回归，岭回归，主成分回归 回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测线性回归分析：一元线性，多元线性，广义线性非线性回归分析困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理 关系函数关系：确定性关系，">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/1.png">
 
 
 
@@ -307,23 +307,30 @@
       
 
       
-        <p>回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测<br>线性回归分析：一元线性，多元线性，广义线性<br>非线性回归分析<br>困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理</p>
+        <p>[TOC]</p>
+<h1 id="回归分析："><a href="#回归分析：" class="headerlink" title="回归分析："></a>回归分析：</h1><h2 id="线性回归："><a href="#线性回归：" class="headerlink" title="线性回归："></a>线性回归：</h2><p>基本假设，DW检验，多重共线性，参数估计值方差</p>
+<p>线性回归，非线性回归non-Linear regression，logistic回归，岭回归，主成分回归</p>
+<p>回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测<br>线性回归分析：一元线性，多元线性，广义线性<br>非线性回归分析<br>困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理</p>
 <p>关系<br>函数关系：确定性关系，如</p>
 <script type="math/tex; mode=display">
 y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数去衡量线性相关的强弱：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/1.png" alt="1"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/1.png" alt="1"></p>
 <p>区间范围是[-1,1]，绝对值越接近1，表示线性程度越高</p>
 <p>一元线性回归推导：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/2.png" alt="2"><br>回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/2.png" alt="2"><br>回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
 <p>多元回归方程，和一元的类似<br>在选择变量方面，多元回归分析可以采用的一种方法是逐步回归：<br>向前引入法：从一元回归开始，逐步增加变量，是指标达到最优为止<br>向后剔除法：从全变量回归方程开始，逐步删去某些变量，使指标值达到最优为止<br>逐步筛选法：综合上面两种方法<br>变量选择的评价指标：RSS（残差平方和），R^2（相关系数平方），AIC准则（Akaike information criterion）和BIC准则（Bayesian Information Criterion）</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/3.png" alt="3"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/3.png" alt="3"></p>
 <p>哑变量/虚拟变量：将枚举变量变为离散型变量<br>比如男/女变为（1，0）和（0，1）</p>
 <p>回归诊断：<br>样本是否符合正态分布假设（正态分布检验）<br>是否存在离群值导致模型产生较大误差<br>线性模型是否合理（残差图判断）<br>误差是否满足独立性，等方差，正态分布等假设条件<br>是否存在多重共线性（通过计算特征根，kappa值发现多重共线性）</p>
 <p>多重共线性的发现：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/4.png" alt="4"></p>
-<p><img src="/2019/03/08/机器学习-LR:回归/5.png" alt="5"></p>
-<p>广义线性回归：<br>比如logistic回归：<br><img src="/2019/03/08/机器学习-LR:回归/6.png" alt="6"></p>
-<p><img src="/2019/03/08/机器学习-LR:回归/7.png" alt="7"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/4.png" alt="4"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/5.png" alt="5"></p>
+<p>广义线性回归：<br>比如logistic回归：<br><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/6.png" alt="6"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LR:%E5%9B%9E%E5%BD%92/7.png" alt="7"></p>
+<h1 id="Logistic-Regression："><a href="#Logistic-Regression：" class="headerlink" title="Logistic Regression："></a>Logistic Regression：</h1><p>sigmoid函数</p>
+<p>多项/多类别Logistic回归 Multinomial logistic regression</p>
+<p>Fisher的线性判别 Fisher’s linear discriminant</p>
+<p>感知 Perceptron（感知机）</p>
 
       
     </div>
@@ -358,8 +365,8 @@ y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/机器学习-概念:数据:特征工程篇/" rel="prev" title="机器学习-概念/数据/特征工程篇">
-                机器学习-概念/数据/特征工程篇 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-马尔可夫模型/" rel="prev" title="机器学习-马尔可夫模型">
+                机器学习-马尔可夫模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -412,8 +419,17 @@ y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -428,7 +444,7 @@ y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -473,6 +489,22 @@ y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数�
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回归分析："><span class="nav-number">1.</span> <span class="nav-text">回归分析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归："><span class="nav-number">1.1.</span> <span class="nav-text">线性回归：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression："><span class="nav-number">2.</span> <span class="nav-text">Logistic Regression：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

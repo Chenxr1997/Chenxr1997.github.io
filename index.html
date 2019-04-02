@@ -229,6 +229,455 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/02/系统分析作业2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/02/系统分析作业2/" itemprop="url">系统分析与设计作业二</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T12:00:10+08:00">
+                2019-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="系统分析与设计作业二"><a href="#系统分析与设计作业二" class="headerlink" title="系统分析与设计作业二"></a>系统分析与设计作业二</h1><p>[TOC]</p>
+<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><h3 id="用简短的语言给出对分析、设计的理解"><a href="#用简短的语言给出对分析、设计的理解" class="headerlink" title="用简短的语言给出对分析、设计的理解"></a>用简短的语言给出对分析、设计的理解</h3><p><strong>分析</strong>（analysis）强调的是对问题和需求的<code>调查研究</code>，而不是解决方案，找出构成问题域概念模型的关键抽象（行为和交互）。例如，如果需要一个新的在线交易系统，那么应该如何使用它？他应该具有哪些功能？</p>
+<p><strong>设计</strong>（design）强调的是满足需求的<code>概念上的解决方案</code>（软件，硬件方面），而不是其实现。在体系结构框架内构建系统。设计过程将分析的抽象结果映射到软件设计类层次结构中，将对象（类实例）及其行为组合到系统协作中，还需要在设计过程中发现和设计一些不在问题域中，但是在实现中需要的抽象，最后在层次结构中组织类。例如，对数据库和软件对象的描述。设计思想通常排斥底层或”显而易见”的细节。</p>
+<h3 id="用一句话描述面向对象的分析与设计的优势"><a href="#用一句话描述面向对象的分析与设计的优势" class="headerlink" title="用一句话描述面向对象的分析与设计的优势"></a>用一句话描述面向对象的分析与设计的优势</h3><blockquote>
+<p>在<strong>面向对象分析</strong>（objected-oriented analysis）过程中，强调的是在问题领域内发现和描述对象（或概念）。例如，航班信息系统中的飞机，航班，飞行员等概念。</p>
+<p>在<strong>面向对象设计</strong>（objected-oriented design）过程中，强调的是定义软件对象以及它们如何协作以实现要求。例如，软件对象飞机可以有tailNumber属性和getFlightHistory方法。</p>
+</blockquote>
+<p><strong>优势</strong>：面向对象分析与设计根据设计的需要对现实世界的事物进行抽象，产生类。使用这样的方法解决问题，接近于日常生活和自然的思考方式，系统分析师不需要懂专业术语，问题领域和实现层面的专家可以用平常通用的语言沟通，使得分析结果更加符合需求。</p>
+<h3 id="简述-UML（统一建模语言）的作用。考试考哪些图？"><a href="#简述-UML（统一建模语言）的作用。考试考哪些图？" class="headerlink" title="简述 UML（统一建模语言）的作用。考试考哪些图？"></a>简述 UML（统一建模语言）的作用。考试考哪些图？</h3><blockquote>
+<p>统一建模语言（UML）是描述，构造和文档化系统制品的可视化语言。</p>
+</blockquote>
+<p><strong>作用</strong>：</p>
+<p>UML是一种进行面向对象程序设计的工具，将OOA（面向对象分析）与OOD（面向对象设计）用统一的符号表示出来，讲对象属性和对象之间的联系可视化，用来把现实中的问题抽象成面向对象的解决方案，以便进一步的编码。具体来说，可以用作有如下作用：</p>
+<p>1.作为草图：使用UML设计非正式的，不完整的图，借助可视化语言的功能，用于探讨问题或解决问题方案的复杂部分。</p>
+<p>2.作为蓝图：使用UML设计相对详细的设计图，可以用于1）逆向工程，即以UML图的方式对现有代码进行可视化，使其容易理解；2）代码生成（前向工程），使用图生成代码，然后开发者编写并补充其他代码。</p>
+<p>3.作为编程语言：用UML完成软件系统可执行规格说明，可执行代码能够被自动生成，但并不像通常一样为开发者所见或修改；人们仅使用UML”编程语言”进行工作。</p>
+<p><strong>考试</strong>：</p>
+<p><strong>用例图</strong>:用户角度:功能、执行者</p>
+<p><strong>静态图</strong>:系统静态结构</p>
+<p>​    ><code>类图</code>:概念及关系 􏰆</p>
+<p>​    ><code>对象图</code>:某种状态或时间段内，系统中活跃的对象及其关系</p>
+<p>​    ><code>􏰆包图</code>:􏰇述系统的分解结构</p>
+<p><strong>行为图</strong>:系统的动态行为</p>
+<p>​    ><code>􏰆交互图</code>:􏰇述对象间的消息传递 􏰈</p>
+<p>​            ><code>顺序图</code>:强调对象间消息发送的时序 􏰈</p>
+<p>​            ><code>合作图</code>:强调对象间的动态协作关系</p>
+<p>​    ><code>􏰆状态图</code>:对象的动态行为。状态-事件-状态迁移-响应动作</p>
+<p>​    ><code>􏰆活动图</code>:􏰇述系统为完成某功能而执行的操作序列</p>
+<p><strong>实现图</strong>:􏰇描述系统的组成和分布状况 􏰆</p>
+<p>​    ><code>构件图</code>:组成部件及其关系 􏰆</p>
+<p>​    ><code>部署图</code>:物理体系结构及与软件单元的对应关系</p>
+<h3 id="从软件本质的角度，解释软件范围（需求）控制的可行性"><a href="#从软件本质的角度，解释软件范围（需求）控制的可行性" class="headerlink" title="从软件本质的角度，解释软件范围（需求）控制的可行性"></a>从软件本质的角度，解释软件范围（需求）控制的可行性</h3><blockquote>
+<p>软件的本质有：</p>
+<p>1.complexity 复杂性<br>2.conformity 一致性<br>3.changeability 可变性<br>4.invisibility 不可视性</p>
+</blockquote>
+<p>由于软件的复杂性和可变性，一个需求的改变就可能引发整个软件设计的改变，因此如果不对软件的需求范围做出控制，会增加开发难度，对软件制品的质量产生负面效果，因此软件范围的控制具有必要性。</p>
+<p>又由于软件的不可视性，难以在初次测试时检测是否满足确定真正的需求。所以软件范围的控制具有困难性。</p>
+<p>但是在多数情况下，客户与开发者能就项目的 20% 内容给出严格的需求约定，80% 的内容都是相对模糊的。因此，围绕客户目标，发现并满足客户感兴趣的内容是最关键的。因此在需求分析与设计的过程中，对现有的需求进行评估，对需求的重要性进行评级并排序，初次迭代中开发有较大价值的需求，并对软件的增量留有足够的空间，同时围绕软件开发的成本进行调控，这样可以使得软件生产的范围，预算、工期、意外变化等在一定程度都在我们的掌控之中。</p>
+<h2 id="项目管理实践"><a href="#项目管理实践" class="headerlink" title="项目管理实践"></a>项目管理实践</h2><h3 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h3><p>看板（kanban）是敏捷开发的重要手段，主要用于项目的进度管理。所有需要完成的任务，都做成卡片，贴在一块白板上面，这就是看板。</p>
+<p>按照不同的阶段，看板分成若干列。</p>
+<ul>
+<li>Todo （待开发）</li>
+<li>Doing （开发中）</li>
+<li>Done （已完成）</li>
+</ul>
+<p>可以根据实际情况，分出更多的列。</p>
+<ul>
+<li><p>Todo （待安排）</p>
+</li>
+<li><p>Plan （计划）</p>
+</li>
+<li><p>Develop （开发）</p>
+</li>
+<li><p>Test （测试）</p>
+</li>
+<li><p>Deploy （部署）</p>
+</li>
+<li><p>Done （已完成）</p>
+</li>
+</ul>
+<p>复读的</p>
+<h3 id="UML绘图练习"><a href="#UML绘图练习" class="headerlink" title="UML绘图练习"></a>UML绘图练习</h3><p>课本中文版p.193，图16-17</p>
+<p><img src="/2019/04/02/系统分析作业2/Users/aodacat/my-hexo-site/source/_posts/系统分析作业2/1.png" alt="1"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/人工智能-逻辑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/人工智能-逻辑/" itemprop="url">人工智能-逻辑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T15:27:05+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>命题逻辑，一阶逻辑</p>
+<p>知识表示</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/数据科学-信息检索/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/24/数据科学-信息检索/" itemprop="url">数据科学-信息检索</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T22:16:08+08:00">
+                2019-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Pagerank</p>
+<p>VSM法即向量空间模型(Vector Space Model)法，由Salton等人于60年代末提出。这是最早也是最出名的信息检索方面的数学模型。其基本思想是将文档表示为加权的特征向量: D=D(T1, W1; T2，W2; …Tn, Wn), 然后通过计算文本相似度的方法来确定待分样本的类别。当文本被表示为空间向量模型的时候，文本的相似度就可以借助特征向量之间的内积来表示。</p>
+<p>在实际应用中，VSM法一般事先依据语料库中的训练样本和分类体系建立类别向量空间。当需要对一篇待分样本进行分类的时候，只需要计算待分样本和每一个类别向量的相似度即内积，然后选取相似度最大的类别作为该待分样本所对应的类别。</p>
+<p>由于VSM法中需要事先计算类别的空间向量，而该空间向量的建立又很大程度的依赖于该类别向量中所包含的特征项。根据研究发现，类别中所包含的非零特征项越多，其包含的每个特征项对于类别的表达能力越弱。因此，VSM法相对其他分类方法而言，更适合于专业文献的分类。</p>
+<p>关键词权重计算算法：TF-IDF<a href="https://www.cnblogs.com/likai198981/p/3344060.html" target="_blank" rel="noopener">https://www.cnblogs.com/likai198981/p/3344060.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/系统分析作业1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -462,7 +911,82 @@
       
         
           
-            
+            <p>[TOC]</p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h1 id="latex-math"><a href="#latex-math" class="headerlink" title="latex_math"></a>latex_math</h1><script type="math/tex; mode=display">
+c^{2}=a^{2}+b^{2} \\
+a^x+y \neq a^{x+y} \\
+a_{1} \qquad x^{2} \qquad e^{-\alpha t} \qquad a^{3}_{ij}\\
+e^{x^2} \neq {e^x}^2</script><script type="math/tex; mode=display">
+\tau \qquad \epsilon \qquad \chi \qquad \lambda \qquad \xi \qquad \pi  \qquad \mu \qquad \Phi \qquad \Omega \qquad \sigma</script><script type="math/tex; mode=display">
+\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}</script><script type="math/tex; mode=display">
+\forall x \in \mathbf{R}:\qquad x^{2} \geq 0\\
+x^{2} \geq 0\qquad\textrm{for all }x\in\mathbf{R}</script><script type="math/tex; mode=display">
+\sqrt{x}\\ 
+\sqrt{ x^{2}+\sqrt{y} }\\
+\sqrt[3]{2}\\
+\surd[x^2 + y^2]</script><script type="math/tex; mode=display">
+\overline{m+n} \\
+\underline{m+n}</script><script type="math/tex; mode=display">
+\underbrace{ a+b+\cdots+z }_{26} \qquad
+x_{1},\ldots,x_{n} \qquad
+x_{1}+\cdots+x_{n}</script><script type="math/tex; mode=display">
+y=x^{2}\qquad y’=2x\qquad y’’=2</script><script type="math/tex; mode=display">
+\vec a\quad\overrightarrow{AB}</script><script type="math/tex; mode=display">
+{n \choose k}\qquad {x \atop y+2}</script><script type="math/tex; mode=display">
+\int f_N(x) \stackrel{!}{=} 1 \\
+
+\int\!\!\!\int_{D} g(x,y)
+\, d x\, dy \\
+
+\newcommand{\ud}{\mathrm{d}}
+\iint_{D} \, \ud x \, \ud y \\ 
+
+\sum_{i=1}^{n} \qquad \int_{0}^{\frac{\pi}{2}} \qquad \prod_\epsilon</script><script type="math/tex; mode=display">
+{a,b,c}\neq\{a,b,c\}</script><script type="math/tex; mode=display">
+\Big( (x+1) (x-1) \Big) ^{2} \\
+\big(\Big(\bigg(\Bigg( \quad
+\big\}\Big\}\bigg\}\Bigg\} \quad
+\big\|\Big\|\bigg\|\Bigg\|</script><script type="math/tex; mode=display">
+x_{1},\ldots,x_{n} \qquad
+x_{1}+\cdots+x_{n}</script><script type="math/tex; mode=display">
+\mathbf{X} =
+\left( \begin{array}{ccc}
+x_{11} & x_{12} & \ldots \\
+x_{21} & x_{22} & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right)</script><script type="math/tex; mode=display">
+y = \left\{ \begin{array}{ll}
+a & \textrm{if $d>c$}\\
+b+x & \textrm{in the morning}\\
+l & \textrm{all day long}
+\end{array} \right.</script><script type="math/tex; mode=display">
+\left(\begin{array}{c|c}
+1 & 2 \\
+\hline
+3 & 4
+\end{array}\right)</script><script type="math/tex; mode=display">
+\begin{eqnarray}
+f(x) & = & \cos x \\
+f’(x) & = & -\sin x \\
+\int_{0}^{x} f(y)dy &
+= & \sin x
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\begin{eqnarray}
+\sin x & = & x -\frac{x^{3}}{3!}
++\frac{x^{5}}{5!}-{}
+\nonumber\\
+& & {}-\frac{x^{7}}{7!}+{}\cdots
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\mathbf R</script><p><a href="http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf" target="_blank" rel="noopener">http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf</a></p>
+
           
         
       
@@ -581,6 +1105,128 @@
       
         
           
+            <p>[TOC]</p>
+<p>支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据<strong>结构风险最小化准则</strong>，以<strong>最大化分类间隔</strong>构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。</p>
+<h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><h1 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h1><h1 id="软间隔"><a href="#软间隔" class="headerlink" title="软间隔"></a>软间隔</h1><h1 id="SVR"><a href="#SVR" class="headerlink" title="SVR"></a>SVR</h1><p>支持向量回归—&gt;可用线性或高斯核（RBF）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-条件随机场/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/机器学习-条件随机场/" itemprop="url">机器学习-条件随机场</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:45:20+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
             
           
         
@@ -629,7 +1275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-决策树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-经典模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -648,7 +1294,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/机器学习-决策树/" itemprop="url">机器学习-决策树</a></h1>
+                <a class="post-title-link" href="/2019/03/08/人工智能-经典模型/" itemprop="url">人工智能-经典模型</a></h1>
         
 
         <div class="post-meta">
@@ -700,7 +1346,8 @@
       
         
           
-            
+            <p>alphago</p>
+
           
         
       
@@ -748,7 +1395,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-聚类/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-强化学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -767,7 +1414,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/机器学习-聚类/" itemprop="url">机器学习-聚类</a></h1>
+                <a class="post-title-link" href="/2019/03/08/人工智能-强化学习/" itemprop="url">人工智能-强化学习</a></h1>
         
 
         <div class="post-meta">
@@ -779,7 +1426,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:43+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
                 2019-03-08
               </time>
             
@@ -819,7 +1466,22 @@
       
         
           
-            
+            <p>dqn</p>
+<p>DRL</p>
+<p><a href="https://blog.csdn.net/u013236946/article/details/72871858" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/72871858</a></p>
+<p><a href="https://blog.csdn.net/u013236946/article/details/73195035" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/73195035</a></p>
+<p><a href="https://blog.csdn.net/u013236946/article/details/73243310" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/73243310</a></p>
+<p><a href="https://blog.csdn.net/u013236946/article/details/73161586" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/73161586</a></p>
+<p><a href="https://blog.csdn.net/mmc2015/article/details/58021482/" target="_blank" rel="noopener">https://blog.csdn.net/mmc2015/article/details/58021482/</a></p>
+<p>RL</p>
+<p><a href="http://www.cnblogs.com/steven-yang/p/6481772.html" target="_blank" rel="noopener">http://www.cnblogs.com/steven-yang/p/6481772.html</a></p>
+<p>时间差分学习 Temporal difference learning</p>
+<p>Q学习 Q-learning</p>
+<p>自动学习机 Learning Automata</p>
+<p>状态-行动-回馈-状态-行动（SARSA） State-Action-Reward-State-Action(SARSA)</p>
+<p>policy gradient method </p>
+<p>Temporal Difference</p>
+
           
         
       
@@ -867,7 +1529,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-集成学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-搜索/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -886,7 +1548,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/机器学习-集成学习/" itemprop="url">机器学习-集成学习</a></h1>
+                <a class="post-title-link" href="/2019/03/08/人工智能-搜索/" itemprop="url">人工智能-搜索</a></h1>
         
 
         <div class="post-meta">
@@ -898,7 +1560,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:24+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
                 2019-03-08
               </time>
             
@@ -938,483 +1600,11 @@
       
         
           
-            
-          
-        
-      
-    </div>
-    
-    
-    
+            <p>bfs，dfs</p>
+<p>随机场算法CRF</p>
+<p>搜索：蚁群算法，人工鱼群算法，人工蜂群算法，粒子群算法PSO，蛙跳算法，模拟退火，爬山算法，A*算法，禁忌搜索算法，匈牙利算法，进化算法，遗传算法</p>
+<p>搜索论：search theory</p>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-评价指标/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/机器学习-评价指标/" itemprop="url">机器学习-评价指标</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:43:54+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-朴素贝叶斯/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/机器学习-朴素贝叶斯/" itemprop="url">机器学习-朴素贝叶斯</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:43:41+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-RNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-RNN/" itemprop="url">深度学习-RNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:53+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-CNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-CNN/" itemprop="url">深度学习-CNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:38+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -1453,7 +1643,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1499,7 +1689,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

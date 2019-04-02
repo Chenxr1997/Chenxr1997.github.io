@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="LeetCode-1 Two Sum(Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法刷题">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/算法刷题/index.html">
+<meta property="og:site_name" content="Chenxr&#39;s blogs">
+<meta property="og:description" content="LeetCode-1 Two Sum(Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-22T03:37:29.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法刷题">
+<meta name="twitter:description" content="LeetCode-1 Two Sum(Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/算法刷题/">
+
+
+
+
+
+  <title>算法刷题 | Chenxr's blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chenxr's blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/算法刷题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法刷题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:45+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>LeetCode-1 Two Sum(Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice)</p>
+<p>两遍哈希，一遍哈希</p>
+<p>LeetCode-2. Add Two Numbers（You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.）</p>
+<p>初等数学遍历相加</p>
+<p>LeetCode-3. Longest Substring Without Repeating Characters（Given a string, find the length of the longest substring without repeating characters）</p>
+<p>滑动窗口</p>
+<p>区分subsequence和substring</p>
+<p>LeetCode-4. Median of Two Sorted Arrays（There are two sorted arrays <strong>nums1</strong> and <strong>nums2</strong> of size m and n respectively.Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n))）</p>
+<p>递归</p>
+<p>LeetCode-</p>
+<p>LeetCode-46. Permutations（Given a collection of distinct integers, return all possible permutations）</p>
+<p>递归</p>
+<p>LeetCode:47. Permutations II</p>
+<p>递归</p>
+<p>LeetCode 50.Pow(x, n)</p>
+<p>分治</p>
+<p>Leetcode 69. Sqrt(x)</p>
+<p>二分法</p>
+<p>牛顿逼近</p>
+<p>leetCode 93.Restore IP Addresses (恢复IP地址)</p>
+<p>根据目前刷了这么多题，得出了两个经验，一是只要遇到字符串的子序列或配准问题首先考虑动态规划DP，二是只要遇到需要求出所有可能情况首先考虑用递归。</p>
+<p>递归搜索</p>
+<p>LeetCode-100 Same Tree（Given two binary trees, write a function to check if they are equal or not. Two binary trees are considered equal if they are structurally identical and the nodes have the same value）</p>
+<p>遍历</p>
+<p>Leetcode 104. Maximum Depth of Binary Tree（Given a binary tree, find its maximum depth）</p>
+<p>递归，层序</p>
+<p>LeetCode111（The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node）</p>
+<p>层序遍历，记录遍历的层数，一旦我们遍历到第一个叶结点，就将当前层数返回</p>
+<p>LeetCode126—Word Ladder II</p>
+<p>BFS建立邻接表 从后往前搜索</p>
+<p>若所有边的长度相等，广度优先搜索算法是最佳解——亦即它找到的第一个解，距离根节点的边数目一定最少</p>
+<p>LeetCode127—Word Ladder</p>
+<p>bfs</p>
+<p>Leetcode128 Longest Consecutive Sequence solution（Given an unsorted array of integers, find the length of the longest consecutive elements sequence）</p>
+<p>哈希表，set</p>
+<p>LeetCode 129 Sum Root to Leaf Numbers </p>
+<p>先序遍历，层序遍历</p>
+<p>LeetCode 130 Surrounded Regions（Given a 2D board containing ‘X’ and ‘O’ (the letter O), capture all regions surrounded by ‘X’.）</p>
+<p>搜索</p>
+<p>leedcode 134 Gas Station（There are N gas stations along a circular route, where the amount of gas at station i is gas[i].You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1）</p>
+<p>贪心，start的后退，end的前进</p>
+<p>LeetCode 135 Candy（There are N children standing in a line. Each child is assigned a rating value.You are giving candies to these children subjected to the following requirements:Each child must have at least one candy.Children with a higher rating get more candies than their neighbors.What is the minimum candies you must give?）</p>
+<p>两次遍历（前，后）</p>
+<p>LeetCode 136 single-number（Given an array of integers, every element appears twice except for one. Find that single one）</p>
+<p>异或，哈希</p>
+<p>LeetCode 137 single-number-ii（Given an array of integers, every element appears three times except for one. Find that single one）</p>
+<p>位运算（妙解），哈希，排序</p>
+<p>Leetcode138 Copy List with Random Pointer solution（A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.Return a deep copy of the list.）</p>
+<p>插入节点，分离节点</p>
+<p>LeetCode139 Word Break（Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words）</p>
+<p>dp</p>
+<p>leetcode141 Linked List Cycle（Given a linked list, determine if it has a cycle in it.Follow up: Can you solve it without using extra space?）</p>
+<p>快慢指针</p>
+<p>Leetcode 142 Linked List Cycle (II)（Given a linked list, return the node where the cycle begins. If there is no cycle, return null.Note: Do not modify the linked list.Follow up:Can you solve it without using extra space?）</p>
+<p>快慢指针</p>
+<p>快慢指针应用：</p>
+<p>判断一个链表是否有环</p>
+<p>求一个链表是否存在环，如果存在，则求出环的入口结点</p>
+<p>求链表是否存在环的变式，如给定两个链表A和B，判断两个链表是否相交，解决方法就是将A链表尾节点指向头结点形成一个环，检测B链表是否存在环，如果存在，则两个链表相交，而检测出来的依赖环入口即为相交的第一个点</p>
+<p>求有序链表中求出其中位数，这种问题也是设置快慢指针，当快指针到底链表尾部的时候，慢指针刚好指向链表中间的结点</p>
+<p>LeetCode-143. Reorder List（Given a singly linked list L: L 0→L 1→…→L n-1→L n,reorder it to: L 0→L n →L 1→L n-1→L 2→L n-2→…You must do this in-place without altering the nodes’ values.）</p>
+<p>快慢指针</p>
+<p>LeetCode 144. Binary Tree Preorder Traversal（Given a binary tree, return the preorder traversal of its nodes’ values.Note: Recursive solution is trivial, could you do it iteratively?）</p>
+<p>栈，递归</p>
+<p>[leetcode]147. Insertion Sort List（Sort a linked list using insertion sort）</p>
+<p>新建一个链表,遍历原链表，将每个节点加入新链表正确的位置</p>
+<p>Leetcode 149 Max Points on a Line</p>
+<p>穷举法，两边循环，找斜率</p>
+<p>CV中的hough transform（据说不保证完全正确）</p>
+<p>LeetCode 148. Sort List—O(nlogn)时间复杂度和常数空间复杂度给链表排序</p>
+<p>归并排序和快慢指针</p>
+<p>LeetCode150逆波兰表达式求解（Evaluate Reverse Polish Notation）</p>
+<p>用栈</p>
+<p>判断两个链表是否相交并找出交点</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/计算机科学基础-算法/" rel="next" title="计算机科学基础-算法">
+                <i class="fa fa-chevron-left"></i> 计算机科学基础-算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/计算机科学基础-数据结构/" rel="prev" title="计算机科学基础-数据结构">
+                计算机科学基础-数据结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chenxr</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chenxr</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

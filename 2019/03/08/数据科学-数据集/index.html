@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="图像分类数据集The MNIST Database ( http://yann.lecun.com/exdb/mnist/ ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集 ImageNet ( http://image-net.org/ ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据科学-数据集">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-数据集/index.html">
+<meta property="og:site_name" content="Chenxr&#39;s blogs">
+<meta property="og:description" content="图像分类数据集The MNIST Database ( http://yann.lecun.com/exdb/mnist/ ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集 ImageNet ( http://image-net.org/ ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-22T03:37:29.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据科学-数据集">
+<meta name="twitter:description" content="图像分类数据集The MNIST Database ( http://yann.lecun.com/exdb/mnist/ ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集 ImageNet ( http://image-net.org/ ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/数据科学-数据集/">
+
+
+
+
+
+  <title>数据科学-数据集 | Chenxr's blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chenxr's blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据科学-数据集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="图像分类数据集"><a href="#图像分类数据集" class="headerlink" title="图像分类数据集"></a>图像分类数据集</h1><p>The MNIST Database ( <a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a> ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集</p>
+<p>ImageNet ( <a href="http://image-net.org/" target="_blank" rel="noopener">http://image-net.org/</a> ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图像描述。目前，该集合平均每个节点有超过500个图像(而且还在增加)</p>
+<p>MS-COCO，COCO是一个大型的、丰富的物体检测，分割和字幕数据集</p>
+<p>CIFAR-10，该数据集是图像分类的另一个数据集，它由10个类的60,000个图像组成（每个类在上面的图像中表示为一行）。总共有50,000个训练图像和10,000个测试图像。数据集分为6个部分：5个训练批次和1个测试批次，每批有10,000个图像</p>
+<p>MIRFlickr-25K图像数据集 (Huiskes and Lew 2008)（It originally consists of 25,000 image samples collected from the Flickr website.Each image is annotated by one or more labels selected from 24 labels and some textual tags）</p>
+<p>NUS-WIDE 图像数据集(Chua et al. 2009)（It contains 260,648 images from a public web image dataset. There are 81 ground truth concepts man- ually annotated for search evaluation）</p>
+<h1 id="文本分类-nlp数据集"><a href="#文本分类-nlp数据集" class="headerlink" title="文本分类/nlp数据集"></a>文本分类/nlp数据集</h1><p>Spam – Non Spam (<a href="http://www.esp.uem.es/jmgomez/smsspamcorpus/" target="_blank" rel="noopener">http://www.esp.uem.es/jmgomez/smsspamcorpus/</a>)</p>
+<p>区分短信是否为垃圾邮件是一个有趣的问题。你需要构建一个分类器将短信进行分类</p>
+<p>Twitter Sentiment Analysis (<a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/" target="_blank" rel="noopener">http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/</a>) </p>
+<p>该数据集包含 1578627 个分类推文，每行被标记为1的积极情绪，0位负面情绪。数据依次基于 Kaggle 比赛和 Nick Sanders 的分析</p>
+<p>Yelp评论</p>
+<p>这是Yelp为了学习目的而发布的一个开放数据集。它由数百万用户评论，商业属性和来自多个大都市地区的超过20万张照片组成。这是一个非常常用的全球NLP挑战数据集</p>
+<p>Movie Review Data (<a href="http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签" target="_blank" rel="noopener">http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签</a></p>
+<p>WordNetWordNet</p>
+<p>WordNetWordNet是一个包含英文synsets的大型数据库。Synsets是同义词组，每个描述不同的概念。WordNet的结构使其成为NLP非常有用的工具</p>
+<h1 id="推荐引擎数据集"><a href="#推荐引擎数据集" class="headerlink" title="推荐引擎数据集"></a>推荐引擎数据集</h1><p>MovieLens ( <a href="https://grouplens.org/" target="_blank" rel="noopener">https://grouplens.org/</a> )</p>
+<p> MovieLens是一个帮助人们查找电影的网站。它有成千上万的注册用户。他们进行自动内容推荐，推荐界面，基于标签的推荐页面等在线实验。这些数据集可供下载，可用于创建自己的推荐系统</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/数据科学-进阶知识/" rel="next" title="数据科学-进阶知识">
+                <i class="fa fa-chevron-left"></i> 数据科学-进阶知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/数据科学-基础知识/" rel="prev" title="数据科学-基础知识">
+                数据科学-基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chenxr</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图像分类数据集"><span class="nav-number">1.</span> <span class="nav-text">图像分类数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本分类-nlp数据集"><span class="nav-number">2.</span> <span class="nav-text">文本分类/nlp数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐引擎数据集"><span class="nav-number">3.</span> <span class="nav-text">推荐引擎数据集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chenxr</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

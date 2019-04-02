@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC] 基本概念输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间 每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间 假设空间：输入空间到输出空间的映射的集合 学习三要素：模型：确定模型空间，策略：确定模型空间中什么是好的模型，算法：在模型空间中怎么得到好的模型 学习任务分类监督学习，无监督学习，半监督学习，强化学习，迁移学习/联邦学习 半监督">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据科学-基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-基础知识/index.html">
+<meta property="og:site_name" content="Chenxr&#39;s blogs">
+<meta property="og:description" content="[TOC] 基本概念输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间 每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间 假设空间：输入空间到输出空间的映射的集合 学习三要素：模型：确定模型空间，策略：确定模型空间中什么是好的模型，算法：在模型空间中怎么得到好的模型 学习任务分类监督学习，无监督学习，半监督学习，强化学习，迁移学习/联邦学习 半监督">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/Users/aodacat/my-hexo-site/source/_posts/数据科学-基础知识/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/Users/aodacat/my-hexo-site/source/_posts/数据科学-基础知识/2.png">
+<meta property="og:updated_time" content="2019-03-30T05:09:15.125Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据科学-基础知识">
+<meta name="twitter:description" content="[TOC] 基本概念输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间 每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间 假设空间：输入空间到输出空间的映射的集合 学习三要素：模型：确定模型空间，策略：确定模型空间中什么是好的模型，算法：在模型空间中怎么得到好的模型 学习任务分类监督学习，无监督学习，半监督学习，强化学习，迁移学习/联邦学习 半监督">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/Users/aodacat/my-hexo-site/source/_posts/数据科学-基础知识/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/数据科学-基础知识/">
+
+
+
+
+
+  <title>数据科学-基础知识 | Chenxr's blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chenxr's blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据科学-基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
+<p>每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间</p>
+<p>假设空间：输入空间到输出空间的映射的集合</p>
+<p>学习三要素：模型：确定模型空间，策略：确定模型空间中什么是好的模型，算法：在模型空间中怎么得到好的模型</p>
+<h2 id="学习任务分类"><a href="#学习任务分类" class="headerlink" title="学习任务分类"></a>学习任务分类</h2><p>监督学习，无监督学习，半监督学习，强化学习，迁移学习/联邦学习</p>
+<p>半监督学习：</p>
+<p>生成模型 Generative models</p>
+<p>低密度分离 Low-density separation</p>
+<p>联合训练 Co-training</p>
+<p>迁移学习 Transfer learning：</p>
+<p>传递式迁移学习 Transitive Transfer Learning</p>
+<h2 id="问题分类"><a href="#问题分类" class="headerlink" title="问题分类"></a>问题分类</h2><p>分类问题，标注问题，回归问题</p>
+<h1 id="优化-策略"><a href="#优化-策略" class="headerlink" title="(优化)策略"></a>(优化)策略</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数度量模型一次预测的好坏</p>
+<p>0-1损失函数，平方损失函数，绝对损失函数，对数损失函数（对数似然损失函数）</p>
+<h2 id="风险函数"><a href="#风险函数" class="headerlink" title="风险函数"></a>风险函数</h2><p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
+<p>经验风险（经验损失）</p>
+<h2 id="经验风险最小化"><a href="#经验风险最小化" class="headerlink" title="经验风险最小化"></a>经验风险最小化</h2><h2 id="结构风险最小化"><a href="#结构风险最小化" class="headerlink" title="结构风险最小化"></a>结构风险最小化</h2><p>为了防止过拟合而提出的策略，等价于正则化</p>
+<h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="训练误差和测试误差"><a href="#训练误差和测试误差" class="headerlink" title="训练误差和测试误差"></a>训练误差和测试误差</h2><h2 id="评价指标："><a href="#评价指标：" class="headerlink" title="评价指标："></a>评价指标：</h2><h3 id="绝对误差，相对误差"><a href="#绝对误差，相对误差" class="headerlink" title="绝对误差，相对误差"></a>绝对误差，相对误差</h3><h3 id="平均绝对误差（mean-absolute-error-MAE）"><a href="#平均绝对误差（mean-absolute-error-MAE）" class="headerlink" title="平均绝对误差（mean absolute error MAE）"></a>平均绝对误差（mean absolute error MAE）</h3><h3 id="均方误差（mean-squared-error-MSE）"><a href="#均方误差（mean-squared-error-MSE）" class="headerlink" title="均方误差（mean squared error MSE）"></a>均方误差（mean squared error MSE）</h3><h3 id="均方根误差（root-mean-squared-error-RMSE）"><a href="#均方根误差（root-mean-squared-error-RMSE）" class="headerlink" title="均方根误差（root mean squared error RMSE）"></a>均方根误差（root mean squared error RMSE）</h3><h3 id="平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><a href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）" class="headerlink" title="平均绝对百分误差（mean absolute percentage error MAPE）"></a>平均绝对百分误差（mean absolute percentage error MAPE）</h3><h3 id="Kappa统计"><a href="#Kappa统计" class="headerlink" title="Kappa统计"></a>Kappa统计</h3><h3 id="准确度accuracy（TP-TN-FP-FN）"><a href="#准确度accuracy（TP-TN-FP-FN）" class="headerlink" title="准确度accuracy（TP,TN,FP,FN）"></a>准确度accuracy（TP,TN,FP,FN）</h3><p>TPR = TP / (TP + FN)</p>
+<p>FPR = PF / (FP + TN)</p>
+<h3 id="识别准确率presion-amp-amp-召回率recall"><a href="#识别准确率presion-amp-amp-召回率recall" class="headerlink" title="识别准确率presion &amp;&amp; 召回率recall"></a>识别准确率presion &amp;&amp; 召回率recall</h3><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><h3 id="Mean-Average-Precision-MAP"><a href="#Mean-Average-Precision-MAP" class="headerlink" title="Mean Average Precision (MAP)"></a>Mean Average Precision (MAP)</h3><h3 id="AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><a href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic" class="headerlink" title="AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)"></a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h3><p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
+<h3 id="F值（F-Measure）"><a href="#F值（F-Measure）" class="headerlink" title="F值（F-Measure）"></a>F值（F-Measure）</h3><p>F = 2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
+<h3 id="A-B-test显著性检验"><a href="#A-B-test显著性检验" class="headerlink" title="A/B-test显著性检验"></a>A/B-test显著性检验</h3><h2 id="评估："><a href="#评估：" class="headerlink" title="评估："></a>评估：</h2><p>交叉验证，自助法，随机二次抽样</p>
+<h1 id="过拟合-欠拟合："><a href="#过拟合-欠拟合：" class="headerlink" title="过拟合/欠拟合："></a>过拟合/欠拟合：</h1><p>过拟合：把误差，噪声也拟合进去了</p>
+<p>Errors on training data are small</p>
+<p>But errors on new points are likely to be large</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>L1L2范数（模型参数向量的范数）</p>
+<p>奥卡姆剃刀模型</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>训练集的划分</p>
+<p>训练集，验证集，测试集</p>
+<p>简单交叉验证</p>
+<p>k折交叉验证</p>
+<p>cv交叉验证</p>
+<p>留一交叉验证</p>
+<h2 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h2><p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
+<h1 id="泛化能力"><a href="#泛化能力" class="headerlink" title="泛化能力"></a>泛化能力</h1><p>泛化误差上界，推导</p>
+<h1 id="生成模型-判别模型"><a href="#生成模型-判别模型" class="headerlink" title="生成模型/判别模型"></a>生成模型/判别模型</h1><h1 id="Bias-Variance-Tradeoff"><a href="#Bias-Variance-Tradeoff" class="headerlink" title="Bias-Variance Tradeoff"></a>Bias-Variance Tradeoff</h1><p><img src="/2019/03/08/数据科学-基础知识/Users/aodacat/my-hexo-site/source/_posts/数据科学-基础知识/1.png" alt="1"></p>
+<p><img src="/2019/03/08/数据科学-基础知识/Users/aodacat/my-hexo-site/source/_posts/数据科学-基础知识/2.png" alt="2"></p>
+<p>高斯马尔科夫定理：</p>
+<p>数据质量：</p>
+<p>缺失值</p>
+<p>异常值（3σ原则，箱形图分析）</p>
+<p>一致性分析/检验</p>
+<p>数据特征/探索性数据分析EDA<a href="https://www.cnblogs.com/shencc3/p/7851340.html：" target="_blank" rel="noopener">https://www.cnblogs.com/shencc3/p/7851340.html：</a></p>
+<p>分布分析</p>
+<p>定性（条形图，饼图）</p>
+<p>定量（求极差-分组-决定分点-列出频率分布表-绘出频率直方分布图）</p>
+<p>对比分析</p>
+<p>绝对数比较</p>
+<p>相对数比较（结构相对数，比例相对数，比较相对数，强度相对数，计划完成程度相对数，动态相对数）</p>
+<p>统计量分析</p>
+<p>集中趋势度量（均值，中位数，总数）</p>
+<p>离中趋势度量（极差，标准差，变异系数，四分位数间距）</p>
+<p>周期性分析</p>
+<p>共献度分析（帕累托法则，2/8定律）</p>
+<p>相关性分析</p>
+<p>绘制散点图，绘制散点图矩阵</p>
+<p>相关系数：pearson相关系数，spearman秩相关系数，判定系数</p>
+<h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><p>数据清洗</p>
+<p>缺失值处理</p>
+<p>不处理</p>
+<p>删除记录</p>
+<p>插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条）</p>
+<p>异常值处理</p>
+<p>不处理，删除记录，视为缺失值，平均值修正</p>
+<p>数据集成</p>
+<p>实体识别（同名同义，异名同义，单位不统一）</p>
+<p>冗余属性识别</p>
+<p>数据变换</p>
+<p>简单函数变化</p>
+<p>数据规范化/标准化（最大-最小规范化，零-均值规范化，小数定标规范化，归一化）</p>
+<p>连续属性离散化（等宽法，等频法，聚类法）</p>
+<p>属性构造</p>
+<p>小波变换</p>
+<p>数据规约</p>
+<p>属性规约（合并属性，逐步向前选择，逐步向后删除，决策树归纳，主成分分析）</p>
+<p>数值规约（直方图，聚类，抽样，参数回归）</p>
+<p>数据融合：</p>
+<h1 id="异常点-离群点检测"><a href="#异常点-离群点检测" class="headerlink" title="异常点/离群点检测"></a>异常点/离群点检测</h1><p><strong>异常检测 Anomaly detection</strong> </p>
+<p>离群点分类（从数据范围，从数据类型，从属性个数）</p>
+<p>检测方法（基于统计，基于邻近度，基于密度，基于聚类）</p>
+<p>基于统计（一元正态分布的离群点检测，混合模型xxxx，）</p>
+<p>基于聚类（丢弃远离其他簇的小簇，基于原型的聚类）</p>
+<p>OneClassSVM，IsolationForest，Local Outlier Factor(LOF)，基于高斯分布的方法</p>
+<p><a href="https://blog.csdn.net/qq_15111861/article/details/81178085" target="_blank" rel="noopener">https://blog.csdn.net/qq_15111861/article/details/81178085</a></p>
+<p><a href="https://blog.csdn.net/littlely_ll/article/details/68486537" target="_blank" rel="noopener">https://blog.csdn.net/littlely_ll/article/details/68486537</a></p>
+<p>局部异常因子 Local outlier factor</p>
+<p>离群点检测</p>
+<h1 id="陷阱与挑战"><a href="#陷阱与挑战" class="headerlink" title="陷阱与挑战"></a>陷阱与挑战</h1><p>过拟合</p>
+<p>维度灾难</p>
+<p>泛化能力</p>
+<h1 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h1><p>连续性/离散型</p>
+<h1 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h1><p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
+<p><a href="https://blog.csdn.net/occamo/article/details/84957692" target="_blank" rel="noopener">https://blog.csdn.net/occamo/article/details/84957692</a></p>
+<p>Ground Truth翻译的意思是地面实况，放到机器学习里面，再抽象点可以把它理解为真值、真实的有效值或者是标准的答案</p>
+<p>shallow learning</p>
+<p>互信息</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/数据科学-数据集/" rel="next" title="数据科学-数据集">
+                <i class="fa fa-chevron-left"></i> 数据科学-数据集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/数据挖掘-关联分析/" rel="prev" title="数据挖掘-关联分析">
+                数据挖掘-关联分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chenxr</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学习任务分类"><span class="nav-number">1.1.</span> <span class="nav-text">学习任务分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分类"><span class="nav-number">1.2.</span> <span class="nav-text">问题分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化-策略"><span class="nav-number">2.</span> <span class="nav-text">(优化)策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">2.1.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险函数"><span class="nav-number">2.2.</span> <span class="nav-text">风险函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化"><span class="nav-number">2.3.</span> <span class="nav-text">经验风险最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构风险最小化"><span class="nav-number">2.4.</span> <span class="nav-text">结构风险最小化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型评估"><span class="nav-number">3.</span> <span class="nav-text">模型评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练误差和测试误差"><span class="nav-number">3.1.</span> <span class="nav-text">训练误差和测试误差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标："><span class="nav-number">3.2.</span> <span class="nav-text">评价指标：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差，相对误差"><span class="nav-number">3.2.1.</span> <span class="nav-text">绝对误差，相对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对误差（mean-absolute-error-MAE）"><span class="nav-number">3.2.2.</span> <span class="nav-text">平均绝对误差（mean absolute error MAE）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方误差（mean-squared-error-MSE）"><span class="nav-number">3.2.3.</span> <span class="nav-text">均方误差（mean squared error MSE）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方根误差（root-mean-squared-error-RMSE）"><span class="nav-number">3.2.4.</span> <span class="nav-text">均方根误差（root mean squared error RMSE）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><span class="nav-number">3.2.5.</span> <span class="nav-text">平均绝对百分误差（mean absolute percentage error MAPE）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kappa统计"><span class="nav-number">3.2.6.</span> <span class="nav-text">Kappa统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准确度accuracy（TP-TN-FP-FN）"><span class="nav-number">3.2.7.</span> <span class="nav-text">准确度accuracy（TP,TN,FP,FN）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#识别准确率presion-amp-amp-召回率recall"><span class="nav-number">3.2.8.</span> <span class="nav-text">识别准确率presion &amp;&amp; 召回率recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆矩阵"><span class="nav-number">3.2.9.</span> <span class="nav-text">混淆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mean-Average-Precision-MAP"><span class="nav-number">3.2.10.</span> <span class="nav-text">Mean Average Precision (MAP)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><span class="nav-number">3.2.11.</span> <span class="nav-text">AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F值（F-Measure）"><span class="nav-number">3.2.12.</span> <span class="nav-text">F值（F-Measure）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-B-test显著性检验"><span class="nav-number">3.2.13.</span> <span class="nav-text">A/B-test显著性检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估："><span class="nav-number">3.3.</span> <span class="nav-text">评估：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过拟合-欠拟合："><span class="nav-number">4.</span> <span class="nav-text">过拟合/欠拟合：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">4.1.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-number">4.2.</span> <span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout"><span class="nav-number">4.3.</span> <span class="nav-text">dropout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泛化能力"><span class="nav-number">5.</span> <span class="nav-text">泛化能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成模型-判别模型"><span class="nav-number">6.</span> <span class="nav-text">生成模型/判别模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bias-Variance-Tradeoff"><span class="nav-number">7.</span> <span class="nav-text">Bias-Variance Tradeoff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据预处理"><span class="nav-number">8.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常点-离群点检测"><span class="nav-number">9.</span> <span class="nav-text">异常点/离群点检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#陷阱与挑战"><span class="nav-number">10.</span> <span class="nav-text">陷阱与挑战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据特征"><span class="nav-number">11.</span> <span class="nav-text">数据特征</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检验"><span class="nav-number">12.</span> <span class="nav-text">检验</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chenxr</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

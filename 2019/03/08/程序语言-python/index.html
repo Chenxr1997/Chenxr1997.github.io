@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="[TOC] 基础文档：__doc__ lambda，map，reduce 文件读写https://www.cnblogs.com/zywscq/p/5441145.html 查看数据占用内存大小https://blog.csdn.net/u013679490/article/details/54408326 环境变量配置https://www.cnblogs.com/huangbiquan/p/7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序语言-python">
-<meta property="og:url" content="http://yoursite.com/2019/03/08/程序语言-python/index.html">
+<meta property="og:title" content="程序语言-Python">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/程序语言-Python/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
+<meta property="og:description" content="[TOC] 基础文档：__doc__ lambda，map，reduce 文件读写https://www.cnblogs.com/zywscq/p/5441145.html 查看数据占用内存大小https://blog.csdn.net/u013679490/article/details/54408326 环境变量配置https://www.cnblogs.com/huangbiquan/p/7">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T15:12:22.779Z">
+<meta property="og:updated_time" content="2019-04-01T15:01:33.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序语言-python">
+<meta name="twitter:title" content="程序语言-Python">
+<meta name="twitter:description" content="[TOC] 基础文档：__doc__ lambda，map，reduce 文件读写https://www.cnblogs.com/zywscq/p/5441145.html 查看数据占用内存大小https://blog.csdn.net/u013679490/article/details/54408326 环境变量配置https://www.cnblogs.com/huangbiquan/p/7">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/08/程序语言-python/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/程序语言-Python/">
 
 
 
 
 
-  <title>程序语言-python | Chenxr's blogs</title>
+  <title>程序语言-Python | Chenxr's blogs</title>
   
 
 
@@ -229,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/程序语言-python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/程序语言-Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -246,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">程序语言-python</h1>
+          <h1 class="post-title" itemprop="name headline">程序语言-Python</h1>
         
 
         <div class="post-meta">
@@ -296,7 +299,127 @@
       
 
       
-        
+        <p>[TOC]</p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>文档：__doc__</p>
+<p>lambda，map，reduce</p>
+<p>文件读写<a href="https://www.cnblogs.com/zywscq/p/5441145.html" target="_blank" rel="noopener">https://www.cnblogs.com/zywscq/p/5441145.html</a></p>
+<p>查看数据占用内存大小<a href="https://blog.csdn.net/u013679490/article/details/54408326" target="_blank" rel="noopener">https://blog.csdn.net/u013679490/article/details/54408326</a></p>
+<p>环境变量配置<a href="https://www.cnblogs.com/huangbiquan/p/7784533.html" target="_blank" rel="noopener">https://www.cnblogs.com/huangbiquan/p/7784533.html</a></p>
+<p>python文件从哪里开始运行，文件目录就要根据它来设置，包括其他引入的文件</p>
+<p>configparser库，设置配置文件</p>
+<p>struct（字节流，组包拆包实现）<a href="http://blog.sina.com.cn/s/blog_4b5039210100f1tu.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4b5039210100f1tu.html</a></p>
+<p>pip控制版本：pip install numpy==1.11.0 </p>
+<p>python快速执行<a href="https://www.cnblogs.com/wobuyayi/p/10026089.html" target="_blank" rel="noopener">https://www.cnblogs.com/wobuyayi/p/10026089.html</a> </p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表的深复制与浅复制，超级深度复制copy.deepcopy()</p>
+<h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>] </span><br><span class="line"><span class="comment"># [4, 16, 36, 64, 100]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m + n <span class="keyword">for</span> m <span class="keyword">in</span> <span class="string">'ABC'</span> <span class="keyword">for</span> n <span class="keyword">in</span> <span class="string">'XYZ'</span>] </span><br><span class="line"><span class="comment"># ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">'x'</span>: <span class="string">'A'</span>, <span class="string">'y'</span>: <span class="string">'B'</span>, <span class="string">'z'</span>: <span class="string">'C'</span> &#125;</span><br><span class="line">[k + <span class="string">'='</span> + v <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items()]</span><br><span class="line"><span class="comment"># ['y=B', 'x=A', 'z=C']</span></span><br></pre></td></tr></table></figure>
+<h2 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h2><p>map，filter见常用库-内建函数</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>字典的遍历：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">'x'</span>: <span class="string">'A'</span>, <span class="string">'y'</span>: <span class="string">'B'</span>, <span class="string">'z'</span>: <span class="string">'C'</span> &#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> d.items():</span><br><span class="line">	print(k, <span class="string">'='</span>, v)</span><br><span class="line"><span class="comment"># y = B</span></span><br><span class="line"><span class="comment"># x = A</span></span><br><span class="line"><span class="comment"># z = C</span></span><br></pre></td></tr></table></figure>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = <span class="string">'LIST'</span></span><br><span class="line">l.lower()</span><br><span class="line"><span class="comment"># list</span></span><br></pre></td></tr></table></figure>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>创建生成器的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))  <span class="comment"># 注意是()不是[]</span></span><br><span class="line">g</span><br><span class="line"><span class="comment"># &lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;</span></span><br></pre></td></tr></table></figure>
+<p>获取生成器元素的方法，generator保存的是算法，每次调用<code>next(g)</code>，就计算出<code>g</code>的下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出<code>StopIteration</code>的错误。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">next(g)</span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 9</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 16</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 25</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 36</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 49</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 64</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># 81</span></span><br><span class="line">next(g)</span><br><span class="line"><span class="comment"># Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#   File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment"># StopIteration</span></span><br></pre></td></tr></table></figure>
+<p>也可以使用for循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> g:</span><br><span class="line">	print(n)</span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line"><span class="comment"># 9</span></span><br><span class="line"><span class="comment"># 16</span></span><br><span class="line"><span class="comment"># 25</span></span><br><span class="line"><span class="comment"># 36</span></span><br><span class="line"><span class="comment"># 49</span></span><br><span class="line"><span class="comment"># 64</span></span><br><span class="line"><span class="comment"># 81</span></span><br></pre></td></tr></table></figure>
+<p>创建生成器还可以使用<code>yield</code>，如果一个函数定义中包含<code>yield</code>关键字，那么这个函数就不再是一个普通函数，而是一个generator。函数是顺序执行，遇到<code>return</code>语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用<code>next()</code>的时候执行，遇到<code>yield</code>语句返回，再次执行时从上次返回的<code>yield</code>语句处继续执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line">f = fib(<span class="number">6</span>)</span><br><span class="line">f</span><br><span class="line"><span class="comment"># &lt;generator object fib at 0x104feaaa0&gt;</span></span><br></pre></td></tr></table></figure>
+<p>但是用<code>for</code>循环调用generator时，发现拿不到generator的<code>return</code>语句的返回值。如果想要拿到返回值，必须捕获<code>StopIteration</code>错误，返回值包含在<code>StopIteration</code>的<code>value</code>中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">g = fib(<span class="number">6</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		x = next(g)</span><br><span class="line">		print(<span class="string">'g:'</span>, x)</span><br><span class="line">	<span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</span><br><span class="line">		print(<span class="string">'Generator return value:'</span>, e.value)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"><span class="comment"># g: 1</span></span><br><span class="line"><span class="comment"># g: 1</span></span><br><span class="line"><span class="comment"># g: 2</span></span><br><span class="line"><span class="comment"># g: 3</span></span><br><span class="line"><span class="comment"># g: 5</span></span><br><span class="line"><span class="comment"># g: 8</span></span><br><span class="line"><span class="comment"># Generator return value: done</span></span><br></pre></td></tr></table></figure>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>可以直接作用于<code>for</code>循环的对象统称为可迭代对象：<code>Iterable</code>。</p>
+<p>可以使用<code>isinstance()</code>判断一个对象是否是<code>Iterable</code>对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable</span><br><span class="line">isinstance([], Iterable)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance(&#123;&#125;, Iterable)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance(<span class="string">'abc'</span>, Iterable)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance((x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)), Iterable)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance(<span class="number">100</span>, Iterable)</span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<p>而生成器不但可以作用于<code>for</code>循环，还可以被<code>next()</code>函数不断调用并返回下一个值，直到最后抛出<code>StopIteration</code>错误表示无法继续返回下一个值了。</p>
+<p>可以被<code>next()</code>函数调用并不断返回下一个值的对象称为迭代器：<code>Iterator</code>。</p>
+<p>可以使用<code>isinstance()</code>判断一个对象是否是<code>Iterator</code>对象:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterator</span><br><span class="line">isinstance((x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)), Iterator)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance([], Iterator)</span><br><span class="line"><span class="comment"># False</span></span><br><span class="line">isinstance(&#123;&#125;, Iterator)</span><br><span class="line"><span class="comment"># False</span></span><br><span class="line">isinstance(<span class="string">'abc'</span>, Iterator)</span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<p>生成器都是<code>Iterator</code>对象，但<code>list</code>、<code>dict</code>、<code>str</code>虽然是<code>Iterable</code>，却不是<code>Iterator</code>。</p>
+<p>把<code>list</code>、<code>dict</code>、<code>str</code>等<code>Iterable</code>变成<code>Iterator</code>可以使用<code>iter()</code>函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isinstance(iter([]), Iterator)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance(iter(<span class="string">'abc'</span>), Iterator)</span><br><span class="line"><span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+<p>为什么<code>list</code>、<code>dict</code>、<code>str</code>等数据类型不是<code>Iterator</code>？</p>
+<p>这是因为Python的<code>Iterator</code>对象表示的是一个数据流，Iterator对象可以被<code>next()</code>函数调用并不断返回下一个数据，直到没有数据时抛出<code>StopIteration</code>错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过<code>next()</code>函数实现按需计算下一个数据，所以<code>Iterator</code>的计算是惰性的，只有在需要返回下一个数据时它才会计算。</p>
+<p><code>Iterator</code>甚至可以表示一个无限大的数据流，例如全体自然数。而使用list是永远不可能存储全体自然数的。</p>
+<p>Enumerate</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i, value <span class="keyword">in</span> enumerate([<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]):</span><br><span class="line">	print(i, value)</span><br><span class="line"><span class="comment"># 0 A</span></span><br><span class="line"><span class="comment"># 1 B</span></span><br><span class="line"><span class="comment"># 2 C</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x, y <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">4</span>), (<span class="number">3</span>, <span class="number">9</span>)]:</span><br><span class="line">	print(x, y)</span><br><span class="line"><span class="comment"># 1 1</span></span><br><span class="line"><span class="comment"># 2 4</span></span><br><span class="line"><span class="comment"># 3 9</span></span><br></pre></td></tr></table></figure>
+<h1 id="基础数学运算"><a href="#基础数学运算" class="headerlink" title="基础数学运算"></a>基础数学运算</h1><p>random<a href="http://www.runoob.com/python/func-number-random.html" target="_blank" rel="noopener">http://www.runoob.com/python/func-number-random.html</a></p>
+<p>随机数<a href="https://www.cnblogs.com/twilight77/p/7675512.html" target="_blank" rel="noopener">https://www.cnblogs.com/twilight77/p/7675512.html</a></p>
+<p>log计算<a href="http://www.runoob.com/python/func-number-log.html" target="_blank" rel="noopener">http://www.runoob.com/python/func-number-log.html</a></p>
+<h1 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h1><h2 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h2><h3 id="isinstance"><a href="#isinstance" class="headerlink" title="isinstance"></a>isinstance</h3><p><code>isinstance</code>函数可以判断一个变量是不是某类型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">'abc'</span></span><br><span class="line">y = <span class="number">123</span></span><br><span class="line">isinstance(x, str)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line">isinstance(y, str)</span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map()是 Python 内置的高阶函数，它接收一个函数 f 和一个 list，并通过把函数 f 依次作用在 list 的每个元素上，得到一个新的生成器并返回。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x*x</span><br><span class="line">map(f, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"><span class="comment"># [1, 4, 9, 10, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+<p>配合lambda使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(map(<span class="keyword">lambda</span> x: x * x, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]))</span><br><span class="line"><span class="comment"># [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+<h1 id><a href="#" class="headerlink" title="#"></a>#</h1><p>注意到<code>map()</code>函数返回的是一个<code>Iterator</code>，也就是一个惰性序列，所以要强迫<code>map()</code>完成计算结果，需要用<code>list()</code>函数获得所有结果并返回list</p>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>和<code>map()</code>类似，<code>filter()</code>也接收一个函数和一个序列。和<code>map()</code>不同的是，<code>filter()</code>把传入的函数依次作用于每个元素，然后根据返回值是<code>True</code>还是<code>False</code>决定保留还是丢弃该元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></span><br><span class="line"></span><br><span class="line">list(filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>]))</span><br><span class="line"><span class="comment"># [1, 5, 9, 15]</span></span><br></pre></td></tr></table></figure>
+<p>注意到<code>filter()</code>函数返回的是一个<code>Iterator</code>，也就是一个惰性序列，所以要强迫<code>filter()</code>完成计算结果，需要用<code>list()</code>函数获得所有结果并返回list</p>
+<p>除了列表，filter也可以用<code>Iterator</code>做参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_odd_iter</span><span class="params">()</span>:</span></span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = n + <span class="number">2</span></span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_not_divisible</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x % n &gt; <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primes</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">    it = _odd_iter() <span class="comment"># 初始序列</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = next(it) <span class="comment"># 返回序列的第一个数</span></span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        it = filter(_not_divisible(n), it) <span class="comment"># 构造新序列</span></span><br></pre></td></tr></table></figure>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p><code>reduce</code>把一个函数作用在一个序列<code>[x1, x2, x3, ...]</code>上，这个函数必须接收两个参数，<code>reduce</code>把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</span><br></pre></td></tr></table></figure>
+<p>比方说对一个序列求和，就可以用<code>reduce</code>实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">reduce(add, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"><span class="comment"># 25</span></span><br></pre></td></tr></table></figure>
+<p>和map配合使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line">DIGITS = &#123;<span class="string">'0'</span>: <span class="number">0</span>, <span class="string">'1'</span>: <span class="number">1</span>, <span class="string">'2'</span>: <span class="number">2</span>, <span class="string">'3'</span>: <span class="number">3</span>, <span class="string">'4'</span>: <span class="number">4</span>, <span class="string">'5'</span>: <span class="number">5</span>, <span class="string">'6'</span>: <span class="number">6</span>, <span class="string">'7'</span>: <span class="number">7</span>, <span class="string">'8'</span>: <span class="number">8</span>, <span class="string">'9'</span>: <span class="number">9</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">char2num</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> DIGITS[s]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">str2int</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x * <span class="number">10</span> + y, map(char2num, s))</span><br></pre></td></tr></table></figure>
+<h3 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sorted([<span class="number">36</span>, <span class="number">5</span>, <span class="number">-12</span>, <span class="number">9</span>, <span class="number">-21</span>])</span><br><span class="line"><span class="comment"># [-21, -12, 5, 9, 36]</span></span><br></pre></td></tr></table></figure>
+<p>此外，<code>sorted()</code>函数也是一个高阶函数，它还可以接收一个<code>key</code>函数来实现自定义的排序，例如按绝对值大小排序，key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sorted([<span class="number">36</span>, <span class="number">5</span>, <span class="number">-12</span>, <span class="number">9</span>, <span class="number">-21</span>], key=abs)</span><br><span class="line"><span class="comment"># [5, 9, -12, -21, 36]</span></span><br><span class="line">sorted([<span class="string">'bob'</span>, <span class="string">'about'</span>, <span class="string">'Zoo'</span>, <span class="string">'Credit'</span>], key=str.lower)</span><br><span class="line"><span class="comment"># ['about', 'bob', 'Credit', 'Zoo']</span></span><br></pre></td></tr></table></figure>
+<p>要进行反向排序，不必改动key函数，可以传入第三个参数<code>reverse=True</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sorted([<span class="string">'bob'</span>, <span class="string">'about'</span>, <span class="string">'Zoo'</span>, <span class="string">'Credit'</span>], key=str.lower, reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># ['Zoo', 'Credit', 'bob', 'about']</span></span><br></pre></td></tr></table></figure>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p><strong>zip()</strong> 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同</p>
+<p>在 Python 3.x 中为了减少内存，zip() 返回的是一个对<code>Iterator</code>，如需展示列表，需手动 list() 转换。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">c = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">zipped = zip(a,b)     <span class="comment"># 打包为元组的列表</span></span><br><span class="line"><span class="comment"># [(1, 4), (2, 5), (3, 6)]</span></span><br><span class="line">zip(a,c)              <span class="comment"># 元素个数与最短的列表一致</span></span><br><span class="line"><span class="comment"># [(1, 4), (2, 5), (3, 6)]</span></span><br></pre></td></tr></table></figure>
+<p>利用 * 号操作符，可以将元组解压为列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip(*zipped)          <span class="comment"># 与 zip 相反，*zipped 可理解为解压，返回二维矩阵式</span></span><br><span class="line"><span class="comment"># [(1, 2, 3), (4, 5, 6)]</span></span><br></pre></td></tr></table></figure>
+<h2 id="os"><a href="#os" class="headerlink" title="os"></a>os</h2><p>列出当前目录下的所有文件和目录名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os <span class="comment"># 导入os模块，模块的概念后面讲到</span></span><br><span class="line">[d <span class="keyword">for</span> d <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>)] <span class="comment"># os.listdir可以列出文件和目录</span></span><br><span class="line"><span class="comment"># ['.emacs.d', '.ssh', '.Trash', 'Adlm', 'Applications', 'Desktop', 'Documents', 'Downloads', 'Library', 'Movies', 'Music', 'Pictures', 'Public', 'VirtualBox VMs', 'Workspace', 'XCode']</span></span><br></pre></td></tr></table></figure>
+<h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p>numpy初始化<a href="https://blog.csdn.net/nanaanana/article/details/80487201" target="_blank" rel="noopener">https://blog.csdn.net/nanaanana/article/details/80487201</a></p>
+<p>矩阵运算<a href="https://www.cnblogs.com/chamie/p/4870078.html" target="_blank" rel="noopener">https://www.cnblogs.com/chamie/p/4870078.html</a></p>
+<p>array复制<a href="https://www.cnblogs.com/dreampursuer/p/7833124.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreampursuer/p/7833124.html</a></p>
+<p>numpy数据类型的比较<a href="https://blog.csdn.net/dillon2015/article/details/53037110" target="_blank" rel="noopener">https://blog.csdn.net/dillon2015/article/details/53037110</a></p>
+<p>修改数据类型<a href="https://www.cnblogs.com/hhh5460/p/5129032.html" target="_blank" rel="noopener">https://www.cnblogs.com/hhh5460/p/5129032.html</a></p>
+<p>numpy求方差<a href="https://blog.csdn.net/weixin_35425512/article/details/79320814" target="_blank" rel="noopener">https://blog.csdn.net/weixin_35425512/article/details/79320814</a></p>
+<p><a href="https://blog.csdn.net/liangzuojiayi/article/details/51534164" target="_blank" rel="noopener">https://blog.csdn.net/liangzuojiayi/article/details/51534164</a></p>
+<p>增加行列<a href="https://blog.csdn.net/lishuandao/article/details/52444288" target="_blank" rel="noopener">https://blog.csdn.net/lishuandao/article/details/52444288</a></p>
+<p>删除行列<a href="https://www.jb51.net/article/137636.htm" target="_blank" rel="noopener">https://www.jb51.net/article/137636.htm</a></p>
+<p>np.vectorize<a href="https://blog.csdn.net/m0_37477175/article/details/78485836" target="_blank" rel="noopener">https://blog.csdn.net/m0_37477175/article/details/78485836</a></p>
+<p>np.stack<a href="https://blog.csdn.net/csdn15698845876/article/details/73380803" target="_blank" rel="noopener">https://blog.csdn.net/csdn15698845876/article/details/73380803</a></p>
+<p>reshape<a href="https://blog.csdn.net/zhanggonglalala/article/details/79356653" target="_blank" rel="noopener">https://blog.csdn.net/zhanggonglalala/article/details/79356653</a></p>
+<p>axis<a href="http://blog.csdn.net/fangjian1204/article/details/53055219" target="_blank" rel="noopener">http://blog.csdn.net/fangjian1204/article/details/53055219</a></p>
+<p>SciPy</p>
+<p>Panda</p>
+<p>sum，mean，var，std，corr，cov，skew，kurt，describe</p>
+<p>累计统计特征函数</p>
+<p>绘图</p>
+<p>matplotlib</p>
+<p>线性二维图，折线图plot</p>
+<p>饼图pie</p>
+<p>二为条形直方图hist</p>
+<p>statmodels</p>
+<p>scikit-learn</p>
+<p>聚类sklearn.cluster</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>作用域，参数，函数式编程工具，装饰器，偏函数</p>
+<p>yield&lt;<a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/</a></p>
+<h2 id="lambda匿名函数"><a href="#lambda匿名函数" class="headerlink" title="lambda匿名函数"></a>lambda匿名函数</h2><p>lambda表达式，通常是在<strong>需要一个函数，但是又不想费神去命名一个函数</strong>的场合下使用，也就是指<strong>匿名函数</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list(map(<span class="keyword">lambda</span> x: x * x, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]))</span><br><span class="line"><span class="comment"># [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+<p>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x * x</span><br><span class="line">f</span><br><span class="line"><span class="comment"># &lt;function &lt;lambda&gt; at 0x101c6ef28&gt;</span></span><br><span class="line">f(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># 25</span></span><br></pre></td></tr></table></figure>
+<p>同样，也可以把匿名函数作为返回值返回，比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span>: x * x + y * y</span><br></pre></td></tr></table></figure>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>命名空间，模块包，<strong>init</strong>.py</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>类，管理属性，元类，类装饰器，迭代器对象，索引迭代，构造函数，索引和分片，成员关系，属性引用，运算符重载</p>
+<p>self</p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>异常对象，异常设计</p>
+<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><p><a href="http://www.runoob.com/w3cnote/python-func-decorators.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/python-func-decorators.html</a></p>
+<p><a href="https://www.cnblogs.com/cicaday/p/python-decorator.html" target="_blank" rel="noopener">https://www.cnblogs.com/cicaday/p/python-decorator.html</a></p>
+<p>wrap，property，staticmethod，classmethod</p>
+<h1 id="内置方法"><a href="#内置方法" class="headerlink" title="内置方法"></a>内置方法</h1><h1 id="和-运算符"><a href="#和-运算符" class="headerlink" title="*和**运算符"></a>*和**运算符</h1><p><a href="https://blog.csdn.net/yilovexing/article/details/80577510" target="_blank" rel="noopener">https://blog.csdn.net/yilovexing/article/details/80577510</a></p>
+<h1 id="pythonic"><a href="#pythonic" class="headerlink" title="pythonic"></a>pythonic</h1><p><a href="https://www.cnblogs.com/HacTF/p/8142374.html" target="_blank" rel="noopener">https://www.cnblogs.com/HacTF/p/8142374.html</a></p>
+
       
     </div>
     
@@ -320,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/程序语言-c++/" rel="next" title="程序语言-c++">
-                <i class="fa fa-chevron-left"></i> 程序语言-c++
+              <a href="/2019/03/08/前端-React/" rel="next" title="前端-React">
+                <i class="fa fa-chevron-left"></i> 前端-React
               </a>
             
           </div>
@@ -330,8 +453,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/计算机基本功-操作系统/" rel="prev" title="计算机基本功-操作系统">
-                计算机基本功-操作系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/计算机科学基础-操作系统/" rel="prev" title="计算机科学基础-操作系统">
+                计算机科学基础-操作系统 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -384,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -400,7 +532,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -445,6 +577,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">1.1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表生成式"><span class="nav-number">1.1.1.</span> <span class="nav-text">列表生成式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见用法"><span class="nav-number">1.2.</span> <span class="nav-text">常见用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">1.3.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">1.4.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器"><span class="nav-number">1.6.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器"><span class="nav-number">1.7.</span> <span class="nav-text">迭代器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础数学运算"><span class="nav-number">2.</span> <span class="nav-text">基础数学运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用库"><span class="nav-number">3.</span> <span class="nav-text">常用库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内建函数"><span class="nav-number">3.1.</span> <span class="nav-text">内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isinstance"><span class="nav-number">3.1.1.</span> <span class="nav-text">isinstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">3.1.2.</span> <span class="nav-text">map</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">4.0.1.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">4.0.2.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorted"><span class="nav-number">4.0.3.</span> <span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip"><span class="nav-number">4.0.4.</span> <span class="nav-text">zip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#os"><span class="nav-number">4.1.</span> <span class="nav-text">os</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy"><span class="nav-number">4.2.</span> <span class="nav-text">numpy</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda匿名函数"><span class="nav-number">5.1.</span> <span class="nav-text">lambda匿名函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">6.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象"><span class="nav-number">7.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">8.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装饰器"><span class="nav-number">9.</span> <span class="nav-text">装饰器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置方法"><span class="nav-number">10.</span> <span class="nav-text">内置方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和-运算符"><span class="nav-number">11.</span> <span class="nav-text">*和**运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pythonic"><span class="nav-number">12.</span> <span class="nav-text">pythonic</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
