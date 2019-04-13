@@ -87,12 +87,13 @@
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
 <meta property="og:description" content="系统分析与设计作业二[TOC] 简答题用简短的语言给出对分析、设计的理解分析（analysis）强调的是对问题和需求的调查研究，而不是解决方案，找出构成问题域概念模型的关键抽象（行为和交互）。例如，如果需要一个新的在线交易系统，那么应该如何使用它？他应该具有哪些功能？ 设计（design）强调的是满足需求的概念上的解决方案（软件，硬件方面），而不是其实现。在体系结构框架内构建系统。设计过程将分析的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/04/02/系统分析作业2/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/02/系统分析作业2/1.png">
 <meta property="og:updated_time" content="2019-04-02T04:00:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统分析与设计作业二">
 <meta name="twitter:description" content="系统分析与设计作业二[TOC] 简答题用简短的语言给出对分析、设计的理解分析（analysis）强调的是对问题和需求的调查研究，而不是解决方案，找出构成问题域概念模型的关键抽象（行为和交互）。例如，如果需要一个新的在线交易系统，那么应该如何使用它？他应该具有哪些功能？ 设计（design）强调的是满足需求的概念上的解决方案（软件，硬件方面），而不是其实现。在体系结构框架内构建系统。设计过程将分析的">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/02/系统分析作业2/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/02/系统分析作业2/2.png">
 
 
 
@@ -345,13 +346,13 @@
 <p><strong>静态图</strong>:系统静态结构</p>
 <p>​    ><code>类图</code>:概念及关系 􏰆</p>
 <p>​    ><code>对象图</code>:某种状态或时间段内，系统中活跃的对象及其关系</p>
-<p>​    ><code>􏰆包图</code>:􏰇述系统的分解结构</p>
+<p>​    ><code>􏰆包图</code>:􏰇描述系统的分解结构</p>
 <p><strong>行为图</strong>:系统的动态行为</p>
-<p>​    ><code>􏰆交互图</code>:􏰇述对象间的消息传递 􏰈</p>
+<p>​    ><code>􏰆交互图</code>:描􏰇述对象间的消息传递 􏰈</p>
 <p>​            ><code>顺序图</code>:强调对象间消息发送的时序 􏰈</p>
 <p>​            ><code>合作图</code>:强调对象间的动态协作关系</p>
 <p>​    ><code>􏰆状态图</code>:对象的动态行为。状态-事件-状态迁移-响应动作</p>
-<p>​    ><code>􏰆活动图</code>:􏰇述系统为完成某功能而执行的操作序列</p>
+<p>​    ><code>􏰆活动图</code>:􏰇描述系统为完成某功能而执行的操作序列</p>
 <p><strong>实现图</strong>:􏰇描述系统的组成和分布状况 􏰆</p>
 <p>​    ><code>构件图</code>:组成部件及其关系 􏰆</p>
 <p>​    ><code>部署图</code>:物理体系结构及与软件单元的对应关系</p>
@@ -363,13 +364,13 @@
 <p>又由于软件的不可视性，难以在初次测试时检测是否满足确定真正的需求。所以软件范围的控制具有困难性。</p>
 <p>但是在多数情况下，客户与开发者能就项目的 20% 内容给出严格的需求约定，80% 的内容都是相对模糊的。因此，围绕客户目标，发现并满足客户感兴趣的内容是最关键的。因此在需求分析与设计的过程中，对现有的需求进行评估，对需求的重要性进行评级并排序，初次迭代中开发有较大价值的需求，并对软件的增量留有足够的空间，同时围绕软件开发的成本进行调控，这样可以使得软件生产的范围，预算、工期、意外变化等在一定程度都在我们的掌控之中。</p>
 <h2 id="项目管理实践"><a href="#项目管理实践" class="headerlink" title="项目管理实践"></a>项目管理实践</h2><h3 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h3><p>看板（kanban）是敏捷开发的重要手段，主要用于项目的进度管理。所有需要完成的任务，都做成卡片，贴在一块白板上面，这就是看板。</p>
-<p>按照不同的阶段，看板分成若干列。</p>
+<p>按照不同的阶段，看板分成若干列：</p>
 <ul>
 <li>Todo （待开发）</li>
 <li>Doing （开发中）</li>
 <li>Done （已完成）</li>
 </ul>
-<p>可以根据实际情况，分出更多的列。</p>
+<p>可以根据实际情况，分出更多的列：</p>
 <ul>
 <li><p>Todo （待安排）</p>
 </li>
@@ -384,7 +385,8 @@
 <li><p>Done （已完成）</p>
 </li>
 </ul>
-<p>复读的</p>
+<p>由于团队还没有正式开始工作，因此我自己在kanban上面做了一些学习测试：</p>
+<p><img src="/2019/04/02/系统分析作业2/2.png" alt="2"></p>
 <h3 id="UML绘图练习"><a href="#UML绘图练习" class="headerlink" title="UML绘图练习"></a>UML绘图练习</h3><p>课本中文版p.193，图16-17</p>
 <p><img src="/2019/04/02/系统分析作业2/1.png" alt="1"></p>
 
@@ -502,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

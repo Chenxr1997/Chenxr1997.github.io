@@ -868,7 +868,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-深度学习编程框架/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-机器学习库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -887,7 +887,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/深度学习-深度学习编程框架/" itemprop="url">深度学习-深度学习编程框架</a></h1>
+                <a class="post-title-link" href="/2019/03/08/机器学习-机器学习库/" itemprop="url">机器学习-机器学习库</a></h1>
         
 
         <div class="post-meta">
@@ -939,12 +939,154 @@
       
         
           
-            <p>pytorch</p>
-<p><a href="https://blog.csdn.net/Tan915730/article/details/78954482" target="_blank" rel="noopener">https://blog.csdn.net/Tan915730/article/details/78954482</a></p>
+            <p>[TOC]</p>
+<h1 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h1><h2 id="xgboost"><a href="#xgboost" class="headerlink" title="xgboost"></a>xgboost</h2><h2 id="neighbors"><a href="#neighbors" class="headerlink" title="neighbors"></a>neighbors</h2><h3 id="KNeighborsClassifier"><a href="#KNeighborsClassifier" class="headerlink" title="KNeighborsClassifier"></a>KNeighborsClassifier</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/深度学习-pytorch/" itemprop="url">深度学习-pytorch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p><a href="https://blog.csdn.net/Tan915730/article/details/78954482" target="_blank" rel="noopener">https://blog.csdn.net/Tan915730/article/details/78954482</a></p>
 <p>函数名下划线<a href="https://blog.csdn.net/qq_27261889/article/details/86777230" target="_blank" rel="noopener">https://blog.csdn.net/qq_27261889/article/details/86777230</a></p>
 <p>函数，数据类型查询<a href="https://blog.csdn.net/zzulp/article/details/80573331" target="_blank" rel="noopener">https://blog.csdn.net/zzulp/article/details/80573331</a></p>
-<p>GPU</p>
-<p><a href="https://blog.csdn.net/liulina603/article/details/80180355" target="_blank" rel="noopener">https://blog.csdn.net/liulina603/article/details/80180355</a></p>
+<h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><p><a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/index.html</a></p>
+<h2 id="类型及类型转换"><a href="#类型及类型转换" class="headerlink" title="类型及类型转换"></a>类型及类型转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">print(inputs.dtype) <span class="comment"># float32</span></span><br></pre></td></tr></table></figure>
+<h2 id="运行模型"><a href="#运行模型" class="headerlink" title="运行模型"></a>运行模型</h2><p>直接运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = nn.Sigmoid()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
+<p>通过继承nn.Module，重载__init__和forward</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sig</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__() </span><br><span class="line">        self.sigmoid = nn.Sigmoid()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        out = self.sigmoid(x)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = sig()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
+<h2 id="Dataset-amp-amp-Dataloader"><a href="#Dataset-amp-amp-Dataloader" class="headerlink" title="Dataset &amp;&amp; Dataloader"></a>Dataset &amp;&amp; Dataloader</h2><p>torch.utils.data.Dataset</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">trainset</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#定义好 image 的路径</span></span><br><span class="line">        self.images = file_train</span><br><span class="line">        self.target = number_train</span><br><span class="line">        self.loader = loader</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        fn = self.images[index]</span><br><span class="line">        img = self.loader(fn)</span><br><span class="line">        target = self.target[index]</span><br><span class="line">        <span class="keyword">return</span> img,target</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.images)</span><br></pre></td></tr></table></figure>
+<p>torch.utils.data.Dataloader</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">        transforms.Resize(<span class="number">32</span>),</span><br><span class="line">        transforms.ToTensor(),</span><br><span class="line">        transforms.Normalize(</span><br><span class="line">            mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">            std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">    ])</span><br><span class="line"><span class="comment"># prepare dataset by ImageFolder, data should be classified by directory</span></span><br><span class="line">train_set = torchvision.datasets.ImageFolder(root = <span class="string">'./mnist/train'</span>, transform = transform)</span><br><span class="line"><span class="comment"># print(train_set[0][0])</span></span><br><span class="line">train_loader = torch.utils.data.DataLoader(train_set, batch_size = <span class="number">32</span>, shuffle = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> train_loader:</span><br><span class="line">    print(i[<span class="number">0</span>].shape) <span class="comment"># torch.Size([32, 3, 32, 32])</span></span><br><span class="line">    print(i[<span class="number">1</span>].shape) <span class="comment"># torch.Size([32]) </span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line"><span class="keyword">for</span> batch_idx, (data, target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    print(data.shape) <span class="comment"># 同上</span></span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h1 id="各种处理-转换"><a href="#各种处理-转换" class="headerlink" title="各种处理/转换"></a>各种处理/转换</h1><h2 id="view"><a href="#view" class="headerlink" title="view"></a>view</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">img_pil =  Image.open(<span class="string">'./mnist/test/0/mnist_test_10.png'</span>)</span><br><span class="line">img_pil = img_pil.convert(<span class="string">'RGB'</span>)</span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">32</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">        mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">        std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">])</span><br><span class="line">img_pil = transform(img_pil)</span><br><span class="line">print(img_pil.shape) <span class="comment"># 3 32 32</span></span><br><span class="line">img_pil = img_pil.view(<span class="number">1</span>,img_pil.size(<span class="number">0</span>), img_pil.size(<span class="number">1</span>), img_pil.size(<span class="number">2</span>))</span><br><span class="line">print(img_pil.shape) <span class="comment"># 1 3 32 32</span></span><br></pre></td></tr></table></figure>
+<h2 id="transforms"><a href="#transforms" class="headerlink" title="transforms"></a>transforms</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision.transforms <span class="keyword">as</span> transforms</span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">32</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">    	mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">        std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">])</span><br><span class="line">img_pil =  Image.open(<span class="string">'./mnist/test/0/mnist_test_10.png'</span>)</span><br><span class="line">img_pil = img_pil.convert(<span class="string">'RGB'</span>)</span><br><span class="line">img_pil = transform(img_pil)</span><br></pre></td></tr></table></figure>
+<h1 id="深度学习运算"><a href="#深度学习运算" class="headerlink" title="深度学习运算"></a>深度学习运算</h1><h2 id="Linear"><a href="#Linear" class="headerlink" title="Linear"></a>Linear</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="Conv1d"><a href="#Conv1d" class="headerlink" title="Conv1d"></a>Conv1d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="Conv2d"><a href="#Conv2d" class="headerlink" title="Conv2d"></a>Conv2d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="BatchNorm1d"><a href="#BatchNorm1d" class="headerlink" title="BatchNorm1d"></a>BatchNorm1d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="BatchNorm2d"><a href="#BatchNorm2d" class="headerlink" title="BatchNorm2d"></a>BatchNorm2d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="avg-pool2d"><a href="#avg-pool2d" class="headerlink" title="avg_pool2d"></a>avg_pool2d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">9</span>],[<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">outputs = nn.functional.avg_pool2d(inputs, <span class="number">2</span>)</span><br><span class="line">print(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[1., 2., 3., 4.],</span></span><br><span class="line"><span class="comment">#           [1., 5., 3., 4.],</span></span><br><span class="line"><span class="comment">#           [1., 2., 3., 9.],</span></span><br><span class="line"><span class="comment">#           [0., 2., 3., 4.]]]])</span></span><br><span class="line"><span class="comment"># tensor([[[[2.2500, 3.5000],</span></span><br><span class="line"><span class="comment">#           [1.2500, 4.7500]]]])</span></span><br></pre></td></tr></table></figure>
+<h2 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = nn.Sigmoid()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
+<h2 id="Relu"><a href="#Relu" class="headerlink" title="Relu"></a>Relu</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h2 id="CrossEntropyLoss"><a href="#CrossEntropyLoss" class="headerlink" title="CrossEntropyLoss"></a>CrossEntropyLoss</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+<h1 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h1><h2 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, weight_decay=l2_norm)</span><br></pre></td></tr></table></figure>
+<h1 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h1><p><a href="https://blog.csdn.net/liulina603/article/details/80180355" target="_blank" rel="noopener">https://blog.csdn.net/liulina603/article/details/80180355</a></p>
 <p><a href="https://ptorch.com/news/160.html" target="_blank" rel="noopener">https://ptorch.com/news/160.html</a></p>
 
           
@@ -1072,6 +1214,7 @@
 <h1 id="基于网格的方法"><a href="#基于网格的方法" class="headerlink" title="基于网格的方法"></a>基于网格的方法</h1><p>sting算法（统计信息网络），clioue算法（聚类高维空间），wave-cluster算法（小波变换）</p>
 <h1 id="基于模型的方法"><a href="#基于模型的方法" class="headerlink" title="基于模型的方法"></a>基于模型的方法</h1><p>统计学方法，深度学习</p>
 <h1 id="混合高斯模型（GMM）"><a href="#混合高斯模型（GMM）" class="headerlink" title="混合高斯模型（GMM）"></a>混合高斯模型（GMM）</h1><p>首先假设数据点是呈高斯分布的，相对应K-Means假设数据点是圆形的，高斯分布（椭圆形）给出了更多的可能性。我们有两个参数来描述簇的形状：均值和标准差。所以这些簇可以采取任何形状的椭圆形，因为在x，y方向上都有标准差。因此，每个高斯分布被分配给单个簇。所以要做聚类首先应该找到数据集的均值和标准差，我们将采用一个叫做最大期望(EM)的优化算法</p>
+<p><a href="https://blog.csdn.net/u014665013/article/details/78970184" target="_blank" rel="noopener">https://blog.csdn.net/u014665013/article/details/78970184</a></p>
 <h1 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h1><p>图团体检测(Graph Community Detection) </p>
 <p>当我们的数据可以被表示为网络或图是，可以使用图团体检测方法完成聚类</p>
 <h1 id="数据相似度度量"><a href="#数据相似度度量" class="headerlink" title="数据相似度度量"></a>数据相似度度量</h1><p>（欧式距离，曼哈顿距离，闵可夫距离，文档数据相似度，余弦相似度）</p>
@@ -1374,130 +1517,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-RNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-RNN/" itemprop="url">深度学习-RNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:53+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1543,7 +1567,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
