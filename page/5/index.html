@@ -1130,7 +1130,7 @@
             <p>[TOC]</p>
 <h1 id="模型分类"><a href="#模型分类" class="headerlink" title="模型分类"></a>模型分类</h1><h2 id="判别模型"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型</h2><p>SVM，深度学习，线性判别分析，线性回归</p>
 <h2 id="产生式模型"><a href="#产生式模型" class="headerlink" title="产生式模型"></a>产生式模型</h2><p>高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场</p>
-<h2 id="分类模型-回归模型"><a href="#分类模型-回归模型" class="headerlink" title="分类模型/回归模型"></a>分类模型/回归模型</h2><h1 id="模型比较"><a href="#模型比较" class="headerlink" title="模型比较"></a>模型比较</h1><p><img src="/2019/03/08/机器学习-概念:总结篇/Users/aodacat/my-hexo-site/source/_posts/机器学习-概念:总结篇/1.png" alt="1"></p>
+<h2 id="分类模型-回归模型"><a href="#分类模型-回归模型" class="headerlink" title="分类模型/回归模型"></a>分类模型/回归模型</h2><h1 id="模型比较"><a href="#模型比较" class="headerlink" title="模型比较"></a>模型比较</h1><p><img src="/2019/03/08/机器学习-概念:总结篇/1.png" alt="1"></p>
 
           
         
@@ -1380,19 +1380,19 @@
 <p>关系<br>函数关系：确定性关系，如</p>
 <script type="math/tex; mode=display">
 y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数去衡量线性相关的强弱：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/1.png" alt="1"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/1.png" alt="1"></p>
 <p>区间范围是[-1,1]，绝对值越接近1，表示线性程度越高</p>
 <p>一元线性回归推导：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/2.png" alt="2"><br>回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
+<p><img src="/2019/03/08/机器学习-LR:回归/2.png" alt="2"><br>回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
 <p>多元回归方程，和一元的类似<br>在选择变量方面，多元回归分析可以采用的一种方法是逐步回归：<br>向前引入法：从一元回归开始，逐步增加变量，是指标达到最优为止<br>向后剔除法：从全变量回归方程开始，逐步删去某些变量，使指标值达到最优为止<br>逐步筛选法：综合上面两种方法<br>变量选择的评价指标：RSS（残差平方和），R^2（相关系数平方），AIC准则（Akaike information criterion）和BIC准则（Bayesian Information Criterion）</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/3.png" alt="3"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/3.png" alt="3"></p>
 <p>哑变量/虚拟变量：将枚举变量变为离散型变量<br>比如男/女变为（1，0）和（0，1）</p>
 <p>回归诊断：<br>样本是否符合正态分布假设（正态分布检验）<br>是否存在离群值导致模型产生较大误差<br>线性模型是否合理（残差图判断）<br>误差是否满足独立性，等方差，正态分布等假设条件<br>是否存在多重共线性（通过计算特征根，kappa值发现多重共线性）</p>
 <p>多重共线性的发现：</p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/4.png" alt="4"></p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/5.png" alt="5"></p>
-<p>广义线性回归：<br>比如logistic回归：<br><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/6.png" alt="6"></p>
-<p><img src="/2019/03/08/机器学习-LR:回归/Users/aodacat/my-hexo-site/source/_posts/机器学习-LR:回归/7.png" alt="7"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/4.png" alt="4"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/5.png" alt="5"></p>
+<p>广义线性回归：<br>比如logistic回归：<br><img src="/2019/03/08/机器学习-LR:回归/6.png" alt="6"></p>
+<p><img src="/2019/03/08/机器学习-LR:回归/7.png" alt="7"></p>
 <h1 id="Logistic-Regression："><a href="#Logistic-Regression：" class="headerlink" title="Logistic Regression："></a>Logistic Regression：</h1><p>sigmoid函数</p>
 <p>多项/多类别Logistic回归 Multinomial logistic regression</p>
 <p>Fisher的线性判别 Fisher’s linear discriminant</p>
