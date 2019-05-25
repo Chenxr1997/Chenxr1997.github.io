@@ -229,6 +229,482 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据挖掘-关联分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/数据挖掘-关联分析/" itemprop="url">数据挖掘-关联分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关联分析：</p>
+<p>apriori算法（最小支持度，最小置信度，项集，支持度计数）</p>
+<p>FP-growth算法，FP-Tree，Eclat算法，灰色关联法</p>
+<p>基于关联规则的分类</p>
+<p>关联规则挖掘是数据挖掘中一个重要的研究领域。近年来，对于如何将关联规则挖掘用于分类问题，学者们进行了广泛的研究。关联分类方法挖掘形如condset-&gt;C的规则，其中condset是项(或属性值对)的集合，而C是类标号，这种形式的规则称为类关联规则(class association rules, CARS)。关联分类方法一般由两步组成:第一步用关联规则挖掘算法从训练数据集中挖掘出所有满足指定支持度和置信度的类关联规则;第二步使用启发式方法从挖掘出的类关联规则中挑选出一组高质量的规则用于分类。属于关联分类的算法主要包括CBA[44]，ADT，CMAR等。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/数据科学-基础知识/" itemprop="url">数据科学-基础知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
+<p>每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间</p>
+<p>假设空间：输入空间到输出空间的映射的集合</p>
+<p>学习三要素：模型：确定模型空间，策略：确定模型空间中什么是好的模型，算法：在模型空间中怎么得到好的模型</p>
+<h2 id="学习任务分类"><a href="#学习任务分类" class="headerlink" title="学习任务分类"></a>学习任务分类</h2><p>监督学习，无监督学习，半监督学习，强化学习，迁移学习/联邦学习</p>
+<p>半监督学习：</p>
+<p>生成模型 Generative models</p>
+<p>低密度分离 Low-density separation</p>
+<p>联合训练 Co-training</p>
+<p>迁移学习 Transfer learning：</p>
+<p>传递式迁移学习 Transitive Transfer Learning</p>
+<h2 id="问题分类"><a href="#问题分类" class="headerlink" title="问题分类"></a>问题分类</h2><p>分类问题，标注问题，回归问题</p>
+<h1 id="优化-策略"><a href="#优化-策略" class="headerlink" title="(优化)策略"></a>(优化)策略</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数度量模型一次预测的好坏</p>
+<p>0-1损失函数，平方损失函数，绝对损失函数，对数损失函数（对数似然损失函数）</p>
+<h2 id="风险函数"><a href="#风险函数" class="headerlink" title="风险函数"></a>风险函数</h2><p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
+<p>经验风险（经验损失）</p>
+<h2 id="经验风险最小化"><a href="#经验风险最小化" class="headerlink" title="经验风险最小化"></a>经验风险最小化</h2><h2 id="结构风险最小化"><a href="#结构风险最小化" class="headerlink" title="结构风险最小化"></a>结构风险最小化</h2><p>为了防止过拟合而提出的策略，等价于正则化</p>
+<h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="训练误差和测试误差"><a href="#训练误差和测试误差" class="headerlink" title="训练误差和测试误差"></a>训练误差和测试误差</h2><h2 id="评价指标："><a href="#评价指标：" class="headerlink" title="评价指标："></a>评价指标：</h2><h3 id="绝对误差，相对误差"><a href="#绝对误差，相对误差" class="headerlink" title="绝对误差，相对误差"></a>绝对误差，相对误差</h3><h3 id="平均绝对误差（mean-absolute-error-MAE）"><a href="#平均绝对误差（mean-absolute-error-MAE）" class="headerlink" title="平均绝对误差（mean absolute error MAE）"></a>平均绝对误差（mean absolute error MAE）</h3><h3 id="均方误差（mean-squared-error-MSE）"><a href="#均方误差（mean-squared-error-MSE）" class="headerlink" title="均方误差（mean squared error MSE）"></a>均方误差（mean squared error MSE）</h3><h3 id="均方根误差（root-mean-squared-error-RMSE）"><a href="#均方根误差（root-mean-squared-error-RMSE）" class="headerlink" title="均方根误差（root mean squared error RMSE）"></a>均方根误差（root mean squared error RMSE）</h3><h3 id="平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><a href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）" class="headerlink" title="平均绝对百分误差（mean absolute percentage error MAPE）"></a>平均绝对百分误差（mean absolute percentage error MAPE）</h3><h3 id="Kappa统计"><a href="#Kappa统计" class="headerlink" title="Kappa统计"></a>Kappa统计</h3><h3 id="准确度accuracy（TP-TN-FP-FN）"><a href="#准确度accuracy（TP-TN-FP-FN）" class="headerlink" title="准确度accuracy（TP,TN,FP,FN）"></a>准确度accuracy（TP,TN,FP,FN）</h3><p>TPR = TP / (TP + FN)</p>
+<p>FPR = PF / (FP + TN)</p>
+<h3 id="识别准确率presion-amp-amp-召回率recall"><a href="#识别准确率presion-amp-amp-召回率recall" class="headerlink" title="识别准确率presion &amp;&amp; 召回率recall"></a>识别准确率presion &amp;&amp; 召回率recall</h3><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><h3 id="Mean-Average-Precision-MAP"><a href="#Mean-Average-Precision-MAP" class="headerlink" title="Mean Average Precision (MAP)"></a>Mean Average Precision (MAP)</h3><h3 id="AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><a href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic" class="headerlink" title="AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)"></a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h3><p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
+<h3 id="F值（F-Measure）"><a href="#F值（F-Measure）" class="headerlink" title="F值（F-Measure）"></a>F值（F-Measure）</h3><p>F = 2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
+<h3 id="A-B-test显著性检验"><a href="#A-B-test显著性检验" class="headerlink" title="A/B-test显著性检验"></a>A/B-test显著性检验</h3><h2 id="评估："><a href="#评估：" class="headerlink" title="评估："></a>评估：</h2><p>交叉验证，自助法，随机二次抽样</p>
+<h1 id="过拟合-欠拟合："><a href="#过拟合-欠拟合：" class="headerlink" title="过拟合/欠拟合："></a>过拟合/欠拟合：</h1><p>过拟合：把误差，噪声也拟合进去了</p>
+<p>Errors on training data are small</p>
+<p>But errors on new points are likely to be large</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>L1L2范数（模型参数向量的范数）</p>
+<p>奥卡姆剃刀模型</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>训练集的划分</p>
+<p>训练集，验证集，测试集</p>
+<p>简单交叉验证</p>
+<p>k折交叉验证</p>
+<p>cv交叉验证</p>
+<p>留一交叉验证</p>
+<h2 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h2><p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
+<h1 id="泛化能力"><a href="#泛化能力" class="headerlink" title="泛化能力"></a>泛化能力</h1><p>泛化误差上界，推导</p>
+<h1 id="生成模型-判别模型"><a href="#生成模型-判别模型" class="headerlink" title="生成模型/判别模型"></a>生成模型/判别模型</h1><h1 id="Bias-Variance-Tradeoff"><a href="#Bias-Variance-Tradeoff" class="headerlink" title="Bias-Variance Tradeoff"></a>Bias-Variance Tradeoff</h1><p><img src="/2019/03/08/数据科学-基础知识/1.png" alt="1"></p>
+<p><img src="/2019/03/08/数据科学-基础知识/2.png" alt="2"></p>
+<p>高斯马尔科夫定理：</p>
+<p>数据质量：</p>
+<p>缺失值</p>
+<p>异常值（3σ原则，箱形图分析）</p>
+<p>一致性分析/检验</p>
+<p>数据特征/探索性数据分析EDA<a href="https://www.cnblogs.com/shencc3/p/7851340.html：" target="_blank" rel="noopener">https://www.cnblogs.com/shencc3/p/7851340.html：</a></p>
+<p>分布分析</p>
+<p>定性（条形图，饼图）</p>
+<p>定量（求极差-分组-决定分点-列出频率分布表-绘出频率直方分布图）</p>
+<p>对比分析</p>
+<p>绝对数比较</p>
+<p>相对数比较（结构相对数，比例相对数，比较相对数，强度相对数，计划完成程度相对数，动态相对数）</p>
+<p>统计量分析</p>
+<p>集中趋势度量（均值，中位数，总数）</p>
+<p>离中趋势度量（极差，标准差，变异系数，四分位数间距）</p>
+<p>周期性分析</p>
+<p>共献度分析（帕累托法则，2/8定律）</p>
+<p>相关性分析</p>
+<p>绘制散点图，绘制散点图矩阵</p>
+<p>相关系数：pearson相关系数，spearman秩相关系数，判定系数</p>
+<h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><p>数据清洗</p>
+<p>缺失值处理</p>
+<p>不处理</p>
+<p>删除记录</p>
+<p>插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条）</p>
+<p>异常值处理</p>
+<p>不处理，删除记录，视为缺失值，平均值修正</p>
+<p>数据集成</p>
+<p>实体识别（同名同义，异名同义，单位不统一）</p>
+<p>冗余属性识别</p>
+<p>数据变换</p>
+<p>简单函数变化</p>
+<p>数据规范化/标准化（最大-最小规范化，零-均值规范化，小数定标规范化，归一化）</p>
+<p>连续属性离散化（等宽法，等频法，聚类法）</p>
+<p>属性构造</p>
+<p>小波变换</p>
+<p>数据规约</p>
+<p>属性规约（合并属性，逐步向前选择，逐步向后删除，决策树归纳，主成分分析）</p>
+<p>数值规约（直方图，聚类，抽样，参数回归）</p>
+<p>数据融合：</p>
+<h1 id="异常点-离群点检测"><a href="#异常点-离群点检测" class="headerlink" title="异常点/离群点检测"></a>异常点/离群点检测</h1><p><strong>异常检测 Anomaly detection</strong> </p>
+<p>离群点分类（从数据范围，从数据类型，从属性个数）</p>
+<p>检测方法（基于统计，基于邻近度，基于密度，基于聚类）</p>
+<p>基于统计（一元正态分布的离群点检测，混合模型xxxx，）</p>
+<p>基于聚类（丢弃远离其他簇的小簇，基于原型的聚类）</p>
+<p>OneClassSVM，IsolationForest，Local Outlier Factor(LOF)，基于高斯分布的方法</p>
+<p><a href="https://blog.csdn.net/qq_15111861/article/details/81178085" target="_blank" rel="noopener">https://blog.csdn.net/qq_15111861/article/details/81178085</a></p>
+<p><a href="https://blog.csdn.net/littlely_ll/article/details/68486537" target="_blank" rel="noopener">https://blog.csdn.net/littlely_ll/article/details/68486537</a></p>
+<p>局部异常因子 Local outlier factor</p>
+<p>离群点检测</p>
+<h1 id="陷阱与挑战"><a href="#陷阱与挑战" class="headerlink" title="陷阱与挑战"></a>陷阱与挑战</h1><p>过拟合</p>
+<p>维度灾难</p>
+<p>泛化能力</p>
+<h1 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h1><p>连续性/离散型</p>
+<h1 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h1><p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
+<p><a href="https://blog.csdn.net/occamo/article/details/84957692" target="_blank" rel="noopener">https://blog.csdn.net/occamo/article/details/84957692</a></p>
+<p>Ground Truth翻译的意思是地面实况，放到机器学习里面，再抽象点可以把它理解为真值、真实的有效值或者是标准的答案</p>
+<p>shallow learning</p>
+<p>互信息</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-数据集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/数据科学-数据集/" itemprop="url">数据科学-数据集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="图像分类数据集"><a href="#图像分类数据集" class="headerlink" title="图像分类数据集"></a>图像分类数据集</h1><p>The MNIST Database ( <a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a> ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集</p>
+<p>ImageNet ( <a href="http://image-net.org/" target="_blank" rel="noopener">http://image-net.org/</a> ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图像描述。目前，该集合平均每个节点有超过500个图像(而且还在增加)</p>
+<p>MS-COCO，COCO是一个大型的、丰富的物体检测，分割和字幕数据集</p>
+<p>CIFAR-10，该数据集是图像分类的另一个数据集，它由10个类的60,000个图像组成（每个类在上面的图像中表示为一行）。总共有50,000个训练图像和10,000个测试图像。数据集分为6个部分：5个训练批次和1个测试批次，每批有10,000个图像</p>
+<p>MIRFlickr-25K图像数据集 (Huiskes and Lew 2008)（It originally consists of 25,000 image samples collected from the Flickr website.Each image is annotated by one or more labels selected from 24 labels and some textual tags）</p>
+<p>NUS-WIDE 图像数据集(Chua et al. 2009)（It contains 260,648 images from a public web image dataset. There are 81 ground truth concepts man- ually annotated for search evaluation）</p>
+<h1 id="文本分类-nlp数据集"><a href="#文本分类-nlp数据集" class="headerlink" title="文本分类/nlp数据集"></a>文本分类/nlp数据集</h1><p>Spam – Non Spam (<a href="http://www.esp.uem.es/jmgomez/smsspamcorpus/" target="_blank" rel="noopener">http://www.esp.uem.es/jmgomez/smsspamcorpus/</a>)</p>
+<p>区分短信是否为垃圾邮件是一个有趣的问题。你需要构建一个分类器将短信进行分类</p>
+<p>Twitter Sentiment Analysis (<a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/" target="_blank" rel="noopener">http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/</a>) </p>
+<p>该数据集包含 1578627 个分类推文，每行被标记为1的积极情绪，0位负面情绪。数据依次基于 Kaggle 比赛和 Nick Sanders 的分析</p>
+<p>Yelp评论</p>
+<p>这是Yelp为了学习目的而发布的一个开放数据集。它由数百万用户评论，商业属性和来自多个大都市地区的超过20万张照片组成。这是一个非常常用的全球NLP挑战数据集</p>
+<p>Movie Review Data (<a href="http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签" target="_blank" rel="noopener">http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签</a></p>
+<p>WordNetWordNet</p>
+<p>WordNetWordNet是一个包含英文synsets的大型数据库。Synsets是同义词组，每个描述不同的概念。WordNet的结构使其成为NLP非常有用的工具</p>
+<h1 id="推荐引擎数据集"><a href="#推荐引擎数据集" class="headerlink" title="推荐引擎数据集"></a>推荐引擎数据集</h1><p>MovieLens ( <a href="https://grouplens.org/" target="_blank" rel="noopener">https://grouplens.org/</a> )</p>
+<p> MovieLens是一个帮助人们查找电影的网站。它有成千上万的注册用户。他们进行自动内容推荐，推荐界面，基于标签的推荐页面等在线实验。这些数据集可供下载，可用于创建自己的推荐系统</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-进阶知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -678,9 +1154,10 @@
       
         
           
-            <p>哈哈哈</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps</span><br></pre></td></tr></table></figure>
-
+            <p>[TOC]</p>
+<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="pwd-查看当前目录路径"><a href="#pwd-查看当前目录路径" class="headerlink" title="pwd 查看当前目录路径"></a>pwd 查看当前目录路径</h2><h2 id="ls-显示目录内容"><a href="#ls-显示目录内容" class="headerlink" title="ls 显示目录内容"></a>ls 显示目录内容</h2><h2 id="cd-目录跳转"><a href="#cd-目录跳转" class="headerlink" title="cd 目录跳转"></a>cd 目录跳转</h2><h2 id="mkdir-创建文件夹"><a href="#mkdir-创建文件夹" class="headerlink" title="mkdir 创建文件夹"></a>mkdir 创建文件夹</h2><h2 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h2><h2 id="rm-删除文件"><a href="#rm-删除文件" class="headerlink" title="rm 删除文件"></a>rm 删除文件</h2><h2 id="mv-移动文件"><a href="#mv-移动文件" class="headerlink" title="mv 移动文件"></a>mv 移动文件</h2><h2 id="cp-拷贝文件"><a href="#cp-拷贝文件" class="headerlink" title="cp 拷贝文件"></a>cp 拷贝文件</h2><h2 id="cat-输出文件内容"><a href="#cat-输出文件内容" class="headerlink" title="cat 输出文件内容"></a>cat 输出文件内容</h2><h2 id="chmod-给文件的属主分配权限"><a href="#chmod-给文件的属主分配权限" class="headerlink" title="chmod 给文件的属主分配权限"></a>chmod 给文件的属主分配权限</h2><h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="ps-查询进程"><a href="#ps-查询进程" class="headerlink" title="ps 查询进程"></a>ps 查询进程</h2><h2 id="kill-杀死进程"><a href="#kill-杀死进程" class="headerlink" title="kill 杀死进程"></a>kill 杀死进程</h2><h2 id="lsof-查看端口"><a href="#lsof-查看端口" class="headerlink" title="lsof 查看端口"></a>lsof 查看端口</h2><h2 id="top-持续监控进程-系统整体信息"><a href="#top-持续监控进程-系统整体信息" class="headerlink" title="top 持续监控进程/系统整体信息"></a>top 持续监控进程/系统整体信息</h2><h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="curl-下载命令"><a href="#curl-下载命令" class="headerlink" title="curl 下载命令"></a>curl 下载命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o</span><br></pre></td></tr></table></figure>
+<h2 id="scp-终端传输命令"><a href="#scp-终端传输命令" class="headerlink" title="scp 终端传输命令"></a>scp 终端传输命令</h2><p>使用ssh连接和加密方式</p>
+<h2 id="netstat-查看网络信息"><a href="#netstat-查看网络信息" class="headerlink" title="netstat 查看网络信息"></a>netstat 查看网络信息</h2><h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="clear-清除屏幕内容"><a href="#clear-清除屏幕内容" class="headerlink" title="clear 清除屏幕内容"></a>clear 清除屏幕内容</h2><h2 id="history-查看命令历史"><a href="#history-查看命令历史" class="headerlink" title="history 查看命令历史"></a>history 查看命令历史</h2><h2 id="echo-输出命令"><a href="#echo-输出命令" class="headerlink" title="echo 输出命令"></a>echo 输出命令</h2>
           
         
       
@@ -1157,438 +1634,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学基础-数据库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/计算机科学基础-数据库/" itemprop="url">计算机科学基础-数据库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:28+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>图数据库</p>
-<p><a href="http://blog.csdn.net/hzw05103020/article/details/51288992" target="_blank" rel="noopener">http://blog.csdn.net/hzw05103020/article/details/51288992</a></p>
-<p>也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。</p>
-<p>　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
-<p>　　⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
-<p>　　⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
-<p>　　在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
-<p><a href="http://www.educity.cn/zk/sjkyl/201306141646051747.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141646051747.htm</a></p>
-<p><a href="http://www.educity.cn/zk/sjkyl/201306141542141835.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141542141835.htm</a></p>
-<p><a href="https://www.zhihu.com/question/24696366" target="_blank" rel="noopener">https://www.zhihu.com/question/24696366</a></p>
-<p>OLTP，OLAP</p>
-<p>产品：</p>
-<p>Oracle、MySQL、HBase，Cassandra，MongeDB，MariaDB，PostgreSQL，NoSQL，Redis</p>
-<p>RDB：SQL</p>
-<p>NoSQL：Redis</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学基础-计算机网络/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/计算机科学基础-计算机网络/" itemprop="url">计算机科学基础-计算机网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:01+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>HTTP，FTP，IMAP/POP3/SMTP，DNS</p>
-<p>P2P</p>
-<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>TCP，UDP</p>
-<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>交换机，路由器，路由表</p>
-<p>私有网络，子网</p>
-<p>反向代理</p>
-<p>NAT网关</p>
-<h1 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h1><p>LTE，WIFI，蓝牙，IPv4/6，NFV，VLAN，IPQoS</p>
-<p>PPP</p>
-<p>SDN（OpenFlow）</p>
-<p>DHCP</p>
-<p>ICMP</p>
-<p><img src="/2019/03/08/计算机科学基础-计算机网络/1.png" alt="img"></p>
-<p>协议图<a href="https://blog.csdn.net/china_jeffery/article/details/79195819" target="_blank" rel="noopener">https://blog.csdn.net/china_jeffery/article/details/79195819</a></p>
-<p>交换机配置，路由器配置</p>
-<p>云api密钥，SSH密钥，安全组，IPsec，SSH，SSL，防火墙</p>
-<p>弹性公网IP，多IP服务器</p>
-<p>包转发率(PPS)</p>
-<p>CDN</p>
-<p>管理工具：wireshark</p>
-<p>QoS配置，ACL规则</p>
-<p>边界网关协议（BGP）</p>
-<p>ACL访问控制策略</p>
-<p>ISP</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学基础-操作系统/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/计算机科学基础-操作系统/" itemprop="url">计算机科学基础-操作系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:39:39+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="os提供的服务"><a href="#os提供的服务" class="headerlink" title="os提供的服务"></a>os提供的服务</h2><h2 id="多道程序"><a href="#多道程序" class="headerlink" title="多道程序"></a>多道程序</h2><p>多道程序设计技术是在计算机内存中同时存放几道相互独立的程序，使它们在管理程序控制下，相互穿插运行，两个或两个以上程序在计算机系统中同处于开始到结束之间的状态, 这些程序共享计算机系统资源。与之相对应的是单道程序，即在计算机内存中只允许一个的程序运行。对于一个单CPU系统来说，程序同时处于运行状态只是一种宏观上的概念，他们虽然都已经开始运行，但就微观而言，任意时刻，CPU上运行的程序只有一个</p>
-<h2 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h2><p><a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a> (time-sharing system)，“分时”的含义：分时是指多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是指在一台<a href="https://baike.baidu.com/item/%E4%B8%BB%E6%9C%BA/455151" target="_blank" rel="noopener">主机</a>上连接多个带有显示器和键盘的<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF/1903878" target="_blank" rel="noopener">终端</a>，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是一个多用户交互式操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>，主要分为三类：单道分时操作系统，多道分时操作系统，具有前台和后台的分时操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>将CPU的时间划分成若干个片段，称为<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>。操作系统以<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>为单位，轮流为每个<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF" target="_blank" rel="noopener">终端</a>用户服务。</p>
-<h2 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h2><h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>中断（interrupt）是是一种硬件机制，指在计算机执行期间，系统内发生任何非寻常的或非预期的急需处理事件（处理器外部的一个事件或者处理器内部的一个事件，内部的中断，比如说定时器中断，当定时器定时到的时候，就会产生一个中断来告诉处理器，这时候处理器可以做出相应的动作；外部中断，比如说某个管脚的电平发生了变化，这时候就会产生一个中断来告诉处理器），使得CPU暂时中断当前正在执行的程序而转去执行相应的事件处理程序。待处理完毕后又返回原来被中断处继续执行或调度新的进程执行的过程。</p>
-<p>因此中断是一种处理器与外设进行通信的机制，用于“通知”处理器外部有“重要事件发生”，一般情况下，中断需要被处理器响应。它是计算机可以更好更快利用有限的系统资源解决系统<a href="https://www.baidu.com/s?wd=%E5%93%8D%E5%BA%94%E9%80%9F%E5%BA%A6&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">响应速度</a>和运行效率,实现实时响应,系统调度的一种控制技术。中断的意义还在于应用程序不必关心中断的发生与处理，以及中断服务程序不必关心应用程序的执行状态。</p>
-<p>中断是由外部事件导致并且它发生的时间是不可预测的，这一点和陷阱不同，中断发生完全是”异步”的，根本无法预测到此类中断会在什么时候发生。因此，<a href="https://www.baidu.com/s?wd=CPU&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">CPU</a>(或者软件)对于此类外部中断完全是”被动”的。在有些情况下，尽管产生了中断源和发出了中断请求，但CPU内部的处理器状态字PSW的中断允许位已被清除，从而不允许CPU响应中断。这种情况称为禁止中断。CPU禁止中断后只有等到PSW的中断允许位被重新设置后才能接收中断。禁止中断也称为关中断，PSW的中断允许位的设置也被称为开中断。开中断和关中断是为了保证某段程序执行的原子性。还有一个比较常用的概念是中断屏蔽。中断屏蔽是指在中断请求产生之后，系统有选择地封锁一部分中断而允许另一部分中断仍能得到响应。不过，有些中断请求是不能屏蔽甚至不能禁止的，也就是说，这些中断具有最高优先级，只要这些中断请求一旦提出，CPU必须立即响应。例如，电源掉电事件所引起的中断就是不可禁止和不可屏蔽的。</p>
-<p>外部事件主要是指时钟中断，硬件中断等。由于CPU一次只能运行一条指令，所以在一个时刻只能有一个程序运行，但我们感觉在我们的计算机中明明可以同时运行很多程序，这是由于CPU在多个进程之间快速切换所导致的伪并行。如果某一个程序运行了足够长用完了分配给它的时间片，CPU决定切换到另一个进程运行，就会产生一个时钟中断，切换到下一个进程运行。</p>
-<p>硬件中断顾名思义就是由硬件引起的中断，比如一个程序需要用户输入一个数据，但用户一直没有输入，操作系统决定是一直等待用户输入还是转而运行别的进程，一般情况是转而运行别的进程，如果用户的输入到来了，那么键盘驱动器会产生一个中断通知操作系统，操作系统保存正在运行的程序的状态，从而切换到原来的进程处理到来的数据。</p>
-<p>所以中断发生是随机的且主要作用是完成进程间切换，从而支持CPU和设备之间的并行。</p>
-<p>中断和异常的另一个重要差别是，CPU处理中断的过程中会屏蔽中断，不接受新的中断直到此次中断处理结束。而陷阱的发生并不屏蔽中断，可以接受新的中断。</p>
-<p>硬中断：通过处理器中断信号线产生的中断</p>
-<p>软中断：通过非法指令或特殊指令触发的中断</p>
-<p>计算机的中断系统能够加强CPU对多任务事件的处理能力。中断机制是现代计算机系统中的基础设施之一，它在系统中起着通信网络作用，以协调系统对各种外部事件的响应和处理。中断是实现多道程序设计的必要条件。中断是CPU对系统发生的某个事件作出的一种反应。引起中断的事件称为中断源。中断源向CPU提出处理的请求称为中断请求。发生中断时被打断程序的暂停点成为断点。CPU暂停现行程序而转为响应中断请求的过程称为中断响应。处理中断源的程序称为中断处理程序。CPU执行有关的中断处理程序称为中断处理。而返回断点的过程称为中断返回。中断的实现实行软件和硬件综合完成，硬件部分叫做硬件装置，软件部分成为软件处理程序。</p>
-<p>根据中断源产生的条件，可把中断分为外中断和内中断。外中断是指来自处理器和内存外部的中断，包括I／0设备发出的I／O中断、外部信号中断(例如用户键人ESC键)。各种定时器引起的时钟中断以及调试程序中设置的断点等引起的调试中断等。外中断在狭义上一般被称为中断。 </p>
-<p>内中断主要指在处理器和内存内部产生的中断。内中断一般称为陷阱(trap)或异常。它包括程序运算引起的各种错误，如地址非法、校验错、页面失效、存取访问控制错、算术操作溢出、数据格式非法、除数为零、非法指令、用户程序执行特权指令、分时系统中的时间片中断以及从用户态到核心态的切换等都是陷阱的例子。 </p>
-<p>为了按中断源的轻重缓急处理响应中断，操作系统为不同的中断赋予不同的优先级。例如在UNIX系统中，外中断和陷阱的优先级共分为8级。为了禁止中断或屏蔽中断，CPU的处理器状态字PSW中也设有相应的优先级。如果中断源的优先级高于PSW的优先级，则CPU响应该中断源的请求；反之，CPU屏蔽该中断源的中断请求。 </p>
-<p>各中断源的优先级在系统设计时给定，在系统运行时是固定的。而处理器的优先级则根据执行情况由系统程序动态设定。</p>
-<h2 id="陷阱"><a href="#陷阱" class="headerlink" title="陷阱"></a>陷阱</h2><p>计算机有两种运行模式：用户态， 内核态。 其中操作系统运行在内核态，在内核态中，操作系统具有对所有硬件的完全访问权限，可以使机器运行任何指令；相反，用户程序运行在用户态，在用户态下，软件只能使用少数指令，它们并不具备直接访问硬件的权限。这就出现了问题，假如软件需要访问硬件或者需要调用内核中的函数该怎么办呢，这就是陷阱的作用了。陷阱指令可以使执行流程从用户态陷入内核（这也就是为什么叫做陷阱，而不是捕猎的陷阱）并把控制权转移给操作系统，使得用户程序可以调用内核函数和使用硬件从而获得操作系统所提供的服务，比如用视频软件放一个电影，视频软件就发出陷阱使用显示器和声卡从而访问硬件。</p>
-<p>陷阱是程序有意产生的。</p>
-<p>操作系统有很多系统调用接口供用程序调用。陷阱的发生时间是固定的，比如第一次用视频软件时，在加载视频时软件会向操作系统发送陷阱指令，第二次播放时，软件仍然会在同样的时刻发送陷阱指令。这一点是和中断的明显的差别之一。陷阱通常由处理器正在执行的现行指令引起，而中断则是由与现行指令无关的中断源引起的。陷阱处理程序提供的服务为当前进程所用，而中断处理程序提供的服务则不是为了当前进程的。</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常就是程序执行过程中的异常行为。比如除零异常，缓冲区溢出异常等。不同的操作系统定义了不同种类和数量的异常并且每个异常都有一个唯一的异常号，异常会扰乱程序的正常执行流程，所以异常是在CPU执行指令时本身出现的问题，比如除数为零而出现的除零异常。异常的产生表示程序设计不合理，所以在编程的时候要尽量避免异常的产生。</p>
-<h2 id="系统调用-1"><a href="#系统调用-1" class="headerlink" title="系统调用"></a>系统调用</h2><p>在Unix/Linux系统中，系统调用像普通C函数调用那样出现在C程序中。但是一般的函数调用序列并不能把进程的状态从用户态变为核心态，而系统调用却可以做到。</p>
-<p>C语言编译程序利用一个预先确定的函数库（一般称为C库），其中有各系统调用的名字。C库中的函数都专门使用一条指令，把进程的运行状态改为核心态。Linux的系统调用是通过中断指令“INT0x80”实现的。</p>
-<p>每个系统调用都有惟一的号码，称作系统调用号。所有的系统调用都集中在系统调用入口表中统一管理。</p>
-<p>系统调用入口表是一个函数指针数组，以系统调用号为下标在该数组中找到相应的函数指针，进而就能确定用户使用的是哪一个系统调用。不同系统中系统调用的个数是不同的，目前Linux系统中共定义了221个系统调用。</p>
-<p>另外，系统调用表中还留有一些余项，可供用户自行添加。</p>
-<p>当CPU执行到中断指令“INT0x80”时，硬件就做出一系列响应，其动作与上述的中断响应相同。CPU穿过陷阱门，从用户空间进入系统空间。相应地，进程的上下文从用户堆栈切换到系统堆栈。</p>
-<p>接着运行内核函数system_call（）。首先，进一步保存各寄存器的内容；接着调用syscall_trace()，以系统调用号为下标检索系统调用入口表sys_call_table，从中找到相应的函数；然后转去执行该函数，完成具体的服务。</p>
-<p>执行完服务程序，核心检查是否发生错误，并作相应处理。如果本进程收到信号，则对信号作相应处理。最后进程从系统空间返回到用户空间。</p>
-<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><p>进程间通信</p>
-<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><p>存储系统，虚拟内存</p>
-<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><p>文件管理系统，文件管理</p>
-<h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p>内存IO访问，DMA</p>
-<p>primitives原语</p>
-<p>ioctl</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1639,7 +1684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
