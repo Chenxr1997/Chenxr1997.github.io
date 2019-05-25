@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="模型Trans系列 TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by translatin">
+<meta name="description" content="模型 ¶Trans系列  TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by transla">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能-知识图谱">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/人工智能-知识图谱/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="模型Trans系列 TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by translatin">
+<meta property="og:description" content="模型 ¶Trans系列  TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by transla">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.524Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能-知识图谱">
-<meta name="twitter:description" content="模型Trans系列 TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by translatin">
+<meta name="twitter:description" content="模型 ¶Trans系列  TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data) TransH, AAAI2014, Knowledge graph embedding by transla">
 
 
 
@@ -299,7 +299,9 @@
       
 
       
-        <h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><h2 id="Trans系列"><a href="#Trans系列" class="headerlink" title="Trans系列"></a>Trans系列</h2><ul>
+        <h1>模型</h1>
+<h2 id="trans系列"><a class="header-anchor" href="#trans系列">¶</a>Trans系列</h2>
+<ul>
 <li>TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data)</li>
 <li>TransH, AAAI2014, Knowledge graph embedding by translating on hyperplanes</li>
 <li>TransR, AAAI2015, Learning Entity and Relation Embeddings for Knowledge Graph Completion</li>
@@ -308,12 +310,20 @@
 <li>TranSparse, AAAI2016, Knowledge graph completion with adaptive sparse transfer matrix</li>
 <li>TransG, arXiv2015, A Generative Mixture Model for Knowledge Graph Embedding</li>
 </ul>
-<h2 id="KG2E-CIKM2015-Learning-to-represent-knowledge-graphs-with-gaussian-embedding"><a href="#KG2E-CIKM2015-Learning-to-represent-knowledge-graphs-with-gaussian-embedding" class="headerlink" title="KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding"></a>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</h2><p>作者：wp_csdn<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wp_csdn/article/details/79607727" target="_blank" rel="noopener">https://blog.csdn.net/wp_csdn/article/details/79607727</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
-<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><h2 id="mr-Mean-Rank"><a href="#mr-Mean-Rank" class="headerlink" title="mr(Mean Rank)"></a>mr(Mean Rank)</h2><p>对于每个 testing triple，以预测tail entity为例，我们将（h,r,t）中的t用知识图谱中的每个实体来代替，然后通过fr（h,t）函数来计算分数，这样我们可以得到一系列的分数，之后按照 升序将这些分数排列。</p>
+<h2 id="kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding"><a class="header-anchor" href="#kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding">¶</a>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</h2>
+<p>作者：wp_csdn<br>
+来源：CSDN<br>
+原文：<a href="https://blog.csdn.net/wp_csdn/article/details/79607727" target="_blank" rel="noopener">https://blog.csdn.net/wp_csdn/article/details/79607727</a><br>
+版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+<h1>评价指标</h1>
+<h2 id="mr-mean-rank"><a class="header-anchor" href="#mr-mean-rank">¶</a>mr(Mean Rank)</h2>
+<p>对于每个 testing triple，以预测tail entity为例，我们将（h,r,t）中的t用知识图谱中的每个实体来代替，然后通过fr（h,t）函数来计算分数，这样我们可以得到一系列的分数，之后按照 升序将这些分数排列。</p>
 <p>然后，我们需要知道的是f函数值是越小越好，那么在上个排列中，排的越前越好。</p>
-<p>现在重点来了，我们去看每个 testing triple中正确答案也就是真实的t到底能在上述序列中排多少位，比如说t1排100，t2排200，t3排60…….，之后对这些排名求平均，Mean rank就得到了</p>
-<h2 id="mrr-Mean-Reciprocal-Rank"><a href="#mrr-Mean-Reciprocal-Rank" class="headerlink" title="mrr(Mean Reciprocal Rank)"></a>mrr(Mean Reciprocal Rank)</h2><p>是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均</p>
-<h2 id="hit-10"><a href="#hit-10" class="headerlink" title="hit@10"></a>hit@10</h2><p>按照上述进行f函数值排列，然后去看每个testing triple正确答案是否排在序列的前十，如果在的话就计数+1</p>
+<p>现在重点来了，我们去看每个 testing triple中正确答案也就是真实的t到底能在上述序列中排多少位，比如说t1排100，t2排200，t3排60…，之后对这些排名求平均，Mean rank就得到了</p>
+<h2 id="mrr-mean-reciprocal-rank"><a class="header-anchor" href="#mrr-mean-reciprocal-rank">¶</a>mrr(Mean Reciprocal Rank)</h2>
+<p>是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均</p>
+<h2 id="hit-10"><a class="header-anchor" href="#hit-10">¶</a>hit@10</h2>
+<p>按照上述进行f函数值排列，然后去看每个testing triple正确答案是否排在序列的前十，如果在的话就计数+1</p>
 <p>最终  排在前十的个数/总个数   就是Hit@10</p>
 
       
@@ -339,8 +349,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/人工智能-经典模型/" rel="next" title="人工智能-经典模型">
-                <i class="fa fa-chevron-left"></i> 人工智能-经典模型
+              <a href="/2019/03/08/人工智能-搜索/" rel="next" title="人工智能-搜索">
+                <i class="fa fa-chevron-left"></i> 人工智能-搜索
               </a>
             
           </div>
@@ -349,8 +359,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/人工智能-搜索/" rel="prev" title="人工智能-搜索">
-                人工智能-搜索 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/人工智能-强化学习/" rel="prev" title="人工智能-强化学习">
+                人工智能-强化学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型"><span class="nav-number">1.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Trans系列"><span class="nav-number">1.1.</span> <span class="nav-text">Trans系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KG2E-CIKM2015-Learning-to-represent-knowledge-graphs-with-gaussian-embedding"><span class="nav-number">1.2.</span> <span class="nav-text">KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评价指标"><span class="nav-number">2.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mr-Mean-Rank"><span class="nav-number">2.1.</span> <span class="nav-text">mr(Mean Rank)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mrr-Mean-Reciprocal-Rank"><span class="nav-number">2.2.</span> <span class="nav-text">mrr(Mean Reciprocal Rank)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hit-10"><span class="nav-number">2.3.</span> <span class="nav-text">hit@10</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#trans系列"><span class="nav-number">1.1.</span> <span class="nav-text">¶Trans系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding"><span class="nav-number">1.2.</span> <span class="nav-text">¶KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mr-mean-rank"><span class="nav-number">2.1.</span> <span class="nav-text">¶mr(Mean Rank)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mrr-mean-reciprocal-rank"><span class="nav-number">2.2.</span> <span class="nav-text">¶mrr(Mean Reciprocal Rank)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hit-10"><span class="nav-number">2.3.</span> <span class="nav-text">¶hit@10</span></a></li></ol></li></ol></div>
             
 
           </div>

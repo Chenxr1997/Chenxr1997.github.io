@@ -313,8 +313,153 @@
 <p>Q学习 Q-learning</p>
 <p>自动学习机 Learning Automata</p>
 <p>状态-行动-回馈-状态-行动（SARSA） State-Action-Reward-State-Action(SARSA)</p>
-<p>policy gradient method </p>
+<p>policy gradient method</p>
 <p>Temporal Difference</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-知识图谱/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/人工智能-知识图谱/" itemprop="url">人工智能-知识图谱</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1>模型</h1>
+<h2 id="trans系列"><a class="header-anchor" href="#trans系列">¶</a>Trans系列</h2>
+<ul>
+<li>TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data)</li>
+<li>TransH, AAAI2014, Knowledge graph embedding by translating on hyperplanes</li>
+<li>TransR, AAAI2015, Learning Entity and Relation Embeddings for Knowledge Graph Completion</li>
+<li>TransD, ACL2015, Knowledge graph embedding via dynamic mapping matrix</li>
+<li>TransA, arXiv2015, An adaptive approach for knowledge graph embedding</li>
+<li>TranSparse, AAAI2016, Knowledge graph completion with adaptive sparse transfer matrix</li>
+<li>TransG, arXiv2015, A Generative Mixture Model for Knowledge Graph Embedding</li>
+</ul>
+<h2 id="kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding"><a class="header-anchor" href="#kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding">¶</a>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</h2>
+<p>作者：wp_csdn<br>
+来源：CSDN<br>
+原文：<a href="https://blog.csdn.net/wp_csdn/article/details/79607727" target="_blank" rel="noopener">https://blog.csdn.net/wp_csdn/article/details/79607727</a><br>
+版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+<h1>评价指标</h1>
+<h2 id="mr-mean-rank"><a class="header-anchor" href="#mr-mean-rank">¶</a>mr(Mean Rank)</h2>
+<p>对于每个 testing triple，以预测tail entity为例，我们将（h,r,t）中的t用知识图谱中的每个实体来代替，然后通过fr（h,t）函数来计算分数，这样我们可以得到一系列的分数，之后按照 升序将这些分数排列。</p>
+<p>然后，我们需要知道的是f函数值是越小越好，那么在上个排列中，排的越前越好。</p>
+<p>现在重点来了，我们去看每个 testing triple中正确答案也就是真实的t到底能在上述序列中排多少位，比如说t1排100，t2排200，t3排60…，之后对这些排名求平均，Mean rank就得到了</p>
+<h2 id="mrr-mean-reciprocal-rank"><a class="header-anchor" href="#mrr-mean-reciprocal-rank">¶</a>mrr(Mean Reciprocal Rank)</h2>
+<p>是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均</p>
+<h2 id="hit-10"><a class="header-anchor" href="#hit-10">¶</a>hit@10</h2>
+<p>按照上述进行f函数值排列，然后去看每个testing triple正确答案是否排在序列的前十，如果在的话就计数+1</p>
+<p>最终  排在前十的个数/总个数   就是Hit@10</p>
 
           
         
@@ -486,7 +631,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-知识图谱/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-自然语言处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -505,7 +650,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/人工智能-知识图谱/" itemprop="url">人工智能-知识图谱</a></h1>
+                <a class="post-title-link" href="/2019/03/08/人工智能-自然语言处理/" itemprop="url">人工智能-自然语言处理</a></h1>
         
 
         <div class="post-meta">
@@ -557,22 +702,15 @@
       
         
           
-            <h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><h2 id="Trans系列"><a href="#Trans系列" class="headerlink" title="Trans系列"></a>Trans系列</h2><ul>
-<li>TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data)</li>
-<li>TransH, AAAI2014, Knowledge graph embedding by translating on hyperplanes</li>
-<li>TransR, AAAI2015, Learning Entity and Relation Embeddings for Knowledge Graph Completion</li>
-<li>TransD, ACL2015, Knowledge graph embedding via dynamic mapping matrix</li>
-<li>TransA, arXiv2015, An adaptive approach for knowledge graph embedding</li>
-<li>TranSparse, AAAI2016, Knowledge graph completion with adaptive sparse transfer matrix</li>
-<li>TransG, arXiv2015, A Generative Mixture Model for Knowledge Graph Embedding</li>
-</ul>
-<h2 id="KG2E-CIKM2015-Learning-to-represent-knowledge-graphs-with-gaussian-embedding"><a href="#KG2E-CIKM2015-Learning-to-represent-knowledge-graphs-with-gaussian-embedding" class="headerlink" title="KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding"></a>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</h2><p>作者：wp_csdn<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/wp_csdn/article/details/79607727" target="_blank" rel="noopener">https://blog.csdn.net/wp_csdn/article/details/79607727</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
-<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><h2 id="mr-Mean-Rank"><a href="#mr-Mean-Rank" class="headerlink" title="mr(Mean Rank)"></a>mr(Mean Rank)</h2><p>对于每个 testing triple，以预测tail entity为例，我们将（h,r,t）中的t用知识图谱中的每个实体来代替，然后通过fr（h,t）函数来计算分数，这样我们可以得到一系列的分数，之后按照 升序将这些分数排列。</p>
-<p>然后，我们需要知道的是f函数值是越小越好，那么在上个排列中，排的越前越好。</p>
-<p>现在重点来了，我们去看每个 testing triple中正确答案也就是真实的t到底能在上述序列中排多少位，比如说t1排100，t2排200，t3排60…….，之后对这些排名求平均，Mean rank就得到了</p>
-<h2 id="mrr-Mean-Reciprocal-Rank"><a href="#mrr-Mean-Reciprocal-Rank" class="headerlink" title="mrr(Mean Reciprocal Rank)"></a>mrr(Mean Reciprocal Rank)</h2><p>是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均</p>
-<h2 id="hit-10"><a href="#hit-10" class="headerlink" title="hit@10"></a>hit@10</h2><p>按照上述进行f函数值排列，然后去看每个testing triple正确答案是否排在序列的前十，如果在的话就计数+1</p>
-<p>最终  排在前十的个数/总个数   就是Hit@10</p>
+            <p>隐含狄利克雷分布(Latent Dirichlet Allocation）</p>
+<h1>分词</h1>
+<p>正向最大匹配(FMM)</p>
+<p>逆向最大匹配(BMM)</p>
+<p>最少分词法（最短路径法）</p>
+<p>基于统计的分析方法</p>
+<h1>word2vec</h1>
+<p>词向量<a href="https://www.cnblogs.com/peghoty/p/3798528.html" target="_blank" rel="noopener">https://www.cnblogs.com/peghoty/p/3798528.html</a></p>
+<p>分布表示（distributional representation），分布式表示（distributed representation），n元语法模型(n-gram model)</p>
 
           
         
@@ -741,132 +879,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/人工智能-自然语言处理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/人工智能-自然语言处理/" itemprop="url">人工智能-自然语言处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>隐含狄利克雷分布(Latent Dirichlet Allocation）</p>
-<h1 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h1><p>正向最大匹配(FMM)</p>
-<p>逆向最大匹配(BMM)</p>
-<p>最少分词法（最短路径法）</p>
-<p>基于统计的分析方法</p>
-<h1 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h1><p>词向量<a href="https://www.cnblogs.com/peghoty/p/3798528.html" target="_blank" rel="noopener">https://www.cnblogs.com/peghoty/p/3798528.html</a></p>
-<p>分布表示（distributional representation），分布式表示（distributed representation），n元语法模型(n-gram model)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/大数据处理:分布式框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -939,19 +951,32 @@
         
           
             <p>[TOC]</p>
-<h2 id="流处理"><a href="#流处理" class="headerlink" title="流处理"></a>流处理</h2><p>Flink，Storm</p>
-<h2 id="消息系统"><a href="#消息系统" class="headerlink" title="消息系统"></a>消息系统</h2><p>Kafka（CKafka）</p>
-<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>CMQ</p>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>MongoDB，MariaDB，MySQL，Oracle，PostgreSQL，NoSQL，Redis，非关系型数据库</p>
-<h2 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h2><p>Docker（dockerhub）（VM，Xen，VMM）</p>
-<h2 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h2><p>Elasticsearch</p>
-<h2 id="生态圈"><a href="#生态圈" class="headerlink" title="生态圈"></a>生态圈</h2><p>Hadoop</p>
-<h2 id="计算模式"><a href="#计算模式" class="headerlink" title="计算模式"></a>计算模式</h2><p>MapReduce</p>
-<h2 id="管理系统"><a href="#管理系统" class="headerlink" title="管理系统"></a>管理系统</h2><p>ZooKeeper，Puppet</p>
-<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>HDFS</p>
-<h2 id="内存计算"><a href="#内存计算" class="headerlink" title="内存计算"></a>内存计算</h2><p>Spark</p>
-<h2 id="容器管理"><a href="#容器管理" class="headerlink" title="容器管理"></a>容器管理</h2><p>kubernetes，Swarm，Mesos</p>
-<h2 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h2><p>OpenStack</p>
+<h2 id="流处理"><a class="header-anchor" href="#流处理">¶</a>流处理</h2>
+<p>Flink，Storm</p>
+<h2 id="消息系统"><a class="header-anchor" href="#消息系统">¶</a>消息系统</h2>
+<p>Kafka（CKafka）</p>
+<h2 id="消息队列"><a class="header-anchor" href="#消息队列">¶</a>消息队列</h2>
+<p>CMQ</p>
+<h2 id="数据库"><a class="header-anchor" href="#数据库">¶</a>数据库</h2>
+<p>MongoDB，MariaDB，MySQL，Oracle，PostgreSQL，NoSQL，Redis，非关系型数据库</p>
+<h2 id="虚拟化"><a class="header-anchor" href="#虚拟化">¶</a>虚拟化</h2>
+<p>Docker（dockerhub）（VM，Xen，VMM）</p>
+<h2 id="搜索引擎"><a class="header-anchor" href="#搜索引擎">¶</a>搜索引擎</h2>
+<p>Elasticsearch</p>
+<h2 id="生态圈"><a class="header-anchor" href="#生态圈">¶</a>生态圈</h2>
+<p>Hadoop</p>
+<h2 id="计算模式"><a class="header-anchor" href="#计算模式">¶</a>计算模式</h2>
+<p>MapReduce</p>
+<h2 id="管理系统"><a class="header-anchor" href="#管理系统">¶</a>管理系统</h2>
+<p>ZooKeeper，Puppet</p>
+<h2 id="文件系统"><a class="header-anchor" href="#文件系统">¶</a>文件系统</h2>
+<p>HDFS</p>
+<h2 id="内存计算"><a class="header-anchor" href="#内存计算">¶</a>内存计算</h2>
+<p>Spark</p>
+<h2 id="容器管理"><a class="header-anchor" href="#容器管理">¶</a>容器管理</h2>
+<p>kubernetes，Swarm，Mesos</p>
+<h2 id="云计算"><a class="header-anchor" href="#云计算">¶</a>云计算</h2>
+<p>OpenStack</p>
 <p>Pig</p>
 <p>RPC</p>
 <p>YARN</p>
@@ -1324,10 +1349,17 @@
             <p>[TOC]</p>
 <p>决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。</p>
 <p>主要的决策树算法有ID3、C4.5 (C5.0) 、CART、PUBLIC、SLIQ和SPRINT算法等。它们在选择测试属性采用的技术、生成的决策树的结构、剪枝的方法以及时刻，能否处理大数据集等方面都有各自的不同之处。</p>
-<h1 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h1><p>用的信息增益gain</p>
-<h1 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h1><p>用的信息增益率</p>
-<h1 id="剪枝方法"><a href="#剪枝方法" class="headerlink" title="剪枝方法"></a>剪枝方法</h1><h1 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h1><h2 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h2><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>用的gini</p>
-<h2 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h2><p>entropy，条件熵</p>
+<h1>ID3</h1>
+<p>用的信息增益gain</p>
+<h1>C4.5</h1>
+<p>用的信息增益率</p>
+<h1>剪枝方法</h1>
+<h1>CART</h1>
+<h2 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h2>
+<h2 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h2>
+<p>用的gini</p>
+<h2 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h2>
+<p>entropy，条件熵</p>
 <p>卡方自动交互检测（CHAID） Chi-squared Automatic Interaction Detection</p>
 <p>决策树桩/单层决策树 Decision stump</p>
 <p>SLIQ</p>
@@ -1379,7 +1411,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-pytorch/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-其他框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -1398,7 +1430,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/深度学习-pytorch/" itemprop="url">深度学习-pytorch</a></h1>
+                <a class="post-title-link" href="/2019/03/08/深度学习-其他框架/" itemprop="url">深度学习-其他框架</a></h1>
         
 
         <div class="post-meta">
@@ -1451,41 +1483,13 @@
         
           
             <p>[TOC]</p>
-<p><a href="https://ptorch.com/news/45.html" target="_blank" rel="noopener">https://ptorch.com/news/45.html</a></p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p><a href="https://blog.csdn.net/Tan915730/article/details/78954482" target="_blank" rel="noopener">https://blog.csdn.net/Tan915730/article/details/78954482</a></p>
-<p>函数名下划线<a href="https://blog.csdn.net/qq_27261889/article/details/86777230" target="_blank" rel="noopener">https://blog.csdn.net/qq_27261889/article/details/86777230</a></p>
-<p>函数，数据类型查询<a href="https://blog.csdn.net/zzulp/article/details/80573331" target="_blank" rel="noopener">https://blog.csdn.net/zzulp/article/details/80573331</a></p>
-<h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><p><a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/index.html</a></p>
-<h2 id="类型及类型转换"><a href="#类型及类型转换" class="headerlink" title="类型及类型转换"></a>类型及类型转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">print(inputs.dtype) <span class="comment"># float32</span></span><br></pre></td></tr></table></figure>
-<h2 id="运行模型"><a href="#运行模型" class="headerlink" title="运行模型"></a>运行模型</h2><p>直接运行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = nn.Sigmoid()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
-<p>通过继承nn.Module，重载__init__和forward</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sig</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__() </span><br><span class="line">        self.sigmoid = nn.Sigmoid()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        out = self.sigmoid(x)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = sig()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
-<h2 id="cpu与gpu"><a href="#cpu与gpu" class="headerlink" title="cpu与gpu"></a>cpu与gpu</h2><p><a href="https://blog.csdn.net/liulina603/article/details/80180355" target="_blank" rel="noopener">https://blog.csdn.net/liulina603/article/details/80180355</a></p>
-<p><a href="https://ptorch.com/news/160.html" target="_blank" rel="noopener">https://ptorch.com/news/160.html</a></p>
-<h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><h2 id="Dataset-amp-amp-Dataloader"><a href="#Dataset-amp-amp-Dataloader" class="headerlink" title="Dataset &amp;&amp; Dataloader"></a>Dataset &amp;&amp; Dataloader</h2><p>torch.utils.data.Dataset</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">trainset</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#定义好 image 的路径</span></span><br><span class="line">        self.images = file_train</span><br><span class="line">        self.target = number_train</span><br><span class="line">        self.loader = loader</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        fn = self.images[index]</span><br><span class="line">        img = self.loader(fn)</span><br><span class="line">        target = self.target[index]</span><br><span class="line">        <span class="keyword">return</span> img,target</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.images)</span><br></pre></td></tr></table></figure>
-<p>torch.utils.data.Dataloader</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">        transforms.Resize(<span class="number">32</span>),</span><br><span class="line">        transforms.ToTensor(),</span><br><span class="line">        transforms.Normalize(</span><br><span class="line">            mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">            std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">    ])</span><br><span class="line"><span class="comment"># prepare dataset by ImageFolder, data should be classified by directory</span></span><br><span class="line">train_set = torchvision.datasets.ImageFolder(root = <span class="string">'./mnist/train'</span>, transform = transform)</span><br><span class="line"><span class="comment"># print(train_set[0][0])</span></span><br><span class="line">train_loader = torch.utils.data.DataLoader(train_set, batch_size = <span class="number">32</span>, shuffle = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> train_loader:</span><br><span class="line">    print(i[<span class="number">0</span>].shape) <span class="comment"># torch.Size([32, 3, 32, 32])</span></span><br><span class="line">    print(i[<span class="number">1</span>].shape) <span class="comment"># torch.Size([32]) </span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line"><span class="keyword">for</span> batch_idx, (data, target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    print(data.shape) <span class="comment"># 同上</span></span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<h1 id="各种处理-转换"><a href="#各种处理-转换" class="headerlink" title="各种处理/转换"></a>各种处理/转换</h1><h2 id="view"><a href="#view" class="headerlink" title="view"></a>view</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">img_pil =  Image.open(<span class="string">'./mnist/test/0/mnist_test_10.png'</span>)</span><br><span class="line">img_pil = img_pil.convert(<span class="string">'RGB'</span>)</span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">32</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">        mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">        std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">])</span><br><span class="line">img_pil = transform(img_pil)</span><br><span class="line">print(img_pil.shape) <span class="comment"># 3 32 32</span></span><br><span class="line">img_pil = img_pil.view(<span class="number">1</span>,img_pil.size(<span class="number">0</span>), img_pil.size(<span class="number">1</span>), img_pil.size(<span class="number">2</span>))</span><br><span class="line">print(img_pil.shape) <span class="comment"># 1 3 32 32</span></span><br></pre></td></tr></table></figure>
-<h2 id="transforms"><a href="#transforms" class="headerlink" title="transforms"></a>transforms</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision.transforms <span class="keyword">as</span> transforms</span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">    transforms.Resize(<span class="number">32</span>),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(</span><br><span class="line">    	mean=np.array([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>]),</span><br><span class="line">        std=np.array([<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])),</span><br><span class="line">])</span><br><span class="line">img_pil =  Image.open(<span class="string">'./mnist/test/0/mnist_test_10.png'</span>)</span><br><span class="line">img_pil = img_pil.convert(<span class="string">'RGB'</span>)</span><br><span class="line">img_pil = transform(img_pil)</span><br></pre></td></tr></table></figure>
-<h2 id="squeeze"><a href="#squeeze" class="headerlink" title="squeeze"></a>squeeze</h2><h2 id="unsqueeze"><a href="#unsqueeze" class="headerlink" title="unsqueeze"></a>unsqueeze</h2><h1 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h1><p><a href="https://blog.csdn.net/th_num/article/details/80783037" target="_blank" rel="noopener">https://blog.csdn.net/th_num/article/details/80783037</a></p>
-<h2 id="max"><a href="#max" class="headerlink" title="max"></a>max</h2><h2 id="eq"><a href="#eq" class="headerlink" title="eq"></a>eq</h2><h2 id="abs"><a href="#abs" class="headerlink" title="abs"></a>abs</h2><h2 id="sin"><a href="#sin" class="headerlink" title="sin"></a>sin</h2><h2 id="mean"><a href="#mean" class="headerlink" title="mean"></a>mean</h2><h1 id="深度学习运算"><a href="#深度学习运算" class="headerlink" title="深度学习运算"></a>深度学习运算</h1><h2 id="层"><a href="#层" class="headerlink" title="层"></a>层</h2><h3 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h3><h4 id="Conv（1d-2d-3d）"><a href="#Conv（1d-2d-3d）" class="headerlink" title="Conv（1d/2d/3d）"></a>Conv（1d/2d/3d）</h4><h4 id="ConvTranspose（1d-2d-3d）"><a href="#ConvTranspose（1d-2d-3d）" class="headerlink" title="ConvTranspose（1d/2d/3d）"></a>ConvTranspose（1d/2d/3d）</h4><h4 id="Unfold"><a href="#Unfold" class="headerlink" title="Unfold"></a>Unfold</h4><h4 id="fold"><a href="#fold" class="headerlink" title="fold"></a>fold</h4><h3 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h3><h4 id="MaxPool（1d-2d-3d）"><a href="#MaxPool（1d-2d-3d）" class="headerlink" title="MaxPool（1d/2d/3d）"></a>MaxPool（1d/2d/3d）</h4><h4 id="MaxUnpool（1d-2d-3d）"><a href="#MaxUnpool（1d-2d-3d）" class="headerlink" title="MaxUnpool（1d/2d/3d）"></a>MaxUnpool（1d/2d/3d）</h4><h4 id="AvgPool（1d-2d-3d）"><a href="#AvgPool（1d-2d-3d）" class="headerlink" title="AvgPool（1d/2d/3d）"></a>AvgPool（1d/2d/3d）</h4><h4 id="FractionalMaxPool2d"><a href="#FractionalMaxPool2d" class="headerlink" title="FractionalMaxPool2d"></a>FractionalMaxPool2d</h4><h4 id="LPPool（1d-2d）"><a href="#LPPool（1d-2d）" class="headerlink" title="LPPool（1d/2d）"></a>LPPool（1d/2d）</h4><h4 id="AdaptiveMaxPool（1d-2d-3d）"><a href="#AdaptiveMaxPool（1d-2d-3d）" class="headerlink" title="AdaptiveMaxPool（1d/2d/3d）"></a>AdaptiveMaxPool（1d/2d/3d）</h4><h4 id="AdaptiveAvgPool（1d-2d-3d）"><a href="#AdaptiveAvgPool（1d-2d-3d）" class="headerlink" title="AdaptiveAvgPool（1d/2d/3d）"></a>AdaptiveAvgPool（1d/2d/3d）</h4><h3 id="填充层"><a href="#填充层" class="headerlink" title="填充层"></a>填充层</h3><h4 id="ReflectionPad（1d-2d）"><a href="#ReflectionPad（1d-2d）" class="headerlink" title="ReflectionPad（1d/2d）"></a>ReflectionPad（1d/2d）</h4><h4 id="ReplicationPad（1d-2d-3d）"><a href="#ReplicationPad（1d-2d-3d）" class="headerlink" title="ReplicationPad（1d/2d/3d）"></a>ReplicationPad（1d/2d/3d）</h4><h4 id="ZeroPad2d"><a href="#ZeroPad2d" class="headerlink" title="ZeroPad2d"></a>ZeroPad2d</h4><h4 id="ConstantPad（1d-2d-3d）"><a href="#ConstantPad（1d-2d-3d）" class="headerlink" title="ConstantPad（1d/2d/3d）"></a>ConstantPad（1d/2d/3d）</h4><h3 id="激活层"><a href="#激活层" class="headerlink" title="激活层"></a>激活层</h3><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4><p>LeakyReLU</p>
-<p>PReLU</p>
-<p>ReLU6</p>
-<p>RReLU</p>
-<p>SELU</p>
-<p>CELU</p>
-<h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>LogSigmoid</p>
-<h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><p>Hardtanh</p>
-<p>Tanhshrink</p>
-<h4 id="Softplus"><a href="#Softplus" class="headerlink" title="Softplus"></a>Softplus</h4><h4 id="Softshrink"><a href="#Softshrink" class="headerlink" title="Softshrink"></a>Softshrink</h4><h4 id="Softsign"><a href="#Softsign" class="headerlink" title="Softsign"></a>Softsign</h4><h4 id="Threshold"><a href="#Threshold" class="headerlink" title="Threshold"></a>Threshold</h4><h4 id="ELU"><a href="#ELU" class="headerlink" title="ELU"></a>ELU</h4><h4 id="Hardshrink"><a href="#Hardshrink" class="headerlink" title="Hardshrink"></a>Hardshrink</h4><h3 id="末端激活层"><a href="#末端激活层" class="headerlink" title="末端激活层"></a>末端激活层</h3><h4 id="Softmin"><a href="#Softmin" class="headerlink" title="Softmin"></a>Softmin</h4><h4 id="Softmax（1d-2d）"><a href="#Softmax（1d-2d）" class="headerlink" title="Softmax（1d/2d）"></a>Softmax（1d/2d）</h4><h4 id="LogSoftmax"><a href="#LogSoftmax" class="headerlink" title="LogSoftmax"></a>LogSoftmax</h4><h4 id="AdaptiveLogSoftmaxWithLoss"><a href="#AdaptiveLogSoftmaxWithLoss" class="headerlink" title="AdaptiveLogSoftmaxWithLoss"></a>AdaptiveLogSoftmaxWithLoss</h4><h3 id="正则化层"><a href="#正则化层" class="headerlink" title="正则化层"></a>正则化层</h3><h4 id="BatchNorm（1d-2d-3d）"><a href="#BatchNorm（1d-2d-3d）" class="headerlink" title="BatchNorm（1d/2d/3d）"></a>BatchNorm（1d/2d/3d）</h4><h4 id="GroupNorm"><a href="#GroupNorm" class="headerlink" title="GroupNorm"></a>GroupNorm</h4><h4 id="InstanceNorm（1d-2d-3d）"><a href="#InstanceNorm（1d-2d-3d）" class="headerlink" title="InstanceNorm（1d/2d/3d）"></a>InstanceNorm（1d/2d/3d）</h4><h4 id="LayerNorm"><a href="#LayerNorm" class="headerlink" title="LayerNorm"></a>LayerNorm</h4><h4 id="LocalResponseNorm"><a href="#LocalResponseNorm" class="headerlink" title="LocalResponseNorm"></a>LocalResponseNorm</h4><h3 id="递归层"><a href="#递归层" class="headerlink" title="递归层"></a>递归层</h3><h4 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h4><h4 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h4><h4 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h4><p>以及各自的cell版本</p>
-<h3 id="线性层"><a href="#线性层" class="headerlink" title="线性层"></a>线性层</h3><h4 id="linear"><a href="#linear" class="headerlink" title="linear"></a>linear</h4><h4 id="bilinear"><a href="#bilinear" class="headerlink" title="bilinear"></a>bilinear</h4><h3 id="Dropout层"><a href="#Dropout层" class="headerlink" title="Dropout层"></a>Dropout层</h3><h4 id="Dropout（1d-2d-3d）"><a href="#Dropout（1d-2d-3d）" class="headerlink" title="Dropout（1d/2d/3d）"></a>Dropout（1d/2d/3d）</h4><h4 id="AlphaDropout"><a href="#AlphaDropout" class="headerlink" title="AlphaDropout"></a>AlphaDropout</h4><h3 id="稀疏层-嵌入层"><a href="#稀疏层-嵌入层" class="headerlink" title="稀疏层/嵌入层"></a>稀疏层/嵌入层</h3><h4 id="Embedding"><a href="#Embedding" class="headerlink" title="Embedding"></a>Embedding</h4><h4 id="EmbeddingBag"><a href="#EmbeddingBag" class="headerlink" title="EmbeddingBag"></a>EmbeddingBag</h4><h2 id="运算函数"><a href="#运算函数" class="headerlink" title="运算函数"></a>运算函数</h2><h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p><a href="https://blog.csdn.net/shanglianlm/article/details/85019768" target="_blank" rel="noopener">https://blog.csdn.net/shanglianlm/article/details/85019768</a></p>
-<p><a href="https://blog.csdn.net/jacke121/article/details/82812218" target="_blank" rel="noopener">https://blog.csdn.net/jacke121/article/details/82812218</a></p>
-<h4 id="L1Loss"><a href="#L1Loss" class="headerlink" title="L1Loss"></a>L1Loss</h4><h4 id="SmoothL1Loss"><a href="#SmoothL1Loss" class="headerlink" title="SmoothL1Loss"></a>SmoothL1Loss</h4><h4 id="MSELoss"><a href="#MSELoss" class="headerlink" title="MSELoss"></a>MSELoss</h4><h4 id="BCELoss"><a href="#BCELoss" class="headerlink" title="BCELoss"></a>BCELoss</h4><h4 id="CrossEntropyLoss"><a href="#CrossEntropyLoss" class="headerlink" title="CrossEntropyLoss"></a>CrossEntropyLoss</h4><h4 id="NLLLoss"><a href="#NLLLoss" class="headerlink" title="NLLLoss"></a>NLLLoss</h4><h4 id="NLLLoss2d"><a href="#NLLLoss2d" class="headerlink" title="NLLLoss2d"></a>NLLLoss2d</h4><h3 id="距离计算"><a href="#距离计算" class="headerlink" title="距离计算"></a>距离计算</h3><h4 id="CosineSimilarity"><a href="#CosineSimilarity" class="headerlink" title="CosineSimilarity"></a>CosineSimilarity</h4><h4 id="PairwiseDistance"><a href="#PairwiseDistance" class="headerlink" title="PairwiseDistance"></a>PairwiseDistance</h4><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><h3 id="calculate-gain"><a href="#calculate-gain" class="headerlink" title="calculate_gain"></a>calculate_gain</h3><h3 id="uniform"><a href="#uniform" class="headerlink" title="uniform_"></a>uniform_</h3><h3 id="normal"><a href="#normal" class="headerlink" title="normal_"></a>normal_</h3><h3 id="constant"><a href="#constant" class="headerlink" title="constant_"></a>constant_</h3><h3 id="eye"><a href="#eye" class="headerlink" title="eye_"></a>eye_</h3><h3 id="dirac"><a href="#dirac" class="headerlink" title="dirac_"></a>dirac_</h3><h3 id="xavieruniform"><a href="#xavieruniform" class="headerlink" title="xavieruniform"></a>xavier<em>uniform</em></h3><h3 id="xaviernormal"><a href="#xaviernormal" class="headerlink" title="xaviernormal"></a>xavier<em>normal</em></h3><h3 id="kaiminguniform"><a href="#kaiminguniform" class="headerlink" title="kaiminguniform"></a>kaiming<em>uniform</em></h3><h3 id="kaimingnormal"><a href="#kaimingnormal" class="headerlink" title="kaimingnormal"></a>kaiming<em>normal</em></h3><h3 id="orthogonal"><a href="#orthogonal" class="headerlink" title="orthogonal_"></a>orthogonal_</h3><h3 id="sparse"><a href="#sparse" class="headerlink" title="sparse_"></a>sparse_</h3><h2 id="avg-pool2d"><a href="#avg-pool2d" class="headerlink" title="avg_pool2d"></a>avg_pool2d</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">9</span>],[<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">outputs = nn.functional.avg_pool2d(inputs, <span class="number">2</span>)</span><br><span class="line">print(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[1., 2., 3., 4.],</span></span><br><span class="line"><span class="comment">#           [1., 5., 3., 4.],</span></span><br><span class="line"><span class="comment">#           [1., 2., 3., 9.],</span></span><br><span class="line"><span class="comment">#           [0., 2., 3., 4.]]]])</span></span><br><span class="line"><span class="comment"># tensor([[[[2.2500, 3.5000],</span></span><br><span class="line"><span class="comment">#           [1.2500, 4.7500]]]])</span></span><br></pre></td></tr></table></figure>
-<h2 id="Sigmoid-1"><a href="#Sigmoid-1" class="headerlink" title="Sigmoid"></a>Sigmoid</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">inputs = [[[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]]]</span><br><span class="line">inputs = torch.tensor(inputs, dtype=torch.float32) <span class="comment"># 类型转换</span></span><br><span class="line">model = nn.Sigmoid()</span><br><span class="line">outputs = model(inputs)</span><br><span class="line">print(outputs)</span><br><span class="line"><span class="comment"># tensor([[[[0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820],</span></span><br><span class="line"><span class="comment">#           [0.7311, 0.8808, 0.9526, 0.9820]]]])</span></span><br></pre></td></tr></table></figure>
-<h1 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h1><h2 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, weight_decay=l2_norm)</span><br></pre></td></tr></table></figure>
-<h3 id="momentum"><a href="#momentum" class="headerlink" title="momentum"></a>momentum</h3><h2 id="ASGD"><a href="#ASGD" class="headerlink" title="ASGD"></a>ASGD</h2><h2 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h2><h2 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a>Adadelta</h2><h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h2 id="Adamax"><a href="#Adamax" class="headerlink" title="Adamax"></a>Adamax</h2><h2 id="SparseAdam"><a href="#SparseAdam" class="headerlink" title="SparseAdam"></a>SparseAdam</h2><h2 id="LBFGS"><a href="#LBFGS" class="headerlink" title="LBFGS"></a>LBFGS</h2><h2 id="Rprop"><a href="#Rprop" class="headerlink" title="Rprop"></a>Rprop</h2><h1 id="内置经典网络"><a href="#内置经典网络" class="headerlink" title="内置经典网络"></a>内置经典网络</h1><h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><h2 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h2><h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><h2 id="SqueezeNet"><a href="#SqueezeNet" class="headerlink" title="SqueezeNet"></a>SqueezeNet</h2><h2 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h2><h2 id="Inception-v3"><a href="#Inception-v3" class="headerlink" title="Inception v3"></a>Inception v3</h2>
+<h1>keras</h1>
+<h2 id="preprocessing"><a class="header-anchor" href="#preprocessing">¶</a>preprocessing</h2>
+<h2 id="text-文本预处理"><a class="header-anchor" href="#text-文本预处理">¶</a>text(文本预处理)</h2>
+<p>关于Tokenizer的使用，需要自己看源码，官方文档没有Tokenizer的介绍，下面是一个使用例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.preprocessing <span class="keyword">import</span> text</span><br><span class="line"></span><br><span class="line">tokenizer = text.Tokenizer()</span><br></pre></td></tr></table></figure>
+<h1>tensorflow</h1>
+
           
         
       

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
 <meta property="og:description" content="[TOC] 决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。 主要的决策树算法有ID3、C4.5 (">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.539Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-决策树">
 <meta name="twitter:description" content="[TOC] 决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。 主要的决策树算法有ID3、C4.5 (">
@@ -302,10 +302,17 @@
         <p>[TOC]</p>
 <p>决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。</p>
 <p>主要的决策树算法有ID3、C4.5 (C5.0) 、CART、PUBLIC、SLIQ和SPRINT算法等。它们在选择测试属性采用的技术、生成的决策树的结构、剪枝的方法以及时刻，能否处理大数据集等方面都有各自的不同之处。</p>
-<h1 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h1><p>用的信息增益gain</p>
-<h1 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h1><p>用的信息增益率</p>
-<h1 id="剪枝方法"><a href="#剪枝方法" class="headerlink" title="剪枝方法"></a>剪枝方法</h1><h1 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h1><h2 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h2><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>用的gini</p>
-<h2 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h2><p>entropy，条件熵</p>
+<h1>ID3</h1>
+<p>用的信息增益gain</p>
+<h1>C4.5</h1>
+<p>用的信息增益率</p>
+<h1>剪枝方法</h1>
+<h1>CART</h1>
+<h2 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h2>
+<h2 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h2>
+<p>用的gini</p>
+<h2 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h2>
+<p>entropy，条件熵</p>
 <p>卡方自动交互检测（CHAID） Chi-squared Automatic Interaction Detection</p>
 <p>决策树桩/单层决策树 Decision stump</p>
 <p>SLIQ</p>
@@ -333,8 +340,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/深度学习-pytorch/" rel="next" title="深度学习-pytorch">
-                <i class="fa fa-chevron-left"></i> 深度学习-pytorch
+              <a href="/2019/03/08/深度学习-其他框架/" rel="next" title="深度学习-其他框架">
+                <i class="fa fa-chevron-left"></i> 深度学习-其他框架
               </a>
             
           </div>
@@ -477,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ID3"><span class="nav-number">1.</span> <span class="nav-text">ID3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C4-5"><span class="nav-number">2.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪枝方法"><span class="nav-number">3.</span> <span class="nav-text">剪枝方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CART"><span class="nav-number">4.</span> <span class="nav-text">CART</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回归"><span class="nav-number">4.1.</span> <span class="nav-text">回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪枝"><span class="nav-number">4.3.</span> <span class="nav-text">剪枝</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">ID3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">剪枝方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">CART</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回归"><span class="nav-number">4.1.</span> <span class="nav-text">¶回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">¶分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪枝"><span class="nav-number">4.3.</span> <span class="nav-text">¶剪枝</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 介绍集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以">
+<meta name="description" content="[TOC] 介绍 集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-集成学习">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-集成学习/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 介绍集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以">
+<meta property="og:description" content="[TOC] 介绍 集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.529Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-集成学习">
-<meta name="twitter:description" content="[TOC] 介绍集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以">
+<meta name="twitter:description" content="[TOC] 介绍 集成学习(Ensemble Learning) 实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。 集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可">
 
 
 
@@ -300,11 +300,27 @@
 
       
         <p>[TOC]</p>
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>集成学习(Ensemble Learning)</p>
+<h1>介绍</h1>
+<p>集成学习(Ensemble Learning)</p>
 <p>实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。</p>
 <p>集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。</p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="lightBGM"><a href="#lightBGM" class="headerlink" title="lightBGM"></a>lightBGM</h2><h2 id="Catboost"><a href="#Catboost" class="headerlink" title="Catboost"></a>Catboost</h2><h2 id="Extratree"><a href="#Extratree" class="headerlink" title="Extratree"></a>Extratree</h2><h2 id="Regularized-Greedy-Forest-RGF"><a href="#Regularized-Greedy-Forest-RGF" class="headerlink" title="Regularized Greedy Forest(RGF)"></a>Regularized Greedy Forest(RGF)</h2><h2 id="Gradient-Boosting"><a href="#Gradient-Boosting" class="headerlink" title="Gradient Boosting"></a>Gradient Boosting</h2><h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><h2 id="XGBOOST"><a href="#XGBOOST" class="headerlink" title="XGBOOST"></a>XGBOOST</h2><h2 id="Bootstrap-aggregating-Bagging"><a href="#Bootstrap-aggregating-Bagging" class="headerlink" title="Bootstrap aggregating (Bagging)"></a>Bootstrap aggregating (Bagging)</h2><h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><h2 id="深度森林"><a href="#深度森林" class="headerlink" title="深度森林"></a>深度森林</h2><h2 id="梯度提升机"><a href="#梯度提升机" class="headerlink" title="梯度提升机"></a>梯度提升机</h2><p>Gradient boosting machine(GBM)</p>
-<h2 id="梯度提升决策树"><a href="#梯度提升决策树" class="headerlink" title="梯度提升决策树"></a>梯度提升决策树</h2><p>Gradient boosted decision tree(GBRT)</p>
+<h1>算法</h1>
+<h2 id="lightbgm"><a class="header-anchor" href="#lightbgm">¶</a>lightBGM</h2>
+<h2 id="catboost"><a class="header-anchor" href="#catboost">¶</a>Catboost</h2>
+<h2 id="extratree"><a class="header-anchor" href="#extratree">¶</a>Extratree</h2>
+<h2 id="regularized-greedy-forest-rgf"><a class="header-anchor" href="#regularized-greedy-forest-rgf">¶</a>Regularized Greedy Forest(RGF)</h2>
+<h2 id="gradient-boosting"><a class="header-anchor" href="#gradient-boosting">¶</a>Gradient Boosting</h2>
+<h2 id="boosting"><a class="header-anchor" href="#boosting">¶</a>Boosting</h2>
+<h2 id="adaboost"><a class="header-anchor" href="#adaboost">¶</a>AdaBoost</h2>
+<h2 id="gbdt"><a class="header-anchor" href="#gbdt">¶</a>GBDT</h2>
+<h2 id="xgboost"><a class="header-anchor" href="#xgboost">¶</a>XGBOOST</h2>
+<h2 id="bootstrap-aggregating-bagging"><a class="header-anchor" href="#bootstrap-aggregating-bagging">¶</a>Bootstrap aggregating (Bagging)</h2>
+<h2 id="随机森林"><a class="header-anchor" href="#随机森林">¶</a>随机森林</h2>
+<h2 id="深度森林"><a class="header-anchor" href="#深度森林">¶</a>深度森林</h2>
+<h2 id="梯度提升机"><a class="header-anchor" href="#梯度提升机">¶</a>梯度提升机</h2>
+<p>Gradient boosting machine(GBM)</p>
+<h2 id="梯度提升决策树"><a class="header-anchor" href="#梯度提升决策树">¶</a>梯度提升决策树</h2>
+<p>Gradient boosted decision tree(GBRT)</p>
 
       
     </div>
@@ -473,7 +489,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法"><span class="nav-number">2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lightBGM"><span class="nav-number">2.1.</span> <span class="nav-text">lightBGM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Catboost"><span class="nav-number">2.2.</span> <span class="nav-text">Catboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extratree"><span class="nav-number">2.3.</span> <span class="nav-text">Extratree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regularized-Greedy-Forest-RGF"><span class="nav-number">2.4.</span> <span class="nav-text">Regularized Greedy Forest(RGF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Boosting"><span class="nav-number">2.5.</span> <span class="nav-text">Gradient Boosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boosting"><span class="nav-number">2.6.</span> <span class="nav-text">Boosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaBoost"><span class="nav-number">2.7.</span> <span class="nav-text">AdaBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT"><span class="nav-number">2.8.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBOOST"><span class="nav-number">2.9.</span> <span class="nav-text">XGBOOST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-aggregating-Bagging"><span class="nav-number">2.10.</span> <span class="nav-text">Bootstrap aggregating (Bagging)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林"><span class="nav-number">2.11.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度森林"><span class="nav-number">2.12.</span> <span class="nav-text">深度森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度提升机"><span class="nav-number">2.13.</span> <span class="nav-text">梯度提升机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度提升决策树"><span class="nav-number">2.14.</span> <span class="nav-text">梯度提升决策树</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lightbgm"><span class="nav-number">2.1.</span> <span class="nav-text">¶lightBGM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#catboost"><span class="nav-number">2.2.</span> <span class="nav-text">¶Catboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extratree"><span class="nav-number">2.3.</span> <span class="nav-text">¶Extratree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regularized-greedy-forest-rgf"><span class="nav-number">2.4.</span> <span class="nav-text">¶Regularized Greedy Forest(RGF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradient-boosting"><span class="nav-number">2.5.</span> <span class="nav-text">¶Gradient Boosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boosting"><span class="nav-number">2.6.</span> <span class="nav-text">¶Boosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adaboost"><span class="nav-number">2.7.</span> <span class="nav-text">¶AdaBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gbdt"><span class="nav-number">2.8.</span> <span class="nav-text">¶GBDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost"><span class="nav-number">2.9.</span> <span class="nav-text">¶XGBOOST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap-aggregating-bagging"><span class="nav-number">2.10.</span> <span class="nav-text">¶Bootstrap aggregating (Bagging)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林"><span class="nav-number">2.11.</span> <span class="nav-text">¶随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度森林"><span class="nav-number">2.12.</span> <span class="nav-text">¶深度森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度提升机"><span class="nav-number">2.13.</span> <span class="nav-text">¶梯度提升机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度提升决策树"><span class="nav-number">2.14.</span> <span class="nav-text">¶梯度提升决策树</span></a></li></ol></li></ol></div>
             
 
           </div>

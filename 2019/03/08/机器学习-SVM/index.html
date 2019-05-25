@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题核函数软间隔SV">
+<meta name="description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题 核函数 软间隔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-SVM">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-SVM/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题核函数软间隔SV">
+<meta property="og:description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题 核函数 软间隔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.523Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-SVM">
-<meta name="twitter:description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题核函数软间隔SV">
+<meta name="twitter:description" content="[TOC] 支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据结构风险最小化准则，以最大化分类间隔构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。 对偶问题 核函数 软间隔">
 
 
 
@@ -301,7 +301,11 @@
       
         <p>[TOC]</p>
 <p>支持向量机(SVM, Support Vector Machine)是Vapnik根据统计学习理论提出的一种新的学习方法，它的最大特点是根据<strong>结构风险最小化准则</strong>，以<strong>最大化分类间隔</strong>构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别。</p>
-<h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><h1 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h1><h1 id="软间隔"><a href="#软间隔" class="headerlink" title="软间隔"></a>软间隔</h1><h1 id="SVR"><a href="#SVR" class="headerlink" title="SVR"></a>SVR</h1><p>支持向量回归—&gt;可用线性或高斯核（RBF）</p>
+<h1>对偶问题</h1>
+<h1>核函数</h1>
+<h1>软间隔</h1>
+<h1>SVR</h1>
+<p>支持向量回归–&gt;可用线性或高斯核（RBF）</p>
 
       
     </div>
@@ -470,7 +474,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">1.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核函数"><span class="nav-number">2.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软间隔"><span class="nav-number">3.</span> <span class="nav-text">软间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVR"><span class="nav-number">4.</span> <span class="nav-text">SVR</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">软间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">SVR</span></a></li></ol></div>
             
 
           </div>

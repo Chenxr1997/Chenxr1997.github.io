@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 矩阵与方程组线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换定义，线性变换的矩阵表示，相似性 正交性Rn中的标量积，正交子空间，最小二乘问题，内积空间，正交集，格">
+<meta name="description" content="[TOC] 矩阵与方程组 线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式 克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间 定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换 定义，线性变换的矩阵表示，相似性 正交性 Rn中的标量积，正交子空间，最小二乘问题，内积空间，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-线性代数知识">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-线性代数知识/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 矩阵与方程组线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换定义，线性变换的矩阵表示，相似性 正交性Rn中的标量积，正交子空间，最小二乘问题，内积空间，正交集，格">
+<meta property="og:description" content="[TOC] 矩阵与方程组 线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式 克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间 定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换 定义，线性变换的矩阵表示，相似性 正交性 Rn中的标量积，正交子空间，最小二乘问题，内积空间，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.527Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-线性代数知识">
-<meta name="twitter:description" content="[TOC] 矩阵与方程组线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换定义，线性变换的矩阵表示，相似性 正交性Rn中的标量积，正交子空间，最小二乘问题，内积空间，正交集，格">
+<meta name="twitter:description" content="[TOC] 矩阵与方程组 线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵 行列式 克拉默法则，http://blog.csdn.net/vernice/article/details/48512203 向量空间 定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩 线性变换 定义，线性变换的矩阵表示，相似性 正交性 Rn中的标量积，正交子空间，最小二乘问题，内积空间，">
 
 
 
@@ -300,12 +300,18 @@
 
       
         <p>[TOC]</p>
-<h1 id="矩阵与方程组"><a href="#矩阵与方程组" class="headerlink" title="矩阵与方程组"></a>矩阵与方程组</h1><p>线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵</p>
-<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><p>克拉默法则，<a href="http://blog.csdn.net/vernice/article/details/48512203" target="_blank" rel="noopener">http://blog.csdn.net/vernice/article/details/48512203</a></p>
-<h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><p>定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩</p>
-<h1 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h1><p>定义，线性变换的矩阵表示，相似性</p>
-<h1 id="正交性"><a href="#正交性" class="headerlink" title="正交性"></a>正交性</h1><p>Rn中的标量积，正交子空间，最小二乘问题，内积空间，正交集，格拉姆施密特正交化过程，正交多项式，正交投影</p>
-<h1 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h1><p>特征值，特征向量，相似性</p>
+<h1>矩阵与方程组</h1>
+<p>线性方程组，行阶梯形，矩阵算术，矩阵代数，初等矩阵，分块矩阵，逆矩阵</p>
+<h1>行列式</h1>
+<p>克拉默法则，<a href="http://blog.csdn.net/vernice/article/details/48512203" target="_blank" rel="noopener">http://blog.csdn.net/vernice/article/details/48512203</a></p>
+<h1>向量空间</h1>
+<p>定义，子空间，线性无关，线性空间，基变换，行空间和列空间，秩</p>
+<h1>线性变换</h1>
+<p>定义，线性变换的矩阵表示，相似性</p>
+<h1>正交性</h1>
+<p>Rn中的标量积，正交子空间，最小二乘问题，内积空间，正交集，格拉姆施密特正交化过程，正交多项式，正交投影</p>
+<h1>特征值</h1>
+<p>特征值，特征向量，相似性</p>
 <p>奇异性，奇异值分解</p>
 <p>线性微分方程组</p>
 <p>对角化</p>
@@ -319,7 +325,8 @@
 <p>Jordan标准型</p>
 <p>特征值的位置与摄动</p>
 <p>gersgorin圆盘</p>
-<h1 id="向量-矩阵范数"><a href="#向量-矩阵范数" class="headerlink" title="向量/矩阵范数"></a>向量/矩阵范数</h1><p>内积和范数</p>
+<h1>向量/矩阵范数</h1>
+<p>内积和范数</p>
 <p>矩阵范数</p>
 <p>矩阵的秩</p>
 <p>矩阵的迹</p>
@@ -501,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵与方程组"><span class="nav-number">1.</span> <span class="nav-text">矩阵与方程组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行列式"><span class="nav-number">2.</span> <span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向量空间"><span class="nav-number">3.</span> <span class="nav-text">向量空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性变换"><span class="nav-number">4.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正交性"><span class="nav-number">5.</span> <span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值"><span class="nav-number">6.</span> <span class="nav-text">特征值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向量-矩阵范数"><span class="nav-number">7.</span> <span class="nav-text">向量/矩阵范数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">矩阵与方程组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">向量空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">特征值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">向量/矩阵范数</span></a></li></ol></div>
             
 
           </div>

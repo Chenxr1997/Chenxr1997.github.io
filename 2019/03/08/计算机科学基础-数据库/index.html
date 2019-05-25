@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q">
+<meta name="description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 ⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机科学基础-数据库">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/计算机科学基础-数据库/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q">
+<meta property="og:description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 ⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.532Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机科学基础-数据库">
-<meta name="twitter:description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q">
+<meta name="twitter:description" content="图数据库 http://blog.csdn.net/hzw05103020/article/details/51288992 也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。 ⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初">
 
 
 
@@ -302,10 +302,10 @@
         <p>图数据库</p>
 <p><a href="http://blog.csdn.net/hzw05103020/article/details/51288992" target="_blank" rel="noopener">http://blog.csdn.net/hzw05103020/article/details/51288992</a></p>
 <p>也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。</p>
-<p>　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
-<p>　　⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
-<p>　　⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
-<p>　　在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
+<p>⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
+<p>⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
+<p>⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
+<p>在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
 <p><a href="http://www.educity.cn/zk/sjkyl/201306141646051747.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141646051747.htm</a></p>
 <p><a href="http://www.educity.cn/zk/sjkyl/201306141542141835.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141542141835.htm</a></p>
 <p><a href="https://www.zhihu.com/question/24696366" target="_blank" rel="noopener">https://www.zhihu.com/question/24696366</a></p>

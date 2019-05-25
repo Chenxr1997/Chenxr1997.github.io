@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 基础int main(int argc, char **argv) 常用库stdio.hprintf scanf sprintf 输出缓存内容用fflush(stdout) stdlib.hatoi itoa(不是标准库里的) malloc string.h系统1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;gt;#incl">
+<meta name="description" content="[TOC] 基础 int main(int argc, char **argv) 常用库 ¶stdio.h printf scanf sprintf 输出缓存内容用fflush(stdout) ¶stdlib.h atoi itoa(不是标准库里的) malloc ¶string.h 系统 1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="程序语言-C">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/程序语言-C/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 基础int main(int argc, char **argv) 常用库stdio.hprintf scanf sprintf 输出缓存内容用fflush(stdout) stdlib.hatoi itoa(不是标准库里的) malloc string.h系统1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;gt;#incl">
+<meta property="og:description" content="[TOC] 基础 int main(int argc, char **argv) 常用库 ¶stdio.h printf scanf sprintf 输出缓存内容用fflush(stdout) ¶stdlib.h atoi itoa(不是标准库里的) malloc ¶string.h 系统 1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.525Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序语言-C">
-<meta name="twitter:description" content="[TOC] 基础int main(int argc, char **argv) 常用库stdio.hprintf scanf sprintf 输出缓存内容用fflush(stdout) stdlib.hatoi itoa(不是标准库里的) malloc string.h系统1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;gt;#incl">
+<meta name="twitter:description" content="[TOC] 基础 int main(int argc, char **argv) 常用库 ¶stdio.h printf scanf sprintf 输出缓存内容用fflush(stdout) ¶stdlib.h atoi itoa(不是标准库里的) malloc ¶string.h 系统 1234567#include &amp;lt;sys/shm.h&amp;gt;#include &amp;lt;errno.h&amp;">
 
 
 
@@ -300,15 +300,21 @@
 
       
         <p>[TOC]</p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>int main(int argc, char **argv)</p>
-<h1 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h1><h2 id="stdio-h"><a href="#stdio-h" class="headerlink" title="stdio.h"></a>stdio.h</h2><p>printf</p>
+<h1>基础</h1>
+<p>int main(int argc, char **argv)</p>
+<h1>常用库</h1>
+<h2 id="stdio-h"><a class="header-anchor" href="#stdio-h">¶</a>stdio.h</h2>
+<p>printf</p>
 <p>scanf</p>
 <p>sprintf</p>
 <p>输出缓存内容用fflush(stdout)</p>
-<h2 id="stdlib-h"><a href="#stdlib-h" class="headerlink" title="stdlib.h"></a>stdlib.h</h2><p>atoi</p>
+<h2 id="stdlib-h"><a class="header-anchor" href="#stdlib-h">¶</a>stdlib.h</h2>
+<p>atoi</p>
 <p>itoa(不是标准库里的)</p>
 <p>malloc</p>
-<h2 id="string-h"><a href="#string-h" class="headerlink" title="string.h"></a>string.h</h2><h1 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/shm.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/ipc.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="string-h"><a class="header-anchor" href="#string-h">¶</a>string.h</h2>
+<h1>系统</h1>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/shm.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/ipc.h&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>shmget //创建共享内存段</p>
 <p>shmat // 将共享内存段加入地址空间</p>
 <p>shmdt //从地址空间中分离共享内存</p>
@@ -337,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/程序语言-JavaScript/" rel="next" title="JavaScript">
-                <i class="fa fa-chevron-left"></i> JavaScript
+              <a href="/2019/03/08/程序语言-C++/" rel="next" title="程序语言-C++">
+                <i class="fa fa-chevron-left"></i> 程序语言-C++
               </a>
             
           </div>
@@ -347,8 +353,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/程序语言-C++/" rel="prev" title="程序语言-C++">
-                程序语言-C++ <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/开发工具-git/" rel="prev" title="开发工具-git/github">
+                开发工具-git/github <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +487,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用库"><span class="nav-number">2.</span> <span class="nav-text">常用库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stdio-h"><span class="nav-number">2.1.</span> <span class="nav-text">stdio.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stdlib-h"><span class="nav-number">2.2.</span> <span class="nav-text">stdlib.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-h"><span class="nav-number">2.3.</span> <span class="nav-text">string.h</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统"><span class="nav-number">3.</span> <span class="nav-text">系统</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">常用库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stdio-h"><span class="nav-number">2.1.</span> <span class="nav-text">¶stdio.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stdlib-h"><span class="nav-number">2.2.</span> <span class="nav-text">¶stdlib.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-h"><span class="nav-number">2.3.</span> <span class="nav-text">¶string.h</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">系统</span></a></li></ol></div>
             
 
           </div>

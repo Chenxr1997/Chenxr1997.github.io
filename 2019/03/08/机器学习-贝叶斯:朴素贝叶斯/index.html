@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
+<meta name="description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-贝叶斯&#x2F;朴素贝叶斯">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-贝叶斯:朴素贝叶斯/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
+<meta property="og:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:02:35.534Z">
+<meta property="og:updated_time" content="2019-05-25T17:10:24.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-贝叶斯&#x2F;朴素贝叶斯">
-<meta name="twitter:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
+<meta name="twitter:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 
 
 
@@ -300,13 +300,21 @@
 
       
         <p>[TOC]</p>
-<h1 id="朴素贝叶斯分类Naive-Bayes-Classifier"><a href="#朴素贝叶斯分类Naive-Bayes-Classifier" class="headerlink" title="朴素贝叶斯分类Naïve Bayes Classifier"></a>朴素贝叶斯分类Naïve Bayes Classifier</h1><p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的。</p>
-<h1 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h1><h1 id="高斯贝叶斯"><a href="#高斯贝叶斯" class="headerlink" title="高斯贝叶斯"></a>高斯贝叶斯</h1><p>Gaussian Naive Bayes</p>
-<h1 id="多项朴素贝叶斯"><a href="#多项朴素贝叶斯" class="headerlink" title="多项朴素贝叶斯"></a>多项朴素贝叶斯</h1><p>Multinomial Naive Bayes</p>
-<h1 id="平均一依赖性评估"><a href="#平均一依赖性评估" class="headerlink" title="平均一依赖性评估"></a>平均一依赖性评估</h1><p>Averaged One-Dependence Estimators</p>
-<h1 id="贝叶斯信念网络"><a href="#贝叶斯信念网络" class="headerlink" title="贝叶斯信念网络"></a>贝叶斯信念网络</h1><p>Bayesian Belief Network</p>
-<h1 id="贝叶斯网络"><a href="#贝叶斯网络" class="headerlink" title="贝叶斯网络"></a>贝叶斯网络</h1><p>Bayesian Network</p>
-<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1>
+<h1>朴素贝叶斯分类Naïve Bayes Classifier</h1>
+<p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的。</p>
+<h1>贝叶斯估计</h1>
+<h1>高斯贝叶斯</h1>
+<p>Gaussian Naive Bayes</p>
+<h1>多项朴素贝叶斯</h1>
+<p>Multinomial Naive Bayes</p>
+<h1>平均一依赖性评估</h1>
+<p>Averaged One-Dependence Estimators</p>
+<h1>贝叶斯信念网络</h1>
+<p>Bayesian Belief Network</p>
+<h1>贝叶斯网络</h1>
+<p>Bayesian Network</p>
+<h1>EM算法</h1>
+
       
     </div>
     
@@ -474,7 +482,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#朴素贝叶斯分类Naive-Bayes-Classifier"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯估计"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高斯贝叶斯"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多项朴素贝叶斯"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平均一依赖性评估"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯信念网络"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯网络"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM算法"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li></ol></div>
             
 
           </div>
