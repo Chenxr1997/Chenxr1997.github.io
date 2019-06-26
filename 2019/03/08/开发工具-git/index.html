@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] git ¶初始化/更新 初始化git项目 1git init 此时会在目录中创建一个 .git 隐藏文件夹 将本地仓库关联到远程仓库 1git remote add origin https://github.com/superRaytin/alipay-app-ui.git 可运行以下命令查看结果： 1git remote -v 或者从github上上面clone下来 1git cl">
+<meta name="description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发工具-git&#x2F;github">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/开发工具-git/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] git ¶初始化/更新 初始化git项目 1git init 此时会在目录中创建一个 .git 隐藏文件夹 将本地仓库关联到远程仓库 1git remote add origin https://github.com/superRaytin/alipay-app-ui.git 可运行以下命令查看结果： 1git remote -v 或者从github上上面clone下来 1git cl">
+<meta property="og:description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T17:48:27.508Z">
+<meta property="og:updated_time" content="2019-06-11T10:33:40.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发工具-git&#x2F;github">
-<meta name="twitter:description" content="[TOC] git ¶初始化/更新 初始化git项目 1git init 此时会在目录中创建一个 .git 隐藏文件夹 将本地仓库关联到远程仓库 1git remote add origin https://github.com/superRaytin/alipay-app-ui.git 可运行以下命令查看结果： 1git remote -v 或者从github上上面clone下来 1git cl">
+<meta name="twitter:description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
 
 
 
@@ -301,25 +301,7 @@
       
         <p>[TOC]</p>
 <h1>git</h1>
-<h2 id="初始化-更新"><a class="header-anchor" href="#初始化-更新">¶</a>初始化/更新</h2>
-<p>初始化git项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>此时会在目录中创建一个 <code>.git</code> 隐藏文件夹</p>
-<p>将本地仓库关联到远程仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/superRaytin/alipay-app-ui.git</span><br></pre></td></tr></table></figure>
-<p>可运行以下命令查看结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<p>或者从github上上面clone下来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sysu-change/Dashboard.git</span><br></pre></td></tr></table></figure>
-<p>从github上面更新文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <h2 id="提交"><a class="header-anchor" href="#提交">¶</a>提交</h2>
-<p>将所有文件放进新的本地 git 的缓存区</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-<p>如果你本地已经有 <code>.gitignore</code> 文件，会按照已有规则过滤不需要添加的文件。如果不想要添加所有文件，可以把 <code>.</code> 符号换成具体的文件名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add -A  提交所有变化</span><br><span class="line">git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</span><br><span class="line">git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</span><br><span class="line">git add config/esqueryconfig.php //提交某一个文件到本地缓存区</span><br></pre></td></tr></table></figure>
-<p><code>git status</code>命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。<code>git status</code>不显示已经<code>commit</code>到项目历史中去的信息。看项目历史的信息要使用<code>git log</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 <p>在git add 命令后撤销已经加入到暂存区的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD -- . 撤销所有</span><br><span class="line">git reset HEAD -- filename 撤销特定目标</span><br><span class="line">git rm -cached filepath 将文件从缓存中删除</span><br></pre></td></tr></table></figure>
 <p>将添加的文件提交到仓库</p>
@@ -336,22 +318,12 @@
 <p>恢复到历史版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></pre></td></tr></table></figure>
 <p>然后push后就可以把GitHub上面都代码回退了</p>
+<p><a href="https://blog.csdn.net/asoar/article/details/84111841" target="_blank" rel="noopener">https://blog.csdn.net/asoar/article/details/84111841</a></p>
 <h2 id="分支管理"><a class="header-anchor" href="#分支管理">¶</a>分支管理</h2>
-<p>查看分支和当前分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-<p>创建分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch branch_name</span><br></pre></td></tr></table></figure>
-<p>切换分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout branch_name</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.cnblogs.com/fatfatdachao/p/5597028.html" target="_blank" rel="noopener">https://www.cnblogs.com/fatfatdachao/p/5597028.html</a></p>
-<p>查看一个branch中有哪些文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ls-files</span><br></pre></td></tr></table></figure>
 <p>合并分支</p>
 <p><a href="http://baijiahao.baidu.com/s?id=1599307015836362675&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">http://baijiahao.baidu.com/s?id=1599307015836362675&amp;wfr=spider&amp;for=pc</a></p>
 <p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000</a></p>
-<p>从仓库中删除文件（但是物理上不删除）</p>
-<p><a href="https://blog.csdn.net/qq_37174526/article/details/86770976" target="_blank" rel="noopener">https://blog.csdn.net/qq_37174526/article/details/86770976</a></p>
-<p><a href="https://www.cnblogs.com/adeng/p/7026811.html" target="_blank" rel="noopener">https://www.cnblogs.com/adeng/p/7026811.html</a></p>
 <p>pull的冲突</p>
 <p><a href="https://blog.csdn.net/qq_34630887/article/details/78642522" target="_blank" rel="noopener">https://blog.csdn.net/qq_34630887/article/details/78642522</a></p>
 <h1>github</h1>
@@ -380,8 +352,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/程序语言-C++/" rel="next" title="程序语言-C++">
-                <i class="fa fa-chevron-left"></i> 程序语言-C++
+              <a href="/2019/03/08/程序语言-C/" rel="next" title="程序语言-C">
+                <i class="fa fa-chevron-left"></i> 程序语言-C
               </a>
             
           </div>
@@ -469,7 +441,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +496,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化-更新"><span class="nav-number">1.1.</span> <span class="nav-text">¶初始化/更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">1.2.</span> <span class="nav-text">¶提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">1.3.</span> <span class="nav-text">¶版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">1.4.</span> <span class="nav-text">¶分支管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">1.1.</span> <span class="nav-text">¶提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">1.2.</span> <span class="nav-text">¶版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">1.3.</span> <span class="nav-text">¶分支管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">github</span></a></li></ol></div>
             
 
           </div>
