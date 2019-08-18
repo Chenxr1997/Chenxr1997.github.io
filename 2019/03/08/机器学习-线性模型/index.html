@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="title: 机器学习-线性模型 [TOC] 回归分析线性回归 y = \theta^T x+b+\epsilon \\ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \\ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\\ 那么Y\thicksim N(\theta^T x,\sigma">
+<meta name="description" content="[TOC] 回归分析 ¶线性回归 $$ y = \theta^T x+b+\epsilon \ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\ 那么Y\thicksim N(\theta^T x,\sigma ^2)\ p(y|x) =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chenxr&#39;s blogs">
+<meta property="og:title" content="机器学习-线性模型">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-线性模型/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="title: 机器学习-线性模型 [TOC] 回归分析线性回归 y = \theta^T x+b+\epsilon \\ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \\ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\\ 那么Y\thicksim N(\theta^T x,\sigma">
+<meta property="og:description" content="[TOC] 回归分析 ¶线性回归 $$ y = \theta^T x+b+\epsilon \ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\ 那么Y\thicksim N(\theta^T x,\sigma ^2)\ p(y|x) =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/image-20190812135825778.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/1.png">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/6.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/7.png">
-<meta property="og:updated_time" content="2019-08-18T09:07:40.029Z">
+<meta property="og:updated_time" content="2019-08-18T09:54:49.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenxr&#39;s blogs">
-<meta name="twitter:description" content="title: 机器学习-线性模型 [TOC] 回归分析线性回归 y = \theta^T x+b+\epsilon \\ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \\ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\\ 那么Y\thicksim N(\theta^T x,\sigma">
+<meta name="twitter:title" content="机器学习-线性模型">
+<meta name="twitter:description" content="[TOC] 回归分析 ¶线性回归 $$ y = \theta^T x+b+\epsilon \ \epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \ 线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\ 那么Y\thicksim N(\theta^T x,\sigma ^2)\ p(y|x) =">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-线性模型/image-20190812135825778.png">
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title> | Chenxr's blogs</title>
+  <title>机器学习-线性模型 | Chenxr's blogs</title>
   
 
 
@@ -258,7 +258,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">机器学习-线性模型</h1>
         
 
         <div class="post-meta">
@@ -308,213 +308,313 @@
       
 
       
-        <p>title: 机器学习-线性模型</p>
-<p>[TOC]</p>
-<h1 id="回归分析"><a href="#回归分析" class="headerlink" title="回归分析"></a>回归分析</h1><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><script type="math/tex; mode=display">
-y = \theta^T x+b+\epsilon \\
-\epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \\
-线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\\
-那么Y\thicksim N(\theta^T x,\sigma ^2)\\
-p(y|x) = \frac{1}{\sigma \sqrt{2\pi}}\exp(-\frac{(y-\theta^T x)^2}{2\sigma^2})\\
-贝叶斯派Bayesian一般写为p(y|x,\theta,\sigma^2)\\
-频率学派Frequentist一般写为p_{\theta,\sigma^2}(y|x)\\</script><script type="math/tex; mode=display">
-对于独立同分布数据Independent \ and \ Identically \ Distributed    (iid)\\
-\mathcal D=\{(x_1,y1)...(x_i,yi)\}_{i=1}^n\\
-P(\mathcal D) = \prod_{i=1}^n p(x_i,y_i) = \prod_{i=1}^n p(x_i)p(y_i|x_i)\\
-可将数据集中的x视为矩阵X \in \mathbb R^{np},y视为向量Y\in \mathbb R^{n},\theta \in R^{p}
-那么开头的式子可以重写为Y=X\theta + \epsilon</script><h3 id="最小二乘法-模型"><a href="#最小二乘法-模型" class="headerlink" title="最小二乘法/模型"></a>最小二乘法/模型</h3><p>最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。</p>
+        <p>[TOC]</p>
+<h1>回归分析</h1>
+<h2 id="线性回归"><a class="header-anchor" href="#线性回归">¶</a>线性回归</h2>
+<p>$$<br>
+y = \theta^T x+b+\epsilon \<br>
+\epsilon表示noise,假设\epsilon \thicksim N(0,\sigma ^2) \<br>
+线性组合可以表示为\sum_{i=1}^{p+1} \theta_ix_i,其中x_{p+1}=1\<br>
+那么Y\thicksim N(\theta^T x,\sigma ^2)\<br>
+p(y|x) = \frac{1}{\sigma \sqrt{2\pi}}\exp(-\frac{(y-\theta^T x)<sup>2}{2\sigma</sup>2})\<br>
+贝叶斯派Bayesian一般写为p(y|x,\theta,\sigma^2)\<br>
+频率学派Frequentist一般写为p_{\theta,\sigma^2}(y|x)\<br>
+$$</p>
+<p>$$<br>
+对于独立同分布数据Independent \ and \ Identically \ Distributed	(iid)\<br>
+\mathcal D={(x_1,y1)…(x_i,yi)}<em>{i=1}^n\<br>
+P(\mathcal D) = \prod</em>{i=1}^n p(x_i,y_i) = \prod_{i=1}^n p(x_i)p(y_i|x_i)\<br>
+可将数据集中的x视为矩阵X \in \mathbb R^{np},y视为向量Y\in \mathbb R^{n},\theta \in R^{p}<br>
+那么开头的式子可以重写为Y=X\theta + \epsilon<br>
+$$</p>
+<h3 id="最小二乘法-模型"><a class="header-anchor" href="#最小二乘法-模型">¶</a>最小二乘法/模型</h3>
+<p>最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。</p>
 <p>使误差「所谓误差，当然是观察值与实际真实值的差量」平方和达到最小以寻求估计值的方法，就叫做最小二乘法，用最小二乘法得到的估计，叫做最小二乘估计。当然，取平方和作为目标函数只是众多可取的方法之一。</p>
 <p>最小二乘使得误差平方和最小，并在各个方程的误差之间建立了一种平衡，从而防止某一个极端误差取得支配地位 计算中只要求偏导后求解线性方程组，计算过程明确便捷 最小二乘可以导出算术平均值作为估计值 是一种数学的优化技术，通过求最小化平方误差来寻找最佳的函数匹配 假设现在有二维的观测数据(x1,y1),(x2,y2)…(xn,yn)(x1,y1),(x2,y2)…(xn,yn)，求y=a+bxy=a+bx的拟合。</p>
 <p>训练串行，运行并行</p>
-<h4 id="使用极大似然法分析"><a href="#使用极大似然法分析" class="headerlink" title="使用极大似然法分析"></a>使用极大似然法分析</h4><p>找出\theta，让概率最大</p>
+<h4 id="使用极大似然法分析"><a class="header-anchor" href="#使用极大似然法分析">¶</a>使用极大似然法分析</h4>
+<p>找出\theta，让概率最大</p>
 <p>分析法：使用求导方法</p>
-<p>迭代法：（随机）梯度下降</p>
-<script type="math/tex; mode=display">
-P(\mathcal D) = \prod_{i=1}^n p(x_i,y_i) \\
- = \prod_{i=1}^n p(x_i)p(y_i|x_i)\\
- = \prod_{i=1}^n p(x_i)\prod_{i=1}^np(y_i|x_i)第一项都是一样的，因此可省略\\
-\mathcal L(\theta|\mathcal D) = \prod_{i=1}^np(y_i|x_i)\\
- = \prod_{i=1}^n \frac{1}{\sigma \sqrt{2\pi}}\exp(-\frac{(y_i-\theta^T x_i)^2}{2\sigma^2})\\
- = \frac{1}{\sigma^n (2\pi)^{n/2}}\exp(-\frac{\sum_{i=1}^n(y_i-\theta^T x_i)^2}{2\sigma^2})\\</script><script type="math/tex; mode=display">
-我们想要\hat \theta_{MLE} = \arg \max_{\theta \in R^{p}}\mathcal L(\theta|\mathcal D)\\
-= \arg \max_{\theta \in R^{p}}\mathcal \log \mathcal L(\theta|\mathcal D) \\
- \log \mathcal L(\theta|\mathcal D) = -\log(\sigma^n (2\pi)^{n/2}) - \frac{\sum_{i=1}^n(y_i-\theta^T x_i)^2}{2\sigma^2}\\
-去掉常数项可得\\
-\log \mathcal L(\theta|\mathcal D) = - \sum_{i=1}^n(y_i-\theta^T x_i)^2\\
-\hat \theta_{MLE} = \arg \min_{\theta \in R^{p}} \sum_{i=1}^n(y_i-\theta^T x_i)^2</script><p>可以通过求梯度使其为0</p>
-<p><img src="/2019/03/08/机器学习-线性模型/image-20190812135825778.png" alt="image-20190812135825778"></p>
-<script type="math/tex; mode=display">
--\triangledown_\theta \log \mathcal L(\theta|\mathcal D) = \triangledown_\theta \sum_{i=1}^n(y_i-\theta^T x_i)^2 \\
-= -2\sum_{i=1}^n(y_i-\theta^T x_i)x_i\\
-= -2\sum_{i=1}^ny_ix_i + -2\sum_{i=1}^n(\theta^T x_i)x_i \\
-= -2X^TY + 2X^TX\theta</script><p>为了使得极大似然是凸的，计算二阶导数（Hessian）</p>
-<script type="math/tex; mode=display">
--\triangledown_\theta^2 \log \mathcal L(\theta|\mathcal D) = 2X^TX</script><p>如果X是满秩的，那么X^TX则是正定矩阵，那么可以让梯度为0，求得</p>
-<script type="math/tex; mode=display">
--\triangledown_\theta \log \mathcal L(\theta|\mathcal D) = -2X^TY + 2X^TX\theta = 0\\
-(X^TX)\hat \theta_{MLE} = X^TY\\
-\hat \theta_{MLE} = (X^TX)^{-1}X^TY</script><h4 id="使用几何的思想分析"><a href="#使用几何的思想分析" class="headerlink" title="使用几何的思想分析"></a>使用几何的思想分析</h4><p>对于计算</p>
-<script type="math/tex; mode=display">
-\hat Y = X\theta</script><p>我们可以视作\hat Y是X的列向量张成的空间（col(X)），因为误差，真实的Y不再这个空间中，因此需要找到一个合适的\theta，使得y - \hat y误差最小</p>
-<p>一种方法是找到Y在col(X)上的投影\hat y，由投影的性质可知y - \hat y垂直于col(X)，换句话说就是y - \hat y垂直于空间中的x1，x2，可得</p>
-<script type="math/tex; mode=display">
-(y-\hat y)^T x_1 = (y-X\hat \theta)^T x1= 0\\
-(y-\hat y)^T x_2 = (y-X\hat \theta)^T x2= 0\\</script><p>上式合并可得</p>
-<script type="math/tex; mode=display">
-(y-X\hat \theta)^TX = 0\\
-X^T(y-X\hat \theta) = 0\\
-X^Ty-X^TX\hat \theta = 0\\
-X^TX\hat \theta = X^Ty\\
-\theta = (X^TX)^{-1}X^Ty</script><h4 id="伪逆-Pseudo-Inverse"><a href="#伪逆-Pseudo-Inverse" class="headerlink" title="伪逆 Pseudo-Inverse"></a>伪逆 Pseudo-Inverse</h4><p>Moore-Penrose Psuedoinverse</p>
-<script type="math/tex; mode=display">
-X^\dagger = (X^TX)^{-1}X^T</script><p>而如果X是n*n矩阵，且可逆的话</p>
-<script type="math/tex; mode=display">
-X^\dagger = (X^TX)^{-1}X^T = X^{-1}(X^T)^{-1}X^T = X^{-1}</script><h4 id="计算MLE"><a href="#计算MLE" class="headerlink" title="计算MLE"></a>计算MLE</h4><script type="math/tex; mode=display">
-\hat \theta_{MLE} = (X^TX)^{-1}X^TY</script><p>一般来说不会直接计算X^TX的逆，计算代价太大</p>
-<h5 id="直接的方法"><a href="#直接的方法" class="headerlink" title="直接的方法"></a>直接的方法</h5><ul>
-<li><p>Cholesky分解 Cholesky factorization</p>
-<script type="math/tex; mode=display">
-  \mathtt{solve}_{\hat \theta_{\mathtt{MLE}}} (\underbrace{X^TX}_C) \hat \theta_{MLE} = \underbrace{X^TY}_d\\
-  计算对称矩阵:C = X^TX = \sum_{i=1}^nx_ix_i^T \quad O(np^2)\\
-  计算向量:d = X^TY = \sum_{i=1}^nx_iy_i \quad O(np)\\
-  Cholesky分解:LL^T = C \quad O(p^3) \quad L是下三角矩阵\\
-  \mathtt{Forward \ subs}:Lz = d \quad O(p^2)\\
-  \mathtt{Backward \ subs}:L^T\theta_{\mathtt{MLE}} = z \quad O(p^2)\\
-  \theta_{\mathtt{MLE}} \in \mathbb R^{p} \quad X \in \mathbb R^{np} \quad Y \in \mathbb R^{n} \quad C \in \mathbb R^{pp} \quad d \in \mathbb R^{p} \quad L \in \mathbb R^{pp} \quad z \in \mathbb R^{p}</script><p>  三角形矩阵等式求解，见<code>数学-数值方法</code></p>
-</li>
-<li><p>QR分解 QR factorization</p>
-</li>
-<li><p>分布式计算</p>
-</li>
-</ul>
-<h5 id="迭代的方法"><a href="#迭代的方法" class="headerlink" title="迭代的方法"></a>迭代的方法</h5><p>​    当n接近于p时，计算复杂度时O(n^3)，是不可接受的，因此需要用迭代的方法求解</p>
+<p>迭代法：（随机）梯度下降<br>
+$$<br>
+P(\mathcal D) = \prod_{i=1}^n p(x_i,y_i) \<br>
+= \prod_{i=1}^n p(x_i)p(y_i|x_i)\<br>
+= \prod_{i=1}^n p(x_i)\prod_{i=1}^np(y_i|x_i)第一项都是一样的，因此可省略\<br>
+\mathcal L(\theta|\mathcal D) = \prod_{i=1}^np(y_i|x_i)\<br>
+= \prod_{i=1}^n \frac{1}{\sigma \sqrt{2\pi}}\exp(-\frac{(y_i-\theta^T x_i)<sup>2}{2\sigma</sup>2})\<br>
+= \frac{1}{\sigma^n (2\pi)<sup>{n/2}}\exp(-\frac{\sum_{i=1}</sup>n(y_i-\theta^T x_i)<sup>2}{2\sigma</sup>2})\<br>
+$$</p>
+<p>$$<br>
+我们想要\hat \theta_{MLE} = \arg \max_{\theta \in R^{p}}\mathcal L(\theta|\mathcal D)\<br>
+= \arg \max_{\theta \in R^{p}}\mathcal \log \mathcal L(\theta|\mathcal D) \<br>
+\log \mathcal L(\theta|\mathcal D) = -\log(\sigma^n (2\pi)^{n/2}) - \frac{\sum_{i=1}<sup>n(y_i-\theta</sup>T x_i)<sup>2}{2\sigma</sup>2}\<br>
+去掉常数项可得\<br>
+\log \mathcal L(\theta|\mathcal D) = - \sum_{i=1}<sup>n(y_i-\theta</sup>T x_i)^2\<br>
+\hat \theta_{MLE} = \arg \min_{\theta \in R^{p}} \sum_{i=1}<sup>n(y_i-\theta</sup>T x_i)^2<br>
+$$</p>
+<p>可以通过求梯度使其为0</p>
+<p><img src="/2019/03/08/机器学习-线性模型/image-20190812135825778.png" alt="image-20190812135825778"><br>
+$$<br>
+-\triangledown_\theta \log \mathcal L(\theta|\mathcal D) = \triangledown_\theta \sum_{i=1}<sup>n(y_i-\theta</sup>T x_i)^2 \<br>
+= -2\sum_{i=1}<sup>n(y_i-\theta</sup>T x_i)x_i\<br>
+= -2\sum_{i=1}^ny_ix_i + -2\sum_{i=1}<sup>n(\theta</sup>T x_i)x_i \<br>
+= -2X^TY + 2X^TX\theta<br>
+$$<br>
+为了使得极大似然是凸的，计算二阶导数（Hessian）<br>
+$$<br>
+-\triangledown_\theta^2 \log \mathcal L(\theta|\mathcal D) = 2X^TX<br>
+$$<br>
+如果X是满秩的，那么X^TX则是正定矩阵，那么可以让梯度为0，求得<br>
+$$<br>
+-\triangledown_\theta \log \mathcal L(\theta|\mathcal D) = -2X^TY + 2X^TX\theta = 0\<br>
+(X^TX)\hat \theta_{MLE} = X^TY\<br>
+\hat \theta_{MLE} = (X<sup>TX)</sup>{-1}X^TY<br>
+$$</p>
+<h4 id="使用几何的思想分析"><a class="header-anchor" href="#使用几何的思想分析">¶</a>使用几何的思想分析</h4>
+<p>对于计算<br>
+$$<br>
+\hat Y = X\theta<br>
+$$<br>
+我们可以视作\hat Y是X的列向量张成的空间（col(X)），因为误差，真实的Y不再这个空间中，因此需要找到一个合适的\theta，使得y - \hat y误差最小</p>
+<p>一种方法是找到Y在col(X)上的投影\hat y，由投影的性质可知y - \hat y垂直于col(X)，换句话说就是y - \hat y垂直于空间中的x1，x2，可得<br>
+$$<br>
+(y-\hat y)^T x_1 = (y-X\hat \theta)^T x1= 0\<br>
+(y-\hat y)^T x_2 = (y-X\hat \theta)^T x2= 0\<br>
+$$<br>
+上式合并可得<br>
+$$<br>
+(y-X\hat \theta)^TX = 0\<br>
+X^T(y-X\hat \theta) = 0\<br>
+X<sup>Ty-X</sup>TX\hat \theta = 0\<br>
+X^TX\hat \theta = X^Ty\<br>
+\theta = (X<sup>TX)</sup>{-1}X^Ty<br>
+$$</p>
+<h4 id="伪逆-pseudo-inverse"><a class="header-anchor" href="#伪逆-pseudo-inverse">¶</a>伪逆 Pseudo-Inverse</h4>
+<p>Moore-Penrose Psuedoinverse<br>
+$$<br>
+X^\dagger = (X<sup>TX)</sup>{-1}X^T<br>
+$$<br>
+而如果X是n*n矩阵，且可逆的话<br>
+$$<br>
+X^\dagger = (X<sup>TX)</sup>{-1}X^T = X<sup>{-1}(X</sup>T)<sup>{-1}X</sup>T = X^{-1}<br>
+$$</p>
+<h4 id="计算mle"><a class="header-anchor" href="#计算mle">¶</a>计算MLE</h4>
+<p>$$<br>
+\hat \theta_{MLE} = (X<sup>TX)</sup>{-1}X^TY<br>
+$$</p>
+<p>一般来说不会直接计算X^TX的逆，计算代价太大</p>
+<h5 id="直接的方法"><a class="header-anchor" href="#直接的方法">¶</a>直接的方法</h5>
 <ul>
-<li><p>Krylov subspace methods</p>
+<li>
+<p>Cholesky分解 Cholesky factorization<br>
+$$<br>
+\mathtt{solve}<em>{\hat \theta</em>{\mathtt{MLE}}} (\underbrace{X^TX}<em>C) \hat \theta</em>{MLE} = \underbrace{X^TY}<em>d\<br>
+计算对称矩阵:C = X^TX = \sum</em>{i=1}<sup>nx_ix_i</sup>T \quad O(np^2)\<br>
+计算向量:d = X^TY = \sum_{i=1}^nx_iy_i \quad O(np)\<br>
+Cholesky分解:LL^T = C \quad O(p^3) \quad L是下三角矩阵\<br>
+\mathtt{Forward \ subs}:Lz = d \quad O(p^2)\<br>
+\mathtt{Backward \ subs}:L^T\theta_{\mathtt{MLE}} = z \quad O(p^2)\<br>
+\theta_{\mathtt{MLE}} \in \mathbb R^{p} \quad X \in \mathbb R^{np} \quad Y \in \mathbb R^{n} \quad C \in \mathbb R^{pp} \quad d \in \mathbb R^{p} \quad L \in \mathbb R^{pp} \quad z \in \mathbb R^{p}<br>
+$$<br>
+三角形矩阵等式求解，见<code>数学-数值方法</code></p>
 </li>
-<li><p>梯度下降 Gradient Descent</p>
-<script type="math/tex; mode=display">
-  从\tau到0,直到收敛\\
-  \theta^{(\tau+1)} = \theta^{(\tau)} - \rho(\tau)\triangledown_{\theta^{(\tau)}} \log \mathcal L(\theta^{(\tau)}|\mathcal D)\\
-  = \theta^{(\tau)} - \rho(\tau) \frac{1}{n} \sum_{i=1}^n(y_i-\theta^{(\tau)T} x_i)x_i \quad O(np) \quad 这里我怀疑是O(np^2) \\
-  \rho(\tau)是每一轮迭代的学习率</script></li>
-<li><p>随机梯度下降 Stochastic Gradient Descent</p>
-<script type="math/tex; mode=display">
-  随机选取一个i\\
-  \theta^{(\tau+1)} = \theta^{(\tau)} - \rho(\tau) (y_i-\theta^{(\tau)T} x_i)x_i \quad O(p) \quad 这里我怀疑是O(p^2)</script></li>
+<li>
+<p>QR分解 QR factorization</p>
+</li>
+<li>
+<p>分布式计算</p>
+</li>
 </ul>
-<h4 id="拟合非线性数据"><a href="#拟合非线性数据" class="headerlink" title="拟合非线性数据"></a>拟合非线性数据</h4><p>转换特征空间</p>
-<script type="math/tex; mode=display">
-使用非线性转换\phi:\mathbb R^{p} \rightarrow \mathbb R^{k} \\
-ex:\phi(x) = {1,x,x^2,...,x^k}
-还有样条函数splines, 径向基函数radial \ basis \ functions</script><p>可能会有过拟合，Bias-Variance Tradeoff见<code>数据科学-过(欠)拟合</code></p>
-<h4 id="方差和偏差分析（bias，variance）"><a href="#方差和偏差分析（bias，variance）" class="headerlink" title="方差和偏差分析（bias，variance）"></a>方差和偏差分析（bias，variance）</h4><p>Bias-Variance Tradeoff的基础见<code>数据科学-过(欠)拟合</code></p>
-<script type="math/tex; mode=display">
-f(x_*|D) = x_*^T\hat \theta_{MLE}\\
-假设h(x_*) = x_*^T\theta</script><script type="math/tex; mode=display">
-bias = h(x_*)-E_{D}[f(x_*|D)]\\
-= x_*^T\theta - E_{D}[x_*^T\hat \theta_{MLE}]\\
-= x_*^T\theta - E_{D}[x_*^T(X^TX)^{-1}X^TY]\\
-= x_*^T\theta - E_{D}[x_*^T(X^TX)^{-1}X^T(X\theta + \epsilon))]\\
-= x_*^T\theta - E_{D}[x_*^T(X^TX)^{-1}X^TX\theta + x_*^T(X^TX)^{-1}X^T\epsilon]\\
-= x_*^T\theta - E_{D}[x_*^T\theta + x_*^T(X^TX)^{-1}X^T\epsilon]\\
-= x_*^T\theta - x_*^T\theta + x_*^T(X^TX)^{-1}X^TE_{D}[\epsilon]\\
-= x_*^T\theta - x_*^T\theta\\
-= 0\\
-\hat \theta_{MLE} \ is \ unbiased(无偏估计)</script><script type="math/tex; mode=display">
-Var = E_{D}[(f(x_*|D)-E_D[f(x_*|D)])^2]\\
-= E_{D}[(x_*^T\hat \theta_{MLE}-x_*^T\theta)^2]\\
-= E_{D}[(x_*^T(X^TX)^{-1}X^TY-x_*^T\theta)^2]\\
-= E_{D}[(x_*^T(X^TX)^{-1}X^T(X\theta + \epsilon)-x_*^T\theta)^2]\\
-= E_{D}[(x_*^T\theta + x_*^T(X^TX)^{-1}X^T\epsilon -x_*^T\theta)^2]\\
-= E_{D}[(x_*^T(X^TX)^{-1}X^T\epsilon)^2]\\
-= E_{D}[(x_*^T(X^TX)^{-1}X^T\epsilon)(x_*^T(X^TX)^{-1}X^T\epsilon)]\\
-= E_{D}[x_*^T(X^TX)^{-1}X^T\epsilon \epsilon^T (x_*^T(X^TX)^{-1}X^T)^T]\\
-= x_*^T(X^TX)^{-1}X^T E_{D}[\epsilon \epsilon^T] (x_*^T(X^TX)^{-1}X^T)^T\\
-= x_*^T(X^TX)^{-1}X^T \sigma_\epsilon^2 (x_*^T(X^TX)^{-1}X^T)^T\\
-= x_*^T(X^TX)^{-1}X^T \sigma_\epsilon^2 X(x_*^T(X^TX)^{-1})^T\\
-= \sigma_\epsilon^2 x_*^T(X^TX)^{-1}X^T  X(x_*^T(X^TX)^{-1})^T\\
-= \sigma_\epsilon^2 x_*^T(x_*^T(X^TX)^{-1})^T\\
-= \sigma_\epsilon^2 x_*^T(X^TX)^{-1}x_*, \ 这里(X^TX)^{-1}是对称矩阵，因此不变</script><script type="math/tex; mode=display">
-如果假设x_i和x_*是N(0,1)分布的,那么\\
-E_{X,x_*}[Var] = \sigma_\epsilon^2 E_{X,x_*}[x_*^T(X^TX)^{-1}x_*]\\
-= \sigma_\epsilon^2 E_{X,x_*}[tr(x_*x_*^T(X^TX)^{-1})]\\
-= \sigma_\epsilon^2 tr(E_{X,x_*}[x_*x_*^T(X^TX)^{-1}])\\
-= \sigma_\epsilon^2 tr(E_{X,x_*}[x_*x_*^T]E_{X,x_*}[(X^TX)^{-1}])\\
-\approx \frac{\sigma_\epsilon^2}{n} tr(E_{X,x_*}[x_*x_*^T]) \ 注1 \\
-= \frac{\sigma_\epsilon^2}{n}p</script><script type="math/tex; mode=display">
-注1:关于这一步，我是这样理解的\\
-X \in \mathbb R^{np}\\
-(X^TX)_{ij} = \sum_{k=1}^nX^T_{ik}X_{kj}\\
-因为X_{ij}是N(0,1)分布的，且E(X^2) = D(X)+E(X)^2 = \sigma^2 + \mu^2，因此E[X^T_{ij}X_{ji}] = 1 \ 
-E[\sum_{j=1}^nX^T_{ij}X_{ji}] = n\\
-X^TX,(X^TX)^{-1} \in \mathbb R^{pp}\\
-设X^TX为A,(X^TX)^{-1}为B\\
-(AB)_{ii} = \sum_{k=1}^pA_{ik}B_{ki} = 1\\
-因为E[A_{ik}] = n,因此E[B_{ki}] = \frac{1}{np}\\
-设x_*x_*^T = C,根据E(X^2) = D(X)+E(X)^2 = \sigma^2 + \mu^2可知E[C_{ij}] = 1\\
-(CB)_{ii} = \sum_{k=1}^p C_{ik}B_{ki}, E[(CB)_{ii}] = \frac{1}{n}
-因此相比之前迹缩小到了\frac{1}{n}</script><p>因此，数据越多，方差越小；维度越大，方差越大</p>
-<h3 id="高斯-马尔可夫定理-Gauss-Markov-Theorem"><a href="#高斯-马尔可夫定理-Gauss-Markov-Theorem" class="headerlink" title="高斯-马尔可夫定理 Gauss-Markov Theorem"></a>高斯-马尔可夫定理 Gauss-Markov Theorem</h3><p><a href="https://www.jianshu.com/p/b49f28b1b98c" target="_blank" rel="noopener">https://www.jianshu.com/p/b49f28b1b98c</a></p>
+<h5 id="迭代的方法"><a class="header-anchor" href="#迭代的方法">¶</a>迭代的方法</h5>
+<p>​	当n接近于p时，计算复杂度时O(n^3)，是不可接受的，因此需要用迭代的方法求解</p>
+<ul>
+<li>
+<p>Krylov subspace methods</p>
+</li>
+<li>
+<p>梯度下降 Gradient Descent<br>
+$$<br>
+从\tau到0,直到收敛\<br>
+\theta^{(\tau+1)} = \theta^{(\tau)} - \rho(\tau)\triangledown_{\theta^{(\tau)}} \log \mathcal L(\theta^{(\tau)}|\mathcal D)\<br>
+= \theta^{(\tau)} - \rho(\tau) \frac{1}{n} \sum_{i=1}<sup>n(y_i-\theta</sup>{(\tau)T} x_i)x_i \quad O(np) \quad 这里我怀疑是O(np^2) \<br>
+\rho(\tau)是每一轮迭代的学习率<br>
+$$</p>
+</li>
+<li>
+<p>随机梯度下降 Stochastic Gradient Descent<br>
+$$<br>
+随机选取一个i\<br>
+\theta^{(\tau+1)} = \theta^{(\tau)} - \rho(\tau) (y_i-\theta^{(\tau)T} x_i)x_i \quad O§ \quad 这里我怀疑是O(p^2)<br>
+$$</p>
+</li>
+</ul>
+<h4 id="拟合非线性数据"><a class="header-anchor" href="#拟合非线性数据">¶</a>拟合非线性数据</h4>
+<p>转换特征空间<br>
+$$<br>
+使用非线性转换\phi:\mathbb R^{p} \rightarrow \mathbb R^{k} \<br>
+ex:\phi(x) = {1,x,x<sup>2,…,x</sup>k}<br>
+还有样条函数splines, 径向基函数radial \ basis \ functions<br>
+$$<br>
+可能会有过拟合，Bias-Variance Tradeoff见<code>数据科学-过(欠)拟合</code></p>
+<h4 id="方差和偏差分析-bias-variance"><a class="header-anchor" href="#方差和偏差分析-bias-variance">¶</a>方差和偏差分析（bias，variance）</h4>
+<p>Bias-Variance Tradeoff的基础见<code>数据科学-过(欠)拟合</code><br>
+$$<br>
+f(x_<em>|D) = x_</em>^T\hat \theta_{MLE}\<br>
+假设h(x_<em>) = x_</em>^T\theta<br>
+$$</p>
+<p>$$<br>
+bias = h(x_<em>)-E_{D}[f(x_</em>|D)]\<br>
+= x_<em>^T\theta - E_{D}[x_</em>^T\hat \theta_{MLE}]\<br>
+= x_<em>^T\theta - E_{D}[x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>TY]\<br>
+= x_<em>^T\theta - E_{D}[x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T(X\theta + \epsilon))]\<br>
+= x_<em>^T\theta - E_{D}[x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>TX\theta + x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon]\<br>
+= x_</em>^T\theta - E_{D}[x_<em>^T\theta + x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon]\<br>
+= x_<em>^T\theta - x_</em>^T\theta + x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>TE_{D}[\epsilon]\<br>
+= x_</em>^T\theta - x_*^T\theta\<br>
+= 0\<br>
+\hat \theta_{MLE} \ is \ unbiased(无偏估计)<br>
+$$</p>
+<p>$$<br>
+Var = E_{D}[(f(x_<em>|D)-E_D[f(x_</em>|D)])^2]\<br>
+= E_{D}[(x_<em>^T\hat \theta_{MLE}-x_</em><sup>T\theta)</sup>2]\<br>
+= E_{D}[(x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>TY-x_</em><sup>T\theta)</sup>2]\<br>
+= E_{D}[(x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T(X\theta + \epsilon)-x_</em><sup>T\theta)</sup>2]\<br>
+= E_{D}[(x_<em>^T\theta + x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon -x_<em><sup>T\theta)</sup>2]\<br>
+= E_{D}[(x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon)^2]\<br>
+= E_{D}[(x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon)(x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon)]\<br>
+= E_{D}[x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T\epsilon \epsilon^T (x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T)^T]\<br>
+= x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T E_{D}[\epsilon \epsilon^T] (x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T)^T\<br>
+= x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T \sigma_\epsilon^2 (x_</em><sup>T(X</sup>TX)<sup>{-1}X</sup>T)^T\<br>
+= x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T \sigma_\epsilon^2 X(x_</em><sup>T(X</sup>TX)<sup>{-1})</sup>T\<br>
+= \sigma_\epsilon^2 x_<em><sup>T(X</sup>TX)<sup>{-1}X</sup>T  X(x_</em><sup>T(X</sup>TX)<sup>{-1})</sup>T\<br>
+= \sigma_\epsilon^2 x_<em><sup>T(x_*</sup>T(X<sup>TX)</sup>{-1})^T\<br>
+= \sigma_\epsilon^2 x_</em><sup>T(X</sup>TX)^{-1}x_*, \ 这里(X<sup>TX)</sup>{-1}是对称矩阵，因此不变<br>
+$$</p>
+<p>$$<br>
+如果假设x_i和x_<em>是N(0,1)分布的,那么\<br>
+E_{X,x_</em>}[Var] = \sigma_\epsilon^2 E_{X,x_<em>}[x_</em><sup>T(X</sup>TX)^{-1}x_<em>]\<br>
+= \sigma_\epsilon^2 E_{X,x_</em>}[tr(x_<em>x_</em><sup>T(X</sup>TX)^{-1})]\<br>
+= \sigma_\epsilon^2 tr(E_{X,x_<em>}[x_<em>x_</em><sup>T(X</sup>TX)^{-1}])\<br>
+= \sigma_\epsilon^2 tr(E_{X,x_</em>}[x_<em>x_</em><sup>T]E_{X,x_*}[(X</sup>TX)^{-1}])\<br>
+\approx \frac{\sigma_\epsilon^2}{n} tr(E_{X,x_*}[x_<em>x_</em>^T]) \ 注1 \<br>
+= \frac{\sigma_\epsilon^2}{n}p<br>
+$$</p>
+<p>$$<br>
+注1:关于这一步，我是这样理解的\<br>
+X \in \mathbb R^{np}\<br>
+(X^TX)<em>{ij} = \sum</em>{k=1}<sup>nX</sup>T_{ik}X_{kj}\<br>
+因为X_{ij}是N(0,1)分布的，且E(X^2) = D(X)+E(X)^2 = \sigma^2 + \mu<sup>2，因此E[X</sup>T_{ij}X_{ji}] = 1 \<br>
+E[\sum_{j=1}<sup>nX</sup>T_{ij}X_{ji}] = n\<br>
+X<sup>TX,(X</sup>TX)^{-1} \in \mathbb R^{pp}\<br>
+设X<sup>TX为A,(X</sup>TX)^{-1}为B\<br>
+(AB)<em>{ii} = \sum</em>{k=1}^pA_{ik}B_{ki} = 1\<br>
+因为E[A_{ik}] = n,因此E[B_{ki}] = \frac{1}{np}\<br>
+设x_<em>x_</em>^T = C,根据E(X^2) = D(X)+E(X)^2 = \sigma^2 + \mu^2可知E[C_{ij}] = 1\<br>
+(CB)<em>{ii} = \sum</em>{k=1}^p C_{ik}B_{ki}, E[(CB)_{ii}] = \frac{1}{n}<br>
+因此相比之前迹缩小到了\frac{1}{n}<br>
+$$</p>
+<p>因此，数据越多，方差越小；维度越大，方差越大</p>
+<h3 id="高斯-马尔可夫定理-gauss-markov-theorem"><a class="header-anchor" href="#高斯-马尔可夫定理-gauss-markov-theorem">¶</a>高斯-马尔可夫定理 Gauss-Markov Theorem</h3>
+<p><a href="https://www.jianshu.com/p/b49f28b1b98c" target="_blank" rel="noopener">https://www.jianshu.com/p/b49f28b1b98c</a></p>
 <p>在线性回归模型中，如果误差满足零均值、同方差且互不相关，则回归系数的最佳线性无偏估计(BLUE, Best Linear unbiased estimator)就是普通最小二乘法估计。</p>
 <p>基本假设，DW检验，多重共线性，参数估计值方差</p>
 <p>线性回归，非线性回归non-Linear regression，logistic回归，岭回归，主成分回归</p>
-<p>回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测<br>线性回归分析：一元线性，多元线性，广义线性<br>非线性回归分析<br>困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理</p>
-<p>关系<br>函数关系：确定性关系，如</p>
-<script type="math/tex; mode=display">
-y = 10x + 5</script><p>相关关系：非确定性关系<br>使用相关系数去衡量线性相关的强弱：</p>
+<p>回归分析就是利用已知数据，产生拟合方程，从而对未知数据进行预测<br>
+线性回归分析：一元线性，多元线性，广义线性<br>
+非线性回归分析<br>
+困难：选定变量（多元），避免多重共线性，避免过拟合，检验模型是否合理</p>
+<p>关系<br>
+函数关系：确定性关系，如<br>
+$$<br>
+y = 10x + 5<br>
+$$<br>
+相关关系：非确定性关系<br>
+使用相关系数去衡量线性相关的强弱：</p>
 <p><img src="/2019/03/08/机器学习-线性模型/1.png" alt="1"></p>
 <p>区间范围是[-1,1]，绝对值越接近1，表示线性程度越高</p>
 <p>一元线性回归推导：</p>
-<p><img src="/2019/03/08/机器学习-线性模型/2.png" alt="2"><br>回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
-<p>多元回归方程，和一元的类似<br>在选择变量方面，多元回归分析可以采用的一种方法是逐步回归：<br>向前引入法：从一元回归开始，逐步增加变量，是指标达到最优为止<br>向后剔除法：从全变量回归方程开始，逐步删去某些变量，使指标值达到最优为止<br>逐步筛选法：综合上面两种方法<br>变量选择的评价指标：RSS（残差平方和），R^2（相关系数平方），AIC准则（Akaike information criterion）和BIC准则（Bayesian Information Criterion）</p>
+<p><img src="/2019/03/08/机器学习-线性模型/2.png" alt="2"><br>
+回归方法擅长内推插值，不擅长外推归纳，外推归纳用时间序列分析比较好</p>
+<p>多元回归方程，和一元的类似<br>
+在选择变量方面，多元回归分析可以采用的一种方法是逐步回归：<br>
+向前引入法：从一元回归开始，逐步增加变量，是指标达到最优为止<br>
+向后剔除法：从全变量回归方程开始，逐步删去某些变量，使指标值达到最优为止<br>
+逐步筛选法：综合上面两种方法<br>
+变量选择的评价指标：RSS（残差平方和），R^2（相关系数平方），AIC准则（Akaike information criterion）和BIC准则（Bayesian Information Criterion）</p>
 <p><img src="/2019/03/08/机器学习-线性模型/3.png" alt="3"></p>
-<p>哑变量/虚拟变量：将枚举变量变为离散型变量<br>比如男/女变为（1，0）和（0，1）</p>
-<p>回归诊断：<br>样本是否符合正态分布假设（正态分布检验）<br>是否存在离群值导致模型产生较大误差<br>线性模型是否合理（残差图判断）<br>误差是否满足独立性，等方差，正态分布等假设条件<br>是否存在多重共线性（通过计算特征根，kappa值发现多重共线性）</p>
+<p>哑变量/虚拟变量：将枚举变量变为离散型变量<br>
+比如男/女变为（1，0）和（0，1）</p>
+<p>回归诊断：<br>
+样本是否符合正态分布假设（正态分布检验）<br>
+是否存在离群值导致模型产生较大误差<br>
+线性模型是否合理（残差图判断）<br>
+误差是否满足独立性，等方差，正态分布等假设条件<br>
+是否存在多重共线性（通过计算特征根，kappa值发现多重共线性）</p>
 <p>多重共线性的发现：</p>
 <p><img src="/2019/03/08/机器学习-线性模型/4.png" alt="4"></p>
 <p><img src="/2019/03/08/机器学习-线性模型/5.png" alt="5"></p>
-<p>广义线性回归：<br>比如logistic回归：<br><img src="/2019/03/08/机器学习-线性模型/6.png" alt="6"></p>
+<p>广义线性回归：<br>
+比如logistic回归：<br>
+<img src="/2019/03/08/机器学习-线性模型/6.png" alt="6"></p>
 <p><img src="/2019/03/08/机器学习-线性模型/7.png" alt="7"></p>
-<h1 id="逻辑回归-Logistic-Regression"><a href="#逻辑回归-Logistic-Regression" class="headerlink" title="逻辑回归 Logistic Regression"></a>逻辑回归 Logistic Regression</h1><p>是判别式分类器Discriminative classifier</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><script type="math/tex; mode=display">
-设X为数据项目(x_1,...,x_n)，Y为分类标签,直接学习P(Y|X)\\
-再设W为权值(w_1,...,w_n)\\
-那么sigmoid \ function:\\
-P_0(X;W) = P(Y=0|X) = \frac{1}{1+e^{-W^TX}}\\
-P_1(X;W) = P(Y=1|X) = 1-\frac{1}{1+e^{-W^TX}}\\
-可得\log \frac{P_1(X;W)}{P_0(X;W)} = W^TX</script><h2 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h2><script type="math/tex; mode=display">
-可以使得训练数据的似然函数最大:\\
-W = {\arg \max}_W  \prod_l P(y_l;X_l,W)\\
-= {\arg \max}_W  \sum_l \ln P(y_l;X_l,W) \ 转为对数似然函数\\
-对于\sum_l \ln P(y_l;X_l,W),可以定义为l(W):\\
-l(W) = \sum_l y_l\ln P(y_l=1;X_l,W)+(1-y_l)\ln P(y_l=0;X_l,W)\\
-= \sum_l y_l \ln \frac{P(y_l=1;X_l,W)}{P(y_l=0;X_l,W)}+\ln P(y_l=0;X_l,W)\\
-= \sum_l y_l(w_0+\sum_{i=1}^nw_ix_{li})-\ln(1+e^{(w_0+\sum_{i=1}^nw_ix_{li})})</script><p>然而这里并没有一个(近似的)形式解来找到使l(W)最大的W</p>
-<p>一种方法就是使用梯度下降</p>
-<script type="math/tex; mode=display">
-\frac{\partial}{\partial w_i}l(W) = \sum_l y_lx_{li}-\frac{x_{li}e^{(w_0+\sum_{i=1}^nw_ix_{li})}}{1+e^{(w_0+\sum_{i=1}^nw_ix_{li})}}\\
-= \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))\\
-因此我们可以设出事参数W的所有参数为0，每次对每一个项进行更新:\\
-w_i = w_i+\eta \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))</script><h2 id="正则化Regularization"><a href="#正则化Regularization" class="headerlink" title="正则化Regularization"></a>正则化Regularization</h2><p>在逻辑回归中，当数据维数大且稀疏时，容易发生过拟合</p>
-<p>一种方法是使用正则化的方法</p>
-<script type="math/tex; mode=display">
-在对数似然中加入惩罚项:\\
-W = {\arg \max}_W  \sum_l \ln P(y_l;X_l,W) - \frac{\lambda}{2}||W^2||\\
-\frac{\partial}{\partial w_i}l(W) = \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W)) - \lambda w_i\\
-w_i = w_i+\eta \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))- \eta \lambda w_i</script><p>sigmoid函数</p>
+<h1>逻辑回归 Logistic Regression</h1>
+<p>是判别式分类器Discriminative classifier</p>
+<h2 id="概念"><a class="header-anchor" href="#概念">¶</a>概念</h2>
+<p>$$<br>
+设X为数据项目(x_1,…,x_n)，Y为分类标签,直接学习P(Y|X)\<br>
+再设W为权值(w_1,…,w_n)\<br>
+那么sigmoid \ function:\<br>
+P_0(X;W) = P(Y=0|X) = \frac{1}{1+e<sup>{-W</sup>TX}}\<br>
+P_1(X;W) = P(Y=1|X) = 1-\frac{1}{1+e<sup>{-W</sup>TX}}\<br>
+可得\log \frac{P_1(X;W)}{P_0(X;W)} = W^TX<br>
+$$</p>
+<h2 id="学习算法"><a class="header-anchor" href="#学习算法">¶</a>学习算法</h2>
+<p>$$<br>
+可以使得训练数据的似然函数最大:\<br>
+W = {\arg \max}<em>W  \prod_l P(y_l;X_l,W)\<br>
+= {\arg \max}<em>W  \sum_l \ln P(y_l;X_l,W) \ 转为对数似然函数\<br>
+对于\sum_l \ln P(y_l;X_l,W),可以定义为l(W):\<br>
+l(W) = \sum_l y_l\ln P(y_l=1;X_l,W)+(1-y_l)\ln P(y_l=0;X_l,W)\<br>
+= \sum_l y_l \ln \frac{P(y_l=1;X_l,W)}{P(y_l=0;X_l,W)}+\ln P(y_l=0;X_l,W)\<br>
+= \sum_l y_l(w_0+\sum</em>{i=1}<sup>nw_ix_{li})-\ln(1+e</sup>{(w_0+\sum</em>{i=1}^nw_ix_{li})})<br>
+$$</p>
+<p>然而这里并没有一个(近似的)形式解来找到使l(W)最大的W</p>
+<p>一种方法就是使用梯度下降<br>
+$$<br>
+\frac{\partial}{\partial w_i}l(W) = \sum_l y_lx_{li}-\frac{x_{li}e<sup>{(w_0+\sum_{i=1}</sup>nw_ix_{li})}}{1+e<sup>{(w_0+\sum_{i=1}</sup>nw_ix_{li})}}\<br>
+= \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))\<br>
+因此我们可以设出事参数W的所有参数为0，每次对每一个项进行更新:\<br>
+w_i = w_i+\eta \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))<br>
+$$</p>
+<h2 id="正则化regularization"><a class="header-anchor" href="#正则化regularization">¶</a>正则化Regularization</h2>
+<p>在逻辑回归中，当数据维数大且稀疏时，容易发生过拟合</p>
+<p>一种方法是使用正则化的方法<br>
+$$<br>
+在对数似然中加入惩罚项:\<br>
+W = {\arg \max}<em>W  \sum_l \ln P(y_l;X_l,W) - \frac{\lambda}{2}||W^2||\<br>
+\frac{\partial}{\partial w_i}l(W) = \sum_lx</em>{li}(y_l - \hat P(y_l=1;X_l,W)) - \lambda w_i\<br>
+w_i = w_i+\eta \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))- \eta \lambda w_i<br>
+$$</p>
+<p>sigmoid函数</p>
 <p>多项/多类别Logistic回归 Multinomial logistic regression</p>
 <p>Fisher的线性判别 Fisher’s linear discriminant</p>
 <p>感知 Perceptron（感知机）</p>
 <p>逻辑回归是一种分类的方法，主要用于二分类，从训练数据特征学习出一个0/1分类模型，以一个线性组合作为自变量，使用逻辑函数将自变量映射到(0,1)上，LR分类器实际上就是求解一组权值，带入逻辑函数中，得到一个类别为1和类别为0的概率。</p>
 <p>可以用梯度下降求解</p>
-<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><p>逻辑回归的模型本质上是一个线性回归模型，逻辑回归都是以线性回归为理论支持的。但线性回归模型无法做到sigmoid的非线性形式，sigmoid可以轻松处理0/1分类问题。</p>
-<p>逻辑回归和线性回归<br>逻辑回归是一个线性的二分类问题，主要是计算在某个样本特征下事件发生的概率</p>
+<h1>比较</h1>
+<p>逻辑回归的模型本质上是一个线性回归模型，逻辑回归都是以线性回归为理论支持的。但线性回归模型无法做到sigmoid的非线性形式，sigmoid可以轻松处理0/1分类问题。</p>
+<p>逻辑回归和线性回归<br>
+逻辑回归是一个线性的二分类问题，主要是计算在某个样本特征下事件发生的概率</p>
 <p>线性函数+sigmoid函数求得，这个线性和函数权重的特征值的累加以及加上偏置求出来的，所以训练其实就是在训练这个权重。</p>
 <p>所以求解问题就变成了这个最大似然函数的最优化问题，这里通常会采样随机梯度下降法和拟牛顿迭代法来进行优化</p>
 <p>如果类别之间是否互斥（比如音乐只能属于古典音乐、乡村音乐、摇滚月的一种）就用softmax 否则类别之前有联系（比如一首歌曲可能有影视原声，也可能包含人声，或者是舞曲），这个时候使用k个LR更为合适</p>
-<p>优缺点：<br>Logistic回归优点：</p>
-<p>实现简单；<br>分类时计算量非常小，速度很快，存储资源低；<br>缺点：</p>
-<p>容易欠拟合，一般准确度不太高<br>只能处理两分类问题（在此基础上衍生出来的softmax可以用于多分类），且必须线性可分；</p>
+<p>优缺点：<br>
+Logistic回归优点：</p>
+<p>实现简单；<br>
+分类时计算量非常小，速度很快，存储资源低；<br>
+缺点：</p>
+<p>容易欠拟合，一般准确度不太高<br>
+只能处理两分类问题（在此基础上衍生出来的softmax可以用于多分类），且必须线性可分；</p>
 
       
     </div>
@@ -683,7 +783,7 @@ w_i = w_i+\eta \sum_lx_{li}(y_l - \hat P(y_l=1;X_l,W))- \eta \lambda w_i</script
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回归分析"><span class="nav-number">1.</span> <span class="nav-text">回归分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法-模型"><span class="nav-number">1.1.1.</span> <span class="nav-text">最小二乘法/模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用极大似然法分析"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">使用极大似然法分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用几何的思想分析"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">使用几何的思想分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪逆-Pseudo-Inverse"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">伪逆 Pseudo-Inverse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算MLE"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">计算MLE</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#直接的方法"><span class="nav-number">1.1.1.4.1.</span> <span class="nav-text">直接的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代的方法"><span class="nav-number">1.1.1.4.2.</span> <span class="nav-text">迭代的方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拟合非线性数据"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">拟合非线性数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方差和偏差分析（bias，variance）"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">方差和偏差分析（bias，variance）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯-马尔可夫定理-Gauss-Markov-Theorem"><span class="nav-number">1.1.2.</span> <span class="nav-text">高斯-马尔可夫定理 Gauss-Markov Theorem</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归-Logistic-Regression"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归 Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习算法"><span class="nav-number">2.2.</span> <span class="nav-text">学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化Regularization"><span class="nav-number">2.3.</span> <span class="nav-text">正则化Regularization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较"><span class="nav-number">3.</span> <span class="nav-text">比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">回归分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.1.</span> <span class="nav-text">¶线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法-模型"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶最小二乘法/模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用极大似然法分析"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶使用极大似然法分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用几何的思想分析"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">¶使用几何的思想分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪逆-pseudo-inverse"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">¶伪逆 Pseudo-Inverse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算mle"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">¶计算MLE</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#直接的方法"><span class="nav-number">1.1.1.4.1.</span> <span class="nav-text">¶直接的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代的方法"><span class="nav-number">1.1.1.4.2.</span> <span class="nav-text">¶迭代的方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拟合非线性数据"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">¶拟合非线性数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方差和偏差分析-bias-variance"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">¶方差和偏差分析（bias，variance）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯-马尔可夫定理-gauss-markov-theorem"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶高斯-马尔可夫定理 Gauss-Markov Theorem</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归 Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">¶概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习算法"><span class="nav-number">2.2.</span> <span class="nav-text">¶学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化regularization"><span class="nav-number">2.3.</span> <span class="nav-text">¶正则化Regularization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">比较</span></a></li></ol></div>
             
 
           </div>

@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 训练误差和测试误差评价指标分类任务混淆矩阵 TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative 准确率accuracyAccuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR = PF / (F">
+<meta name="description" content="[TOC] 训练误差和测试误差 评价指标 ¶分类任务 ¶混淆矩阵  TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative ¶准确率accuracy Accuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-模型评估与选择">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-模型评估与选择/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 训练误差和测试误差评价指标分类任务混淆矩阵 TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative 准确率accuracyAccuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR = PF / (F">
+<meta property="og:description" content="[TOC] 训练误差和测试误差 评价指标 ¶分类任务 ¶混淆矩阵  TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative ¶准确率accuracy Accuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-模型评估与选择/image-20190811160925943.png">
@@ -98,7 +98,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-模型评估与选择">
-<meta name="twitter:description" content="[TOC] 训练误差和测试误差评价指标分类任务混淆矩阵 TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative 准确率accuracyAccuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR = PF / (F">
+<meta name="twitter:description" content="[TOC] 训练误差和测试误差 评价指标 ¶分类任务 ¶混淆矩阵  TP：真正例 true positive FP：假正例 false positive FN：假负例 false negative TN：真负例 true negative ¶准确率accuracy Accuracy = TP + TN / (TP + FN + FP + TN) TPR = TP / (TP + FN) FPR =">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png">
 
 
@@ -310,48 +310,73 @@
 
       
         <p>[TOC]</p>
-<h1 id="训练误差和测试误差"><a href="#训练误差和测试误差" class="headerlink" title="训练误差和测试误差"></a>训练误差和测试误差</h1><h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><h2 id="分类任务"><a href="#分类任务" class="headerlink" title="分类任务"></a>分类任务</h2><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png" alt="image-20190811155916124"></p>
+<h1>训练误差和测试误差</h1>
+<h1>评价指标</h1>
+<h2 id="分类任务"><a class="header-anchor" href="#分类任务">¶</a>分类任务</h2>
+<h3 id="混淆矩阵"><a class="header-anchor" href="#混淆矩阵">¶</a>混淆矩阵</h3>
+<p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png" alt="image-20190811155916124"></p>
 <p>TP：真正例 true positive</p>
 <p>FP：假正例 false positive</p>
 <p>FN：假负例 false negative</p>
 <p>TN：真负例 true negative</p>
-<h3 id="准确率accuracy"><a href="#准确率accuracy" class="headerlink" title="准确率accuracy"></a>准确率accuracy</h3><p>Accuracy = TP + TN / (TP + FN + FP + TN)</p>
+<h3 id="准确率accuracy"><a class="header-anchor" href="#准确率accuracy">¶</a>准确率accuracy</h3>
+<p>Accuracy = TP + TN / (TP + FN + FP + TN)</p>
 <p>TPR = TP / (TP + FN)</p>
 <p>FPR = PF / (FP + TN)</p>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<h4 id="问题"><a class="header-anchor" href="#问题">¶</a>问题</h4>
+<ul>
 <li>可能负例占绝大多数</li>
 </ul>
-<h3 id="识别准确率presion-amp-amp-召回率recall"><a href="#识别准确率presion-amp-amp-召回率recall" class="headerlink" title="识别准确率presion &amp;&amp; 召回率recall"></a>识别准确率presion &amp;&amp; 召回率recall</h3><p>准确率（查准率）presion：TP / (TP + FP)</p>
+<h3 id="识别准确率presion-召回率recall"><a class="header-anchor" href="#识别准确率presion-召回率recall">¶</a>识别准确率presion &amp;&amp; 召回率recall</h3>
+<p>准确率（查准率）presion：TP / (TP + FP)</p>
 <p>召回率（召回率）recall：TP / (TP + FN)</p>
-<h4 id="准确率和召回率的权衡"><a href="#准确率和召回率的权衡" class="headerlink" title="准确率和召回率的权衡"></a>准确率和召回率的权衡</h4><p>很多情况下，可以根据预测结果对样例排序，排在前面的认为是最可能的正例，排在后面的则是认为最不可能是正例子的样本。按照这个顺序逐个把样例加进正例预测集中，可以计算出当前的准确率和召回率，以此做图，可得到准确率-召回率曲线</p>
+<h4 id="准确率和召回率的权衡"><a class="header-anchor" href="#准确率和召回率的权衡">¶</a>准确率和召回率的权衡</h4>
+<p>很多情况下，可以根据预测结果对样例排序，排在前面的认为是最可能的正例，排在后面的则是认为最不可能是正例子的样本。按照这个顺序逐个把样例加进正例预测集中，可以计算出当前的准确率和召回率，以此做图，可得到准确率-召回率曲线</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811160925943.png" alt="image-20190811160925943"></p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811161219405.png" alt="image-20190811161219405"></p>
-<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
+<h4 id="问题-v2"><a class="header-anchor" href="#问题-v2">¶</a>问题</h4>
+<ul>
 <li>信息检索中，不能知道所有的相关文档，也不一定知道那些文档是相关的；准确率容易测，但召回率不容易测</li>
 <li>需要一个严格的排序</li>
 </ul>
-<h3 id="F1度量-F1-measure"><a href="#F1度量-F1-measure" class="headerlink" title="F1度量 F1-measure"></a>F1度量 F1-measure</h3><p>F = 2/((1/R)+(1/P)) = 2RP/(R+P) =2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
+<h3 id="f1度量-f1-measure"><a class="header-anchor" href="#f1度量-f1-measure">¶</a>F1度量 F1-measure</h3>
+<p>F = 2/((1/R)+(1/P)) = 2RP/(R+P) =2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
 <p>F介于0到1，当为1是，把所有正例都选中了，且只选了正确的正例，0是没有一个真正例</p>
-<h3 id="E-measure"><a href="#E-measure" class="headerlink" title="E-measure"></a>E-measure</h3><script type="math/tex; mode=display">
-E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}</script><p>b表示在P和R之间的权衡</p>
-<h2 id="排序相关-Rank-Based-Measures"><a href="#排序相关-Rank-Based-Measures" class="headerlink" title="排序相关 Rank-Based Measures"></a>排序相关 Rank-Based Measures</h2><h3 id="二元相关-Binary-relevance"><a href="#二元相关-Binary-relevance" class="headerlink" title="二元相关 Binary relevance"></a>二元相关 Binary relevance</h3><h4 id="Precision-K-P-K"><a href="#Precision-K-P-K" class="headerlink" title="Precision@K (P@K)"></a>Precision@K (P@K)</h4><p>设置一个阈值K，在前K个检索内容中，计算precision</p>
+<h3 id="e-measure"><a class="header-anchor" href="#e-measure">¶</a>E-measure</h3>
+<p>$$<br>
+E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}<br>
+$$</p>
+<p>b表示在P和R之间的权衡</p>
+<h2 id="排序相关-rank-based-measures"><a class="header-anchor" href="#排序相关-rank-based-measures">¶</a>排序相关 Rank-Based Measures</h2>
+<h3 id="二元相关-binary-relevance"><a class="header-anchor" href="#二元相关-binary-relevance">¶</a>二元相关 Binary relevance</h3>
+<h4 id="precision-k-p-k"><a class="header-anchor" href="#precision-k-p-k">¶</a>Precision@K (P@K)</h4>
+<p>设置一个阈值K，在前K个检索内容中，计算precision</p>
 <p>同理还有Recall@K</p>
-<h4 id="Mean-Average-Precision-MAP"><a href="#Mean-Average-Precision-MAP" class="headerlink" title="Mean Average Precision (MAP)"></a>Mean Average Precision (MAP)</h4><h5 id="Average-Precision"><a href="#Average-Precision" class="headerlink" title="Average Precision"></a>Average Precision</h5><p>考虑在正例出现的位置中，计算P@K，然后计算平均值</p>
+<h4 id="mean-average-precision-map"><a class="header-anchor" href="#mean-average-precision-map">¶</a>Mean Average Precision (MAP)</h4>
+<h5 id="average-precision"><a class="header-anchor" href="#average-precision">¶</a>Average Precision</h5>
+<p>考虑在正例出现的位置中，计算P@K，然后计算平均值</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811164517274.png" alt="image-20190811164517274"></p>
 <p>而MAP就是在所有查询中，average precision的平均值</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811164809517.png" alt="image-20190811164809517"></p>
-<h4 id="平均倒数排名-Mean-Reciprocal-Rank-MRR"><a href="#平均倒数排名-Mean-Reciprocal-Rank-MRR" class="headerlink" title="平均倒数排名 Mean Reciprocal Rank (MRR)"></a>平均倒数排名 Mean Reciprocal Rank (MRR)</h4><p>RR = 1/K，K是排序中第一个正例出现的位置</p>
+<h4 id="平均倒数排名-mean-reciprocal-rank-mrr"><a class="header-anchor" href="#平均倒数排名-mean-reciprocal-rank-mrr">¶</a>平均倒数排名 Mean Reciprocal Rank (MRR)</h4>
+<p>RR = 1/K，K是排序中第一个正例出现的位置</p>
 <p>MRR就是RR的平均值</p>
-<h4 id="H-10"><a href="#H-10" class="headerlink" title="H@10"></a>H@10</h4><h3 id="多层次相关-Multiple-levels-of-relevance"><a href="#多层次相关-Multiple-levels-of-relevance" class="headerlink" title="多层次相关 Multiple levels of relevance"></a>多层次相关 Multiple levels of relevance</h3><h4 id="Discounted-Cumulative-Gain-DCG"><a href="#Discounted-Cumulative-Gain-DCG" class="headerlink" title="Discounted Cumulative Gain (DCG)"></a>Discounted Cumulative Gain (DCG)</h4><p>需要一个grade来评价一个item的好坏（比如相关度）</p>
+<h4 id="h-10"><a class="header-anchor" href="#h-10">¶</a>H@10</h4>
+<h3 id="多层次相关-multiple-levels-of-relevance"><a class="header-anchor" href="#多层次相关-multiple-levels-of-relevance">¶</a>多层次相关 Multiple levels of relevance</h3>
+<h4 id="discounted-cumulative-gain-dcg"><a class="header-anchor" href="#discounted-cumulative-gain-dcg">¶</a>Discounted Cumulative Gain (DCG)</h4>
+<p>需要一个grade来评价一个item的好坏（比如相关度）</p>
 <p>Cumulative Gain (CG)</p>
 <p>在1-n的排名中，CG = r1+r2+…+rn，r为grade</p>
-<p>Discounted Cumulative Gain (DCG) </p>
+<p>Discounted Cumulative Gain (DCG)</p>
 <p>DCG = r1 + r2 / log2 + r3 / log3 + … + rn / logn</p>
 <p>或者分子可以为2^r，这样更强调最前面的item的grade</p>
-<h5 id="Normalized-Discounted-Cumulative-Gain-NDCG"><a href="#Normalized-Discounted-Cumulative-Gain-NDCG" class="headerlink" title="Normalized Discounted Cumulative Gain(NDCG)"></a>Normalized Discounted Cumulative Gain(NDCG)</h5><p>NDCG = DCG/IDCG</p>
+<h5 id="normalized-discounted-cumulative-gain-ndcg"><a class="header-anchor" href="#normalized-discounted-cumulative-gain-ndcg">¶</a>Normalized Discounted Cumulative Gain(NDCG)</h5>
+<p>NDCG = DCG/IDCG</p>
 <p>其中IDCG是所有情况中，最大的DCG，即按照grade从大到小排列的结果</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811170555392.png" alt="image-20190811170555392"></p>
-<h2 id="序列相关-sequence"><a href="#序列相关-sequence" class="headerlink" title="序列相关 sequence"></a>序列相关 sequence</h2><h3 id="ROUGE-Recall-Oriented-Understudy-for-Gisting-Evaluation"><a href="#ROUGE-Recall-Oriented-Understudy-for-Gisting-Evaluation" class="headerlink" title="ROUGE (Recall-Oriented Understudy for Gisting Evaluation)"></a>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h3><p>生成式摘要的评价标准</p>
+<h2 id="序列相关-sequence"><a class="header-anchor" href="#序列相关-sequence">¶</a>序列相关 sequence</h2>
+<h3 id="rouge-recall-oriented-understudy-for-gisting-evaluation"><a class="header-anchor" href="#rouge-recall-oriented-understudy-for-gisting-evaluation">¶</a>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h3>
+<p>生成式摘要的评价标准</p>
 <p>ROUGE-N: 将句子分为一组N-gram，来将生成的和参考摘要进行比较</p>
 <p>比如生成的摘要：</p>
 <p>the cat was found under the bed</p>
@@ -361,40 +386,65 @@ E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}</script><p>b表示在P和R之间
 <p>the cat，cat was，was found，found under，under the，the bed</p>
 <p>参考摘要的bi-grams为</p>
 <p>the cat，cat was，was under，under the，the bed</p>
-<p>因此</p>
-<script type="math/tex; mode=display">
-ROUGE_{Precision} = \frac{4}{6} = 0.67</script><h2 id="误差类"><a href="#误差类" class="headerlink" title="误差类"></a>误差类</h2><h3 id="R-2"><a href="#R-2" class="headerlink" title="R^2"></a>R^2</h3><p>一般用于线性回归</p>
-<script type="math/tex; mode=display">
-R^2 = 1 - \frac {\sum(y_i-f_i)^2}{\sum(y_i-\bar y_i)^2}</script><h3 id="绝对误差，相对误差"><a href="#绝对误差，相对误差" class="headerlink" title="绝对误差，相对误差"></a>绝对误差，相对误差</h3><h3 id="平均绝对误差-mean-absolute-error-MAE"><a href="#平均绝对误差-mean-absolute-error-MAE" class="headerlink" title="平均绝对误差 mean absolute error MAE"></a>平均绝对误差 mean absolute error MAE</h3><h3 id="均方误差-mean-squared-error-MSE"><a href="#均方误差-mean-squared-error-MSE" class="headerlink" title="均方误差 mean squared error MSE"></a>均方误差 mean squared error MSE</h3><h3 id="均方根误差-root-mean-squared-error-RMSE"><a href="#均方根误差-root-mean-squared-error-RMSE" class="headerlink" title="均方根误差 root mean squared error RMSE"></a>均方根误差 root mean squared error RMSE</h3><h3 id="平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><a href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）" class="headerlink" title="平均绝对百分误差（mean absolute percentage error MAPE）"></a>平均绝对百分误差（mean absolute percentage error MAPE）</h3><h2 id="Kappa统计"><a href="#Kappa统计" class="headerlink" title="Kappa统计"></a>Kappa统计</h2><h2 id="AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><a href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic" class="headerlink" title="AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)"></a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h2><p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
-<h2 id="A-B-test显著性检验"><a href="#A-B-test显著性检验" class="headerlink" title="A/B-test显著性检验"></a>A/B-test显著性检验</h2><h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><p>目的：检验模型是否有比较好的泛化能力</p>
+<p>因此<br>
+$$<br>
+ROUGE_{Precision} = \frac{4}{6} = 0.67<br>
+$$</p>
+<h2 id="误差类"><a class="header-anchor" href="#误差类">¶</a>误差类</h2>
+<h3 id="r-2"><a class="header-anchor" href="#r-2">¶</a>R^2</h3>
+<p>一般用于线性回归<br>
+$$<br>
+R^2 = 1 - \frac {\sum(y_i-f_i)^2}{\sum(y_i-\bar y_i)^2}<br>
+$$</p>
+<h3 id="绝对误差-相对误差"><a class="header-anchor" href="#绝对误差-相对误差">¶</a>绝对误差，相对误差</h3>
+<h3 id="平均绝对误差-mean-absolute-error-mae"><a class="header-anchor" href="#平均绝对误差-mean-absolute-error-mae">¶</a>平均绝对误差 mean absolute error MAE</h3>
+<h3 id="均方误差-mean-squared-error-mse"><a class="header-anchor" href="#均方误差-mean-squared-error-mse">¶</a>均方误差 mean squared error MSE</h3>
+<h3 id="均方根误差-root-mean-squared-error-rmse"><a class="header-anchor" href="#均方根误差-root-mean-squared-error-rmse">¶</a>均方根误差 root mean squared error RMSE</h3>
+<h3 id="平均绝对百分误差-mean-absolute-percentage-error-mape"><a class="header-anchor" href="#平均绝对百分误差-mean-absolute-percentage-error-mape">¶</a>平均绝对百分误差（mean absolute percentage error MAPE）</h3>
+<h2 id="kappa统计"><a class="header-anchor" href="#kappa统计">¶</a>Kappa统计</h2>
+<h2 id="auc-area-under-roc-curve-roc-receiver-operating-characteristic"><a class="header-anchor" href="#auc-area-under-roc-curve-roc-receiver-operating-characteristic">¶</a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h2>
+<p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
+<h2 id="a-b-test显著性检验"><a class="header-anchor" href="#a-b-test显著性检验">¶</a>A/B-test显著性检验</h2>
+<h1>评估</h1>
+<p>目的：检验模型是否有比较好的泛化能力</p>
 <p>通常使用训练数据来评估模型并不是一个好的选择，但是可以作为过拟合程度的一个评估（和测试集的结果比较）</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812111716972.png" alt="image-20190812111716972"></p>
 <p>通常使用测试集</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812111704809.png" alt="image-20190812111704809"></p>
 <p>自助法，随机二次抽样</p>
-<h2 id="交叉验证-Cross-Validation"><a href="#交叉验证-Cross-Validation" class="headerlink" title="交叉验证 Cross-Validation"></a>交叉验证 Cross-Validation</h2><h2 id="留出法-Hold-out-Method"><a href="#留出法-Hold-out-Method" class="headerlink" title="留出法 Hold-out Method"></a>留出法 Hold-out Method</h2><p>将数据分的2/3作为训练集，1/3作为测试集</p>
+<h2 id="交叉验证-cross-validation"><a class="header-anchor" href="#交叉验证-cross-validation">¶</a>交叉验证 Cross-Validation</h2>
+<h2 id="留出法-hold-out-method"><a class="header-anchor" href="#留出法-hold-out-method">¶</a>留出法 Hold-out Method</h2>
+<p>将数据分的2/3作为训练集，1/3作为测试集</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812112036826.png" alt="image-20190812112036826"></p>
 <p>在生成最终的分类器时，还是需要把所有的数据拿来训练</p>
 <p>对于类别不均衡的样本，需要分层（Stratification）抽样</p>
-<h3 id="重复留出法-Repeated-Holdout-Method"><a href="#重复留出法-Repeated-Holdout-Method" class="headerlink" title="重复留出法 Repeated Holdout Method"></a>重复留出法 Repeated Holdout Method</h3><p>通过几次迭代，在每一次迭代中，随机选择数据进行留出法训练与测试</p>
+<h3 id="重复留出法-repeated-holdout-method"><a class="header-anchor" href="#重复留出法-repeated-holdout-method">¶</a>重复留出法 Repeated Holdout Method</h3>
+<p>通过几次迭代，在每一次迭代中，随机选择数据进行留出法训练与测试</p>
 <p>使得留出法更加reliable</p>
 <p>问题：每一次的测试中，仍然会有很多重叠的部分（overlap），但我们希望每一个数据都在测试集中出现至少一次</p>
-<h2 id="k折交叉验证-k-Fold-Cross-Validation"><a href="#k折交叉验证-k-Fold-Cross-Validation" class="headerlink" title="k折交叉验证 k-Fold Cross-Validation"></a>k折交叉验证 k-Fold Cross-Validation</h2><p>避免了测试集的重叠overlapping</p>
+<h2 id="k折交叉验证-k-fold-cross-validation"><a class="header-anchor" href="#k折交叉验证-k-fold-cross-validation">¶</a>k折交叉验证 k-Fold Cross-Validation</h2>
+<p>避免了测试集的重叠overlapping</p>
 <p>首先将数据分为K份（要根据种类分层次）</p>
 <p>将每一份轮流作为测试集，其余的作为训练集</p>
 <p>最终的结果是所有结果的平均</p>
-<h3 id="有验证集的版本"><a href="#有验证集的版本" class="headerlink" title="有验证集的版本"></a>有验证集的版本</h3><p>首先将数据分为K份（要根据种类分层次）</p>
+<h3 id="有验证集的版本"><a class="header-anchor" href="#有验证集的版本">¶</a>有验证集的版本</h3>
+<p>首先将数据分为K份（要根据种类分层次）</p>
 <p>将每一份轮流作为测试集，其余的数据集中，再轮流选一份作为验证集，剩下的作为训练机</p>
-<h2 id="留一交叉验证-Leave-One-Out-Cross-Validation"><a href="#留一交叉验证-Leave-One-Out-Cross-Validation" class="headerlink" title="留一交叉验证 Leave-One-Out Cross-Validation"></a>留一交叉验证 Leave-One-Out Cross-Validation</h2><p>K = 数据总数</p>
+<h2 id="留一交叉验证-leave-one-out-cross-validation"><a class="header-anchor" href="#留一交叉验证-leave-one-out-cross-validation">¶</a>留一交叉验证 Leave-One-Out Cross-Validation</h2>
+<p>K = 数据总数</p>
 <p>能最大程度的利用</p>
 <p>问题：计算量很大；不能实现分层（因为测试集只有一个数据）</p>
-<h2 id="自助法-Bootstrap-Method"><a href="#自助法-Bootstrap-Method" class="headerlink" title="自助法 Bootstrap Method"></a>自助法 Bootstrap Method</h2><p>交叉验证中，抽样是无放回的（without replacement）</p>
+<h2 id="自助法-bootstrap-method"><a class="header-anchor" href="#自助法-bootstrap-method">¶</a>自助法 Bootstrap Method</h2>
+<p>交叉验证中，抽样是无放回的（without replacement）</p>
 <p>bootstrap的采样是有放回的（with replacement）</p>
 <p>在一个有n个数据的数据集中，有放回的抽取n个数据作为训练集，然后从来没有被选中的数据作为测试集</p>
-<p>也被称为0.632 bootstrap，因为一次抽取中，一个数据被又被抽取到的概率是1-(1/n)，而(1-(1/n))^n约等于e^-1（0.368），也就是说测试集的数据大概会有36.8%</p>
-<p>由于所使用的训练集数据较少（相对总体），因此err可以用以下方法计算</p>
-<script type="math/tex; mode=display">
-err = 0.632*e_{test\ instances}+0.368*e_{training\ instances}</script><h2 id="适合范围"><a href="#适合范围" class="headerlink" title="适合范围"></a>适合范围</h2><p>大数据集适合留出法</p>
+<p>也被称为0.632 bootstrap，因为一次抽取中，一个数据被又被抽取到的概率是1-(1/n)，而(1-(1/n))<sup>n约等于e</sup>-1（0.368），也就是说测试集的数据大概会有36.8%</p>
+<p>由于所使用的训练集数据较少（相对总体），因此err可以用以下方法计算<br>
+$$<br>
+err = 0.632<em>e_{test\ instances}+0.368</em>e_{training\ instances}<br>
+$$</p>
+<h2 id="适合范围"><a class="header-anchor" href="#适合范围">¶</a>适合范围</h2>
+<p>大数据集适合留出法</p>
 <p>中数据集适合交叉验证</p>
 <p>小数据集适合自助法和留一法</p>
 <p>不能用测试集来调参，而要用验证集</p>
@@ -422,8 +472,8 @@ err = 0.632*e_{test\ instances}+0.368*e_{training\ instances}</script><h2 id="�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/数据科学-过欠拟合/" rel="next" title="数据科学-过/欠拟合">
-                <i class="fa fa-chevron-left"></i> 数据科学-过/欠拟合
+              <a href="/2019/03/08/数据科学-进阶知识/" rel="next" title="数据科学-进阶知识">
+                <i class="fa fa-chevron-left"></i> 数据科学-进阶知识
               </a>
             
           </div>
@@ -566,7 +616,7 @@ err = 0.632*e_{test\ instances}+0.368*e_{training\ instances}</script><h2 id="�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#训练误差和测试误差"><span class="nav-number">1.</span> <span class="nav-text">训练误差和测试误差</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评价指标"><span class="nav-number">2.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类任务"><span class="nav-number">2.1.</span> <span class="nav-text">分类任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆矩阵"><span class="nav-number">2.1.1.</span> <span class="nav-text">混淆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准确率accuracy"><span class="nav-number">2.1.2.</span> <span class="nav-text">准确率accuracy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#识别准确率presion-amp-amp-召回率recall"><span class="nav-number">2.1.3.</span> <span class="nav-text">识别准确率presion &amp;&amp; 召回率recall</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准确率和召回率的权衡"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">准确率和召回率的权衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题-1"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F1度量-F1-measure"><span class="nav-number">2.1.4.</span> <span class="nav-text">F1度量 F1-measure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-measure"><span class="nav-number">2.1.5.</span> <span class="nav-text">E-measure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序相关-Rank-Based-Measures"><span class="nav-number">2.2.</span> <span class="nav-text">排序相关 Rank-Based Measures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二元相关-Binary-relevance"><span class="nav-number">2.2.1.</span> <span class="nav-text">二元相关 Binary relevance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Precision-K-P-K"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Precision@K (P@K)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Average-Precision-MAP"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Mean Average Precision (MAP)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Average-Precision"><span class="nav-number">2.2.1.2.1.</span> <span class="nav-text">Average Precision</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平均倒数排名-Mean-Reciprocal-Rank-MRR"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">平均倒数排名 Mean Reciprocal Rank (MRR)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H-10"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">H@10</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层次相关-Multiple-levels-of-relevance"><span class="nav-number">2.2.2.</span> <span class="nav-text">多层次相关 Multiple levels of relevance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discounted-Cumulative-Gain-DCG"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Discounted Cumulative Gain (DCG)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Normalized-Discounted-Cumulative-Gain-NDCG"><span class="nav-number">2.2.2.1.1.</span> <span class="nav-text">Normalized Discounted Cumulative Gain(NDCG)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列相关-sequence"><span class="nav-number">2.3.</span> <span class="nav-text">序列相关 sequence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-Recall-Oriented-Understudy-for-Gisting-Evaluation"><span class="nav-number">2.3.1.</span> <span class="nav-text">ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差类"><span class="nav-number">2.4.</span> <span class="nav-text">误差类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#R-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">R^2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差，相对误差"><span class="nav-number">2.4.2.</span> <span class="nav-text">绝对误差，相对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对误差-mean-absolute-error-MAE"><span class="nav-number">2.4.3.</span> <span class="nav-text">平均绝对误差 mean absolute error MAE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方误差-mean-squared-error-MSE"><span class="nav-number">2.4.4.</span> <span class="nav-text">均方误差 mean squared error MSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方根误差-root-mean-squared-error-RMSE"><span class="nav-number">2.4.5.</span> <span class="nav-text">均方根误差 root mean squared error RMSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><span class="nav-number">2.4.6.</span> <span class="nav-text">平均绝对百分误差（mean absolute percentage error MAPE）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kappa统计"><span class="nav-number">2.5.</span> <span class="nav-text">Kappa统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><span class="nav-number">2.6.</span> <span class="nav-text">AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-test显著性检验"><span class="nav-number">2.7.</span> <span class="nav-text">A/B-test显著性检验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评估"><span class="nav-number">3.</span> <span class="nav-text">评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证-Cross-Validation"><span class="nav-number">3.1.</span> <span class="nav-text">交叉验证 Cross-Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留出法-Hold-out-Method"><span class="nav-number">3.2.</span> <span class="nav-text">留出法 Hold-out Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重复留出法-Repeated-Holdout-Method"><span class="nav-number">3.2.1.</span> <span class="nav-text">重复留出法 Repeated Holdout Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k折交叉验证-k-Fold-Cross-Validation"><span class="nav-number">3.3.</span> <span class="nav-text">k折交叉验证 k-Fold Cross-Validation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有验证集的版本"><span class="nav-number">3.3.1.</span> <span class="nav-text">有验证集的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留一交叉验证-Leave-One-Out-Cross-Validation"><span class="nav-number">3.4.</span> <span class="nav-text">留一交叉验证 Leave-One-Out Cross-Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自助法-Bootstrap-Method"><span class="nav-number">3.5.</span> <span class="nav-text">自助法 Bootstrap Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适合范围"><span class="nav-number">3.6.</span> <span class="nav-text">适合范围</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">训练误差和测试误差</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类任务"><span class="nav-number">2.1.</span> <span class="nav-text">¶分类任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆矩阵"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶混淆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准确率accuracy"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶准确率accuracy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">¶问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#识别准确率presion-召回率recall"><span class="nav-number">2.1.3.</span> <span class="nav-text">¶识别准确率presion &amp;&amp; 召回率recall</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准确率和召回率的权衡"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">¶准确率和召回率的权衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题-v2"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">¶问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#f1度量-f1-measure"><span class="nav-number">2.1.4.</span> <span class="nav-text">¶F1度量 F1-measure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#e-measure"><span class="nav-number">2.1.5.</span> <span class="nav-text">¶E-measure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序相关-rank-based-measures"><span class="nav-number">2.2.</span> <span class="nav-text">¶排序相关 Rank-Based Measures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二元相关-binary-relevance"><span class="nav-number">2.2.1.</span> <span class="nav-text">¶二元相关 Binary relevance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#precision-k-p-k"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">¶Precision@K (P@K)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mean-average-precision-map"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">¶Mean Average Precision (MAP)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#average-precision"><span class="nav-number">2.2.1.2.1.</span> <span class="nav-text">¶Average Precision</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平均倒数排名-mean-reciprocal-rank-mrr"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">¶平均倒数排名 Mean Reciprocal Rank (MRR)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-10"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">¶H@10</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层次相关-multiple-levels-of-relevance"><span class="nav-number">2.2.2.</span> <span class="nav-text">¶多层次相关 Multiple levels of relevance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#discounted-cumulative-gain-dcg"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">¶Discounted Cumulative Gain (DCG)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#normalized-discounted-cumulative-gain-ndcg"><span class="nav-number">2.2.2.1.1.</span> <span class="nav-text">¶Normalized Discounted Cumulative Gain(NDCG)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列相关-sequence"><span class="nav-number">2.3.</span> <span class="nav-text">¶序列相关 sequence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rouge-recall-oriented-understudy-for-gisting-evaluation"><span class="nav-number">2.3.1.</span> <span class="nav-text">¶ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误差类"><span class="nav-number">2.4.</span> <span class="nav-text">¶误差类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#r-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">¶R^2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对误差-相对误差"><span class="nav-number">2.4.2.</span> <span class="nav-text">¶绝对误差，相对误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对误差-mean-absolute-error-mae"><span class="nav-number">2.4.3.</span> <span class="nav-text">¶平均绝对误差 mean absolute error MAE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方误差-mean-squared-error-mse"><span class="nav-number">2.4.4.</span> <span class="nav-text">¶均方误差 mean squared error MSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均方根误差-root-mean-squared-error-rmse"><span class="nav-number">2.4.5.</span> <span class="nav-text">¶均方根误差 root mean squared error RMSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均绝对百分误差-mean-absolute-percentage-error-mape"><span class="nav-number">2.4.6.</span> <span class="nav-text">¶平均绝对百分误差（mean absolute percentage error MAPE）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kappa统计"><span class="nav-number">2.5.</span> <span class="nav-text">¶Kappa统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#auc-area-under-roc-curve-roc-receiver-operating-characteristic"><span class="nav-number">2.6.</span> <span class="nav-text">¶AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-test显著性检验"><span class="nav-number">2.7.</span> <span class="nav-text">¶A/B-test显著性检验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证-cross-validation"><span class="nav-number">3.1.</span> <span class="nav-text">¶交叉验证 Cross-Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留出法-hold-out-method"><span class="nav-number">3.2.</span> <span class="nav-text">¶留出法 Hold-out Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重复留出法-repeated-holdout-method"><span class="nav-number">3.2.1.</span> <span class="nav-text">¶重复留出法 Repeated Holdout Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k折交叉验证-k-fold-cross-validation"><span class="nav-number">3.3.</span> <span class="nav-text">¶k折交叉验证 k-Fold Cross-Validation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有验证集的版本"><span class="nav-number">3.3.1.</span> <span class="nav-text">¶有验证集的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#留一交叉验证-leave-one-out-cross-validation"><span class="nav-number">3.4.</span> <span class="nav-text">¶留一交叉验证 Leave-One-Out Cross-Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自助法-bootstrap-method"><span class="nav-number">3.5.</span> <span class="nav-text">¶自助法 Bootstrap Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适合范围"><span class="nav-number">3.6.</span> <span class="nav-text">¶适合范围</span></a></li></ol></li></ol></div>
             
 
           </div>

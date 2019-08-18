@@ -301,21 +301,31 @@
         
           
             <p>[TOC]</p>
-<h1 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h1><p><code>conda env list``conda info --envs</code>列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base）</p>
-<p><code>conda create -n env_name</code>创建环境<br><code>conda create -n env_name python=3.3</code>指定python版本</p>
-<p><code>conda activate my_env</code>进入环境（在OSX/Linux上）<br><code>activate my_env</code>进入环境（在Windows上）</p>
-<p><code>conda deactivate</code>离开环境（在OSX/Linux上）<br><code>deactivate</code>进入环境（在Windows上）</p>
-<p><code>conda env export &gt; environment.yaml</code>将环境保存为yaml<br><code>conda env create -f environment.yaml</code>读取环境</p>
+<h1>环境管理</h1>
+<p><code>conda env list``conda info --envs</code>列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base）</p>
+<p><code>conda create -n env_name</code>创建环境<br>
+<code>conda create -n env_name python=3.3</code>指定python版本</p>
+<p><code>conda activate my_env</code>进入环境（在OSX/Linux上）<br>
+<code>activate my_env</code>进入环境（在Windows上）</p>
+<p><code>conda deactivate</code>离开环境（在OSX/Linux上）<br>
+<code>deactivate</code>进入环境（在Windows上）</p>
+<p><code>conda env export &gt; environment.yaml</code>将环境保存为yaml<br>
+<code>conda env create -f environment.yaml</code>读取环境</p>
 <p><code>conda env remove -n env_name</code>删除环境</p>
-<h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><p><code>conda list</code>查看安装哪些包</p>
+<h1>包管理</h1>
+<p><code>conda list</code>查看安装哪些包</p>
 <p><code>conda upgrade --all</code>更新环境中所有包</p>
-<p><code>conda install package_name</code>安装包<br>指定版本<code>conda install numpy=1.10</code></p>
+<p><code>conda install package_name</code>安装包<br>
+指定版本<code>conda install numpy=1.10</code></p>
 <p><code>conda remove package_name</code>卸载包</p>
 <p><code>conda search search_term</code>如果不知道要找的包的确切名称，可以搜索包</p>
-<h1 id="源管理"><a href="#源管理" class="headerlink" title="源管理"></a>源管理</h1><p>添加国内源<br><code>conda config --add channels https://repo.continuum.io/pkgs/free/ 
-conda config --add channels https://repo.continuum.io/pkgs/main/ 
-conda config --set show_channel_urls yes</code></p>
-<h1 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h1><p><code>conda --version</code>查看版本<br><code>conda update --h(elp)</code>查看某个命令的帮助<br><code>conda update conda</code>升级conda</p>
+<h1>源管理</h1>
+<p>添加国内源<br>
+<code>conda config --add channels https://repo.continuum.io/pkgs/free/  conda config --add channels https://repo.continuum.io/pkgs/main/  conda config --set show_channel_urls yes</code></p>
+<h1>杂七杂八</h1>
+<p><code>conda --version</code>查看版本<br>
+<code>conda update --h(elp)</code>查看某个命令的帮助<br>
+<code>conda update conda</code>升级conda</p>
 
           
         
@@ -457,23 +467,28 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业六"><a href="#系统分析与设计作业六" class="headerlink" title="系统分析与设计作业六"></a>系统分析与设计作业六</h1><p>[TOC]</p>
+            <h1>系统分析与设计作业六</h1>
+<p>[TOC]</p>
 <p>练习资源：<a href="https://sysu-swsad.github.io/swad-guide/material/Asg_RH.pdf" target="_blank" rel="noopener">Asg-RH.pdf</a></p>
 <p>使用 <strong>UMLet</strong> 建模：</p>
-<h1 id="1-使用类图，分别对-Asg-RH-文档中-Make-Reservation-用例以及-Payment-用例开展领域建模"><a href="#1-使用类图，分别对-Asg-RH-文档中-Make-Reservation-用例以及-Payment-用例开展领域建模" class="headerlink" title="1. 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模"></a>1. 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模</h1><p>然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键</p>
+<h1>1. 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模</h1>
+<p>然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键</p>
 <ul>
-<li>注意事项：<ul>
+<li>注意事项：
+<ul>
 <li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li>
 <li>关联必须有多重性、部分有名称与导航方向</li>
 <li>属性要注意计算字段</li>
 </ul>
 </li>
-<li>数据建模，为了简化描述仅需要给出表清单，例如：<ul>
-<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address…..）</li>
+<li>数据建模，为了简化描述仅需要给出表清单，例如：
+<ul>
+<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li>
 </ul>
 </li>
 </ul>
-<h1 id="2-使用-UML-State-Model，对每个订单对象生命周期建模"><a href="#2-使用-UML-State-Model，对每个订单对象生命周期建模" class="headerlink" title="2. 使用 UML State Model，对每个订单对象生命周期建模"></a>2. 使用 UML State Model，对每个订单对象生命周期建模</h1><ul>
+<h1>2. 使用 UML State Model，对每个订单对象生命周期建模</h1>
+<ul>
 <li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模</li>
 <li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单</li>
 </ul>
@@ -618,27 +633,34 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业五"><a href="#系统分析与设计作业五" class="headerlink" title="系统分析与设计作业五"></a>系统分析与设计作业五</h1><p>[TOC]</p>
+            <h1>系统分析与设计作业五</h1>
+<p>[TOC]</p>
 <p>使用 <strong>UMLet</strong> 建模：</p>
-<h1 id="1、根据订旅馆建模文档"><a href="#1、根据订旅馆建模文档" class="headerlink" title="1、根据订旅馆建模文档"></a>1、根据订旅馆建模文档</h1><p>​    <a href="https://sysu-swsad.github.io/swad-guide/material/Asg_RH.pdf" target="_blank" rel="noopener">Asg-RH.pdf</a></p>
+<h1>1、根据订旅馆建模文档</h1>
+<p>​	<a href="https://sysu-swsad.github.io/swad-guide/material/Asg_RH.pdf" target="_blank" rel="noopener">Asg-RH.pdf</a></p>
 <ul>
-<li><p>绘制用例图模型（到子用例）</p>
-<p><img src="/2019/05/22/系统分析作业6/1.png" alt="1">  </p>
+<li>
+<p>绘制用例图模型（到子用例）</p>
+<p><img src="/2019/05/22/系统分析作业6/1.png" alt="1"></p>
 </li>
-<li><p>给出 make reservation 用例的活动图</p>
-<p>  <img src="/2019/05/22/系统分析作业6/2.png" alt="2"></p>
+<li>
+<p>给出 make reservation 用例的活动图</p>
+<p><img src="/2019/05/22/系统分析作业6/2.png" alt="2"></p>
 </li>
 </ul>
-<h1 id="2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景"><a href="#2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景" class="headerlink" title="2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景"></a>2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景</h1><ul>
-<li><p>分别用多泳道图建模三个场景的业务过程</p>
-<p>  1.x科技公司发明了投递柜，它们自建了投递柜以及远程控制系统。注册的投递员在推广期免费使用投递柜。由于缺乏资源，仅能使用y移动平台向客户发送短信通知</p>
-<p>  <img src="/2019/05/22/系统分析作业6/3.png" alt="3"></p>
-<p>  2.随着产品推广，x公司与各大快递z公司达成协议。x公司在快递柜上添加了二维码扫描装置，z公司的快递员不仅可在快递柜上登陆（由z公司提供认证服务），且可扫描快递单号，投递入柜后自动由z公司发短信给客户。客户取件后，自动发送给z公司投递完成</p>
-<p>  <img src="/2019/05/22/系统分析作业6/4.png" alt="4"></p>
-<p>  3.x公司进一步优化服务，开发了微信小程序实现扫码取快递。如果用户关注了该公司公众号，直接通过过公众号推送给用户取件码等信息。不再发送短信。</p>
-<p>  <img src="/2019/05/22/系统分析作业6/5.png" alt="5"></p>
+<h1>2、根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景</h1>
+<ul>
+<li>
+<p>分别用多泳道图建模三个场景的业务过程</p>
+<p>1.x科技公司发明了投递柜，它们自建了投递柜以及远程控制系统。注册的投递员在推广期免费使用投递柜。由于缺乏资源，仅能使用y移动平台向客户发送短信通知</p>
+<p><img src="/2019/05/22/系统分析作业6/3.png" alt="3"></p>
+<p>2.随着产品推广，x公司与各大快递z公司达成协议。x公司在快递柜上添加了二维码扫描装置，z公司的快递员不仅可在快递柜上登陆（由z公司提供认证服务），且可扫描快递单号，投递入柜后自动由z公司发短信给客户。客户取件后，自动发送给z公司投递完成</p>
+<p><img src="/2019/05/22/系统分析作业6/4.png" alt="4"></p>
+<p>3.x公司进一步优化服务，开发了微信小程序实现扫码取快递。如果用户关注了该公司公众号，直接通过过公众号推送给用户取件码等信息。不再发送短信。</p>
+<p><img src="/2019/05/22/系统分析作业6/5.png" alt="5"></p>
 </li>
-<li><p>根据上述流程，给出快递柜系统最终的用例图模型</p>
+<li>
+<p>根据上述流程，给出快递柜系统最终的用例图模型</p>
 <ul>
 <li>用正常色彩表示第一个业务流程反映的用例</li>
 <li>用绿色背景表述第二个业务场景添加或修改的用例，以及支持 Actor</li>
@@ -788,28 +810,36 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业四"><a href="#系统分析与设计作业四" class="headerlink" title="系统分析与设计作业四"></a>系统分析与设计作业四</h1><p>[TOC]</p>
-<h1 id="1、简答题"><a href="#1、简答题" class="headerlink" title="1、简答题"></a>1、简答题</h1><h2 id="1-用例的概念"><a href="#1-用例的概念" class="headerlink" title="1.用例的概念"></a>1.用例的概念</h2><ul>
+            <h1>系统分析与设计作业四</h1>
+<p>[TOC]</p>
+<h1>1、简答题</h1>
+<h2 id="1-用例的概念"><a class="header-anchor" href="#1-用例的概念">¶</a>1.用例的概念</h2>
+<ul>
 <li>用例是软件工程中对系统如何反应外界请求的描述，是一种通过用户的使用场景来获取需求的技术。包含了一系列相关的成功和失败场景的集合，这些场景描述了一个角色和系统的交互，来支持一个目标。每个用例提供了一个或多个场景，该场景说明了系统是如何和最终用户或其它系统互动，也就是谁可以用系统做什么，从而获得一个明确的业务目标。每个用例都有一个名字和一段简述。用例的详细描述本质上是一些叙述，说明了用户如何使用系统来完成他们认为重要的事情，以及系统做了些什么来满足这些需要。</li>
 </ul>
-<h2 id="2-用例和场景的关系？什么是主场景或-happy-path？"><a href="#2-用例和场景的关系？什么是主场景或-happy-path？" class="headerlink" title="2.用例和场景的关系？什么是主场景或 happy path？"></a>2.用例和场景的关系？什么是主场景或 happy path？</h2><ul>
+<h2 id="2-用例和场景的关系？什么是主场景或-happy-path？"><a class="header-anchor" href="#2-用例和场景的关系？什么是主场景或-happy-path？">¶</a>2.用例和场景的关系？什么是主场景或 happy path？</h2>
+<ul>
 <li>关系：场景是参与者和系统之间一个特定的交互行为和会话，也被称为用例实例。每个用例提供了一个或多个场景，该场景说明了系统是如何和最终用户或其它系统互动，也就是谁可以用系统做什么，从而获得一个明确的业务目标。用例就是对全部用例场景的抽象，用例场景就是从用例中实例化出来的一组活动</li>
 <li>主场景或 happy path：每个用例提供了一个主场景和若干个可选场景，主场景/happy path对应于主要的系统交互，通常是“成功”的场景，它是最常用的，典型的、无条件的、理想方式、无错误的系统最基本的成功场景</li>
 </ul>
-<h2 id="3-用例有哪些形式？"><a href="#3-用例有哪些形式？" class="headerlink" title="3.用例有哪些形式？"></a>3.用例有哪些形式？</h2><ul>
+<h2 id="3-用例有哪些形式？"><a class="header-anchor" href="#3-用例有哪些形式？">¶</a>3.用例有哪些形式？</h2>
+<ul>
 <li>Brief概要型：通常是一段总结性的文字，主要描述主要的成功场景，便于快速了解主题和范围，可快速创建</li>
 <li>Casual简便型：通常用非正式的格式描述不同的场景</li>
 <li>Fully 完整型：详细描述所有步骤和分支情况，有支持的部分，比如前提条件和成功场景的保证</li>
 </ul>
-<h2 id="4-对于复杂业务，为什么编制完整用例非常难？"><a href="#4-对于复杂业务，为什么编制完整用例非常难？" class="headerlink" title="4.对于复杂业务，为什么编制完整用例非常难？"></a>4.对于复杂业务，为什么编制完整用例非常难？</h2><ul>
+<h2 id="4-对于复杂业务-为什么编制完整用例非常难？"><a class="header-anchor" href="#4-对于复杂业务-为什么编制完整用例非常难？">¶</a>4.对于复杂业务，为什么编制完整用例非常难？</h2>
+<ul>
 <li>复杂的业务涉及到很多场景，且场景与场景之间存在复杂的关联，因此负责业务的场景也很复杂（比如会出现很多分支），编制用例时容易遗漏一些业务和需求，很难全覆盖</li>
 <li>编制完整用例需要熟悉各种业务场景、流程和建模相关的专业知识，对用例编写者的水平要求较高</li>
 <li>业务与需求本身就是需要不断迭代来确定的，还有可能会变化，因此项目初期很难编写出完整正式的用例的</li>
 </ul>
-<h2 id="5-什么是用例图？"><a href="#5-什么是用例图？" class="headerlink" title="5.什么是用例图？"></a>5.什么是用例图？</h2><ul>
+<h2 id="5-什么是用例图？"><a class="header-anchor" href="#5-什么是用例图？">¶</a>5.什么是用例图？</h2>
+<ul>
 <li>用例图是指由<strong>参与者（Actor）</strong>、<strong>用例（Use Case）</strong>，<strong>边界</strong>以及它们之间的<strong>关系</strong>构成的用于描述系统功能的视图。用例图是外部用户（被称为参与者）所能观察到的系统功能的模型图。用例图是系统的蓝图，呈现了一些参与者，一些用例，以及它们之间的关系，主要用于对系统、子系统或类的功能行为进行建模。通过用例图，人们可以获知系统不同种类的用户和用例。</li>
 </ul>
-<h2 id="6-用例图的基本符号与元素？"><a href="#6-用例图的基本符号与元素？" class="headerlink" title="6.用例图的基本符号与元素？"></a>6.用例图的基本符号与元素？</h2><p>​    用例图有四个部分：参与者（Actor)，用例（Use Case)，系统边界，关系</p>
+<h2 id="6-用例图的基本符号与元素？"><a class="header-anchor" href="#6-用例图的基本符号与元素？">¶</a>6.用例图的基本符号与元素？</h2>
+<p>​	用例图有四个部分：参与者（Actor)，用例（Use Case)，系统边界，关系</p>
 <ul>
 <li>参与者（actor）：参与者是与系统交互的人或物。包括开发系统用户，除此之外，与开发的系统有关联的其他系统也算是参与者。在UML图中用一个小人表示，也可以用带«actor»关键字的类矩形表示</li>
 </ul>
@@ -819,29 +849,37 @@ conda config --set show_channel_urls yes</code></p>
 </ul>
 <p><img src="/2019/05/22/系统分析作业4/2.png" alt="2"></p>
 <ul>
-<li><p>系统边界：指系统与系统之间的界限。把系统边界以外的同系统相关联的其他部分称为系统环境，用例在系统内部，执行者在系统的外部。在UML图中用一个矩形框表示</p>
-<p>  <img src="/2019/05/22/系统分析作业4/3.png" alt="3"></p>
+<li>
+<p>系统边界：指系统与系统之间的界限。把系统边界以外的同系统相关联的其他部分称为系统环境，用例在系统内部，执行者在系统的外部。在UML图中用一个矩形框表示</p>
+<p><img src="/2019/05/22/系统分析作业4/3.png" alt="3"></p>
 </li>
-<li><p>关系</p>
+<li>
+<p>关系</p>
 <ul>
-<li><p>关联：表示参与者和用例之间的交互。为通信途径，任何一方都可发送或可接收消息。箭头指向消息接收方。在UML中用直线表示</p>
-<p>  <img src="/2019/05/22/系统分析作业4/4.png" alt="4"></p>
+<li>
+<p>关联：表示参与者和用例之间的交互。为通信途径，任何一方都可发送或可接收消息。箭头指向消息接收方。在UML中用直线表示</p>
+<p><img src="/2019/05/22/系统分析作业4/4.png" alt="4"></p>
 </li>
-<li><p>包含：包含关系用来把一个较复杂的用例所表示的功能分解成较小的步骤。包含用例是必须的，如果缺少包含用例，基用用例就是不完整的，通常它假设，任何被包含的用例在基本程序运行时每一次都会被调用。包含关系最典型的应用就是复用。这种情况类似与在过程设计语言中，将程序的某一段算法封装成一个子过程，然后在从主程序中调用这一子过程。在UML中，包含关系用带箭头的虚线段加《includes》表示，箭头指向被包含的用例</p>
-<p>  <img src="/2019/05/22/系统分析作业4/5.png" alt="5"></p>
+<li>
+<p>包含：包含关系用来把一个较复杂的用例所表示的功能分解成较小的步骤。包含用例是必须的，如果缺少包含用例，基用用例就是不完整的，通常它假设，任何被包含的用例在基本程序运行时每一次都会被调用。包含关系最典型的应用就是复用。这种情况类似与在过程设计语言中，将程序的某一段算法封装成一个子过程，然后在从主程序中调用这一子过程。在UML中，包含关系用带箭头的虚线段加《includes》表示，箭头指向被包含的用例</p>
+<p><img src="/2019/05/22/系统分析作业4/5.png" alt="5"></p>
 </li>
-<li><p>扩展：扩展关系是指用例功能的延伸。与包含关系不同的是，扩展用例是可选的，如果缺少扩展用例。不会影响到基用例的完整性。在UML中，扩展关系用带箭头的虚线段加《extends》表示，要注意的是箭头指向<strong>基用例</strong></p>
-<p>  <img src="/2019/05/22/系统分析作业4/6.png" alt="6"></p>
+<li>
+<p>扩展：扩展关系是指用例功能的延伸。与包含关系不同的是，扩展用例是可选的，如果缺少扩展用例。不会影响到基用例的完整性。在UML中，扩展关系用带箭头的虚线段加《extends》表示，要注意的是箭头指向<strong>基用例</strong></p>
+<p><img src="/2019/05/22/系统分析作业4/6.png" alt="6"></p>
 </li>
-<li><p>泛化：用例的泛化指的是一个父用例可以被特化形成多个子用例，页就是继承关系。在UML中，泛化关系用空心箭头表示，箭头指向的是父用例</p>
-<p>  <img src="/2019/05/22/系统分析作业4/7.png" alt="7"></p>
+<li>
+<p>泛化：用例的泛化指的是一个父用例可以被特化形成多个子用例，页就是继承关系。在UML中，泛化关系用空心箭头表示，箭头指向的是父用例</p>
+<p><img src="/2019/05/22/系统分析作业4/7.png" alt="7"></p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="7-用例图的画法与步骤"><a href="#7-用例图的画法与步骤" class="headerlink" title="7.用例图的画法与步骤"></a>7.用例图的画法与步骤</h2><p>主要步骤就是确定用例图的三大元素：参与者、用例、关系</p>
+<h2 id="7-用例图的画法与步骤"><a class="header-anchor" href="#7-用例图的画法与步骤">¶</a>7.用例图的画法与步骤</h2>
+<p>主要步骤就是确定用例图的三大元素：参与者、用例、关系</p>
 <ol>
-<li><p>识别参与者以及外部系统, 包括:</p>
+<li>
+<p>识别参与者以及外部系统, 包括:</p>
 <ul>
 <li>谁将使用该系统的主要功能</li>
 <li>谁将需要该系统的支持以完成其工作</li>
@@ -851,30 +889,46 @@ conda config --set show_channel_urls yes</code></p>
 <li>谁或什么系统对本系统产生的结果感兴趣</li>
 </ul>
 </li>
-<li><p>识别用例(服务)</p>
+<li>
+<p>识别用例(服务)</p>
 <ul>
-<li><p>识别用户级别用例(user goal level)</p>
+<li>
+<p>识别用户级别用例(user goal level)</p>
 </li>
-<li><p>识别子功能级别的用例(sub function level)</p>
+<li>
+<p>识别子功能级别的用例(sub function level)</p>
 </li>
-<li><p>特定参与者希望系统提供什么功能</p>
+<li>
+<p>特定参与者希望系统提供什么功能</p>
 </li>
-<li>系统是否存储和检索信息，如果是，由哪个参与者触发</li>
-<li>当系统改变状态时，是否通知参与者</li>
-<li>是否存在影响系统的外部事件</li>
-<li>哪个参与者通知系统这些事</li>
+<li>
+<p>系统是否存储和检索信息，如果是，由哪个参与者触发</p>
+</li>
+<li>
+<p>当系统改变状态时，是否通知参与者</p>
+</li>
+<li>
+<p>是否存在影响系统的外部事件</p>
+</li>
+<li>
+<p>哪个参与者通知系统这些事</p>
+</li>
 </ul>
 </li>
-<li><p>通过用例之间的业务关系，建立参与者和用例之间的关联</p>
+<li>
+<p>通过用例之间的业务关系，建立参与者和用例之间的关联</p>
 </li>
 </ol>
-<h2 id="8-用例图给利益相关人与开发者的价值有哪些？"><a href="#8-用例图给利益相关人与开发者的价值有哪些？" class="headerlink" title="8.用例图给利益相关人与开发者的价值有哪些？"></a>8.用例图给利益相关人与开发者的价值有哪些？</h2><ul>
-<li>利益相关人:<ul>
+<h2 id="8-用例图给利益相关人与开发者的价值有哪些？"><a class="header-anchor" href="#8-用例图给利益相关人与开发者的价值有哪些？">¶</a>8.用例图给利益相关人与开发者的价值有哪些？</h2>
+<ul>
+<li>利益相关人:
+<ul>
 <li>可以直观看到系统的结果和用户的功能体验, 保证系统按照用户的需求进行设计</li>
 <li>用例能够根据需要对复杂程度和形式化程序进行增减调节, 即能够响应用户(利益相关人)提出的需求, 而用例图则使得这种调节更加便利, 可以通过修改图形间的关系实现</li>
 </ul>
 </li>
-<li>开发者<ul>
+<li>开发者
+<ul>
 <li>用例图是设计者设计过程的结论与参考, 设计者与开发者之间的交流工具, 开发者开发过程的蓝图</li>
 <li>用例图方便开发者评估工作量，合理规划迭代周期，规划人力资源</li>
 <li>用例图与用户和系统交互相关，它们使软件开发者在开发之前或当中就能够开始用户接口设计。</li>
@@ -884,8 +938,10 @@ conda config --set show_channel_urls yes</code></p>
 </ul>
 </li>
 </ul>
-<h1 id="2、建模练习题（用例模型）"><a href="#2、建模练习题（用例模型）" class="headerlink" title="2、建模练习题（用例模型）"></a>2、建模练习题（用例模型）</h1><ul>
-<li><p>选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、订电影票、背单词APP等，分别绘制它们用例图。并满足以下要求：</p>
+<h1>2、建模练习题（用例模型）</h1>
+<ul>
+<li>
+<p>选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、订电影票、背单词APP等，分别绘制它们用例图。并满足以下要求：</p>
 <ul>
 <li>请使用用户的视角，描述用户目标或系统提供的服务</li>
 <li>粒度达到子用例级别，并用 include 和 exclude 关联它们</li>
@@ -893,44 +949,166 @@ conda config --set show_channel_urls yes</code></p>
 <li>尽可能识别外部系统和服务</li>
 </ul>
 </li>
-<li><p>酒店预订</p>
-<p>  <img src="/2019/05/22/系统分析作业4/10.png" alt="10"></p>
+<li>
+<p>酒店预订</p>
+<p><img src="/2019/05/22/系统分析作业4/10.png" alt="10"></p>
 </li>
-<li><p>电影预订</p>
-<p>  <img src="/2019/05/22/系统分析作业4/11.png" alt="11"></p>
+<li>
+<p>电影预订</p>
+<p><img src="/2019/05/22/系统分析作业4/11.png" alt="11"></p>
 </li>
-<li><p>回答下列问题：</p>
+<li>
+<p>回答下列问题：</p>
 <ol>
-<li><p>为什么相似系统的用例图是相似的？</p>
+<li>
+<p>为什么相似系统的用例图是相似的？</p>
 <ul>
 <li>相似系统面对的参与者和用例是相似的, 用例之间的关系也是同构的，场景有很多重复的元素，用户的需求都是相似的（如增删查改）。因此同类型的不同系统一定具有一致基本功能以及带有自己特色的扩展功能。所以体现在用例图上也是相似的</li>
 </ul>
 </li>
-<li><p>如果是订旅馆业务，请对比Asg_RH用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术</p>
-<p> 由上一题可知，同为订旅馆业务，主用例基本相同，所以创新点多出现在子用例</p>
+<li>
+<p>如果是订旅馆业务，请对比Asg_RH用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术</p>
+<p>由上一题可知，同为订旅馆业务，主用例基本相同，所以创新点多出现在子用例</p>
 <ul>
 <li>不同时代：随着技术的进步，可以将最新的一些信息技术加入到用例图中。例如高效快捷的注册登录验证技术（比如微信扫码，QQ账号登陆）、更高效的支付方式（从银行卡支付到微信、支付宝支付等）</li>
 <li>不同地区：考虑不同地区的审美风格、以及不同地区的政策，宗教，风俗习惯，语言等，比如中文输入，中文语音</li>
 </ul>
 </li>
-<li><p>如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用</p>
+<li>
+<p>如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用</p>
 <ul>
 <li>对于创新的用例，使用区别于常规用例的颜色背景的用例图表示，直观地观察其在系统中的作用。如果创新位于较高的父级，则作用比较大，可能是商业模式的创新和业务的创新；如果是子类或者是被包括的关系，则作用相对较小，可能是技术创新</li>
 </ul>
 </li>
-<li><p>请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表</p>
-<p> 以喵眼电影用例图为例</p>
-<p> | ID   | Name     | Imp  | est  | How to demo                                                  | Notes                              |<br> | —— | ———— | —— | —— | —————————————————————————————— | ————————————————— |<br> | 1    | 注册     | 20   | 10   | 用户信息收集、邮箱验证实现                                   | 突出注册渠道                       |<br> | 2    | 登录     | 20   | 5    | 登录，然后收到登录成果的反馈                                 | 注意增强登录成功的反馈             |<br> | 3    | 注销     | 20   | 5    | 登录，然后注销，然后收到注销的反馈                           | 注意增强注销成功的反馈             |<br> | 4    | 订单管理 | 90   | 80   | 下订单、取消订单、评价订单、使用客户服务                     | 使用分页技术避免大规模的数据库查询 |<br> | 5    | 查询选择 | 100  | 100  | 根据旅馆的价格、地点、特色等进行筛选，同时基于数据分析提供喜好推荐 | 使用缓存，防止输入一半的信息丢失   |<br> | 6    | 支付     | 50   | 30   | 登录，然后查找电影，然后订一张票，然后付款，在订单中检查刚刚的订单状态是已支付 | 突出交易数额和支付渠道             |</p>
+<li>
+<p>请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表</p>
+<p>以喵眼电影用例图为例</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Imp</th>
+<th>est</th>
+<th>How to demo</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>注册</td>
+<td>20</td>
+<td>10</td>
+<td>用户信息收集、邮箱验证实现</td>
+<td>突出注册渠道</td>
+</tr>
+<tr>
+<td>2</td>
+<td>登录</td>
+<td>20</td>
+<td>5</td>
+<td>登录，然后收到登录成果的反馈</td>
+<td>注意增强登录成功的反馈</td>
+</tr>
+<tr>
+<td>3</td>
+<td>注销</td>
+<td>20</td>
+<td>5</td>
+<td>登录，然后注销，然后收到注销的反馈</td>
+<td>注意增强注销成功的反馈</td>
+</tr>
+<tr>
+<td>4</td>
+<td>订单管理</td>
+<td>90</td>
+<td>80</td>
+<td>下订单、取消订单、评价订单、使用客户服务</td>
+<td>使用分页技术避免大规模的数据库查询</td>
+</tr>
+<tr>
+<td>5</td>
+<td>查询选择</td>
+<td>100</td>
+<td>100</td>
+<td>根据旅馆的价格、地点、特色等进行筛选，同时基于数据分析提供喜好推荐</td>
+<td>使用缓存，防止输入一半的信息丢失</td>
+</tr>
+<tr>
+<td>6</td>
+<td>支付</td>
+<td>50</td>
+<td>30</td>
+<td>登录，然后查找电影，然后订一张票，然后付款，在订单中检查刚刚的订单状态是已支付</td>
+<td>突出交易数额和支付渠道</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>根据任务4，参考<a href="https://www.ibm.com/developerworks/cn/rational/edge/09/mar09/collaris_dekker/index.html" target="_blank" rel="noopener">使用用例点估算软件成本</a>，给出项目用例点的估算</p>
-<p> 根据用户点方法，对用例分配权重的标准是： </p>
+<li>
+<p>根据任务4，参考<a href="https://www.ibm.com/developerworks/cn/rational/edge/09/mar09/collaris_dekker/index.html" target="_blank" rel="noopener">使用用例点估算软件成本</a>，给出项目用例点的估算</p>
+<p>根据用户点方法，对用例分配权重的标准是：</p>
 <ul>
 <li>简单用例：1 到 3 个事务，权重=5</li>
 <li>一般用例：4 到 7 个事务，权重=10</li>
-<li><p>复杂用例：多于 7 个事务，权重=15</p>
-<p>| 用例     | 事务 | 计算 | 原因            | UC权重 |<br>| ———— | —— | —— | ———————- | ——— |<br>| 注册     | 3    | 2    | 使用微信/QQ API | 简单   |<br>| 登陆     | 3    | 2    | 使用微信/QQ API | 简单   |<br>| 注销     | 1    | 1    |                 | 简单   |<br>| 查找电影 | 10   | 10   |                 | 复杂   |<br>| 订电影票 | 12   | 8    | 使用流程框架    | 复杂   |<br>| 支付     | 5    | 3    | 使用支付api     | 简单   |</p>
-</li>
+<li>复杂用例：多于 7 个事务，权重=15</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>用例</th>
+<th>事务</th>
+<th>计算</th>
+<th>原因</th>
+<th>UC权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注册</td>
+<td>3</td>
+<td>2</td>
+<td>使用微信/QQ API</td>
+<td>简单</td>
+</tr>
+<tr>
+<td>登陆</td>
+<td>3</td>
+<td>2</td>
+<td>使用微信/QQ API</td>
+<td>简单</td>
+</tr>
+<tr>
+<td>注销</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td>简单</td>
+</tr>
+<tr>
+<td>查找电影</td>
+<td>10</td>
+<td>10</td>
+<td></td>
+<td>复杂</td>
+</tr>
+<tr>
+<td>订电影票</td>
+<td>12</td>
+<td>8</td>
+<td>使用流程框架</td>
+<td>复杂</td>
+</tr>
+<tr>
+<td>支付</td>
+<td>5</td>
+<td>3</td>
+<td>使用支付api</td>
+<td>简单</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 </li>
@@ -1076,8 +1254,11 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业三"><a href="#系统分析与设计作业三" class="headerlink" title="系统分析与设计作业三"></a>系统分析与设计作业三</h1><p>[TOC]</p>
-<h1 id="1、简单题"><a href="#1、简单题" class="headerlink" title="1、简单题"></a>1、简单题</h1><h2 id="简述瀑布模型、增量模型、螺旋模型-含原型方法-并分析优缺点"><a href="#简述瀑布模型、增量模型、螺旋模型-含原型方法-并分析优缺点" class="headerlink" title="简述瀑布模型、增量模型、螺旋模型(含原型方法),并分析优缺点"></a>简述瀑布模型、增量模型、螺旋模型(含原型方法),并分析优缺点</h2><p><strong>(1)瀑布模型</strong></p>
+            <h1>系统分析与设计作业三</h1>
+<p>[TOC]</p>
+<h1>1、简单题</h1>
+<h2 id="简述瀑布模型-增量模型-螺旋模型-含原型方法-并分析优缺点"><a class="header-anchor" href="#简述瀑布模型-增量模型-螺旋模型-含原型方法-并分析优缺点">¶</a>简述瀑布模型、增量模型、螺旋模型(含原型方法),并分析优缺点</h2>
+<p><strong>(1)瀑布模型</strong></p>
 <p>瀑布模型是一个经典的周期模型，一般情况下将其分为计划、需求分析、概要设计、详细设计、编码以及单元测试、测试、运行维护等几个阶段。瀑布模型的周期是环环相扣的。每个周期中交互点都是一个里程碑，上一个周期的结束需要输出本次活动的工作结果，本次的活动的工作结果将会作为下一个周期的输入。这样，当某一个阶段出现了不可控的问题的时候，就会导致返工，返回到上一个阶段，甚至会延迟下一个阶段。</p>
 <p><img src="http://img2.imgtn.bdimg.com/it/u=1769503111,3112613153&amp;fm=26&amp;gp=0.jpg" alt="瀑布模型"></p>
 <p><strong>优点：</strong></p>
@@ -1118,67 +1299,81 @@ conda config --set show_channel_urls yes</code></p>
 <p>缺点：</p>
 <p>一.很难让用户确信这种演化方法的结果是可以控制的；</p>
 <p>二.建设周期长，而软件技术发展比较快，所以经常出现软件开发完毕后，和当前的技术水平有了较大的差距，无法满足当前用户需求。</p>
-<h2 id="简述统一过程三大特点-与面向对象的方法有什么关系？"><a href="#简述统一过程三大特点-与面向对象的方法有什么关系？" class="headerlink" title="简述统一过程三大特点,与面向对象的方法有什么关系？"></a>简述统一过程三大特点,与面向对象的方法有什么关系？</h2><p>三大特点：<strong>用例驱动</strong>，<strong>以架构为中心的</strong>，<strong>受控的迭代式增量开发</strong><br>和面向对象方法的关系：其中，<code>用例驱动</code>和<code>受控的迭代式增量开发</code>体现用户驱动开发，<code>以架构为中心的</code>体现风险驱动开发。</p>
+<h2 id="简述统一过程三大特点-与面向对象的方法有什么关系？"><a class="header-anchor" href="#简述统一过程三大特点-与面向对象的方法有什么关系？">¶</a>简述统一过程三大特点,与面向对象的方法有什么关系？</h2>
+<p>三大特点：<strong>用例驱动</strong>，<strong>以架构为中心的</strong>，<strong>受控的迭代式增量开发</strong><br>
+和面向对象方法的关系：其中，<code>用例驱动</code>和<code>受控的迭代式增量开发</code>体现用户驱动开发，<code>以架构为中心的</code>体现风险驱动开发。</p>
 <p><strong>RUP（统一软件过程）</strong> 是将类似的产品（如面向对象的软件过程OOSP），以及OPEN Process都是理解性的软件工程工具–把开发中面向过程的方面（例如定义的阶段，技术和实践）和其他开发的组件（例如文档，模型，手册以及代码等等）整合在一个统一的框架内。</p>
-<h2 id="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"><a href="#简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？" class="headerlink" title="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"></a>简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h2><p><strong>初始(inception)：</strong>编制简要的愿景文档、 业务案例、 确定范围、 粗略评估成本；关键的里程碑是生命周期目标(Lifecycle Objective)。</p>
-<p><strong>细化(elaboration)：</strong>细化愿景文档、 迭代地实现核心构架、 解决高风险的问题、 确定大多数的需求和范围、 进一步评估成本；关键的里程碑是生命周期架构(Lifecycle Architecture)。</p>
-<p><strong>构造(construction)：</strong>对遗留下来的风险较低和比较简单的元素进行迭代实现，准备部署；关键的里程碑是初始运作功能(Initial Operational)。</p>
-<p><strong>移交(transaction)：</strong>进行beta测试和软件部署；关键的里程碑是产品发布(Product Release)。</p>
-<h2 id="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"><a href="#软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？" class="headerlink" title="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"></a>软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h2><p>RUP（软件统一过程）的软件生命周期从时间上分为四个阶段，每个阶段的里程碑都定义了该阶段所要实现的主要目标，利用软件产品范围的弹性，合理规划范围，为企业按固定节奏生产提供了依据。 </p>
+<h2 id="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"><a class="header-anchor" href="#简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？">¶</a>简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h2>
+<p>**初始(inception)：**编制简要的愿景文档、 业务案例、 确定范围、 粗略评估成本；关键的里程碑是生命周期目标(Lifecycle Objective)。</p>
+<p>**细化(elaboration)：**细化愿景文档、 迭代地实现核心构架、 解决高风险的问题、 确定大多数的需求和范围、 进一步评估成本；关键的里程碑是生命周期架构(Lifecycle Architecture)。</p>
+<p>**构造(construction)：**对遗留下来的风险较低和比较简单的元素进行迭代实现，准备部署；关键的里程碑是初始运作功能(Initial Operational)。</p>
+<p>**移交(transaction)：**进行beta测试和软件部署；关键的里程碑是产品发布(Product Release)。</p>
+<h2 id="软件企业为什么能按固定节奏生产-固定周期发布软件产品？它给企业项目管理带来哪些好处？"><a class="header-anchor" href="#软件企业为什么能按固定节奏生产-固定周期发布软件产品？它给企业项目管理带来哪些好处？">¶</a>软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h2>
+<p>RUP（软件统一过程）的软件生命周期从时间上分为四个阶段，每个阶段的里程碑都定义了该阶段所要实现的主要目标，利用软件产品范围的弹性，合理规划范围，为企业按固定节奏生产提供了依据。</p>
 <p>迭代开发是RUP的关键实践。在软件生命周期中，每个阶段可进一步划分为多个迭代，一个迭代是一个完整的开发循环，确定一个内部里程碑，产生一个可执行的产品版本，是最终产品的一个子集，它增量式地发展，从一个迭代过程到另一个迭代过程到成为最终的系统。因此，统一过程UP也为企业固定周期发布软件产品提供了依据。</p>
 <p>好处：</p>
 <p>一.每个迭代都是瀑布的工作流程</p>
 <p>二.每个迭代产品在增量(制品是可运行的)，利于及时交付使用并反馈</p>
 <p>三.固定的迭代周期(等量的人月)，利于量化团队/个人生产率</p>
-<h1 id="2、实践题"><a href="#2、实践题" class="headerlink" title="2、实践题"></a>2、实践题</h1><h2 id="下载腾讯微信企业版PC端-安装腾讯敏捷产品研发平台-TAPD-了解使用-TAPD-的最佳实践"><a href="#下载腾讯微信企业版PC端-安装腾讯敏捷产品研发平台-TAPD-了解使用-TAPD-的最佳实践" class="headerlink" title="下载腾讯微信企业版PC端,安装腾讯敏捷产品研发平台(TAPD),了解使用 TAPD 的最佳实践"></a>下载腾讯微信企业版PC端,安装腾讯敏捷产品研发平台(TAPD),了解使用 TAPD 的最佳实践</h2><ul>
-<li><p>比较完善 backlog 支持（树结构）</p>
-<p>  可以在需求一栏中查看需求的树结构和需求的状态信息</p>
-<p>  <img src="/2019/04/16/系统分析作业3/8.png" alt="8"></p>
-<p>  左上角可以添加需求</p>
-<p>  <img src="/2019/04/16/系统分析作业3/7.png" alt="7"></p>
+<h1>2、实践题</h1>
+<h2 id="下载腾讯微信企业版pc端-安装腾讯敏捷产品研发平台-tapd-了解使用-tapd-的最佳实践"><a class="header-anchor" href="#下载腾讯微信企业版pc端-安装腾讯敏捷产品研发平台-tapd-了解使用-tapd-的最佳实践">¶</a>下载腾讯微信企业版PC端,安装腾讯敏捷产品研发平台(TAPD),了解使用 TAPD 的最佳实践</h2>
+<ul>
+<li>
+<p>比较完善 backlog 支持（树结构）</p>
+<p>可以在需求一栏中查看需求的树结构和需求的状态信息</p>
+<p><img src="/2019/04/16/系统分析作业3/8.png" alt="8"></p>
+<p>左上角可以添加需求</p>
+<p><img src="/2019/04/16/系统分析作业3/7.png" alt="7"></p>
 </li>
-<li><p>迭代（sprint）安排</p>
-<p>  迭代一栏中可以查看迭代的情况以及添加迭代</p>
-<p>  <img src="/2019/04/16/系统分析作业3/9.png" alt="9"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/10.png" alt="10"></p>
+<li>
+<p>迭代（sprint）安排</p>
+<p>迭代一栏中可以查看迭代的情况以及添加迭代</p>
+<p><img src="/2019/04/16/系统分析作业3/9.png" alt="9"></p>
+<p><img src="/2019/04/16/系统分析作业3/10.png" alt="10"></p>
 </li>
-<li><p>较好的缺陷管理</p>
-<p>  缺陷一栏中可以查看缺陷的基本状态，以及添加缺陷</p>
-<p>  <img src="/2019/04/16/系统分析作业3/11.png" alt="11"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/12.png" alt="12"></p>
+<li>
+<p>较好的缺陷管理</p>
+<p>缺陷一栏中可以查看缺陷的基本状态，以及添加缺陷</p>
+<p><img src="/2019/04/16/系统分析作业3/11.png" alt="11"></p>
+<p><img src="/2019/04/16/系统分析作业3/12.png" alt="12"></p>
 </li>
-<li><p>Kanban</p>
-<p>  kanban功能在团队协作项目中，标准的kanban模式和GitHub 上面差不多</p>
-<p>  <img src="/2019/04/16/系统分析作业3/1.png" alt="1">  </p>
-<p>  点开某条内容，详细编辑和分配任务</p>
-<p>  <img src="/2019/04/16/系统分析作业3/2.png" alt="2"></p>
-<p>  也可以以成员看板视角来查看</p>
-<p>  <img src="/2019/04/16/系统分析作业3/3.png" alt="3"></p>
+<li>
+<p>Kanban</p>
+<p>kanban功能在团队协作项目中，标准的kanban模式和GitHub 上面差不多</p>
+<p><img src="/2019/04/16/系统分析作业3/1.png" alt="1"></p>
+<p>点开某条内容，详细编辑和分配任务</p>
+<p><img src="/2019/04/16/系统分析作业3/2.png" alt="2"></p>
+<p>也可以以成员看板视角来查看</p>
+<p><img src="/2019/04/16/系统分析作业3/3.png" alt="3"></p>
 </li>
-<li><p>统计</p>
-<p>  在团队协作项目中，报表栏目可以查看任务的统计</p>
-<p>  <img src="/2019/04/16/系统分析作业3/4.png" alt="4"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/5.png" alt="5"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/6.png" alt="6"></p>
-<p>  在敏捷开发项目中，有缺陷统计，需求分布统计和需求关联统计</p>
-<p>  <img src="/2019/04/16/系统分析作业3/15.png" alt="15"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/16.png" alt="16"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/17.png" alt="17"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/18.png" alt="18"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/14.png" alt="14"></p>
-<p>  <img src="/2019/04/16/系统分析作业3/13.png" alt="13"></p>
+<li>
+<p>统计</p>
+<p>在团队协作项目中，报表栏目可以查看任务的统计</p>
+<p><img src="/2019/04/16/系统分析作业3/4.png" alt="4"></p>
+<p><img src="/2019/04/16/系统分析作业3/5.png" alt="5"></p>
+<p><img src="/2019/04/16/系统分析作业3/6.png" alt="6"></p>
+<p>在敏捷开发项目中，有缺陷统计，需求分布统计和需求关联统计</p>
+<p><img src="/2019/04/16/系统分析作业3/15.png" alt="15"></p>
+<p><img src="/2019/04/16/系统分析作业3/16.png" alt="16"></p>
+<p><img src="/2019/04/16/系统分析作业3/17.png" alt="17"></p>
+<p><img src="/2019/04/16/系统分析作业3/18.png" alt="18"></p>
+<p><img src="/2019/04/16/系统分析作业3/14.png" alt="14"></p>
+<p><img src="/2019/04/16/系统分析作业3/13.png" alt="13"></p>
 </li>
 </ul>
-<h2 id="大作业准备"><a href="#大作业准备" class="headerlink" title="大作业准备"></a>大作业准备</h2><ul>
-<li>按大作业要求组件团队、思考项目题目与内容</li>
-<li><p>将团队暂时分为技术研究、业务调研两个部分</p>
+<h2 id="大作业准备"><a class="header-anchor" href="#大作业准备">¶</a>大作业准备</h2>
 <ul>
-<li><p>技术团队</p>
-<p>  初步确定技术方法，力争做一些技术原型</p>
-<p>  ​    如 基于 MVC 框架的的用户登陆实现</p>
+<li>按大作业要求组件团队、思考项目题目与内容</li>
+<li>将团队暂时分为技术研究、业务调研两个部分
+<ul>
+<li>
+<p>技术团队</p>
+<p>初步确定技术方法，力争做一些技术原型</p>
+<p>​	如 基于 MVC 框架的的用户登陆实现</p>
 </li>
-<li><p>业务调研团队</p>
-<p>  调查竞争性产品，分析它们的基础、共性业务以及竞争优势</p>
+<li>
+<p>业务调研团队</p>
+<p>调查竞争性产品，分析它们的基础、共性业务以及竞争优势</p>
 </li>
 </ul>
 </li>
@@ -1324,45 +1519,56 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业二"><a href="#系统分析与设计作业二" class="headerlink" title="系统分析与设计作业二"></a>系统分析与设计作业二</h1><p>[TOC]</p>
-<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><h3 id="用简短的语言给出对分析、设计的理解"><a href="#用简短的语言给出对分析、设计的理解" class="headerlink" title="用简短的语言给出对分析、设计的理解"></a>用简短的语言给出对分析、设计的理解</h3><p><strong>分析</strong>（analysis）强调的是对问题和需求的<code>调查研究</code>，而不是解决方案，找出构成问题域概念模型的关键抽象（行为和交互）。例如，如果需要一个新的在线交易系统，那么应该如何使用它？他应该具有哪些功能？</p>
-<p><strong>设计</strong>（design）强调的是满足需求的<code>概念上的解决方案</code>（软件，硬件方面），而不是其实现。在体系结构框架内构建系统。设计过程将分析的抽象结果映射到软件设计类层次结构中，将对象（类实例）及其行为组合到系统协作中，还需要在设计过程中发现和设计一些不在问题域中，但是在实现中需要的抽象，最后在层次结构中组织类。例如，对数据库和软件对象的描述。设计思想通常排斥底层或”显而易见”的细节。</p>
-<h3 id="用一句话描述面向对象的分析与设计的优势"><a href="#用一句话描述面向对象的分析与设计的优势" class="headerlink" title="用一句话描述面向对象的分析与设计的优势"></a>用一句话描述面向对象的分析与设计的优势</h3><blockquote>
+            <h1>系统分析与设计作业二</h1>
+<p>[TOC]</p>
+<h2 id="简答题"><a class="header-anchor" href="#简答题">¶</a>简答题</h2>
+<h3 id="用简短的语言给出对分析-设计的理解"><a class="header-anchor" href="#用简短的语言给出对分析-设计的理解">¶</a>用简短的语言给出对分析、设计的理解</h3>
+<p><strong>分析</strong>（analysis）强调的是对问题和需求的<code>调查研究</code>，而不是解决方案，找出构成问题域概念模型的关键抽象（行为和交互）。例如，如果需要一个新的在线交易系统，那么应该如何使用它？他应该具有哪些功能？</p>
+<p><strong>设计</strong>（design）强调的是满足需求的<code>概念上的解决方案</code>（软件，硬件方面），而不是其实现。在体系结构框架内构建系统。设计过程将分析的抽象结果映射到软件设计类层次结构中，将对象（类实例）及其行为组合到系统协作中，还需要在设计过程中发现和设计一些不在问题域中，但是在实现中需要的抽象，最后在层次结构中组织类。例如，对数据库和软件对象的描述。设计思想通常排斥底层或&quot;显而易见&quot;的细节。</p>
+<h3 id="用一句话描述面向对象的分析与设计的优势"><a class="header-anchor" href="#用一句话描述面向对象的分析与设计的优势">¶</a>用一句话描述面向对象的分析与设计的优势</h3>
+<blockquote>
 <p>在<strong>面向对象分析</strong>（objected-oriented analysis）过程中，强调的是在问题领域内发现和描述对象（或概念）。例如，航班信息系统中的飞机，航班，飞行员等概念。</p>
 <p>在<strong>面向对象设计</strong>（objected-oriented design）过程中，强调的是定义软件对象以及它们如何协作以实现要求。例如，软件对象飞机可以有tailNumber属性和getFlightHistory方法。</p>
 </blockquote>
 <p><strong>优势</strong>：面向对象分析与设计根据设计的需要对现实世界的事物进行抽象，产生类。使用这样的方法解决问题，接近于日常生活和自然的思考方式，系统分析师不需要懂专业术语，问题领域和实现层面的专家可以用平常通用的语言沟通，使得分析结果更加符合需求。</p>
-<h3 id="简述-UML（统一建模语言）的作用。考试考哪些图？"><a href="#简述-UML（统一建模语言）的作用。考试考哪些图？" class="headerlink" title="简述 UML（统一建模语言）的作用。考试考哪些图？"></a>简述 UML（统一建模语言）的作用。考试考哪些图？</h3><blockquote>
+<h3 id="简述-uml-统一建模语言-的作用-考试考哪些图？"><a class="header-anchor" href="#简述-uml-统一建模语言-的作用-考试考哪些图？">¶</a>简述 UML（统一建模语言）的作用。考试考哪些图？</h3>
+<blockquote>
 <p>统一建模语言（UML）是描述，构造和文档化系统制品的可视化语言。</p>
 </blockquote>
 <p><strong>作用</strong>：</p>
 <p>UML是一种进行面向对象程序设计的工具，将OOA（面向对象分析）与OOD（面向对象设计）用统一的符号表示出来，讲对象属性和对象之间的联系可视化，用来把现实中的问题抽象成面向对象的解决方案，以便进一步的编码。具体来说，可以用作有如下作用：</p>
 <p>1.作为草图：使用UML设计非正式的，不完整的图，借助可视化语言的功能，用于探讨问题或解决问题方案的复杂部分。</p>
 <p>2.作为蓝图：使用UML设计相对详细的设计图，可以用于1）逆向工程，即以UML图的方式对现有代码进行可视化，使其容易理解；2）代码生成（前向工程），使用图生成代码，然后开发者编写并补充其他代码。</p>
-<p>3.作为编程语言：用UML完成软件系统可执行规格说明，可执行代码能够被自动生成，但并不像通常一样为开发者所见或修改；人们仅使用UML”编程语言”进行工作。</p>
+<p>3.作为编程语言：用UML完成软件系统可执行规格说明，可执行代码能够被自动生成，但并不像通常一样为开发者所见或修改；人们仅使用UML&quot;编程语言&quot;进行工作。</p>
 <p><strong>考试</strong>：</p>
 <p><strong>用例图</strong>:用户角度:功能、执行者</p>
 <p><strong>静态图</strong>:系统静态结构</p>
-<p>​    ><code>类图</code>:概念及关系 􏰆</p>
-<p>​    ><code>对象图</code>:某种状态或时间段内，系统中活跃的对象及其关系</p>
-<p>​    ><code>􏰆包图</code>:􏰇描述系统的分解结构</p>
+<p>​	&gt;<code>类图</code>:概念及关系 􏰆</p>
+<p>​	&gt;<code>对象图</code>:某种状态或时间段内，系统中活跃的对象及其关系</p>
+<p>​	&gt;<code>􏰆包图</code>:􏰇描述系统的分解结构</p>
 <p><strong>行为图</strong>:系统的动态行为</p>
-<p>​    ><code>􏰆交互图</code>:描􏰇述对象间的消息传递 􏰈</p>
-<p>​            ><code>顺序图</code>:强调对象间消息发送的时序 􏰈</p>
-<p>​            ><code>合作图</code>:强调对象间的动态协作关系</p>
-<p>​    ><code>􏰆状态图</code>:对象的动态行为。状态-事件-状态迁移-响应动作</p>
-<p>​    ><code>􏰆活动图</code>:􏰇描述系统为完成某功能而执行的操作序列</p>
+<p>​	&gt;<code>􏰆交互图</code>:描􏰇述对象间的消息传递 􏰈</p>
+<p>​			&gt;<code>顺序图</code>:强调对象间消息发送的时序 􏰈</p>
+<p>​			&gt;<code>合作图</code>:强调对象间的动态协作关系</p>
+<p>​	&gt;<code>􏰆状态图</code>:对象的动态行为。状态-事件-状态迁移-响应动作</p>
+<p>​	&gt;<code>􏰆活动图</code>:􏰇描述系统为完成某功能而执行的操作序列</p>
 <p><strong>实现图</strong>:􏰇描述系统的组成和分布状况 􏰆</p>
-<p>​    ><code>构件图</code>:组成部件及其关系 􏰆</p>
-<p>​    ><code>部署图</code>:物理体系结构及与软件单元的对应关系</p>
-<h3 id="从软件本质的角度，解释软件范围（需求）控制的可行性"><a href="#从软件本质的角度，解释软件范围（需求）控制的可行性" class="headerlink" title="从软件本质的角度，解释软件范围（需求）控制的可行性"></a>从软件本质的角度，解释软件范围（需求）控制的可行性</h3><blockquote>
+<p>​	&gt;<code>构件图</code>:组成部件及其关系 􏰆</p>
+<p>​	&gt;<code>部署图</code>:物理体系结构及与软件单元的对应关系</p>
+<h3 id="从软件本质的角度-解释软件范围-需求-控制的可行性"><a class="header-anchor" href="#从软件本质的角度-解释软件范围-需求-控制的可行性">¶</a>从软件本质的角度，解释软件范围（需求）控制的可行性</h3>
+<blockquote>
 <p>软件的本质有：</p>
-<p>1.complexity 复杂性<br>2.conformity 一致性<br>3.changeability 可变性<br>4.invisibility 不可视性</p>
+<p>1.complexity 复杂性<br>
+2.conformity 一致性<br>
+3.changeability 可变性<br>
+4.invisibility 不可视性</p>
 </blockquote>
 <p>由于软件的复杂性和可变性，一个需求的改变就可能引发整个软件设计的改变，因此如果不对软件的需求范围做出控制，会增加开发难度，对软件制品的质量产生负面效果，因此软件范围的控制具有必要性。</p>
 <p>又由于软件的不可视性，难以在初次测试时检测是否满足确定真正的需求。所以软件范围的控制具有困难性。</p>
 <p>但是在多数情况下，客户与开发者能就项目的 20% 内容给出严格的需求约定，80% 的内容都是相对模糊的。因此，围绕客户目标，发现并满足客户感兴趣的内容是最关键的。因此在需求分析与设计的过程中，对现有的需求进行评估，对需求的重要性进行评级并排序，初次迭代中开发有较大价值的需求，并对软件的增量留有足够的空间，同时围绕软件开发的成本进行调控，这样可以使得软件生产的范围，预算、工期、意外变化等在一定程度都在我们的掌控之中。</p>
-<h2 id="项目管理实践"><a href="#项目管理实践" class="headerlink" title="项目管理实践"></a>项目管理实践</h2><h3 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h3><p>看板（kanban）是敏捷开发的重要手段，主要用于项目的进度管理。所有需要完成的任务，都做成卡片，贴在一块白板上面，这就是看板。</p>
+<h2 id="项目管理实践"><a class="header-anchor" href="#项目管理实践">¶</a>项目管理实践</h2>
+<h3 id="看板使用练习"><a class="header-anchor" href="#看板使用练习">¶</a>看板使用练习</h3>
+<p>看板（kanban）是敏捷开发的重要手段，主要用于项目的进度管理。所有需要完成的任务，都做成卡片，贴在一块白板上面，这就是看板。</p>
 <p>按照不同的阶段，看板分成若干列：</p>
 <ul>
 <li>Todo （待开发）</li>
@@ -1371,22 +1577,29 @@ conda config --set show_channel_urls yes</code></p>
 </ul>
 <p>可以根据实际情况，分出更多的列：</p>
 <ul>
-<li><p>Todo （待安排）</p>
+<li>
+<p>Todo （待安排）</p>
 </li>
-<li><p>Plan （计划）</p>
+<li>
+<p>Plan （计划）</p>
 </li>
-<li><p>Develop （开发）</p>
+<li>
+<p>Develop （开发）</p>
 </li>
-<li><p>Test （测试）</p>
+<li>
+<p>Test （测试）</p>
 </li>
-<li><p>Deploy （部署）</p>
+<li>
+<p>Deploy （部署）</p>
 </li>
-<li><p>Done （已完成）</p>
+<li>
+<p>Done （已完成）</p>
 </li>
 </ul>
 <p>由于团队还没有正式开始工作，因此我自己在kanban上面做了一些学习测试：</p>
 <p><img src="/2019/04/02/系统分析作业2/2.png" alt="2"></p>
-<h3 id="UML绘图练习"><a href="#UML绘图练习" class="headerlink" title="UML绘图练习"></a>UML绘图练习</h3><p>课本中文版p.193，图16-17</p>
+<h3 id="uml绘图练习"><a class="header-anchor" href="#uml绘图练习">¶</a>UML绘图练习</h3>
+<p>课本中文版p.193，图16-17</p>
 <p><img src="/2019/04/02/系统分析作业2/1.png" alt="1"></p>
 
           
@@ -1635,22 +1848,32 @@ conda config --set show_channel_urls yes</code></p>
 <p>由于VSM法中需要事先计算类别的空间向量，而该空间向量的建立又很大程度的依赖于该类别向量中所包含的特征项。根据研究发现，类别中所包含的非零特征项越多，其包含的每个特征项对于类别的表达能力越弱。因此，VSM法相对其他分类方法而言，更适合于专业文献的分类。</p>
 <p>关键词权重计算算法：TF-IDF<a href="https://www.cnblogs.com/likai198981/p/3344060.html" target="_blank" rel="noopener">https://www.cnblogs.com/likai198981/p/3344060.html</a></p>
 <p>搜索引擎</p>
-<h1 id="评估测试"><a href="#评估测试" class="headerlink" title="评估测试"></a>评估测试</h1><h2 id="评估要点"><a href="#评估要点" class="headerlink" title="评估要点"></a>评估要点</h2><ul>
-<li><p>性能评估</p>
+<h1>评估测试</h1>
+<h2 id="评估要点"><a class="header-anchor" href="#评估要点">¶</a>评估要点</h2>
+<ul>
+<li>
+<p>性能评估</p>
 </li>
-<li><p>检索质量评估</p>
+<li>
+<p>检索质量评估</p>
 </li>
 </ul>
-<h2 id="使用准确率precision-召回率recall"><a href="#使用准确率precision-召回率recall" class="headerlink" title="使用准确率precision/召回率recall"></a>使用准确率precision/召回率recall</h2><p>困难在于需要对文档进行事先的评估，且只能是二值化的评估</p>
+<h2 id="使用准确率precision-召回率recall"><a class="header-anchor" href="#使用准确率precision-召回率recall">¶</a>使用准确率precision/召回率recall</h2>
+<p>困难在于需要对文档进行事先的评估，且只能是二值化的评估</p>
 <p>F-measure也经常使用</p>
 <p>谷歌更强调precision</p>
-<h2 id="Interleaved-ranking"><a href="#Interleaved-ranking" class="headerlink" title="Interleaved ranking"></a>Interleaved ranking</h2><p>将A，B两个检索系统的排序结果交叉</p>
+<h2 id="interleaved-ranking"><a class="header-anchor" href="#interleaved-ranking">¶</a>Interleaved ranking</h2>
+<p>将A，B两个检索系统的排序结果交叉</p>
 <p><img src="/2019/03/24/数据科学-信息检索/image-20190812105610420.png" alt="image-20190812105610420"></p>
 <p>并且去掉相同的结果</p>
 <p><img src="/2019/03/24/数据科学-信息检索/image-20190812105635511.png" alt="image-20190812105635511"></p>
 <p>之后比较哪一个系统获得更多的点击量</p>
-<h2 id="A-B-testing"><a href="#A-B-testing" class="headerlink" title="A/B testing"></a>A/B testing</h2><h2 id="测试集Test-Collections"><a href="#测试集Test-Collections" class="headerlink" title="测试集Test Collections"></a>测试集Test Collections</h2><h3 id="Old-Test-Collections"><a href="#Old-Test-Collections" class="headerlink" title="Old Test Collections"></a>Old Test Collections</h3><ul>
-<li>Cranfield 2<ul>
+<h2 id="a-b-testing"><a class="header-anchor" href="#a-b-testing">¶</a>A/B testing</h2>
+<h2 id="测试集test-collections"><a class="header-anchor" href="#测试集test-collections">¶</a>测试集Test Collections</h2>
+<h3 id="old-test-collections"><a class="header-anchor" href="#old-test-collections">¶</a>Old Test Collections</h3>
+<ul>
+<li>Cranfield 2
+<ul>
 <li>1400 Documents, 221 Queries</li>
 <li>200 Documents, 42 Queries</li>
 </ul>
@@ -1662,7 +1885,8 @@ conda config --set show_channel_urls yes</code></p>
 <li>CISI – 1460 Documents, 35 Queries</li>
 <li>MEDLARS (Salton) 273 Documents, 18 Queries</li>
 </ul>
-<h3 id="Modern-Well-Used-Test-Collections"><a href="#Modern-Well-Used-Test-Collections" class="headerlink" title="Modern Well Used Test Collections"></a>Modern Well Used Test Collections</h3><p>Text Retrieval Conference (<a href="http://trec.nist.gov/data.html" target="_blank" rel="noopener">TREC</a>)</p>
+<h3 id="modern-well-used-test-collections"><a class="header-anchor" href="#modern-well-used-test-collections">¶</a>Modern Well Used Test Collections</h3>
+<p>Text Retrieval Conference (<a href="http://trec.nist.gov/data.html" target="_blank" rel="noopener">TREC</a>)</p>
 <p>NII Test Collections for IR Systems (<a href="http://research.nii.ac.jp/ntcir/data/data-en.html" target="_blank" rel="noopener">NTCIR</a>)</p>
 <p>Cross Language Evaluation Forum (<a href="http://www.clef-campaign.org/" target="_blank" rel="noopener">CLEF</a>)</p>
 <p>Reuters-RCV1</p>
@@ -1808,27 +2032,118 @@ conda config --set show_channel_urls yes</code></p>
       
         
           
-            <h1 id="系统分析与设计作业一"><a href="#系统分析与设计作业一" class="headerlink" title="系统分析与设计作业一"></a>系统分析与设计作业一</h1><p>[TOC]</p>
-<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><h3 id="软件工程的定义"><a href="#软件工程的定义" class="headerlink" title="软件工程的定义"></a>软件工程的定义</h3><blockquote>
+            <h1>系统分析与设计作业一</h1>
+<p>[TOC]</p>
+<h2 id="简答题"><a class="header-anchor" href="#简答题">¶</a>简答题</h2>
+<h3 id="软件工程的定义"><a class="header-anchor" href="#软件工程的定义">¶</a>软件工程的定义</h3>
+<blockquote>
 <p>Software engineering is “(1) the application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software, that is, the application of engineering to software,” and “(2) the study of approaches as in (1).” – IEEE Standard 610.12</p>
 </blockquote>
 <p><strong>软件工程</strong>是指导计算机软件开发和维护的工程学科。采用工程的概念、原理、技术和方法来开发与维护有效的、实用的和高质量软件，把经过实践考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来，它主要涉及程序设计语言、数据库、软件开发工具、系统平台、标准、设计模式等方面。</p>
-<h3 id="解释导致-software-crisis-本质原因、表现，述说克服软件危机的方法"><a href="#解释导致-software-crisis-本质原因、表现，述说克服软件危机的方法" class="headerlink" title="解释导致 software crisis 本质原因、表现，述说克服软件危机的方法"></a>解释导致 software crisis 本质原因、表现，述说克服软件危机的方法</h3><blockquote>
+<h3 id="解释导致-software-crisis-本质原因-表现-述说克服软件危机的方法"><a class="header-anchor" href="#解释导致-software-crisis-本质原因-表现-述说克服软件危机的方法">¶</a>解释导致 software crisis 本质原因、表现，述说克服软件危机的方法</h3>
+<blockquote>
 <p><strong>software crisis(软件危机)</strong>，指落后的软件生产方式无法满足迅速增长的计算机软件需求，从而导致软件开发与维护过程中出现一系列严重问题的现象。这些问题皆可能导致软件产品的寿命缩短、甚至夭折。软件开发是一项高难度、高风险的活动，由于它的高失败率，故有所谓“软件危机”之说。</p>
 </blockquote>
-<h4 id="本质原因"><a href="#本质原因" class="headerlink" title="本质原因"></a>本质原因</h4><p>软件危机的本质原因是软件需求猛增且缺乏科学开发方法的指导，具体体现为<code>缺乏正确的理论指导</code>,<code>软件开发规模越来越大</code>,<code>软件开发复杂度越来越高</code></p>
-<h4 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h4><p>危机表现在下面几个方面：<br>·Projects running over-budget: 项目运行超出预算<br>·Projects running over-time: 项目运行超过时间<br>·Software was very inefficient: 软件性能低效<br>·Software was of low quality: 软件质量低落<br>·Software often did not meet requirements: 软件通常不匹配需求<br>·Projects were unmanageable and code difficult to maintain: 项目无法管理，且代码难以维护<br>·Software was never delivered: 软件不发布</p>
-<h4 id="克服方法"><a href="#克服方法" class="headerlink" title="克服方法"></a>克服方法</h4><p>·用现代工程的概念，原理，技术和方法进行计算机软件的开发，管理和维护<br>·研制和使用软件工具，用以辅助进行软件项目管理与技术生产<br>·将软件生命周期各阶段使用的软件工具有机地集合成为一个整体，形成能够连续支持软件开发与维护全过程的集成化软件支援环境，以期从管理和技术两方面解决软件危机问题</p>
-<h3 id="软件生命周期"><a href="#软件生命周期" class="headerlink" title="软件生命周期"></a>软件生命周期</h3><p>软件生命周期(Software Life Cycle,SLC)是软件的产生直到报废或停止使用的生命周期，从时间角度，把整个周期划分为若干个阶段<br>划分的原则：各阶段的任务彼此间尽可能<strong>相对独立</strong>，同一个阶段各项任务的性质尽可能相同，从而降低每个阶段任务的复杂性，简化不同阶段之间的联系，有利于软件开发过程的组织管理。划分受软件规模、性质、种类、开发方法等因素的影响。</p>
+<h4 id="本质原因"><a class="header-anchor" href="#本质原因">¶</a>本质原因</h4>
+<p>软件危机的本质原因是软件需求猛增且缺乏科学开发方法的指导，具体体现为<code>缺乏正确的理论指导</code>,<code>软件开发规模越来越大</code>,<code>软件开发复杂度越来越高</code></p>
+<h4 id="表现"><a class="header-anchor" href="#表现">¶</a>表现</h4>
+<p>危机表现在下面几个方面：<br>
+·Projects running over-budget: 项目运行超出预算<br>
+·Projects running over-time: 项目运行超过时间<br>
+·Software was very inefficient: 软件性能低效<br>
+·Software was of low quality: 软件质量低落<br>
+·Software often did not meet requirements: 软件通常不匹配需求<br>
+·Projects were unmanageable and code difficult to maintain: 项目无法管理，且代码难以维护<br>
+·Software was never delivered: 软件不发布</p>
+<h4 id="克服方法"><a class="header-anchor" href="#克服方法">¶</a>克服方法</h4>
+<p>·用现代工程的概念，原理，技术和方法进行计算机软件的开发，管理和维护<br>
+·研制和使用软件工具，用以辅助进行软件项目管理与技术生产<br>
+·将软件生命周期各阶段使用的软件工具有机地集合成为一个整体，形成能够连续支持软件开发与维护全过程的集成化软件支援环境，以期从管理和技术两方面解决软件危机问题</p>
+<h3 id="软件生命周期"><a class="header-anchor" href="#软件生命周期">¶</a>软件生命周期</h3>
+<p>软件生命周期(Software Life Cycle,SLC)是软件的产生直到报废或停止使用的生命周期，从时间角度，把整个周期划分为若干个阶段<br>
+划分的原则：各阶段的任务彼此间尽可能<strong>相对独立</strong>，同一个阶段各项任务的性质尽可能相同，从而降低每个阶段任务的复杂性，简化不同阶段之间的联系，有利于软件开发过程的组织管理。划分受软件规模、性质、种类、开发方法等因素的影响。</p>
 <p>软件生命周期存在多种模型，包括<code>瀑布模型</code>、<code>原型模型</code>、<code>增量模型</code>、<code>螺旋模型</code>、<code>喷泉模型</code>等等。</p>
-<p>瀑布模型：<br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1552632968300&amp;di=574f39bb54acd79c554e8de178633d80&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mukewang.com%2F58451dbe0001c9e012800720.jpg" alt="瀑布模型"><br>原型模型：<br><img src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=5e66d70c4134970a537e187df4a3baad/a8014c086e061d95fcce281b7bf40ad162d9ca0d.jpg" alt="原型模型"><br>增量模型：<br><img src="http://img2.imgtn.bdimg.com/it/u=3388197172,2608548260&amp;fm=214&amp;gp=0.jpg" alt="增量模型"><br>螺旋模型：<br><img src="http://img3.imgtn.bdimg.com/it/u=75302616,622430667&amp;fm=26&amp;gp=0.jpg" alt="螺旋模型"><br>喷泉模型：<br><img src="http://www.gzmh56.cn/upload/baike/qx1e3gjyr3f.jpg" alt="喷泉模型"></p>
-<p>而在业界共识中，软件生存周期一般包括：<br>一、问题定义。要求系统分析员与用户进行交流，弄清“用户需要计算机解决什么问题”然后提出关于“系统目标与范围的说明”，提交用户审查和确认。<br>二、可行性研究。一方面在于把待开发的系统的目标以明确的语言描述出来，另一方面从经济、技术、法律等多方面进行可行性分析。<br>三、需求分析。弄清用户对软件系统的全部需求，编写需求规格说明书和初步的用户手册，提交评审。<br>四、开发阶段。开发阶段由四个阶段组成：<br>    1、概要设计<br>    2、详细设计<br>    3、实现：根据选定的程序设计语言完成源程序的编码。<br>    4、测试<br>五、维护：维护包括四个方面<br>    1、改正性维护：在软件交付使用后，由于开发测试时的不彻底、不完全、必然会有一部分隐藏的错误被带到运行阶段，这些隐藏的错误在某些特定的使用环境下就会暴露。<br>    2、适应性维护：是为适应环境的变化而修改软件的活动。<br>    3、完善性维护：是根据用户在使用过程中提出的一些建设性意见而进行的维护活动。<br>    4、预防性维护：是为了进一步改善软件系统的可维护性和可靠性，并为以后的改进奠定基础。</p>
-<h3 id="SWEBoK-的-15-个知识域"><a href="#SWEBoK-的-15-个知识域" class="headerlink" title="SWEBoK 的 15 个知识域"></a>SWEBoK 的 15 个知识域</h3><p><strong>软件工程实践(Knowledge Areas Characterizing the Practice of Software Engineering):</strong><br>    <strong>Software requirements(软件需求)</strong><br>        软件需求知识域主要涉及软件需求的引导、协商、分析、规范和确认过程。当这些过程执行得不好时，软件工程项目是极为脆弱的，这一点在软件行业得到了普遍认可。软件需求表示对软件产品的需求和约束，这些需求和约束有助于解决现实世界中的一些实际问题。<br>    <strong>Software design(软件设计)</strong><br>        软件设计被定义为定义系统或组件的架构、组件、接口和其他特性的过程，以及该过程的结果(IEEE 1991)。软件设计知识域覆盖了设计过程和最终产品。软件设计过程是软件工程生命周期活动，在该活动中分析软件需求，以便对软件的内部结构及其行为进行描述，作为其构建的基础。软件设计的结果必须描述软件架构——也就是软件是如何分解和组织成组件的，以及这些组件之间的接口。它还必须在细节层次上描述组件，以实现其构造。<br>    <strong>Software construction(软件构造)</strong><br>        软件构造是指通过详细设计、编码、单元测试、集成测试、调试和验证的组合来详细创建工作软件。软件构造知识域包括与满足其需求和设计约束的软件程序开发相关的主题。软件构造知识域涵盖软件构建基础知识、管理软件构建、构建技术、实践考虑和软件构建工具。<br>    <strong>Software testing(软件测试)</strong><br>        软件测试是一项评估产品质量并通过识别缺陷来改进产品质量的活动。软件测试涉及根据有限的测试用例集上的预期行为对程序行为进行动态验证。这些测试用例是从(通常非常大)执行域中选择的。软件测试知识域包括软件测试的基础知识、测试技术、人机界面测试和评估、测试相关措施和实际考虑。<br>    <strong>Software maintenance(软件维护)</strong><br>        软件维护包括增强现有的能力，使软件适应新的和修改过的操作环境，以及纠正缺陷。这些类别被称为完善的、适应性的和纠正性的软件维护。软件维护知识域包括软件维护的基础知识（维护的性质和需要、维护的类别、维护成本），软件维护中的关键问题（技术问题、管理问题、维护成本估算、软件维护的测量），维护过程，软件维护技术(程序理解、重新设计、逆向工程、重构、软件退役)，灾难恢复技术和软件维护工具。<br>    <strong>Software configuration management(软件配置管理)</strong><br>        系统的配置是硬件、固件、软件的功能和/或物理特性，或这些特性的组合。它还可以被视为硬件、固件或软件项的特定版本的集合，根据特定的构建过程进行组合以满足特定的目的。因此，软件配置管理（SCM）是一门在不同的时间点识别系统配置的学科，目的是系统地控制配置的更改，并在整个软件生命周期中保持配置的完整性和可追溯性。软件配置管理知识域包括对SCM过程的管理，软件配置识别、控制、状态记录、审核，软件发布管理和交付以及软件配置管理工具。<br>    <strong>Software engineering management(软件工程管理)</strong><br>        软件工程管理包括计划、协调、测量、报告和控制项目（程序），以确保软件的开发和维护是系统的、有纪律的和量化的。软件工程管理知识域包括启动和范围定义(确定和协商需求、可行性分析以及需求的评审和修订)，软件项目规划(过程规划、工作量、成本和进度估算、资源分配、风险分析、质量规划)，软件项目投资(测量、报告和控制，采购和供应商合同管理)，产品验收，项目绩效的审查和分析，项目验收以及软件管理工具。<br>    <strong>Software engineering process(软件工程过程)</strong><br>        软件工程知识域涉及软件生命周期过程的定义、实现、评估、测量、管理和改进。所涵盖的主题包括过程实施和变更（过程基础设施、过程实施和变更模型以及软件过程管理)，过程定义（软件生命周期模型和过程、过程定义的注释、过程适应和过程自动化)，过程评估模型和方法，度量（过程测量、产品测量、测量技术和测量结果质量)和软件过程工具。<br>    <strong>Software engineering models and methods(软件工程模型和方法)</strong><br>        软件工程模型和方法知识域描述了包含多个生命周期阶段的方法，特定于某个生命周期阶段的方法由其他知识域涵盖。该知识域所涵盖的主题包括建模（软件工程模型的原理和属性，语法，语义和不变量，前提条件、后置条件和不变量），模型类型（信息，结构和行为模型），分析（分析正确性、完整性、一致性、质量和交互，可追溯性和权衡分析）和软件开发方法（启发式方法、形式方法、原型方法和敏捷方法）。<br>    <strong>Software quality(软件质量)</strong><br>        软件质量是一个在软件生命周期中普遍存在的问题，在许多Swebok v3 知识域中都有解决方法。此外，软件质量知识域还包括了软件质量基础（软件工程文化，软件质量特征，软件质量的价值和成本以及软件质量改进），软件质量管理过程（软件质量保证、验证和确认、评审和审计）以及实践中的注意事项（缺陷描述、软件质量度量和软件质量工具）。<br>    <strong>Software engineering professional practice(软件工程专业实践)</strong><br>        软件工程专业实践涉及软件工程师在实践软件工程中所必须具备的知识、技能和态度。软件工程专业实践知识域涵盖专业性（专业行为，专业协会，软件工程标准，雇佣合同和法律问题），道德规范，群体动力学（团队合作，认知问题复杂性，与利益相关者互动，处理不确定性和模糊性，在多元文化环境处理问题）以及沟通技巧。<br><strong>软件工程教育(Knowledge Areas Characterizing the Educational Requirements of Software Engineering):</strong><br>    <strong>Software engineering economics(软件工程经济学)</strong><br>        软件工程经济学知识域关注于在业务环境中做出决策，以使得技术决策与组织的业务目标保持一致。所涵盖的主题包括软件工程经济学基础（提案，现金流，货币时间价值，规划范围，通货膨胀，折旧，重置和退休决策），非营利决策（成本效益分析，优化分析），估算，经济风险和不确定性（估算方法，在风险和不确定性下的决策）以及多属性决策（价值和测量尺度、补偿和非补偿方法）。<br>    <strong>Computing foundations(计算基础)</strong><br>        计算基础知识域涵盖了为软件工程实践提供必要计算背景的基本主题。所涵盖的主题包括问题解决方法，抽象，算法和复杂性，编程基础，并行和分布式计算基础，计算机组成，操作系统和网络通信。<br>    <strong>Mathematical foundations(数学基础)</strong><br>        数学基础知识域涵盖了为软件工程实践提供必要数学背景的基本主题。所涉及的主题包括集合、关系和函数，基本命题和谓词逻辑，证明方法，图和树，离散概率，语法和有限状态机以及数论。<br>    <strong>Engineering foundations(工程基础)</strong><br>        工程基础知识域涵盖了为软件工程实践提供必要工程背景的基本主题。所涉及的主题包括了经验方法和实践技术，统计分析，测量和度量，工程设计，模拟和建模以及根本性原因分析。</p>
+<p>瀑布模型：<br>
+<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1552632968300&amp;di=574f39bb54acd79c554e8de178633d80&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mukewang.com%2F58451dbe0001c9e012800720.jpg" alt="瀑布模型"><br>
+原型模型：<br>
+<img src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=5e66d70c4134970a537e187df4a3baad/a8014c086e061d95fcce281b7bf40ad162d9ca0d.jpg" alt="原型模型"><br>
+增量模型：<br>
+<img src="http://img2.imgtn.bdimg.com/it/u=3388197172,2608548260&amp;fm=214&amp;gp=0.jpg" alt="增量模型"><br>
+螺旋模型：<br>
+<img src="http://img3.imgtn.bdimg.com/it/u=75302616,622430667&amp;fm=26&amp;gp=0.jpg" alt="螺旋模型"><br>
+喷泉模型：<br>
+<img src="http://www.gzmh56.cn/upload/baike/qx1e3gjyr3f.jpg" alt="喷泉模型"></p>
+<p>而在业界共识中，软件生存周期一般包括：<br>
+一、问题定义。要求系统分析员与用户进行交流，弄清“用户需要计算机解决什么问题”然后提出关于“系统目标与范围的说明”，提交用户审查和确认。<br>
+二、可行性研究。一方面在于把待开发的系统的目标以明确的语言描述出来，另一方面从经济、技术、法律等多方面进行可行性分析。<br>
+三、需求分析。弄清用户对软件系统的全部需求，编写需求规格说明书和初步的用户手册，提交评审。<br>
+四、开发阶段。开发阶段由四个阶段组成：<br>
+	1、概要设计<br>
+	2、详细设计<br>
+	3、实现：根据选定的程序设计语言完成源程序的编码。<br>
+	4、测试<br>
+五、维护：维护包括四个方面<br>
+	1、改正性维护：在软件交付使用后，由于开发测试时的不彻底、不完全、必然会有一部分隐藏的错误被带到运行阶段，这些隐藏的错误在某些特定的使用环境下就会暴露。<br>
+	2、适应性维护：是为适应环境的变化而修改软件的活动。<br>
+	3、完善性维护：是根据用户在使用过程中提出的一些建设性意见而进行的维护活动。<br>
+	4、预防性维护：是为了进一步改善软件系统的可维护性和可靠性，并为以后的改进奠定基础。</p>
+<h3 id="swebok-的-15-个知识域"><a class="header-anchor" href="#swebok-的-15-个知识域">¶</a>SWEBoK 的 15 个知识域</h3>
+<p><strong>软件工程实践(Knowledge Areas Characterizing the Practice of Software Engineering):</strong><br>
+	<strong>Software requirements(软件需求)</strong><br>
+		软件需求知识域主要涉及软件需求的引导、协商、分析、规范和确认过程。当这些过程执行得不好时，软件工程项目是极为脆弱的，这一点在软件行业得到了普遍认可。软件需求表示对软件产品的需求和约束，这些需求和约束有助于解决现实世界中的一些实际问题。<br>
+	<strong>Software design(软件设计)</strong><br>
+		软件设计被定义为定义系统或组件的架构、组件、接口和其他特性的过程，以及该过程的结果(IEEE 1991)。软件设计知识域覆盖了设计过程和最终产品。软件设计过程是软件工程生命周期活动，在该活动中分析软件需求，以便对软件的内部结构及其行为进行描述，作为其构建的基础。软件设计的结果必须描述软件架构——也就是软件是如何分解和组织成组件的，以及这些组件之间的接口。它还必须在细节层次上描述组件，以实现其构造。<br>
+	<strong>Software construction(软件构造)</strong><br>
+		软件构造是指通过详细设计、编码、单元测试、集成测试、调试和验证的组合来详细创建工作软件。软件构造知识域包括与满足其需求和设计约束的软件程序开发相关的主题。软件构造知识域涵盖软件构建基础知识、管理软件构建、构建技术、实践考虑和软件构建工具。<br>
+	<strong>Software testing(软件测试)</strong><br>
+		软件测试是一项评估产品质量并通过识别缺陷来改进产品质量的活动。软件测试涉及根据有限的测试用例集上的预期行为对程序行为进行动态验证。这些测试用例是从(通常非常大)执行域中选择的。软件测试知识域包括软件测试的基础知识、测试技术、人机界面测试和评估、测试相关措施和实际考虑。<br>
+	<strong>Software maintenance(软件维护)</strong><br>
+		软件维护包括增强现有的能力，使软件适应新的和修改过的操作环境，以及纠正缺陷。这些类别被称为完善的、适应性的和纠正性的软件维护。软件维护知识域包括软件维护的基础知识（维护的性质和需要、维护的类别、维护成本），软件维护中的关键问题（技术问题、管理问题、维护成本估算、软件维护的测量），维护过程，软件维护技术(程序理解、重新设计、逆向工程、重构、软件退役)，灾难恢复技术和软件维护工具。<br>
+	<strong>Software configuration management(软件配置管理)</strong><br>
+		系统的配置是硬件、固件、软件的功能和/或物理特性，或这些特性的组合。它还可以被视为硬件、固件或软件项的特定版本的集合，根据特定的构建过程进行组合以满足特定的目的。因此，软件配置管理（SCM）是一门在不同的时间点识别系统配置的学科，目的是系统地控制配置的更改，并在整个软件生命周期中保持配置的完整性和可追溯性。软件配置管理知识域包括对SCM过程的管理，软件配置识别、控制、状态记录、审核，软件发布管理和交付以及软件配置管理工具。<br>
+	<strong>Software engineering management(软件工程管理)</strong><br>
+		软件工程管理包括计划、协调、测量、报告和控制项目（程序），以确保软件的开发和维护是系统的、有纪律的和量化的。软件工程管理知识域包括启动和范围定义(确定和协商需求、可行性分析以及需求的评审和修订)，软件项目规划(过程规划、工作量、成本和进度估算、资源分配、风险分析、质量规划)，软件项目投资(测量、报告和控制，采购和供应商合同管理)，产品验收，项目绩效的审查和分析，项目验收以及软件管理工具。<br>
+	<strong>Software engineering process(软件工程过程)</strong><br>
+		软件工程知识域涉及软件生命周期过程的定义、实现、评估、测量、管理和改进。所涵盖的主题包括过程实施和变更（过程基础设施、过程实施和变更模型以及软件过程管理)，过程定义（软件生命周期模型和过程、过程定义的注释、过程适应和过程自动化)，过程评估模型和方法，度量（过程测量、产品测量、测量技术和测量结果质量)和软件过程工具。<br>
+	<strong>Software engineering models and methods(软件工程模型和方法)</strong><br>
+		软件工程模型和方法知识域描述了包含多个生命周期阶段的方法，特定于某个生命周期阶段的方法由其他知识域涵盖。该知识域所涵盖的主题包括建模（软件工程模型的原理和属性，语法，语义和不变量，前提条件、后置条件和不变量），模型类型（信息，结构和行为模型），分析（分析正确性、完整性、一致性、质量和交互，可追溯性和权衡分析）和软件开发方法（启发式方法、形式方法、原型方法和敏捷方法）。<br>
+	<strong>Software quality(软件质量)</strong><br>
+		软件质量是一个在软件生命周期中普遍存在的问题，在许多Swebok v3 知识域中都有解决方法。此外，软件质量知识域还包括了软件质量基础（软件工程文化，软件质量特征，软件质量的价值和成本以及软件质量改进），软件质量管理过程（软件质量保证、验证和确认、评审和审计）以及实践中的注意事项（缺陷描述、软件质量度量和软件质量工具）。<br>
+	<strong>Software engineering professional practice(软件工程专业实践)</strong><br>
+		软件工程专业实践涉及软件工程师在实践软件工程中所必须具备的知识、技能和态度。软件工程专业实践知识域涵盖专业性（专业行为，专业协会，软件工程标准，雇佣合同和法律问题），道德规范，群体动力学（团队合作，认知问题复杂性，与利益相关者互动，处理不确定性和模糊性，在多元文化环境处理问题）以及沟通技巧。<br>
+<strong>软件工程教育(Knowledge Areas Characterizing the Educational Requirements of Software Engineering):</strong><br>
+	<strong>Software engineering economics(软件工程经济学)</strong><br>
+		软件工程经济学知识域关注于在业务环境中做出决策，以使得技术决策与组织的业务目标保持一致。所涵盖的主题包括软件工程经济学基础（提案，现金流，货币时间价值，规划范围，通货膨胀，折旧，重置和退休决策），非营利决策（成本效益分析，优化分析），估算，经济风险和不确定性（估算方法，在风险和不确定性下的决策）以及多属性决策（价值和测量尺度、补偿和非补偿方法）。<br>
+	<strong>Computing foundations(计算基础)</strong><br>
+		计算基础知识域涵盖了为软件工程实践提供必要计算背景的基本主题。所涵盖的主题包括问题解决方法，抽象，算法和复杂性，编程基础，并行和分布式计算基础，计算机组成，操作系统和网络通信。<br>
+	<strong>Mathematical foundations(数学基础)</strong><br>
+		数学基础知识域涵盖了为软件工程实践提供必要数学背景的基本主题。所涉及的主题包括集合、关系和函数，基本命题和谓词逻辑，证明方法，图和树，离散概率，语法和有限状态机以及数论。<br>
+	<strong>Engineering foundations(工程基础)</strong><br>
+		工程基础知识域涵盖了为软件工程实践提供必要工程背景的基本主题。所涉及的主题包括了经验方法和实践技术，统计分析，测量和度量，工程设计，模拟和建模以及根本性原因分析。</p>
 <p>按照SWEBOK V3版本关于KA的划分，本门课程重点会关注<strong>软件需求(Software requirements)</strong>、<strong>软件设计(Software design)</strong>、<strong>软件构造(Software construction)</strong>、<strong>软件工程模型和方法(Software engineering models and methods)</strong>。</p>
-<h3 id="解释-CMMI-的五个级别"><a href="#解释-CMMI-的五个级别" class="headerlink" title="解释 CMMI 的五个级别"></a>解释 CMMI 的五个级别</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Characteristics_of_Capability_Maturity_Model.svg/750px-Characteristics_of_Capability_Maturity_Model.svg.png" alt="CMMI的五个级别"></p>
-<p>Level 1 - 初始级(Initial)：软件开发过程是<strong>无序</strong>的，有时候甚至是混乱的，对过程几乎没有定义，管理是反应式的。是一种自发的生产模式<br>Level 2 - 可管理级(Managed)：建立了<strong>基本</strong>的项目管理过程来跟踪费用、进度和功能特性，制定了必要的过程纪律，能重复早先类似应用项目取得的成功经验。<br>Level 3 - 已定义级(Defined)：已将软件管理和工程两方面的过程<strong>文档化、标准化</strong>，并综合成该组织的标准软件过程。所有项目均使用经批准、剪裁的标准软件过程来开发和维护软件，软件产品的生产在整个软件过程是可见的。<br>Level 4 - 量化管理级(Quantitatively Managed)：分析对软件过程和产品质量的详细度量数据，对软件过程和产品都有<strong>定量的理解与控制</strong>。管理有一个作出结论的客观依据，管理能够在定量的范围内预测性能。<br>Level 5 - 优化管理级别(Optimizing)：过程的量化反馈和先进的新思想、新技术促使过程持续不断<strong>改进</strong>。</p>
-<h3 id="用自己语言简述SWEBok或CMMI"><a href="#用自己语言简述SWEBok或CMMI" class="headerlink" title="用自己语言简述SWEBok或CMMI"></a>用自己语言简述SWEBok或CMMI</h3><p><strong>SWEBok(软件工程知识体系)</strong>，是IEEE计算机协会发起为软件工程职业化制定相应的准则和规范，作为产业决策、职业认证和课程教育的依据，为软件工程学科的范围提供一致的确认，为支持该学科的本体知识提供指导，描述了在软件工程中需要掌握的知识主体是什么。<br>它的目的在于指导软件工程人才的培养和学科建设，用以克服软件危机，具体其目标是：<br>①促进软件工程本体知识达成世界范围的共识<br>②澄清软件工程与其他相关学科如计算机科学、项目管理、计算机工程以及计算机数学的关系，并且确定软件工程学科的范围<br>③反映软件工程这个学科内容的特征<br>④确定软件工程本体知识的各个专题<br>⑤为相应的课程和职业资格认证材料的编写奠定基础</p>
-<p><strong>CMMI(能力成熟度集成模型)</strong>，是一个过程级改进和评估程序。1994年由美国国防部与CMU下的软件工程研究中心以及美国国防工业协会共同开发和研制的，其目的是帮助企业对软件工程过程进行管理和改进，增强开发与改进能力，从而能按时地、不超预算地开发出高质量的软件。<br>其所依据的想法是：只要集中精力持续努力去建立有效的软件工程过程的基础结构，不断进行管理的实践和过程的改进，就可以克服软件开发中的困难。CMMI为改进一个组织的各种过程提供了一个单一的集成化框架，新的集成模型框架消除了各个模型的不一致性，减少了模型间的重复，增加透明度和理解，建立了一个自动的、可扩展的框架，因而能够从总体上改进组织的质量和效率。其主要关注点就是<code>成本效益、明确重点、过程集中和灵活性</code>四个方面。<br>CMMI为流程成熟度定义了5个等级：<br>    初始级(Initial)<br>    可管理级(Managed)<br>    已定义级(Defined)<br>    量化管理级(Quantitatively Managed)<br>    优化管理级别(Optimizing)</p>
+<h3 id="解释-cmmi-的五个级别"><a class="header-anchor" href="#解释-cmmi-的五个级别">¶</a>解释 CMMI 的五个级别</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Characteristics_of_Capability_Maturity_Model.svg/750px-Characteristics_of_Capability_Maturity_Model.svg.png" alt="CMMI的五个级别"></p>
+<p>Level 1 - 初始级(Initial)：软件开发过程是<strong>无序</strong>的，有时候甚至是混乱的，对过程几乎没有定义，管理是反应式的。是一种自发的生产模式<br>
+Level 2 - 可管理级(Managed)：建立了<strong>基本</strong>的项目管理过程来跟踪费用、进度和功能特性，制定了必要的过程纪律，能重复早先类似应用项目取得的成功经验。<br>
+Level 3 - 已定义级(Defined)：已将软件管理和工程两方面的过程<strong>文档化、标准化</strong>，并综合成该组织的标准软件过程。所有项目均使用经批准、剪裁的标准软件过程来开发和维护软件，软件产品的生产在整个软件过程是可见的。<br>
+Level 4 - 量化管理级(Quantitatively Managed)：分析对软件过程和产品质量的详细度量数据，对软件过程和产品都有<strong>定量的理解与控制</strong>。管理有一个作出结论的客观依据，管理能够在定量的范围内预测性能。<br>
+Level 5 - 优化管理级别(Optimizing)：过程的量化反馈和先进的新思想、新技术促使过程持续不断<strong>改进</strong>。</p>
+<h3 id="用自己语言简述swebok或cmmi"><a class="header-anchor" href="#用自己语言简述swebok或cmmi">¶</a>用自己语言简述SWEBok或CMMI</h3>
+<p><strong>SWEBok(软件工程知识体系)</strong>，是IEEE计算机协会发起为软件工程职业化制定相应的准则和规范，作为产业决策、职业认证和课程教育的依据，为软件工程学科的范围提供一致的确认，为支持该学科的本体知识提供指导，描述了在软件工程中需要掌握的知识主体是什么。<br>
+它的目的在于指导软件工程人才的培养和学科建设，用以克服软件危机，具体其目标是：<br>
+①促进软件工程本体知识达成世界范围的共识<br>
+②澄清软件工程与其他相关学科如计算机科学、项目管理、计算机工程以及计算机数学的关系，并且确定软件工程学科的范围<br>
+③反映软件工程这个学科内容的特征<br>
+④确定软件工程本体知识的各个专题<br>
+⑤为相应的课程和职业资格认证材料的编写奠定基础</p>
+<p><strong>CMMI(能力成熟度集成模型)</strong>，是一个过程级改进和评估程序。1994年由美国国防部与CMU下的软件工程研究中心以及美国国防工业协会共同开发和研制的，其目的是帮助企业对软件工程过程进行管理和改进，增强开发与改进能力，从而能按时地、不超预算地开发出高质量的软件。<br>
+其所依据的想法是：只要集中精力持续努力去建立有效的软件工程过程的基础结构，不断进行管理的实践和过程的改进，就可以克服软件开发中的困难。CMMI为改进一个组织的各种过程提供了一个单一的集成化框架，新的集成模型框架消除了各个模型的不一致性，减少了模型间的重复，增加透明度和理解，建立了一个自动的、可扩展的框架，因而能够从总体上改进组织的质量和效率。其主要关注点就是<code>成本效益、明确重点、过程集中和灵活性</code>四个方面。<br>
+CMMI为流程成熟度定义了5个等级：<br>
+	初始级(Initial)<br>
+	可管理级(Managed)<br>
+	已定义级(Defined)<br>
+	量化管理级(Quantitatively Managed)<br>
+	优化管理级别(Optimizing)</p>
 
           
         
@@ -1949,95 +2264,147 @@ conda config --set show_channel_urls yes</code></p>
         
           
             <p>[TOC]</p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h1>Hexo</h1>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="quick-start"><a class="header-anchor" href="#quick-start">¶</a>Quick Start</h2>
+<h3 id="create-a-new-post"><a class="header-anchor" href="#create-a-new-post">¶</a>Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="run-server"><a class="header-anchor" href="#run-server">¶</a>Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="generate-static-files"><a class="header-anchor" href="#generate-static-files">¶</a>Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<h1 id="latex-math"><a href="#latex-math" class="headerlink" title="latex math"></a>latex math</h1><script type="math/tex; mode=display">
-c^{2}=a^{2}+b^{2} \\
-a^x+y \neq a^{x+y} \\
-a_{1} \qquad x^{2} \qquad e^{-\alpha t} \qquad a^{3}_{ij}\\
-e^{x^2} \neq {e^x}^2</script><script type="math/tex; mode=display">
-\tau \qquad \epsilon \qquad \chi \qquad \lambda \qquad \xi \qquad \pi  \qquad \mu \qquad \Phi \qquad \Omega \qquad \sigma</script><script type="math/tex; mode=display">
-\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}</script><script type="math/tex; mode=display">
-\forall x \in \mathbf{R}:\qquad x^{2} \geq 0\\
-x^{2} \geq 0\qquad\textrm{for all }x\in\mathbf{R}</script><script type="math/tex; mode=display">
-\sqrt{x}\\ 
-\sqrt{ x^{2}+\sqrt{y} }\\
-\sqrt[3]{2}\\
-\surd[x^2 + y^2]</script><script type="math/tex; mode=display">
-\overline{m+n} \\
-\underline{m+n}</script><script type="math/tex; mode=display">
-\underbrace{ a+b+\cdots+z }_{26} \qquad
-x_{1},\ldots,x_{n} \qquad
-x_{1}+\cdots+x_{n}</script><script type="math/tex; mode=display">
-y=x^{2}\qquad y’=2x\qquad y’’=2</script><script type="math/tex; mode=display">
-\vec a\quad\overrightarrow{AB}</script><script type="math/tex; mode=display">
-{n \choose k}\qquad {x \atop y+2}</script><script type="math/tex; mode=display">
-\int f_N(x) \stackrel{!}{=} 1 \\
-
-\int\!\!\!\int_{D} g(x,y)
-\, d x\, dy \\
-
-\newcommand{\ud}{\mathrm{d}}
-\iint_{D} \, \ud x \, \ud y \\ 
-
-\sum_{i=1}^{n} \qquad \int_{0}^{\frac{\pi}{2}} \qquad \prod_\epsilon</script><script type="math/tex; mode=display">
-{a,b,c}\neq\{a,b,c\}</script><script type="math/tex; mode=display">
-\Big( (x+1) (x-1) \Big) ^{2} \\
-\big(\Big(\bigg(\Bigg( \quad
-\big\}\Big\}\bigg\}\Bigg\} \quad
-\big\|\Big\|\bigg\|\Bigg\|</script><script type="math/tex; mode=display">
-x_{1},\ldots,x_{n} \qquad
-x_{1}+\cdots+x_{n}</script><script type="math/tex; mode=display">
-\mathbf{X} =
-\left( \begin{array}{ccc}
-x_{11} & x_{12} & \ldots \\
-x_{21} & x_{22} & \ldots \\
-\vdots & \vdots & \ddots
-\end{array} \right)</script><script type="math/tex; mode=display">
-y = \left\{ \begin{array}{ll}
-a & \textrm{if $d>c$}\\
-b+x & \textrm{in the morning}\\
-l & \textrm{all day long}
-\end{array} \right.</script><script type="math/tex; mode=display">
-\left(\begin{array}{c|c}
-1 & 2 \\
-\hline
-3 & 4
-\end{array}\right)</script><script type="math/tex; mode=display">
-\begin{eqnarray}
-f(x) & = & \cos x \\
-f’(x) & = & -\sin x \\
-\int_{0}^{x} f(y)dy &
-= & \sin x
-\end{eqnarray}</script><script type="math/tex; mode=display">
-\begin{eqnarray}
-\sin x & = & x -\frac{x^{3}}{3!}
-+\frac{x^{5}}{5!}-{}
-\nonumber\\
-& & {}-\frac{x^{7}}{7!}+{}\cdots
-\end{eqnarray}</script><script type="math/tex; mode=display">
-\mathbf R</script><script type="math/tex; mode=display">
-C4 \vee C5 \rightarrow T12\\
-C2 \wedge T12 \rightarrow T11\\
-\neg C1 \rightarrow E21\\</script><p>对齐</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-a & = & b + c \\
-& = & d + e + f + g + h + i
-+ j + k + l\\
-&& +\: m + n + o \\
-& = & p + q + r + s
-\end{eqnarray}</script><script type="math/tex; mode=display">
-\begin{align}
-h(x) =& \frac{1}{\int_xt(x)\mathrm{d}x} \tag{1}\\
-f(x) =& \frac{1}{\int_x\eta(x)ffffffffffffff\mathrm{d}x}g(x)\tag{2}
-\end{align}</script><p><a href="http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf" target="_blank" rel="noopener">http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf</a></p>
+<h3 id="deploy-to-remote-sites"><a class="header-anchor" href="#deploy-to-remote-sites">¶</a>Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h1>latex math</h1>
+<p>$$<br>
+c<sup>{2}=a</sup>{2}+b^{2} \<br>
+a^x+y \neq a^{x+y} \<br>
+a_{1} \qquad x^{2} \qquad e^{-\alpha t} \qquad a^{3}_{ij}\<br>
+e<sup>{x</sup>2} \neq {e<sup>x}</sup>2<br>
+$$</p>
+<p>$$<br>
+\tau \qquad \epsilon \qquad \chi \qquad \lambda \qquad \xi \qquad \pi  \qquad \mu \qquad \Phi \qquad \Omega \qquad \sigma<br>
+$$</p>
+<p>$$<br>
+\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}<br>
+$$</p>
+<p>$$<br>
+\forall x \in \mathbf{R}:\qquad x^{2} \geq 0\<br>
+x^{2} \geq 0\qquad\textrm{for all }x\in\mathbf{R}<br>
+$$</p>
+<p>$$<br>
+\sqrt{x}\<br>
+\sqrt{ x^{2}+\sqrt{y} }\<br>
+\sqrt[3]{2}\<br>
+\surd[x^2 + y^2]<br>
+$$</p>
+<p>$$<br>
+\overline{m+n} \<br>
+\underline{m+n}<br>
+$$</p>
+<p>$$<br>
+\underbrace{ a+b+\cdots+z }<em>{26} \qquad<br>
+x</em>{1},\ldots,x_{n} \qquad<br>
+x_{1}+\cdots+x_{n}<br>
+$$</p>
+<p>$$<br>
+y=x^{2}\qquad y’=2x\qquad y’’=2<br>
+$$</p>
+<p>$$<br>
+\vec a\quad\overrightarrow{AB}<br>
+$$</p>
+<p>$$<br>
+{n \choose k}\qquad {x \atop y+2}<br>
+$$</p>
+<p>$$<br>
+\int f_N(x) \stackrel{!}{=} 1 \</p>
+<p>\int!!!\int_{D} g(x,y)<br>
+, d x, dy \</p>
+<p>\newcommand{\ud}{\mathrm{d}}<br>
+\iint_{D} , \ud x , \ud y \</p>
+<p>\sum_{i=1}^{n} \qquad \int_{0}^{\frac{\pi}{2}} \qquad \prod_\epsilon<br>
+$$</p>
+<p>$$<br>
+{a,b,c}\neq{a,b,c}<br>
+$$</p>
+<p>$$<br>
+\Big( (x+1) (x-1) \Big) ^{2} \<br>
+\big(\Big(\bigg(\Bigg( \quad<br>
+\big}\Big}\bigg}\Bigg} \quad<br>
+\big|\Big|\bigg|\Bigg|<br>
+$$</p>
+<p>$$<br>
+x_{1},\ldots,x_{n} \qquad<br>
+x_{1}+\cdots+x_{n}<br>
+$$</p>
+<p>$$<br>
+\mathbf{X} =<br>
+\left( \begin{array}{ccc}<br>
+x_{11} &amp; x_{12} &amp; \ldots \<br>
+x_{21} &amp; x_{22} &amp; \ldots \<br>
+\vdots &amp; \vdots &amp; \ddots<br>
+\end{array} \right)<br>
+$$</p>
+<p>$$<br>
+y = \left{ \begin{array}{ll}<br>
+a &amp; \textrm{if $d&gt;c$}\<br>
+b+x &amp; \textrm{in the morning}\<br>
+l &amp; \textrm{all day long}<br>
+\end{array} \right.<br>
+$$</p>
+<p>$$<br>
+\left(\begin{array}{c|c}<br>
+1 &amp; 2 \<br>
+\hline<br>
+3 &amp; 4<br>
+\end{array}\right)<br>
+$$</p>
+<p>$$<br>
+\begin{eqnarray}<br>
+f(x) &amp; = &amp; \cos x \<br>
+f’(x) &amp; = &amp; -\sin x \<br>
+\int_{0}^{x} f(y)dy &amp;<br>
+= &amp; \sin x<br>
+\end{eqnarray}<br>
+$$</p>
+<p>$$<br>
+\begin{eqnarray}<br>
+\sin x &amp; = &amp; x -\frac{x^{3}}{3!}<br>
++\frac{x^{5}}{5!}-{}<br>
+\nonumber\<br>
+&amp; &amp; {}-\frac{x^{7}}{7!}+{}\cdots<br>
+\end{eqnarray}<br>
+$$</p>
+<p>$$<br>
+\mathbf R<br>
+$$</p>
+<p>$$<br>
+C4 \vee C5 \rightarrow T12\<br>
+C2 \wedge T12 \rightarrow T11\<br>
+\neg C1 \rightarrow E21\<br>
+$$</p>
+<p>对齐<br>
+$$<br>
+\begin{eqnarray}<br>
+a &amp; = &amp; b + c \<br>
+&amp; = &amp; d + e + f + g + h + i</p>
+<ul>
+<li>j + k + l\<br>
+&amp;&amp; +: m + n + o \<br>
+&amp; = &amp; p + q + r + s<br>
+\end{eqnarray}<br>
+$$</li>
+</ul>
+<p>$$<br>
+\begin{align}<br>
+h(x) =&amp; \frac{1}{\int_xt(x)\mathrm{d}x} \tag{1}\<br>
+f(x) =&amp; \frac{1}{\int_x\eta(x)ffffffffffffff\mathrm{d}x}g(x)\tag{2}<br>
+\end{align}<br>
+$$</p>
+<p><a href="http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf" target="_blank" rel="noopener">http://202.116.81.74/cache/9/03/www.mohu.org/a563578b882a238082752429e17e2a84/lshort-cn.pdf</a></p>
 
           
         

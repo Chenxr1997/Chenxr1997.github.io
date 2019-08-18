@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限序列极限/函数极限 连续函数 多元函数了连续性/极限 微分无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵微分法则 Hessian矩阵 泰勒公式">
+<meta name="description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限 序列极限/函数极限 连续函数 多元函数了连续性/极限 微分 无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵 微分法则 Hessian矩阵 ¶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学-微积分">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数学-微积分/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限序列极限/函数极限 连续函数 多元函数了连续性/极限 微分无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵微分法则 Hessian矩阵 泰勒公式">
+<meta property="og:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限 序列极限/函数极限 连续函数 多元函数了连续性/极限 微分 无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵 微分法则 Hessian矩阵 ¶">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学-微积分">
-<meta name="twitter:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限序列极限/函数极限 连续函数 多元函数了连续性/极限 微分无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵微分法则 Hessian矩阵 泰勒公式">
+<meta name="twitter:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 极限 序列极限/函数极限 连续函数 多元函数了连续性/极限 微分 无穷小量 一阶微分 高阶导数与高阶微分 多元函数微分 偏导数/全微分 复合函数/隐函数的微分法 方向导数/梯度 多元函数的微分中值定理与泰勒公式 隐函数存在定理 导数矩阵 微分法则 Hessian矩阵 ¶">
 
 
 
@@ -301,10 +301,12 @@
       
         <p>[TOC]</p>
 <p><a href="https://blog.csdn.net/qq_32769481/article/details/84330857" target="_blank" rel="noopener">https://blog.csdn.net/qq_32769481/article/details/84330857</a></p>
-<h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><p>序列极限/函数极限</p>
+<h1>极限</h1>
+<p>序列极限/函数极限</p>
 <p>连续函数</p>
 <p>多元函数了连续性/极限</p>
-<h1 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h1><p>无穷小量</p>
+<h1>微分</h1>
+<p>无穷小量</p>
 <p>一阶微分</p>
 <p>高阶导数与高阶微分</p>
 <p>多元函数微分</p>
@@ -313,29 +315,39 @@
 <p>方向导数/梯度</p>
 <p>多元函数的微分中值定理与泰勒公式</p>
 <p>隐函数存在定理</p>
-<p>导数矩阵<br>微分法则</p>
+<p>导数矩阵<br>
+微分法则</p>
 <p>Hessian矩阵</p>
-<h2 id="泰勒公式-泰勒展开"><a href="#泰勒公式-泰勒展开" class="headerlink" title="泰勒公式/泰勒展开"></a>泰勒公式/泰勒展开</h2><p>泰勒公式是一个用函数在某点的信息描述其附近取值的公式，拥有局部有效性</p>
-<script type="math/tex; mode=display">
-n阶可微函数f(x)在x=a处的展开为\\
-f(x) = \frac{f(a)}{0!} + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+...+\frac{f^n(a)}{n!}(x-a)^n + R_n(x)\\
-余项R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{(n+1)}\\
-必须满足\lim_{x \to a}R_n(x) = 0\\
-一般常取的在 x=0 处的展开（也称作麦克劳林的展开）</script><script type="math/tex; mode=display">
-(1+z)^a进行泰勒展开，在z=0处展开，必须满足|z|<1，才能让余项趋于0</script><script type="math/tex; mode=display">
-一阶泰勒展开：f(x) = f(a) + f'(a)(x-a)\\
-二阶泰勒展开：f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2\\
-迭代形式：假设x^t = x^{t-1} + \Delta t\\
-展开f(x^t) = f(x^{t-1} + \Delta t)\\
-\approx f(x^{t-1}) + f'(x^{t-1})\Delta t + \frac{f''(x^{t-1})}{2}(\Delta t)^2</script><p><a href="https://blog.csdn.net/lanchunhui/article/details/51750194" target="_blank" rel="noopener">https://blog.csdn.net/lanchunhui/article/details/51750194</a></p>
+<h2 id="泰勒公式-泰勒展开"><a class="header-anchor" href="#泰勒公式-泰勒展开">¶</a>泰勒公式/泰勒展开</h2>
+<p>泰勒公式是一个用函数在某点的信息描述其附近取值的公式，拥有局部有效性<br>
+$$<br>
+n阶可微函数f(x)在x=a处的展开为\<br>
+f(x) = \frac{f(a)}{0!} + \frac{f’(a)}{1!}(x-a) + \frac{f’’(a)}{2!}(x-a)<sup>2+…+\frac{f</sup>n(a)}{n!}(x-a)^n + R_n(x)\<br>
+余项R_n(x) = \frac{f<sup>{(n+1)}(\xi)}{(n+1)!}(x-a)</sup>{(n+1)}\<br>
+必须满足\lim_{x \to a}R_n(x) = 0\<br>
+一般常取的在 x=0 处的展开（也称作麦克劳林的展开）<br>
+$$</p>
+<p>$$<br>
+(1+z)^a进行泰勒展开，在z=0处展开，必须满足|z|&lt;1，才能让余项趋于0<br>
+$$</p>
+<p>$$<br>
+一阶泰勒展开：f(x) = f(a) + f’(a)(x-a)\<br>
+二阶泰勒展开：f(x) = f(a) + f’(a)(x-a) + \frac{f’’(a)}{2}(x-a)^2\<br>
+迭代形式：假设x^t = x^{t-1} + \Delta t\<br>
+展开f(x^t) = f(x^{t-1} + \Delta t)\<br>
+\approx f(x^{t-1}) + f’(x^{t-1})\Delta t + \frac{f’’(x^{t-1})}{2}(\Delta t)^2<br>
+$$</p>
+<p><a href="https://blog.csdn.net/lanchunhui/article/details/51750194" target="_blank" rel="noopener">https://blog.csdn.net/lanchunhui/article/details/51750194</a></p>
 <p><a href="https://blog.csdn.net/qq_42452134/article/details/83095736" target="_blank" rel="noopener">https://blog.csdn.net/qq_42452134/article/details/83095736</a></p>
 <p>泰勒级数</p>
-<h1 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h1><p>定积分</p>
+<h1>积分</h1>
+<p>定积分</p>
 <p>变上限定积分</p>
 <p>不定积分</p>
 <p>分部积分法</p>
 <p>微分中值定理/柯西中值定理/洛必达法则</p>
-<h1 id="向量代数-空间解析几何"><a href="#向量代数-空间解析几何" class="headerlink" title="向量代数/空间解析几何"></a>向量代数/空间解析几何</h1>
+<h1>向量代数/空间解析几何</h1>
+
       
     </div>
     
@@ -503,7 +515,7 @@ f(x) = \frac{f(a)}{0!} + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+...+\f
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#极限"><span class="nav-number">1.</span> <span class="nav-text">极限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微分"><span class="nav-number">2.</span> <span class="nav-text">微分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泰勒公式-泰勒展开"><span class="nav-number">2.1.</span> <span class="nav-text">泰勒公式/泰勒展开</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#积分"><span class="nav-number">3.</span> <span class="nav-text">积分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向量代数-空间解析几何"><span class="nav-number">4.</span> <span class="nav-text">向量代数/空间解析几何</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">极限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">微分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泰勒公式-泰勒展开"><span class="nav-number">2.1.</span> <span class="nav-text">¶泰勒公式/泰勒展开</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">积分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">向量代数/空间解析几何</span></a></li></ol></div>
             
 
           </div>

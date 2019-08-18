@@ -301,18 +301,32 @@
         
           
             <p>卷积层：特征提取 子采样层/池化层：缩减输入数据的规模</p>
-<p>卷积<br>对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。</p>
+<p>卷积<br>
+对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。</p>
 <p>3.1 卷积层</p>
 <p>卷积层是一种线性的、平移不变性的运算。</p>
-<p>线性<br>卷积核过滤的结果相当于一次线性计算<br>平移不变性<br>识别结果不依赖物体的位置<br>卷积核扫过图片，只要DNA是不变的，那么它在图片上下左右的哪个位置看到的结果都相同，这便是卷积本身具有平移不变形的原理。<br>卷积的kernel本质</p>
-<p>kernel具有局域性，只对图像中的局部区域敏感<br>权重共享，一个kernel扫描整个图像，过程kernel的值是不变的<br>池化<br>池化，简言之，即取区域平均或最大</p>
+<p>线性<br>
+卷积核过滤的结果相当于一次线性计算<br>
+平移不变性<br>
+识别结果不依赖物体的位置<br>
+卷积核扫过图片，只要DNA是不变的，那么它在图片上下左右的哪个位置看到的结果都相同，这便是卷积本身具有平移不变形的原理。<br>
+卷积的kernel本质</p>
+<p>kernel具有局域性，只对图像中的局部区域敏感<br>
+权重共享，一个kernel扫描整个图像，过程kernel的值是不变的<br>
+池化<br>
+池化，简言之，即取区域平均或最大</p>
 <p>上图所展示的是取区域最大，即上图左边部分中 左上角2x2的矩阵中6最大，右上角2x2的矩阵中8最大，左下角2x2的矩阵中3最大，右下角2x2的矩阵中4最大，所以得到上图右边部分的结果：6 8 3 4。</p>
 <p>池化</p>
 <p>扔掉周边长得差不多那些像素</p>
 <p>本质：降采样，提升统计效率，局部特征不变性降维</p>
 <p>在pooling的终结点， 我们得到的是一个降低维度了的图像，这个图像的含义是告诉你在原有的图像的每个区域里是含有1还是不含有1， 又叫做特征图。</p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><h2 id="stride"><a href="#stride" class="headerlink" title="stride"></a>stride</h2><p>卷积，跨度，边界填充，卷积核，反卷积<a href="https://blog.csdn.net/weixin_38776853/article/details/72636422" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38776853/article/details/72636422</a></p>
-<h1 id="池化pooling"><a href="#池化pooling" class="headerlink" title="池化pooling"></a>池化pooling</h1><h1 id="著名模型"><a href="#著名模型" class="headerlink" title="著名模型"></a>著名模型</h1><p>Alexnet</p>
+<h1>基础</h1>
+<h2 id="padding"><a class="header-anchor" href="#padding">¶</a>padding</h2>
+<h2 id="stride"><a class="header-anchor" href="#stride">¶</a>stride</h2>
+<p>卷积，跨度，边界填充，卷积核，反卷积<a href="https://blog.csdn.net/weixin_38776853/article/details/72636422" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38776853/article/details/72636422</a></p>
+<h1>池化pooling</h1>
+<h1>著名模型</h1>
+<p>Alexnet</p>
 <p>VGG</p>
 <p>GoogleNet</p>
 <p>Resnet</p>
@@ -325,7 +339,10 @@
 <p>FaceNet</p>
 <p>Inception</p>
 <p>SSD<a href="https://github.com/amdegroot/ssd.pytorch" target="_blank" rel="noopener">https://github.com/amdegroot/ssd.pytorch</a></p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="style-transfer"><a href="#style-transfer" class="headerlink" title="style transfer"></a>style transfer</h2><h2 id="文本分类-情感分析"><a href="#文本分类-情感分析" class="headerlink" title="文本分类/情感分析"></a>文本分类/情感分析</h2>
+<h1>应用</h1>
+<h2 id="style-transfer"><a class="header-anchor" href="#style-transfer">¶</a>style transfer</h2>
+<h2 id="文本分类-情感分析"><a class="header-anchor" href="#文本分类-情感分析">¶</a>文本分类/情感分析</h2>
+
           
         
       
@@ -444,84 +461,122 @@
       
         
           
-            <p>[TOC]<br>EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大</p>
-<p>如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。<br>但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。</p>
+            <p>[TOC]<br>
+EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大</p>
+<p>如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。<br>
+但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。</p>
 <p>应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型</p>
 <p>有时候因为样本的产生和隐含变量有关（隐含变量是不能观察的），而求模型的参数时一般采用最大似然估计，由于含有了隐含变量，所以对似然函数参数求导是求不出来的，这时可以采用EM算法来求模型的参数的（对应模型参数个数可能有多个），EM算法一般分为2步：</p>
 <p>E步：选取一组参数，求出在该参数下隐含变量的条件概率值；</p>
 <p>M步：结合E步求出的隐含变量条件概率，求出似然函数下界函数（本质上是某个期望函数）的最大值。</p>
 <p>重复上面2步直至收敛</p>
 <p>最大希望算法。在统计计算中，EM算法时在概率模型中寻找参数最大似然估计或者最大后验估计的算法，概率模型依赖于无法观测的隐性变量。最大期望算法经常在机器学习和计算机视觉的数据聚类领域。</p>
-<p>计算期望E，利用隐藏变量的现有估计值，计算最大似然估计值。<br>最大化M，最大化在E步上求得最大的似然值来计算参数值，</p>
+<p>计算期望E，利用隐藏变量的现有估计值，计算最大似然估计值。<br>
+最大化M，最大化在E步上求得最大的似然值来计算参数值，</p>
 <p>M步骤上找到的参数估计被用于下一个计算E步的计算中。</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>EM算法即期望最大化Expectation Maximization算法，由Dempster等人在1976年提出</p>
+<h1>概念</h1>
+<p>EM算法即期望最大化Expectation Maximization算法，由Dempster等人在1976年提出</p>
 <p>是一种迭代法，用于求解含有隐变量的最大似然估计、最大后验概率估计问题，求解的机器学习模型中有隐变量存在，并且要估计模型的参数。典型是求解高斯混合模型，隐马尔可夫模型</p>
-<h2 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h2><p>已知：(1)分布模型(2)随机抽取的样本</p>
+<h2 id="解决的问题"><a class="header-anchor" href="#解决的问题">¶</a>解决的问题</h2>
+<p>已知：(1)分布模型(2)随机抽取的样本</p>
 <p>通过EM算法求得：(1)那一个样本属于哪个分布(2)模型的参数</p>
 <p>比如有100个男生和100个女生的身高，但不知道这个身高的数据是属于男生还是女生的，此时就需要估计(1)这个身高数据来自于男生还是女生(2)男生女生身高的正态分布参数</p>
-<h2 id="求解过程"><a href="#求解过程" class="headerlink" title="求解过程"></a>求解过程</h2><p>（1）初始化参数：先初始化男生身高的正态分布的参数：比如均值=1.65，方差=0.15</p>
+<h2 id="求解过程"><a class="header-anchor" href="#求解过程">¶</a>求解过程</h2>
+<p>（1）初始化参数：先初始化男生身高的正态分布的参数：比如均值=1.65，方差=0.15</p>
 <p>（2）计算每个人更可能属于男生分布还是女生分布</p>
 <p>（3）通过分为男生的n个人来重新估计男生身高分布的参数（极大似然估计），女生分布也按照相同的方式估计分布，更新分布</p>
 <p>（4）这时两个分布也变了，重复步骤（1）到（3），直到参数不变为止</p>
-<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><h2 id="Jensen-不等式"><a href="#Jensen-不等式" class="headerlink" title="Jensen 不等式"></a>Jensen 不等式</h2><p>EM算法的推导，收敛性证明依赖于Jensen不等式</p>
-<script type="math/tex; mode=display">
-Jensen不等式\\
-如果f(x)是凸函数，x是随机变量，则下面不等式成立\\
-E[f(x)] \ge f(E[x])\\
-如果f(x)是一个严格凸函数，当且仅当x是常数时不等式取等号\\
-E[f(x)] = f(E[x])\\</script><script type="math/tex; mode=display">
-凸函数是一个定义在某个向量空间的凸子集C(区间)上的实值函数f，如果在其定义域C上的任意两点x_1,x_2,0 \le \lambda \le 1，有\\
-\lambda f(x_1) + (1-\lambda)f(x_2) \ge f(\lambda x_1 + (1-\lambda)x_2)\\
-也就是说凸函数任意两点的割线位于函数图形上方</script><script type="math/tex; mode=display">
-因此对于任意点集，若\lambda_i \ge 0且\sum_i \lambda_i = 1,使用数学归纳法，不难得到凸函数f(x)满足：\\
-\sum_i \lambda_if(x_i) \ge f(\sum_i \lambda_ix_i)\\
-该概率论中，如果把\lambda_i看成值x_i的离散变量x的概率分布，那么可写成\\
-E[f(x)] \ge f(E[x])\\</script><p><img src="/2019/03/08/机器学习-EM/image-20190814204045701.png" alt="image-20190814204045701"></p>
-<h2 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h2><script type="math/tex; mode=display">
-对于n个样本观察数据x = (x_1,x_2,...,x_n),找出样本的参数模型\theta，极大化模型分布的对数似然函数:\\
-\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta)\\
-如果得到的观察数据有未观察到的隐含数据z = (z_1,z_2,...,z_n)，即上下文中每个样本属于哪个分布是未知的\\此时极大化模型分布的对数似然函数如下:\\
-\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta) = \arg \max \sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta)</script><script type="math/tex; mode=display">
-上面的式子是根据x_i的边缘概率计算来的，没有办法直接求出\theta,因此需要一些技巧\\
-使用jensen不等式对这个式子进行缩放,利用\log是凹函数的性质\\
-\sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta) = \sum_{i=1}^n \log \sum _{z_i} Q_i(z_i) \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (1) \\
-\ge \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (2)</script><script type="math/tex; mode=display">
-如果要满足jenson中的等号，需要\frac{p(x_i,z_i;\theta)}{Q_i(z_i)}是一个常数c(见jensen的定理)\\
-又由于Q_i(z_i)是一个分布，所以\sum_z Q_i(z_i) = 1\\
-代入\sum _{z}p(x_i,z_i;\theta)可得\sum _{z}p(x_i,z_i;\theta) = c\\
-将\sum _{z}p(x_i,z_i;\theta) = c和\frac{p(x_i,z_i;\theta)}{Q_i(z_i)} = c联立可得\\
-Q_i(z_i) = \frac{p(x_i,z_i;\theta)}{\sum _{z}p(x_i,z_i;\theta)} = \frac{p(x_i,z_i;\theta)}{p(x_i;\theta)} = p(z_i|x_i;\theta)\\
-至此推出了在固定参数\theta后，Q_i(z_i)的计算公式就是后验概率</script><script type="math/tex; mode=display">
-如果Q_i(z_i) = p(z_i|x_i;\theta)，则(2)式是包含隐藏数据的对数似然的一个下界，如果能最大化(2)式这个下界，则也是在极大化对数似然函数\\
-{\arg \max}_\theta \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\\
-这就是EM算法中的M步骤</script><script type="math/tex; mode=display">
-对于E步骤，它解决了Q_i(z_i)如何选择的问题，确定了下界</script><script type="math/tex; mode=display">
-EM算法步骤:\\
-随机初始化模型参数\theta的初值\theta_0\\
-j = 1,2,...,J开始EM算法迭代：\\
-    E步:\\
-    Q_i(z_i) = p(z_i|x_i;\theta)\\
-    l(\theta_,\theta_j) = \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\\
-    M步:\\
-    极大化l(\theta_,\theta_j),得到\theta_{j+1}\\
-    \theta_{j+1} = \arg \max l(\theta_,\theta_j)\\
-    如果\theta_{j+1}已经收敛，则退出迭代,否则返回E步\\
-输出模型参数\theta</script><p><img src="/2019/03/08/机器学习-EM/image-20190816111352814.png" alt="image-20190816111352814"></p>
-<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h3 id="初始化问题"><a href="#初始化问题" class="headerlink" title="初始化问题"></a>初始化问题</h3><p>上面介绍的传统EM算法对初始值敏感，聚类结果随不同的初始值而波动较大。总的来说， EM算法收敛的优劣很大程度上取决于其初始参数。<br>针对传统EM算法对初始值敏感的问题，许多研究者在EM算法初始化方面做了许多研究。</p>
+<h1>算法描述</h1>
+<h2 id="jensen-不等式"><a class="header-anchor" href="#jensen-不等式">¶</a>Jensen 不等式</h2>
+<p>EM算法的推导，收敛性证明依赖于Jensen不等式<br>
+$$<br>
+Jensen不等式\<br>
+如果f(x)是凸函数，x是随机变量，则下面不等式成立\<br>
+E[f(x)] \ge f(E[x])\<br>
+如果f(x)是一个严格凸函数，当且仅当x是常数时不等式取等号\<br>
+E[f(x)] = f(E[x])\<br>
+$$</p>
+<p>$$<br>
+凸函数是一个定义在某个向量空间的凸子集C(区间)上的实值函数f，如果在其定义域C上的任意两点x_1,x_2,0 \le \lambda \le 1，有\<br>
+\lambda f(x_1) + (1-\lambda)f(x_2) \ge f(\lambda x_1 + (1-\lambda)x_2)\<br>
+也就是说凸函数任意两点的割线位于函数图形上方<br>
+$$</p>
+<p>$$<br>
+因此对于任意点集，若\lambda_i \ge 0且\sum_i \lambda_i = 1,使用数学归纳法，不难得到凸函数f(x)满足：\<br>
+\sum_i \lambda_if(x_i) \ge f(\sum_i \lambda_ix_i)\<br>
+该概率论中，如果把\lambda_i看成值x_i的离散变量x的概率分布，那么可写成\<br>
+E[f(x)] \ge f(E[x])\<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-EM/image-20190814204045701.png" alt="image-20190814204045701"></p>
+<h2 id="算法推导"><a class="header-anchor" href="#算法推导">¶</a>算法推导</h2>
+<p>$$<br>
+对于n个样本观察数据x = (x_1,x_2,…,x_n),找出样本的参数模型\theta，极大化模型分布的对数似然函数:\<br>
+\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta)\<br>
+如果得到的观察数据有未观察到的隐含数据z = (z_1,z_2,…,z_n)，即上下文中每个样本属于哪个分布是未知的\此时极大化模型分布的对数似然函数如下:\<br>
+\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta) = \arg \max \sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta)<br>
+$$</p>
+<p>$$<br>
+上面的式子是根据x_i的边缘概率计算来的，没有办法直接求出\theta,因此需要一些技巧\<br>
+使用jensen不等式对这个式子进行缩放,利用\log是凹函数的性质\<br>
+\sum_{i=1}^n \log \sum <em>{z_i}p(x_i,z_i;\theta) = \sum</em>{i=1}^n \log \sum <em>{z_i} Q_i(z_i) \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (1) \<br>
+\ge \sum</em>{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (2)<br>
+$$</p>
+<p>$$<br>
+如果要满足jenson中的等号，需要\frac{p(x_i,z_i;\theta)}{Q_i(z_i)}是一个常数c(见jensen的定理)\<br>
+又由于Q_i(z_i)是一个分布，所以\sum_z Q_i(z_i) = 1\<br>
+代入\sum _{z}p(x_i,z_i;\theta)可得\sum _{z}p(x_i,z_i;\theta) = c\<br>
+将\sum _{z}p(x_i,z_i;\theta) = c和\frac{p(x_i,z_i;\theta)}{Q_i(z_i)} = c联立可得\<br>
+Q_i(z_i) = \frac{p(x_i,z_i;\theta)}{\sum _{z}p(x_i,z_i;\theta)} = \frac{p(x_i,z_i;\theta)}{p(x_i;\theta)} = p(z_i|x_i;\theta)\<br>
+至此推出了在固定参数\theta后，Q_i(z_i)的计算公式就是后验概率<br>
+$$</p>
+<p>$$<br>
+如果Q_i(z_i) = p(z_i|x_i;\theta)，则(2)式是包含隐藏数据的对数似然的一个下界，如果能最大化(2)式这个下界，则也是在极大化对数似然函数\<br>
+{\arg \max}<em>\theta \sum</em>{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\<br>
+这就是EM算法中的M步骤<br>
+$$</p>
+<p>$$<br>
+对于E步骤，它解决了Q_i(z_i)如何选择的问题，确定了下界<br>
+$$</p>
+<p>$$<br>
+EM算法步骤:\<br>
+随机初始化模型参数\theta的初值\theta_0\<br>
+j = 1,2,…,J开始EM算法迭代：\<br>
+	E步:\<br>
+	Q_i(z_i) = p(z_i|x_i;\theta)\<br>
+	l(\theta_,\theta_j) = \sum_{i=1}^n \sum <em>{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\<br>
+	M步:\<br>
+	极大化l(\theta</em>,\theta_j),得到\theta_{j+1}\<br>
+	\theta_{j+1} = \arg \max l(\theta_,\theta_j)\<br>
+	如果\theta_{j+1}已经收敛，则退出迭代,否则返回E步\<br>
+输出模型参数\theta<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-EM/image-20190816111352814.png" alt="image-20190816111352814"></p>
+<h2 id="讨论"><a class="header-anchor" href="#讨论">¶</a>讨论</h2>
+<h3 id="初始化问题"><a class="header-anchor" href="#初始化问题">¶</a>初始化问题</h3>
+<p>上面介绍的传统EM算法对初始值敏感，聚类结果随不同的初始值而波动较大。总的来说， EM算法收敛的优劣很大程度上取决于其初始参数。<br>
+针对传统EM算法对初始值敏感的问题，许多研究者在EM算法初始化方面做了许多研究。</p>
 <ul>
-<li>Blömer J, Bujna K. Simple methods for initializing the EM algorithm for Gaussian<br>  mixture models[J]. CoRR, 2013.</li>
+<li>Blömer J, Bujna K. Simple methods for initializing the EM algorithm for Gaussian<br>
+mixture models[J]. CoRR, 2013.</li>
 <li>Chen F. An Improved EM algorithm[J]. arXiv preprint arXiv:1305.0626, 2013.</li>
-<li>Kwedlo W. (2013) A New Method for Random Initialization of the EM Algorithm for<br>  Multivariate Gaussian Mixture Learning. In: Burduk R., Jackowski K., Kurzynski M.,<br>  Wozniak M., Zolnierek A. (eds) Proceedings of the 8th International Conference on<br>  Computer Recognition Systems CORES 2013. Advances in Intelligent Systems and<br>  Computing, vol 226. Springer, Heidelberg</li>
+<li>Kwedlo W. (2013) A New Method for Random Initialization of the EM Algorithm for<br>
+Multivariate Gaussian Mixture Learning. In: Burduk R., Jackowski K., Kurzynski M.,<br>
+Wozniak M., Zolnierek A. (eds) Proceedings of the 8th International Conference on<br>
+Computer Recognition Systems CORES 2013. Advances in Intelligent Systems and<br>
+Computing, vol 226. Springer, Heidelberg</li>
 </ul>
-<h3 id="收敛性"><a href="#收敛性" class="headerlink" title="收敛性"></a>收敛性</h3><p>EM算法可以保证收敛到一个稳定点（局部最优），但不能保证收敛到全局的最大值点，因此是局部最优的算法。</p>
+<h3 id="收敛性"><a class="header-anchor" href="#收敛性">¶</a>收敛性</h3>
+<p>EM算法可以保证收敛到一个稳定点（局部最优），但不能保证收敛到全局的最大值点，因此是局部最优的算法。</p>
 <p>如果l(\theta,\theta_j)是凸函数，那么EM算法可以保证收敛到全局的最大值点，这一点和梯度下降相同</p>
 <p>不过收敛速度可能会比较慢</p>
-<h3 id="统计假设"><a href="#统计假设" class="headerlink" title="统计假设"></a>统计假设</h3><p>基于一些统计假设</p>
-<h2 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h2><h3 id="硬币实验"><a href="#硬币实验" class="headerlink" title="硬币实验"></a>硬币实验</h3><p>假设有A，B两种硬币，正面朝上的概率分别是\theta_A，\theta_B，这两个即为需要估计的参数</p>
+<h3 id="统计假设"><a class="header-anchor" href="#统计假设">¶</a>统计假设</h3>
+<p>基于一些统计假设</p>
+<h2 id="应用实例"><a class="header-anchor" href="#应用实例">¶</a>应用实例</h2>
+<h3 id="硬币实验"><a class="header-anchor" href="#硬币实验">¶</a>硬币实验</h3>
+<p>假设有A，B两种硬币，正面朝上的概率分别是\theta_A，\theta_B，这两个即为需要估计的参数</p>
 <p>设计5组实验，每次实验投掷5次硬币，但是每次实验都不知道是哪一枚硬币进行的本次试验(如果知道的话，就很容易估计\theta_A，\theta_B)，投掷结束会得到数组x = (x1,x2,x3,x4,x5)，表示每组有几次硬币正面朝上，因此0 &lt;= x_i &lt;=5</p>
 <p>虽然我们不知道每组实验用的哪个硬币，但是如果我们<strong>用某种方法猜测每组实验用的哪种硬币，就可以将数据缺失的问题转为一个极大似然问题和完整参数估计问题</strong></p>
 <p>假设5次结果如下</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -558,16 +613,16 @@ j = 1,2,...,J开始EM算法迭代：\\
 </tr>
 </tbody>
 </table>
-</div>
-<script type="math/tex; mode=display">
-首先，随机选取\theta_A,\theta_B的初始值，比如\theta_A = 0.2，\theta_B = 0.7\\
-E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B硬币）的每个值出现的概率\\
-也就是给定\theta_A,\theta_B和观测数据，计算这组数据出自A硬币的概率和B硬币的概率\\
-比如对于第一组实验，3正面2反面\\
-如果是A硬币得到这个结果的概率为:0.2^3 \times 0.8^2 = 0.00512\\
-如果是B硬币得到这个结果的概率为:0.7^3 \times 0.3^2 = 0.03087\\
-因此第一组实验结果是A硬币得到的概率为\frac{0.00512}{0.00512+0.03087} = 0.14,B硬币同理为0.86\\</script><p>整个5组实验A，B投掷概率如下：</p>
-<div class="table-container">
+<p>$$<br>
+首先，随机选取\theta_A,\theta_B的初始值，比如\theta_A = 0.2，\theta_B = 0.7\<br>
+E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B硬币）的每个值出现的概率\<br>
+也就是给定\theta_A,\theta_B和观测数据，计算这组数据出自A硬币的概率和B硬币的概率\<br>
+比如对于第一组实验，3正面2反面\<br>
+如果是A硬币得到这个结果的概率为:0.2^3 \times 0.8^2 = 0.00512\<br>
+如果是B硬币得到这个结果的概率为:0.7^3 \times 0.3^2 = 0.03087\<br>
+因此第一组实验结果是A硬币得到的概率为\frac{0.00512}{0.00512+0.03087} = 0.14,B硬币同理为0.86\<br>
+$$</p>
+<p>整个5组实验A，B投掷概率如下：</p>
 <table>
 <thead>
 <tr>
@@ -604,10 +659,8 @@ E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B�
 </tr>
 </tbody>
 </table>
-</div>
 <p>再根据隐含变量的概率，计算两组训练值的期望。以第一组实验为例，3正2反中，A硬币期望为0.14*3 = 0.42个正面，0.14*2 = 0.28个反面；B硬币期望为0.86*3 = 2.58个正面，0.86*2 = 1.72个反面；</p>
 <p>5组实验期望如下</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -649,33 +702,40 @@ E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B�
 </tr>
 </tbody>
 </table>
-</div>
-<script type="math/tex; mode=display">
-通过计算期望，把一个有隐含变量的问题变化为了一个没有隐含变量的问题，由上表数据，估计\theta_A,\theta_B变得简单\\
-\theta_A = 4.22/(4.22+7.98) = 0.35 \\
-\theta_B = 6.78/(6.78+6.02) = 0.53\\
-这一步中，根据E步求出的两种硬币的概率分布，依据极大似然概率去估计\theta_A,\theta_B，称为M步\\
-最后一直迭代循环直到\theta_A,\theta_B不更新为止</script><h3 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h3><p>在K-means聚类时，每个聚类簇的质心是隐含数据，我们会假设K个初始化质心，即EM中的E；然后计算每个样本最近的质心，并把样本聚类到这里，即EM中的M</p>
-<h3 id="高斯混合模型-Gaussian-mixture-model-GMM"><a href="#高斯混合模型-Gaussian-mixture-model-GMM" class="headerlink" title="高斯混合模型 Gaussian mixture model GMM"></a>高斯混合模型 Gaussian mixture model GMM</h3><p>EM算法的目标是求解似然函数或后验概率的极值，而样本中具有无法观测的隐含变量</p>
+<p>$$<br>
+通过计算期望，把一个有隐含变量的问题变化为了一个没有隐含变量的问题，由上表数据，估计\theta_A,\theta_B变得简单\<br>
+\theta_A = 4.22/(4.22+7.98) = 0.35 \<br>
+\theta_B = 6.78/(6.78+6.02) = 0.53\<br>
+这一步中，根据E步求出的两种硬币的概率分布，依据极大似然概率去估计\theta_A,\theta_B，称为M步\<br>
+最后一直迭代循环直到\theta_A,\theta_B不更新为止<br>
+$$</p>
+<h3 id="k-means"><a class="header-anchor" href="#k-means">¶</a>K-means</h3>
+<p>在K-means聚类时，每个聚类簇的质心是隐含数据，我们会假设K个初始化质心，即EM中的E；然后计算每个样本最近的质心，并把样本聚类到这里，即EM中的M</p>
+<h3 id="高斯混合模型-gaussian-mixture-model-gmm"><a class="header-anchor" href="#高斯混合模型-gaussian-mixture-model-gmm">¶</a>高斯混合模型 Gaussian mixture model GMM</h3>
+<p>EM算法的目标是求解似然函数或后验概率的极值，而样本中具有无法观测的隐含变量</p>
 <p>下面以聚类问题和高斯混合模型为例进行说明。有一批样本，分属于3个类，假设每个类都服从正态分布，均值和协方差未知，各样本属于哪个类也是未知的</p>
 <p>算法需要在此条件下估计每个正态分布的均值和协方差</p>
 <p>下图是一个例子， 3类样本都服从正态分布，但每个样本属于哪个类是未知的：</p>
 <p><img src="/2019/03/08/机器学习-EM/image-20190815112746475.png" alt="image-20190815112746475"></p>
 <p>样本所属的类别就是隐变量，我们无法直接观察到它的值，这种隐变量的存在导致了用最大似然估计求解时的困难</p>
-<p>上面这个例子可以用高斯混合模型进行描述，它的概率密度函数是多个高斯分布（正态分布）的加权和</p>
-<script type="math/tex; mode=display">
-高斯混合模型（ Gaussian Mixture Model，简称GMM）通过多个正态分布的加权和来描述一个随机变量的概率分布\\概率密度函数定义为：\\
-p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
-其中x为随机变量，k为高斯分布的数量，w_i为高斯分布的权重，是一个正数，\mu 为高斯分布的均值向量，\Sigma为协方差矩阵\\
-所有高斯分布权重的和为1，即\\
-\sum_{i=1}^kw_i = 1\\
-高斯混合模型可以逼近任何一个连续的概率分布，因此它可以看作是连续型概率分布的万能逼近器\\之所以要权重和为1，是因为概率密度函数必须满足(-\infty,+\infty)内的积分值为1</script><p>对于高斯混合模型，也可以使用最大似然估计确定模型的参数，但每个样本属于哪个高斯分布是未知的，而计算高斯分布的参数时需要用到这个信息；反过来，样本属于哪个高斯分布又是由高斯分布的参数确定的。因此存在循环依赖，解决此问题的办法是打破此循环依赖，从高斯分布的一个不准确的初始猜测值开始，计算样本属于每个高斯分布的概率，然后又根据这个概率更新每个高斯分布的参数。这就是EM算法求解时的做法。</p>
-<script type="math/tex; mode=display">
-高斯混合模型的对数似然函数为：\\
-\sum_{i=1}^l \ln(\sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i))\\
-由于对数似然函数中有k个求和项，以及参数w_j的存在，无法像单个高斯模型那样通过极大似然估计求得公式解\\
-而如果用梯度下降近似求解，则要求保证w_j非负且和为1，同样存在困难\\
-用极大似然估计来确定单个高斯分布的参数的过程：给定训练样本，构造他们的对数似然函数，对参数求导，并令导数为0</script>
+<p>上面这个例子可以用高斯混合模型进行描述，它的概率密度函数是多个高斯分布（正态分布）的加权和<br>
+$$<br>
+高斯混合模型（ Gaussian Mixture Model，简称GMM）通过多个正态分布的加权和来描述一个随机变量的概率分布\概率密度函数定义为：\<br>
+p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\<br>
+其中x为随机变量，k为高斯分布的数量，w_i为高斯分布的权重，是一个正数，\mu 为高斯分布的均值向量，\Sigma为协方差矩阵\<br>
+所有高斯分布权重的和为1，即\<br>
+\sum_{i=1}^kw_i = 1\<br>
+高斯混合模型可以逼近任何一个连续的概率分布，因此它可以看作是连续型概率分布的万能逼近器\之所以要权重和为1，是因为概率密度函数必须满足(-\infty,+\infty)内的积分值为1<br>
+$$<br>
+对于高斯混合模型，也可以使用最大似然估计确定模型的参数，但每个样本属于哪个高斯分布是未知的，而计算高斯分布的参数时需要用到这个信息；反过来，样本属于哪个高斯分布又是由高斯分布的参数确定的。因此存在循环依赖，解决此问题的办法是打破此循环依赖，从高斯分布的一个不准确的初始猜测值开始，计算样本属于每个高斯分布的概率，然后又根据这个概率更新每个高斯分布的参数。这就是EM算法求解时的做法。<br>
+$$<br>
+高斯混合模型的对数似然函数为：\<br>
+\sum_{i=1}^l \ln(\sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i))\<br>
+由于对数似然函数中有k个求和项，以及参数w_j的存在，无法像单个高斯模型那样通过极大似然估计求得公式解\<br>
+而如果用梯度下降近似求解，则要求保证w_j非负且和为1，同样存在困难\<br>
+用极大似然估计来确定单个高斯分布的参数的过程：给定训练样本，构造他们的对数似然函数，对参数求导，并令导数为0<br>
+$$</p>
+
           
         
       
@@ -795,11 +855,13 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
         
           
             <p>[TOC]</p>
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>人工神经网络(Artificial Neural Networks, ANN)是一种种应用类似于大脑神经突触联接的结构进行信息处理的数学模型。在这种模型中，大量的节点(或称”神经元”，或”单元”)之间相互联接构成网络，即”神经网络”，以达到处理信息的目的。神经网络通常需要进行训练，训练的过程就是网络进行学习的过程。训练改变了网络节点的连接权的值使其具有分类的功能，经过训练的网络就可用于对象的识别。</p>
+<h1>介绍</h1>
+<p>人工神经网络(Artificial Neural Networks, ANN)是一种种应用类似于大脑神经突触联接的结构进行信息处理的数学模型。在这种模型中，大量的节点(或称”神经元”，或”单元&quot;)之间相互联接构成网络，即&quot;神经网络”，以达到处理信息的目的。神经网络通常需要进行训练，训练的过程就是网络进行学习的过程。训练改变了网络节点的连接权的值使其具有分类的功能，经过训练的网络就可用于对象的识别。</p>
 <p>目前，神经网络已有上百种不同的模型，常见的有BP网络、径向基RBF网络、Hopfield网络、 随机神经网络(Boltzmann机) 、竞争神经网络(Hamming网络，自组织映射网络)等。但是当前的神经网络仍普遍存在计算量大、收敛速度慢、训练时间长和不可解释等缺点。</p>
 <p>与浅层学习的区别</p>
 <p>深度学习实质：多隐层+海量数据——&gt;学习有用特征—–&gt;提高分类或预测准确性 区别：（1）DL强调模型深度 (2）DL突出特征学习的重要性：特征变换+非人工</p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>深度学习也叫多层感知机（MLP，Multilayer Perceptron）</p>
+<h1>基础</h1>
+<p>深度学习也叫多层感知机（MLP，Multilayer Perceptron）</p>
 <p><img src="/2019/03/08/深度学习-基础篇/1.png" alt="1"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/2.png" alt="2"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/3.png" alt="3"></p>
@@ -808,28 +870,34 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><img src="/2019/03/08/深度学习-基础篇/6.png" alt="6"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/8.png" alt="8"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/9.png" alt="9"></p>
-<h1 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h1><p><img src="/2019/03/08/深度学习-基础篇/11.png" alt="11"></p>
+<h1>激活函数</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/11.png" alt="11"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/12.png" alt="12"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/13.png" alt="13"></p>
-<p>激活函数<br>（1）sigmoid：易饱和（梯度消失），非0均值</p>
+<p>激活函数<br>
+（1）sigmoid：易饱和（梯度消失），非0均值</p>
 <p>（2）tanh，改进了sigmoid的第二个缺点，即它是0均值的</p>
 <p>（3）ReLU，收敛快（不容易饱和），求梯度简单（没有指数计算，只需要阈值就可以），有稀疏特性。缺点是神经元容易坏死。</p>
 <p>由于ReLU在x&lt;0时梯度为0，这样就导致负的梯度在这个ReLU被置零，而且这个神经元有可能再也不会被任何数据激活。如果这个情况发生了，那么这个神经元之后的梯度就永远是0了，也就是ReLU神经元坏死了，不再对任何数据有所响应。实际操作中，如果你的learning rate 很大，那么很有可能你网络中的40%的神经元都坏死了</p>
 <p>leaky-relu</p>
 <p>不是0</p>
-<h1 id="损失函数-交叉熵"><a href="#损失函数-交叉熵" class="headerlink" title="损失函数-交叉熵"></a>损失函数-交叉熵</h1><p><img src="/2019/03/08/深度学习-基础篇/14.png" alt="14"></p>
+<h1>损失函数-交叉熵</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/14.png" alt="14"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/15.png" alt="15"></p>
 <p>其他：</p>
 <p>均方差损失，负对数似然损失，带泊松分布的负对数似然损失</p>
 <p><a href="https://blog.csdn.net/u010976453/article/details/78488279" target="_blank" rel="noopener">https://blog.csdn.net/u010976453/article/details/78488279</a></p>
 <p><a href="https://www.cnblogs.com/shixiangwan/p/7953591.html" target="_blank" rel="noopener">https://www.cnblogs.com/shixiangwan/p/7953591.html</a></p>
 <p>Triplet Loss</p>
-<h1 id="softmax"><a href="#softmax" class="headerlink" title="softmax"></a>softmax</h1><p><img src="/2019/03/08/深度学习-基础篇/10.png" alt="10"></p>
+<h1>softmax</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/10.png" alt="10"></p>
 <p>LogSoftmax</p>
-<h1 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h1><p><img src="/2019/03/08/深度学习-基础篇/16.png" alt="16"></p>
+<h1>梯度下降</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/16.png" alt="16"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/17.png" alt="17"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/18.png" alt="18"></p>
-<h1 id="后向传播"><a href="#后向传播" class="headerlink" title="后向传播"></a>后向传播</h1><p><img src="/2019/03/08/深度学习-基础篇/19.png" alt="19"></p>
+<h1>后向传播</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/19.png" alt="19"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/20.png" alt="20"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/21.png" alt="21"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/22.png" alt="22"></p>
@@ -840,8 +908,10 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><img src="/2019/03/08/深度学习-基础篇/27.png" alt="27"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/28.png" alt="28"></p>
 <p>后向传播算法一般形式（草稿纸6）</p>
-<h1 id="优化策略"><a href="#优化策略" class="headerlink" title="优化策略"></a>优化策略</h1><p><img src="/2019/03/08/深度学习-基础篇/29.png" alt="29"></p>
-<h2 id="batch-size"><a href="#batch-size" class="headerlink" title="batch_size"></a>batch_size</h2><p><img src="/2019/03/08/深度学习-基础篇/30.png" alt="30"></p>
+<h1>优化策略</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/29.png" alt="29"></p>
+<h2 id="batch-size"><a class="header-anchor" href="#batch-size">¶</a>batch_size</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/30.png" alt="30"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/31.png" alt="31"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/32.png" alt="32"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/33.png" alt="33"></p>
@@ -884,14 +954,15 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <li>在合理的范围内，增大batch_size可以提高内存利用率，大矩阵乘法的并行化效率提高；跑完一次epoch（全数据集）所需的迭代次数减少，对于相同数据量的处理速度进一步加快；在适当的范围内，batch_size越大，其确定的下降方向越准，引起训练波动越小。<strong>注意，当batch_size增大到一定程度，其确定的下降方向基本不会变化</strong>。</li>
 <li>batch_size值增大到超过合理范围时，和全数据训练full batch learning就会表现出相近的症候；内存容量占有率增加，跑完一次epoch（全数据集）所需的迭代次数减少，达到相同的精度所耗损的时间增加，从而对参数的修正也就显得更加缓慢。</li>
 </ul>
-<h2 id="momentum-NAD"><a href="#momentum-NAD" class="headerlink" title="momentum/NAD"></a>momentum/NAD</h2><p><img src="/2019/03/08/深度学习-基础篇/34.png" alt="34"></p>
+<h2 id="momentum-nad"><a class="header-anchor" href="#momentum-nad">¶</a>momentum/NAD</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/34.png" alt="34"></p>
 <p>1.动量方法主要是为了解决Hessian矩阵病态条件问题（直观上讲就是梯度高度敏感于参数空间的某些方向）的。</p>
 <p>2.加速学习</p>
 <p>3.一般将参数设为0.5,0.9，或者0.99，分别表示最大速度2倍，10倍，100倍于SGD的算法。</p>
 <p>4.通过速度v，来积累了之间梯度指数级衰减的平均，并且继续延该方向移动：</p>
 <p>如图所示，红色为SGD+Momentum。黑色为SGD。可以看到黑色为典型Hessian矩阵病态的情况，相当于大幅度的徘徊着向最低点前进。</p>
-<p>  而由于动量积攒了历史的梯度，如点P前一刻的梯度与当前的梯度方向几乎相反。因此原本在P点原本要大幅徘徊的梯度，主要受到前一时刻的影响，而导致在当前时刻的梯度幅度减小。</p>
-<p>  直观上讲就是，要是当前时刻的梯度与历史时刻梯度方向相似，这种趋势在当前时刻则会加强；要是不同，则当前时刻的梯度方向减弱。</p>
+<p>而由于动量积攒了历史的梯度，如点P前一刻的梯度与当前的梯度方向几乎相反。因此原本在P点原本要大幅徘徊的梯度，主要受到前一时刻的影响，而导致在当前时刻的梯度幅度减小。</p>
+<p>直观上讲就是，要是当前时刻的梯度与历史时刻梯度方向相似，这种趋势在当前时刻则会加强；要是不同，则当前时刻的梯度方向减弱。</p>
 <p><img src="/2019/03/08/深度学习-基础篇/35.png" alt="35"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/36.png" alt="36"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/37.png" alt="37"></p>
@@ -901,7 +972,8 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p>4.在GD下，Nesterov将误差收敛从O（1/k），改进到O(1/k^2)</p>
 <p>5.然而在SGD下，Nesterov并没有任何改进</p>
 <p>举个通俗的例子就是，你在下坡时，如果在下坡快到底，但又未到底时，动量梯度下降会让你冲到坡的对面去。Nesterov梯度下降会预知你的下一步将会时到坡的对面去，所以会提示你提前刹车，避免过度冲到坡的对面去。这包含了一种提前计算下一步的梯度，来指导当前梯度的想法</p>
-<h2 id="Adagrad-Rprop-RMSprop"><a href="#Adagrad-Rprop-RMSprop" class="headerlink" title="Adagrad/Rprop/RMSprop"></a>Adagrad/Rprop/RMSprop</h2><p><img src="/2019/03/08/深度学习-基础篇/38.png" alt="38"></p>
+<h2 id="adagrad-rprop-rmsprop"><a class="header-anchor" href="#adagrad-rprop-rmsprop">¶</a>Adagrad/Rprop/RMSprop</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/38.png" alt="38"></p>
 <p>1.简单来讲，设置全局学习率之后，每次通过，全局学习率逐参数的除以历史梯度平方和的平方根，使得每个参数的学习率不同</p>
 <p>2.效果是：在参数空间更为平缓的方向，会取得更大的进步（因为平缓，所以历史梯度平方和较小，对应学习下降的幅度较小）</p>
 <p>3.缺点是,使得学习率过早，过量的减少</p>
@@ -922,7 +994,8 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><img src="/2019/03/08/深度学习-基础篇/40.png" alt="40"></p>
 <p>1.<a href="http://blog.csdn.net/bvl10101111/article/details/72616097" target="_blank" rel="noopener">AdaGrad</a>算法的改进。鉴于神经网络都是非凸条件下的，RMSProp在非凸条件下结果更好，改变梯度累积为指数衰减的移动平均以丢弃遥远的过去历史。</p>
 <p>2.经验上，RMSProp被证明有效且实用的深度学习网络优化算法。</p>
-<h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><p><img src="/2019/03/08/深度学习-基础篇/41.png" alt="41"></p>
+<h2 id="adam"><a class="header-anchor" href="#adam">¶</a>Adam</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/41.png" alt="41"></p>
 <p>1.Adam算法可以看做是修正后的<a href="http://blog.csdn.net/bvl10101111/article/details/72615621" target="_blank" rel="noopener">Momentum</a>+<a href="http://blog.csdn.net/BVL10101111/article/details/72616378" target="_blank" rel="noopener">RMSProp</a>算法</p>
 <p>2.动量直接并入梯度一阶矩估计中（指数加权）</p>
 <p>3.Adam通常被认为对超参数的选择相当鲁棒</p>
@@ -931,15 +1004,20 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p>Adadelta，MBGD</p>
 <p><a href="https://blog.csdn.net/u010089444/article/details/76725843" target="_blank" rel="noopener">https://blog.csdn.net/u010089444/article/details/76725843</a></p>
 <p><a href="https://www.cnblogs.com/guoyaohua/p/8542554.html" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/8542554.html</a></p>
-<h2 id="学习率"><a href="#学习率" class="headerlink" title="学习率"></a>学习率</h2><p><img src="/2019/03/08/深度学习-基础篇/43.png" alt="43"></p>
+<h2 id="学习率"><a class="header-anchor" href="#学习率">¶</a>学习率</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/43.png" alt="43"></p>
 <p><a href="https://baijiahao.baidu.com/s?id=1591271039698173396&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1591271039698173396&amp;wfr=spider&amp;for=pc</a></p>
-<h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><p><img src="/2019/03/08/深度学习-基础篇/44.png" alt="44"></p>
+<h2 id="超参数选择"><a class="header-anchor" href="#超参数选择">¶</a>超参数选择</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/44.png" alt="44"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/45.png" alt="45"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/46.png" alt="46"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/47.png" alt="47"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/48.png" alt="48"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/49.png" alt="49"></p>
-<h2 id="Batch-Normalization-amp-Group-Normalization"><a href="#Batch-Normalization-amp-Group-Normalization" class="headerlink" title="Batch Normalization &amp; Group Normalization"></a>Batch Normalization &amp; Group Normalization</h2><h1 id="学习中的问题及解决方法"><a href="#学习中的问题及解决方法" class="headerlink" title="学习中的问题及解决方法"></a>学习中的问题及解决方法</h1><h2 id="梯度消失-爆炸"><a href="#梯度消失-爆炸" class="headerlink" title="梯度消失/爆炸"></a>梯度消失/爆炸</h2><p><img src="/2019/03/08/深度学习-基础篇/51.png" alt="51"></p>
+<h2 id="batch-normalization-group-normalization"><a class="header-anchor" href="#batch-normalization-group-normalization">¶</a>Batch Normalization &amp; Group Normalization</h2>
+<h1>学习中的问题及解决方法</h1>
+<h2 id="梯度消失-爆炸"><a class="header-anchor" href="#梯度消失-爆炸">¶</a>梯度消失/爆炸</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/51.png" alt="51"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/52.png" alt="52"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/53.png" alt="53"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/54.png" alt="54"></p>
@@ -948,11 +1026,13 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><img src="/2019/03/08/深度学习-基础篇/57.png" alt="57"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/58.png" alt="58"></p>
 <p>weight_decay</p>
-<h2 id="小批数据问题"><a href="#小批数据问题" class="headerlink" title="小批数据问题"></a>小批数据问题</h2><p><img src="/2019/03/08/深度学习-基础篇/59.png" alt="59"></p>
+<h2 id="小批数据问题"><a class="header-anchor" href="#小批数据问题">¶</a>小批数据问题</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/59.png" alt="59"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/60.png" alt="60"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/61.png" alt="61"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/62.png" alt="62"></p>
-<h2 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h2><p><img src="/2019/03/08/深度学习-基础篇/63.png" alt="63"></p>
+<h2 id="过拟合问题"><a class="header-anchor" href="#过拟合问题">¶</a>过拟合问题</h2>
+<p><img src="/2019/03/08/深度学习-基础篇/63.png" alt="63"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/64.png" alt="64"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/65.png" alt="65"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/66.png" alt="66"></p>
@@ -966,14 +1046,17 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><img src="/2019/03/08/深度学习-基础篇/70.png" alt="70"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/71.png" alt="71"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/72.png" alt="72"></p>
-<h1 id="深度学习框架"><a href="#深度学习框架" class="headerlink" title="深度学习框架"></a>深度学习框架</h1><p><img src="/2019/03/08/深度学习-基础篇/50.png" alt="50"></p>
-<h1 id="epoch"><a href="#epoch" class="headerlink" title="epoch"></a>epoch</h1><p><a href="https://blog.csdn.net/qq_18668137/article/details/80883350" target="_blank" rel="noopener">https://blog.csdn.net/qq_18668137/article/details/80883350</a></p>
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>BP神经网络，LM神经网络，RBF径向基神经网络，FNN模糊神经网络，GMDH神经网络，ANFIS自适应神经网络，GRU，GRNN编码器，cnn，rnn，lstm</p>
+<h1>深度学习框架</h1>
+<p><img src="/2019/03/08/深度学习-基础篇/50.png" alt="50"></p>
+<h1>epoch</h1>
+<p><a href="https://blog.csdn.net/qq_18668137/article/details/80883350" target="_blank" rel="noopener">https://blog.csdn.net/qq_18668137/article/details/80883350</a></p>
+<h1>分类</h1>
+<p>BP神经网络，LM神经网络，RBF径向基神经网络，FNN模糊神经网络，GMDH神经网络，ANFIS自适应神经网络，GRU，GRNN编码器，cnn，rnn，lstm</p>
 <p>深度信念网络 Deep belief machines</p>
 <p>HTM算法 Hierarchical temporal memory</p>
 <p>堆叠自动编码器 Stacked Boltzmann Machine</p>
 <p>生成式对抗网络 Generative adversarial networks</p>
-<p>前馈神经网络 Feedforward neurral network </p>
+<p>前馈神经网络 Feedforward neurral network</p>
 <p>极端学习机 Extreme learning machine</p>
 <p>逻辑学习机 Logic learning machine<a href="https://en.wikipedia.org/wiki/Logic_learning_machine" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Logic_learning_machine</a></p>
 <p>自组织映射神经网络 Self-organizing map</p>
@@ -985,7 +1068,8 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p>受限玻尔兹曼机 Restricted Boltzmann machine</p>
 <p>自组织映射（SOM） Self-organizing map</p>
 <p>脉冲神经网络 Spiking neural network</p>
-<h1 id="经典网络"><a href="#经典网络" class="headerlink" title="经典网络"></a>经典网络</h1><p>alexnet，vgg-net</p>
+<h1>经典网络</h1>
+<p>alexnet，vgg-net</p>
 
           
         
@@ -1230,76 +1314,96 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
         
           
             <p>[TOC]</p>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h1>基本概念</h1>
+<h2 id="数据"><a class="header-anchor" href="#数据">¶</a>数据</h2>
+<h3 id="特点"><a class="header-anchor" href="#特点">¶</a>特点</h3>
+<ul>
 <li>大规模Large-scale</li>
 <li>高维度High dimensional</li>
 <li>异构Heterogeneous</li>
 <li>复杂Complex</li>
 <li>分布式Distributed</li>
 </ul>
-<h3 id="属性Attributes"><a href="#属性Attributes" class="headerlink" title="属性Attributes"></a>属性Attributes</h3><h4 id="属性的种类"><a href="#属性的种类" class="headerlink" title="属性的种类"></a>属性的种类</h4><ul>
-<li><p>Nominal（标称/名词词组）</p>
+<h3 id="属性attributes"><a class="header-anchor" href="#属性attributes">¶</a>属性Attributes</h3>
+<h4 id="属性的种类"><a class="header-anchor" href="#属性的种类">¶</a>属性的种类</h4>
+<ul>
+<li>
+<p>Nominal（标称/名词词组）</p>
 <ul>
 <li>ID numbers, eye color, zip codes</li>
 <li>支持操作：distinctness</li>
 </ul>
 </li>
-<li><p>Ordinal</p>
+<li>
+<p>Ordinal</p>
 <ul>
 <li>rankings (e.g., taste of potato chips on a scale from 1-10), grades, height {tall, medium, short}</li>
 <li>支持操作：distinctness，order</li>
 </ul>
 </li>
-<li><p>Interval</p>
+<li>
+<p>Interval</p>
 <ul>
 <li>calendar dates, temperatures in Celsius or Fahrenheit</li>
 <li>支持操作：distinctness，order，meaningful differences</li>
 </ul>
 </li>
-<li><p>Ratio</p>
+<li>
+<p>Ratio</p>
 <ul>
-<li><p>temperature in Kelvin, length, time, counts</p>
+<li>
+<p>temperature in Kelvin, length, time, counts</p>
 </li>
-<li><p>支持操作：all 4 properties/operations</p>
-<p>  <img src="/2019/03/08/数据科学-基础知识/image-20190810184147554.png" alt="image-20190810184147554"></p>
-<p>  <img src="/2019/03/08/数据科学-基础知识/image-20190810184330500.png" alt="image-20190810184330500"></p>
+<li>
+<p>支持操作：all 4 properties/operations</p>
+<p><img src="/2019/03/08/数据科学-基础知识/image-20190810184147554.png" alt="image-20190810184147554"></p>
+<p><img src="/2019/03/08/数据科学-基础知识/image-20190810184330500.png" alt="image-20190810184330500"></p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="属性上的操作"><a href="#属性上的操作" class="headerlink" title="属性上的操作"></a>属性上的操作</h3><ul>
+<h3 id="属性上的操作"><a class="header-anchor" href="#属性上的操作">¶</a>属性上的操作</h3>
+<ul>
 <li>Distinctness：=，不等号</li>
 <li>Order：&lt;，&gt;</li>
 <li>Differences are meaningful：+，-</li>
 <li>Ratios are meaningful：*，\</li>
 </ul>
-<h3 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h3><ul>
-<li>Discrete Attribute</li>
-<li><p>Continuous Attribute</p>
+<h3 id="其他属性"><a class="header-anchor" href="#其他属性">¶</a>其他属性</h3>
+<ul>
+<li>
+<p>Discrete Attribute</p>
 </li>
-<li><p>Asymmetric Attributes</p>
-<p>  只有存在的（非0属性）才被视为是重要的</p>
+<li>
+<p>Continuous Attribute</p>
+</li>
+<li>
+<p>Asymmetric Attributes</p>
+<p>只有存在的（非0属性）才被视为是重要的</p>
 <ul>
 <li>一篇文档中出现的单词</li>
-<li><p>购物篮中的商品</p>
+<li>购物篮中的商品</li>
+</ul>
 <p>Asymmetric attributes通常从对象集合中产生</p>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="数据集种类"><a href="#数据集种类" class="headerlink" title="数据集种类"></a>数据集种类</h3><ul>
-<li>记录类 record<ul>
+<h3 id="数据集种类"><a class="header-anchor" href="#数据集种类">¶</a>数据集种类</h3>
+<ul>
+<li>记录类 record
+<ul>
 <li>Data Matrix</li>
 <li>Document Data</li>
 <li>Transaction Data</li>
 </ul>
 </li>
-<li>图类 graph<ul>
+<li>图类 graph
+<ul>
 <li>World Wide Web</li>
 <li>Molecular Structures</li>
 </ul>
 </li>
-<li>顺序类 ordered<ul>
+<li>顺序类 ordered
+<ul>
 <li>Spatial Data</li>
 <li>Temporal Data</li>
 <li>Sequential Data</li>
@@ -1307,32 +1411,40 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 </ul>
 </li>
 </ul>
-<h3 id="数据质量"><a href="#数据质量" class="headerlink" title="数据质量"></a>数据质量</h3><ul>
-<li>噪声和离群点 Noise and outliers<ul>
+<h3 id="数据质量"><a class="header-anchor" href="#数据质量">¶</a>数据质量</h3>
+<ul>
+<li>噪声和离群点 Noise and outliers
+<ul>
 <li>离群点也许是噪声，也许正是要检测和分析的数据</li>
 </ul>
 </li>
-<li>数据（属性）丢失 Missing values<ul>
-<li>处理方式（更多内容见<code>数据科学-数据预处理</code>）<ul>
+<li>数据（属性）丢失 Missing values
+<ul>
+<li>处理方式（更多内容见<code>数据科学-数据预处理</code>）
+<ul>
 <li>删除该数据</li>
 <li>估计丢失的属性值</li>
 <li>分析时略过该属性</li>
 </ul>
 </li>
-<li>四种产生机制<ul>
-<li>完全随机缺失（Missing Completely at Random，MCAR）<ul>
+<li>四种产生机制
+<ul>
+<li>完全随机缺失（Missing Completely at Random，MCAR）
+<ul>
 <li>某个变量是否缺失与它自身的值无关，也与其他任何变量的值无关（Missingness of a value is independent of attributes）。例如，由于测量设备出故障导致某些值缺失</li>
 <li>Fill in values based on the attribute</li>
 <li>关于它的分析可能是无偏差的（unbiased）</li>
 </ul>
 </li>
-<li>随机缺失（Missing at Random，MAR）<ul>
+<li>随机缺失（Missing at Random，MAR）
+<ul>
 <li>在控制了其他变量已观测到的值后（Missingness is related to other variables），某个变量是否缺失与它自身的值无关。例如，人们是否透露收入可能与性别、教育程度、职业等因素有关系。如果这些因素都观测到了，而且尽管收入缺失的比例在不同性别、教育程度、职业的人群之间有差异，但是在每一类人群内收入是否缺失与收入本身的值无关，那么收入就是随机缺失的</li>
 <li>Fill in values based other values</li>
 <li>关于它的分析大多是有偏差的（biased）</li>
 </ul>
 </li>
-<li>非随机缺失（Missing Not at Random，MNAR）<ul>
+<li>非随机缺失（Missing Not at Random，MNAR）
+<ul>
 <li>即使控制了其他变量已观测到的值，某个变量是否缺失仍然与它自身的值有关（Missingness is related to unobserved measurements）。例如，在控制了性别、教育程度、职业等已观测因素之后，如果收入是否缺失还依赖于收入本身的值，那么收入就是非随机缺失的</li>
 </ul>
 </li>
@@ -1340,52 +1452,66 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 </li>
 </ul>
 </li>
-<li>数据重复 Duplicate data<ul>
+<li>数据重复 Duplicate data
+<ul>
 <li>比如合并数据的时候，一个人有很多邮箱</li>
 </ul>
 </li>
 <li>数据错误 Wrong data</li>
 </ul>
-<h3 id="数据度量"><a href="#数据度量" class="headerlink" title="数据度量"></a>数据度量</h3><p>见<code>数据科学-数据度量</code></p>
-<h3 id="数据纬度的影响"><a href="#数据纬度的影响" class="headerlink" title="数据纬度的影响"></a>数据纬度的影响</h3><p>见<code>数据科学-特征工程</code></p>
-<h2 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h2><p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
+<h3 id="数据度量"><a class="header-anchor" href="#数据度量">¶</a>数据度量</h3>
+<p>见<code>数据科学-数据度量</code></p>
+<h3 id="数据纬度的影响"><a class="header-anchor" href="#数据纬度的影响">¶</a>数据纬度的影响</h3>
+<p>见<code>数据科学-特征工程</code></p>
+<h2 id="空间"><a class="header-anchor" href="#空间">¶</a>空间</h2>
+<p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
 <p>每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间</p>
 <p>假设空间：输入空间到输出空间的映射的集合</p>
-<h2 id="学习三要素"><a href="#学习三要素" class="headerlink" title="学习三要素"></a>学习三要素</h2><ul>
+<h2 id="学习三要素"><a class="header-anchor" href="#学习三要素">¶</a>学习三要素</h2>
+<ul>
 <li>模型：确定模型空间</li>
 <li>策略：确定模型空间中什么是好的模型</li>
 <li>算法：在模型空间中怎么得到好的模型</li>
 </ul>
-<h2 id="学习任务分类"><a href="#学习任务分类" class="headerlink" title="学习任务分类"></a>学习任务分类</h2><ul>
-<li><p>监督学习 supervised learning</p>
+<h2 id="学习任务分类"><a class="header-anchor" href="#学习任务分类">¶</a>学习任务分类</h2>
+<ul>
+<li>
+<p>监督学习 supervised learning</p>
 <ul>
 <li>生成模型 Generative models</li>
 <li>判别模型 Discriminative Model</li>
 </ul>
 </li>
-<li><p>无监督学习 unsupervised learning</p>
+<li>
+<p>无监督学习 unsupervised learning</p>
 </li>
-<li><p>强化学习 reinforcement learning</p>
+<li>
+<p>强化学习 reinforcement learning</p>
 </li>
-<li><p>半监督学习 semisupervised learning</p>
+<li>
+<p>半监督学习 semisupervised learning</p>
 <ul>
 <li>低密度分离假设 Low-density separation</li>
 <li>联合训练 Co-training</li>
 </ul>
 </li>
-<li><p>迁移学习 Transfer learning</p>
+<li>
+<p>迁移学习 Transfer learning</p>
 <ul>
 <li>传递式迁移学习 Transitive Transfer Learning</li>
 </ul>
 </li>
 </ul>
-<h2 id="问题分类"><a href="#问题分类" class="headerlink" title="问题分类"></a>问题分类</h2><ul>
-<li>预测类 Predictive<ul>
+<h2 id="问题分类"><a class="header-anchor" href="#问题分类">¶</a>问题分类</h2>
+<ul>
+<li>预测类 Predictive
+<ul>
 <li>分类问题 Classification</li>
 <li>回归问题 Regression</li>
 </ul>
 </li>
-<li>描述类 Descriptive<ul>
+<li>描述类 Descriptive
+<ul>
 <li>聚类问题 Clustering</li>
 <li>(关联)规则发掘 Association Rule Discovery</li>
 <li>序列模式发掘 Sequential Pattern Discovery</li>
@@ -1393,30 +1519,42 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <li>标注问题 labeling（也可以是预测类）</li>
 </ul>
 </li>
-<li>生成类 Generative<ul>
+<li>生成类 Generative
+<ul>
 <li>生成问题 Generative</li>
 </ul>
 </li>
 </ul>
-<h1 id="优化-策略"><a href="#优化-策略" class="headerlink" title="(优化)策略"></a>(优化)策略</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数度量模型一次预测的好坏</p>
+<h1>(优化)策略</h1>
+<h2 id="损失函数"><a class="header-anchor" href="#损失函数">¶</a>损失函数</h2>
+<p>损失函数度量模型一次预测的好坏</p>
 <p>0-1损失函数，平方损失函数，绝对损失函数，对数损失函数（对数似然损失函数）</p>
-<h2 id="风险函数"><a href="#风险函数" class="headerlink" title="风险函数"></a>风险函数</h2><p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
+<h2 id="风险函数"><a class="header-anchor" href="#风险函数">¶</a>风险函数</h2>
+<p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
 <p>经验风险（经验损失）</p>
-<h2 id="经验风险最小化"><a href="#经验风险最小化" class="headerlink" title="经验风险最小化"></a>经验风险最小化</h2><h2 id="结构风险最小化"><a href="#结构风险最小化" class="headerlink" title="结构风险最小化"></a>结构风险最小化</h2><p>为了防止过拟合而提出的策略，等价于正则化</p>
-<h1 id="过拟合-欠拟合："><a href="#过拟合-欠拟合：" class="headerlink" title="过拟合/欠拟合："></a>过拟合/欠拟合：</h1><p>过拟合：把误差，噪声也拟合进去了</p>
+<h2 id="经验风险最小化"><a class="header-anchor" href="#经验风险最小化">¶</a>经验风险最小化</h2>
+<h2 id="结构风险最小化"><a class="header-anchor" href="#结构风险最小化">¶</a>结构风险最小化</h2>
+<p>为了防止过拟合而提出的策略，等价于正则化</p>
+<h1>过拟合/欠拟合：</h1>
+<p>过拟合：把误差，噪声也拟合进去了</p>
 <p>Errors on training data are small</p>
 <p>But errors on new points are likely to be large</p>
-<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>L1L2范数（模型参数向量的范数）</p>
+<h2 id="正则化"><a class="header-anchor" href="#正则化">¶</a>正则化</h2>
+<p>L1L2范数（模型参数向量的范数）</p>
 <p>奥卡姆剃刀模型</p>
-<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>见<code>数据科学-模型评估与选择</code></p>
-<h2 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h2><p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
-<h1 id="泛化能力"><a href="#泛化能力" class="headerlink" title="泛化能力"></a>泛化能力</h1><p>泛化误差上界，推导</p>
-<h1 id="生成模型-判别模型"><a href="#生成模型-判别模型" class="headerlink" title="生成模型/判别模型"></a>生成模型/判别模型</h1><p>高斯马尔科夫定理：</p>
+<h2 id="交叉验证"><a class="header-anchor" href="#交叉验证">¶</a>交叉验证</h2>
+<p>见<code>数据科学-模型评估与选择</code></p>
+<h2 id="dropout"><a class="header-anchor" href="#dropout">¶</a>dropout</h2>
+<p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
+<h1>泛化能力</h1>
+<p>泛化误差上界，推导</p>
+<h1>生成模型/判别模型</h1>
+<p>高斯马尔科夫定理：</p>
 <p>数据质量：</p>
 <p>缺失值</p>
 <p>异常值（3σ原则，箱形图分析）</p>
 <p>一致性分析/检验</p>
-<p>数据特征/探索性数据分析EDA<a href="https://www.cnblogs.com/shencc3/p/7851340.html：" target="_blank" rel="noopener">https://www.cnblogs.com/shencc3/p/7851340.html：</a></p>
+<p>数据特征/探索性数据分析EDAhttps://www.cnblogs.com/shencc3/p/7851340.html：</p>
 <p>分布分析</p>
 <p>定性（条形图，饼图）</p>
 <p>定量（求极差-分组-决定分点-列出频率分布表-绘出频率直方分布图）</p>
@@ -1431,7 +1569,8 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p>相关性分析</p>
 <p>绘制散点图，绘制散点图矩阵</p>
 <p>相关系数：pearson相关系数，spearman秩相关系数，判定系数</p>
-<h1 id="异常点-离群点检测"><a href="#异常点-离群点检测" class="headerlink" title="异常点/离群点检测"></a>异常点/离群点检测</h1><p><strong>异常检测 Anomaly detection</strong></p>
+<h1>异常点/离群点检测</h1>
+<p><strong>异常检测 Anomaly detection</strong></p>
 <p>离群点分类（从数据范围，从数据类型，从属性个数）</p>
 <p>检测方法（基于统计，基于邻近度，基于密度，基于聚类）</p>
 <p>基于统计（一元正态分布的离群点检测，混合模型xxxx，）</p>
@@ -1441,10 +1580,12 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
 <p><a href="https://blog.csdn.net/littlely_ll/article/details/68486537" target="_blank" rel="noopener">https://blog.csdn.net/littlely_ll/article/details/68486537</a></p>
 <p>局部异常因子 Local outlier factor</p>
 <p>离群点检测</p>
-<h1 id="陷阱与挑战"><a href="#陷阱与挑战" class="headerlink" title="陷阱与挑战"></a>陷阱与挑战</h1><p>过拟合</p>
+<h1>陷阱与挑战</h1>
+<p>过拟合</p>
 <p>维度灾难</p>
 <p>泛化能力</p>
-<h1 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h1><p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
+<h1>检验</h1>
+<p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
 <p><a href="https://blog.csdn.net/occamo/article/details/84957692" target="_blank" rel="noopener">https://blog.csdn.net/occamo/article/details/84957692</a></p>
 <p>Ground Truth翻译的意思是地面实况，放到机器学习里面，再抽象点可以把它理解为真值、真实的有效值或者是标准的答案</p>
 <p>shallow learning</p>
@@ -1569,117 +1710,178 @@ p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
         
           
             <p>[TOC]</p>
-<h1 id="相似度度量-Similarity-measure"><a href="#相似度度量-Similarity-measure" class="headerlink" title="相似度度量 Similarity measure"></a>相似度度量 Similarity measure</h1><p><img src="/2019/03/08/数据科学-数据度量/image-20190811092503711.png" alt="image-20190811092503711"></p>
-<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
+<h1>相似度度量 Similarity measure</h1>
+<p><img src="/2019/03/08/数据科学-数据度量/image-20190811092503711.png" alt="image-20190811092503711"></p>
+<h2 id="距离"><a class="header-anchor" href="#距离">¶</a>距离</h2>
+<ul>
 <li>欧式/欧几里得距离 Euclidean Distance</li>
 </ul>
-<script type="math/tex; mode=display">
-d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}^{n}(x_k-y_k)^2}</script><p>​    如果比例（scale）不同，需要标准化（Standardization）</p>
+<p>$$<br>
+d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}<sup>{n}(x_k-y_k)</sup>2}<br>
+$$</p>
+<p>​	如果比例（scale）不同，需要标准化（Standardization）</p>
 <ul>
 <li>明氏/明可夫斯基距离 Minkowski Distance</li>
 </ul>
-<script type="math/tex; mode=display">
-d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}^{n}|x_k-y_k|^r)^{1/r}</script><ul>
-<li><ul>
-<li>r = 1，曼哈顿距离Manhattan，L1范数 norm<ul>
+<p>$$<br>
+d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}<sup>{n}|x_k-y_k|</sup>r)^{1/r}<br>
+$$</p>
+<ul>
+<li>
+<ul>
+<li>r = 1，曼哈顿距离Manhattan，L1范数 norm
+<ul>
 <li>比如汉明吗中的Hamming distance</li>
 </ul>
 </li>
 <li>r = 2，欧式距离，L2 norm</li>
-<li><p>r = ∞，supremum/切比雪夫Chebyshev distance，L_max norm, L_∞ norm)</p>
-<script type="math/tex; mode=display">
-{\lim_{r \to +\infty}} (\sum_{k=1}^{n}|x_k-y_k|^r)^{1/r} = \max_{k=1}^n|x_k-y_k|</script></li>
+<li>r = ∞，supremum/切比雪夫Chebyshev distance，L_max norm, L_∞ norm)</li>
 </ul>
+<p>$$<br>
+{\lim_{r \to +\infty}} (\sum_{k=1}<sup>{n}|x_k-y_k|</sup>r)^{1/r} = \max_{k=1}^n|x_k-y_k|<br>
+$$</p>
 </li>
-<li><p>马哈拉诺比斯距离 Mahalanobis Distance</p>
+<li>
+<p>马哈拉诺比斯距离 Mahalanobis Distance</p>
 </li>
 </ul>
-<script type="math/tex; mode=display">
-mahalanobis(\mathbf{x},\mathbf{y}) = (\mathbf{x} -\mathbf{y})^\mathsf{T}\Sigma^{-1}(\mathbf{x} - \mathbf{y})</script><p>​    中间的\Sigma是协方差矩阵</p>
+<p>$$<br>
+mahalanobis(\mathbf{x},\mathbf{y}) = (\mathbf{x} -\mathbf{y})<sup>\mathsf{T}\Sigma</sup>{-1}(\mathbf{x} - \mathbf{y})<br>
+$$</p>
+<p>​	中间的\Sigma是协方差矩阵</p>
 <ul>
 <li>距离应该满足的属性</li>
 </ul>
-<script type="math/tex; mode=display">
-d(\mathbf{x},\mathbf{y}) \ge 0 \\
-d(\mathbf{x},\mathbf{y}) = d(\mathbf{y},\mathbf{x})\\
-d(\mathbf{x},\mathbf{x}) \le d(\mathbf{x},\mathbf{y}) + d(\mathbf{y},\mathbf{z})</script><ul>
+<p>$$<br>
+d(\mathbf{x},\mathbf{y}) \ge 0 \<br>
+d(\mathbf{x},\mathbf{y}) = d(\mathbf{y},\mathbf{x})\<br>
+d(\mathbf{x},\mathbf{x}) \le d(\mathbf{x},\mathbf{y}) + d(\mathbf{y},\mathbf{z})<br>
+$$</p>
+<ul>
 <li>相似度应该满足的属性</li>
 </ul>
-<script type="math/tex; mode=display">
-d(\mathbf{x},\mathbf{y}) = 0 \  only \ if \ \mathbf{x} = \mathbf{y}\\
-s(\mathbf{x},\mathbf{y}) = s(\mathbf{y},\mathbf{x})</script><h2 id="二进制串相似度度量"><a href="#二进制串相似度度量" class="headerlink" title="二进制串相似度度量"></a>二进制串相似度度量</h2><p>比较p和q</p>
-<p>f01 = 该属性中p为0，q为1<br>f10 = 该属性中p为1，q为0<br>f00 = 该属性中p为0，q为1<br>f11 = 该属性中p为1，q为1</p>
+<p>$$<br>
+d(\mathbf{x},\mathbf{y}) = 0 \  only \ if \ \mathbf{x} = \mathbf{y}\<br>
+s(\mathbf{x},\mathbf{y}) = s(\mathbf{y},\mathbf{x})<br>
+$$</p>
+<h2 id="二进制串相似度度量"><a class="header-anchor" href="#二进制串相似度度量">¶</a>二进制串相似度度量</h2>
+<p>比较p和q</p>
+<p>f01 = 该属性中p为0，q为1<br>
+f10 = 该属性中p为1，q为0<br>
+f00 = 该属性中p为0，q为1<br>
+f11 = 该属性中p为1，q为1</p>
 <ul>
-<li><p>Simple Matching Coefficients = number of matches / number of attributes = = (f11 + f00) / (f01 + f10 + f11 + f00)</p>
+<li>
+<p>Simple Matching Coefficients = number of matches / number of attributes = = (f11 + f00) / (f01 + f10 + f11 + f00)</p>
 </li>
-<li><p>Jaccard雅卡尔 Coefficients = number of 11 matches / number of non-zero attributes = (f11) / (f01 + f10 + f11)</p>
+<li>
+<p>Jaccard雅卡尔 Coefficients = number of 11 matches / number of non-zero attributes = (f11) / (f01 + f10 + f11)</p>
 </li>
 </ul>
-<h2 id="余弦相似度Cosine-Similarity"><a href="#余弦相似度Cosine-Similarity" class="headerlink" title="余弦相似度Cosine Similarity"></a>余弦相似度Cosine Similarity</h2><script type="math/tex; mode=display">
-\cos(\mathbf{d_1},\mathbf{d_2}) = <\mathbf{d_1},\mathbf{d_2}> / |\mathbf{d_1}||\mathbf{d_2}|\\</script><h2 id="（皮尔逊）相关系数Correlation"><a href="#（皮尔逊）相关系数Correlation" class="headerlink" title="（皮尔逊）相关系数Correlation"></a>（皮尔逊）相关系数Correlation</h2><p>​    用于度量两个变量的线性关系，区间为[-1,1]，1表示正比例，-1表示反比例</p>
-<script type="math/tex; mode=display">
-corr(\mathbf{x},\mathbf{y}) = \frac{covariance(\mathbf{x},\mathbf{y})}{standard\_deviation(\mathbf{x})*standard\_deviation(\mathbf{y})} = \frac{S_{xy}}{S_xS_y} \\
-covariance(\mathbf{x},\mathbf{y}) = S_{xy} = \frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)(y_k-\bar y)\\
-standard\_deviation(\mathbf{x}) = S_x = \sqrt{\frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)^2}</script><h2 id="多属性相关度量"><a href="#多属性相关度量" class="headerlink" title="多属性相关度量"></a>多属性相关度量</h2><script type="math/tex; mode=display">
-similarity(\mathbf{x},\mathbf{y}) = \frac {\sum_{k=1}^n \delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \delta_k}</script><p>其中</p>
-<script type="math/tex; mode=display">
-s_k(\mathbf{x},\mathbf{y})</script><p>表示第k个属性的相似度</p>
-<p>而</p>
-<script type="math/tex; mode=display">
-\delta_k</script><p>一般情况下为1，只有在该属性有丢失值的情况或者为非对称属性而两个数据的该属性均为0时，为0</p>
-<p>也可以加上权值</p>
-<script type="math/tex; mode=display">
-similarity(\mathbf{x},\mathbf{y}) = \frac { \sum_{k=1}^n \omega_i\delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \omega_i \delta_k}</script><script type="math/tex; mode=display">
-d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}^{n}\omega_i|x_k-y_k|^r)^{1/r}</script><h1 id="信息论度量"><a href="#信息论度量" class="headerlink" title="信息论度量"></a>信息论度量</h1><p>信息的量取决于事件发生的概率，概率越大，信息量越少，反之亦然</p>
-<h2 id="熵-entropy"><a href="#熵-entropy" class="headerlink" title="熵 entropy"></a>熵 entropy</h2><p>对于一个随机事件X，有n个可能的输出x1,,,xn，每一个输出概率为p1,,,pn，熵定义为</p>
-<script type="math/tex; mode=display">
-H(X) = -\sum_{i=1}^np_i\log_2p_i</script><p>介于0到log2n之间，是表示X事件的平均bit数目</p>
+<h2 id="余弦相似度cosine-similarity"><a class="header-anchor" href="#余弦相似度cosine-similarity">¶</a>余弦相似度Cosine Similarity</h2>
+<p>$$<br>
+\cos(\mathbf{d_1},\mathbf{d_2}) = &lt;\mathbf{d_1},\mathbf{d_2}&gt; / |\mathbf{d_1}||\mathbf{d_2}|\<br>
+$$</p>
+<h2 id="皮尔逊-相关系数correlation"><a class="header-anchor" href="#皮尔逊-相关系数correlation">¶</a>（皮尔逊）相关系数Correlation</h2>
+<p>​	用于度量两个变量的线性关系，区间为[-1,1]，1表示正比例，-1表示反比例<br>
+$$<br>
+corr(\mathbf{x},\mathbf{y}) = \frac{covariance(\mathbf{x},\mathbf{y})}{standard_deviation(\mathbf{x})*standard_deviation(\mathbf{y})} = \frac{S_{xy}}{S_xS_y} \<br>
+covariance(\mathbf{x},\mathbf{y}) = S_{xy} = \frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)(y_k-\bar y)\<br>
+standard_deviation(\mathbf{x}) = S_x = \sqrt{\frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)^2}<br>
+$$</p>
+<h2 id="多属性相关度量"><a class="header-anchor" href="#多属性相关度量">¶</a>多属性相关度量</h2>
+<p>$$<br>
+similarity(\mathbf{x},\mathbf{y}) = \frac {\sum_{k=1}^n \delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \delta_k}<br>
+$$</p>
+<p>其中<br>
+$$<br>
+s_k(\mathbf{x},\mathbf{y})<br>
+$$<br>
+表示第k个属性的相似度</p>
+<p>而<br>
+$$<br>
+\delta_k<br>
+$$<br>
+一般情况下为1，只有在该属性有丢失值的情况或者为非对称属性而两个数据的该属性均为0时，为0</p>
+<p>也可以加上权值<br>
+$$<br>
+similarity(\mathbf{x},\mathbf{y}) = \frac { \sum_{k=1}^n \omega_i\delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \omega_i \delta_k}<br>
+$$</p>
+<p>$$<br>
+d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}<sup>{n}\omega_i|x_k-y_k|</sup>r)^{1/r}<br>
+$$</p>
+<h1>信息论度量</h1>
+<p>信息的量取决于事件发生的概率，概率越大，信息量越少，反之亦然</p>
+<h2 id="熵-entropy"><a class="header-anchor" href="#熵-entropy">¶</a>熵 entropy</h2>
+<p>对于一个随机事件X，有n个可能的输出x1,xn，每一个输出概率为p1,pn，熵定义为<br>
+$$<br>
+H(X) = -\sum_{i=1}^np_i\log_2p_i<br>
+$$<br>
+介于0到log2n之间，是表示X事件的平均bit数目</p>
 <p>或者也可以解释为一个数据集的信息熵（information entropy），度量样本集合纯度，p则为每一类样本所占的比率，信息熵越小，纯度越高</p>
-<script type="math/tex; mode=display">
-熵的计算方式来源\\
-假设我们已经知道衡量不确定性大小的这个量已经存在了，不妨就叫做“信息量”,他应该有3个性质：\\
-• 不会是负数\\
-• 不确定性函数f是概率p的单调递减函数；\\
-• 可加性： 两个独立符号所产生的不确定性应等于各自不确定性之和，即\\
-f(p_1 \times p_2) = f(p_1)+f(P_2)\\
-同时满足这三个条件的函数f是负的对数函数，即\\
-f(p_i) = \log \frac{1}{p_i} = -\log p_i\\
-信息熵是跟所有事件的可能性有关的，是平均而言发生一个事件得到
-的信息量大小。所以信息熵其实是信息量的期望</script><p>采样数据的熵（总数为m，每一种的数目为m_i）</p>
-<script type="math/tex; mode=display">
-H(X) = -\sum_{i=1}^n\frac{m_i}{m}\log_2\frac{m_i}{m}</script><h2 id="条件熵-Conditional-Entropy"><a href="#条件熵-Conditional-Entropy" class="headerlink" title="条件熵 Conditional Entropy"></a>条件熵 Conditional Entropy</h2><script type="math/tex; mode=display">
-H(Y|X) = \sum_{x \in \mathcal X} p(x)H(Y|X=x)\\
-= -\sum_{x \in \mathcal X} p(x) \sum_{y \in \mathcal Y} p(y|x) \log_2p(y|x)\\
-= -\sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2p(y|x)\\
-= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2p(y|x)\\
-= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)}\\
-= \sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x)}{p(x,y)}</script><h2 id="互信息-Mutual-Information"><a href="#互信息-Mutual-Information" class="headerlink" title="互信息 Mutual Information"></a>互信息 Mutual Information</h2><p>表示一个事件（变量）给另一个事件提供的信息</p>
-<script type="math/tex; mode=display">
-I(X,Y) = H(X) + H(Y) - H(X,Y) \\
-= \sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)(y)}</script><p>H(X, Y)表示联合熵</p>
-<script type="math/tex; mode=display">
-H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}</script><p>互信息的最大值为log(min(n_x,n_Y))，n_x(n_Y)表示X(Y)的值的数目</p>
+<p>$$<br>
+熵的计算方式来源\<br>
+假设我们已经知道衡量不确定性大小的这个量已经存在了，不妨就叫做“信息量”,他应该有3个性质：\<br>
+• 不会是负数\<br>
+• 不确定性函数f是概率p的单调递减函数；\<br>
+• 可加性： 两个独立符号所产生的不确定性应等于各自不确定性之和，即\<br>
+f(p_1 \times p_2) = f(p_1)+f(P_2)\<br>
+同时满足这三个条件的函数f是负的对数函数，即\<br>
+f(p_i) = \log \frac{1}{p_i} = -\log p_i\<br>
+信息熵是跟所有事件的可能性有关的，是平均而言发生一个事件得到<br>
+的信息量大小。所以信息熵其实是信息量的期望<br>
+$$</p>
+<p>采样数据的熵（总数为m，每一种的数目为m_i）<br>
+$$<br>
+H(X) = -\sum_{i=1}^n\frac{m_i}{m}\log_2\frac{m_i}{m}<br>
+$$</p>
+<h2 id="条件熵-conditional-entropy"><a class="header-anchor" href="#条件熵-conditional-entropy">¶</a>条件熵 Conditional Entropy</h2>
+<p>$$<br>
+H(Y|X) = \sum_{x \in \mathcal X} p(x)H(Y|X=x)\<br>
+= -\sum_{x \in \mathcal X} p(x) \sum_{y \in \mathcal Y} p(y|x) \log_2p(y|x)\<br>
+= -\sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2p(y|x)\<br>
+= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2p(y|x)\<br>
+= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)}\<br>
+= \sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x)}{p(x,y)}<br>
+$$</p>
+<h2 id="互信息-mutual-information"><a class="header-anchor" href="#互信息-mutual-information">¶</a>互信息 Mutual Information</h2>
+<p>表示一个事件（变量）给另一个事件提供的信息<br>
+$$<br>
+I(X,Y) = H(X) + H(Y) - H(X,Y) \<br>
+= \sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)(y)}<br>
+$$<br>
+H(X, Y)表示联合熵<br>
+$$<br>
+H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}<br>
+$$<br>
+互信息的最大值为log(min(n_x,n_Y))，n_x(n_Y)表示X(Y)的值的数目</p>
 <p><img src="/2019/03/08/数据科学-数据度量/image-20190811110755946.png" alt="image-20190811110755946"></p>
-<h1 id="密度度量"><a href="#密度度量" class="headerlink" title="密度度量"></a>密度度量</h1><p>度量在一个区域内，数据见接近的程度</p>
+<h1>密度度量</h1>
+<p>度量在一个区域内，数据见接近的程度</p>
 <ul>
-<li><p>Euclidean density</p>
-<p>  单位空间内的数据点个数</p>
+<li>
+<p>Euclidean density</p>
+<p>单位空间内的数据点个数</p>
 <ul>
-<li><p>Grid-based Approach</p>
-<p>  将区域划分为一个个矩形，统计每个矩形中的点数</p>
-<p>  <img src="/2019/03/08/数据科学-数据度量/image-20190811122615714.png" alt="image-20190811122615714"></p>
+<li>
+<p>Grid-based Approach</p>
+<p>将区域划分为一个个矩形，统计每个矩形中的点数</p>
+<p><img src="/2019/03/08/数据科学-数据度量/image-20190811122615714.png" alt="image-20190811122615714"></p>
 </li>
-<li><p>Center-Based</p>
-<p>  半径范围内的点数</p>
-<p>  <img src="/2019/03/08/数据科学-数据度量/image-20190811122646615.png" alt="image-20190811122646615"></p>
+<li>
+<p>Center-Based</p>
+<p>半径范围内的点数</p>
+<p><img src="/2019/03/08/数据科学-数据度量/image-20190811122646615.png" alt="image-20190811122646615"></p>
 </li>
 </ul>
 </li>
-<li><p>Probability density</p>
-<p>  Estimate what the distribution of the data looks like</p>
+<li>
+<p>Probability density</p>
+<p>Estimate what the distribution of the data looks like</p>
 </li>
-<li><p>Graph-based density</p>
-<p>  Connectivity</p>
+<li>
+<p>Graph-based density</p>
+<p>Connectivity</p>
 </li>
 </ul>
 
@@ -1801,23 +2003,26 @@ H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}</script><p>互信息的最大值为l
       
         
           
-            <h1 id="图像分类数据集"><a href="#图像分类数据集" class="headerlink" title="图像分类数据集"></a>图像分类数据集</h1><p>The MNIST Database ( <a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a> ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集</p>
+            <h1>图像分类数据集</h1>
+<p>The MNIST Database ( <a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">http://yann.lecun.com/exdb/mnist/</a> ) 最流行的图像识别数据集，使用手写数字。它包括6万个示例和1万个示例的测试集。这通常是第一个进行图像识别的数据集</p>
 <p>ImageNet ( <a href="http://image-net.org/" target="_blank" rel="noopener">http://image-net.org/</a> ) 根据WordNet层次结构组织的图像数据库(目前仅为名词)。层次结构的每个节点都由数百个图像描述。目前，该集合平均每个节点有超过500个图像(而且还在增加)</p>
 <p>MS-COCO，COCO是一个大型的、丰富的物体检测，分割和字幕数据集</p>
 <p>CIFAR-10，该数据集是图像分类的另一个数据集，它由10个类的60,000个图像组成（每个类在上面的图像中表示为一行）。总共有50,000个训练图像和10,000个测试图像。数据集分为6个部分：5个训练批次和1个测试批次，每批有10,000个图像</p>
 <p>MIRFlickr-25K图像数据集 (Huiskes and Lew 2008)（It originally consists of 25,000 image samples collected from the Flickr website.Each image is annotated by one or more labels selected from 24 labels and some textual tags）</p>
 <p>NUS-WIDE 图像数据集(Chua et al. 2009)（It contains 260,648 images from a public web image dataset. There are 81 ground truth concepts man- ually annotated for search evaluation）</p>
-<h1 id="文本分类-nlp数据集"><a href="#文本分类-nlp数据集" class="headerlink" title="文本分类/nlp数据集"></a>文本分类/nlp数据集</h1><p>Spam – Non Spam (<a href="http://www.esp.uem.es/jmgomez/smsspamcorpus/" target="_blank" rel="noopener">http://www.esp.uem.es/jmgomez/smsspamcorpus/</a>)</p>
+<h1>文本分类/nlp数据集</h1>
+<p>Spam – Non Spam (<a href="http://www.esp.uem.es/jmgomez/smsspamcorpus/" target="_blank" rel="noopener">http://www.esp.uem.es/jmgomez/smsspamcorpus/</a>)</p>
 <p>区分短信是否为垃圾邮件是一个有趣的问题。你需要构建一个分类器将短信进行分类</p>
-<p>Twitter Sentiment Analysis (<a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/" target="_blank" rel="noopener">http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/</a>) </p>
+<p>Twitter Sentiment Analysis (<a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/" target="_blank" rel="noopener">http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/</a>)</p>
 <p>该数据集包含 1578627 个分类推文，每行被标记为1的积极情绪，0位负面情绪。数据依次基于 Kaggle 比赛和 Nick Sanders 的分析</p>
 <p>Yelp评论</p>
 <p>这是Yelp为了学习目的而发布的一个开放数据集。它由数百万用户评论，商业属性和来自多个大都市地区的超过20万张照片组成。这是一个非常常用的全球NLP挑战数据集</p>
-<p>Movie Review Data (<a href="http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签" target="_blank" rel="noopener">http://www.cs.cornell.edu/People/pabo/movie-review-data/)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签</a></p>
+<p>Movie Review Data (<a href="http://www.cs.cornell.edu/People/pabo/movie-review-data/" target="_blank" rel="noopener">http://www.cs.cornell.edu/People/pabo/movie-review-data/</a>)这个网站提供了一系列的电影评论文件，这些文件标注了他们的总体情绪极性(正面或负面)或主观评价(例如，“两个半明星”)和对其主观性地位(主观或客观)或极性的标签</p>
 <p>WordNetWordNet</p>
 <p>WordNetWordNet是一个包含英文synsets的大型数据库。Synsets是同义词组，每个描述不同的概念。WordNet的结构使其成为NLP非常有用的工具</p>
-<h1 id="推荐引擎数据集"><a href="#推荐引擎数据集" class="headerlink" title="推荐引擎数据集"></a>推荐引擎数据集</h1><p>MovieLens ( <a href="https://grouplens.org/" target="_blank" rel="noopener">https://grouplens.org/</a> )</p>
-<p> MovieLens是一个帮助人们查找电影的网站。它有成千上万的注册用户。他们进行自动内容推荐，推荐界面，基于标签的推荐页面等在线实验。这些数据集可供下载，可用于创建自己的推荐系统</p>
+<h1>推荐引擎数据集</h1>
+<p>MovieLens ( <a href="https://grouplens.org/" target="_blank" rel="noopener">https://grouplens.org/</a> )</p>
+<p>MovieLens是一个帮助人们查找电影的网站。它有成千上万的注册用户。他们进行自动内容推荐，推荐界面，基于标签的推荐页面等在线实验。这些数据集可供下载，可用于创建自己的推荐系统</p>
 
           
         
@@ -1938,48 +2143,73 @@ H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}</script><p>互信息的最大值为l
         
           
             <p>[TOC]</p>
-<h1 id="训练误差和测试误差"><a href="#训练误差和测试误差" class="headerlink" title="训练误差和测试误差"></a>训练误差和测试误差</h1><h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><h2 id="分类任务"><a href="#分类任务" class="headerlink" title="分类任务"></a>分类任务</h2><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png" alt="image-20190811155916124"></p>
+<h1>训练误差和测试误差</h1>
+<h1>评价指标</h1>
+<h2 id="分类任务"><a class="header-anchor" href="#分类任务">¶</a>分类任务</h2>
+<h3 id="混淆矩阵"><a class="header-anchor" href="#混淆矩阵">¶</a>混淆矩阵</h3>
+<p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811155916124.png" alt="image-20190811155916124"></p>
 <p>TP：真正例 true positive</p>
 <p>FP：假正例 false positive</p>
 <p>FN：假负例 false negative</p>
 <p>TN：真负例 true negative</p>
-<h3 id="准确率accuracy"><a href="#准确率accuracy" class="headerlink" title="准确率accuracy"></a>准确率accuracy</h3><p>Accuracy = TP + TN / (TP + FN + FP + TN)</p>
+<h3 id="准确率accuracy"><a class="header-anchor" href="#准确率accuracy">¶</a>准确率accuracy</h3>
+<p>Accuracy = TP + TN / (TP + FN + FP + TN)</p>
 <p>TPR = TP / (TP + FN)</p>
 <p>FPR = PF / (FP + TN)</p>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<h4 id="问题"><a class="header-anchor" href="#问题">¶</a>问题</h4>
+<ul>
 <li>可能负例占绝大多数</li>
 </ul>
-<h3 id="识别准确率presion-amp-amp-召回率recall"><a href="#识别准确率presion-amp-amp-召回率recall" class="headerlink" title="识别准确率presion &amp;&amp; 召回率recall"></a>识别准确率presion &amp;&amp; 召回率recall</h3><p>准确率（查准率）presion：TP / (TP + FP)</p>
+<h3 id="识别准确率presion-召回率recall"><a class="header-anchor" href="#识别准确率presion-召回率recall">¶</a>识别准确率presion &amp;&amp; 召回率recall</h3>
+<p>准确率（查准率）presion：TP / (TP + FP)</p>
 <p>召回率（召回率）recall：TP / (TP + FN)</p>
-<h4 id="准确率和召回率的权衡"><a href="#准确率和召回率的权衡" class="headerlink" title="准确率和召回率的权衡"></a>准确率和召回率的权衡</h4><p>很多情况下，可以根据预测结果对样例排序，排在前面的认为是最可能的正例，排在后面的则是认为最不可能是正例子的样本。按照这个顺序逐个把样例加进正例预测集中，可以计算出当前的准确率和召回率，以此做图，可得到准确率-召回率曲线</p>
+<h4 id="准确率和召回率的权衡"><a class="header-anchor" href="#准确率和召回率的权衡">¶</a>准确率和召回率的权衡</h4>
+<p>很多情况下，可以根据预测结果对样例排序，排在前面的认为是最可能的正例，排在后面的则是认为最不可能是正例子的样本。按照这个顺序逐个把样例加进正例预测集中，可以计算出当前的准确率和召回率，以此做图，可得到准确率-召回率曲线</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811160925943.png" alt="image-20190811160925943"></p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811161219405.png" alt="image-20190811161219405"></p>
-<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
+<h4 id="问题-v2"><a class="header-anchor" href="#问题-v2">¶</a>问题</h4>
+<ul>
 <li>信息检索中，不能知道所有的相关文档，也不一定知道那些文档是相关的；准确率容易测，但召回率不容易测</li>
 <li>需要一个严格的排序</li>
 </ul>
-<h3 id="F1度量-F1-measure"><a href="#F1度量-F1-measure" class="headerlink" title="F1度量 F1-measure"></a>F1度量 F1-measure</h3><p>F = 2/((1/R)+(1/P)) = 2RP/(R+P) =2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
+<h3 id="f1度量-f1-measure"><a class="header-anchor" href="#f1度量-f1-measure">¶</a>F1度量 F1-measure</h3>
+<p>F = 2/((1/R)+(1/P)) = 2RP/(R+P) =2TP / (2TP + FP + FN)，精确率和召回率都高时，F值也会高</p>
 <p>F介于0到1，当为1是，把所有正例都选中了，且只选了正确的正例，0是没有一个真正例</p>
-<h3 id="E-measure"><a href="#E-measure" class="headerlink" title="E-measure"></a>E-measure</h3><script type="math/tex; mode=display">
-E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}</script><p>b表示在P和R之间的权衡</p>
-<h2 id="排序相关-Rank-Based-Measures"><a href="#排序相关-Rank-Based-Measures" class="headerlink" title="排序相关 Rank-Based Measures"></a>排序相关 Rank-Based Measures</h2><h3 id="二元相关-Binary-relevance"><a href="#二元相关-Binary-relevance" class="headerlink" title="二元相关 Binary relevance"></a>二元相关 Binary relevance</h3><h4 id="Precision-K-P-K"><a href="#Precision-K-P-K" class="headerlink" title="Precision@K (P@K)"></a>Precision@K (P@K)</h4><p>设置一个阈值K，在前K个检索内容中，计算precision</p>
+<h3 id="e-measure"><a class="header-anchor" href="#e-measure">¶</a>E-measure</h3>
+<p>$$<br>
+E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}<br>
+$$</p>
+<p>b表示在P和R之间的权衡</p>
+<h2 id="排序相关-rank-based-measures"><a class="header-anchor" href="#排序相关-rank-based-measures">¶</a>排序相关 Rank-Based Measures</h2>
+<h3 id="二元相关-binary-relevance"><a class="header-anchor" href="#二元相关-binary-relevance">¶</a>二元相关 Binary relevance</h3>
+<h4 id="precision-k-p-k"><a class="header-anchor" href="#precision-k-p-k">¶</a>Precision@K (P@K)</h4>
+<p>设置一个阈值K，在前K个检索内容中，计算precision</p>
 <p>同理还有Recall@K</p>
-<h4 id="Mean-Average-Precision-MAP"><a href="#Mean-Average-Precision-MAP" class="headerlink" title="Mean Average Precision (MAP)"></a>Mean Average Precision (MAP)</h4><h5 id="Average-Precision"><a href="#Average-Precision" class="headerlink" title="Average Precision"></a>Average Precision</h5><p>考虑在正例出现的位置中，计算P@K，然后计算平均值</p>
+<h4 id="mean-average-precision-map"><a class="header-anchor" href="#mean-average-precision-map">¶</a>Mean Average Precision (MAP)</h4>
+<h5 id="average-precision"><a class="header-anchor" href="#average-precision">¶</a>Average Precision</h5>
+<p>考虑在正例出现的位置中，计算P@K，然后计算平均值</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811164517274.png" alt="image-20190811164517274"></p>
 <p>而MAP就是在所有查询中，average precision的平均值</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811164809517.png" alt="image-20190811164809517"></p>
-<h4 id="平均倒数排名-Mean-Reciprocal-Rank-MRR"><a href="#平均倒数排名-Mean-Reciprocal-Rank-MRR" class="headerlink" title="平均倒数排名 Mean Reciprocal Rank (MRR)"></a>平均倒数排名 Mean Reciprocal Rank (MRR)</h4><p>RR = 1/K，K是排序中第一个正例出现的位置</p>
+<h4 id="平均倒数排名-mean-reciprocal-rank-mrr"><a class="header-anchor" href="#平均倒数排名-mean-reciprocal-rank-mrr">¶</a>平均倒数排名 Mean Reciprocal Rank (MRR)</h4>
+<p>RR = 1/K，K是排序中第一个正例出现的位置</p>
 <p>MRR就是RR的平均值</p>
-<h4 id="H-10"><a href="#H-10" class="headerlink" title="H@10"></a>H@10</h4><h3 id="多层次相关-Multiple-levels-of-relevance"><a href="#多层次相关-Multiple-levels-of-relevance" class="headerlink" title="多层次相关 Multiple levels of relevance"></a>多层次相关 Multiple levels of relevance</h3><h4 id="Discounted-Cumulative-Gain-DCG"><a href="#Discounted-Cumulative-Gain-DCG" class="headerlink" title="Discounted Cumulative Gain (DCG)"></a>Discounted Cumulative Gain (DCG)</h4><p>需要一个grade来评价一个item的好坏（比如相关度）</p>
+<h4 id="h-10"><a class="header-anchor" href="#h-10">¶</a>H@10</h4>
+<h3 id="多层次相关-multiple-levels-of-relevance"><a class="header-anchor" href="#多层次相关-multiple-levels-of-relevance">¶</a>多层次相关 Multiple levels of relevance</h3>
+<h4 id="discounted-cumulative-gain-dcg"><a class="header-anchor" href="#discounted-cumulative-gain-dcg">¶</a>Discounted Cumulative Gain (DCG)</h4>
+<p>需要一个grade来评价一个item的好坏（比如相关度）</p>
 <p>Cumulative Gain (CG)</p>
 <p>在1-n的排名中，CG = r1+r2+…+rn，r为grade</p>
-<p>Discounted Cumulative Gain (DCG) </p>
+<p>Discounted Cumulative Gain (DCG)</p>
 <p>DCG = r1 + r2 / log2 + r3 / log3 + … + rn / logn</p>
 <p>或者分子可以为2^r，这样更强调最前面的item的grade</p>
-<h5 id="Normalized-Discounted-Cumulative-Gain-NDCG"><a href="#Normalized-Discounted-Cumulative-Gain-NDCG" class="headerlink" title="Normalized Discounted Cumulative Gain(NDCG)"></a>Normalized Discounted Cumulative Gain(NDCG)</h5><p>NDCG = DCG/IDCG</p>
+<h5 id="normalized-discounted-cumulative-gain-ndcg"><a class="header-anchor" href="#normalized-discounted-cumulative-gain-ndcg">¶</a>Normalized Discounted Cumulative Gain(NDCG)</h5>
+<p>NDCG = DCG/IDCG</p>
 <p>其中IDCG是所有情况中，最大的DCG，即按照grade从大到小排列的结果</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190811170555392.png" alt="image-20190811170555392"></p>
-<h2 id="序列相关-sequence"><a href="#序列相关-sequence" class="headerlink" title="序列相关 sequence"></a>序列相关 sequence</h2><h3 id="ROUGE-Recall-Oriented-Understudy-for-Gisting-Evaluation"><a href="#ROUGE-Recall-Oriented-Understudy-for-Gisting-Evaluation" class="headerlink" title="ROUGE (Recall-Oriented Understudy for Gisting Evaluation)"></a>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h3><p>生成式摘要的评价标准</p>
+<h2 id="序列相关-sequence"><a class="header-anchor" href="#序列相关-sequence">¶</a>序列相关 sequence</h2>
+<h3 id="rouge-recall-oriented-understudy-for-gisting-evaluation"><a class="header-anchor" href="#rouge-recall-oriented-understudy-for-gisting-evaluation">¶</a>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h3>
+<p>生成式摘要的评价标准</p>
 <p>ROUGE-N: 将句子分为一组N-gram，来将生成的和参考摘要进行比较</p>
 <p>比如生成的摘要：</p>
 <p>the cat was found under the bed</p>
@@ -1989,218 +2219,68 @@ E = 1 - \frac {1+b^2}{\frac {b^2}{R} + \frac1P}</script><p>b表示在P和R之间
 <p>the cat，cat was，was found，found under，under the，the bed</p>
 <p>参考摘要的bi-grams为</p>
 <p>the cat，cat was，was under，under the，the bed</p>
-<p>因此</p>
-<script type="math/tex; mode=display">
-ROUGE_{Precision} = \frac{4}{6} = 0.67</script><h2 id="误差类"><a href="#误差类" class="headerlink" title="误差类"></a>误差类</h2><h3 id="R-2"><a href="#R-2" class="headerlink" title="R^2"></a>R^2</h3><p>一般用于线性回归</p>
-<script type="math/tex; mode=display">
-R^2 = 1 - \frac {\sum(y_i-f_i)^2}{\sum(y_i-\bar y_i)^2}</script><h3 id="绝对误差，相对误差"><a href="#绝对误差，相对误差" class="headerlink" title="绝对误差，相对误差"></a>绝对误差，相对误差</h3><h3 id="平均绝对误差-mean-absolute-error-MAE"><a href="#平均绝对误差-mean-absolute-error-MAE" class="headerlink" title="平均绝对误差 mean absolute error MAE"></a>平均绝对误差 mean absolute error MAE</h3><h3 id="均方误差-mean-squared-error-MSE"><a href="#均方误差-mean-squared-error-MSE" class="headerlink" title="均方误差 mean squared error MSE"></a>均方误差 mean squared error MSE</h3><h3 id="均方根误差-root-mean-squared-error-RMSE"><a href="#均方根误差-root-mean-squared-error-RMSE" class="headerlink" title="均方根误差 root mean squared error RMSE"></a>均方根误差 root mean squared error RMSE</h3><h3 id="平均绝对百分误差（mean-absolute-percentage-error-MAPE）"><a href="#平均绝对百分误差（mean-absolute-percentage-error-MAPE）" class="headerlink" title="平均绝对百分误差（mean absolute percentage error MAPE）"></a>平均绝对百分误差（mean absolute percentage error MAPE）</h3><h2 id="Kappa统计"><a href="#Kappa统计" class="headerlink" title="Kappa统计"></a>Kappa统计</h2><h2 id="AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic"><a href="#AUC（Area-Under-roc-Curve）-amp-amp-ROC-Receiver-Operating-Characteristic" class="headerlink" title="AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)"></a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h2><p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
-<h2 id="A-B-test显著性检验"><a href="#A-B-test显著性检验" class="headerlink" title="A/B-test显著性检验"></a>A/B-test显著性检验</h2><h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><p>目的：检验模型是否有比较好的泛化能力</p>
+<p>因此<br>
+$$<br>
+ROUGE_{Precision} = \frac{4}{6} = 0.67<br>
+$$</p>
+<h2 id="误差类"><a class="header-anchor" href="#误差类">¶</a>误差类</h2>
+<h3 id="r-2"><a class="header-anchor" href="#r-2">¶</a>R^2</h3>
+<p>一般用于线性回归<br>
+$$<br>
+R^2 = 1 - \frac {\sum(y_i-f_i)^2}{\sum(y_i-\bar y_i)^2}<br>
+$$</p>
+<h3 id="绝对误差-相对误差"><a class="header-anchor" href="#绝对误差-相对误差">¶</a>绝对误差，相对误差</h3>
+<h3 id="平均绝对误差-mean-absolute-error-mae"><a class="header-anchor" href="#平均绝对误差-mean-absolute-error-mae">¶</a>平均绝对误差 mean absolute error MAE</h3>
+<h3 id="均方误差-mean-squared-error-mse"><a class="header-anchor" href="#均方误差-mean-squared-error-mse">¶</a>均方误差 mean squared error MSE</h3>
+<h3 id="均方根误差-root-mean-squared-error-rmse"><a class="header-anchor" href="#均方根误差-root-mean-squared-error-rmse">¶</a>均方根误差 root mean squared error RMSE</h3>
+<h3 id="平均绝对百分误差-mean-absolute-percentage-error-mape"><a class="header-anchor" href="#平均绝对百分误差-mean-absolute-percentage-error-mape">¶</a>平均绝对百分误差（mean absolute percentage error MAPE）</h3>
+<h2 id="kappa统计"><a class="header-anchor" href="#kappa统计">¶</a>Kappa统计</h2>
+<h2 id="auc-area-under-roc-curve-roc-receiver-operating-characteristic"><a class="header-anchor" href="#auc-area-under-roc-curve-roc-receiver-operating-characteristic">¶</a>AUC（Area Under roc Curve）&amp;&amp; ROC (Receiver Operating Characteristic)</h2>
+<p><a href="https://blog.csdn.net/pipisorry/article/details/51788927" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51788927</a></p>
+<h2 id="a-b-test显著性检验"><a class="header-anchor" href="#a-b-test显著性检验">¶</a>A/B-test显著性检验</h2>
+<h1>评估</h1>
+<p>目的：检验模型是否有比较好的泛化能力</p>
 <p>通常使用训练数据来评估模型并不是一个好的选择，但是可以作为过拟合程度的一个评估（和测试集的结果比较）</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812111716972.png" alt="image-20190812111716972"></p>
 <p>通常使用测试集</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812111704809.png" alt="image-20190812111704809"></p>
 <p>自助法，随机二次抽样</p>
-<h2 id="交叉验证-Cross-Validation"><a href="#交叉验证-Cross-Validation" class="headerlink" title="交叉验证 Cross-Validation"></a>交叉验证 Cross-Validation</h2><h2 id="留出法-Hold-out-Method"><a href="#留出法-Hold-out-Method" class="headerlink" title="留出法 Hold-out Method"></a>留出法 Hold-out Method</h2><p>将数据分的2/3作为训练集，1/3作为测试集</p>
+<h2 id="交叉验证-cross-validation"><a class="header-anchor" href="#交叉验证-cross-validation">¶</a>交叉验证 Cross-Validation</h2>
+<h2 id="留出法-hold-out-method"><a class="header-anchor" href="#留出法-hold-out-method">¶</a>留出法 Hold-out Method</h2>
+<p>将数据分的2/3作为训练集，1/3作为测试集</p>
 <p><img src="/2019/03/08/数据科学-模型评估与选择/image-20190812112036826.png" alt="image-20190812112036826"></p>
 <p>在生成最终的分类器时，还是需要把所有的数据拿来训练</p>
 <p>对于类别不均衡的样本，需要分层（Stratification）抽样</p>
-<h3 id="重复留出法-Repeated-Holdout-Method"><a href="#重复留出法-Repeated-Holdout-Method" class="headerlink" title="重复留出法 Repeated Holdout Method"></a>重复留出法 Repeated Holdout Method</h3><p>通过几次迭代，在每一次迭代中，随机选择数据进行留出法训练与测试</p>
+<h3 id="重复留出法-repeated-holdout-method"><a class="header-anchor" href="#重复留出法-repeated-holdout-method">¶</a>重复留出法 Repeated Holdout Method</h3>
+<p>通过几次迭代，在每一次迭代中，随机选择数据进行留出法训练与测试</p>
 <p>使得留出法更加reliable</p>
 <p>问题：每一次的测试中，仍然会有很多重叠的部分（overlap），但我们希望每一个数据都在测试集中出现至少一次</p>
-<h2 id="k折交叉验证-k-Fold-Cross-Validation"><a href="#k折交叉验证-k-Fold-Cross-Validation" class="headerlink" title="k折交叉验证 k-Fold Cross-Validation"></a>k折交叉验证 k-Fold Cross-Validation</h2><p>避免了测试集的重叠overlapping</p>
+<h2 id="k折交叉验证-k-fold-cross-validation"><a class="header-anchor" href="#k折交叉验证-k-fold-cross-validation">¶</a>k折交叉验证 k-Fold Cross-Validation</h2>
+<p>避免了测试集的重叠overlapping</p>
 <p>首先将数据分为K份（要根据种类分层次）</p>
 <p>将每一份轮流作为测试集，其余的作为训练集</p>
 <p>最终的结果是所有结果的平均</p>
-<h3 id="有验证集的版本"><a href="#有验证集的版本" class="headerlink" title="有验证集的版本"></a>有验证集的版本</h3><p>首先将数据分为K份（要根据种类分层次）</p>
+<h3 id="有验证集的版本"><a class="header-anchor" href="#有验证集的版本">¶</a>有验证集的版本</h3>
+<p>首先将数据分为K份（要根据种类分层次）</p>
 <p>将每一份轮流作为测试集，其余的数据集中，再轮流选一份作为验证集，剩下的作为训练机</p>
-<h2 id="留一交叉验证-Leave-One-Out-Cross-Validation"><a href="#留一交叉验证-Leave-One-Out-Cross-Validation" class="headerlink" title="留一交叉验证 Leave-One-Out Cross-Validation"></a>留一交叉验证 Leave-One-Out Cross-Validation</h2><p>K = 数据总数</p>
+<h2 id="留一交叉验证-leave-one-out-cross-validation"><a class="header-anchor" href="#留一交叉验证-leave-one-out-cross-validation">¶</a>留一交叉验证 Leave-One-Out Cross-Validation</h2>
+<p>K = 数据总数</p>
 <p>能最大程度的利用</p>
 <p>问题：计算量很大；不能实现分层（因为测试集只有一个数据）</p>
-<h2 id="自助法-Bootstrap-Method"><a href="#自助法-Bootstrap-Method" class="headerlink" title="自助法 Bootstrap Method"></a>自助法 Bootstrap Method</h2><p>交叉验证中，抽样是无放回的（without replacement）</p>
+<h2 id="自助法-bootstrap-method"><a class="header-anchor" href="#自助法-bootstrap-method">¶</a>自助法 Bootstrap Method</h2>
+<p>交叉验证中，抽样是无放回的（without replacement）</p>
 <p>bootstrap的采样是有放回的（with replacement）</p>
 <p>在一个有n个数据的数据集中，有放回的抽取n个数据作为训练集，然后从来没有被选中的数据作为测试集</p>
-<p>也被称为0.632 bootstrap，因为一次抽取中，一个数据被又被抽取到的概率是1-(1/n)，而(1-(1/n))^n约等于e^-1（0.368），也就是说测试集的数据大概会有36.8%</p>
-<p>由于所使用的训练集数据较少（相对总体），因此err可以用以下方法计算</p>
-<script type="math/tex; mode=display">
-err = 0.632*e_{test\ instances}+0.368*e_{training\ instances}</script><h2 id="适合范围"><a href="#适合范围" class="headerlink" title="适合范围"></a>适合范围</h2><p>大数据集适合留出法</p>
+<p>也被称为0.632 bootstrap，因为一次抽取中，一个数据被又被抽取到的概率是1-(1/n)，而(1-(1/n))<sup>n约等于e</sup>-1（0.368），也就是说测试集的数据大概会有36.8%</p>
+<p>由于所使用的训练集数据较少（相对总体），因此err可以用以下方法计算<br>
+$$<br>
+err = 0.632<em>e_{test\ instances}+0.368</em>e_{training\ instances}<br>
+$$</p>
+<h2 id="适合范围"><a class="header-anchor" href="#适合范围">¶</a>适合范围</h2>
+<p>大数据集适合留出法</p>
 <p>中数据集适合交叉验证</p>
 <p>小数据集适合自助法和留一法</p>
 <p>不能用测试集来调参，而要用验证集</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-过欠拟合/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/数据科学-过欠拟合/" itemprop="url">数据科学-过/欠拟合</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差）</p>
-<p>通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度</p>
-<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171605086.png" alt="image-20190811171605086"></p>
-<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171643706.png" alt="image-20190811171643706"></p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>减少特征数目<br>减少模型参数</p>
-<h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><p>见<code>数据科学-模型评估与选择-评估</code></p>
-<h1 id="Bias-Variance-Tradeoff"><a href="#Bias-Variance-Tradeoff" class="headerlink" title="Bias-Variance Tradeoff"></a>Bias-Variance Tradeoff</h1><p><img src="/2019/03/08/数据科学-过欠拟合/2.png" alt="2"></p>
-<script type="math/tex; mode=display">
-我们将测试集(y_*,x_*)中的期望loss分解为\\
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2] = Noise + Bias^2 + Variance\\
-定义真实的模型(不可观测)为\\
-y_* = h(x_*)+\epsilon_*\\
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((y_*-h(x_*))+(h(x_*)-f(x_*|D)))^2]\\
-= E_{D,(y_*,x_*)}[(y_*-h(x_*))^2] + E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2] + 2E_{D,(y_*,x_*)}[y_*h_*-y_*f_*-h_*h_*+f_*h_*]\\</script><script type="math/tex; mode=display">
-由于y_* = h_* + \epsilon_*,且E(\epsilon_*) = 0\\
-因此E_{D,(y_*,x_*)}[y_*h_*-y_*f_*-h_*h_*+f_*h_*]\\
-= E_{D,(y_*,x_*)}[(h_*+\epsilon_*)h_*-(h_*+\epsilon_*)f_*-h_*h_*+f_*h_*]\\
-= E_{D,(y_*,x_*)}[\epsilon_*h_*-\epsilon_*f_*]\\
-= E_{D,(y_*,x_*)}[\epsilon_*h_*]-E_{D,(y*,x*)}[\epsilon_*f_*]\\
-= E[\epsilon_*]E_{D,(y_*,x_*)}[h_*]-E[\epsilon_*]E_{D,(y_*,x_*)}[f_*]\\
-= 0</script><script type="math/tex; mode=display">
-因此E_{D,(y_*,x_*)}[(y_*-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[(y_*-h(x_*))^2] + E_{D,(y_*,x*_)}[(h(x_*)-f(x_*|D))^2]\\
-= \underbrace{E[\epsilon_*^2]}_{noise\ item\\ out \ of \ our \ control} + \underbrace{E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]}_{Model \ Estimation \ Error \\ we \ want \ to \ minimize \ this}\\</script><script type="math/tex; mode=display">
-设E_{D,(y_*,x_*)}[f(x_*|D)] = \bar {f_*}\\
-对于E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[(h(x_*)-E[f(x_*|D)]+E[f(x_*|D)]-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))^2] + \\2E[h_*\bar {f_*}-h_*f_*-\bar {f_*}f_*+\bar {f_*}^2]\\</script><script type="math/tex; mode=display">
-其中E[h_*\bar {f_*}-h_*f_*-\bar {f_*}f_*+\bar {f_*}^2]\\
-= h_*\bar {f_*}-h_*E[f_*]-\bar {f_*}E[f_*]+\bar {f_*}^2\\
-= h_*\bar {f_*}-h_*\bar {f_*}-\bar {f_*}^2+\bar {f_*}^2\\
-= 0</script><script type="math/tex; mode=display">
-因此E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2]\\
-= \underbrace{((h(x_*)-E[f(x_*|D)])^2}_{Bias^2} + \underbrace{E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2]}_{Variance}</script><p>偏差和方差的trade off</p>
-<ul>
-<li>简单模型：高偏差，低方差</li>
-<li>复杂模型：低偏差，高方差</li>
-</ul>
-<p>总结</p>
-<script type="math/tex; mode=display">
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2] =  \ Expected \ loss \\
-E[\epsilon_*^2] \ noise \\
-+ ((h(x_*)-E[f(x_*|D)])^2 \ (Bias)^2\\ 
-+ E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2] \ Variance</script><p>偏差和方差的trade off</p>
-<ul>
-<li>简单模型：高偏差，低方差</li>
-<li>复杂模型：低偏差，高方差</li>
-<li>过拟合：方差太大</li>
-<li>欠拟合：偏差太大</li>
-</ul>
-<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190813125216615.png" alt="image-20190813125216615"></p>
-<h2 id="线性回归的方差与偏差分析"><a href="#线性回归的方差与偏差分析" class="headerlink" title="线性回归的方差与偏差分析"></a>线性回归的方差与偏差分析</h2><p>见<code>机器学习-线性模型</code></p>
 
           
         
@@ -2326,8 +2406,8 @@ E[\epsilon_*^2] \ noise \\
 <p>假设要划分属于两种类别ω1和ω2的模式样本，这些样本可看成是分布在n维模式空间中的点xk。</p>
 <p>把属于ω1的点比拟为某种能源点，在点上，电位达到峰值。</p>
 <p>随着与该点距离的增大，电位分布迅速减小，即把样本xk附近空间x点上的电位分布，看成是一个势函数K(x,xk)。</p>
-<p>对于属于ω1的样本集群，其附近空间会形成一个”高地”，这些样本点所处的位置就是”山头”。</p>
-<p>同理，用电位的几何分布来看待属于ω2的模式样本，在其附近空间就形成”凹地”。</p>
+<p>对于属于ω1的样本集群，其附近空间会形成一个&quot;高地&quot;，这些样本点所处的位置就是&quot;山头&quot;。</p>
+<p>同理，用电位的几何分布来看待属于ω2的模式样本，在其附近空间就形成&quot;凹地&quot;。</p>
 <p>只要在两类电位分布之间选择合适的等高线，就可以认为是模式分类的判别函数。</p>
 <p><a href="http://www.cnblogs.com/huadongw/p/4106290.html" target="_blank" rel="noopener">http://www.cnblogs.com/huadongw/p/4106290.html</a></p>
 <p>积累势函数</p>
@@ -2337,6 +2417,203 @@ E[\epsilon_*^2] \ noise \\
 <p>模糊分类</p>
 <p><strong>随机方法</strong></p>
 <p>Boltzmann学习，模拟退火，遗传算法，蒙特卡洛方法</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据科学-过欠拟合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/数据科学-过欠拟合/" itemprop="url">数据科学-过/欠拟合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:06+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h1>概念</h1>
+<p>表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差）</p>
+<p>通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度</p>
+<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171605086.png" alt="image-20190811171605086"></p>
+<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171643706.png" alt="image-20190811171643706"></p>
+<h1>解决</h1>
+<p>减少特征数目<br>
+减少模型参数</p>
+<h1>评估</h1>
+<p>见<code>数据科学-模型评估与选择-评估</code></p>
+<h1>Bias-Variance Tradeoff</h1>
+<p><img src="/2019/03/08/数据科学-过欠拟合/2.png" alt="2"><br>
+$$<br>
+我们将测试集(y_<em>,x_</em>)中的期望loss分解为\<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2] = Noise + Bias^2 + Variance\<br>
+定义真实的模型(不可观测)为\<br>
+y_</em> = h(x_<em>)+\epsilon_</em>\<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2]\<br>
+= E_{D,(y_</em>,x_<em>)}[((y_</em>-h(x_<em>))+(h(x_</em>)-f(x_<em>|D)))^2]\<br>
+= E_{D,(y_</em>,x_<em>)}[(y_</em>-h(x_<em>))^2] + E_{D,(y_</em>,x_<em>)}[(h(x_</em>)-f(x_<em>|D))^2] + 2E_{D,(y_</em>,x_*)}[y_<em>h_</em>-y_<em>f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+$$</p>
+<p>$$<br>
+由于y_* = h_* + \epsilon_<em>,且E(\epsilon_</em>) = 0\<br>
+因此E_{D,(y_<em>,x_</em>)}[y_<em>h_</em>-y_<em>f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[(h_<em>+\epsilon_</em>)h_<em>-(h_</em>+\epsilon_<em>)f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[\epsilon_<em>h_</em>-\epsilon_<em>f_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[\epsilon_<em>h_</em>]-E_{D,(y*,x*)}[\epsilon_<em>f_</em>]\<br>
+= E[\epsilon_<em>]E_{D,(y_</em>,x_<em>)}[h_</em>]-E[\epsilon_<em>]E_{D,(y_</em>,x_<em>)}[f_</em>]\<br>
+= 0<br>
+$$</p>
+<p>$$<br>
+因此E_{D,(y_<em>,x_</em>)}[(y_<em>-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[(y_<em>-h(x_</em>))^2] + E_{D,(y_<em>,x</em><em>)}[(h(x</em><em>)-f(x_</em>|D))^2]\<br>
+= \underbrace{E[\epsilon_<em>^2]}<em>{noise\ item\ out \ of \ our \ control} + \underbrace{E</em>{D,(y_</em>,x_<em>)}[(h(x_</em>)-f(x_*|D))^2]}_{Model \ Estimation \ Error \ we \ want \ to \ minimize \ this}\<br>
+$$</p>
+<p>$$<br>
+设E_{D,(y_<em>,x_</em>)}[f(x_<em>|D)] = \bar {f_</em>}\<br>
+对于E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-E[f(x_</em>|D)]+E[f(x_<em>|D)]-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))</sup>2] + \2E[h_<em>\bar {f_</em>}-h_<em>f_</em>-\bar {f_<em>}f_</em>+\bar {f_*}^2]\<br>
+$$</p>
+<p>$$<br>
+其中E[h_<em>\bar {f_</em>}-h_<em>f_</em>-\bar {f_<em>}f_</em>+\bar {f_<em>}^2]\<br>
+= h_</em>\bar {f_<em>}-h_<em>E[f_</em>]-\bar {f_</em>}E[f_<em>]+\bar {f_</em>}^2\<br>
+= h_<em>\bar {f_</em>}-h_<em>\bar {f_</em>}-\bar {f_<em>}^2+\bar {f_</em>}^2\<br>
+= 0<br>
+$$</p>
+<p>$$<br>
+因此E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))</sup>2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])</sup>2]\<br>
+= \underbrace{((h(x_<em>)-E[f(x_</em>|D)])<sup>2}_{Bias</sup>2} + \underbrace{E_{D,(y_<em>,x_</em>)}[(f(x_<em>|D)-E[f(x_</em>|D)])^2]}_{Variance}<br>
+$$</p>
+<p>偏差和方差的trade off</p>
+<ul>
+<li>简单模型：高偏差，低方差</li>
+<li>复杂模型：低偏差，高方差</li>
+</ul>
+<p>总结<br>
+$$<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2] =  \ Expected \ loss \<br>
+E[\epsilon_</em>^2] \ noise \</p>
+<ul>
+<li>((h(x_<em>)-E[f(x_</em>|D)])^2 \ (Bias)^2\</li>
+<li>E_{D,(y_<em>,x_</em>)}[(f(x_<em>|D)-E[f(x_</em>|D)])^2] \ Variance<br>
+$$</li>
+</ul>
+<p>偏差和方差的trade off</p>
+<ul>
+<li>简单模型：高偏差，低方差</li>
+<li>复杂模型：低偏差，高方差</li>
+<li>过拟合：方差太大</li>
+<li>欠拟合：偏差太大</li>
+</ul>
+<p><img src="/2019/03/08/数据科学-过欠拟合/image-20190813125216615.png" alt="image-20190813125216615"></p>
+<h2 id="线性回归的方差与偏差分析"><a class="header-anchor" href="#线性回归的方差与偏差分析">¶</a>线性回归的方差与偏差分析</h2>
+<p>见<code>机器学习-线性模型</code></p>
 
           
         

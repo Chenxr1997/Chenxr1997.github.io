@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化训练集近似线性可分：软间隔最大化线性不可分：和技巧及软间隔最大化离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积核方法：隐式的从高维的特征空间中学习线">
+<meta name="description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化 训练集近似线性可分：软间隔最大化 线性不可分：和技巧及软间隔最大化 离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积 核方法：隐式的从高维的特征空间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-SVM">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-SVM/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化训练集近似线性可分：软间隔最大化线性不可分：和技巧及软间隔最大化离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积核方法：隐式的从高维的特征空间中学习线">
+<meta property="og:description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化 训练集近似线性可分：软间隔最大化 线性不可分：和技巧及软间隔最大化 离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积 核方法：隐式的从高维的特征空间">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-SVM/image-20190817173116038.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-SVM/image-20190817173435368.png">
@@ -110,7 +110,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-SVM">
-<meta name="twitter:description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化训练集近似线性可分：软间隔最大化线性不可分：和技巧及软间隔最大化离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积核方法：隐式的从高维的特征空间中学习线">
+<meta name="twitter:description" content="[TOC] 斯坦福大学机器学习笔记 https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details SVM希望求得每类元素最近的距离最远 训练数据线性可分：硬间隔最大化 训练集近似线性可分：软间隔最大化 线性不可分：和技巧及软间隔最大化 离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积 核方法：隐式的从高维的特征空间">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-SVM/image-20190817173116038.png">
 
 
@@ -325,10 +325,16 @@
 <p>斯坦福大学机器学习笔记</p>
 <p><a href="https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details" target="_blank" rel="noopener">https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details</a></p>
 <p>SVM希望求得每类元素最近的距离最远</p>
-<p>训练数据线性可分：硬间隔最大化<br>训练集近似线性可分：软间隔最大化<br>线性不可分：和技巧及软间隔最大化<br>离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积<br>核方法：隐式的从高维的特征空间中学习线性支持向量机。<br>感知机利用误分类最小的策略，求得分离超平面，不过这时的解有无穷多个。线性可分支持向量机利用间隔最大化求解最优分离超平面。</p>
+<p>训练数据线性可分：硬间隔最大化<br>
+训练集近似线性可分：软间隔最大化<br>
+线性不可分：和技巧及软间隔最大化<br>
+离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积<br>
+核方法：隐式的从高维的特征空间中学习线性支持向量机。<br>
+感知机利用误分类最小的策略，求得分离超平面，不过这时的解有无穷多个。线性可分支持向量机利用间隔最大化求解最优分离超平面。</p>
 <p>一个点距离分离平面的远近可以表示分类预测的确信程度，在超平面wx+b=0确定的情况下，|wx+b|能够相对的表示点x距离超平面的远近，而wx+b的符号与标记y的符号是否一致能够表示分类是否正确。</p>
 <p>函数间隔就是y(wx+b)，但是随着w的改变，可能平面不变，但是函数间隔会变，因此几何间隔提取出了真正的距离，除以一个权重的值。</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>支持向量机(SVM, Support Vector Machine)是Vapnik在92年根据统计学习理论提出的一种新的学习方法更贴近于统计学习方法，在手写数字识别中获得了较大成功</p>
+<h1>概念</h1>
+<p>支持向量机(SVM, Support Vector Machine)是Vapnik在92年根据统计学习理论提出的一种新的学习方法更贴近于统计学习方法，在手写数字识别中获得了较大成功</p>
 <p>它的最大特点是根据<strong>结构风险最小化准则</strong>，以<strong>最大化分类间隔</strong>构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别</p>
 <p>一组数据集也许有很多线性可分的方案</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817173116038.png" alt="image-20190817173116038"></p>
@@ -338,237 +344,348 @@
 <p>求一个最大margin的线性分类器就是线性SVM的任务</p>
 <p>margin碰到的点，就是支持向量</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817173712738.png" alt="image-20190817173712738"></p>
-<h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><script type="math/tex; mode=display">
-分割线表示为WX + b = 0\\
-X表示分隔线上的点\\
-W表示法向量normal \ vector,它垂直于分割线\\
-b表示分割线的偏移量\\
-在下图中:w_1*x_1 + w_2*x_2 + b = 0</script><p><img src="/2019/03/08/机器学习-SVM/image-20190817174003874.png" alt="image-20190817174003874"></p>
-<script type="math/tex; mode=display">
-怎样求空间中的一个点到分割线的距离\\
-设P为空间中的一个点(x_0,y_0),Q为分割线上的一点(x_1,y_1)\\
-那么P到分割线的距离就等于\overrightarrow{QP}在W上的投影长度\\
-计算方式为d = \frac{\overrightarrow{QP}\cdot W}{||W||}\\
- = \frac{w_1(x_0-x_1)+w_2(y_0-y_1)}{\sqrt{w_1^2+w_2^2}}\\
- = \frac{w_1x_0+w_2y_0-w_1x_1-w_2y_1}{\sqrt{w_1^2+w_2^2}}\\
- = \frac{w_1x_0+w_2y_0+b}{\sqrt{w_1^2+w_2^2}} (因为Q在分割线上)\\
- = \frac{P\cdot W+b}{||W||}</script><p><img src="/2019/03/08/机器学习-SVM/image-20190817174632501.png" alt="image-20190817174632501"></p>
-<p>为了让margin最大化，我们不妨设分割线在margin的中间，并且分割线两边的支持向量分别满足</p>
-<script type="math/tex; mode=display">
-W^TX + b = 1\\
-W^TX + b = -1\\
-这里只是一个为了方便计算的假设，因为W^TX + b的结果同[W \ b]成正比，因此是可以缩放的，并不影响实际的效果\\
-那么根据上面的距离计算公式，它们到分割线的距离均为\frac{1}{||W||}\\
-因此margin大小为\frac{2}{||W||}</script><p><img src="/2019/03/08/机器学习-SVM/image-20190817184559300.png" alt="image-20190817184559300"></p>
-<p>为了使得分割线能够把所有数据都分类正确，且在margin之外，那么需要满足</p>
-<script type="math/tex; mode=display">
-y_i(W^TX_i+b) \ge 1 \quad \forall i\\</script><p>那么优化目标可以写作</p>
-<script type="math/tex; mode=display">
-Minimize \ ||w||/2\\
-subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\\</script><p>等价于</p>
-<script type="math/tex; mode=display">
-Minimize \ ||w||\\
-subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\\</script><p>等价于</p>
-<script type="math/tex; mode=display">
-Minimize \ ||w||^2/2\\
-subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\\</script><h1 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h1><p>在数学优化理论中，对偶性意味着优化问题可以从两个角度来看待，一个是原始问题，另一个是对偶问题（对偶原理）。对偶问题的解为原问题（最小化）的解提供了一个下界</p>
-<h2 id="下界-上界-lower-bound-upper-bound"><a href="#下界-上界-lower-bound-upper-bound" class="headerlink" title="下界/上界 lower bound/upper bound"></a>下界/上界 lower bound/upper bound</h2><script type="math/tex; mode=display">
-存在一个实数a和一个实数集合B，使得对∀x∈B，都有x≥a，则称a为B的下界（lower bound）\\
-相反，在数学中，特别是在秩序理论中，在某些部分有序集合（K，≤）的子集S里面\\
-大于或等于S的每个元素的K的那个元素，叫做上界\\
-而下界被定义为K的元素小于或等于S的每个元素</script><script type="math/tex; mode=display">
-比如对于S = \{2,4,8,12\}\\
-因此S的下界可以是2,1,-1等</script><p>上面的例子中，由于2是最大的下界，因此称为最大下界/下确界<strong>infimum</strong></p>
+<h1>优化目标</h1>
+<p>$$<br>
+分割线表示为WX + b = 0\<br>
+X表示分隔线上的点\<br>
+W表示法向量normal \ vector,它垂直于分割线\<br>
+b表示分割线的偏移量\<br>
+在下图中:w_1<em>x_1 + w_2</em>x_2 + b = 0<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817174003874.png" alt="image-20190817174003874"><br>
+$$<br>
+怎样求空间中的一个点到分割线的距离\<br>
+设P为空间中的一个点(x_0,y_0),Q为分割线上的一点(x_1,y_1)\<br>
+那么P到分割线的距离就等于\overrightarrow{QP}在W上的投影长度\<br>
+计算方式为d = \frac{\overrightarrow{QP}\cdot W}{||W||}\<br>
+= \frac{w_1(x_0-x_1)+w_2(y_0-y_1)}{\sqrt{w_1<sup>2+w_2</sup>2}}\<br>
+= \frac{w_1x_0+w_2y_0-w_1x_1-w_2y_1}{\sqrt{w_1<sup>2+w_2</sup>2}}\<br>
+= \frac{w_1x_0+w_2y_0+b}{\sqrt{w_1<sup>2+w_2</sup>2}} (因为Q在分割线上)\<br>
+= \frac{P\cdot W+b}{||W||}<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817174632501.png" alt="image-20190817174632501"></p>
+<p>为了让margin最大化，我们不妨设分割线在margin的中间，并且分割线两边的支持向量分别满足<br>
+$$<br>
+W^TX + b = 1\<br>
+W^TX + b = -1\<br>
+这里只是一个为了方便计算的假设，因为W^TX + b的结果同[W \ b]成正比，因此是可以缩放的，并不影响实际的效果\<br>
+那么根据上面的距离计算公式，它们到分割线的距离均为\frac{1}{||W||}\<br>
+因此margin大小为\frac{2}{||W||}<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817184559300.png" alt="image-20190817184559300"></p>
+<p>为了使得分割线能够把所有数据都分类正确，且在margin之外，那么需要满足<br>
+$$<br>
+y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+那么优化目标可以写作<br>
+$$<br>
+Minimize \ ||w||/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+等价于<br>
+$$<br>
+Minimize \ ||w||\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+等价于<br>
+$$<br>
+Minimize \ ||w||^2/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$</p>
+<h1>对偶问题</h1>
+<p>在数学优化理论中，对偶性意味着优化问题可以从两个角度来看待，一个是原始问题，另一个是对偶问题（对偶原理）。对偶问题的解为原问题（最小化）的解提供了一个下界</p>
+<h2 id="下界-上界-lower-bound-upper-bound"><a class="header-anchor" href="#下界-上界-lower-bound-upper-bound">¶</a>下界/上界 lower bound/upper bound</h2>
+<p>$$<br>
+存在一个实数a和一个实数集合B，使得对∀x∈B，都有x≥a，则称a为B的下界（lower bound）\<br>
+相反，在数学中，特别是在秩序理论中，在某些部分有序集合（K，≤）的子集S里面\<br>
+大于或等于S的每个元素的K的那个元素，叫做上界\<br>
+而下界被定义为K的元素小于或等于S的每个元素<br>
+$$</p>
+<p>$$<br>
+比如对于S = {2,4,8,12}\<br>
+因此S的下界可以是2,1,-1等<br>
+$$</p>
+<p>上面的例子中，由于2是最大的下界，因此称为最大下界/下确界<strong>infimum</strong></p>
 <p>同样最小上界/上确界称为<strong>supremum</strong></p>
-<h2 id="对偶问题-1"><a href="#对偶问题-1" class="headerlink" title="对偶问题"></a>对偶问题</h2><p>在对偶问题中，可以把原问题（最小化）视为一个最大化问题，并且当找到这个问题的最大值时，它是原问题的一个下界</p>
+<h2 id="对偶问题"><a class="header-anchor" href="#对偶问题">¶</a>对偶问题</h2>
+<p>在对偶问题中，可以把原问题（最小化）视为一个最大化问题，并且当找到这个问题的最大值时，它是原问题的一个下界</p>
 <p>有时解决对偶问题比解决原问题更简单，并且有时对偶问题给出的下界就是原问题的最小值</p>
 <p>下图中对偶问题给出的下界，就比原问题的最小值更小</p>
 <p>我们称原问题的解为P，对偶问题解为D，P-D为<strong>duality gap</strong>，当P-D&gt;0时称为<strong>弱对偶 week duality holds</strong></p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817192738685.png" alt="image-20190817192738685"></p>
 <p>下图中对偶问题给出的下界，就是原问题的最小值，我们称之为<strong>强对偶 strong duality holds</strong></p>
-<p><img src="/2019/03/08/机器学习-SVM/image-20190817192907367.png" alt="image-20190817192907367"></p>
-<script type="math/tex; mode=display">
-一个优化问题，通常写作\\
-minimize_x \quad f(x)\\
-subject \ to \quad g_i(x) = 0, \ i=1,...,p\\
-\quad\quad \quad \quad \quad \quad h_i(x) \le 0, \ i=1,...,m\\
-f称为目标函数\\
-x^* = inf\{f(x)|g_i(x)=0,i=1,...,p,h_i(x)\le 0,i=1,...,m\}</script><h2 id="拉格朗日乘子-Lagrange-Multiplier"><a href="#拉格朗日乘子-Lagrange-Multiplier" class="headerlink" title="拉格朗日乘子 Lagrange Multiplier"></a>拉格朗日乘子 Lagrange Multiplier</h2><p>在数学优化中，拉格朗日乘数法是一种寻找受等式约束的函数的局部极大值和极小值的策略（即在一个或多个条件下的等式必须完全由变量的值来满足）</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817192907367.png" alt="image-20190817192907367"><br>
+$$<br>
+一个优化问题，通常写作\<br>
+minimize_x \quad f(x)\<br>
+subject \ to \quad g_i(x) = 0, \ i=1,…,p\<br>
+\quad\quad \quad \quad \quad \quad h_i(x) \le 0, \ i=1,…,m\<br>
+f称为目标函数\<br>
+x^* = inf{f(x)|g_i(x)=0,i=1,…,p,h_i(x)\le 0,i=1,…,m}<br>
+$$</p>
+<h2 id="拉格朗日乘子-lagrange-multiplier"><a class="header-anchor" href="#拉格朗日乘子-lagrange-multiplier">¶</a>拉格朗日乘子 Lagrange Multiplier</h2>
+<p>在数学优化中，拉格朗日乘数法是一种寻找受等式约束的函数的局部极大值和极小值的策略（即在一个或多个条件下的等式必须完全由变量的值来满足）</p>
 <p>一个关键点是拉格朗日乘子只适用于等式限制</p>
 <ul>
-<li><p>等值线 Contour Lines</p>
-<p>  等值线图是将三维函数可视化为二维的一种方法</p>
-<p>  比如x+y</p>
-<p>  <img src="/2019/03/08/机器学习-SVM/image-20190817200101447.png" alt="image-20190817200101447"></p>
+<li>
+<p>等值线 Contour Lines</p>
+<p>等值线图是将三维函数可视化为二维的一种方法</p>
+<p>比如x+y</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200101447.png" alt="image-20190817200101447"></p>
 </li>
-<li><p>矢量场 Vector Field</p>
-<p>  函数的梯度可以可视化为向量场，箭头指向函数递增的方向</p>
-<p>  <img src="/2019/03/08/机器学习-SVM/image-20190817200405379.png" alt="image-20190817200405379"></p>
-<p>  <img src="/2019/03/08/机器学习-SVM/image-20190817200419092.png" alt="image-20190817200419092"></p>
+<li>
+<p>矢量场 Vector Field</p>
+<p>函数的梯度可以可视化为向量场，箭头指向函数递增的方向</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200405379.png" alt="image-20190817200405379"></p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200419092.png" alt="image-20190817200419092"></p>
 </li>
 </ul>
-<p>以下面的优化问题为例</p>
-<script type="math/tex; mode=display">
-minimize_{x,y} \quad f(x,y) = x^2+y^2\\
-subject \ to \quad g_i(x,y) = x+y-1\\</script><p>两个方程的等值线为</p>
+<p>以下面的优化问题为例<br>
+$$<br>
+minimize_{x,y} \quad f(x,y) = x<sup>2+y</sup>2\<br>
+subject \ to \quad g_i(x,y) = x+y-1\<br>
+$$<br>
+两个方程的等值线为</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817200823571.png" alt="image-20190817200823571"></p>
 <p>如果组合起来，并且只关注满足等式约束的地方，则为</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817200934530.png" alt="image-20190817200934530"></p>
 <p>然后拉格朗日发现，在g(x,y)的限制下f(x,y)取得最小值的时候，他们梯度的指向同一个方向或者反方向</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190817201226717.png" alt="image-20190817201226717"></p>
-<p>用数学表达，即为</p>
-<script type="math/tex; mode=display">
-\nabla f(x,y) = \lambda \nabla g(x,y)\\
-\lambda 称为拉格朗日乘子\\
-这里\lambda 可以是负数，即两个梯度可以不用是一个方向，只要平行就可以</script><script type="math/tex; mode=display">
-step1:\\
-我们定义L(x,y,\lambda) = f(x,y) - \lambda  g(x,y)\\
-那么\nabla L(x,y,\lambda) = \nabla f(x,y) - \lambda \nabla g(x,y)\\
-L称为拉格朗日函数Lagrangian,L的梯度方程就是寻找f和g梯度平行的点</script><script type="math/tex; mode=display">
-step2:\\
-解方程\nabla L(x,y,\lambda) = 0\\
-意味着\\\begin{cases}
-\frac{\partial L}{\partial x} = 0&\\
-\frac{\partial L}{\partial y} = 0&\\
-\frac{\partial L}{\partial \lambda} = 0&\\
-\end{cases}\\
-即\\
-\begin{cases}
-2x-\lambda=0\\
-2y-\lambda = 0\\
--x-y+1=0
-\end{cases}\\</script><p>这样解出方程，即是最优解</p>
-<h2 id="SVM对偶"><a href="#SVM对偶" class="headerlink" title="SVM对偶"></a>SVM对偶</h2><p>SVM优化目标</p>
-<script type="math/tex; mode=display">
-Minimize \ ||w||^2/2\\
-subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\\</script><script type="math/tex; mode=display">
-原始问题是一个凸二次规划问题，将这个问题一般化\\
-\min_{x \in R^n} f(x)\\
-s.t. \quad c_i(x) \le 0 \quad i=1,2,...,k\\
-\quad \quad \quad h_j(x) = 0 \quad j=1,2,...,l\\</script><script type="math/tex; mode=display">
-拉格朗日函数可写为\\
-L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad \alpha_i > 0\\
-这里参数\alpha和\beta总共k+l个，果全部求偏导工作量太大，不太现实\\
-并且这个问题可能根本就没有最优解这种情况存在\\</script><p>因此换一个思路，将原问题变为对偶问题</p>
-<script type="math/tex; mode=display">
-对L(x,\alpha,\beta)再定义一个函数:\\
-\theta_p(x) = \max_{\alpha,\beta,\alpha_i>0} L(x,\alpha,\beta)\\
-= \max_{\alpha,\beta,\alpha_i>0}f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad 注意这里x是常数\\</script><script type="math/tex; mode=display">
-如果x不满足原条件约束，即c_i(x)\ge0或者h_j(x)\ne0,由于有\alpha_i > 0,可取\alpha_i = +\infty,\beta_ih_j(x)= +\infty\\
-这样\theta_p(x) \to +\infty\\
-而如果满足所有条件约束，即c_i(x) < 0,h_j(x)=0,此时\sum_{j=1}^l\beta_jh_j(x)=0,\sum_{i=1}^k\alpha_ic_i(x)\le0\\
-要使得\theta_p(x)最大,\sum_{i=1}^k\alpha_ic_i(x)=0\\
-此时\theta_p(x) = f(x),且x为常数，因此\max f(x) = f(x)\\
-所以原最小化问题\min_{w,b}f(x)可以变为\min_{w,b}\theta_p(x),然后可以推出\min_x \max_{\alpha,\beta,\alpha_i>0} L(x,\alpha,\beta)</script><p>至此，我们将SVM要求得最大间隔的凸二次规划问题转变成了拉格朗日函数求解问题(一个没有限制条件的极值问题)</p>
-<script type="math/tex; mode=display">
-通常情况下求最小值更方便（因为可以使导数为0）\\
-于是将上述式子转为其对偶问题，即将\min \max对调\\
-\max_{\alpha,\beta,\alpha_i>0} \min_x L(x,\alpha,\beta) \le \min_x \max_{\alpha,\beta,\alpha_i>0} L(x,\alpha,\beta)</script><p>然后回到SVM的优化上面</p>
-<script type="math/tex; mode=display">
-先最小化L(W,b,\alpha):\\
-L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}^m\alpha_i(1-y_i(W^TX_i+b))\\
-在\min_{W,b} \max_{\alpha,\alpha_i>0} L(W,b,\alpha)中，根据前面的推导，实际上隐含了这样的限制:\\
-\begin{cases}
-\alpha_i>0\\
-1-y_i(W^TX_i+b) > 0\\
-\alpha_i(1-y_i(W^TX_i+b))=0
-\end{cases}\\</script><script type="math/tex; mode=display">
-在\max_{\alpha,\alpha_i>0} \min_{W,b} L(W,b,\alpha)中，先对W，b求结果为0的偏导，有：\\
-\frac{\partial L(W,b,\alpha)}{\partial W} = \frac{\partial}{\partial W} [\frac{1}{2}||W||^2 + \sum_{i=1}^m\alpha_i(1-y_i(W^TX_i+b))]\\
-= W - \sum_{i=1}^m\alpha_iy_iX_i = 0\\
-\frac{\partial L(W,b,\alpha)}{\partial b} = \frac{\partial}{\partial b} [\frac{1}{2}||W||^2 + \sum_{i=1}^m\alpha_i(1-y_i(W^TX_i+b))]\\
-= \sum_{i=1}^m \alpha_iy_i = 0\\
-因此W = \sum_{i=1}^m\alpha_iy_iX_i\\
-b = \sum_{i=1}^m \alpha_iy_i</script><p>将上述结果代入拉格朗日函数中</p>
-<script type="math/tex; mode=display">
-L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}^m\alpha_i(1-y_i(W^TX_i+b))\\
-= \frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j+\sum_{i=1}^m\alpha_i-\sum_{i=1}^m\alpha_iy_i(\sum_{j=1}^m\alpha_jy_jX_j)X_i-b\sum_{i=1}^m\alpha_iy_i\\
-= \frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j+\sum_{i=1}^m\alpha_i-\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j\\
-= -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j+\sum_{i=1}^m\alpha_i</script><script type="math/tex; mode=display">
-于是在对偶问题\max_{\alpha,\beta,\alpha_i>0} \min_x L(x,\alpha,\beta)中，有\\
-\max_\alpha -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j+\sum_{i=1}^m\alpha_i\\
-s.t. \quad \alpha_i \ge 0 \\
-\sum_{i=1}^m \alpha_iy_i = 0\\
-可以用二次规划quadratic \ programming去求解</script><script type="math/tex; mode=display">
-求出\alpha后，可求得\\
-W^* = \sum_{i=1}^m \alpha_iy_iX_i\\
-b^* = - \frac{\max_{i:y_i=-1}W^{*T}X_i+\min_{i:y_i=1}W^{*T}X_i}{2}\\
-f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b</script><p>因为优化函数是凸函数，因此最优解满足KKT条件(充分必要条件)</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-\alpha_i>0\\
-1-y_i(W^TX_i+b) > 0\\
-\alpha_i(1-y_i(W^TX_i+b))=0
-\end{cases}\\
-因此对于训练样本，总有\alpha_i = 0或y_if(X_i)=1\\
-若\alpha_i=0，则样本不会在f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b中出现\\
-若\alpha_i>0，则y_if(X_i)=1,所对应的样本出现在最大间隔边界上，是一个支持向量</script><p>因此训练完成后，大部分训练样本都不会保留，最终模型仅与支持向量有关</p>
-<script type="math/tex; mode=display">
-对于一个新数据z\\
-f(z)为正数时就预测为正例，为负数时预测为负例</script><p><img src="/2019/03/08/机器学习-SVM/image-20190818154621861.png" alt="image-20190818154621861"></p>
-<h1 id="软间隔"><a href="#软间隔" class="headerlink" title="软间隔"></a>软间隔</h1><script type="math/tex; mode=display">
-有时线性不可分时，可以允许一部分误差\xi_i</script><p><img src="/2019/03/08/机器学习-SVM/image-20190818155040991.png" alt="image-20190818155040991"></p>
-<script type="math/tex; mode=display">
-对于数据点的限制，可以设为\\
-\begin{cases}
-W^TX_i+b \ge 1-\xi_i \quad y_i=1\\
-W^TX_i+b \le -1+\xi_i \quad y_i=-1\\
-\xi_i>0 \quad \forall i
-\end{cases}\\
-\xi_i表示松弛变量slack \ variables\\
-当\xi_i为0时，表示没有误差</script><script type="math/tex; mode=display">
-优化目标可写为\\
-Minimize \ \frac{1}{2}||w||^2+C\sum_{i=1}^m\xi_i\\
-subject \ to \ y_i(W^TX_i+b) \ge 1-\xi_i,\ \xi_i\ge0 \quad \forall i\\
-C表示了在margin和error中的trade-off</script><h1 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h1><p>将间隔边界变为非线性的，将X转移transform到高维空间</p>
+<p>用数学表达，即为<br>
+$$<br>
+\nabla f(x,y) = \lambda \nabla g(x,y)\<br>
+\lambda 称为拉格朗日乘子\<br>
+这里\lambda 可以是负数，即两个梯度可以不用是一个方向，只要平行就可以<br>
+$$</p>
+<p>$$<br>
+step1:\<br>
+我们定义L(x,y,\lambda) = f(x,y) - \lambda  g(x,y)\<br>
+那么\nabla L(x,y,\lambda) = \nabla f(x,y) - \lambda \nabla g(x,y)\<br>
+L称为拉格朗日函数Lagrangian,L的梯度方程就是寻找f和g梯度平行的点<br>
+$$</p>
+<p>$$<br>
+step2:\<br>
+解方程\nabla L(x,y,\lambda) = 0\<br>
+意味着\\begin{cases}<br>
+\frac{\partial L}{\partial x} = 0&amp;\<br>
+\frac{\partial L}{\partial y} = 0&amp;\<br>
+\frac{\partial L}{\partial \lambda} = 0&amp;\<br>
+\end{cases}\<br>
+即\<br>
+\begin{cases}<br>
+2x-\lambda=0\<br>
+2y-\lambda = 0\<br>
+-x-y+1=0<br>
+\end{cases}\<br>
+$$</p>
+<p>这样解出方程，即是最优解</p>
+<h2 id="svm对偶"><a class="header-anchor" href="#svm对偶">¶</a>SVM对偶</h2>
+<p>SVM优化目标<br>
+$$<br>
+Minimize \ ||w||^2/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$</p>
+<p>$$<br>
+原始问题是一个凸二次规划问题，将这个问题一般化\<br>
+\min_{x \in R^n} f(x)\<br>
+s.t. \quad c_i(x) \le 0 \quad i=1,2,…,k\<br>
+\quad \quad \quad h_j(x) = 0 \quad j=1,2,…,l\<br>
+$$</p>
+<p>$$<br>
+拉格朗日函数可写为\<br>
+L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad \alpha_i &gt; 0\<br>
+这里参数\alpha和\beta总共k+l个，果全部求偏导工作量太大，不太现实\<br>
+并且这个问题可能根本就没有最优解这种情况存在\<br>
+$$</p>
+<p>因此换一个思路，将原问题变为对偶问题<br>
+$$<br>
+对L(x,\alpha,\beta)再定义一个函数:\<br>
+\theta_p(x) = \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)\<br>
+= \max_{\alpha,\beta,\alpha_i&gt;0}f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad 注意这里x是常数\<br>
+$$</p>
+<p>$$<br>
+如果x不满足原条件约束，即c_i(x)\ge0或者h_j(x)\ne0,由于有\alpha_i &gt; 0,可取\alpha_i = +\infty,\beta_ih_j(x)= +\infty\<br>
+这样\theta_p(x) \to +\infty\<br>
+而如果满足所有条件约束，即c_i(x) &lt; 0,h_j(x)=0,此时\sum_{j=1}<sup>l\beta_jh_j(x)=0,\sum_{i=1}</sup>k\alpha_ic_i(x)\le0\<br>
+要使得\theta_p(x)最大,\sum_{i=1}^k\alpha_ic_i(x)=0\<br>
+此时\theta_p(x) = f(x),且x为常数，因此\max f(x) = f(x)\<br>
+所以原最小化问题\min_{w,b}f(x)可以变为\min_{w,b}\theta_p(x),然后可以推出\min_x \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)<br>
+$$</p>
+<p>至此，我们将SVM要求得最大间隔的凸二次规划问题转变成了拉格朗日函数求解问题(一个没有限制条件的极值问题)<br>
+$$<br>
+通常情况下求最小值更方便（因为可以使导数为0）\<br>
+于是将上述式子转为其对偶问题，即将\min \max对调\<br>
+\max_{\alpha,\beta,\alpha_i&gt;0} \min_x L(x,\alpha,\beta) \le \min_x \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)<br>
+$$<br>
+然后回到SVM的优化上面<br>
+$$<br>
+先最小化L(W,b,\alpha):\<br>
+L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))\<br>
+在\min_{W,b} \max_{\alpha,\alpha_i&gt;0} L(W,b,\alpha)中，根据前面的推导，实际上隐含了这样的限制:\<br>
+\begin{cases}<br>
+\alpha_i&gt;0\<br>
+1-y_i(W^TX_i+b) &gt; 0\<br>
+\alpha_i(1-y_i(W^TX_i+b))=0<br>
+\end{cases}\<br>
+$$</p>
+<p>$$<br>
+在\max_{\alpha,\alpha_i&gt;0} \min_{W,b} L(W,b,\alpha)中，先对W，b求结果为0的偏导，有：\<br>
+\frac{\partial L(W,b,\alpha)}{\partial W} = \frac{\partial}{\partial W} [\frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))]\<br>
+= W - \sum_{i=1}^m\alpha_iy_iX_i = 0\<br>
+\frac{\partial L(W,b,\alpha)}{\partial b} = \frac{\partial}{\partial b} [\frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))]\<br>
+= \sum_{i=1}^m \alpha_iy_i = 0\<br>
+因此W = \sum_{i=1}^m\alpha_iy_iX_i\<br>
+b = \sum_{i=1}^m \alpha_iy_i<br>
+$$</p>
+<p>将上述结果代入拉格朗日函数中<br>
+$$<br>
+L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))\<br>
+= \frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i-\sum_{i=1}<sup>m\alpha_iy_i(\sum_{j=1}</sup>m\alpha_jy_jX_j)X_i-b\sum_{i=1}^m\alpha_iy_i\<br>
+= \frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i-\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i^TX_j\<br>
+= -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i<br>
+$$</p>
+<p>$$<br>
+于是在对偶问题\max_{\alpha,\beta,\alpha_i&gt;0} \min_x L(x,\alpha,\beta)中，有\<br>
+\max_\alpha -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i\<br>
+s.t. \quad \alpha_i \ge 0 \<br>
+\sum_{i=1}^m \alpha_iy_i = 0\<br>
+可以用二次规划quadratic \ programming去求解<br>
+$$</p>
+<p>$$<br>
+求出\alpha后，可求得\<br>
+W^* = \sum_{i=1}^m \alpha_iy_iX_i\<br>
+b^* = - \frac{\max_{i:y_i=-1}W<sup>{*T}X_i+\min_{i:y_i=1}W</sup>{*T}X_i}{2}\<br>
+f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b<br>
+$$</p>
+<p>因为优化函数是凸函数，因此最优解满足KKT条件(充分必要条件)<br>
+$$<br>
+\begin{cases}<br>
+\alpha_i&gt;0\<br>
+1-y_i(W^TX_i+b) &gt; 0\<br>
+\alpha_i(1-y_i(W^TX_i+b))=0<br>
+\end{cases}\<br>
+因此对于训练样本，总有\alpha_i = 0或y_if(X_i)=1\<br>
+若\alpha_i=0，则样本不会在f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b中出现\<br>
+若\alpha_i&gt;0，则y_if(X_i)=1,所对应的样本出现在最大间隔边界上，是一个支持向量<br>
+$$<br>
+因此训练完成后，大部分训练样本都不会保留，最终模型仅与支持向量有关<br>
+$$<br>
+对于一个新数据z\<br>
+f(z)为正数时就预测为正例，为负数时预测为负例<br>
+$$<br>
+<img src="/2019/03/08/机器学习-SVM/image-20190818154621861.png" alt="image-20190818154621861"></p>
+<h1>软间隔</h1>
+<p>$$<br>
+有时线性不可分时，可以允许一部分误差\xi_i<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818155040991.png" alt="image-20190818155040991"><br>
+$$<br>
+对于数据点的限制，可以设为\<br>
+\begin{cases}<br>
+W^TX_i+b \ge 1-\xi_i \quad y_i=1\<br>
+W^TX_i+b \le -1+\xi_i \quad y_i=-1\<br>
+\xi_i&gt;0 \quad \forall i<br>
+\end{cases}\<br>
+\xi_i表示松弛变量slack \ variables\<br>
+当\xi_i为0时，表示没有误差<br>
+$$</p>
+<p>$$<br>
+优化目标可写为\<br>
+Minimize \ \frac{1}{2}||w||<sup>2+C\sum_{i=1}</sup>m\xi_i\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1-\xi_i,\ \xi_i\ge0 \quad \forall i\<br>
+C表示了在margin和error中的trade-off<br>
+$$</p>
+<h1>核函数</h1>
+<p>将间隔边界变为非线性的，将X转移transform到高维空间</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190818155919853.png" alt="image-20190818155919853"></p>
-<p>但是在高维空间中的运算代价更大，且通常是无限维的空间，这时可以用核技巧来解决</p>
-<script type="math/tex; mode=display">
-在SVM的对偶问题优化目标中\\
-\max_\alpha -\frac{1}{2}\sum_{i=1}^m\sum_{j=1}^m\alpha_i\alpha_jy_iy_jX_i^TX_j+\sum_{i=1}^m\alpha_i\\
-s.t. \quad \alpha_i \ge 0 \\
-\sum_{i=1}^m \alpha_iy_i = 0\\
-数据点只在X_i^TX_j出现，是一个内积inner \ product\\</script><script type="math/tex; mode=display">
-因此只要能计算特征空间的内积，就不用显式地explicitly转换到高维空间\\
-K(X_i,X_j) = \phi(X_i)^T\phi(X_j)</script><p>例如</p>
-<script type="math/tex; mode=display">
-\phi(\left[\begin{array}{c} x_1 \\ x_2 \end{array}\right]) = (1,\sqrt2 x_1,\sqrt2 x_2,x_1^2,x_2^2,\sqrt2 x_1x_2)\\
-于是特征空间上的内积为\\
-<\phi(\left[\begin{array}{c} x_1 \\ x_2 \end{array}\right]),\phi(\left[\begin{array}{c} y_1 \\ y_2 \end{array}\right])> = (1+x_iy_1+x_2y_2)^2\\
-因此我们可以这样定义核函数\\
-K(x,y) = (1+x_iy_1+x_2y_2)^2\\
-而不用显式地计算\phi\\
-这就是核技巧</script><script type="math/tex; mode=display">
-核函数要满足的条件是Mercer's\ condition\\
-任何总是半正定的函数都可以作为核函数。所谓半正定的函数f(X_i,X_j)，是指拥有训练数据集合（X_1,X_2,...X_n)\\
-我们定义一个矩阵的元素a_{ij} = f(x_i,x_j)，这个矩阵式n*n的，如果这个矩阵是半正定的，那么f(X_i,X_j)就称为半正定的函数\\
-这个mercer定理是核函数必要条件</script><p>这也意味着优化问题可以在多项式时间内解决（这里还不是很懂）</p>
-<script type="math/tex; mode=display">
-线性核\\
-K(x,y) = (x^Ty+1)^d\\
-径向基函数核(无限维空间)\\
-K(x,y) = \exp(-||x-y||^2/(2\sigma^2))\\
-sigmoid\\
-K(x,y) = \tanh(kx^Ty+\theta) \quad 并不是所有的k,\theta都满足Mercer \ condition</script><p>原始输入空间的数据总能够转移到某个可以线性可分的高维空间</p>
+<p>但是在高维空间中的运算代价更大，且通常是无限维的空间，这时可以用核技巧来解决<br>
+$$<br>
+在SVM的对偶问题优化目标中\<br>
+\max_\alpha -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i\<br>
+s.t. \quad \alpha_i \ge 0 \<br>
+\sum_{i=1}^m \alpha_iy_i = 0\<br>
+数据点只在X_i^TX_j出现，是一个内积inner \ product\<br>
+$$</p>
+<p>$$<br>
+因此只要能计算特征空间的内积，就不用显式地explicitly转换到高维空间\<br>
+K(X_i,X_j) = \phi(X_i)^T\phi(X_j)<br>
+$$</p>
+<p>例如<br>
+$$<br>
+\phi(\left[\begin{array}{c} x_1 \ x_2 \end{array}\right]) = (1,\sqrt2 x_1,\sqrt2 x_2,x_1<sup>2,x_2</sup>2,\sqrt2 x_1x_2)\<br>
+于是特征空间上的内积为\<br>
+&lt;\phi(\left[\begin{array}{c} x_1 \ x_2 \end{array}\right]),\phi(\left[\begin{array}{c} y_1 \ y_2 \end{array}\right])&gt; = (1+x_iy_1+x_2y_2)^2\<br>
+因此我们可以这样定义核函数\<br>
+K(x,y) = (1+x_iy_1+x_2y_2)^2\<br>
+而不用显式地计算\phi\<br>
+这就是核技巧<br>
+$$</p>
+<p>$$<br>
+核函数要满足的条件是Mercer’s\ condition\<br>
+任何总是半正定的函数都可以作为核函数。所谓半正定的函数f(X_i,X_j)，是指拥有训练数据集合（X_1,X_2,…X_n)\<br>
+我们定义一个矩阵的元素a_{ij} = f(x_i,x_j)，这个矩阵式n*n的，如果这个矩阵是半正定的，那么f(X_i,X_j)就称为半正定的函数\<br>
+这个mercer定理是核函数必要条件<br>
+$$</p>
+<p>这也意味着优化问题可以在多项式时间内解决（这里还不是很懂）<br>
+$$<br>
+线性核\<br>
+K(x,y) = (x<sup>Ty+1)</sup>d\<br>
+径向基函数核(无限维空间)\<br>
+K(x,y) = \exp(-||x-y||<sup>2/(2\sigma</sup>2))\<br>
+sigmoid\<br>
+K(x,y) = \tanh(kx^Ty+\theta) \quad 并不是所有的k,\theta都满足Mercer \ condition<br>
+$$<br>
+原始输入空间的数据总能够转移到某个可以线性可分的高维空间</p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190818163756686.png" alt="image-20190818163756686"></p>
-<p>高斯核<br>高斯核（此处应有公式），这个核就是最开始提到过的会将原始空间映射为无穷维空间的那个家伙。不过，如果delta选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上（数值上近似一下）相当于一个低维的子空间；反过来，如果delta选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数delta，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。下图所示的例子便是把低维线性不可分的数据通过高斯核函数映射到了高维空间：</p>
-<p>线性核<br>线性核（此处应有公式），这实际上就是原始空间中的内积。这个核存在的主要目的是使得“映射后空间中的问题”和“映射前空间中的问题”两者在形式上统一起来了(意思是说，咱们有的时候，写代码，或写公式的时候，只要写个模板或通用表达式，然后再代入不同的核，便可以了，于此，便在形式上统一了起来，不用再分别写一个线性的，和一个非线性的)</p>
-<h1 id="SVR"><a href="#SVR" class="headerlink" title="SVR"></a>SVR</h1><p>支持向量回归—&gt;可用线性或高斯核（RBF）</p>
-<h1 id="和LR比较"><a href="#和LR比较" class="headerlink" title="和LR比较"></a>和LR比较</h1><p>逻辑回归和SVM的联系<br>1、LR和SVM都可以处理分类问题，且一般都用于处理线性二分类问题（在改进的情况下可以处理多分类问题）</p>
+<p>高斯核<br>
+高斯核（此处应有公式），这个核就是最开始提到过的会将原始空间映射为无穷维空间的那个家伙。不过，如果delta选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上（数值上近似一下）相当于一个低维的子空间；反过来，如果delta选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数delta，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。下图所示的例子便是把低维线性不可分的数据通过高斯核函数映射到了高维空间：</p>
+<p>线性核<br>
+线性核（此处应有公式），这实际上就是原始空间中的内积。这个核存在的主要目的是使得“映射后空间中的问题”和“映射前空间中的问题”两者在形式上统一起来了(意思是说，咱们有的时候，写代码，或写公式的时候，只要写个模板或通用表达式，然后再代入不同的核，便可以了，于此，便在形式上统一了起来，不用再分别写一个线性的，和一个非线性的)</p>
+<h1>SVR</h1>
+<p>支持向量回归–&gt;可用线性或高斯核（RBF）</p>
+<h1>和LR比较</h1>
+<p>逻辑回归和SVM的联系<br>
+1、LR和SVM都可以处理分类问题，且一般都用于处理线性二分类问题（在改进的情况下可以处理多分类问题）</p>
 <p>2、两个方法都可以增加不同的正则化项，如l1、l2等等。所以在很多实验中，两种算法的结果是很接近的。</p>
-<p>区别<br>1、LR是参数模型，SVM是非参数模型。</p>
+<p>区别<br>
+1、LR是参数模型，SVM是非参数模型。</p>
 <p>2、从目标函数来看，区别在于逻辑回归采用的是logistical loss，SVM采用的是hinge loss，这两个损失函数的目的都是增加对分类影响较大的数据点的权重，减少与分类关系较小的数据点的权重。</p>
 <p>3、SVM的处理方法是只考虑support vectors，也就是和分类最相关的少数点，去学习分类器。而逻辑回归通过非线性映射，大大减小了离分类平面较远的点的权重，相对提升了与分类最相关的数据点的权重。</p>
 <p>4、逻辑回归相对来说模型更简单，好理解，特别是大规模线性分类时比较方便。而SVM的理解和优化相对来说复杂一些，SVM转化为对偶问题后,分类只需要计算与少数几个支持向量的距离,这个在进行复杂核函数计算时优势很明显,能够大大简化模型和计算。</p>
 <p>5、logic 能做的 svm能做，但可能在准确率上有问题，svm能做的logic有的做不了。</p>
-<p>数据方面<br>Linear SVM不直接依赖数据分布，分类平面不受一类点影响；LR则受所有数据点的影响，如果数据不同类别strongly unbalance一般需要先对数据做balancing。<br>Linear SVM依赖数据表达的距离测度，所以需要对数据先做normalization；LR不受其影响<br>过拟合方面<br>LR容易欠拟合，准确度低。<br>SVM不太容易过拟合：松弛因子+损失函数形式<br>注意SVM的求解方法叫拉格朗日乘子法，而对于均方误差的优化方法是最小二乘法。<br>选择：<br>如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM<br>如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel<br>如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况<br>svm适合处理的数据<br>高维稀疏，样本少。<br>【参数只与支持向量有关，数量少，所以需要的样本少，<br>由于参数跟维度没有关系，所以可以处理高维问题】<br>优点：</p>
-<p>使用核函数可以向高维空间进行映射<br>使用核函数可以解决非线性的分类<br>分类思想很简单，就是将样本与决策面的间隔最大化<br>分类效果较好<br>缺点：</p>
-<p>对大规模数据训练比较困难<br>无法直接支持多分类，但是可以使用间接的方法来做<br>SVM多分类的问题：</p>
-<p>直接法：直接在目标函数上进行修改，将多个分类面的参数求解合并到一个最优化问题中，计算复杂度比较高，实现起来困难<br>简介法：<br>一对多：其中某个类为一类，剩下n-1一个类为另一个类，一次遍历所有的类，每个类都有单独成为一个类的机会，训练和类别数量相等的分类器，最后在测试的时候将分类器取最大值为分类器。</p>
+<p>数据方面<br>
+Linear SVM不直接依赖数据分布，分类平面不受一类点影响；LR则受所有数据点的影响，如果数据不同类别strongly unbalance一般需要先对数据做balancing。<br>
+Linear SVM依赖数据表达的距离测度，所以需要对数据先做normalization；LR不受其影响<br>
+过拟合方面<br>
+LR容易欠拟合，准确度低。<br>
+SVM不太容易过拟合：松弛因子+损失函数形式<br>
+注意SVM的求解方法叫拉格朗日乘子法，而对于均方误差的优化方法是最小二乘法。<br>
+选择：<br>
+如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM<br>
+如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel<br>
+如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况<br>
+svm适合处理的数据<br>
+高维稀疏，样本少。<br>
+【参数只与支持向量有关，数量少，所以需要的样本少，<br>
+由于参数跟维度没有关系，所以可以处理高维问题】<br>
+优点：</p>
+<p>使用核函数可以向高维空间进行映射<br>
+使用核函数可以解决非线性的分类<br>
+分类思想很简单，就是将样本与决策面的间隔最大化<br>
+分类效果较好<br>
+缺点：</p>
+<p>对大规模数据训练比较困难<br>
+无法直接支持多分类，但是可以使用间接的方法来做<br>
+SVM多分类的问题：</p>
+<p>直接法：直接在目标函数上进行修改，将多个分类面的参数求解合并到一个最优化问题中，计算复杂度比较高，实现起来困难<br>
+简介法：<br>
+一对多：其中某个类为一类，剩下n-1一个类为另一个类，一次遍历所有的类，每个类都有单独成为一个类的机会，训练和类别数量相等的分类器，最后在测试的时候将分类器取最大值为分类器。</p>
 <p>一对一：每两个类都拿出来训练一个分类器，但是最后代价太大。</p>
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p><img src="/2019/03/08/机器学习-SVM/image-20190818164257835.png" alt="image-20190818164257835"></p>
+<h1>例子</h1>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818164257835.png" alt="image-20190818164257835"></p>
 <p><img src="/2019/03/08/机器学习-SVM/image-20190818164309211.png" alt="image-20190818164309211"></p>
-<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p><img src="/2019/03/08/机器学习-SVM/image-20190818164358060.png" alt="image-20190818164358060"></p>
+<h1>讨论</h1>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818164358060.png" alt="image-20190818164358060"></p>
 
       
     </div>
@@ -737,7 +854,7 @@ K(x,y) = \tanh(kx^Ty+\theta) \quad 并不是所有的k,\theta都满足Mercer \ c
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化目标"><span class="nav-number">2.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对偶问题"><span class="nav-number">3.</span> <span class="nav-text">对偶问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下界-上界-lower-bound-upper-bound"><span class="nav-number">3.1.</span> <span class="nav-text">下界/上界 lower bound/upper bound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶问题-1"><span class="nav-number">3.2.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉格朗日乘子-Lagrange-Multiplier"><span class="nav-number">3.3.</span> <span class="nav-text">拉格朗日乘子 Lagrange Multiplier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM对偶"><span class="nav-number">3.4.</span> <span class="nav-text">SVM对偶</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软间隔"><span class="nav-number">4.</span> <span class="nav-text">软间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核函数"><span class="nav-number">5.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVR"><span class="nav-number">6.</span> <span class="nav-text">SVR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和LR比较"><span class="nav-number">7.</span> <span class="nav-text">和LR比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">8.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#讨论"><span class="nav-number">9.</span> <span class="nav-text">讨论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">对偶问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下界-上界-lower-bound-upper-bound"><span class="nav-number">3.1.</span> <span class="nav-text">¶下界/上界 lower bound/upper bound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶问题"><span class="nav-number">3.2.</span> <span class="nav-text">¶对偶问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉格朗日乘子-lagrange-multiplier"><span class="nav-number">3.3.</span> <span class="nav-text">¶拉格朗日乘子 Lagrange Multiplier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svm对偶"><span class="nav-number">3.4.</span> <span class="nav-text">¶SVM对偶</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">软间隔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">核函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">SVR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">和LR比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">讨论</span></a></li></ol></div>
             
 
           </div>

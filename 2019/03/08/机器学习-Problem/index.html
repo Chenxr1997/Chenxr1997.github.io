@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="样本不均衡主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。 做训练">
+<meta name="description" content="¶样本不均衡 主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法 调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-Problem">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-Problem/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="样本不均衡主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。 做训练">
+<meta property="og:description" content="¶样本不均衡 主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法 调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-Problem">
-<meta name="twitter:description" content="样本不均衡主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。 做训练">
+<meta name="twitter:description" content="¶样本不均衡 主要三个方面，数据，模型和评估方法。 数据上重采样和欠采样，使之均衡； 模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN； 评估方法，用查全率，查准率之类 balance的方法 调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。">
 
 
 
@@ -299,28 +299,37 @@
       
 
       
-        <h3 id="样本不均衡"><a href="#样本不均衡" class="headerlink" title="样本不均衡"></a>样本不均衡</h3><p>主要三个方面，数据，模型和评估方法。</p>
+        <h3 id="样本不均衡"><a class="header-anchor" href="#样本不均衡">¶</a>样本不均衡</h3>
+<p>主要三个方面，数据，模型和评估方法。</p>
 <p>数据上重采样和欠采样，使之均衡；</p>
 <p>模型上选对样本不均衡问题不敏感的模型，和算法集成技术，如决策树，不能用KNN；</p>
 <p>评估方法，用查全率，查准率之类</p>
-<p>balance的方法<br>调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。</p>
+<p>balance的方法<br>
+调整正、负样本在求cost时的权重，比如按比例加大正样本cost的权重。然而deep learning的训练过程是on-line的因此你需要按照batch中正、负样本的比例调整。</p>
 <p>做训练样本选取：如hard negative mining，只用负样本中的一部分。</p>
 <p>做训练样本选取：如通过data augmentation扩大正样本数量。</p>
-<h3 id="Shrinkage"><a href="#Shrinkage" class="headerlink" title="Shrinkage"></a>Shrinkage</h3><p>Shrinkage认为，每次走一小步逐步逼近的结果要比每次迈一大步逼近结果更加容易避免过拟合。</p>
+<h3 id="shrinkage"><a class="header-anchor" href="#shrinkage">¶</a>Shrinkage</h3>
+<p>Shrinkage认为，每次走一小步逐步逼近的结果要比每次迈一大步逼近结果更加容易避免过拟合。</p>
 <p>优点：</p>
 <ol>
-<li><p>精度高</p>
+<li>
+<p>精度高</p>
 </li>
-<li><p>能处理非线性数据</p>
+<li>
+<p>能处理非线性数据</p>
 </li>
-<li><p>能处理多特征类型</p>
+<li>
+<p>能处理多特征类型</p>
 </li>
-<li><p>适合低维稠密数据</p>
-<p> 缺点：</p>
+<li>
+<p>适合低维稠密数据</p>
+<p>缺点：</p>
 </li>
-<li><p>并行麻烦（因为上下两颗树有联系）</p>
+<li>
+<p>并行麻烦（因为上下两颗树有联系）</p>
 </li>
-<li><p>多分类的时候 复杂度很大</p>
+<li>
+<p>多分类的时候 复杂度很大</p>
 </li>
 </ol>
 
@@ -491,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#样本不均衡"><span class="nav-number">1.</span> <span class="nav-text">样本不均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shrinkage"><span class="nav-number">2.</span> <span class="nav-text">Shrinkage</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#样本不均衡"><span class="nav-number">1.</span> <span class="nav-text">¶样本不均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shrinkage"><span class="nav-number">2.</span> <span class="nav-text">¶Shrinkage</span></a></li></ol></div>
             
 
           </div>

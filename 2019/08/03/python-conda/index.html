@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 环境管理conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境conda create -n env_name python=3.3指定python版本 conda a">
+<meta name="description" content="[TOC] 环境管理 conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境 conda create -n env_name python=3.3指定python版本 conda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python-Conda">
 <meta property="og:url" content="http://yoursite.com/2019/08/03/python-conda/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 环境管理conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境conda create -n env_name python=3.3指定python版本 conda a">
+<meta property="og:description" content="[TOC] 环境管理 conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境 conda create -n env_name python=3.3指定python版本 conda">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-Conda">
-<meta name="twitter:description" content="[TOC] 环境管理conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境conda create -n env_name python=3.3指定python版本 conda a">
+<meta name="twitter:description" content="[TOC] 环境管理 conda env list``conda info --envs列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base） conda create -n env_name创建环境 conda create -n env_name python=3.3指定python版本 conda">
 
 
 
@@ -300,21 +300,31 @@
 
       
         <p>[TOC]</p>
-<h1 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h1><p><code>conda env list``conda info --envs</code>列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base）</p>
-<p><code>conda create -n env_name</code>创建环境<br><code>conda create -n env_name python=3.3</code>指定python版本</p>
-<p><code>conda activate my_env</code>进入环境（在OSX/Linux上）<br><code>activate my_env</code>进入环境（在Windows上）</p>
-<p><code>conda deactivate</code>离开环境（在OSX/Linux上）<br><code>deactivate</code>进入环境（在Windows上）</p>
-<p><code>conda env export &gt; environment.yaml</code>将环境保存为yaml<br><code>conda env create -f environment.yaml</code>读取环境</p>
+<h1>环境管理</h1>
+<p><code>conda env list``conda info --envs</code>列出你创建的所有环境，可以看到环境的列表，而且当前所在环境的旁边会有一个星号。默认的环境（即当你不在选定环境中时使用的环境）名为 root（base）</p>
+<p><code>conda create -n env_name</code>创建环境<br>
+<code>conda create -n env_name python=3.3</code>指定python版本</p>
+<p><code>conda activate my_env</code>进入环境（在OSX/Linux上）<br>
+<code>activate my_env</code>进入环境（在Windows上）</p>
+<p><code>conda deactivate</code>离开环境（在OSX/Linux上）<br>
+<code>deactivate</code>进入环境（在Windows上）</p>
+<p><code>conda env export &gt; environment.yaml</code>将环境保存为yaml<br>
+<code>conda env create -f environment.yaml</code>读取环境</p>
 <p><code>conda env remove -n env_name</code>删除环境</p>
-<h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><p><code>conda list</code>查看安装哪些包</p>
+<h1>包管理</h1>
+<p><code>conda list</code>查看安装哪些包</p>
 <p><code>conda upgrade --all</code>更新环境中所有包</p>
-<p><code>conda install package_name</code>安装包<br>指定版本<code>conda install numpy=1.10</code></p>
+<p><code>conda install package_name</code>安装包<br>
+指定版本<code>conda install numpy=1.10</code></p>
 <p><code>conda remove package_name</code>卸载包</p>
 <p><code>conda search search_term</code>如果不知道要找的包的确切名称，可以搜索包</p>
-<h1 id="源管理"><a href="#源管理" class="headerlink" title="源管理"></a>源管理</h1><p>添加国内源<br><code>conda config --add channels https://repo.continuum.io/pkgs/free/ 
-conda config --add channels https://repo.continuum.io/pkgs/main/ 
-conda config --set show_channel_urls yes</code></p>
-<h1 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h1><p><code>conda --version</code>查看版本<br><code>conda update --h(elp)</code>查看某个命令的帮助<br><code>conda update conda</code>升级conda</p>
+<h1>源管理</h1>
+<p>添加国内源<br>
+<code>conda config --add channels https://repo.continuum.io/pkgs/free/  conda config --add channels https://repo.continuum.io/pkgs/main/  conda config --set show_channel_urls yes</code></p>
+<h1>杂七杂八</h1>
+<p><code>conda --version</code>查看版本<br>
+<code>conda update --h(elp)</code>查看某个命令的帮助<br>
+<code>conda update conda</code>升级conda</p>
 
       
     </div>
@@ -479,7 +489,7 @@ conda config --set show_channel_urls yes</code></p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境管理"><span class="nav-number">1.</span> <span class="nav-text">环境管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包管理"><span class="nav-number">2.</span> <span class="nav-text">包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源管理"><span class="nav-number">3.</span> <span class="nav-text">源管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杂七杂八"><span class="nav-number">4.</span> <span class="nav-text">杂七杂八</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">环境管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">源管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">杂七杂八</span></a></li></ol></div>
             
 
           </div>

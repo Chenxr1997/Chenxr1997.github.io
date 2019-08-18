@@ -309,22 +309,32 @@
 <p>由于VSM法中需要事先计算类别的空间向量，而该空间向量的建立又很大程度的依赖于该类别向量中所包含的特征项。根据研究发现，类别中所包含的非零特征项越多，其包含的每个特征项对于类别的表达能力越弱。因此，VSM法相对其他分类方法而言，更适合于专业文献的分类。</p>
 <p>关键词权重计算算法：TF-IDF<a href="https://www.cnblogs.com/likai198981/p/3344060.html" target="_blank" rel="noopener">https://www.cnblogs.com/likai198981/p/3344060.html</a></p>
 <p>搜索引擎</p>
-<h1 id="评估测试"><a href="#评估测试" class="headerlink" title="评估测试"></a>评估测试</h1><h2 id="评估要点"><a href="#评估要点" class="headerlink" title="评估要点"></a>评估要点</h2><ul>
-<li><p>性能评估</p>
+<h1>评估测试</h1>
+<h2 id="评估要点"><a class="header-anchor" href="#评估要点">¶</a>评估要点</h2>
+<ul>
+<li>
+<p>性能评估</p>
 </li>
-<li><p>检索质量评估</p>
+<li>
+<p>检索质量评估</p>
 </li>
 </ul>
-<h2 id="使用准确率precision-召回率recall"><a href="#使用准确率precision-召回率recall" class="headerlink" title="使用准确率precision/召回率recall"></a>使用准确率precision/召回率recall</h2><p>困难在于需要对文档进行事先的评估，且只能是二值化的评估</p>
+<h2 id="使用准确率precision-召回率recall"><a class="header-anchor" href="#使用准确率precision-召回率recall">¶</a>使用准确率precision/召回率recall</h2>
+<p>困难在于需要对文档进行事先的评估，且只能是二值化的评估</p>
 <p>F-measure也经常使用</p>
 <p>谷歌更强调precision</p>
-<h2 id="Interleaved-ranking"><a href="#Interleaved-ranking" class="headerlink" title="Interleaved ranking"></a>Interleaved ranking</h2><p>将A，B两个检索系统的排序结果交叉</p>
+<h2 id="interleaved-ranking"><a class="header-anchor" href="#interleaved-ranking">¶</a>Interleaved ranking</h2>
+<p>将A，B两个检索系统的排序结果交叉</p>
 <p><img src="/2019/03/24/数据科学-信息检索/image-20190812105610420.png" alt="image-20190812105610420"></p>
 <p>并且去掉相同的结果</p>
 <p><img src="/2019/03/24/数据科学-信息检索/image-20190812105635511.png" alt="image-20190812105635511"></p>
 <p>之后比较哪一个系统获得更多的点击量</p>
-<h2 id="A-B-testing"><a href="#A-B-testing" class="headerlink" title="A/B testing"></a>A/B testing</h2><h2 id="测试集Test-Collections"><a href="#测试集Test-Collections" class="headerlink" title="测试集Test Collections"></a>测试集Test Collections</h2><h3 id="Old-Test-Collections"><a href="#Old-Test-Collections" class="headerlink" title="Old Test Collections"></a>Old Test Collections</h3><ul>
-<li>Cranfield 2<ul>
+<h2 id="a-b-testing"><a class="header-anchor" href="#a-b-testing">¶</a>A/B testing</h2>
+<h2 id="测试集test-collections"><a class="header-anchor" href="#测试集test-collections">¶</a>测试集Test Collections</h2>
+<h3 id="old-test-collections"><a class="header-anchor" href="#old-test-collections">¶</a>Old Test Collections</h3>
+<ul>
+<li>Cranfield 2
+<ul>
 <li>1400 Documents, 221 Queries</li>
 <li>200 Documents, 42 Queries</li>
 </ul>
@@ -336,7 +346,8 @@
 <li>CISI – 1460 Documents, 35 Queries</li>
 <li>MEDLARS (Salton) 273 Documents, 18 Queries</li>
 </ul>
-<h3 id="Modern-Well-Used-Test-Collections"><a href="#Modern-Well-Used-Test-Collections" class="headerlink" title="Modern Well Used Test Collections"></a>Modern Well Used Test Collections</h3><p>Text Retrieval Conference (<a href="http://trec.nist.gov/data.html" target="_blank" rel="noopener">TREC</a>)</p>
+<h3 id="modern-well-used-test-collections"><a class="header-anchor" href="#modern-well-used-test-collections">¶</a>Modern Well Used Test Collections</h3>
+<p>Text Retrieval Conference (<a href="http://trec.nist.gov/data.html" target="_blank" rel="noopener">TREC</a>)</p>
 <p>NII Test Collections for IR Systems (<a href="http://research.nii.ac.jp/ntcir/data/data-en.html" target="_blank" rel="noopener">NTCIR</a>)</p>
 <p>Cross Language Evaluation Forum (<a href="http://www.clef-campaign.org/" target="_blank" rel="noopener">CLEF</a>)</p>
 <p>Reuters-RCV1</p>
@@ -509,7 +520,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#评估测试"><span class="nav-number">1.</span> <span class="nav-text">评估测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评估要点"><span class="nav-number">1.1.</span> <span class="nav-text">评估要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用准确率precision-召回率recall"><span class="nav-number">1.2.</span> <span class="nav-text">使用准确率precision/召回率recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interleaved-ranking"><span class="nav-number">1.3.</span> <span class="nav-text">Interleaved ranking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-testing"><span class="nav-number">1.4.</span> <span class="nav-text">A/B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试集Test-Collections"><span class="nav-number">1.5.</span> <span class="nav-text">测试集Test Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Old-Test-Collections"><span class="nav-number">1.5.1.</span> <span class="nav-text">Old Test Collections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modern-Well-Used-Test-Collections"><span class="nav-number">1.5.2.</span> <span class="nav-text">Modern Well Used Test Collections</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">评估测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评估要点"><span class="nav-number">1.1.</span> <span class="nav-text">¶评估要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用准确率precision-召回率recall"><span class="nav-number">1.2.</span> <span class="nav-text">¶使用准确率precision/召回率recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interleaved-ranking"><span class="nav-number">1.3.</span> <span class="nav-text">¶Interleaved ranking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-testing"><span class="nav-number">1.4.</span> <span class="nav-text">¶A/B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试集test-collections"><span class="nav-number">1.5.</span> <span class="nav-text">¶测试集Test Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#old-test-collections"><span class="nav-number">1.5.1.</span> <span class="nav-text">¶Old Test Collections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modern-well-used-test-collections"><span class="nav-number">1.5.2.</span> <span class="nav-text">¶Modern Well Used Test Collections</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

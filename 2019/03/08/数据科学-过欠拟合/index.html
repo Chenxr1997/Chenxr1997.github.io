@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 概念表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决减少特征数目减少模型参数 评估见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  我们将测试集(y_*,x_*)中的期望los">
+<meta name="description" content="[TOC] 概念 表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决 减少特征数目 减少模型参数 评估 见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  $$ 我们将测试集(y_,x_)中的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-过&#x2F;欠拟合">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-过欠拟合/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 概念表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决减少特征数目减少模型参数 评估见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  我们将测试集(y_*,x_*)中的期望los">
+<meta property="og:description" content="[TOC] 概念 表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决 减少特征数目 减少模型参数 评估 见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  $$ 我们将测试集(y_,x_)中的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-过欠拟合/image-20190811171605086.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-过欠拟合/image-20190811171643706.png">
@@ -93,7 +93,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-过&#x2F;欠拟合">
-<meta name="twitter:description" content="[TOC] 概念表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决减少特征数目减少模型参数 评估见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  我们将测试集(y_*,x_*)中的期望los">
+<meta name="twitter:description" content="[TOC] 概念 表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差） 通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度   解决 减少特征数目 减少模型参数 评估 见数据科学-模型评估与选择-评估 Bias-Variance Tradeoff  $$ 我们将测试集(y_,x_)中的">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-过欠拟合/image-20190811171605086.png">
 
 
@@ -305,53 +305,74 @@
 
       
         <p>[TOC]</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差）</p>
+<h1>概念</h1>
+<p>表现为训练集中表现很好，但是在新样本中表现不好（在线性回归中，表现为R^2提高，但是样本外的数据表现很差）</p>
 <p>通常原因是添加了过多的参数/变量（比如线性回归中的variable），太高的复杂性会降低对未来数据预测的准确度</p>
 <p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171605086.png" alt="image-20190811171605086"></p>
 <p><img src="/2019/03/08/数据科学-过欠拟合/image-20190811171643706.png" alt="image-20190811171643706"></p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>减少特征数目<br>减少模型参数</p>
-<h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><p>见<code>数据科学-模型评估与选择-评估</code></p>
-<h1 id="Bias-Variance-Tradeoff"><a href="#Bias-Variance-Tradeoff" class="headerlink" title="Bias-Variance Tradeoff"></a>Bias-Variance Tradeoff</h1><p><img src="/2019/03/08/数据科学-过欠拟合/2.png" alt="2"></p>
-<script type="math/tex; mode=display">
-我们将测试集(y_*,x_*)中的期望loss分解为\\
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2] = Noise + Bias^2 + Variance\\
-定义真实的模型(不可观测)为\\
-y_* = h(x_*)+\epsilon_*\\
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((y_*-h(x_*))+(h(x_*)-f(x_*|D)))^2]\\
-= E_{D,(y_*,x_*)}[(y_*-h(x_*))^2] + E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2] + 2E_{D,(y_*,x_*)}[y_*h_*-y_*f_*-h_*h_*+f_*h_*]\\</script><script type="math/tex; mode=display">
-由于y_* = h_* + \epsilon_*,且E(\epsilon_*) = 0\\
-因此E_{D,(y_*,x_*)}[y_*h_*-y_*f_*-h_*h_*+f_*h_*]\\
-= E_{D,(y_*,x_*)}[(h_*+\epsilon_*)h_*-(h_*+\epsilon_*)f_*-h_*h_*+f_*h_*]\\
-= E_{D,(y_*,x_*)}[\epsilon_*h_*-\epsilon_*f_*]\\
-= E_{D,(y_*,x_*)}[\epsilon_*h_*]-E_{D,(y*,x*)}[\epsilon_*f_*]\\
-= E[\epsilon_*]E_{D,(y_*,x_*)}[h_*]-E[\epsilon_*]E_{D,(y_*,x_*)}[f_*]\\
-= 0</script><script type="math/tex; mode=display">
-因此E_{D,(y_*,x_*)}[(y_*-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[(y_*-h(x_*))^2] + E_{D,(y_*,x*_)}[(h(x_*)-f(x_*|D))^2]\\
-= \underbrace{E[\epsilon_*^2]}_{noise\ item\\ out \ of \ our \ control} + \underbrace{E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]}_{Model \ Estimation \ Error \\ we \ want \ to \ minimize \ this}\\</script><script type="math/tex; mode=display">
-设E_{D,(y_*,x_*)}[f(x_*|D)] = \bar {f_*}\\
-对于E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[(h(x_*)-E[f(x_*|D)]+E[f(x_*|D)]-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))^2] + \\2E[h_*\bar {f_*}-h_*f_*-\bar {f_*}f_*+\bar {f_*}^2]\\</script><script type="math/tex; mode=display">
-其中E[h_*\bar {f_*}-h_*f_*-\bar {f_*}f_*+\bar {f_*}^2]\\
-= h_*\bar {f_*}-h_*E[f_*]-\bar {f_*}E[f_*]+\bar {f_*}^2\\
-= h_*\bar {f_*}-h_*\bar {f_*}-\bar {f_*}^2+\bar {f_*}^2\\
-= 0</script><script type="math/tex; mode=display">
-因此E_{D,(y_*,x_*)}[(h(x_*)-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))^2]\\
-= E_{D,(y_*,x_*)}[((h(x_*)-E[f(x_*|D)])^2]+E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2]\\
-= \underbrace{((h(x_*)-E[f(x_*|D)])^2}_{Bias^2} + \underbrace{E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2]}_{Variance}</script><p>偏差和方差的trade off</p>
+<h1>解决</h1>
+<p>减少特征数目<br>
+减少模型参数</p>
+<h1>评估</h1>
+<p>见<code>数据科学-模型评估与选择-评估</code></p>
+<h1>Bias-Variance Tradeoff</h1>
+<p><img src="/2019/03/08/数据科学-过欠拟合/2.png" alt="2"><br>
+$$<br>
+我们将测试集(y_<em>,x_</em>)中的期望loss分解为\<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2] = Noise + Bias^2 + Variance\<br>
+定义真实的模型(不可观测)为\<br>
+y_</em> = h(x_<em>)+\epsilon_</em>\<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2]\<br>
+= E_{D,(y_</em>,x_<em>)}[((y_</em>-h(x_<em>))+(h(x_</em>)-f(x_<em>|D)))^2]\<br>
+= E_{D,(y_</em>,x_<em>)}[(y_</em>-h(x_<em>))^2] + E_{D,(y_</em>,x_<em>)}[(h(x_</em>)-f(x_<em>|D))^2] + 2E_{D,(y_</em>,x_*)}[y_<em>h_</em>-y_<em>f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+$$</p>
+<p>$$<br>
+由于y_* = h_* + \epsilon_<em>,且E(\epsilon_</em>) = 0\<br>
+因此E_{D,(y_<em>,x_</em>)}[y_<em>h_</em>-y_<em>f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[(h_<em>+\epsilon_</em>)h_<em>-(h_</em>+\epsilon_<em>)f_</em>-h_<em>h_</em>+f_<em>h_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[\epsilon_<em>h_</em>-\epsilon_<em>f_</em>]\<br>
+= E_{D,(y_<em>,x_</em>)}[\epsilon_<em>h_</em>]-E_{D,(y*,x*)}[\epsilon_<em>f_</em>]\<br>
+= E[\epsilon_<em>]E_{D,(y_</em>,x_<em>)}[h_</em>]-E[\epsilon_<em>]E_{D,(y_</em>,x_<em>)}[f_</em>]\<br>
+= 0<br>
+$$</p>
+<p>$$<br>
+因此E_{D,(y_<em>,x_</em>)}[(y_<em>-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[(y_<em>-h(x_</em>))^2] + E_{D,(y_<em>,x</em><em>)}[(h(x</em><em>)-f(x_</em>|D))^2]\<br>
+= \underbrace{E[\epsilon_<em>^2]}<em>{noise\ item\ out \ of \ our \ control} + \underbrace{E</em>{D,(y_</em>,x_<em>)}[(h(x_</em>)-f(x_*|D))^2]}_{Model \ Estimation \ Error \ we \ want \ to \ minimize \ this}\<br>
+$$</p>
+<p>$$<br>
+设E_{D,(y_<em>,x_</em>)}[f(x_<em>|D)] = \bar {f_</em>}\<br>
+对于E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-E[f(x_</em>|D)]+E[f(x_<em>|D)]-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))</sup>2] + \2E[h_<em>\bar {f_</em>}-h_<em>f_</em>-\bar {f_<em>}f_</em>+\bar {f_*}^2]\<br>
+$$</p>
+<p>$$<br>
+其中E[h_<em>\bar {f_</em>}-h_<em>f_</em>-\bar {f_<em>}f_</em>+\bar {f_<em>}^2]\<br>
+= h_</em>\bar {f_<em>}-h_<em>E[f_</em>]-\bar {f_</em>}E[f_<em>]+\bar {f_</em>}^2\<br>
+= h_<em>\bar {f_</em>}-h_<em>\bar {f_</em>}-\bar {f_<em>}^2+\bar {f_</em>}^2\<br>
+= 0<br>
+$$</p>
+<p>$$<br>
+因此E_{D,(y_<em>,x_</em>)}[(h(x_<em>)-f(x_</em>|D))^2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(E[f(x_*|D)]-f(x_*|D))</sup>2]\<br>
+= E_{D,(y_<em>,x_</em>)}[((h(x_<em>)-E[f(x_</em>|D)])<sup>2]+E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])</sup>2]\<br>
+= \underbrace{((h(x_<em>)-E[f(x_</em>|D)])<sup>2}_{Bias</sup>2} + \underbrace{E_{D,(y_<em>,x_</em>)}[(f(x_<em>|D)-E[f(x_</em>|D)])^2]}_{Variance}<br>
+$$</p>
+<p>偏差和方差的trade off</p>
 <ul>
 <li>简单模型：高偏差，低方差</li>
 <li>复杂模型：低偏差，高方差</li>
 </ul>
-<p>总结</p>
-<script type="math/tex; mode=display">
-E_{D,(y_*,x_*)}[(y*-f(x_*|D))^2] =  \ Expected \ loss \\
-E[\epsilon_*^2] \ noise \\
-+ ((h(x_*)-E[f(x_*|D)])^2 \ (Bias)^2\\ 
-+ E_{D,(y_*,x_*)}[(f(x_*|D)-E[f(x_*|D)])^2] \ Variance</script><p>偏差和方差的trade off</p>
+<p>总结<br>
+$$<br>
+E_{D,(y_<em>,x_</em>)}[(y*-f(x_<em>|D))^2] =  \ Expected \ loss \<br>
+E[\epsilon_</em>^2] \ noise \</p>
+<ul>
+<li>((h(x_<em>)-E[f(x_</em>|D)])^2 \ (Bias)^2\</li>
+<li>E_{D,(y_<em>,x_</em>)}[(f(x_<em>|D)-E[f(x_</em>|D)])^2] \ Variance<br>
+$$</li>
+</ul>
+<p>偏差和方差的trade off</p>
 <ul>
 <li>简单模型：高偏差，低方差</li>
 <li>复杂模型：低偏差，高方差</li>
@@ -359,7 +380,8 @@ E[\epsilon_*^2] \ noise \\
 <li>欠拟合：偏差太大</li>
 </ul>
 <p><img src="/2019/03/08/数据科学-过欠拟合/image-20190813125216615.png" alt="image-20190813125216615"></p>
-<h2 id="线性回归的方差与偏差分析"><a href="#线性回归的方差与偏差分析" class="headerlink" title="线性回归的方差与偏差分析"></a>线性回归的方差与偏差分析</h2><p>见<code>机器学习-线性模型</code></p>
+<h2 id="线性回归的方差与偏差分析"><a class="header-anchor" href="#线性回归的方差与偏差分析">¶</a>线性回归的方差与偏差分析</h2>
+<p>见<code>机器学习-线性模型</code></p>
 
       
     </div>
@@ -384,8 +406,8 @@ E[\epsilon_*^2] \ noise \\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/数据科学-进阶知识/" rel="next" title="数据科学-进阶知识">
-                <i class="fa fa-chevron-left"></i> 数据科学-进阶知识
+              <a href="/2019/03/08/计算机科学与工程-数据结构/" rel="next" title="计算机科学与工程-数据结构">
+                <i class="fa fa-chevron-left"></i> 计算机科学与工程-数据结构
               </a>
             
           </div>
@@ -394,8 +416,8 @@ E[\epsilon_*^2] \ noise \\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/数据科学-模型评估与选择/" rel="prev" title="数据科学-模型评估与选择">
-                数据科学-模型评估与选择 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/数据科学-进阶知识/" rel="prev" title="数据科学-进阶知识">
+                数据科学-进阶知识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,7 +550,7 @@ E[\epsilon_*^2] \ noise \\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评估"><span class="nav-number">3.</span> <span class="nav-text">评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bias-Variance-Tradeoff"><span class="nav-number">4.</span> <span class="nav-text">Bias-Variance Tradeoff</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归的方差与偏差分析"><span class="nav-number">4.1.</span> <span class="nav-text">线性回归的方差与偏差分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Bias-Variance Tradeoff</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归的方差与偏差分析"><span class="nav-number">4.1.</span> <span class="nav-text">¶线性回归的方差与偏差分析</span></a></li></ol></li></ol></div>
             
 
           </div>

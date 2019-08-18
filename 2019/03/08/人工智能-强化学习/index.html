@@ -317,55 +317,95 @@
 <p>时间差分学习 Temporal difference learning</p>
 <p>自动学习机 Learning Automata</p>
 <p>状态-行动-回馈-状态-行动（SARSA） State-Action-Reward-State-Action(SARSA)</p>
-<p>policy gradient method </p>
+<p>policy gradient method</p>
 <p>Temporal Difference</p>
-<p>强化学习 371<br>16.1 任务与奖赏 371<br>16.2 K KK-摇臂赌博机 373<br>16.2.1 探索与利用 373<br>16.2.2 $\epsilon $-贪心 374<br>16.2.3 Softmax 375<br>16.3 有模型学习 377<br>16.3.1 策略评估 377<br>16.3.2 策略改进 379<br>16.3.3 策略迭代与值迭代 381<br>16.4 免模型学习 382<br>16.4.1 蒙特卡罗强化学习 383<br>16.4.2 时序差分学习 386<br>16.5 值函数近似 388<br>16.6 模仿学习 390<br>16.6.1 直接模仿学习 391<br>16.6.2 逆强化学习 391</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>强化学习的中心思想，就是让智能体agent在环境environment里探索explore和学习。每个行动action会对应各自的奖励reward，智能体通过分析数据来学习，怎样的情况下应该做怎样的事情。没有teacher（label）来说是好还是坏</p>
+<p>强化学习 371<br>
+16.1 任务与奖赏 371<br>
+16.2 K KK-摇臂赌博机 373<br>
+16.2.1 探索与利用 373<br>
+16.2.2 $\epsilon $-贪心 374<br>
+16.2.3 Softmax 375<br>
+16.3 有模型学习 377<br>
+16.3.1 策略评估 377<br>
+16.3.2 策略改进 379<br>
+16.3.3 策略迭代与值迭代 381<br>
+16.4 免模型学习 382<br>
+16.4.1 蒙特卡罗强化学习 383<br>
+16.4.2 时序差分学习 386<br>
+16.5 值函数近似 388<br>
+16.6 模仿学习 390<br>
+16.6.1 直接模仿学习 391<br>
+16.6.2 逆强化学习 391</p>
+<h1>概念</h1>
+<p>强化学习的中心思想，就是让智能体agent在环境environment里探索explore和学习。每个行动action会对应各自的奖励reward，智能体通过分析数据来学习，怎样的情况下应该做怎样的事情。没有teacher（label）来说是好还是坏</p>
 <p><img src="/2019/03/08/人工智能-强化学习/image-20190815200735566.png" alt="image-20190815200735566"></p>
 <p>agent的目标是让预期累计reward最大化，强化学习就是建立在奖励假说的基础之上</p>
-<p>每一个时间步（time step）的累积奖励可以表示为</p>
-<script type="math/tex; mode=display">
-G_t = R_{t+1} + R_{t+2} + ...\\
-= \sum_{k=0}^T R_{t+k+1}</script><p>不过，我们并不能把奖励直接相加。因为游戏里，越接近游戏开始处的奖励，就越容易获得；而随着游戏的进行，后面的奖励就没有那么容易拿到了，因此需要一个折扣</p>
-<script type="math/tex; mode=display">
-用\gamma 表示折扣率，在0-1之间\\
-\gamma 越大，折扣越小，表示agent越在意长期的奖励\\
-\gamma 越小，折扣越大，表示agent越在意短期的奖励\\</script><p>这样累积奖励为</p>
-<script type="math/tex; mode=display">
-G_t = \sum_{k=0}^\infty \gamma^k R_{t+k+1} \quad \gamma \in [0,1)\\
-= R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}...</script><p>策略solution/policy：</p>
-<p>将状态state映射为动作action</p>
-<script type="math/tex; mode=display">
-a = \pi(s)</script><h2 id="片刻性任务-episodic-tasks"><a href="#片刻性任务-episodic-tasks" class="headerlink" title="片刻性任务 episodic tasks"></a>片刻性任务 episodic tasks</h2><p>这类任务，有个<strong>起点</strong>，有个<strong>终点</strong>。两者之间有一堆状态，一堆行动，一堆奖励，和一堆新的状态，它们共同构成了一“集”</p>
+<p>每一个时间步（time step）的累积奖励可以表示为<br>
+$$<br>
+G_t = R_{t+1} + R_{t+2} + …\<br>
+= \sum_{k=0}^T R_{t+k+1}<br>
+$$<br>
+不过，我们并不能把奖励直接相加。因为游戏里，越接近游戏开始处的奖励，就越容易获得；而随着游戏的进行，后面的奖励就没有那么容易拿到了，因此需要一个折扣<br>
+$$<br>
+用\gamma 表示折扣率，在0-1之间\<br>
+\gamma 越大，折扣越小，表示agent越在意长期的奖励\<br>
+\gamma 越小，折扣越大，表示agent越在意短期的奖励\<br>
+$$<br>
+这样累积奖励为<br>
+$$<br>
+G_t = \sum_{k=0}^\infty \gamma^k R_{t+k+1} \quad \gamma \in [0,1)\<br>
+= R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}…<br>
+$$<br>
+策略solution/policy：</p>
+<p>将状态state映射为动作action<br>
+$$<br>
+a = \pi(s)<br>
+$$</p>
+<h2 id="片刻性任务-episodic-tasks"><a class="header-anchor" href="#片刻性任务-episodic-tasks">¶</a>片刻性任务 episodic tasks</h2>
+<p>这类任务，有个<strong>起点</strong>，有个<strong>终点</strong>。两者之间有一堆状态，一堆行动，一堆奖励，和一堆新的状态，它们共同构成了一“集”</p>
 <p>当一集结束，也就是到达终止状态的时候，智能体会看一下奖励累积了多少，以此<strong>评估自己的表现</strong></p>
 <p>然后，它就带着之前的经验开始一局新游戏。这一次，智能体做决定的依据会充分一些</p>
 <p><strong>集数越多</strong>，<strong>智能体的表现会越好</strong></p>
-<h2 id="连续性任务-Continuing-Tasks"><a href="#连续性任务-Continuing-Tasks" class="headerlink" title="连续性任务 Continuing Tasks"></a>连续性任务 Continuing Tasks</h2><p><strong>永远不会有游戏结束的时候</strong>。智能体要学习如何选择最佳的行动，和环境进行实时交互。就像自动驾驶汽车，并没有过关拔旗子的事</p>
+<h2 id="连续性任务-continuing-tasks"><a class="header-anchor" href="#连续性任务-continuing-tasks">¶</a>连续性任务 Continuing Tasks</h2>
+<p><strong>永远不会有游戏结束的时候</strong>。智能体要学习如何选择最佳的行动，和环境进行实时交互。就像自动驾驶汽车，并没有过关拔旗子的事</p>
 <p>这样的任务是通过时间<strong>差分学习</strong>(Temporal Difference Learning) 来训练的。每一个时间步，都会有总结学习，等不到一集结束再分析结果</p>
-<h2 id="探索Exploration和开发Exploitation之间的权衡"><a href="#探索Exploration和开发Exploitation之间的权衡" class="headerlink" title="探索Exploration和开发Exploitation之间的权衡"></a>探索Exploration和开发Exploitation之间的权衡</h2><p><strong>探索</strong> (Exploration) 是找到关于环境的更多信息</p>
+<h2 id="探索exploration和开发exploitation之间的权衡"><a class="header-anchor" href="#探索exploration和开发exploitation之间的权衡">¶</a>探索Exploration和开发Exploitation之间的权衡</h2>
+<p><strong>探索</strong> (Exploration) 是找到关于环境的更多信息</p>
 <p><strong>开发</strong> (Exploitation) 是利用已知信息来得到最多的奖励</p>
 <p>要记住，目标是将预期累积奖励最大化。正因如此，它有时候<strong>会陷入一种困境</strong></p>
-<h1 id="三种方法"><a href="#三种方法" class="headerlink" title="三种方法"></a>三种方法</h1><h2 id="基于价值（value-based）"><a href="#基于价值（value-based）" class="headerlink" title="基于价值（value-based）"></a>基于价值（value-based）</h2><p>这种方法，目标是<strong>优化价值函数V(s)</strong></p>
-<p>价值函数会告诉我们，智能体在<strong>每个状态里</strong>得出的未来奖励最大预期 (maximum expected future reward) </p>
-<p><strong>一个状态下的函数值</strong>，是智能体<strong>可以预期的未来奖励积累总值</strong>，从当前状态开始算</p>
-<script type="math/tex; mode=display">
-V_\pi (s) = \mathbb E_\pi[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+...|S_t = s]</script><p>智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是<strong>Q值</strong>) 最大的那个行动</p>
+<h1>三种方法</h1>
+<h2 id="基于价值-value-based"><a class="header-anchor" href="#基于价值-value-based">¶</a>基于价值（value-based）</h2>
+<p>这种方法，目标是<strong>优化价值函数V(s)</strong></p>
+<p>价值函数会告诉我们，智能体在<strong>每个状态里</strong>得出的未来奖励最大预期 (maximum expected future reward)</p>
+<p><strong>一个状态下的函数值</strong>，是智能体<strong>可以预期的未来奖励积累总值</strong>，从当前状态开始算<br>
+$$<br>
+V_\pi (s) = \mathbb E_\pi[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+…|S_t = s]<br>
+$$<br>
+智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是<strong>Q值</strong>) 最大的那个行动</p>
 <p><img src="/2019/03/08/人工智能-强化学习/image-20190815203726587.png" alt="image-20190815203726587"></p>
 <p>在迷宫问题中，每一步我们都选取最大函数值：-7，-6，-5，以此类推，达到目标</p>
-<h2 id="基于策略（policy-based）"><a href="#基于策略（policy-based）" class="headerlink" title="基于策略（policy-based）"></a>基于策略（policy-based）</h2><p>这种方式，会<strong>直接优化策略函数π(s)</strong>，抛弃价值函数</p>
-<p>策略就是评判智能体在特定时间点的表现</p>
-<script type="math/tex; mode=display">
-a = \pi(s)</script><p>把每一个状态和它所<strong>对应</strong>的最佳行动建立联系</p>
+<h2 id="基于策略-policy-based"><a class="header-anchor" href="#基于策略-policy-based">¶</a>基于策略（policy-based）</h2>
+<p>这种方式，会<strong>直接优化策略函数π(s)</strong>，抛弃价值函数</p>
+<p>策略就是评判智能体在特定时间点的表现<br>
+$$<br>
+a = \pi(s)<br>
+$$<br>
+把每一个状态和它所<strong>对应</strong>的最佳行动建立联系</p>
 <p>策略分为两种</p>
 <p><strong>确定性</strong>策略：某一个特定状态下的策略，永远都会给出同样的行动</p>
-<p><strong>随机性</strong>策略：策略给出的是多种行动的可能性分布</p>
-<script type="math/tex; mode=display">
-Stochastic \ policy: \pi(a|s) = \mathbb P(A_t = a|S_t=s)</script><p><img src="/2019/03/08/人工智能-强化学习/image-20190815204449361.png" alt="image-20190815204449361"></p>
+<p><strong>随机性</strong>策略：策略给出的是多种行动的可能性分布<br>
+$$<br>
+Stochastic \ policy: \pi(a|s) = \mathbb P(A_t = a|S_t=s)<br>
+$$<br>
+<img src="/2019/03/08/人工智能-强化学习/image-20190815204449361.png" alt="image-20190815204449361"></p>
 <p>从图中我们可以看到，策略<strong>直接指出</strong>了每一步的最佳行动</p>
-<h2 id="基于模型（model-based）"><a href="#基于模型（model-based）" class="headerlink" title="基于模型（model-based）"></a>基于模型（model-based）</h2><p>这种方法是对环境建模。这表示，我们要创建一个模型，来表示环境的行为</p>
+<h2 id="基于模型-model-based"><a class="header-anchor" href="#基于模型-model-based">¶</a>基于模型（model-based）</h2>
+<p>这种方法是对环境建模。这表示，我们要创建一个模型，来表示环境的行为</p>
 <p>问题是，<strong>每个环境</strong>都会需要一个不同的模型 (马里奥每走一步，都会有一个新环境) 。这也是这个方法在强化学习中并不太常用的原因</p>
-<h1 id="Q学习-Q-learning"><a href="#Q学习-Q-learning" class="headerlink" title="Q学习 Q-learning"></a>Q学习 Q-learning</h1><p>利用一个传统算法创建Q-table，来帮助智能体找到下一步要采取的行动</p>
-<h1 id="深度强化学习-DRL"><a href="#深度强化学习-DRL" class="headerlink" title="深度强化学习 DRL"></a>深度强化学习 DRL</h1><p><strong>所谓深度强化学习</strong>，<strong>就是在强化学习里</strong>，<strong>加入深度神经网络</strong></p>
+<h1>Q学习 Q-learning</h1>
+<p>利用一个传统算法创建Q-table，来帮助智能体找到下一步要采取的行动</p>
+<h1>深度强化学习 DRL</h1>
+<p><strong>所谓深度强化学习</strong>，<strong>就是在强化学习里</strong>，<strong>加入深度神经网络</strong></p>
 <p>如图，拿Q学习和深度Q网络 (DQN) 来举例</p>
 <p><img src="/2019/03/08/人工智能-强化学习/image-20190815204711228.png" alt="image-20190815204711228"></p>
 <p>利用深度神经网络来近似Q值</p>
@@ -537,7 +577,7 @@ Stochastic \ policy: \pi(a|s) = \mathbb P(A_t = a|S_t=s)</script><p><img src="/2
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#片刻性任务-episodic-tasks"><span class="nav-number">1.1.</span> <span class="nav-text">片刻性任务 episodic tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续性任务-Continuing-Tasks"><span class="nav-number">1.2.</span> <span class="nav-text">连续性任务 Continuing Tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索Exploration和开发Exploitation之间的权衡"><span class="nav-number">1.3.</span> <span class="nav-text">探索Exploration和开发Exploitation之间的权衡</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种方法"><span class="nav-number">2.</span> <span class="nav-text">三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于价值（value-based）"><span class="nav-number">2.1.</span> <span class="nav-text">基于价值（value-based）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于策略（policy-based）"><span class="nav-number">2.2.</span> <span class="nav-text">基于策略（policy-based）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于模型（model-based）"><span class="nav-number">2.3.</span> <span class="nav-text">基于模型（model-based）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Q学习-Q-learning"><span class="nav-number">3.</span> <span class="nav-text">Q学习 Q-learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度强化学习-DRL"><span class="nav-number">4.</span> <span class="nav-text">深度强化学习 DRL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#片刻性任务-episodic-tasks"><span class="nav-number">1.1.</span> <span class="nav-text">¶片刻性任务 episodic tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续性任务-continuing-tasks"><span class="nav-number">1.2.</span> <span class="nav-text">¶连续性任务 Continuing Tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#探索exploration和开发exploitation之间的权衡"><span class="nav-number">1.3.</span> <span class="nav-text">¶探索Exploration和开发Exploitation之间的权衡</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于价值-value-based"><span class="nav-number">2.1.</span> <span class="nav-text">¶基于价值（value-based）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于策略-policy-based"><span class="nav-number">2.2.</span> <span class="nav-text">¶基于策略（policy-based）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于模型-model-based"><span class="nav-number">2.3.</span> <span class="nav-text">¶基于模型（model-based）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Q学习 Q-learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">深度强化学习 DRL</span></a></li></ol></div>
             
 
           </div>

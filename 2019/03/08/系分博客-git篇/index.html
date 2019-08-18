@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇初始化配置git一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开setti">
+<meta name="description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇 ¶初始化配置git 一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开se">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系分博客-git篇">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/系分博客-git篇/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇初始化配置git一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开setti">
+<meta property="og:description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇 ¶初始化配置git 一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开se">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/系分博客-git篇/image-20190611004952090.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/系分博客-git篇/image-20190611005143584.png">
@@ -120,7 +120,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系分博客-git篇">
-<meta name="twitter:description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇初始化配置git一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开setti">
+<meta name="twitter:description" content="[TOC] 环境：macOS 版本：git2.x（作者使用的是2.21.0） 这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的 配置篇 ¶初始化配置git 一路enter 12cd ~/.sshssh-keygen -t rsa -C &quot;youremail@example.com&quot;  然后复制id_ras.pub中的内容  然后在github中打开se">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/系分博客-git篇/image-20190611004952090.png">
 
 
@@ -335,7 +335,9 @@
 <p>环境：macOS</p>
 <p>版本：git2.x（作者使用的是2.21.0）</p>
 <p>这里主要针对github上面的，当然对于其他使用git的平台，比如gitlab，也是同样适用的</p>
-<h1 id="配置篇"><a href="#配置篇" class="headerlink" title="配置篇"></a>配置篇</h1><h2 id="初始化配置git"><a href="#初始化配置git" class="headerlink" title="初始化配置git"></a>初始化配置git</h2><p>一路enter</p>
+<h1>配置篇</h1>
+<h2 id="初始化配置git"><a class="header-anchor" href="#初始化配置git">¶</a>初始化配置git</h2>
+<p>一路enter</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611004952090.png" alt="image-20190611004952090"></p>
 <p>然后复制id_ras.pub中的内容</p>
@@ -352,13 +354,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your_name"</span>    　　　　　　　　　 //给自己起个用户名</span><br><span class="line">git config --global user.email <span class="string">"your_email@youremail.com"</span>    //填写自己的邮箱</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611011340904.png" alt="image-20190611011340904"></p>
 <p>就可以正常使用了！</p>
-<p>注意，如果在使用时出现了<code>Username for &#39;https://github.com&#39;:</code>字段，就先ctrl+c，然后在当前目录下输入</p>
+<p>注意，如果在使用时出现了<code>Username for 'https://github.com':</code>字段，就先ctrl+c，然后在当前目录下输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set</span>-url origin git+ssh://git@github.com/username/reponame.git</span><br></pre></td></tr></table></figure>
 <p>比如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set</span>-url origin git+ssh://git@github.com/132982jianan/webstormSettings.git</span><br></pre></td></tr></table></figure>
 <p>就继续可以正常使用了</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611012552780.png" alt="image-20190611012552780"></p>
-<h2 id="配置多个git"><a href="#配置多个git" class="headerlink" title="配置多个git"></a>配置多个git</h2><p>由于已经配置了一个git账号</p>
+<h2 id="配置多个git"><a class="header-anchor" href="#配置多个git">¶</a>配置多个git</h2>
+<p>由于已经配置了一个git账号</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611012918261.png" alt="image-20190611012918261"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C <span class="string">"yourmail@xxx.com"</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611013214202.png" alt="image-20190611013214202"></p>
@@ -386,7 +389,10 @@
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611021106965.png" alt="image-20190611021106965"></p>
 <p>结果发现确实是实现了分别提交</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611021130334.png" alt="image-20190611021130334"></p>
-<h1 id="初级使用篇"><a href="#初级使用篇" class="headerlink" title="初级使用篇"></a>初级使用篇</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><p>初始化git项目</p>
+<h1>初级使用篇</h1>
+<h2 id="初始化"><a class="header-anchor" href="#初始化">¶</a>初始化</h2>
+<h3 id="init"><a class="header-anchor" href="#init">¶</a>init</h3>
+<p>初始化git项目</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 <p>此时会在目录中创建一个 <code>.git</code> 隐藏文件夹</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611131740172.png" alt="image-20190611131740172"></p>
@@ -405,17 +411,20 @@
 <p>然后仓库里面有了新文件</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611132320107.png" alt="image-20190611132320107"></p>
 <p>之后就不用输入<code>git push --set-upstream origin master</code>，直接输入<code>git push</code>就可以了</p>
-<h3 id="clone-推荐"><a href="#clone-推荐" class="headerlink" title="clone(推荐)"></a>clone(推荐)</h3><p>或者从github上上面clone下来</p>
+<h3 id="clone-推荐"><a class="header-anchor" href="#clone-推荐">¶</a>clone(推荐)</h3>
+<p>或者从github上上面clone下来</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:Chenxr1997/learn_git.git</span><br></pre></td></tr></table></figure>
 <p>这里更新的话可以直接git push</p>
-<h2 id="拉取-更新"><a href="#拉取-更新" class="headerlink" title="拉取/更新"></a>拉取/更新</h2><p>当远程仓库（github）文件发生修改时，从github上面更新文件</p>
+<h2 id="拉取-更新"><a class="header-anchor" href="#拉取-更新">¶</a>拉取/更新</h2>
+<p>当远程仓库（github）文件发生修改时，从github上面更新文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611172304614.png" alt="image-20190611172304614"></p>
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>使用<code>git status</code>可以查看本地git缓存区信息，它存储了<code>add</code>到缓存区中的修改</p>
+<h2 id="提交"><a class="header-anchor" href="#提交">¶</a>提交</h2>
+<p>使用<code>git status</code>可以查看本地git缓存区信息，它存储了<code>add</code>到缓存区中的修改</p>
 <p><img src="/2019/03/08/系分博客-git篇/image-20190611172718210.png" alt="image-20190611172718210"></p>
 <p>当我们对文件作出修改时（添加，删除，修改），我们可以通过<code>git add</code>来添加文件，常用有这几种<code>git add</code></p>
 <p><code>git add .</code>和 <code>git add -A</code>：有些博客会说<code>git add .</code>把文件内容修改(modified)以及新文件(new)加入到缓冲区，但不包括被删除的文件。但是在git 2.x里面，<code>git add .</code>和<code>git add -A</code>一样，把所有修改都加进去</p>
-<p><code>git add -u</code> ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add —update的缩写）</p>
+<p><code>git add -u</code> ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）</p>
 <p>可以用于在些测试性文件的时候使用，不过我更推荐使用ignore</p>
 <p><code>git add filename</code>添加具体的文件到缓存区</p>
 <p><code>git add --ignore-removal .</code>就相当于git 1.x中的<code>git add .</code>，不过我实在想不出来它的太多实际意义</p>
@@ -423,7 +432,9 @@
 <p>使用<code>git reset (HEAD)</code>撤销缓存区的所有修改, <code>git reset (HEAD) filename</code>撤销缓存区某个文件的修改</p>
 <p><code>git commit</code>提交修改到本地仓库</p>
 <p><code>git push</code>将本地仓库同步到远程仓库</p>
-<h2 id="仓库管理"><a href="#仓库管理" class="headerlink" title="仓库管理"></a>仓库管理</h2><h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><p><img src="/2019/03/08/系分博客-git篇/image-20190611181708430.png" alt="image-20190611181708430"></p>
+<h2 id="仓库管理"><a class="header-anchor" href="#仓库管理">¶</a>仓库管理</h2>
+<h3 id="gitignore"><a class="header-anchor" href="#gitignore">¶</a>.gitignore</h3>
+<p><img src="/2019/03/08/系分博客-git篇/image-20190611181708430.png" alt="image-20190611181708430"></p>
 <p>这样这三个文件就不会添加进仓库（如果已经在仓库，还是会保留，要删除看下面）</p>
 <p>详细的可以看这里<a href="https://www.cnblogs.com/kevingrace/p/5690241.html" target="_blank" rel="noopener">https://www.cnblogs.com/kevingrace/p/5690241.html</a></p>
 <p>在git中，文件有四种状态</p>
@@ -433,7 +444,8 @@
 <li>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过<code>git add</code>可进入暂存<code>staged</code>状态, 使用<code>git checkout</code>则丢弃修改过, 返回到<code>unmodify</code>状态, 这个<code>git checkout</code>即从库中取出文件, 覆盖当前修改</li>
 <li>Staged: 暂存状态. 执行<code>git commit</code>则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为<code>Unmodify</code>状态. 执行<code>git reset HEAD filename</code>取消暂存, 文件状态为<code>Modified</code></li>
 </ul>
-<h3 id="仓库文件"><a href="#仓库文件" class="headerlink" title="仓库文件"></a>仓库文件</h3><p>如果你想把一个文件从版本控制中移除，并且保留本地的文件，首先需要把这个文件加入到<code>.gitignore</code>文件中。然后执行以下命令就可以了。这个命令将file_path所代表的文件从版本控制中删除，并保留本地文件，此外还要进行commit操作才能将服务器端的文件删掉</p>
+<h3 id="仓库文件"><a class="header-anchor" href="#仓库文件">¶</a>仓库文件</h3>
+<p>如果你想把一个文件从版本控制中移除，并且保留本地的文件，首先需要把这个文件加入到<code>.gitignore</code>文件中。然后执行以下命令就可以了。这个命令将file_path所代表的文件从版本控制中删除，并保留本地文件，此外还要进行commit操作才能将服务器端的文件删掉</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm file_path --cached</span><br></pre></td></tr></table></figure>
 <p>果想把一个文件夹从版本控制中删除并保留本地的文件，只需在上述命令的基础上加上-r参数，即</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r folder_path --cached</span><br></pre></td></tr></table></figure>
@@ -441,13 +453,16 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -r . --cached</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
 <p>如果要查看当前的仓库中（当前仓库的当前branch）有哪些文件，使用以下命令即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ls-files</span><br></pre></td></tr></table></figure>
-<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>查询历史对应不同版本的ID ，用于回退使用</p>
+<h2 id="版本回退"><a class="header-anchor" href="#版本回退">¶</a>版本回退</h2>
+<p>查询历史对应不同版本的ID ，用于回退使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
 <p>恢复到历史版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></pre></td></tr></table></figure>
 <p>然后push后就可以把GitHub上面都代码回退了</p>
-<h1 id="协作篇"><a href="#协作篇" class="headerlink" title="协作篇"></a>协作篇</h1><h2 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h2><p>在使用git pull代码时，经常会碰到有冲突的情况，提示如下信息：</p>
-<p><code>error: Your local changes to &#39;c/environ.c&#39; would be overwritten by merge. Aborting.Please, commit your changes or stash them before you can merge.</code></p>
+<h1>协作篇</h1>
+<h2 id="冲突处理"><a class="header-anchor" href="#冲突处理">¶</a>冲突处理</h2>
+<p>在使用git pull代码时，经常会碰到有冲突的情况，提示如下信息：</p>
+<p><code>error: Your local changes to 'c/environ.c' would be overwritten by merge. Aborting.Please, commit your changes or stash them before you can merge.</code></p>
 <p>这个意思是说更新下来的内容和本地修改的内容有冲突，先提交你的改变或者先将本地修改暂时存储起来。</p>
 <p>处理的方式非常简单，主要是使用git stash命令进行处理，分成以下几个步骤进行处理。</p>
 <p><strong>1、先将本地修改存储起来</strong></p>
@@ -465,7 +480,8 @@
 <p><strong>4、解决文件中冲突的的部分</strong></p>
 <p>打开冲突的文件，其中Updated upstream 和=====之间的内容就是pull下来的内容，====和stashed changes之间的内容就是本地修改的内容。碰到这种情况，git也不知道哪行内容是需要的，所以要自行确定需要的内容。</p>
 <p>解决完成之后，就可以正常的提交了。</p>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>查看分支和当前分支</p>
+<h2 id="分支管理"><a class="header-anchor" href="#分支管理">¶</a>分支管理</h2>
+<p>查看分支和当前分支</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
 <p>使用<code>git status</code>的时候可以看到当前分支，但是不能看到其他分支</p>
 <p>创建分支</p>
@@ -648,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置篇"><span class="nav-number">1.</span> <span class="nav-text">配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化配置git"><span class="nav-number">1.1.</span> <span class="nav-text">初始化配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置多个git"><span class="nav-number">1.2.</span> <span class="nav-text">配置多个git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初级使用篇"><span class="nav-number">2.</span> <span class="nav-text">初级使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">2.1.1.</span> <span class="nav-text">init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clone-推荐"><span class="nav-number">2.1.2.</span> <span class="nav-text">clone(推荐)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取-更新"><span class="nav-number">2.2.</span> <span class="nav-text">拉取/更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">2.3.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库管理"><span class="nav-number">2.4.</span> <span class="nav-text">仓库管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitignore"><span class="nav-number">2.4.1.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库文件"><span class="nav-number">2.4.2.</span> <span class="nav-text">仓库文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">2.5.</span> <span class="nav-text">版本回退</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协作篇"><span class="nav-number">3.</span> <span class="nav-text">协作篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突处理"><span class="nav-number">3.1.</span> <span class="nav-text">冲突处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">3.2.</span> <span class="nav-text">分支管理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化配置git"><span class="nav-number">1.1.</span> <span class="nav-text">¶初始化配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置多个git"><span class="nav-number">1.2.</span> <span class="nav-text">¶配置多个git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">初级使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.</span> <span class="nav-text">¶初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clone-推荐"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶clone(推荐)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取-更新"><span class="nav-number">2.2.</span> <span class="nav-text">¶拉取/更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">2.3.</span> <span class="nav-text">¶提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库管理"><span class="nav-number">2.4.</span> <span class="nav-text">¶仓库管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitignore"><span class="nav-number">2.4.1.</span> <span class="nav-text">¶.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库文件"><span class="nav-number">2.4.2.</span> <span class="nav-text">¶仓库文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">2.5.</span> <span class="nav-text">¶版本回退</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">协作篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突处理"><span class="nav-number">3.1.</span> <span class="nav-text">¶冲突处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">3.2.</span> <span class="nav-text">¶分支管理</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="[TOC] 数据清洗 ​    缺失值处理 ​    不处理 ​    删除记录 ​    插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​    不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​    简单函数变化 ​    数据规范化/标准">
+<meta name="description" content="[TOC] 数据清洗 ​	缺失值处理 ​	不处理 ​	删除记录 ​	插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​	不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​	简单函数变化 ​	数据规范化/标准化（最大-最小规范化，零-均值规范化，小数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据挖掘-数据(预)处理">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据挖掘-数据(预)处理/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 数据清洗 ​    缺失值处理 ​    不处理 ​    删除记录 ​    插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​    不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​    简单函数变化 ​    数据规范化/标准">
+<meta property="og:description" content="[TOC] 数据清洗 ​	缺失值处理 ​	不处理 ​	删除记录 ​	插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​	不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​	简单函数变化 ​	数据规范化/标准化（最大-最小规范化，零-均值规范化，小数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据挖掘-数据(预)处理/image-20190811124005265.png">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据挖掘-数据(预)处理">
-<meta name="twitter:description" content="[TOC] 数据清洗 ​    缺失值处理 ​    不处理 ​    删除记录 ​    插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​    不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​    简单函数变化 ​    数据规范化/标准">
+<meta name="twitter:description" content="[TOC] 数据清洗 ​	缺失值处理 ​	不处理 ​	删除记录 ​	插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条） 异常值处理 ​	不处理，删除记录，视为缺失值，平均值修正 数据集成 实体识别（同名同义，异名同义，单位不统一） 冗余属性识别 数据变换 ​	简单函数变化 ​	数据规范化/标准化（最大-最小规范化，零-均值规范化，小数">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据挖掘-数据(预)处理/image-20190811124005265.png">
 
 
@@ -303,34 +303,38 @@
       
         <p>[TOC]</p>
 <p>数据清洗</p>
-<p>​    缺失值处理</p>
-<p>​    不处理</p>
-<p>​    删除记录</p>
-<p>​    插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条）</p>
+<p>​	缺失值处理</p>
+<p>​	不处理</p>
+<p>​	删除记录</p>
+<p>​	插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条）</p>
 <p>异常值处理</p>
-<p>​    不处理，删除记录，视为缺失值，平均值修正</p>
+<p>​	不处理，删除记录，视为缺失值，平均值修正</p>
 <p>数据集成</p>
 <p>实体识别（同名同义，异名同义，单位不统一）</p>
 <p>冗余属性识别</p>
 <p>数据变换</p>
-<p>​    简单函数变化</p>
-<p>​    数据规范化/标准化（最大-最小规范化，零-均值规范化，小数定标规范化，归一化）</p>
-<p>​    连续属性离散化（等宽法，等频法，聚类法）</p>
+<p>​	简单函数变化</p>
+<p>​	数据规范化/标准化（最大-最小规范化，零-均值规范化，小数定标规范化，归一化）</p>
+<p>​	连续属性离散化（等宽法，等频法，聚类法）</p>
 <p>属性构造</p>
-<p>​    小波变换</p>
+<p>​	小波变换</p>
 <p>数据规约</p>
-<p>​    属性规约（合并属性，逐步向前选择，逐步向后删除，决策树归纳，主成分分析）</p>
-<p>​    数值规约（直方图，聚类，抽样，参数回归）</p>
+<p>​	属性规约（合并属性，逐步向前选择，逐步向后删除，决策树归纳，主成分分析）</p>
+<p>​	数值规约（直方图，聚类，抽样，参数回归）</p>
 <p>数据融合</p>
-<h1 id="聚集-Aggregation"><a href="#聚集-Aggregation" class="headerlink" title="聚集 Aggregation"></a>聚集 Aggregation</h1><p>将两个或多个对象合并成单个对象，用于精简数据，但是难免会丢失细节</p>
+<h1>聚集 Aggregation</h1>
+<p>将两个或多个对象合并成单个对象，用于精简数据，但是难免会丢失细节</p>
 <p>但是可以让数据变得“稳定”，即更小的方差</p>
 <p>比如将月降水量聚集为年降水量</p>
 <p><img src="/2019/03/08/数据挖掘-数据(预)处理/image-20190811124005265.png" alt="image-20190811124005265"></p>
-<h1 id="采样-Sampling"><a href="#采样-Sampling" class="headerlink" title="采样 Sampling"></a>采样 Sampling</h1><p>初步调查中获取全部的数据太难，因此需要采样</p>
+<h1>采样 Sampling</h1>
+<p>初步调查中获取全部的数据太难，因此需要采样</p>
 <p>数据挖掘/分析时使用所有数据太耗费时间和资源，因此也需要采样</p>
 <p>一个样本是<strong>representative</strong>的，如果它能够有近似于整体数据的性质</p>
-<h2 id="采样方法"><a href="#采样方法" class="headerlink" title="采样方法"></a>采样方法</h2><ul>
-<li>简单随机抽样 Simple Random Sampling<ul>
+<h2 id="采样方法"><a class="header-anchor" href="#采样方法">¶</a>采样方法</h2>
+<ul>
+<li>简单随机抽样 Simple Random Sampling
+<ul>
 <li>无放回 Sampling without replacement</li>
 <li>有放回 Sampling with replacement</li>
 </ul>
@@ -338,36 +342,52 @@
 <li>分层抽样 Stratified sampling</li>
 <li>蒙特卡洛方法（见<code>数据科学-蒙塔卡洛方法</code>）</li>
 </ul>
-<h1 id="降维-Dimensionality-Reduction"><a href="#降维-Dimensionality-Reduction" class="headerlink" title="降维 Dimensionality Reduction"></a>降维 Dimensionality Reduction</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
-<li><p>避免维度灾难</p>
+<h1>降维 Dimensionality Reduction</h1>
+<h2 id="目的"><a class="header-anchor" href="#目的">¶</a>目的</h2>
+<ul>
+<li>
+<p>避免维度灾难</p>
 </li>
-<li><p>减少分析所用的时间和资源</p>
+<li>
+<p>减少分析所用的时间和资源</p>
 </li>
-<li><p>更容易可视化</p>
+<li>
+<p>更容易可视化</p>
 </li>
-<li><p>可能会减少冗余的特征</p>
+<li>
+<p>可能会减少冗余的特征</p>
 </li>
 </ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<h2 id="方法"><a class="header-anchor" href="#方法">¶</a>方法</h2>
+<ul>
 <li>主成分分析 Principal Components Analysis (PCA)</li>
 <li>奇异值分解Singular Value Decomposition(SVD)</li>
 </ul>
 <p>详见<code>数据科学-特征工程</code></p>
-<h1 id="特征子集选择-Feature-subset-selection"><a href="#特征子集选择-Feature-subset-selection" class="headerlink" title="特征子集选择 Feature subset selection"></a>特征子集选择 Feature subset selection</h1><p>另一种降维方法</p>
+<h1>特征子集选择 Feature subset selection</h1>
+<p>另一种降维方法</p>
 <p>详见<code>数据科学-特征工程</code></p>
-<h1 id="特征创建-Feature-creation"><a href="#特征创建-Feature-creation" class="headerlink" title="特征创建 Feature creation"></a>特征创建 Feature creation</h1><p>详见<code>`数据科学-特征工程</code></p>
-<h1 id="离散化和二值化-Discretization-and-Binarization"><a href="#离散化和二值化-Discretization-and-Binarization" class="headerlink" title="离散化和二值化 Discretization and Binarization"></a>离散化和二值化 Discretization and Binarization</h1><p>离散化将连续属性变为离散属性，常用于分类任务中</p>
+<h1>特征创建 Feature creation</h1>
+<p>详见``数据科学-特征工程`</p>
+<h1>离散化和二值化 Discretization and Binarization</h1>
+<p>离散化将连续属性变为离散属性，常用于分类任务中</p>
 <p>二值化将连续属性或类别属性变为(一个或一串)二进制变量，通常用于关联分析</p>
 <p>通常先将连续属性变为类别属性，再变为二进制变量，比如身高变为高中矮</p>
-<h1 id="属性转换-Attribute-Transformation"><a href="#属性转换-Attribute-Transformation" class="headerlink" title="属性转换 Attribute Transformation"></a>属性转换 Attribute Transformation</h1><p>属性转换是指通过一个函数，将某个属性的值映射为新的值，比如指数函数，对数函数，绝对值，e的指数函数等</p>
-<h2 id="归一化-Normalization"><a href="#归一化-Normalization" class="headerlink" title="归一化 Normalization"></a>归一化 Normalization</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
-<li><p>归一化后加快了梯度下降求最优解的速度</p>
+<h1>属性转换 Attribute Transformation</h1>
+<p>属性转换是指通过一个函数，将某个属性的值映射为新的值，比如指数函数，对数函数，绝对值，e的指数函数等</p>
+<h2 id="归一化-normalization"><a class="header-anchor" href="#归一化-normalization">¶</a>归一化 Normalization</h2>
+<h3 id="作用"><a class="header-anchor" href="#作用">¶</a>作用</h3>
+<ul>
+<li>
+<p>归一化后加快了梯度下降求最优解的速度</p>
 </li>
-<li><p>归一化有可能提高精度</p>
+<li>
+<p>归一化有可能提高精度</p>
 </li>
 </ul>
-<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
-<li>线性归一化 </li>
+<h3 id="方法-v2"><a class="header-anchor" href="#方法-v2">¶</a>方法</h3>
+<ul>
+<li>线性归一化</li>
 </ul>
 <p>这种归一化方法比较适用在数值比较集中的情况。这种方法有个缺陷，如果max和min不稳定，很容易使得归一化结果不稳定，使得后续使用效果也不稳定。实际使用中可以用经验常量值来替代max和min</p>
 <ul>
@@ -376,8 +396,9 @@
 <p>经过处理的数据符合标准正态分布，即均值为0，标准差为1，其转化函数为：</p>
 <p>其中μ为所有样本数据的均值，σ为所有样本数据的标准差</p>
 <ul>
-<li><p>非线性归一化 </p>
-<p>  经常用在数据分化比较大的场景，有些数值很大，有些很小。通过一些数学函数，将原始值进行映射。该方法包括 log、指数，正切等。需要根据数据分布的情况，决定非线性函数的曲线，比如log(V, 2)还是log(V, 10)等</p>
+<li>
+<p>非线性归一化</p>
+<p>经常用在数据分化比较大的场景，有些数值很大，有些很小。通过一些数学函数，将原始值进行映射。该方法包括 log、指数，正切等。需要根据数据分布的情况，决定非线性函数的曲线，比如log(V, 2)还是log(V, 10)等</p>
 </li>
 </ul>
 
@@ -548,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#聚集-Aggregation"><span class="nav-number">1.</span> <span class="nav-text">聚集 Aggregation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#采样-Sampling"><span class="nav-number">2.</span> <span class="nav-text">采样 Sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#采样方法"><span class="nav-number">2.1.</span> <span class="nav-text">采样方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#降维-Dimensionality-Reduction"><span class="nav-number">3.</span> <span class="nav-text">降维 Dimensionality Reduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">3.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征子集选择-Feature-subset-selection"><span class="nav-number">4.</span> <span class="nav-text">特征子集选择 Feature subset selection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征创建-Feature-creation"><span class="nav-number">5.</span> <span class="nav-text">特征创建 Feature creation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散化和二值化-Discretization-and-Binarization"><span class="nav-number">6.</span> <span class="nav-text">离散化和二值化 Discretization and Binarization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性转换-Attribute-Transformation"><span class="nav-number">7.</span> <span class="nav-text">属性转换 Attribute Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归一化-Normalization"><span class="nav-number">7.1.</span> <span class="nav-text">归一化 Normalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">7.1.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">7.1.2.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">聚集 Aggregation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">采样 Sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#采样方法"><span class="nav-number">2.1.</span> <span class="nav-text">¶采样方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">降维 Dimensionality Reduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">3.1.</span> <span class="nav-text">¶目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">¶方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">特征子集选择 Feature subset selection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">特征创建 Feature creation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">离散化和二值化 Discretization and Binarization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">属性转换 Attribute Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归一化-normalization"><span class="nav-number">7.1.</span> <span class="nav-text">¶归一化 Normalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">7.1.1.</span> <span class="nav-text">¶作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-v2"><span class="nav-number">7.1.2.</span> <span class="nav-text">¶方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

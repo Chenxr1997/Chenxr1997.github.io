@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 概念集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusterin">
+<meta name="description" content="[TOC] 概念 集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusteri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-集成学习">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-集成学习/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 概念集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusterin">
+<meta property="og:description" content="[TOC] 概念 集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusteri">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-集成学习/image-20190814194548900.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-集成学习/image-20190814195952459.png">
@@ -106,7 +106,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:10:03.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-集成学习">
-<meta name="twitter:description" content="[TOC] 概念集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusterin">
+<meta name="twitter:description" content="[TOC] 概念 集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clusteri">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-集成学习/image-20190814194548900.png">
 
 
@@ -318,59 +318,83 @@
 
       
         <p>[TOC]</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clustering, 协同过滤collaborative filtering, 异常检测anomaly detection中</p>
+<h1>概念</h1>
+<p>集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clustering, 协同过滤collaborative filtering, 异常检测anomaly detection中</p>
 <p>思想是将多个弱分类器组合起来：</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190814194548900.png" alt="image-20190814194548900"></p>
-<h2 id="弱分类器"><a href="#弱分类器" class="headerlink" title="弱分类器"></a>弱分类器</h2><h3 id="如何得到弱分类器"><a href="#如何得到弱分类器" class="headerlink" title="如何得到弱分类器"></a>如何得到弱分类器</h3><ul>
+<h2 id="弱分类器"><a class="header-anchor" href="#弱分类器">¶</a>弱分类器</h2>
+<h3 id="如何得到弱分类器"><a class="header-anchor" href="#如何得到弱分类器">¶</a>如何得到弱分类器</h3>
+<ul>
 <li>使用不同的弱学习算法得到不同基本学习器</li>
 <li>使用相同的弱学习算法，但用不同的参数</li>
 <li>相同输入对象的不同表示凸显事物不同的特征</li>
 <li>使用不同的训练集：装袋bagging也称为自举汇聚法boostrap aggregating与提升boosting</li>
 </ul>
-<h3 id="如何组合弱分类器"><a href="#如何组合弱分类器" class="headerlink" title="如何组合弱分类器"></a>如何组合弱分类器</h3><ul>
-<li>多专家组合：一种并行结构，所有的弱分类器都给出各自的预测结果，通过“ 组合器” 把这些预<br>  测结果转换为最终结果。eg.投票（voting）及其变种、混合专家模型</li>
+<h3 id="如何组合弱分类器"><a class="header-anchor" href="#如何组合弱分类器">¶</a>如何组合弱分类器</h3>
+<ul>
+<li>多专家组合：一种并行结构，所有的弱分类器都给出各自的预测结果，通过“ 组合器” 把这些预<br>
+测结果转换为最终结果。eg.投票（voting）及其变种、混合专家模型</li>
 <li>多级组合：一种串行结构，其中下一个分类器只在前一个分类器预测不够准（不够自信）的实例上进行训练或检测。eg.级联算法（cascading）</li>
 </ul>
-<h2 id="集成work的原因"><a href="#集成work的原因" class="headerlink" title="集成work的原因"></a>集成work的原因</h2><ul>
-<li><p>直觉上</p>
-<p>  就像人类在决策中会将各种各样的观点结合起来</p>
+<h2 id="集成work的原因"><a class="header-anchor" href="#集成work的原因">¶</a>集成work的原因</h2>
+<ul>
+<li>
+<p>直觉上</p>
+<p>就像人类在决策中会将各种各样的观点结合起来</p>
 </li>
-<li><p>减少不相关的错误</p>
-<p>  <img src="/2019/03/08/机器学习-集成学习/image-20190814195952459.png" alt="image-20190814195952459"></p>
+<li>
+<p>减少不相关的错误</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814195952459.png" alt="image-20190814195952459"></p>
 </li>
-<li><p>克服单一假设hypothesis的局限性</p>
-<p>  目标函数可能不能用单个分类器实现，但可以通过模型平均来近似</p>
-<p>  <img src="/2019/03/08/机器学习-集成学习/image-20190814195844353.png" alt="image-20190814195844353"></p>
-</li>
-</ul>
-<h2 id="研究关注点"><a href="#研究关注点" class="headerlink" title="研究关注点"></a>研究关注点</h2><ul>
-<li><p>基础模型<br>  提升多样性diversity</p>
-</li>
-<li><p>组合方案</p>
-<p>  一致性Consensus（无监督）</p>
-<p>  Learn to combine（有监督）</p>
-</li>
-<li><p>任务</p>
-<p>  分类（有监督或半监督）</p>
-<p>  聚类（无监督）</p>
+<li>
+<p>克服单一假设hypothesis的局限性</p>
+<p>目标函数可能不能用单个分类器实现，但可以通过模型平均来近似</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814195844353.png" alt="image-20190814195844353"></p>
 </li>
 </ul>
-<h2 id="集成学习种类"><a href="#集成学习种类" class="headerlink" title="集成学习种类"></a>集成学习种类</h2><p><img src="/2019/03/08/机器学习-集成学习/image-20190814200601088.png" alt="image-20190814200601088"></p>
-<h3 id="分类集成学习-Learn-to-Combine"><a href="#分类集成学习-Learn-to-Combine" class="headerlink" title="分类集成学习-Learn to Combine"></a>分类集成学习-Learn to Combine</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814201300907.png" alt="image-20190814201300907"></p>
+<h2 id="研究关注点"><a class="header-anchor" href="#研究关注点">¶</a>研究关注点</h2>
+<ul>
+<li>
+<p>基础模型<br>
+提升多样性diversity</p>
+</li>
+<li>
+<p>组合方案</p>
+<p>一致性Consensus（无监督）</p>
+<p>Learn to combine（有监督）</p>
+</li>
+<li>
+<p>任务</p>
+<p>分类（有监督或半监督）</p>
+<p>聚类（无监督）</p>
+</li>
+</ul>
+<h2 id="集成学习种类"><a class="header-anchor" href="#集成学习种类">¶</a>集成学习种类</h2>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814200601088.png" alt="image-20190814200601088"></p>
+<h3 id="分类集成学习-learn-to-combine"><a class="header-anchor" href="#分类集成学习-learn-to-combine">¶</a>分类集成学习-Learn to Combine</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201300907.png" alt="image-20190814201300907"></p>
 <p>boosting, stacked generalization, rule ensemble, Bayesian model averaging</p>
-<h3 id="分类集成学习-一致性Consensus"><a href="#分类集成学习-一致性Consensus" class="headerlink" title="分类集成学习-一致性Consensus"></a>分类集成学习-一致性Consensus</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814201318255.png" alt="image-20190814201318255"></p>
+<h3 id="分类集成学习-一致性consensus"><a class="header-anchor" href="#分类集成学习-一致性consensus">¶</a>分类集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201318255.png" alt="image-20190814201318255"></p>
 <p>bagging, random forest, random decision tree, model averaging of probabilities</p>
-<h3 id="聚类集成学习-一致性Consensus"><a href="#聚类集成学习-一致性Consensus" class="headerlink" title="聚类集成学习-一致性Consensus"></a>聚类集成学习-一致性Consensus</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814201419599.png" alt="image-20190814201419599"></p>
+<h3 id="聚类集成学习-一致性consensus"><a class="header-anchor" href="#聚类集成学习-一致性consensus">¶</a>聚类集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201419599.png" alt="image-20190814201419599"></p>
 <p>direct approach, object-based, cluster-based, objectcluster-based approaches, generative models</p>
-<h3 id="半监督集成学习-一Learn-to-Combine"><a href="#半监督集成学习-一Learn-to-Combine" class="headerlink" title="半监督集成学习-一Learn to Combine"></a>半监督集成学习-一Learn to Combine</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814201504280.png" alt="image-20190814201504280"></p>
+<h3 id="半监督集成学习-一learn-to-combine"><a class="header-anchor" href="#半监督集成学习-一learn-to-combine">¶</a>半监督集成学习-一Learn to Combine</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201504280.png" alt="image-20190814201504280"></p>
 <p>multi-view learning</p>
-<h3 id="半监督集成学习-一致性Consensus"><a href="#半监督集成学习-一致性Consensus" class="headerlink" title="半监督集成学习-一致性Consensus"></a>半监督集成学习-一致性Consensus</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814201652183.png" alt="image-20190814201652183"></p>
+<h3 id="半监督集成学习-一致性consensus"><a class="header-anchor" href="#半监督集成学习-一致性consensus">¶</a>半监督集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201652183.png" alt="image-20190814201652183"></p>
 <p>consensus maximization</p>
-<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p><img src="/2019/03/08/机器学习-集成学习/image-20190814200725610.png" alt="image-20190814200725610"></p>
-<h1 id="有监督集成学习"><a href="#有监督集成学习" class="headerlink" title="有监督集成学习"></a>有监督集成学习</h1><script type="math/tex; mode=display">
-给定数据集D = \{x_1,x_2,...,x_n\}以及标签L = \{l_1,l_2,...,l_3\}\\
-集成算法计算出一系列分类器\{f_1,f_2,...,f_k\}\\
-组成成分类器f*减小泛化误差:f^*(x) = w_1f(x_1) + w_2f_2(x)+ ...+w_kf_k(x)</script><p>使用集成的目的是减少variance</p>
+<h3 id="比较"><a class="header-anchor" href="#比较">¶</a>比较</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814200725610.png" alt="image-20190814200725610"></p>
+<h1>有监督集成学习</h1>
+<p>$$<br>
+给定数据集D = {x_1,x_2,…,x_n}以及标签L = {l_1,l_2,…,l_3}\<br>
+集成算法计算出一系列分类器{f_1,f_2,…,f_k}\<br>
+组成成分类器f<em>减小泛化误差:f^</em>(x) = w_1f(x_1) + w_2f_2(x)+ …+w_kf_k(x)<br>
+$$</p>
+<p>使用集成的目的是减少variance</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190816191229638.png" alt="image-20190816191229638"></p>
 <p>产生分类器的方法</p>
 <ul>
@@ -379,7 +403,8 @@
 <li>对特征采样（比如采样出k个特征子集，训练k个分类器）</li>
 <li>在学习过程中加入随机因素</li>
 </ul>
-<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p>将一组弱分类器提升为强分类器，每一步增加了当前分错instance的权重，而对已经对的instance趋向于0，这样后面的树就可以更加关注错分的instance的训练了</p>
+<h2 id="boosting"><a class="header-anchor" href="#boosting">¶</a>Boosting</h2>
+<p>将一组弱分类器提升为强分类器，每一步增加了当前分错instance的权重，而对已经对的instance趋向于0，这样后面的树就可以更加关注错分的instance的训练了</p>
 <p>boosting在训练的时候会给样本加一个权重，然后使loss function尽量去考虑那些分错类的样本（比如给分错类的样本的权重值加大）</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817151647764.png" alt="image-20190817151647764"></p>
 <p>在机器学习中往往是最终要求解某个函数的最优值，但是一般情况下，任意一个函数的最优值求解比较困难，但是对于凸函数来说就可以有效的求解出全局最优值。</p>
@@ -387,7 +412,8 @@
 <p>Adaboost属于Boosting, 采用指数损失函数替代原本分类任务的0/1损失函数;</p>
 <p>GBDT属于Boosting的优秀代表, 对函数残差近似值进行梯度下降, 用CART回归树做学习器, 集成为回归模型;</p>
 <p>xgboost属于Boosting的集大成者, 对函数残差近似值进行梯度下降, 迭代时利用了二阶梯度信息, 集成模型可分类也可回归. 由于它可在特征粒度上并行计算, 结构风险和工程实现都做了很多优化, 泛化, 性能和扩展性都比GBDT要好</p>
-<h3 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h3><p>初始时，所有数据设置统一的权重</p>
+<h3 id="adaboost"><a class="header-anchor" href="#adaboost">¶</a>AdaBoost</h3>
+<p>初始时，所有数据设置统一的权重</p>
 <p>在每一轮迭代中</p>
 <ul>
 <li>使用基于当前权重的数据样本</li>
@@ -396,21 +422,24 @@
 <li>如果错误率大于0.5，则重新开始</li>
 </ul>
 <p>最终的预测是所有分类器的加权平均（权值由训练中的准确率决定）</p>
-<script type="math/tex; mode=display">
-初始时每一条数据权重为\frac{1}{N} \quad N为数据总数\\
-对于分类器，它的错误率为\varepsilon_i = \frac{\sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)}{\sum_{j=1}^{N}w_j} = \sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)\\
-分类器的重要度importance为\alpha_i = \frac{1}{2}\ln (\frac{1-\varepsilon_i}{\varepsilon_i})\\
-每条数据的权重更新方式w_j^{(i+1)} = \frac{w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))}{Z^{(i)}}\\
-=  \begin{cases}
-\frac{w_j^{(i)}\exp(-\alpha_i)}{Z^{(i)}}& {y_j = C_i(x_j)}\\
-\frac{w_j^{(i)}\exp(\alpha_i))}{Z^{(i)}}& {y_j \ne C_i(x_j)}
-\end{cases}\\
-Z^{(i)} 是规范化因子，用于使所有数据权值和为1\\
-Z^{(i)}  = \sum_{j=1}^N w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))\\
-最终预测C^*(x) = {\arg \max}_y \sum_{i=1}^K \alpha_i \delta(C_i(x)=y)\\</script><h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><p>优点：</p>
+<p>$$<br>
+初始时每一条数据权重为\frac{1}{N} \quad N为数据总数\<br>
+对于分类器，它的错误率为\varepsilon_i = \frac{\sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)}{\sum_{j=1}^{N}w_j} = \sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)\<br>
+分类器的重要度importance为\alpha_i = \frac{1}{2}\ln (\frac{1-\varepsilon_i}{\varepsilon_i})\<br>
+每条数据的权重更新方式w_j^{(i+1)} = \frac{w_j<sup>{(i)}\exp(-\alpha_iy_jC_i(x_j))}{Z</sup>{(i)}}\<br>
+=  \begin{cases}<br>
+\frac{w_j<sup>{(i)}\exp(-\alpha_i)}{Z</sup>{(i)}}&amp; {y_j = C_i(x_j)}\<br>
+\frac{w_j<sup>{(i)}\exp(\alpha_i))}{Z</sup>{(i)}}&amp; {y_j \ne C_i(x_j)}<br>
+\end{cases}\<br>
+Z^{(i)} 是规范化因子，用于使所有数据权值和为1\<br>
+Z^{(i)}  = \sum_{j=1}^N w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))\<br>
+最终预测C^*(x) = {\arg \max}<em>y \sum</em>{i=1}^K \alpha_i \delta(C_i(x)=y)\<br>
+$$</p>
+<h4 id="讨论"><a class="header-anchor" href="#讨论">¶</a>讨论</h4>
+<p>优点：</p>
 <ul>
-<li>容易理解、实现简单 </li>
-<li>易编码 </li>
+<li>容易理解、实现简单</li>
+<li>易编码</li>
 <li>分类精度高</li>
 <li>可以使用各种回归模型构建基分类器，非常灵活</li>
 <li>作为二元分类器是，构造简单、结果可理解、参数少</li>
@@ -418,13 +447,17 @@ Z^{(i)}  = \sum_{j=1}^N w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))\\
 </ul>
 <p>缺点：</p>
 <ul>
-<li>只能<strong>串行</strong> </li>
+<li>只能<strong>串行</strong></li>
 <li>对<strong>异常值敏感</strong>（ boosting对异常值都敏感）</li>
 </ul>
-<h3 id="GBDT-Gradient-Boosting-Decision-Tree"><a href="#GBDT-Gradient-Boosting-Decision-Tree" class="headerlink" title="GBDT Gradient Boosting Decision Tree"></a>GBDT Gradient Boosting Decision Tree</h3><p>这里的GBDT泛指所有梯度提升树算法，包括XGBoost，它也是GBDT的一种变种</p>
-<script type="math/tex; mode=display">
-从Gradient \ Descend 到 Gradient \ Boosting\\
-参数空间|函数空间</script><h4 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h4><p>这里的GBDT特指“ Greedy Function Approximation： A Gradient Boosting Machine” 里提出的算法，它只用了一阶导数信息</p>
+<h3 id="gbdt-gradient-boosting-decision-tree"><a class="header-anchor" href="#gbdt-gradient-boosting-decision-tree">¶</a>GBDT Gradient Boosting Decision Tree</h3>
+<p>这里的GBDT泛指所有梯度提升树算法，包括XGBoost，它也是GBDT的一种变种<br>
+$$<br>
+从Gradient \ Descend 到 Gradient \ Boosting\<br>
+参数空间|函数空间<br>
+$$</p>
+<h4 id="gbdt"><a class="header-anchor" href="#gbdt">¶</a>GBDT</h4>
+<p>这里的GBDT特指“ Greedy Function Approximation： A Gradient Boosting Machine” 里提出的算法，它只用了一阶导数信息</p>
 <p>GBDT的精髓在于训练的时候都是以上一颗树的残差为目标，这个残差就是上一个树的预测值与真实值的差值</p>
 <p>和随机森林的区别</p>
 <p>区别：</p>
@@ -434,26 +467,42 @@ Z^{(i)}  = \sum_{j=1}^N w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))\\
 <p>（4）学习器的种类，<strong>GBDT只能用CART回归树</strong> (因为要计算连续梯度)</p>
 <p>（5）对异常值的敏感性</p>
 <p>（6）通过减少方差/偏差提高性能</p>
-<h4 id="GBRT"><a href="#GBRT" class="headerlink" title="GBRT"></a>GBRT</h4><h4 id="XGBOOST"><a href="#XGBOOST" class="headerlink" title="XGBOOST"></a>XGBOOST</h4><h4 id="Catboost"><a href="#Catboost" class="headerlink" title="Catboost"></a>Catboost</h4><h4 id="Gradient-boosting-machine-GBM"><a href="#Gradient-boosting-machine-GBM" class="headerlink" title="Gradient boosting machine(GBM)"></a>Gradient boosting machine(GBM)</h4><h4 id="lightGBM"><a href="#lightGBM" class="headerlink" title="lightGBM"></a>lightGBM</h4><h4 id="正则化贪心森林-Regularized-Greedy-Forest-RGF"><a href="#正则化贪心森林-Regularized-Greedy-Forest-RGF" class="headerlink" title="正则化贪心森林 Regularized Greedy Forest(RGF)"></a>正则化贪心森林 Regularized Greedy Forest(RGF)</h4><h2 id="Bootstrap-aggregating-Bagging"><a href="#Bootstrap-aggregating-Bagging" class="headerlink" title="Bootstrap aggregating (Bagging)"></a>Bootstrap aggregating (Bagging)</h2><ol>
-<li><p>从N样本中有放回的采样N个样本（大约包含总数据的63.2%）</p>
+<h4 id="gbrt"><a class="header-anchor" href="#gbrt">¶</a>GBRT</h4>
+<h4 id="xgboost"><a class="header-anchor" href="#xgboost">¶</a>XGBOOST</h4>
+<h4 id="catboost"><a class="header-anchor" href="#catboost">¶</a>Catboost</h4>
+<h4 id="gradient-boosting-machine-gbm"><a class="header-anchor" href="#gradient-boosting-machine-gbm">¶</a>Gradient boosting machine(GBM)</h4>
+<h4 id="lightgbm"><a class="header-anchor" href="#lightgbm">¶</a>lightGBM</h4>
+<h4 id="正则化贪心森林-regularized-greedy-forest-rgf"><a class="header-anchor" href="#正则化贪心森林-regularized-greedy-forest-rgf">¶</a>正则化贪心森林 Regularized Greedy Forest(RGF)</h4>
+<h2 id="bootstrap-aggregating-bagging"><a class="header-anchor" href="#bootstrap-aggregating-bagging">¶</a>Bootstrap aggregating (Bagging)</h2>
+<ol>
+<li>
+<p>从N样本中有放回的采样N个样本（大约包含总数据的63.2%）</p>
 </li>
-<li><p>对这N个样本在全属性上建立分类器(CART,SVM)</p>
+<li>
+<p>对这N个样本在全属性上建立分类器(CART,SVM)</p>
 </li>
-<li><p>重复上面的步骤，建立m个分类器</p>
+<li>
+<p>重复上面的步骤，建立m个分类器</p>
 </li>
-<li><p>预测的时候Aggregation使用投票的方法得到结果</p>
+<li>
+<p>预测的时候Aggregation使用投票的方法得到结果</p>
 </li>
 </ol>
 <p>学习器间不存在强依赖关系, 学习器可并行训练生成, 集成方式一般为投票</p>
-<p>在以均方误差作为误差的考虑下，bagging可以减少方差variance，让偏差不变</p>
-<script type="math/tex; mode=display">
-在理想的情况下，总分类器的输出是弱分类器的输出的期望\\
-\bar f(x) = E(\hat f_z(x))
-误差为\\
-E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\\
-= E[(Y-\bar f(x))^2] + E[(\bar f(x)-\bar f_z(x))^2] \ge E[(Y-\bar f(x))^2]</script><h3 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h3><p>Random Forest属于Bagging的代表, 放回抽样, 每个学习器随机选择部分特征去优化</p>
+<p>在以均方误差作为误差的考虑下，bagging可以减少方差variance，让偏差不变<br>
+$$<br>
+在理想的情况下，总分类器的输出是弱分类器的输出的期望\<br>
+\bar f(x) = E(\hat f_z(x))<br>
+误差为\<br>
+E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\<br>
+= E[(Y-\bar f(x))^2] + E[(\bar f(x)-\bar f_z(x))^2] \ge E[(Y-\bar f(x))^2]<br>
+$$</p>
+<h3 id="随机森林"><a class="header-anchor" href="#随机森林">¶</a>随机森林</h3>
+<p>Random Forest属于Bagging的代表, 放回抽样, 每个学习器随机选择部分特征去优化</p>
 <p>随机森林是有很多随机得决策树构成，它们之间没有关联。得到RF以后，在预测时分别对每一个决策树进行判断，最后使用Bagging的思想进行结果的输出（也就是投票的思想）</p>
-<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><p>现在有N个训练样本，每个样本的特征为M个，需要建T颗树<br>对于每一棵树：</p>
+<h4 id="算法描述"><a class="header-anchor" href="#算法描述">¶</a>算法描述</h4>
+<p>现在有N个训练样本，每个样本的特征为M个，需要建T颗树<br>
+对于每一棵树：</p>
 <ul>
 <li>从N个训练样本中有放回的取N个样本作为一组训练集（其余未取到的样本作为预测分类，评估其误差）</li>
 <li>从M个特征中取m个特征左右子集特征(m&lt;&lt;M)（通常m=sqrt(M)或者20%）</li>
@@ -461,37 +510,54 @@ E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\\
 </ul>
 <p>建立森林后，预测时使用投票的方法</p>
 <p>使用oob（out-of-bag）进行泛化误差的估计，将各个树的未采样样本作为预测样本（大约有36.8%），使用已经建立好的森林对各个预测样本进行预测，预测完之后最后统计误分得个数占总预测样本的比率作为RF的oob误分率</p>
-<h4 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h4><ul>
-<li>随机性体现在：bagging和特征上的随机选择</li>
-<li><p>通过增加多样性diversity，减小方差variances来增加准确率</p>
+<h4 id="讨论-v2"><a class="header-anchor" href="#讨论-v2">¶</a>讨论</h4>
+<ul>
+<li>
+<p>随机性体现在：bagging和特征上的随机选择</p>
 </li>
-<li><p>能够处理大量特征的分类，并且还不用做特征选择</p>
+<li>
+<p>通过增加多样性diversity，减小方差variances来增加准确率</p>
 </li>
-<li><p>在训练完成之后能给出哪些feature的比较重要</p>
+<li>
+<p>能够处理大量特征的分类，并且还不用做特征选择</p>
 </li>
-<li><p>训练速度很快，很容易并行</p>
+<li>
+<p>在训练完成之后能给出哪些feature的比较重要</p>
 </li>
-<li><p>实现相对来说较为简单</p>
+<li>
+<p>训练速度很快，很容易并行</p>
+</li>
+<li>
+<p>实现相对来说较为简单</p>
 </li>
 </ul>
-<h4 id="深度森林"><a href="#深度森林" class="headerlink" title="深度森林"></a>深度森林</h4><h3 id="随机决策树"><a href="#随机决策树" class="headerlink" title="随机决策树"></a>随机决策树</h3><p><a href="https://www.linuxidc.com/Linux/2016-12/138376.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-12/138376.htm</a></p>
+<h4 id="深度森林"><a class="header-anchor" href="#深度森林">¶</a>深度森林</h4>
+<h3 id="随机决策树"><a class="header-anchor" href="#随机决策树">¶</a>随机决策树</h3>
+<p><a href="https://www.linuxidc.com/Linux/2016-12/138376.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-12/138376.htm</a></p>
 <ul>
-<li>在每一个节点上，随机选择一个un-used特征<ul>
+<li>在每一个节点上，随机选择一个un-used特征
+<ul>
 <li>如果是离散特征，如果从根root到当前节点的路径上还没有使用过，就是un-used的</li>
 <li>连续型特征可以使用多次，不过每次的阈值不一样</li>
 </ul>
 </li>
-<li>停止条件<ul>
+<li>停止条件
+<ul>
 <li>一个节点的数据很少（比如小于等于3个）</li>
 <li>树的高度超过某个阈值（比如特征数）</li>
 </ul>
 </li>
 </ul>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817153748937.png" alt="image-20190817153748937"></p>
-<h3 id="extraTree"><a href="#extraTree" class="headerlink" title="extraTree"></a>extraTree</h3><h1 id="无监督集成"><a href="#无监督集成" class="headerlink" title="无监督集成"></a>无监督集成</h1><h2 id="聚类集成"><a href="#聚类集成" class="headerlink" title="聚类集成"></a>聚类集成</h2><script type="math/tex; mode=display">
-给定没有标签的数据集D = \{x_1,x_2,...,x_n\}\\\
-集成算法计算出一系列聚类方案\{C_1,C_2,...,C_k\},将数据映射为一个簇f_j(x)=m\\
-一个统一的聚类方案f*结合consensus了基本的聚类解决方案\\</script><p>目的是将弱聚类组合成一个</p>
+<h3 id="extratree"><a class="header-anchor" href="#extratree">¶</a>extraTree</h3>
+<h1>无监督集成</h1>
+<h2 id="聚类集成"><a class="header-anchor" href="#聚类集成">¶</a>聚类集成</h2>
+<p>$$<br>
+给定没有标签的数据集D = {x_1,x_2,…,x_n}\<br>
+集成算法计算出一系列聚类方案{C_1,C_2,…,C_k},将数据映射为一个簇f_j(x)=m\<br>
+一个统一的聚类方案f*结合consensus了基本的聚类解决方案\<br>
+$$</p>
+<p>目的是将弱聚类组合成一个</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817160257099.png" alt="image-20190817160257099"></p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817160334714.png" alt="image-20190817160334714"></p>
 <p>挑战：</p>
@@ -512,7 +578,9 @@ E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\\
 <p>如何组合模型：</p>
 <p>Correspondence：对应</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817160643741.png" alt="image-20190817160643741"></p>
-<h3 id="对应-Correspondence"><a href="#对应-Correspondence" class="headerlink" title="对应 Correspondence"></a>对应 Correspondence</h3><h4 id="硬对应-hard-Correspondence"><a href="#硬对应-hard-Correspondence" class="headerlink" title="硬对应 hard Correspondence"></a>硬对应 hard Correspondence</h4><p>使用Re-labeling+voting</p>
+<h3 id="对应-correspondence"><a class="header-anchor" href="#对应-correspondence">¶</a>对应 Correspondence</h3>
+<h4 id="硬对应-hard-correspondence"><a class="header-anchor" href="#硬对应-hard-correspondence">¶</a>硬对应 hard Correspondence</h4>
+<p>使用Re-labeling+voting</p>
 <p>找到划分结果中标签之间的对应关系，并通过投票将具有相同标签的簇融合在一起</p>
 <p><img src="/2019/03/08/机器学习-集成学习/image-20190817161017684.png" alt="image-20190817161017684"></p>
 <p>具体而言</p>
@@ -524,7 +592,10 @@ E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\\
 <ul>
 <li>在很多情况下，簇并没有一对一的对应关系</li>
 </ul>
-<h4 id="软对应-soft-Correspondence"><a href="#软对应-soft-Correspondence" class="headerlink" title="软对应 soft Correspondence"></a>软对应 soft Correspondence</h4><h1 id="半监督集成"><a href="#半监督集成" class="headerlink" title="半监督集成"></a>半监督集成</h1><h2 id="多视角学习"><a href="#多视角学习" class="headerlink" title="多视角学习"></a>多视角学习</h2>
+<h4 id="软对应-soft-correspondence"><a class="header-anchor" href="#软对应-soft-correspondence">¶</a>软对应 soft Correspondence</h4>
+<h1>半监督集成</h1>
+<h2 id="多视角学习"><a class="header-anchor" href="#多视角学习">¶</a>多视角学习</h2>
+
       
     </div>
     
@@ -692,7 +763,7 @@ E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#弱分类器"><span class="nav-number">1.1.</span> <span class="nav-text">弱分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何得到弱分类器"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何得到弱分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何组合弱分类器"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何组合弱分类器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成work的原因"><span class="nav-number">1.2.</span> <span class="nav-text">集成work的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究关注点"><span class="nav-number">1.3.</span> <span class="nav-text">研究关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习种类"><span class="nav-number">1.4.</span> <span class="nav-text">集成学习种类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类集成学习-Learn-to-Combine"><span class="nav-number">1.4.1.</span> <span class="nav-text">分类集成学习-Learn to Combine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类集成学习-一致性Consensus"><span class="nav-number">1.4.2.</span> <span class="nav-text">分类集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类集成学习-一致性Consensus"><span class="nav-number">1.4.3.</span> <span class="nav-text">聚类集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半监督集成学习-一Learn-to-Combine"><span class="nav-number">1.4.4.</span> <span class="nav-text">半监督集成学习-一Learn to Combine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半监督集成学习-一致性Consensus"><span class="nav-number">1.4.5.</span> <span class="nav-text">半监督集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">1.4.6.</span> <span class="nav-text">比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有监督集成学习"><span class="nav-number">2.</span> <span class="nav-text">有监督集成学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boosting"><span class="nav-number">2.1.</span> <span class="nav-text">Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaBoost"><span class="nav-number">2.1.1.</span> <span class="nav-text">AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT-Gradient-Boosting-Decision-Tree"><span class="nav-number">2.1.2.</span> <span class="nav-text">GBDT Gradient Boosting Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GBDT"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GBRT"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">GBRT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XGBOOST"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">XGBOOST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Catboost"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">Catboost</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradient-boosting-machine-GBM"><span class="nav-number">2.1.2.5.</span> <span class="nav-text">Gradient boosting machine(GBM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightGBM"><span class="nav-number">2.1.2.6.</span> <span class="nav-text">lightGBM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化贪心森林-Regularized-Greedy-Forest-RGF"><span class="nav-number">2.1.2.7.</span> <span class="nav-text">正则化贪心森林 Regularized Greedy Forest(RGF)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-aggregating-Bagging"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrap aggregating (Bagging)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林"><span class="nav-number">2.2.1.</span> <span class="nav-text">随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论-1"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">讨论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度森林"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">深度森林</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机决策树"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机决策树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extraTree"><span class="nav-number">2.2.3.</span> <span class="nav-text">extraTree</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无监督集成"><span class="nav-number">3.</span> <span class="nav-text">无监督集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类集成"><span class="nav-number">3.1.</span> <span class="nav-text">聚类集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对应-Correspondence"><span class="nav-number">3.1.1.</span> <span class="nav-text">对应 Correspondence</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬对应-hard-Correspondence"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">硬对应 hard Correspondence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软对应-soft-Correspondence"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">软对应 soft Correspondence</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#半监督集成"><span class="nav-number">4.</span> <span class="nav-text">半监督集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多视角学习"><span class="nav-number">4.1.</span> <span class="nav-text">多视角学习</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#弱分类器"><span class="nav-number">1.1.</span> <span class="nav-text">¶弱分类器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何得到弱分类器"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶如何得到弱分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何组合弱分类器"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶如何组合弱分类器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成work的原因"><span class="nav-number">1.2.</span> <span class="nav-text">¶集成work的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究关注点"><span class="nav-number">1.3.</span> <span class="nav-text">¶研究关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习种类"><span class="nav-number">1.4.</span> <span class="nav-text">¶集成学习种类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类集成学习-learn-to-combine"><span class="nav-number">1.4.1.</span> <span class="nav-text">¶分类集成学习-Learn to Combine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类集成学习-一致性consensus"><span class="nav-number">1.4.2.</span> <span class="nav-text">¶分类集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类集成学习-一致性consensus"><span class="nav-number">1.4.3.</span> <span class="nav-text">¶聚类集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半监督集成学习-一learn-to-combine"><span class="nav-number">1.4.4.</span> <span class="nav-text">¶半监督集成学习-一Learn to Combine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半监督集成学习-一致性consensus"><span class="nav-number">1.4.5.</span> <span class="nav-text">¶半监督集成学习-一致性Consensus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">1.4.6.</span> <span class="nav-text">¶比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">有监督集成学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#boosting"><span class="nav-number">2.1.</span> <span class="nav-text">¶Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#adaboost"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">¶讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gbdt-gradient-boosting-decision-tree"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶GBDT Gradient Boosting Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gbdt"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">¶GBDT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gbrt"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">¶GBRT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xgboost"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">¶XGBOOST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#catboost"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">¶Catboost</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gradient-boosting-machine-gbm"><span class="nav-number">2.1.2.5.</span> <span class="nav-text">¶Gradient boosting machine(GBM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lightgbm"><span class="nav-number">2.1.2.6.</span> <span class="nav-text">¶lightGBM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化贪心森林-regularized-greedy-forest-rgf"><span class="nav-number">2.1.2.7.</span> <span class="nav-text">¶正则化贪心森林 Regularized Greedy Forest(RGF)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrap-aggregating-bagging"><span class="nav-number">2.2.</span> <span class="nav-text">¶Bootstrap aggregating (Bagging)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林"><span class="nav-number">2.2.1.</span> <span class="nav-text">¶随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">¶算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论-v2"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">¶讨论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度森林"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">¶深度森林</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机决策树"><span class="nav-number">2.2.2.</span> <span class="nav-text">¶随机决策树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extratree"><span class="nav-number">2.2.3.</span> <span class="nav-text">¶extraTree</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">无监督集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类集成"><span class="nav-number">3.1.</span> <span class="nav-text">¶聚类集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对应-correspondence"><span class="nav-number">3.1.1.</span> <span class="nav-text">¶对应 Correspondence</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬对应-hard-correspondence"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">¶硬对应 hard Correspondence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软对应-soft-correspondence"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">¶软对应 soft Correspondence</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">半监督集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多视角学习"><span class="nav-number">4.1.</span> <span class="nav-text">¶多视角学习</span></a></li></ol></li></ol></div>
             
 
           </div>

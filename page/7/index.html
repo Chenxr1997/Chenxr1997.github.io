@@ -301,52 +301,79 @@
         
           
             <p>[TOC]</p>
-<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><p>线性表是最常用且最简单的一种数据结构，它是n个数据元素的有限序列</p>
+<h1>线性表</h1>
+<p>线性表是最常用且最简单的一种数据结构，它是n个数据元素的有限序列</p>
 <p>实现线性表的方式一般有两种</p>
 <ul>
 <li>一种是使用数组存储线性表的元素，即用一组连续的存储单元依次存储线性表的数据元素</li>
 <li>另一种是使用链表存储线性表的元素，即用一组任意的存储单元存储线性表的数据元素（存储单元可以是连续的，也可以是不连续的）</li>
 </ul>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是一种大小固定的数据结构，对线性表的所有操作都可以通过数组来实现。虽然数组一旦创建之后，它的大小就无法改变了</p>
+<h2 id="数组"><a class="header-anchor" href="#数组">¶</a>数组</h2>
+<p>数组是一种大小固定的数据结构，对线性表的所有操作都可以通过数组来实现。虽然数组一旦创建之后，它的大小就无法改变了</p>
 <p>当数组不能再存储线性表中的新元素时，可以创建一个新的大的数组来替换当前数组。这样就可以使用数组实现动态的数据结构</p>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>创建数组</p>
+<h3 id="操作"><a class="header-anchor" href="#操作">¶</a>操作</h3>
+<p>创建数组</p>
 <p>插入元素</p>
 <p>删除元素</p>
 <p>修改元素</p>
 <p>遍历元素</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>优点</p>
+<h3 id="特点"><a class="header-anchor" href="#特点">¶</a>特点</h3>
+<p>优点</p>
 <p>缺点</p>
 <p>使用场景</p>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列节点组成，这些节点不必在内存中相连。每个节点由数据部分Data和链部分Next，Next指向下一个节点，这样当添加或者删除时，只需要改变相关节点的Next的指向，效率很高</p>
+<h2 id="链表"><a class="header-anchor" href="#链表">¶</a>链表</h2>
+<h3 id="单链表"><a class="header-anchor" href="#单链表">¶</a>单链表</h3>
+<p>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列节点组成，这些节点不必在内存中相连。每个节点由数据部分Data和链部分Next，Next指向下一个节点，这样当添加或者删除时，只需要改变相关节点的Next的指向，效率很高</p>
 <p><img src="/2019/03/08/计算机科学与工程-数据结构/image-20190814192609702.png" alt="image-20190814192609702"></p>
-<h4 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h4><p>初始化链表</p>
+<h4 id="操作-v2"><a class="header-anchor" href="#操作-v2">¶</a>操作</h4>
+<p>初始化链表</p>
 <p>加入节点</p>
 <p>删除节点</p>
 <p>修改节点</p>
 <p>顺序遍历链表</p>
 <p>倒序遍历链表</p>
 <p>单链表反转</p>
-<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>主要是节点中包含两个指针部分，一个指向前驱元，一个指向后继元</p>
-<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>最后一个节点指向第一个节点</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是比较特殊的线性表，访问、插入和删除元素只能在栈顶进行，栈有时又叫作LIFO(Last In First Out)表，即后进先出</p>
-<h3 id="操作-2"><a href="#操作-2" class="headerlink" title="操作"></a>操作</h3><p>push(进栈，相当于插入)</p>
+<h3 id="双向链表"><a class="header-anchor" href="#双向链表">¶</a>双向链表</h3>
+<p>主要是节点中包含两个指针部分，一个指向前驱元，一个指向后继元</p>
+<h3 id="循环链表"><a class="header-anchor" href="#循环链表">¶</a>循环链表</h3>
+<p>最后一个节点指向第一个节点</p>
+<h2 id="栈"><a class="header-anchor" href="#栈">¶</a>栈</h2>
+<p>栈是比较特殊的线性表，访问、插入和删除元素只能在栈顶进行，栈有时又叫作LIFO(Last In First Out)表，即后进先出</p>
+<h3 id="操作-v3"><a class="header-anchor" href="#操作-v3">¶</a>操作</h3>
+<p>push(进栈，相当于插入)</p>
 <p>pop(出栈，相当于删除最后一个元素)</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是比较特殊的线性表，对于队列来说，只允许在表的前端/队头（front）进行删除操作，而在表的后端/队尾（rear）进行插入操作</p>
+<h2 id="队列"><a class="header-anchor" href="#队列">¶</a>队列</h2>
+<p>队列是比较特殊的线性表，对于队列来说，只允许在表的前端/队头（front）进行删除操作，而在表的后端/队尾（rear）进行插入操作</p>
 <p><img src="/2019/03/08/计算机科学与工程-数据结构/image-20190814194101207.png" alt="image-20190814194101207"></p>
-<h3 id="操作-3"><a href="#操作-3" class="headerlink" title="操作"></a>操作</h3><p>入队</p>
+<h3 id="操作-v4"><a class="header-anchor" href="#操作-v4">¶</a>操作</h3>
+<p>入队</p>
 <p>出队</p>
-<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h3><h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><h2 id="van-Emde-Boas树"><a href="#van-Emde-Boas树" class="headerlink" title="van Emde Boas树"></a>van Emde Boas树</h2><h1 id="哈希表-散列表"><a href="#哈希表-散列表" class="headerlink" title="哈希表/散列表"></a>哈希表/散列表</h1><p>解决冲突的办法</p>
+<h1>树</h1>
+<h2 id="二叉树"><a class="header-anchor" href="#二叉树">¶</a>二叉树</h2>
+<h3 id="完全二叉树"><a class="header-anchor" href="#完全二叉树">¶</a>完全二叉树</h3>
+<h3 id="二叉搜索树"><a class="header-anchor" href="#二叉搜索树">¶</a>二叉搜索树</h3>
+<h2 id="b树"><a class="header-anchor" href="#b树">¶</a>B树</h2>
+<h3 id="b-树"><a class="header-anchor" href="#b-树">¶</a>B+树</h3>
+<h2 id="红黑树"><a class="header-anchor" href="#红黑树">¶</a>红黑树</h2>
+<h2 id="van-emde-boas树"><a class="header-anchor" href="#van-emde-boas树">¶</a>van Emde Boas树</h2>
+<h1>哈希表/散列表</h1>
+<p>解决冲突的办法</p>
 <p>1.线性探查法（linear probing）</p>
 <p>2.平方探查法（quadratic probing）</p>
 <p>3.链地址法</p>
-<p>hash冲突解决方法<br>关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。解决办法：</p>
+<p>hash冲突解决方法<br>
+关键字值不同的元素可能会映象到哈希表的同一地址上就会发生哈希冲突。解决办法：</p>
 <p>1）开放定址法：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。</p>
 <p>2） 再哈希法：同时构造多个不同的哈希函数。</p>
 <p>3）链地址法：将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。</p>
 <p>4）建立公共溢出区：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。</p>
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>稀疏矩阵，三角矩阵</p>
-<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>堆，斐波那契堆</p>
-<h1 id="不相交集合"><a href="#不相交集合" class="headerlink" title="不相交集合"></a>不相交集合</h1>
+<h1>图</h1>
+<h1>矩阵</h1>
+<p>稀疏矩阵，三角矩阵</p>
+<h1>堆</h1>
+<p>堆，斐波那契堆</p>
+<h1>不相交集合</h1>
+
           
         
       
@@ -466,9 +493,34 @@
         
           
             <p>[TOC]</p>
-<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="pwd-查看当前目录路径"><a href="#pwd-查看当前目录路径" class="headerlink" title="pwd 查看当前目录路径"></a>pwd 查看当前目录路径</h2><h2 id="ls-显示目录内容"><a href="#ls-显示目录内容" class="headerlink" title="ls 显示目录内容"></a>ls 显示目录内容</h2><h2 id="cd-目录跳转"><a href="#cd-目录跳转" class="headerlink" title="cd 目录跳转"></a>cd 目录跳转</h2><h2 id="mkdir-创建文件夹"><a href="#mkdir-创建文件夹" class="headerlink" title="mkdir 创建文件夹"></a>mkdir 创建文件夹</h2><h2 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h2><h2 id="rm-删除文件"><a href="#rm-删除文件" class="headerlink" title="rm 删除文件"></a>rm 删除文件</h2><h2 id="mv-移动文件"><a href="#mv-移动文件" class="headerlink" title="mv 移动文件"></a>mv 移动文件</h2><h2 id="cp-拷贝文件"><a href="#cp-拷贝文件" class="headerlink" title="cp 拷贝文件"></a>cp 拷贝文件</h2><h2 id="cat-输出文件内容"><a href="#cat-输出文件内容" class="headerlink" title="cat 输出文件内容"></a>cat 输出文件内容</h2><h2 id="chmod-给文件的属主分配权限"><a href="#chmod-给文件的属主分配权限" class="headerlink" title="chmod 给文件的属主分配权限"></a>chmod 给文件的属主分配权限</h2><h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="ps-查询进程"><a href="#ps-查询进程" class="headerlink" title="ps 查询进程"></a>ps 查询进程</h2><h2 id="kill-杀死进程"><a href="#kill-杀死进程" class="headerlink" title="kill 杀死进程"></a>kill 杀死进程</h2><h2 id="lsof-查看端口"><a href="#lsof-查看端口" class="headerlink" title="lsof 查看端口"></a>lsof 查看端口</h2><h2 id="top-持续监控进程-系统整体信息"><a href="#top-持续监控进程-系统整体信息" class="headerlink" title="top 持续监控进程/系统整体信息"></a>top 持续监控进程/系统整体信息</h2><h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="curl-下载命令"><a href="#curl-下载命令" class="headerlink" title="curl 下载命令"></a>curl 下载命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o</span><br></pre></td></tr></table></figure>
-<h2 id="scp-终端传输命令"><a href="#scp-终端传输命令" class="headerlink" title="scp 终端传输命令"></a>scp 终端传输命令</h2><p>使用ssh连接和加密方式</p>
-<h2 id="netstat-查看网络信息"><a href="#netstat-查看网络信息" class="headerlink" title="netstat 查看网络信息"></a>netstat 查看网络信息</h2><h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="clear-清除屏幕内容"><a href="#clear-清除屏幕内容" class="headerlink" title="clear 清除屏幕内容"></a>clear 清除屏幕内容</h2><h2 id="history-查看命令历史"><a href="#history-查看命令历史" class="headerlink" title="history 查看命令历史"></a>history 查看命令历史</h2><h2 id="echo-输出命令"><a href="#echo-输出命令" class="headerlink" title="echo 输出命令"></a>echo 输出命令</h2>
+<h1>文件系统</h1>
+<h2 id="pwd-查看当前目录路径"><a class="header-anchor" href="#pwd-查看当前目录路径">¶</a>pwd 查看当前目录路径</h2>
+<h2 id="ls-显示目录内容"><a class="header-anchor" href="#ls-显示目录内容">¶</a>ls 显示目录内容</h2>
+<h2 id="cd-目录跳转"><a class="header-anchor" href="#cd-目录跳转">¶</a>cd 目录跳转</h2>
+<h2 id="mkdir-创建文件夹"><a class="header-anchor" href="#mkdir-创建文件夹">¶</a>mkdir 创建文件夹</h2>
+<h2 id="touch-创建文件"><a class="header-anchor" href="#touch-创建文件">¶</a>touch 创建文件</h2>
+<h2 id="rm-删除文件"><a class="header-anchor" href="#rm-删除文件">¶</a>rm 删除文件</h2>
+<h2 id="mv-移动文件"><a class="header-anchor" href="#mv-移动文件">¶</a>mv 移动文件</h2>
+<h2 id="cp-拷贝文件"><a class="header-anchor" href="#cp-拷贝文件">¶</a>cp 拷贝文件</h2>
+<h2 id="cat-输出文件内容"><a class="header-anchor" href="#cat-输出文件内容">¶</a>cat 输出文件内容</h2>
+<h2 id="chmod-给文件的属主分配权限"><a class="header-anchor" href="#chmod-给文件的属主分配权限">¶</a>chmod 给文件的属主分配权限</h2>
+<h1>进程</h1>
+<h2 id="ps-查询进程"><a class="header-anchor" href="#ps-查询进程">¶</a>ps 查询进程</h2>
+<h2 id="kill-杀死进程"><a class="header-anchor" href="#kill-杀死进程">¶</a>kill 杀死进程</h2>
+<h2 id="lsof-查看端口"><a class="header-anchor" href="#lsof-查看端口">¶</a>lsof 查看端口</h2>
+<h2 id="top-持续监控进程-系统整体信息"><a class="header-anchor" href="#top-持续监控进程-系统整体信息">¶</a>top 持续监控进程/系统整体信息</h2>
+<h1>网络</h1>
+<h2 id="curl-下载命令"><a class="header-anchor" href="#curl-下载命令">¶</a>curl 下载命令</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o</span><br></pre></td></tr></table></figure>
+<h2 id="scp-终端传输命令"><a class="header-anchor" href="#scp-终端传输命令">¶</a>scp 终端传输命令</h2>
+<p>使用ssh连接和加密方式</p>
+<h2 id="netstat-查看网络信息"><a class="header-anchor" href="#netstat-查看网络信息">¶</a>netstat 查看网络信息</h2>
+<h1>vim</h1>
+<h1>其他</h1>
+<h2 id="clear-清除屏幕内容"><a class="header-anchor" href="#clear-清除屏幕内容">¶</a>clear 清除屏幕内容</h2>
+<h2 id="history-查看命令历史"><a class="header-anchor" href="#history-查看命令历史">¶</a>history 查看命令历史</h2>
+<h2 id="echo-输出命令"><a class="header-anchor" href="#echo-输出命令">¶</a>echo 输出命令</h2>
+
           
         
       
@@ -622,7 +674,7 @@
 <p>bfs</p>
 <p>Leetcode128 Longest Consecutive Sequence solution（Given an unsorted array of integers, find the length of the longest consecutive elements sequence）</p>
 <p>哈希表，set</p>
-<p>LeetCode 129 Sum Root to Leaf Numbers </p>
+<p>LeetCode 129 Sum Root to Leaf Numbers</p>
 <p>先序遍历，层序遍历</p>
 <p>LeetCode 130 Surrounded Regions（Given a 2D board containing ‘X’ and ‘O’ (the letter O), capture all regions surrounded by ‘X’.）</p>
 <p>搜索</p>
@@ -656,7 +708,7 @@
 <p>Leetcode 149 Max Points on a Line</p>
 <p>穷举法，两边循环，找斜率</p>
 <p>CV中的hough transform（据说不保证完全正确）</p>
-<p>LeetCode 148. Sort List—O(nlogn)时间复杂度和常数空间复杂度给链表排序</p>
+<p>LeetCode 148. Sort List–O(nlogn)时间复杂度和常数空间复杂度给链表排序</p>
 <p>归并排序和快慢指针</p>
 <p>LeetCode150逆波兰表达式求解（Evaluate Reverse Polish Notation）</p>
 <p>用栈</p>
@@ -829,6 +881,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学与工程-算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/计算机科学与工程-算法/" itemprop="url">计算机科学与工程-算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:45+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<ul>
+<li><strong>快排复杂度是多少，并且黑板上手写证明</strong></li>
+<li><strong>简述如何“快速选到第n个数”（快速选择，复杂度为O（n））</strong></li>
+</ul>
+<h1>概念</h1>
+<p>算法五个特性： 有穷性、确定性、可行性、输入、输出</p>
+<p>算法设计要求：正确性、可读性、健壮性、高效率与低存储量需求。(好的算法)</p>
+<p>算法的描述有伪程序、流程图、N-S结构图等。E-R图是实体联系模型，不是程序的描述方式。</p>
+<p>设计算法在执行时间时需要考虑：算法选用的规模、问题的规模</p>
+<p>时间复杂度：算法的执行时间与原操作<strong>执行次数</strong>之和成正比。时间复杂度有小到大：O(1)、O(logn)、O(n)、O(nlogn)、O(n<sup>2)、O(n</sup>3)。幂次时间复杂度有小到大O(2<sup>n)、O(n!)、O(n</sup>n)</p>
+<p>空间复杂度：若输入数据所占空间只取决于问题本身，和算法无关，则只需要分析<strong>除输入和程序之外的辅助变量所占额外空间</strong>。</p>
+<h1>动态优化</h1>
+<h1>搜索</h1>
+<p>DFS，BFS，回溯</p>
+<h1>查找</h1>
+<p>二分，线性查找</p>
+<h1>图</h1>
+<p>Dijkstra，深度优先，广度优先，拓扑排序，强连通分量，最小生成树，最短路径，最大流</p>
+<h1>贪心</h1>
+<h1>分治</h1>
+<p><a href="https://www.cnblogs.com/hellohacker/p/5827222.html" target="_blank" rel="noopener">https://www.cnblogs.com/hellohacker/p/5827222.html</a></p>
+<h1>排序</h1>
+<p>插入，选择，冒泡，希尔，快速，归并，堆，计数，桶，基数，外排序</p>
+<p><img src="/2019/03/08/计算机科学与工程-算法/1.png" alt="1"></p>
+<h1>随机算法</h1>
+<h1>摊还分析</h1>
+<h1>多线程算法</h1>
+<h1>矩阵运算</h1>
+<h1>线性规划</h1>
+<h1>多项式与快速傅里叶变换</h1>
+<h1>数论算法</h1>
+<h1>字符串</h1>
+<p>模式匹配：KMP算法</p>
+<h1>计算几何学</h1>
+<h1>NP完全性</h1>
+<h1>近似算法</h1>
+<h1>大数问题</h1>
+<p><a href="https://www.cnblogs.com/2228212230qq/p/7684472.html" target="_blank" rel="noopener">https://www.cnblogs.com/2228212230qq/p/7684472.html</a></p>
+<p><a href="https://www.cnblogs.com/ganhang-acm/p/3860361.html" target="_blank" rel="noopener">https://www.cnblogs.com/ganhang-acm/p/3860361.html</a></p>
+<p><a href="https://blog.csdn.net/xiang_6/article/details/80659769" target="_blank" rel="noopener">https://blog.csdn.net/xiang_6/article/details/80659769</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学与工程-组成原理:体系结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -922,147 +1134,13 @@
 <p>位（Bit）、字节（Byte）、字（Word）</p>
 <p>位：电子计算机中最小的数据单位。每一位的状态只能是0或者1</p>
 <p>字节：8个二进制位构成1个字节，它是存储空间的基本计量单位。1个字节可以储存1个英文字母或者半个汉字，换句话说，1个汉字占据2个字节的存储空间。</p>
-<p>字：”字”由若干个字节构成，字的位数叫做字长，不同档次的机器有不同的字长。例如一台8位机，它的1个字就等于1个字节，字长为8位。如果是一台16位机，那么，它的1个字就由2个字节构成，字长为16位。字是计算机进行数据处理和运算的单位。</p>
-<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="CU"><a href="#CU" class="headerlink" title="CU"></a>CU</h2><h2 id="PU"><a href="#PU" class="headerlink" title="PU"></a>PU</h2><h1 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h1><h1 id="ISA"><a href="#ISA" class="headerlink" title="ISA"></a>ISA</h1><h2 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学与工程-算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/计算机科学与工程-算法/" itemprop="url">计算机科学与工程-算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:45+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<ul>
-<li><strong>快排复杂度是多少，并且黑板上手写证明</strong></li>
-<li><strong>简述如何“快速选到第n个数”（快速选择，复杂度为O（n））</strong></li>
-</ul>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>算法五个特性： 有穷性、确定性、可行性、输入、输出</p>
-<p>算法设计要求：正确性、可读性、健壮性、高效率与低存储量需求。(好的算法)</p>
-<p>算法的描述有伪程序、流程图、N-S结构图等。E-R图是实体联系模型，不是程序的描述方式。</p>
-<p>设计算法在执行时间时需要考虑：算法选用的规模、问题的规模</p>
-<p>时间复杂度：算法的执行时间与原操作<strong>执行次数</strong>之和成正比。时间复杂度有小到大：O(1)、O(logn)、O(n)、O(nlogn)、O(n^2)、O(n^3)。幂次时间复杂度有小到大O(2^n)、O(n!)、O(n^n)</p>
-<p>空间复杂度：若输入数据所占空间只取决于问题本身，和算法无关，则只需要分析<strong>除输入和程序之外的辅助变量所占额外空间</strong>。</p>
-<h1 id="动态优化"><a href="#动态优化" class="headerlink" title="动态优化"></a>动态优化</h1><h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><p>DFS，BFS，回溯</p>
-<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>二分，线性查找</p>
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>Dijkstra，深度优先，广度优先，拓扑排序，强连通分量，最小生成树，最短路径，最大流</p>
-<h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><h1 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h1><p><a href="https://www.cnblogs.com/hellohacker/p/5827222.html" target="_blank" rel="noopener">https://www.cnblogs.com/hellohacker/p/5827222.html</a></p>
-<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p>插入，选择，冒泡，希尔，快速，归并，堆，计数，桶，基数，外排序</p>
-<p><img src="/2019/03/08/计算机科学与工程-算法/1.png" alt="1"></p>
-<h1 id="随机算法"><a href="#随机算法" class="headerlink" title="随机算法"></a>随机算法</h1><h1 id="摊还分析"><a href="#摊还分析" class="headerlink" title="摊还分析"></a>摊还分析</h1><h1 id="多线程算法"><a href="#多线程算法" class="headerlink" title="多线程算法"></a>多线程算法</h1><h1 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h1><h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h1 id="多项式与快速傅里叶变换"><a href="#多项式与快速傅里叶变换" class="headerlink" title="多项式与快速傅里叶变换"></a>多项式与快速傅里叶变换</h1><h1 id="数论算法"><a href="#数论算法" class="headerlink" title="数论算法"></a>数论算法</h1><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>模式匹配：KMP算法</p>
-<h1 id="计算几何学"><a href="#计算几何学" class="headerlink" title="计算几何学"></a>计算几何学</h1><h1 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h1><h1 id="近似算法"><a href="#近似算法" class="headerlink" title="近似算法"></a>近似算法</h1><h1 id="大数问题"><a href="#大数问题" class="headerlink" title="大数问题"></a>大数问题</h1><p><a href="https://www.cnblogs.com/2228212230qq/p/7684472.html" target="_blank" rel="noopener">https://www.cnblogs.com/2228212230qq/p/7684472.html</a></p>
-<p><a href="https://www.cnblogs.com/ganhang-acm/p/3860361.html" target="_blank" rel="noopener">https://www.cnblogs.com/ganhang-acm/p/3860361.html</a></p>
-<p><a href="https://blog.csdn.net/xiang_6/article/details/80659769" target="_blank" rel="noopener">https://blog.csdn.net/xiang_6/article/details/80659769</a></p>
+<p>字：&quot;字&quot;由若干个字节构成，字的位数叫做字长，不同档次的机器有不同的字长。例如一台8位机，它的1个字就等于1个字节，字长为8位。如果是一台16位机，那么，它的1个字就由2个字节构成，字长为16位。字是计算机进行数据处理和运算的单位。</p>
+<h1>CPU</h1>
+<h2 id="cu"><a class="header-anchor" href="#cu">¶</a>CU</h2>
+<h2 id="pu"><a class="header-anchor" href="#pu">¶</a>PU</h2>
+<h1>存储器</h1>
+<h1>ISA</h1>
+<h2 id="汇编"><a class="header-anchor" href="#汇编">¶</a>汇编</h2>
 
           
         
@@ -1318,19 +1396,19 @@
 <p>第二类：有两个并发事务同时读取同一行数据，然后其中一个对它进行修改提交，而另一个也进行了修改提交。这就会造成第一次写操作失效。</p>
 <p>隔离级别</p>
 <p>未提交读(Read Uncommitted)</p>
-<p>直译就是”读未提交”，意思就是即使一个更新语句没有提交，但是别的事务可以读到这个改变。</p>
+<p>直译就是&quot;读未提交&quot;，意思就是即使一个更新语句没有提交，但是别的事务可以读到这个改变。</p>
 <p>Read Uncommitted允许脏读。</p>
 <p>Read Uncommited 如果一个事务已经开始写数据，则另外一个数据则不允许同时进行写操作，但允许其他事务读此行数据。该隔离级别可以通过“排他写锁”实现。</p>
 <p>已提交读(Read Committed)</p>
-<p>直译就是”读提交”，意思就是语句提交以后，即执行了 Commit 以后别的事务就能读到这个改变，只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别。</p>
+<p>直译就是&quot;读提交&quot;，意思就是语句提交以后，即执行了 Commit 以后别的事务就能读到这个改变，只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别。</p>
 <p>Read Commited 不允许脏读，但会出现非重复读。</p>
 <p>Read Committed 读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务访问该行。可以通过“瞬间共享读锁”和“排他写锁”实现。</p>
 <p>可重复读(Repeatable Read)：</p>
-<p>直译就是”可以重复读”，这是说在同一个事务里面先后执行同一个查询语句的时候，得到的结果是一样的。</p>
+<p>直译就是&quot;可以重复读&quot;，这是说在同一个事务里面先后执行同一个查询语句的时候，得到的结果是一样的。</p>
 <p>Repeatable Read 不允许脏读，不允许非重复读，但是会出现幻象读。</p>
 <p>Repeatable Read 读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务。可以通过“共享读锁”和“排他写锁”实现。</p>
 <p>串行读(Serializable)</p>
-<p>直译就是”序列化”，意思是说这个事务执行的时候不允许别的事务并发执行。完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞。</p>
+<p>直译就是&quot;序列化&quot;，意思是说这个事务执行的时候不允许别的事务并发执行。完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞。</p>
 <p>Serializable 不允许不一致现象的出现。</p>
 <p>Serializable 读加共享锁，写加排他锁，读写互斥。</p>
 <p>海量数据怎么存储</p>
@@ -1369,10 +1447,10 @@
 <p>图数据库</p>
 <p><a href="http://blog.csdn.net/hzw05103020/article/details/51288992" target="_blank" rel="noopener">http://blog.csdn.net/hzw05103020/article/details/51288992</a></p>
 <p>也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。</p>
-<p>　　⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
-<p>　　⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
-<p>　　⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
-<p>　　在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
+<p>⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
+<p>⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
+<p>⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
+<p>在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
 <p><a href="http://www.educity.cn/zk/sjkyl/201306141646051747.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141646051747.htm</a></p>
 <p><a href="http://www.educity.cn/zk/sjkyl/201306141542141835.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141542141835.htm</a></p>
 <p><a href="https://www.zhihu.com/question/24696366" target="_blank" rel="noopener">https://www.zhihu.com/question/24696366</a></p>
@@ -1381,11 +1459,14 @@
 <p>Oracle、MySQL、HBase，Cassandra，MongeDB，MariaDB，PostgreSQL，NoSQL，Redis</p>
 <p>RDB：SQL</p>
 <p>NoSQL：Redis</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h2><p>Online Transaction Processing (OLTP)</p>
+<h1>概念</h1>
+<h2 id="典型应用"><a class="header-anchor" href="#典型应用">¶</a>典型应用</h2>
+<p>Online Transaction Processing (OLTP)</p>
 <p>Online analytical processing (OLAP) and Data Warehousing</p>
 <p>数据挖掘</p>
 <p>大数据（Volume，Velocity，Variety）</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>网状数据模型Network data model</p>
+<h2 id="模型"><a class="header-anchor" href="#模型">¶</a>模型</h2>
+<p>网状数据模型Network data model</p>
 <ul>
 <li>Integrated Data Store (IDS), by Charles Bachman, early 1960s</li>
 </ul>
@@ -1395,7 +1476,7 @@
 </ul>
 <p>关系数据模型Relational Data Model</p>
 <ul>
-<li>Codd, E.F. (1970). “A Relational Model of Data for Large Shared Data Banks”. Communications of the ACM 13 (6): 377–387. </li>
+<li>Codd, E.F. (1970). “A Relational Model of Data for Large Shared Data Banks”. Communications of the ACM 13 (6): 377–387.</li>
 </ul>
 <p>SQL语言 Structured Query Language</p>
 <ul>
@@ -1405,18 +1486,25 @@
 <ul>
 <li>Stonebraker, Michael with Moore, Dorothy. ObjectRelational DBMSs: The Next Great Wave. 1996</li>
 </ul>
-<h2 id="DBMS的结构"><a href="#DBMS的结构" class="headerlink" title="DBMS的结构"></a>DBMS的结构</h2><p><img src="/2019/03/08/计算机科学与工程-数据库/image-20190814191053543.png" alt="image-20190814191053543"></p>
+<h2 id="dbms的结构"><a class="header-anchor" href="#dbms的结构">¶</a>DBMS的结构</h2>
+<p><img src="/2019/03/08/计算机科学与工程-数据库/image-20190814191053543.png" alt="image-20190814191053543"></p>
 <p>views describe how users see the data</p>
 <p>Conceptual schema defines logical structure（存储了哪些关系relations）</p>
 <p>Physical schema specifies physical structure（How the “logical” relations are physically stored on external storage such as disk）</p>
 <p><img src="/2019/03/08/计算机科学与工程-数据库/image-20190814191333257.png" alt="image-20190814191333257"></p>
-<h1 id="ER模型"><a href="#ER模型" class="headerlink" title="ER模型"></a>ER模型</h1><p>实体entity</p>
+<h1>ER模型</h1>
+<p>实体entity</p>
 <p>关系relationship</p>
-<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><p>关系数据模型是目前最广泛使用的模型</p>
+<h2 id="关系模型"><a class="header-anchor" href="#关系模型">¶</a>关系模型</h2>
+<p>关系数据模型是目前最广泛使用的模型</p>
 <p>关系relation：一个表格table（有行rows和列columns）</p>
 <p>schema：用来描述列（名字，类型，限制等）</p>
-<h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>哈希索引，B+树索引</p>
-<h2 id="和文件对比"><a href="#和文件对比" class="headerlink" title="和文件对比"></a>和文件对比</h2><p>Good data modeling</p>
+<h1>sql</h1>
+<h1>存储</h1>
+<h2 id="索引"><a class="header-anchor" href="#索引">¶</a>索引</h2>
+<p>哈希索引，B+树索引</p>
+<h2 id="和文件对比"><a class="header-anchor" href="#和文件对比">¶</a>和文件对比</h2>
+<p>Good data modeling</p>
 <ul>
 <li>Data Independence</li>
 <li>Data Integrity and Security</li>
@@ -1424,14 +1512,17 @@
 <p>Simple and efficient ad-hoc queries，减少了应用开发时间</p>
 <p>Concurrency control</p>
 <p>Crash recovery</p>
-<h1 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h1><p>连接，排序</p>
-<h1 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h1><p>ACID，并发处理</p>
+<h1>查询优化</h1>
+<p>连接，排序</p>
+<h1>事务处理</h1>
+<p>ACID，并发处理</p>
 <p>事务的特性ACID</p>
 <p>A，atomacity：原子性，事务必须是原子工作单元，对于数据的执行要不是全部执行，要不都不执行。如果只执行一个子集，可能会破坏事务的总体目标。</p>
 <p>C，consistency：一致性。事务将数据库从一种一致状态变为下一种一致状态（各种约束不被破坏）</p>
 <p>I，isolation：隔离性。由并发事务所作的修改必须与任何其它并发事务所作的修改隔离。事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看中间状态的数据。换句话说，一个事务的影响在该事务提交前对其他事务都不可见。</p>
 <p>D，durability，持久性：事务完成之后，它对于系统的影响是永久性的。该修改即使出现致命的系统故障也将一直保持。</p>
-<h1 id="崩溃恢复"><a href="#崩溃恢复" class="headerlink" title="崩溃恢复"></a>崩溃恢复</h1>
+<h1>崩溃恢复</h1>
+
           
         
       
@@ -1591,26 +1682,46 @@
 <p>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</p>
 <p>请求报文：HTTP协议是以ASCII码传输，建立在TCP/IP协议之上的应用层规范。规范把HTTP请求分为三个部分：状态行、请求头、消息主体</p>
 <p>一个URL地址，它用于描述一个网络上的资源，而 HTTP 中的GET，POST，PUT，DELETE就对应着对这个资源的查，增，改，删4个操作。</p>
-<p><method> <request-url> <version></version></request-url></method></p>
-<headers>
-
-<p><entity-body><br>GET：信息获取，安全的（不修改，不产生副作用）、幂等的（对同一个URL的多个请求应该返回同样的结果）</entity-body></p>
-<p>GET /books/?sex=man&amp;name=Professional HTTP/1.1<br> Host: www.example.com<br> User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br> Gecko/20050225 Firefox/1.0.1<br> Connection: Keep-Alive<br>POST表示可能修改服务器上的资源的请求</p>
-<p>POST / HTTP/1.1<br> Host: www.example.com<br> User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br> Gecko/20050225 Firefox/1.0.1<br> Content-Type: application/x-www-form-urlencoded<br> Content-Length: 40<br> Connection: Keep-Alive</p>
-<p> sex=man&amp;name=Professional<br>GET提交的数据收到URL长度的限制，HTTP协议规范设有对URL长度进行限制。这个限制是特定的浏览器及服务器对于它的限制</p>
+<p><method> <request-url> <version><br>
+<headers></headers></version></request-url></method></p>
+<entity-body>
+GET：信息获取，安全的（不修改，不产生副作用）、幂等的（对同一个URL的多个请求应该返回同样的结果）
+<p>GET /books/?sex=man&amp;name=Professional HTTP/1.1<br>
+Host: <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a><br>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br>
+Gecko/20050225 Firefox/1.0.1<br>
+Connection: Keep-Alive<br>
+POST表示可能修改服务器上的资源的请求</p>
+<p>POST / HTTP/1.1<br>
+Host: <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a><br>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br>
+Gecko/20050225 Firefox/1.0.1<br>
+Content-Type: application/x-www-form-urlencoded<br>
+Content-Length: 40<br>
+Connection: Keep-Alive</p>
+<p>sex=man&amp;name=Professional<br>
+GET提交的数据收到URL长度的限制，HTTP协议规范设有对URL长度进行限制。这个限制是特定的浏览器及服务器对于它的限制</p>
 <p>POST是没有大小限制的，HTTP协议规范也没有进行大小限制。但是出于安全考虑，服务器软件实现的时候会做一定的限制</p>
 <p>GET和POST的数据是一样的，知识位置不同，一个在URL里面，一个在HTTP包的包体里</p>
 <p>POST提交的数据必须在body部分中，但是协议中没有规定数据使用哪种编码方式或者数据格式。客户端可以自己决定消息主题的格式。但是服务端一般根据请求头中的Content-Type字段来获知请求中的消息是用什么编码方式</p>
-<p>application/x-www-form-urlencoded<br>最常见的POST数据提交方式，浏览器原生的<form>表单。如果不设置enctype属性，最终就会以application/x-www-form-urlencoded 方式提交数据。<br>multipart/form-data<br>我们使用表单上传文件时，必须让 <form> 表单的 enctype 等于 multipart/form-data<br>首先生成了一个 boundary 用于分割不同的字段，为了避免与正文内容重复，boundary 很长很复杂。<br>Content-Type 里指明了数据是以 multipart/form-data 来编码<br>每部分都是以 —boundary 开始，紧接着是内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）<br>如果传输的是文件，还要包含文件名和文件类型信息。<br>application/json，text/xml，乃至 application/x-protobuf 这种二进制格式，只要服务器可以根据 Content-Type和 Content-Encoding 正确地解析出请求，都是没有问题的</form></form></p>
+<p>application/x-www-form-urlencoded<br>
+最常见的POST数据提交方式，浏览器原生的<form>表单。如果不设置enctype属性，最终就会以application/x-www-form-urlencoded 方式提交数据。<br>
+multipart/form-data<br>
+我们使用表单上传文件时，必须让 <form> 表单的 enctype 等于 multipart/form-data<br>
+首先生成了一个 boundary 用于分割不同的字段，为了避免与正文内容重复，boundary 很长很复杂。<br>
+Content-Type 里指明了数据是以 multipart/form-data 来编码<br>
+每部分都是以 --boundary 开始，紧接着是内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）<br>
+如果传输的是文件，还要包含文件名和文件类型信息。<br>
+application/json，text/xml，乃至 application/x-protobuf 这种二进制格式，只要服务器可以根据 Content-Type和 Content-Encoding 正确地解析出请求，都是没有问题的</form></form></p>
 <p>相应报文</p>
 <p>状态行</p>
 <p>第一行为状态行，（HTTP/1.1）表明HTTP版本为1.1版本，状态码为200，状态消息为（ok）</p>
 <p>状态代码：</p>
-<p>1xx：指示信息—表示请求已接收，继续处理</p>
-<p>2xx：成功—表示请求已被成功接收、理解、接受</p>
-<p>3xx：重定向—要完成请求必须进行更进一步的操作</p>
-<p>4xx：客户端错误—请求有语法错误或请求无法实现</p>
-<p>5xx：服务器端错误—服务器未能实现合法的请求</p>
+<p>1xx：指示信息–表示请求已接收，继续处理</p>
+<p>2xx：成功–表示请求已被成功接收、理解、接受</p>
+<p>3xx：重定向–要完成请求必须进行更进一步的操作</p>
+<p>4xx：客户端错误–请求有语法错误或请求无法实现</p>
+<p>5xx：服务器端错误–服务器未能实现合法的请求</p>
 <p>消息报头：说明客户端要使用的一些附加信息</p>
 <p>Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(text/html),编码类型是UTF-8</p>
 <p>空行：消息报头后面的空行是必须的</p>
@@ -1718,7 +1829,7 @@
 <p>第三次握手：192.168.1.116收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，192.168.1.116会再发送ack number=1739326487,ack=1，192.168.1.123收到后确认seq=seq+1,ack=1则连接建立成功。</p>
 <p>图解： 一个三次握手的过程（图1，图2）</p>
 <p>（图1） （图2）</p>
-<p>第一次握手的标志位（图3） 我们可以看到标志位里面只有个同步位，也就是在做请求(SYN) （图3） 第二次握手的标志位（图4） 我们可以看到标志位里面有个确认位和同步位，也就是在做应答(SYN + ACK) （图4） 第三次握手的标志位（图5） 我们可以看到标志位里面只有个确认位，也就是再做再次确认(ACK) （图5） 一个完整的三次握手也就是 请求—-应答—-再次确认</p>
+<p>第一次握手的标志位（图3） 我们可以看到标志位里面只有个同步位，也就是在做请求(SYN) （图3） 第二次握手的标志位（图4） 我们可以看到标志位里面有个确认位和同步位，也就是在做应答(SYN + ACK) （图4） 第三次握手的标志位（图5） 我们可以看到标志位里面只有个确认位，也就是再做再次确认(ACK) （图5） 一个完整的三次握手也就是 请求—应答—再次确认</p>
 <p>UDP</p>
 <p>UDP特性：</p>
 <p>缺乏可靠性：UDP本身不提供确认、序列号、超时重传等机制。因此UDP不保证数据报能够到达、不保证数据报的先后顺序、不保证每个数据报只到达一次</p>
@@ -1732,14 +1843,18 @@
 <p>四种广播地址：</p>
 <p>受限广播：255.255.255.255。该地址用于主机配置过程中IP数据报的目的地址，在任何情况下，router不转发目的地址为255.255.255.255的数据报，这样的数据报仅出现在本地网络中。</p>
 <p>指向网络的广播：</p>
-<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>HTTP，FTP，IMAP/POP3/SMTP，DNS</p>
+<h1>应用层</h1>
+<p>HTTP，FTP，IMAP/POP3/SMTP，DNS</p>
 <p>P2P</p>
-<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>TCP，UDP</p>
-<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>交换机，路由器，路由表</p>
+<h1>传输层</h1>
+<p>TCP，UDP</p>
+<h1>网络层</h1>
+<p>交换机，路由器，路由表</p>
 <p>私有网络，子网</p>
 <p>反向代理</p>
 <p>NAT网关</p>
-<h1 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h1><p>LTE，WIFI，蓝牙，IPv4/6，NFV，VLAN，IPQoS</p>
+<h1>链路层</h1>
+<p>LTE，WIFI，蓝牙，IPv4/6，NFV，VLAN，IPQoS</p>
 <p>PPP</p>
 <p>SDN（OpenFlow）</p>
 <p>DHCP</p>
@@ -1756,7 +1871,7 @@
 <p>边界网关协议（BGP）</p>
 <p>ACL访问控制策略</p>
 <p>ISP</p>
-</headers>
+</entity-body>
           
         
       
@@ -1936,7 +2051,7 @@
 <p>可并发执行。 在一个进程中的多个线程之间，可以并发执行，甚至允许在一个进程中所有线程都能并发执行；同样，不同进程中的线程也能并发执行，充分利用和发挥了处理机与外围设备并行工作的能力。</p>
 <p>共享进程资源。在同一进程中的各个线程，都可以共享该进程所拥有的资源</p>
 <p>所有线程都具有相同的地址空间（进程的地址空间），这意味着，线程可以访问该地址空间的每一个虚地址；</p>
-<p>问进程所拥有的已打开文件、定时器、信号量等。线程之间互相通信不必调用内核。 </p>
+<p>问进程所拥有的已打开文件、定时器、信号量等。线程之间互相通信不必调用内核。</p>
 <p>线程共享的环境包括：进程代码段、进程的公有数据(利用这些共享的数据，线程很容易的实现相互之间的通讯)、进程打开的文件描述符、信号的处理器、进程的当前目录和进程用户ID与进程组ID。</p>
 <p>本地进程间通信的方式：</p>
 <p>消息传递（管道、FIFO、消息队列）</p>
@@ -1948,11 +2063,18 @@
 <p>b.通信：进程间通信IPC，线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。</p>
 <p>c.调度和切换：线程上下文切换比进程上下文切换要快得多。</p>
 <p>d.在多线程OS中，进程不是一个可执行的实体</p>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="os提供的服务"><a href="#os提供的服务" class="headerlink" title="os提供的服务"></a>os提供的服务</h2><h2 id="多道程序"><a href="#多道程序" class="headerlink" title="多道程序"></a>多道程序</h2><p>多道程序设计技术是在计算机内存中同时存放几道相互独立的程序，使它们在管理程序控制下，相互穿插运行，两个或两个以上程序在计算机系统中同处于开始到结束之间的状态, 这些程序共享计算机系统资源。与之相对应的是单道程序，即在计算机内存中只允许一个的程序运行。对于一个单CPU系统来说，程序同时处于运行状态只是一种宏观上的概念，他们虽然都已经开始运行，但就微观而言，任意时刻，CPU上运行的程序只有一个</p>
-<h2 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h2><p><a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a> (time-sharing system)，“分时”的含义：分时是指多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是指在一台<a href="https://baike.baidu.com/item/%E4%B8%BB%E6%9C%BA/455151" target="_blank" rel="noopener">主机</a>上连接多个带有显示器和键盘的<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF/1903878" target="_blank" rel="noopener">终端</a>，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是一个多用户交互式操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>，主要分为三类：单道分时操作系统，多道分时操作系统，具有前台和后台的分时操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>将CPU的时间划分成若干个片段，称为<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>。操作系统以<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>为单位，轮流为每个<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF" target="_blank" rel="noopener">终端</a>用户服务。</p>
-<h2 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h2><h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>中断（interrupt）是是一种硬件机制，指在计算机执行期间，系统内发生任何非寻常的或非预期的急需处理事件（处理器外部的一个事件或者处理器内部的一个事件，内部的中断，比如说定时器中断，当定时器定时到的时候，就会产生一个中断来告诉处理器，这时候处理器可以做出相应的动作；外部中断，比如说某个管脚的电平发生了变化，这时候就会产生一个中断来告诉处理器），使得CPU暂时中断当前正在执行的程序而转去执行相应的事件处理程序。待处理完毕后又返回原来被中断处继续执行或调度新的进程执行的过程。</p>
+<h1>基础</h1>
+<h2 id="os提供的服务"><a class="header-anchor" href="#os提供的服务">¶</a>os提供的服务</h2>
+<h2 id="多道程序"><a class="header-anchor" href="#多道程序">¶</a>多道程序</h2>
+<p>多道程序设计技术是在计算机内存中同时存放几道相互独立的程序，使它们在管理程序控制下，相互穿插运行，两个或两个以上程序在计算机系统中同处于开始到结束之间的状态, 这些程序共享计算机系统资源。与之相对应的是单道程序，即在计算机内存中只允许一个的程序运行。对于一个单CPU系统来说，程序同时处于运行状态只是一种宏观上的概念，他们虽然都已经开始运行，但就微观而言，任意时刻，CPU上运行的程序只有一个</p>
+<h2 id="分时系统"><a class="header-anchor" href="#分时系统">¶</a>分时系统</h2>
+<p><a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a> (time-sharing system)，“分时”的含义：分时是指多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是指在一台<a href="https://baike.baidu.com/item/%E4%B8%BB%E6%9C%BA/455151" target="_blank" rel="noopener">主机</a>上连接多个带有显示器和键盘的<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF/1903878" target="_blank" rel="noopener">终端</a>，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>是一个多用户交互式操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>，主要分为三类：单道分时操作系统，多道分时操作系统，具有前台和后台的分时操作系统。<a href="https://baike.baidu.com/item/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3067636" target="_blank" rel="noopener">分时操作系统</a>将CPU的时间划分成若干个片段，称为<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>。操作系统以<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E7%89%87/6525414" target="_blank" rel="noopener">时间片</a>为单位，轮流为每个<a href="https://baike.baidu.com/item/%E7%BB%88%E7%AB%AF" target="_blank" rel="noopener">终端</a>用户服务。</p>
+<h2 id="微内核"><a class="header-anchor" href="#微内核">¶</a>微内核</h2>
+<h1>系统调用</h1>
+<h2 id="中断"><a class="header-anchor" href="#中断">¶</a>中断</h2>
+<p>中断（interrupt）是是一种硬件机制，指在计算机执行期间，系统内发生任何非寻常的或非预期的急需处理事件（处理器外部的一个事件或者处理器内部的一个事件，内部的中断，比如说定时器中断，当定时器定时到的时候，就会产生一个中断来告诉处理器，这时候处理器可以做出相应的动作；外部中断，比如说某个管脚的电平发生了变化，这时候就会产生一个中断来告诉处理器），使得CPU暂时中断当前正在执行的程序而转去执行相应的事件处理程序。待处理完毕后又返回原来被中断处继续执行或调度新的进程执行的过程。</p>
 <p>因此中断是一种处理器与外设进行通信的机制，用于“通知”处理器外部有“重要事件发生”，一般情况下，中断需要被处理器响应。它是计算机可以更好更快利用有限的系统资源解决系统<a href="https://www.baidu.com/s?wd=%E5%93%8D%E5%BA%94%E9%80%9F%E5%BA%A6&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">响应速度</a>和运行效率,实现实时响应,系统调度的一种控制技术。中断的意义还在于应用程序不必关心中断的发生与处理，以及中断服务程序不必关心应用程序的执行状态。</p>
-<p>中断是由外部事件导致并且它发生的时间是不可预测的，这一点和陷阱不同，中断发生完全是”异步”的，根本无法预测到此类中断会在什么时候发生。因此，<a href="https://www.baidu.com/s?wd=CPU&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">CPU</a>(或者软件)对于此类外部中断完全是”被动”的。在有些情况下，尽管产生了中断源和发出了中断请求，但CPU内部的处理器状态字PSW的中断允许位已被清除，从而不允许CPU响应中断。这种情况称为禁止中断。CPU禁止中断后只有等到PSW的中断允许位被重新设置后才能接收中断。禁止中断也称为关中断，PSW的中断允许位的设置也被称为开中断。开中断和关中断是为了保证某段程序执行的原子性。还有一个比较常用的概念是中断屏蔽。中断屏蔽是指在中断请求产生之后，系统有选择地封锁一部分中断而允许另一部分中断仍能得到响应。不过，有些中断请求是不能屏蔽甚至不能禁止的，也就是说，这些中断具有最高优先级，只要这些中断请求一旦提出，CPU必须立即响应。例如，电源掉电事件所引起的中断就是不可禁止和不可屏蔽的。</p>
+<p>中断是由外部事件导致并且它发生的时间是不可预测的，这一点和陷阱不同，中断发生完全是&quot;异步&quot;的，根本无法预测到此类中断会在什么时候发生。因此，<a href="https://www.baidu.com/s?wd=CPU&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">CPU</a>(或者软件)对于此类外部中断完全是&quot;被动&quot;的。在有些情况下，尽管产生了中断源和发出了中断请求，但CPU内部的处理器状态字PSW的中断允许位已被清除，从而不允许CPU响应中断。这种情况称为禁止中断。CPU禁止中断后只有等到PSW的中断允许位被重新设置后才能接收中断。禁止中断也称为关中断，PSW的中断允许位的设置也被称为开中断。开中断和关中断是为了保证某段程序执行的原子性。还有一个比较常用的概念是中断屏蔽。中断屏蔽是指在中断请求产生之后，系统有选择地封锁一部分中断而允许另一部分中断仍能得到响应。不过，有些中断请求是不能屏蔽甚至不能禁止的，也就是说，这些中断具有最高优先级，只要这些中断请求一旦提出，CPU必须立即响应。例如，电源掉电事件所引起的中断就是不可禁止和不可屏蔽的。</p>
 <p>外部事件主要是指时钟中断，硬件中断等。由于CPU一次只能运行一条指令，所以在一个时刻只能有一个程序运行，但我们感觉在我们的计算机中明明可以同时运行很多程序，这是由于CPU在多个进程之间快速切换所导致的伪并行。如果某一个程序运行了足够长用完了分配给它的时间片，CPU决定切换到另一个进程运行，就会产生一个时钟中断，切换到下一个进程运行。</p>
 <p>硬件中断顾名思义就是由硬件引起的中断，比如一个程序需要用户输入一个数据，但用户一直没有输入，操作系统决定是一直等待用户输入还是转而运行别的进程，一般情况是转而运行别的进程，如果用户的输入到来了，那么键盘驱动器会产生一个中断通知操作系统，操作系统保存正在运行的程序的状态，从而切换到原来的进程处理到来的数据。</p>
 <p>所以中断发生是随机的且主要作用是完成进程间切换，从而支持CPU和设备之间的并行。</p>
@@ -1960,15 +2082,18 @@
 <p>硬中断：通过处理器中断信号线产生的中断</p>
 <p>软中断：通过非法指令或特殊指令触发的中断</p>
 <p>计算机的中断系统能够加强CPU对多任务事件的处理能力。中断机制是现代计算机系统中的基础设施之一，它在系统中起着通信网络作用，以协调系统对各种外部事件的响应和处理。中断是实现多道程序设计的必要条件。中断是CPU对系统发生的某个事件作出的一种反应。引起中断的事件称为中断源。中断源向CPU提出处理的请求称为中断请求。发生中断时被打断程序的暂停点成为断点。CPU暂停现行程序而转为响应中断请求的过程称为中断响应。处理中断源的程序称为中断处理程序。CPU执行有关的中断处理程序称为中断处理。而返回断点的过程称为中断返回。中断的实现实行软件和硬件综合完成，硬件部分叫做硬件装置，软件部分成为软件处理程序。</p>
-<p>根据中断源产生的条件，可把中断分为外中断和内中断。外中断是指来自处理器和内存外部的中断，包括I／0设备发出的I／O中断、外部信号中断(例如用户键人ESC键)。各种定时器引起的时钟中断以及调试程序中设置的断点等引起的调试中断等。外中断在狭义上一般被称为中断。 </p>
-<p>内中断主要指在处理器和内存内部产生的中断。内中断一般称为陷阱(trap)或异常。它包括程序运算引起的各种错误，如地址非法、校验错、页面失效、存取访问控制错、算术操作溢出、数据格式非法、除数为零、非法指令、用户程序执行特权指令、分时系统中的时间片中断以及从用户态到核心态的切换等都是陷阱的例子。 </p>
-<p>为了按中断源的轻重缓急处理响应中断，操作系统为不同的中断赋予不同的优先级。例如在UNIX系统中，外中断和陷阱的优先级共分为8级。为了禁止中断或屏蔽中断，CPU的处理器状态字PSW中也设有相应的优先级。如果中断源的优先级高于PSW的优先级，则CPU响应该中断源的请求；反之，CPU屏蔽该中断源的中断请求。 </p>
+<p>根据中断源产生的条件，可把中断分为外中断和内中断。外中断是指来自处理器和内存外部的中断，包括I／0设备发出的I／O中断、外部信号中断(例如用户键人ESC键)。各种定时器引起的时钟中断以及调试程序中设置的断点等引起的调试中断等。外中断在狭义上一般被称为中断。</p>
+<p>内中断主要指在处理器和内存内部产生的中断。内中断一般称为陷阱(trap)或异常。它包括程序运算引起的各种错误，如地址非法、校验错、页面失效、存取访问控制错、算术操作溢出、数据格式非法、除数为零、非法指令、用户程序执行特权指令、分时系统中的时间片中断以及从用户态到核心态的切换等都是陷阱的例子。</p>
+<p>为了按中断源的轻重缓急处理响应中断，操作系统为不同的中断赋予不同的优先级。例如在UNIX系统中，外中断和陷阱的优先级共分为8级。为了禁止中断或屏蔽中断，CPU的处理器状态字PSW中也设有相应的优先级。如果中断源的优先级高于PSW的优先级，则CPU响应该中断源的请求；反之，CPU屏蔽该中断源的中断请求。</p>
 <p>各中断源的优先级在系统设计时给定，在系统运行时是固定的。而处理器的优先级则根据执行情况由系统程序动态设定。</p>
-<h2 id="陷阱"><a href="#陷阱" class="headerlink" title="陷阱"></a>陷阱</h2><p>计算机有两种运行模式：用户态， 内核态。 其中操作系统运行在内核态，在内核态中，操作系统具有对所有硬件的完全访问权限，可以使机器运行任何指令；相反，用户程序运行在用户态，在用户态下，软件只能使用少数指令，它们并不具备直接访问硬件的权限。这就出现了问题，假如软件需要访问硬件或者需要调用内核中的函数该怎么办呢，这就是陷阱的作用了。陷阱指令可以使执行流程从用户态陷入内核（这也就是为什么叫做陷阱，而不是捕猎的陷阱）并把控制权转移给操作系统，使得用户程序可以调用内核函数和使用硬件从而获得操作系统所提供的服务，比如用视频软件放一个电影，视频软件就发出陷阱使用显示器和声卡从而访问硬件。</p>
+<h2 id="陷阱"><a class="header-anchor" href="#陷阱">¶</a>陷阱</h2>
+<p>计算机有两种运行模式：用户态， 内核态。 其中操作系统运行在内核态，在内核态中，操作系统具有对所有硬件的完全访问权限，可以使机器运行任何指令；相反，用户程序运行在用户态，在用户态下，软件只能使用少数指令，它们并不具备直接访问硬件的权限。这就出现了问题，假如软件需要访问硬件或者需要调用内核中的函数该怎么办呢，这就是陷阱的作用了。陷阱指令可以使执行流程从用户态陷入内核（这也就是为什么叫做陷阱，而不是捕猎的陷阱）并把控制权转移给操作系统，使得用户程序可以调用内核函数和使用硬件从而获得操作系统所提供的服务，比如用视频软件放一个电影，视频软件就发出陷阱使用显示器和声卡从而访问硬件。</p>
 <p>陷阱是程序有意产生的。</p>
 <p>操作系统有很多系统调用接口供用程序调用。陷阱的发生时间是固定的，比如第一次用视频软件时，在加载视频时软件会向操作系统发送陷阱指令，第二次播放时，软件仍然会在同样的时刻发送陷阱指令。这一点是和中断的明显的差别之一。陷阱通常由处理器正在执行的现行指令引起，而中断则是由与现行指令无关的中断源引起的。陷阱处理程序提供的服务为当前进程所用，而中断处理程序提供的服务则不是为了当前进程的。</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常就是程序执行过程中的异常行为。比如除零异常，缓冲区溢出异常等。不同的操作系统定义了不同种类和数量的异常并且每个异常都有一个唯一的异常号，异常会扰乱程序的正常执行流程，所以异常是在CPU执行指令时本身出现的问题，比如除数为零而出现的除零异常。异常的产生表示程序设计不合理，所以在编程的时候要尽量避免异常的产生。</p>
-<h2 id="系统调用-1"><a href="#系统调用-1" class="headerlink" title="系统调用"></a>系统调用</h2><p>在Unix/Linux系统中，系统调用像普通C函数调用那样出现在C程序中。但是一般的函数调用序列并不能把进程的状态从用户态变为核心态，而系统调用却可以做到。</p>
+<h2 id="异常"><a class="header-anchor" href="#异常">¶</a>异常</h2>
+<p>异常就是程序执行过程中的异常行为。比如除零异常，缓冲区溢出异常等。不同的操作系统定义了不同种类和数量的异常并且每个异常都有一个唯一的异常号，异常会扰乱程序的正常执行流程，所以异常是在CPU执行指令时本身出现的问题，比如除数为零而出现的除零异常。异常的产生表示程序设计不合理，所以在编程的时候要尽量避免异常的产生。</p>
+<h2 id="系统调用"><a class="header-anchor" href="#系统调用">¶</a>系统调用</h2>
+<p>在Unix/Linux系统中，系统调用像普通C函数调用那样出现在C程序中。但是一般的函数调用序列并不能把进程的状态从用户态变为核心态，而系统调用却可以做到。</p>
 <p>C语言编译程序利用一个预先确定的函数库（一般称为C库），其中有各系统调用的名字。C库中的函数都专门使用一条指令，把进程的运行状态改为核心态。Linux的系统调用是通过中断指令“INT0x80”实现的。</p>
 <p>每个系统调用都有惟一的号码，称作系统调用号。所有的系统调用都集中在系统调用入口表中统一管理。</p>
 <p>系统调用入口表是一个函数指针数组，以系统调用号为下标在该数组中找到相应的函数指针，进而就能确定用户使用的是哪一个系统调用。不同系统中系统调用的个数是不同的，目前Linux系统中共定义了221个系统调用。</p>
@@ -1976,10 +2101,14 @@
 <p>当CPU执行到中断指令“INT0x80”时，硬件就做出一系列响应，其动作与上述的中断响应相同。CPU穿过陷阱门，从用户空间进入系统空间。相应地，进程的上下文从用户堆栈切换到系统堆栈。</p>
 <p>接着运行内核函数system_call（）。首先，进一步保存各寄存器的内容；接着调用syscall_trace()，以系统调用号为下标检索系统调用入口表sys_call_table，从中找到相应的函数；然后转去执行该函数，完成具体的服务。</p>
 <p>执行完服务程序，核心检查是否发生错误，并作相应处理。如果本进程收到信号，则对信号作相应处理。最后进程从系统空间返回到用户空间。</p>
-<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><p>进程间通信</p>
-<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><p>存储系统，虚拟内存</p>
-<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><p>文件管理系统，文件管理</p>
-<h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p>内存IO访问，DMA</p>
+<h1>进程</h1>
+<p>进程间通信</p>
+<h1>存储</h1>
+<p>存储系统，虚拟内存</p>
+<h1>文件系统</h1>
+<p>文件管理系统，文件管理</p>
+<h1>IO</h1>
+<p>内存IO访问，DMA</p>
 <p>primitives原语</p>
 <p>ioctl</p>
 

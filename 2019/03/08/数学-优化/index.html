@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步步">
+<meta name="description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法 在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-优化知识">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数学-优化/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步步">
+<meta property="og:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法 在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-优化知识">
-<meta name="twitter:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步步">
+<meta name="twitter:description" content="[TOC] https://blog.csdn.net/qq_32769481/article/details/84330857 梯度下降 梯度下降法 在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。 在最小化损失函数时，可以通过梯度下降法来一步">
 
 
 
@@ -301,15 +301,24 @@
       
         <p>[TOC]</p>
 <p><a href="https://blog.csdn.net/qq_32769481/article/details/84330857" target="_blank" rel="noopener">https://blog.csdn.net/qq_32769481/article/details/84330857</a></p>
-<p>梯度下降<br> 梯度下降法<br>在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。</p>
+<p>梯度下降<br>
+梯度下降法<br>
+在微积分中，对多元函数的参数求偏导数，把求得的各个参数的偏导数以向量的形式写出来，就是梯度。几何意义上来说，梯度就是函数变化增加最快的地方。沿着梯度相反的方向，就是梯度减少最快的地方，最容易找到最小值。</p>
 <p>在最小化损失函数时，可以通过梯度下降法来一步步迭代求解，得到最小化的损失函数，和模型参数值。</p>
 <p>步长：步长决定了在梯度下降迭代的过程中，每一步沿着梯度负方向前进的长度。用上面下山的例子，步长就是在当前这一步所在位置沿着最陡峭最容易下山的位置走得那一步的长度</p>
 <p>特征：样本中输入部分</p>
 <p>假设函数：监督学习中，为了拟合输入样本，而使用的假设函数</p>
 <p>损失函数：为了评估模型拟合的好坏，通常用损失函数来度量拟合的成都。损失函数极小化，意味着拟合程度最好，对应的模型参数即为最优参数。</p>
 <p>算法过程：</p>
-<p>确定当前的损失函数的梯度，通过求当前参数的微分<br>用步长乘以损失函数的梯度，得到当前位置下降的距离<br>确定是否所有的梯度下降的距离都小于ε，如果小于ε则算法终止，当前的所有参数即为最终结果，否则进入步骤4<br>更新所有的参数，更新完以后进入步骤1<br>算法调优：</p>
-<p>步长选择，多选一些值，从大到小分别运行算法，看看迭代效果，如果损失函数在变小，说明取值有效，否则要减小步长<br>算法参数的初始值选择，初始值不同，获得的最小值也有可能不同，因此梯度下降求得的只是局部最小值。<br>归一化：由于样本不同特征的取值范围不一样，可能导致迭代很慢。为了减少特征取值的影响，可以对特征归一化或者标准化。<br>批梯度下降：更新参数使用所有样本进行更新</p>
+<p>确定当前的损失函数的梯度，通过求当前参数的微分<br>
+用步长乘以损失函数的梯度，得到当前位置下降的距离<br>
+确定是否所有的梯度下降的距离都小于ε，如果小于ε则算法终止，当前的所有参数即为最终结果，否则进入步骤4<br>
+更新所有的参数，更新完以后进入步骤1<br>
+算法调优：</p>
+<p>步长选择，多选一些值，从大到小分别运行算法，看看迭代效果，如果损失函数在变小，说明取值有效，否则要减小步长<br>
+算法参数的初始值选择，初始值不同，获得的最小值也有可能不同，因此梯度下降求得的只是局部最小值。<br>
+归一化：由于样本不同特征的取值范围不一样，可能导致迭代很慢。为了减少特征取值的影响，可以对特征归一化或者标准化。<br>
+批梯度下降：更新参数使用所有样本进行更新</p>
 <p>随机梯度下降：求梯度时没有用所有的m个样本的数据，而仅仅选取一个样本来求梯度。</p>
 <p>小批量梯度下降：对于m各样本，采用x个样子来迭代。</p>
 <p>和最小二乘法比较：</p>
@@ -317,60 +326,133 @@
 <p>缺点：需要选择步长，如果样本少的时候，最小二成计算速度块</p>
 <p>优点：样本量很大的时候，最小二乘需要去一个超级大的逆矩阵，这时候求解很慢，使用迭代的梯度下降法比较有优势</p>
 <p>梯度下降法和牛顿法/拟牛顿法相比，两者都是迭代求解，不过梯度下降法是梯度求解，而牛顿法/拟牛顿法是用二阶的海森矩阵的逆矩阵或伪逆矩阵求解。相对而言，使用牛顿法/拟牛顿法收敛更快。但是每次迭代的时间比梯度下降法长。</p>
-<p>牛顿迭代<br> 牛顿迭代<br>牛顿-拉弗森方法：</p>
+<p>牛顿迭代<br>
+牛顿迭代<br>
+牛顿-拉弗森方法：</p>
 <p>切线是曲线的线性逼近。</p>
 <p>随便找一个曲线上的点做切线，找到与x周的交点做垂线，然后继续做切线，重复刚才的过程</p>
 <p>如果f二阶可导，那么待求的零点x周围存在一个区域，只要起始点位于这个邻近域内，那么牛顿-拉弗森方法必定收敛</p>
 <p>但是因为我们不知道根点在哪里，所以起始点的选择就不一定在这个区域内。</p>
-<p>驻点：驻点没有根<br>越来越远离：比如说x的三分之一的幂<br>循环震荡不收敛：x的绝对值的二分之一幂<br>注意零点倒数不存在也有可能可以用牛顿方法解<br>不能完整求出所有根，可能只能求到近一点的根，或者远一点的跟<br>应用牛顿-拉弗森方法，要注意以下问题：</p>
+<p>驻点：驻点没有根<br>
+越来越远离：比如说x的三分之一的幂<br>
+循环震荡不收敛：x的绝对值的二分之一幂<br>
+注意零点倒数不存在也有可能可以用牛顿方法解<br>
+不能完整求出所有根，可能只能求到近一点的根，或者远一点的跟<br>
+应用牛顿-拉弗森方法，要注意以下问题：</p>
 <p>函数在整个定义域内最好是二阶可导的</p>
 <p>起始点对求根计算影响重大，可以增加一些别的判断手段进行试错</p>
-<h1 id="几何概念"><a href="#几何概念" class="headerlink" title="几何概念"></a>几何概念</h1><p>线段<br>超平面与线性簇<br>邻域<br>多面体和多胞形</p>
-<p>凸集<br>一个集合C是，当前仅当任意x,y属于C且0≤Θ≤10≤Θ≤1，都有Θ∗x+(1−Θ)∗yΘ∗x+(1−Θ)∗y属于C</p>
+<h1>几何概念</h1>
+<p>线段<br>
+超平面与线性簇<br>
+邻域<br>
+多面体和多胞形</p>
+<p>凸集<br>
+一个集合C是，当前仅当任意x,y属于C且0≤Θ≤10≤Θ≤1，都有Θ∗x+(1−Θ)∗yΘ∗x+(1−Θ)∗y属于C</p>
 <p>用通俗的话来说C集合线段上的任意两点也在C集合中</p>
-<h1 id="函数概念"><a href="#函数概念" class="headerlink" title="函数概念"></a>函数概念</h1><p>凸函数<br>一个函数f其定义域(D(f))是凸集，并且对任意x,y属于D(f)和0≤Θ≤10≤Θ≤1都有</p>
+<h1>函数概念</h1>
+<p>凸函数<br>
+一个函数f其定义域(D(f))是凸集，并且对任意x,y属于D(f)和0≤Θ≤10≤Θ≤1都有</p>
 <p>f(Θ∗x+(1−Θ)∗y)≤Θ∗f(x)+(1−Θ)∗f(y)f(Θ∗x+(1−Θ)∗y)≤Θ∗f(x)+(1−Θ)∗f(y)</p>
 <p>常见的凸函数有：</p>
-<p>指数函数f(x)=ax;a&gt;1f(x)=ax;a&gt;1<br>负对数函数−logax;a&gt;1,x&gt;0−logax;a&gt;1,x&gt;0<br>开口向上的二次函数等<br>凸函数的判定：</p>
-<p>如果f是一阶可导，对于任意数据域内的x,y满足f(y)≥f(x)+f′(x)(y−x)f(y)≥f(x)+f′(x)(y−x)<br>如果f是二阶可导，<br>凸优化应用举例</p>
-<p>SVM：其中由max|w|max|w| 转向min(12∗|w|2)min(12∗|w|2)<br>最小二乘法？</p>
+<p>指数函数f(x)=ax;a&gt;1f(x)=ax;a&gt;1<br>
+负对数函数−logax;a&gt;1,x&gt;0−logax;a&gt;1,x&gt;0<br>
+开口向上的二次函数等<br>
+凸函数的判定：</p>
+<p>如果f是一阶可导，对于任意数据域内的x,y满足f(y)≥f(x)+f′(x)(y−x)f(y)≥f(x)+f′(x)(y−x)<br>
+如果f是二阶可导，<br>
+凸优化应用举例</p>
+<p>SVM：其中由max|w|max|w| 转向min(12∗|w|2)min(12∗|w|2)<br>
+最小二乘法？</p>
 <p>LR的损失函数∑(yi∗log(hw(xi))+(1−yi)∗(log(1−hw(xi))))</p>
 <p>仿射函数</p>
-<h1 id="无约束优化"><a href="#无约束优化" class="headerlink" title="无约束优化"></a>无约束优化</h1><h2 id="一维搜索"><a href="#一维搜索" class="headerlink" title="一维搜索"></a>一维搜索</h2><p>​    黄金分割/斐波那契分割/二分法</p>
-<p>​    牛顿法</p>
-<p>​    割线法</p>
-<p>​    画界法</p>
-<h2 id="梯度下降方法-最速下降方法"><a href="#梯度下降方法-最速下降方法" class="headerlink" title="梯度下降方法/最速下降方法"></a>梯度下降方法/最速下降方法</h2><script type="math/tex; mode=display">
-在机器学习任务中，需要最小化损失函数L(\theta)，其中\theta是要求解的模型参数。\\
-梯度下降法常用来求解这种无约束最优化问题，它是一种迭代方法：选取初值\theta_0,不断迭代，更新\theta的值，进行损失函数极小化</script><script type="math/tex; mode=display">
-迭代公式：\theta^t = \theta^{t-1}+\Delta\theta\\
-将L(\theta^t)在\theta^{t-1}处进行一阶泰勒展开：\\
-L(\theta^t) = L(\theta^{t-1}+\Delta\theta)\\
-\approx L(\theta^{t-1}) + L'(\theta^{t-1})\Delta\theta\\
-要使得L(\theta^t) < L(\theta^{t-1}),可取\Delta\theta = -\alpha L'(\theta^{t-1})\\
-那么\theta^t = \theta^{t-1}-\alpha L'(\theta^{t-1})\\
-这里\alpha是 步长，可通过line \ search确定，但一般直接赋一个小的数。</script><h3 id="梯度下降的困难"><a href="#梯度下降的困难" class="headerlink" title="梯度下降的困难"></a>梯度下降的困难</h3><ol>
+<h1>无约束优化</h1>
+<h2 id="一维搜索"><a class="header-anchor" href="#一维搜索">¶</a>一维搜索</h2>
+<p>​	黄金分割/斐波那契分割/二分法</p>
+<p>​	牛顿法</p>
+<p>​	割线法</p>
+<p>​	画界法</p>
+<h2 id="梯度下降方法-最速下降方法"><a class="header-anchor" href="#梯度下降方法-最速下降方法">¶</a>梯度下降方法/最速下降方法</h2>
+<p>$$<br>
+在机器学习任务中，需要最小化损失函数L(\theta)，其中\theta是要求解的模型参数。\<br>
+梯度下降法常用来求解这种无约束最优化问题，它是一种迭代方法：选取初值\theta_0,不断迭代，更新\theta的值，进行损失函数极小化<br>
+$$</p>
+<p>$$<br>
+迭代公式：\theta^t = \theta^{t-1}+\Delta\theta\<br>
+将L(\theta<sup>t)在\theta</sup>{t-1}处进行一阶泰勒展开：\<br>
+L(\theta^t) = L(\theta^{t-1}+\Delta\theta)\<br>
+\approx L(\theta^{t-1}) + L’(\theta^{t-1})\Delta\theta\<br>
+要使得L(\theta^t) &lt; L(\theta^{t-1}),可取\Delta\theta = -\alpha L’(\theta^{t-1})\<br>
+那么\theta^t = \theta^{t-1}-\alpha L’(\theta^{t-1})\<br>
+这里\alpha是 步长，可通过line \ search确定，但一般直接赋一个小的数。<br>
+$$</p>
+<h3 id="梯度下降的困难"><a class="header-anchor" href="#梯度下降的困难">¶</a>梯度下降的困难</h3>
+<ol>
 <li>梯度的计算：目标函数经常是求和函数的形式，当样本量极大的时候</li>
 <li>学习率的选择：太小导致收敛很慢，太大导致不收敛</li>
 </ol>
-<h2 id="牛顿法-拟牛顿法"><a href="#牛顿法-拟牛顿法" class="headerlink" title="牛顿法/拟牛顿法"></a>牛顿法/拟牛顿法</h2><p>牛顿法</p>
-<script type="math/tex; mode=display">
-将L(\theta^t)在\theta^{t-1}处进行一阶泰勒展开：\\
-L(\theta^t) = L(\theta^{t-1}+\Delta\theta)\\
-\approx L(\theta^{t-1}) + L'(\theta^{t-1})\Delta\theta + L''(\theta^{t-1})\frac {\Delta\theta^2}{2}\\
-为了简化分析过程，假设参数\theta是标量，则可将一阶和二阶导数分别记为 g 和 h\\
-L(\theta^{t-1}) + g\Delta\theta + h\frac {\Delta\theta^2}{2}\\
-所以让L(\theta^t)极小等价于让g\Delta\theta + h\frac {\Delta\theta^2}{2}极小\\
-可令\frac{\partial (g\Delta\theta + h\frac {\Delta\theta^2}{2})}{\partial \Delta\theta} = 0\\
-可得\Delta\theta = -\frac{g}{h},所以\theta^t = \theta^{t-1}-\frac{g}{h}\\</script><script type="math/tex; mode=display">
-把参数\theta推广到向量形式，迭代公式：\theta^{t-1}-H^{-1}g\\
-这里H是海森矩阵</script><p>缺点：</p>
+<h2 id="牛顿法-拟牛顿法"><a class="header-anchor" href="#牛顿法-拟牛顿法">¶</a>牛顿法/拟牛顿法</h2>
+<p>牛顿法<br>
+$$<br>
+将L(\theta<sup>t)在\theta</sup>{t-1}处进行一阶泰勒展开：\<br>
+L(\theta^t) = L(\theta^{t-1}+\Delta\theta)\<br>
+\approx L(\theta^{t-1}) + L’(\theta^{t-1})\Delta\theta + L’’(\theta^{t-1})\frac {\Delta\theta^2}{2}\<br>
+为了简化分析过程，假设参数\theta是标量，则可将一阶和二阶导数分别记为 g 和 h\<br>
+L(\theta^{t-1}) + g\Delta\theta + h\frac {\Delta\theta^2}{2}\<br>
+所以让L(\theta^t)极小等价于让g\Delta\theta + h\frac {\Delta\theta^2}{2}极小\<br>
+可令\frac{\partial (g\Delta\theta + h\frac {\Delta\theta^2}{2})}{\partial \Delta\theta} = 0\<br>
+可得\Delta\theta = -\frac{g}{h},所以\theta^t = \theta^{t-1}-\frac{g}{h}\<br>
+$$</p>
+<p>$$<br>
+把参数\theta推广到向量形式，迭代公式：\theta<sup>{t-1}-H</sup>{-1}g\<br>
+这里H是海森矩阵<br>
+$$</p>
+<p>缺点：</p>
 <ol>
 <li>要求计算目标函数的二阶导数，高纬特征情况下，矩阵太大，计算和存储都有问题</li>
 <li>小批量的情况下，牛顿法的计算结果噪音太大</li>
 <li>目标函数非凸时，牛顿法更容易收敛到鞍点</li>
 </ol>
-<h2 id="BGFS"><a href="#BGFS" class="headerlink" title="BGFS"></a>BGFS</h2><h2 id="共轭方向法"><a href="#共轭方向法" class="headerlink" title="共轭方向法"></a>共轭方向法</h2><h2 id="求解线性方程组"><a href="#求解线性方程组" class="headerlink" title="求解线性方程组"></a>求解线性方程组</h2><h3 id="最小二乘分析"><a href="#最小二乘分析" class="headerlink" title="最小二乘分析"></a>最小二乘分析</h3><h3 id="Kaczmarz算法"><a href="#Kaczmarz算法" class="headerlink" title="Kaczmarz算法"></a>Kaczmarz算法</h3><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h2 id="全局搜索算法"><a href="#全局搜索算法" class="headerlink" title="全局搜索算法"></a>全局搜索算法</h2><h3 id="Nelder-Mead单纯形法"><a href="#Nelder-Mead单纯形法" class="headerlink" title="Nelder-Mead单纯形法"></a>Nelder-Mead单纯形法</h3><h3 id="模拟退火-粒子群优化-遗传算法"><a href="#模拟退火-粒子群优化-遗传算法" class="headerlink" title="模拟退火/粒子群优化/遗传算法"></a>模拟退火/粒子群优化/遗传算法</h3><h1 id="有约束的线性规划"><a href="#有约束的线性规划" class="headerlink" title="有约束的线性规划"></a>有约束的线性规划</h1><h2 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h2><h2 id="对偶线性规划"><a href="#对偶线性规划" class="headerlink" title="对偶线性规划"></a>对偶线性规划</h2><h2 id="非单纯形法"><a href="#非单纯形法" class="headerlink" title="非单纯形法"></a>非单纯形法</h2><h3 id="Khachiyan算法"><a href="#Khachiyan算法" class="headerlink" title="Khachiyan算法"></a>Khachiyan算法</h3><h3 id="仿射尺度法"><a href="#仿射尺度法" class="headerlink" title="仿射尺度法"></a>仿射尺度法</h3><h3 id="Karmarkar算法"><a href="#Karmarkar算法" class="headerlink" title="Karmarkar算法"></a>Karmarkar算法</h3><h2 id="整数规划"><a href="#整数规划" class="headerlink" title="整数规划"></a>整数规划</h2><h3 id="幺模矩阵"><a href="#幺模矩阵" class="headerlink" title="幺模矩阵"></a>幺模矩阵</h3><h3 id="Gomory割平面法"><a href="#Gomory割平面法" class="headerlink" title="Gomory割平面法"></a>Gomory割平面法</h3><h1 id="有约束的非线性规划"><a href="#有约束的非线性规划" class="headerlink" title="有约束的非线性规划"></a>有约束的非线性规划</h1><h2 id="仅含等式约束的优化"><a href="#仅含等式约束的优化" class="headerlink" title="仅含等式约束的优化"></a>仅含等式约束的优化</h2><h3 id="牛顿方法"><a href="#牛顿方法" class="headerlink" title="牛顿方法"></a>牛顿方法</h3><h3 id="切线空间-法线空间"><a href="#切线空间-法线空间" class="headerlink" title="切线空间/法线空间"></a>切线空间/法线空间</h3><h3 id="拉格朗日条件"><a href="#拉格朗日条件" class="headerlink" title="拉格朗日条件"></a>拉格朗日条件</h3><h3 id="二阶条件"><a href="#二阶条件" class="headerlink" title="二阶条件"></a>二阶条件</h3><h1 id="含不等式约束的优化："><a href="#含不等式约束的优化：" class="headerlink" title="含不等式约束的优化："></a>含不等式约束的优化：</h1><h2 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h2><h2 id="二阶条件-1"><a href="#二阶条件-1" class="headerlink" title="二阶条件"></a>二阶条件</h2><h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h2><h3 id="投影法"><a href="#投影法" class="headerlink" title="投影法"></a>投影法</h3><h3 id="拉格朗日法"><a href="#拉格朗日法" class="headerlink" title="拉格朗日法"></a>拉格朗日法</h3><h3 id="罚函数法"><a href="#罚函数法" class="headerlink" title="罚函数法"></a>罚函数法</h3><h2 id="凸优化"><a href="#凸优化" class="headerlink" title="凸优化"></a>凸优化</h2><h3 id="凸集-凸函数"><a href="#凸集-凸函数" class="headerlink" title="凸集/凸函数"></a>凸集/凸函数</h3><h3 id="对偶"><a href="#对偶" class="headerlink" title="对偶"></a>对偶</h3><h3 id="拉格朗日松弛"><a href="#拉格朗日松弛" class="headerlink" title="拉格朗日松弛"></a>拉格朗日松弛</h3><h3 id="内点法"><a href="#内点法" class="headerlink" title="内点法"></a>内点法</h3><h3 id="半定规划"><a href="#半定规划" class="headerlink" title="半定规划"></a>半定规划</h3><h2 id="多目标优化"><a href="#多目标优化" class="headerlink" title="多目标优化"></a>多目标优化</h2><h3 id="帕累托解"><a href="#帕累托解" class="headerlink" title="帕累托解"></a>帕累托解</h3>
+<h2 id="bgfs"><a class="header-anchor" href="#bgfs">¶</a>BGFS</h2>
+<h2 id="共轭方向法"><a class="header-anchor" href="#共轭方向法">¶</a>共轭方向法</h2>
+<h2 id="求解线性方程组"><a class="header-anchor" href="#求解线性方程组">¶</a>求解线性方程组</h2>
+<h3 id="最小二乘分析"><a class="header-anchor" href="#最小二乘分析">¶</a>最小二乘分析</h3>
+<h3 id="kaczmarz算法"><a class="header-anchor" href="#kaczmarz算法">¶</a>Kaczmarz算法</h3>
+<h2 id="神经网络"><a class="header-anchor" href="#神经网络">¶</a>神经网络</h2>
+<h2 id="全局搜索算法"><a class="header-anchor" href="#全局搜索算法">¶</a>全局搜索算法</h2>
+<p>###	Nelder-Mead单纯形法</p>
+<p>###	模拟退火/粒子群优化/遗传算法</p>
+<h1>有约束的线性规划</h1>
+<h2 id="单纯形法"><a class="header-anchor" href="#单纯形法">¶</a>单纯形法</h2>
+<h2 id="对偶线性规划"><a class="header-anchor" href="#对偶线性规划">¶</a>对偶线性规划</h2>
+<h2 id="非单纯形法"><a class="header-anchor" href="#非单纯形法">¶</a>非单纯形法</h2>
+<h3 id="khachiyan算法"><a class="header-anchor" href="#khachiyan算法">¶</a>Khachiyan算法</h3>
+<h3 id="仿射尺度法"><a class="header-anchor" href="#仿射尺度法">¶</a>仿射尺度法</h3>
+<h3 id="karmarkar算法"><a class="header-anchor" href="#karmarkar算法">¶</a>Karmarkar算法</h3>
+<h2 id="整数规划"><a class="header-anchor" href="#整数规划">¶</a>整数规划</h2>
+<h3 id="幺模矩阵"><a class="header-anchor" href="#幺模矩阵">¶</a>幺模矩阵</h3>
+<h3 id="gomory割平面法"><a class="header-anchor" href="#gomory割平面法">¶</a>Gomory割平面法</h3>
+<h1>有约束的非线性规划</h1>
+<h2 id="仅含等式约束的优化"><a class="header-anchor" href="#仅含等式约束的优化">¶</a>仅含等式约束的优化</h2>
+<h3 id="牛顿方法"><a class="header-anchor" href="#牛顿方法">¶</a>牛顿方法</h3>
+<h3 id="切线空间-法线空间"><a class="header-anchor" href="#切线空间-法线空间">¶</a>切线空间/法线空间</h3>
+<h3 id="拉格朗日条件"><a class="header-anchor" href="#拉格朗日条件">¶</a>拉格朗日条件</h3>
+<h3 id="二阶条件"><a class="header-anchor" href="#二阶条件">¶</a>二阶条件</h3>
+<h1>含不等式约束的优化：</h1>
+<h2 id="kkt条件"><a class="header-anchor" href="#kkt条件">¶</a>KKT条件</h2>
+<h2 id="二阶条件-v2"><a class="header-anchor" href="#二阶条件-v2">¶</a>二阶条件</h2>
+<h2 id="求解"><a class="header-anchor" href="#求解">¶</a>求解</h2>
+<h3 id="投影法"><a class="header-anchor" href="#投影法">¶</a>投影法</h3>
+<h3 id="拉格朗日法"><a class="header-anchor" href="#拉格朗日法">¶</a>拉格朗日法</h3>
+<h3 id="罚函数法"><a class="header-anchor" href="#罚函数法">¶</a>罚函数法</h3>
+<h2 id="凸优化"><a class="header-anchor" href="#凸优化">¶</a>凸优化</h2>
+<h3 id="凸集-凸函数"><a class="header-anchor" href="#凸集-凸函数">¶</a>凸集/凸函数</h3>
+<p>###	 对偶</p>
+<h3 id="拉格朗日松弛"><a class="header-anchor" href="#拉格朗日松弛">¶</a>拉格朗日松弛</h3>
+<h3 id="内点法"><a class="header-anchor" href="#内点法">¶</a>内点法</h3>
+<h3 id="半定规划"><a class="header-anchor" href="#半定规划">¶</a>半定规划</h3>
+<h2 id="多目标优化"><a class="header-anchor" href="#多目标优化">¶</a>多目标优化</h2>
+<h3 id="帕累托解"><a class="header-anchor" href="#帕累托解">¶</a>帕累托解</h3>
+
       
     </div>
     
@@ -404,8 +486,8 @@ L(\theta^{t-1}) + g\Delta\theta + h\frac {\Delta\theta^2}{2}\\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/机器学习-线性模型/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-线性模型/" rel="prev" title="机器学习-线性模型">
+                机器学习-线性模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -538,7 +620,7 @@ L(\theta^{t-1}) + g\Delta\theta + h\frac {\Delta\theta^2}{2}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#几何概念"><span class="nav-number">1.</span> <span class="nav-text">几何概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数概念"><span class="nav-number">2.</span> <span class="nav-text">函数概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无约束优化"><span class="nav-number">3.</span> <span class="nav-text">无约束优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维搜索"><span class="nav-number">3.1.</span> <span class="nav-text">一维搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降方法-最速下降方法"><span class="nav-number">3.2.</span> <span class="nav-text">梯度下降方法/最速下降方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降的困难"><span class="nav-number">3.2.1.</span> <span class="nav-text">梯度下降的困难</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿法-拟牛顿法"><span class="nav-number">3.3.</span> <span class="nav-text">牛顿法/拟牛顿法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGFS"><span class="nav-number">3.4.</span> <span class="nav-text">BGFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭方向法"><span class="nav-number">3.5.</span> <span class="nav-text">共轭方向法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解线性方程组"><span class="nav-number">3.6.</span> <span class="nav-text">求解线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘分析"><span class="nav-number">3.6.1.</span> <span class="nav-text">最小二乘分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kaczmarz算法"><span class="nav-number">3.6.2.</span> <span class="nav-text">Kaczmarz算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络"><span class="nav-number">3.7.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局搜索算法"><span class="nav-number">3.8.</span> <span class="nav-text">全局搜索算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nelder-Mead单纯形法"><span class="nav-number">3.8.1.</span> <span class="nav-text">Nelder-Mead单纯形法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟退火-粒子群优化-遗传算法"><span class="nav-number">3.8.2.</span> <span class="nav-text">模拟退火/粒子群优化/遗传算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有约束的线性规划"><span class="nav-number">4.</span> <span class="nav-text">有约束的线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯形法"><span class="nav-number">4.1.</span> <span class="nav-text">单纯形法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶线性规划"><span class="nav-number">4.2.</span> <span class="nav-text">对偶线性规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非单纯形法"><span class="nav-number">4.3.</span> <span class="nav-text">非单纯形法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Khachiyan算法"><span class="nav-number">4.3.1.</span> <span class="nav-text">Khachiyan算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿射尺度法"><span class="nav-number">4.3.2.</span> <span class="nav-text">仿射尺度法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Karmarkar算法"><span class="nav-number">4.3.3.</span> <span class="nav-text">Karmarkar算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数规划"><span class="nav-number">4.4.</span> <span class="nav-text">整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#幺模矩阵"><span class="nav-number">4.4.1.</span> <span class="nav-text">幺模矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gomory割平面法"><span class="nav-number">4.4.2.</span> <span class="nav-text">Gomory割平面法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有约束的非线性规划"><span class="nav-number">5.</span> <span class="nav-text">有约束的非线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仅含等式约束的优化"><span class="nav-number">5.1.</span> <span class="nav-text">仅含等式约束的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#牛顿方法"><span class="nav-number">5.1.1.</span> <span class="nav-text">牛顿方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切线空间-法线空间"><span class="nav-number">5.1.2.</span> <span class="nav-text">切线空间/法线空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日条件"><span class="nav-number">5.1.3.</span> <span class="nav-text">拉格朗日条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二阶条件"><span class="nav-number">5.1.4.</span> <span class="nav-text">二阶条件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#含不等式约束的优化："><span class="nav-number">6.</span> <span class="nav-text">含不等式约束的优化：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#KKT条件"><span class="nav-number">6.1.</span> <span class="nav-text">KKT条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二阶条件-1"><span class="nav-number">6.2.</span> <span class="nav-text">二阶条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解"><span class="nav-number">6.3.</span> <span class="nav-text">求解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#投影法"><span class="nav-number">6.3.1.</span> <span class="nav-text">投影法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日法"><span class="nav-number">6.3.2.</span> <span class="nav-text">拉格朗日法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#罚函数法"><span class="nav-number">6.3.3.</span> <span class="nav-text">罚函数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凸优化"><span class="nav-number">6.4.</span> <span class="nav-text">凸优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凸集-凸函数"><span class="nav-number">6.4.1.</span> <span class="nav-text">凸集/凸函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对偶"><span class="nav-number">6.4.2.</span> <span class="nav-text">对偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日松弛"><span class="nav-number">6.4.3.</span> <span class="nav-text">拉格朗日松弛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内点法"><span class="nav-number">6.4.4.</span> <span class="nav-text">内点法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半定规划"><span class="nav-number">6.4.5.</span> <span class="nav-text">半定规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多目标优化"><span class="nav-number">6.5.</span> <span class="nav-text">多目标优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帕累托解"><span class="nav-number">6.5.1.</span> <span class="nav-text">帕累托解</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">几何概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">函数概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">无约束优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一维搜索"><span class="nav-number">3.1.</span> <span class="nav-text">¶一维搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降方法-最速下降方法"><span class="nav-number">3.2.</span> <span class="nav-text">¶梯度下降方法/最速下降方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降的困难"><span class="nav-number">3.2.1.</span> <span class="nav-text">¶梯度下降的困难</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿法-拟牛顿法"><span class="nav-number">3.3.</span> <span class="nav-text">¶牛顿法/拟牛顿法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bgfs"><span class="nav-number">3.4.</span> <span class="nav-text">¶BGFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭方向法"><span class="nav-number">3.5.</span> <span class="nav-text">¶共轭方向法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解线性方程组"><span class="nav-number">3.6.</span> <span class="nav-text">¶求解线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘分析"><span class="nav-number">3.6.1.</span> <span class="nav-text">¶最小二乘分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kaczmarz算法"><span class="nav-number">3.6.2.</span> <span class="nav-text">¶Kaczmarz算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络"><span class="nav-number">3.7.</span> <span class="nav-text">¶神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局搜索算法"><span class="nav-number">3.8.</span> <span class="nav-text">¶全局搜索算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">有约束的线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯形法"><span class="nav-number">4.1.</span> <span class="nav-text">¶单纯形法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对偶线性规划"><span class="nav-number">4.2.</span> <span class="nav-text">¶对偶线性规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非单纯形法"><span class="nav-number">4.3.</span> <span class="nav-text">¶非单纯形法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#khachiyan算法"><span class="nav-number">4.3.1.</span> <span class="nav-text">¶Khachiyan算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿射尺度法"><span class="nav-number">4.3.2.</span> <span class="nav-text">¶仿射尺度法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#karmarkar算法"><span class="nav-number">4.3.3.</span> <span class="nav-text">¶Karmarkar算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数规划"><span class="nav-number">4.4.</span> <span class="nav-text">¶整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#幺模矩阵"><span class="nav-number">4.4.1.</span> <span class="nav-text">¶幺模矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gomory割平面法"><span class="nav-number">4.4.2.</span> <span class="nav-text">¶Gomory割平面法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">有约束的非线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仅含等式约束的优化"><span class="nav-number">5.1.</span> <span class="nav-text">¶仅含等式约束的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#牛顿方法"><span class="nav-number">5.1.1.</span> <span class="nav-text">¶牛顿方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切线空间-法线空间"><span class="nav-number">5.1.2.</span> <span class="nav-text">¶切线空间/法线空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日条件"><span class="nav-number">5.1.3.</span> <span class="nav-text">¶拉格朗日条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二阶条件"><span class="nav-number">5.1.4.</span> <span class="nav-text">¶二阶条件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">含不等式约束的优化：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#kkt条件"><span class="nav-number">6.1.</span> <span class="nav-text">¶KKT条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二阶条件-v2"><span class="nav-number">6.2.</span> <span class="nav-text">¶二阶条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解"><span class="nav-number">6.3.</span> <span class="nav-text">¶求解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#投影法"><span class="nav-number">6.3.1.</span> <span class="nav-text">¶投影法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日法"><span class="nav-number">6.3.2.</span> <span class="nav-text">¶拉格朗日法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#罚函数法"><span class="nav-number">6.3.3.</span> <span class="nav-text">¶罚函数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凸优化"><span class="nav-number">6.4.</span> <span class="nav-text">¶凸优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凸集-凸函数"><span class="nav-number">6.4.1.</span> <span class="nav-text">¶凸集/凸函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉格朗日松弛"><span class="nav-number">6.4.2.</span> <span class="nav-text">¶拉格朗日松弛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内点法"><span class="nav-number">6.4.3.</span> <span class="nav-text">¶内点法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半定规划"><span class="nav-number">6.4.4.</span> <span class="nav-text">¶半定规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多目标优化"><span class="nav-number">6.5.</span> <span class="nav-text">¶多目标优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帕累托解"><span class="nav-number">6.5.1.</span> <span class="nav-text">¶帕累托解</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
