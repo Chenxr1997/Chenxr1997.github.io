@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="[TOC] 求积分 Evaluating Integrals 函数的期望值为 $$ E[f(X)] = \int f(X)P_X(X)dX $$ 方差为 $$ Var(X) = E[(X-E(X))^2]\ = E(X^2) - E(X)^2 $$ 要求的积分为 $$ F = \int_a^b f(x)dx $$  蒙特卡洛的思想  $$ &amp;lt;F^N&amp;gt; = (b-a)\frac1{N}\">
+<meta name="description" content="[TOC] 求积分 Evaluating Integrals函数的期望值为  E[f(X)] = \int f(X)P_X(X)dX方差为  Var(X) = E[(X-E(X))^2]\\ = E(X^2) - E(X)^2要求的积分为  F = \int_a^b f(x)dx 蒙特卡洛的思想    = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\\ X_i = a + \">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据挖掘-蒙塔卡洛方法">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据挖掘-蒙塔卡洛方法/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 求积分 Evaluating Integrals 函数的期望值为 $$ E[f(X)] = \int f(X)P_X(X)dX $$ 方差为 $$ Var(X) = E[(X-E(X))^2]\ = E(X^2) - E(X)^2 $$ 要求的积分为 $$ F = \int_a^b f(x)dx $$  蒙特卡洛的思想  $$ &amp;lt;F^N&amp;gt; = (b-a)\frac1{N}\">
+<meta property="og:description" content="[TOC] 求积分 Evaluating Integrals函数的期望值为  E[f(X)] = \int f(X)P_X(X)dX方差为  Var(X) = E[(X-E(X))^2]\\ = E(X^2) - E(X)^2要求的积分为  F = \int_a^b f(x)dx 蒙特卡洛的思想    = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\\ X_i = a + \">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125540738.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125710932.png">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据挖掘-蒙塔卡洛方法">
-<meta name="twitter:description" content="[TOC] 求积分 Evaluating Integrals 函数的期望值为 $$ E[f(X)] = \int f(X)P_X(X)dX $$ 方差为 $$ Var(X) = E[(X-E(X))^2]\ = E(X^2) - E(X)^2 $$ 要求的积分为 $$ F = \int_a^b f(x)dx $$  蒙特卡洛的思想  $$ &amp;lt;F^N&amp;gt; = (b-a)\frac1{N}\">
+<meta name="twitter:description" content="[TOC] 求积分 Evaluating Integrals函数的期望值为  E[f(X)] = \int f(X)P_X(X)dX方差为  Var(X) = E[(X-E(X))^2]\\ = E(X^2) - E(X)^2要求的积分为  F = \int_a^b f(x)dx 蒙特卡洛的思想    = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\\ X_i = a + \">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125540738.png">
 
 
@@ -303,53 +303,36 @@
 
       
         <p>[TOC]</p>
-<h1>求积分 Evaluating Integrals</h1>
-<p>函数的期望值为<br>
-$$<br>
-E[f(X)] = \int f(X)P_X(X)dX<br>
-$$<br>
-方差为<br>
-$$<br>
-Var(X) = E[(X-E(X))^2]\<br>
-= E(X^2) - E(X)^2<br>
-$$<br>
-要求的积分为<br>
-$$<br>
-F = \int_a^b f(x)dx<br>
-$$</p>
-<p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125540738.png" alt="image-20190811125540738"></p>
+<h1 id="求积分-Evaluating-Integrals"><a href="#求积分-Evaluating-Integrals" class="headerlink" title="求积分 Evaluating Integrals"></a>求积分 Evaluating Integrals</h1><p>函数的期望值为</p>
+<script type="math/tex; mode=display">
+E[f(X)] = \int f(X)P_X(X)dX</script><p>方差为</p>
+<script type="math/tex; mode=display">
+Var(X) = E[(X-E(X))^2]\\
+= E(X^2) - E(X)^2</script><p>要求的积分为</p>
+<script type="math/tex; mode=display">
+F = \int_a^b f(x)dx</script><p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125540738.png" alt="image-20190811125540738"></p>
 <p>蒙特卡洛的思想</p>
-<p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125710932.png" alt="image-20190811125710932"><br>
-$$<br>
-&lt;F^N&gt; = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\<br>
-X_i = a + \xi(b-a)\<br>
-\xi 是[0,1]中均匀分布的随机数<br>
-$$<br>
-其中<br>
-$$<br>
-Pr(\lim_{N \to \infty}&lt;F^N&gt; = F) = 1<br>
-$$</p>
-<p>$$<br>
-E[&lt;F^N&gt;] = E[(b-a)\frac1{N}\sum_{i=1}^Nf(x_i)] \<br>
-= (b-a)\frac1{N}\sum_{i=1}^NE[f(x_i)] \<br>
-= (b-a)\frac1{N}\sum_{i=1}^N \int_a^bf(x)pdf(x)dx \<br>
-= \frac1{N}\sum_{i=1}^N \int_a^bf(x)dx \<br>
-= \int_a^bf(x)dx \<br>
-= F<br>
-$$</p>
-<p>还可以泛化到任意pdf中<br>
-$$<br>
-&lt;F^N&gt; = \frac1{N}\sum_{i=1}^N \frac {f(X_i)}{pdf(X_i)}\<br>
-$$</p>
-<p>$$<br>
-E[&lt;F^N&gt;] = E[\frac1{N}\sum_{i=1}^N\frac {f(X_i)}{pdf(X_i)}] \<br>
-= \frac1{N}\sum_{i=1}^NE[\frac {f(X_i)}{pdf(X_i)}] \<br>
-= \frac1{N}\sum_{i=1}^N \int_\Omega \frac {f(x)pdf(x)}{pdf(x)}dx \<br>
-= \frac1{N}\sum_{i=1}^N \int_\Omega f(x)dx \<br>
-= \int_\Omega f(x)dx \<br>
-= F<br>
-$$</p>
-
+<p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125710932.png" alt="image-20190811125710932"></p>
+<script type="math/tex; mode=display">
+<F^N> = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\\
+X_i = a + \xi(b-a)\\
+\xi 是[0,1]中均匀分布的随机数</script><p>其中</p>
+<script type="math/tex; mode=display">
+Pr(\lim_{N \to \infty}<F^N> = F) = 1</script><script type="math/tex; mode=display">
+E[<F^N>] = E[(b-a)\frac1{N}\sum_{i=1}^Nf(x_i)] \\
+ = (b-a)\frac1{N}\sum_{i=1}^NE[f(x_i)] \\
+ = (b-a)\frac1{N}\sum_{i=1}^N \int_a^bf(x)pdf(x)dx \\
+ = \frac1{N}\sum_{i=1}^N \int_a^bf(x)dx \\
+ = \int_a^bf(x)dx \\
+ = F</script><p>还可以泛化到任意pdf中</p>
+<script type="math/tex; mode=display">
+<F^N> = \frac1{N}\sum_{i=1}^N \frac {f(X_i)}{pdf(X_i)}\\</script><script type="math/tex; mode=display">
+E[<F^N>] = E[\frac1{N}\sum_{i=1}^N\frac {f(X_i)}{pdf(X_i)}] \\
+ = \frac1{N}\sum_{i=1}^NE[\frac {f(X_i)}{pdf(X_i)}] \\
+ = \frac1{N}\sum_{i=1}^N \int_\Omega \frac {f(x)pdf(x)}{pdf(x)}dx \\
+ = \frac1{N}\sum_{i=1}^N \int_\Omega f(x)dx \\
+ = \int_\Omega f(x)dx \\
+ = F</script>
       
     </div>
     
@@ -517,7 +500,7 @@ $$</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">求积分 Evaluating Integrals</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#求积分-Evaluating-Integrals"><span class="nav-number">1.</span> <span class="nav-text">求积分 Evaluating Integrals</span></a></li></ol></div>
             
 
           </div>

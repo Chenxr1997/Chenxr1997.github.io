@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。 但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量">
+<meta name="description" content="[TOC]EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量有关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-EM">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-EM/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。 但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量">
+<meta property="og:description" content="[TOC]EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量有关">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-EM/image-20190814204045701.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-EM/image-20190816111352814.png">
@@ -92,7 +92,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-EM">
-<meta name="twitter:description" content="[TOC] EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。 但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量">
+<meta name="twitter:description" content="[TOC]EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。 应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型 有时候因为样本的产生和隐含变量有关">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-EM/image-20190814204045701.png">
 
 
@@ -303,122 +303,84 @@
       
 
       
-        <p>[TOC]<br>
-EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大</p>
-<p>如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。<br>
-但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。</p>
+        <p>[TOC]<br>EM用隐含变量的概率模型的极大似然估计，一般分为两步：第一步求期望，第二步求极大</p>
+<p>如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。<br>但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。</p>
 <p>应用到的地方：混合高斯模型、混合朴素贝叶斯模型、因子分析模型</p>
 <p>有时候因为样本的产生和隐含变量有关（隐含变量是不能观察的），而求模型的参数时一般采用最大似然估计，由于含有了隐含变量，所以对似然函数参数求导是求不出来的，这时可以采用EM算法来求模型的参数的（对应模型参数个数可能有多个），EM算法一般分为2步：</p>
 <p>E步：选取一组参数，求出在该参数下隐含变量的条件概率值；</p>
 <p>M步：结合E步求出的隐含变量条件概率，求出似然函数下界函数（本质上是某个期望函数）的最大值。</p>
 <p>重复上面2步直至收敛</p>
 <p>最大希望算法。在统计计算中，EM算法时在概率模型中寻找参数最大似然估计或者最大后验估计的算法，概率模型依赖于无法观测的隐性变量。最大期望算法经常在机器学习和计算机视觉的数据聚类领域。</p>
-<p>计算期望E，利用隐藏变量的现有估计值，计算最大似然估计值。<br>
-最大化M，最大化在E步上求得最大的似然值来计算参数值，</p>
+<p>计算期望E，利用隐藏变量的现有估计值，计算最大似然估计值。<br>最大化M，最大化在E步上求得最大的似然值来计算参数值，</p>
 <p>M步骤上找到的参数估计被用于下一个计算E步的计算中。</p>
-<h1>概念</h1>
-<p>EM算法即期望最大化Expectation Maximization算法，由Dempster等人在1976年提出</p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>EM算法即期望最大化Expectation Maximization算法，由Dempster等人在1976年提出</p>
 <p>是一种迭代法，用于求解含有隐变量的最大似然估计、最大后验概率估计问题，求解的机器学习模型中有隐变量存在，并且要估计模型的参数。典型是求解高斯混合模型，隐马尔可夫模型</p>
-<h2 id="解决的问题"><a class="header-anchor" href="#解决的问题">¶</a>解决的问题</h2>
-<p>已知：(1)分布模型(2)随机抽取的样本</p>
+<h2 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h2><p>已知：(1)分布模型(2)随机抽取的样本</p>
 <p>通过EM算法求得：(1)那一个样本属于哪个分布(2)模型的参数</p>
 <p>比如有100个男生和100个女生的身高，但不知道这个身高的数据是属于男生还是女生的，此时就需要估计(1)这个身高数据来自于男生还是女生(2)男生女生身高的正态分布参数</p>
-<h2 id="求解过程"><a class="header-anchor" href="#求解过程">¶</a>求解过程</h2>
-<p>（1）初始化参数：先初始化男生身高的正态分布的参数：比如均值=1.65，方差=0.15</p>
+<h2 id="求解过程"><a href="#求解过程" class="headerlink" title="求解过程"></a>求解过程</h2><p>（1）初始化参数：先初始化男生身高的正态分布的参数：比如均值=1.65，方差=0.15</p>
 <p>（2）计算每个人更可能属于男生分布还是女生分布</p>
 <p>（3）通过分为男生的n个人来重新估计男生身高分布的参数（极大似然估计），女生分布也按照相同的方式估计分布，更新分布</p>
 <p>（4）这时两个分布也变了，重复步骤（1）到（3），直到参数不变为止</p>
-<h1>算法描述</h1>
-<h2 id="jensen-不等式"><a class="header-anchor" href="#jensen-不等式">¶</a>Jensen 不等式</h2>
-<p>EM算法的推导，收敛性证明依赖于Jensen不等式<br>
-$$<br>
-Jensen不等式\<br>
-如果f(x)是凸函数，x是随机变量，则下面不等式成立\<br>
-E[f(x)] \ge f(E[x])\<br>
-如果f(x)是一个严格凸函数，当且仅当x是常数时不等式取等号\<br>
-E[f(x)] = f(E[x])\<br>
-$$</p>
-<p>$$<br>
-凸函数是一个定义在某个向量空间的凸子集C(区间)上的实值函数f，如果在其定义域C上的任意两点x_1,x_2,0 \le \lambda \le 1，有\<br>
-\lambda f(x_1) + (1-\lambda)f(x_2) \ge f(\lambda x_1 + (1-\lambda)x_2)\<br>
-也就是说凸函数任意两点的割线位于函数图形上方<br>
-$$</p>
-<p>$$<br>
-因此对于任意点集，若\lambda_i \ge 0且\sum_i \lambda_i = 1,使用数学归纳法，不难得到凸函数f(x)满足：\<br>
-\sum_i \lambda_if(x_i) \ge f(\sum_i \lambda_ix_i)\<br>
-该概率论中，如果把\lambda_i看成值x_i的离散变量x的概率分布，那么可写成\<br>
-E[f(x)] \ge f(E[x])\<br>
-$$</p>
-<p><img src="/2019/03/08/机器学习-EM/image-20190814204045701.png" alt="image-20190814204045701"></p>
-<h2 id="算法推导"><a class="header-anchor" href="#算法推导">¶</a>算法推导</h2>
-<p>$$<br>
-对于n个样本观察数据x = (x_1,x_2,…,x_n),找出样本的参数模型\theta，极大化模型分布的对数似然函数:\<br>
-\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta)\<br>
-如果得到的观察数据有未观察到的隐含数据z = (z_1,z_2,…,z_n)，即上下文中每个样本属于哪个分布是未知的\此时极大化模型分布的对数似然函数如下:\<br>
-\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta) = \arg \max \sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta)<br>
-$$</p>
-<p>$$<br>
-上面的式子是根据x_i的边缘概率计算来的，没有办法直接求出\theta,因此需要一些技巧\<br>
-使用jensen不等式对这个式子进行缩放,利用\log是凹函数的性质\<br>
-\sum_{i=1}^n \log \sum <em>{z_i}p(x_i,z_i;\theta) = \sum</em>{i=1}^n \log \sum <em>{z_i} Q_i(z_i) \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (1) \<br>
-\ge \sum</em>{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (2)<br>
-$$</p>
-<p>$$<br>
-如果要满足jenson中的等号，需要\frac{p(x_i,z_i;\theta)}{Q_i(z_i)}是一个常数c(见jensen的定理)\<br>
-又由于Q_i(z_i)是一个分布，所以\sum_z Q_i(z_i) = 1\<br>
-代入\sum _{z}p(x_i,z_i;\theta)可得\sum _{z}p(x_i,z_i;\theta) = c\<br>
-将\sum _{z}p(x_i,z_i;\theta) = c和\frac{p(x_i,z_i;\theta)}{Q_i(z_i)} = c联立可得\<br>
-Q_i(z_i) = \frac{p(x_i,z_i;\theta)}{\sum _{z}p(x_i,z_i;\theta)} = \frac{p(x_i,z_i;\theta)}{p(x_i;\theta)} = p(z_i|x_i;\theta)\<br>
-至此推出了在固定参数\theta后，Q_i(z_i)的计算公式就是后验概率<br>
-$$</p>
-<p>$$<br>
-如果Q_i(z_i) = p(z_i|x_i;\theta)，则(2)式是包含隐藏数据的对数似然的一个下界，如果能最大化(2)式这个下界，则也是在极大化对数似然函数\<br>
-{\arg \max}<em>\theta \sum</em>{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\<br>
-这就是EM算法中的M步骤<br>
-$$</p>
-<p>$$<br>
-对于E步骤，它解决了Q_i(z_i)如何选择的问题，确定了下界<br>
-$$</p>
-<p>$$<br>
-EM算法步骤:\<br>
-随机初始化模型参数\theta的初值\theta_0\<br>
-j = 1,2,…,J开始EM算法迭代：\<br>
-	E步:\<br>
-	Q_i(z_i) = p(z_i|x_i;\theta)\<br>
-	l(\theta_,\theta_j) = \sum_{i=1}^n \sum <em>{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\<br>
-	M步:\<br>
-	极大化l(\theta</em>,\theta_j),得到\theta_{j+1}\<br>
-	\theta_{j+1} = \arg \max l(\theta_,\theta_j)\<br>
-	如果\theta_{j+1}已经收敛，则退出迭代,否则返回E步\<br>
-输出模型参数\theta<br>
-$$</p>
-<p><img src="/2019/03/08/机器学习-EM/image-20190816111352814.png" alt="image-20190816111352814"></p>
-<h2 id="讨论"><a class="header-anchor" href="#讨论">¶</a>讨论</h2>
-<h3 id="初始化问题"><a class="header-anchor" href="#初始化问题">¶</a>初始化问题</h3>
-<p>上面介绍的传统EM算法对初始值敏感，聚类结果随不同的初始值而波动较大。总的来说， EM算法收敛的优劣很大程度上取决于其初始参数。<br>
-针对传统EM算法对初始值敏感的问题，许多研究者在EM算法初始化方面做了许多研究。</p>
+<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><h2 id="Jensen-不等式"><a href="#Jensen-不等式" class="headerlink" title="Jensen 不等式"></a>Jensen 不等式</h2><p>EM算法的推导，收敛性证明依赖于Jensen不等式</p>
+<script type="math/tex; mode=display">
+Jensen不等式\\
+如果f(x)是凸函数，x是随机变量，则下面不等式成立\\
+E[f(x)] \ge f(E[x])\\
+如果f(x)是一个严格凸函数，当且仅当x是常数时不等式取等号\\
+E[f(x)] = f(E[x])\\</script><script type="math/tex; mode=display">
+凸函数是一个定义在某个向量空间的凸子集C(区间)上的实值函数f，如果在其定义域C上的任意两点x_1,x_2,0 \le \lambda \le 1，有\\
+\lambda f(x_1) + (1-\lambda)f(x_2) \ge f(\lambda x_1 + (1-\lambda)x_2)\\
+也就是说凸函数任意两点的割线位于函数图形上方</script><script type="math/tex; mode=display">
+因此对于任意点集，若\lambda_i \ge 0且\sum_i \lambda_i = 1,使用数学归纳法，不难得到凸函数f(x)满足：\\
+\sum_i \lambda_if(x_i) \ge f(\sum_i \lambda_ix_i)\\
+该概率论中，如果把\lambda_i看成值x_i的离散变量x的概率分布，那么可写成\\
+E[f(x)] \ge f(E[x])\\</script><p><img src="/2019/03/08/机器学习-EM/image-20190814204045701.png" alt="image-20190814204045701"></p>
+<h2 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h2><script type="math/tex; mode=display">
+对于n个样本观察数据x = (x_1,x_2,...,x_n),找出样本的参数模型\theta，极大化模型分布的对数似然函数:\\
+\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta)\\
+如果得到的观察数据有未观察到的隐含数据z = (z_1,z_2,...,z_n)，即上下文中每个样本属于哪个分布是未知的\\此时极大化模型分布的对数似然函数如下:\\
+\hat \theta = \arg \max \sum_{i=1}^n \log p(x_i;\theta) = \arg \max \sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta)</script><script type="math/tex; mode=display">
+上面的式子是根据x_i的边缘概率计算来的，没有办法直接求出\theta,因此需要一些技巧\\
+使用jensen不等式对这个式子进行缩放,利用\log是凹函数的性质\\
+\sum_{i=1}^n \log \sum _{z_i}p(x_i,z_i;\theta) = \sum_{i=1}^n \log \sum _{z_i} Q_i(z_i) \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (1) \\
+\ge \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)} \ (2)</script><script type="math/tex; mode=display">
+如果要满足jenson中的等号，需要\frac{p(x_i,z_i;\theta)}{Q_i(z_i)}是一个常数c(见jensen的定理)\\
+又由于Q_i(z_i)是一个分布，所以\sum_z Q_i(z_i) = 1\\
+代入\sum _{z}p(x_i,z_i;\theta)可得\sum _{z}p(x_i,z_i;\theta) = c\\
+将\sum _{z}p(x_i,z_i;\theta) = c和\frac{p(x_i,z_i;\theta)}{Q_i(z_i)} = c联立可得\\
+Q_i(z_i) = \frac{p(x_i,z_i;\theta)}{\sum _{z}p(x_i,z_i;\theta)} = \frac{p(x_i,z_i;\theta)}{p(x_i;\theta)} = p(z_i|x_i;\theta)\\
+至此推出了在固定参数\theta后，Q_i(z_i)的计算公式就是后验概率</script><script type="math/tex; mode=display">
+如果Q_i(z_i) = p(z_i|x_i;\theta)，则(2)式是包含隐藏数据的对数似然的一个下界，如果能最大化(2)式这个下界，则也是在极大化对数似然函数\\
+{\arg \max}_\theta \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\\
+这就是EM算法中的M步骤</script><script type="math/tex; mode=display">
+对于E步骤，它解决了Q_i(z_i)如何选择的问题，确定了下界</script><script type="math/tex; mode=display">
+EM算法步骤:\\
+随机初始化模型参数\theta的初值\theta_0\\
+j = 1,2,...,J开始EM算法迭代：\\
+    E步:\\
+    Q_i(z_i) = p(z_i|x_i;\theta)\\
+    l(\theta_,\theta_j) = \sum_{i=1}^n \sum _{z_i} Q_i(z_i) \log \frac{p(x_i,z_i;\theta)}{Q_i(z_i)}\\
+    M步:\\
+    极大化l(\theta_,\theta_j),得到\theta_{j+1}\\
+    \theta_{j+1} = \arg \max l(\theta_,\theta_j)\\
+    如果\theta_{j+1}已经收敛，则退出迭代,否则返回E步\\
+输出模型参数\theta</script><p><img src="/2019/03/08/机器学习-EM/image-20190816111352814.png" alt="image-20190816111352814"></p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h3 id="初始化问题"><a href="#初始化问题" class="headerlink" title="初始化问题"></a>初始化问题</h3><p>上面介绍的传统EM算法对初始值敏感，聚类结果随不同的初始值而波动较大。总的来说， EM算法收敛的优劣很大程度上取决于其初始参数。<br>针对传统EM算法对初始值敏感的问题，许多研究者在EM算法初始化方面做了许多研究。</p>
 <ul>
-<li>Blömer J, Bujna K. Simple methods for initializing the EM algorithm for Gaussian<br>
-mixture models[J]. CoRR, 2013.</li>
+<li>Blömer J, Bujna K. Simple methods for initializing the EM algorithm for Gaussian<br>  mixture models[J]. CoRR, 2013.</li>
 <li>Chen F. An Improved EM algorithm[J]. arXiv preprint arXiv:1305.0626, 2013.</li>
-<li>Kwedlo W. (2013) A New Method for Random Initialization of the EM Algorithm for<br>
-Multivariate Gaussian Mixture Learning. In: Burduk R., Jackowski K., Kurzynski M.,<br>
-Wozniak M., Zolnierek A. (eds) Proceedings of the 8th International Conference on<br>
-Computer Recognition Systems CORES 2013. Advances in Intelligent Systems and<br>
-Computing, vol 226. Springer, Heidelberg</li>
+<li>Kwedlo W. (2013) A New Method for Random Initialization of the EM Algorithm for<br>  Multivariate Gaussian Mixture Learning. In: Burduk R., Jackowski K., Kurzynski M.,<br>  Wozniak M., Zolnierek A. (eds) Proceedings of the 8th International Conference on<br>  Computer Recognition Systems CORES 2013. Advances in Intelligent Systems and<br>  Computing, vol 226. Springer, Heidelberg</li>
 </ul>
-<h3 id="收敛性"><a class="header-anchor" href="#收敛性">¶</a>收敛性</h3>
-<p>EM算法可以保证收敛到一个稳定点（局部最优），但不能保证收敛到全局的最大值点，因此是局部最优的算法。</p>
+<h3 id="收敛性"><a href="#收敛性" class="headerlink" title="收敛性"></a>收敛性</h3><p>EM算法可以保证收敛到一个稳定点（局部最优），但不能保证收敛到全局的最大值点，因此是局部最优的算法。</p>
 <p>如果l(\theta,\theta_j)是凸函数，那么EM算法可以保证收敛到全局的最大值点，这一点和梯度下降相同</p>
 <p>不过收敛速度可能会比较慢</p>
-<h3 id="统计假设"><a class="header-anchor" href="#统计假设">¶</a>统计假设</h3>
-<p>基于一些统计假设</p>
-<h2 id="应用实例"><a class="header-anchor" href="#应用实例">¶</a>应用实例</h2>
-<h3 id="硬币实验"><a class="header-anchor" href="#硬币实验">¶</a>硬币实验</h3>
-<p>假设有A，B两种硬币，正面朝上的概率分别是\theta_A，\theta_B，这两个即为需要估计的参数</p>
+<h3 id="统计假设"><a href="#统计假设" class="headerlink" title="统计假设"></a>统计假设</h3><p>基于一些统计假设</p>
+<h2 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h2><h3 id="硬币实验"><a href="#硬币实验" class="headerlink" title="硬币实验"></a>硬币实验</h3><p>假设有A，B两种硬币，正面朝上的概率分别是\theta_A，\theta_B，这两个即为需要估计的参数</p>
 <p>设计5组实验，每次实验投掷5次硬币，但是每次实验都不知道是哪一枚硬币进行的本次试验(如果知道的话，就很容易估计\theta_A，\theta_B)，投掷结束会得到数组x = (x1,x2,x3,x4,x5)，表示每组有几次硬币正面朝上，因此0 &lt;= x_i &lt;=5</p>
 <p>虽然我们不知道每组实验用的哪个硬币，但是如果我们<strong>用某种方法猜测每组实验用的哪种硬币，就可以将数据缺失的问题转为一个极大似然问题和完整参数估计问题</strong></p>
 <p>假设5次结果如下</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -455,16 +417,16 @@ Computing, vol 226. Springer, Heidelberg</li>
 </tr>
 </tbody>
 </table>
-<p>$$<br>
-首先，随机选取\theta_A,\theta_B的初始值，比如\theta_A = 0.2，\theta_B = 0.7\<br>
-E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B硬币）的每个值出现的概率\<br>
-也就是给定\theta_A,\theta_B和观测数据，计算这组数据出自A硬币的概率和B硬币的概率\<br>
-比如对于第一组实验，3正面2反面\<br>
-如果是A硬币得到这个结果的概率为:0.2^3 \times 0.8^2 = 0.00512\<br>
-如果是B硬币得到这个结果的概率为:0.7^3 \times 0.3^2 = 0.03087\<br>
-因此第一组实验结果是A硬币得到的概率为\frac{0.00512}{0.00512+0.03087} = 0.14,B硬币同理为0.86\<br>
-$$</p>
-<p>整个5组实验A，B投掷概率如下：</p>
+</div>
+<script type="math/tex; mode=display">
+首先，随机选取\theta_A,\theta_B的初始值，比如\theta_A = 0.2，\theta_B = 0.7\\
+E步骤是在当前的预估参数下，计算隐含变量（是A硬币还是B硬币）的每个值出现的概率\\
+也就是给定\theta_A,\theta_B和观测数据，计算这组数据出自A硬币的概率和B硬币的概率\\
+比如对于第一组实验，3正面2反面\\
+如果是A硬币得到这个结果的概率为:0.2^3 \times 0.8^2 = 0.00512\\
+如果是B硬币得到这个结果的概率为:0.7^3 \times 0.3^2 = 0.03087\\
+因此第一组实验结果是A硬币得到的概率为\frac{0.00512}{0.00512+0.03087} = 0.14,B硬币同理为0.86\\</script><p>整个5组实验A，B投掷概率如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -501,8 +463,10 @@ $$</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>再根据隐含变量的概率，计算两组训练值的期望。以第一组实验为例，3正2反中，A硬币期望为0.14*3 = 0.42个正面，0.14*2 = 0.28个反面；B硬币期望为0.86*3 = 2.58个正面，0.86*2 = 1.72个反面；</p>
 <p>5组实验期望如下</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -544,40 +508,33 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>$$<br>
-通过计算期望，把一个有隐含变量的问题变化为了一个没有隐含变量的问题，由上表数据，估计\theta_A,\theta_B变得简单\<br>
-\theta_A = 4.22/(4.22+7.98) = 0.35 \<br>
-\theta_B = 6.78/(6.78+6.02) = 0.53\<br>
-这一步中，根据E步求出的两种硬币的概率分布，依据极大似然概率去估计\theta_A,\theta_B，称为M步\<br>
-最后一直迭代循环直到\theta_A,\theta_B不更新为止<br>
-$$</p>
-<h3 id="k-means"><a class="header-anchor" href="#k-means">¶</a>K-means</h3>
-<p>在K-means聚类时，每个聚类簇的质心是隐含数据，我们会假设K个初始化质心，即EM中的E；然后计算每个样本最近的质心，并把样本聚类到这里，即EM中的M</p>
-<h3 id="高斯混合模型-gaussian-mixture-model-gmm"><a class="header-anchor" href="#高斯混合模型-gaussian-mixture-model-gmm">¶</a>高斯混合模型 Gaussian mixture model GMM</h3>
-<p>EM算法的目标是求解似然函数或后验概率的极值，而样本中具有无法观测的隐含变量</p>
+</div>
+<script type="math/tex; mode=display">
+通过计算期望，把一个有隐含变量的问题变化为了一个没有隐含变量的问题，由上表数据，估计\theta_A,\theta_B变得简单\\
+\theta_A = 4.22/(4.22+7.98) = 0.35 \\
+\theta_B = 6.78/(6.78+6.02) = 0.53\\
+这一步中，根据E步求出的两种硬币的概率分布，依据极大似然概率去估计\theta_A,\theta_B，称为M步\\
+最后一直迭代循环直到\theta_A,\theta_B不更新为止</script><h3 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h3><p>在K-means聚类时，每个聚类簇的质心是隐含数据，我们会假设K个初始化质心，即EM中的E；然后计算每个样本最近的质心，并把样本聚类到这里，即EM中的M</p>
+<h3 id="高斯混合模型-Gaussian-mixture-model-GMM"><a href="#高斯混合模型-Gaussian-mixture-model-GMM" class="headerlink" title="高斯混合模型 Gaussian mixture model GMM"></a>高斯混合模型 Gaussian mixture model GMM</h3><p>EM算法的目标是求解似然函数或后验概率的极值，而样本中具有无法观测的隐含变量</p>
 <p>下面以聚类问题和高斯混合模型为例进行说明。有一批样本，分属于3个类，假设每个类都服从正态分布，均值和协方差未知，各样本属于哪个类也是未知的</p>
 <p>算法需要在此条件下估计每个正态分布的均值和协方差</p>
 <p>下图是一个例子， 3类样本都服从正态分布，但每个样本属于哪个类是未知的：</p>
 <p><img src="/2019/03/08/机器学习-EM/image-20190815112746475.png" alt="image-20190815112746475"></p>
 <p>样本所属的类别就是隐变量，我们无法直接观察到它的值，这种隐变量的存在导致了用最大似然估计求解时的困难</p>
-<p>上面这个例子可以用高斯混合模型进行描述，它的概率密度函数是多个高斯分布（正态分布）的加权和<br>
-$$<br>
-高斯混合模型（ Gaussian Mixture Model，简称GMM）通过多个正态分布的加权和来描述一个随机变量的概率分布\概率密度函数定义为：\<br>
-p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\<br>
-其中x为随机变量，k为高斯分布的数量，w_i为高斯分布的权重，是一个正数，\mu 为高斯分布的均值向量，\Sigma为协方差矩阵\<br>
-所有高斯分布权重的和为1，即\<br>
-\sum_{i=1}^kw_i = 1\<br>
-高斯混合模型可以逼近任何一个连续的概率分布，因此它可以看作是连续型概率分布的万能逼近器\之所以要权重和为1，是因为概率密度函数必须满足(-\infty,+\infty)内的积分值为1<br>
-$$<br>
-对于高斯混合模型，也可以使用最大似然估计确定模型的参数，但每个样本属于哪个高斯分布是未知的，而计算高斯分布的参数时需要用到这个信息；反过来，样本属于哪个高斯分布又是由高斯分布的参数确定的。因此存在循环依赖，解决此问题的办法是打破此循环依赖，从高斯分布的一个不准确的初始猜测值开始，计算样本属于每个高斯分布的概率，然后又根据这个概率更新每个高斯分布的参数。这就是EM算法求解时的做法。<br>
-$$<br>
-高斯混合模型的对数似然函数为：\<br>
-\sum_{i=1}^l \ln(\sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i))\<br>
-由于对数似然函数中有k个求和项，以及参数w_j的存在，无法像单个高斯模型那样通过极大似然估计求得公式解\<br>
-而如果用梯度下降近似求解，则要求保证w_j非负且和为1，同样存在困难\<br>
-用极大似然估计来确定单个高斯分布的参数的过程：给定训练样本，构造他们的对数似然函数，对参数求导，并令导数为0<br>
-$$</p>
-
+<p>上面这个例子可以用高斯混合模型进行描述，它的概率密度函数是多个高斯分布（正态分布）的加权和</p>
+<script type="math/tex; mode=display">
+高斯混合模型（ Gaussian Mixture Model，简称GMM）通过多个正态分布的加权和来描述一个随机变量的概率分布\\概率密度函数定义为：\\
+p(x) = \sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i)\\
+其中x为随机变量，k为高斯分布的数量，w_i为高斯分布的权重，是一个正数，\mu 为高斯分布的均值向量，\Sigma为协方差矩阵\\
+所有高斯分布权重的和为1，即\\
+\sum_{i=1}^kw_i = 1\\
+高斯混合模型可以逼近任何一个连续的概率分布，因此它可以看作是连续型概率分布的万能逼近器\\之所以要权重和为1，是因为概率密度函数必须满足(-\infty,+\infty)内的积分值为1</script><p>对于高斯混合模型，也可以使用最大似然估计确定模型的参数，但每个样本属于哪个高斯分布是未知的，而计算高斯分布的参数时需要用到这个信息；反过来，样本属于哪个高斯分布又是由高斯分布的参数确定的。因此存在循环依赖，解决此问题的办法是打破此循环依赖，从高斯分布的一个不准确的初始猜测值开始，计算样本属于每个高斯分布的概率，然后又根据这个概率更新每个高斯分布的参数。这就是EM算法求解时的做法。</p>
+<script type="math/tex; mode=display">
+高斯混合模型的对数似然函数为：\\
+\sum_{i=1}^l \ln(\sum_{i=1}^kw_iN_i(x;\mu_i,\Sigma_i))\\
+由于对数似然函数中有k个求和项，以及参数w_j的存在，无法像单个高斯模型那样通过极大似然估计求得公式解\\
+而如果用梯度下降近似求解，则要求保证w_j非负且和为1，同样存在困难\\
+用极大似然估计来确定单个高斯分布的参数的过程：给定训练样本，构造他们的对数似然函数，对参数求导，并令导数为0</script>
       
     </div>
     
@@ -611,8 +568,8 @@ $$</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/机器学习-KNN/" rel="prev" title="机器学习-KNN">
-                机器学习-KNN <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/深度学习-CNN/" rel="prev" title="深度学习-CNN">
+                深度学习-CNN <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -745,7 +702,7 @@ $$</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决的问题"><span class="nav-number">1.1.</span> <span class="nav-text">¶解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解过程"><span class="nav-number">1.2.</span> <span class="nav-text">¶求解过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">算法描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jensen-不等式"><span class="nav-number">2.1.</span> <span class="nav-text">¶Jensen 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法推导"><span class="nav-number">2.2.</span> <span class="nav-text">¶算法推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论"><span class="nav-number">2.3.</span> <span class="nav-text">¶讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化问题"><span class="nav-number">2.3.1.</span> <span class="nav-text">¶初始化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收敛性"><span class="nav-number">2.3.2.</span> <span class="nav-text">¶收敛性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计假设"><span class="nav-number">2.3.3.</span> <span class="nav-text">¶统计假设</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用实例"><span class="nav-number">2.4.</span> <span class="nav-text">¶应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬币实验"><span class="nav-number">2.4.1.</span> <span class="nav-text">¶硬币实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-means"><span class="nav-number">2.4.2.</span> <span class="nav-text">¶K-means</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯混合模型-gaussian-mixture-model-gmm"><span class="nav-number">2.4.3.</span> <span class="nav-text">¶高斯混合模型 Gaussian mixture model GMM</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决的问题"><span class="nav-number">1.1.</span> <span class="nav-text">解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解过程"><span class="nav-number">1.2.</span> <span class="nav-text">求解过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法描述"><span class="nav-number">2.</span> <span class="nav-text">算法描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jensen-不等式"><span class="nav-number">2.1.</span> <span class="nav-text">Jensen 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法推导"><span class="nav-number">2.2.</span> <span class="nav-text">算法推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论"><span class="nav-number">2.3.</span> <span class="nav-text">讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化问题"><span class="nav-number">2.3.1.</span> <span class="nav-text">初始化问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收敛性"><span class="nav-number">2.3.2.</span> <span class="nav-text">收敛性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计假设"><span class="nav-number">2.3.3.</span> <span class="nav-text">统计假设</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用实例"><span class="nav-number">2.4.</span> <span class="nav-text">应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬币实验"><span class="nav-number">2.4.1.</span> <span class="nav-text">硬币实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-means"><span class="nav-number">2.4.2.</span> <span class="nav-text">K-means</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯混合模型-Gaussian-mixture-model-GMM"><span class="nav-number">2.4.3.</span> <span class="nav-text">高斯混合模型 Gaussian mixture model GMM</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

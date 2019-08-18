@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="[TOC] 基本概念 ¶数据 ¶特点  大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  ¶属性Attributes ¶属性的种类   Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness    Ordinal">
+<meta name="description" content="[TOC] 基本概念数据特点 大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  属性Attributes属性的种类 Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness   Ordinal  rankings (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-基础知识">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-基础知识/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 基本概念 ¶数据 ¶特点  大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  ¶属性Attributes ¶属性的种类   Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness    Ordinal">
+<meta property="og:description" content="[TOC] 基本概念数据特点 大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  属性Attributes属性的种类 Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness   Ordinal  rankings (">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/image-20190810184147554.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/image-20190810184330500.png">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-基础知识">
-<meta name="twitter:description" content="[TOC] 基本概念 ¶数据 ¶特点  大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  ¶属性Attributes ¶属性的种类   Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness    Ordinal">
+<meta name="twitter:description" content="[TOC] 基本概念数据特点 大规模Large-scale 高维度High dimensional 异构Heterogeneous 复杂Complex 分布式Distributed  属性Attributes属性的种类 Nominal（标称/名词词组）  ID numbers, eye color, zip codes 支持操作：distinctness   Ordinal  rankings (">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-基础知识/image-20190810184147554.png">
 
 
@@ -303,96 +303,76 @@
 
       
         <p>[TOC]</p>
-<h1>基本概念</h1>
-<h2 id="数据"><a class="header-anchor" href="#数据">¶</a>数据</h2>
-<h3 id="特点"><a class="header-anchor" href="#特点">¶</a>特点</h3>
-<ul>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li>大规模Large-scale</li>
 <li>高维度High dimensional</li>
 <li>异构Heterogeneous</li>
 <li>复杂Complex</li>
 <li>分布式Distributed</li>
 </ul>
-<h3 id="属性attributes"><a class="header-anchor" href="#属性attributes">¶</a>属性Attributes</h3>
-<h4 id="属性的种类"><a class="header-anchor" href="#属性的种类">¶</a>属性的种类</h4>
-<ul>
-<li>
-<p>Nominal（标称/名词词组）</p>
+<h3 id="属性Attributes"><a href="#属性Attributes" class="headerlink" title="属性Attributes"></a>属性Attributes</h3><h4 id="属性的种类"><a href="#属性的种类" class="headerlink" title="属性的种类"></a>属性的种类</h4><ul>
+<li><p>Nominal（标称/名词词组）</p>
 <ul>
 <li>ID numbers, eye color, zip codes</li>
 <li>支持操作：distinctness</li>
 </ul>
 </li>
-<li>
-<p>Ordinal</p>
+<li><p>Ordinal</p>
 <ul>
 <li>rankings (e.g., taste of potato chips on a scale from 1-10), grades, height {tall, medium, short}</li>
 <li>支持操作：distinctness，order</li>
 </ul>
 </li>
-<li>
-<p>Interval</p>
+<li><p>Interval</p>
 <ul>
 <li>calendar dates, temperatures in Celsius or Fahrenheit</li>
 <li>支持操作：distinctness，order，meaningful differences</li>
 </ul>
 </li>
-<li>
-<p>Ratio</p>
+<li><p>Ratio</p>
 <ul>
-<li>
-<p>temperature in Kelvin, length, time, counts</p>
+<li><p>temperature in Kelvin, length, time, counts</p>
 </li>
-<li>
-<p>支持操作：all 4 properties/operations</p>
-<p><img src="/2019/03/08/数据科学-基础知识/image-20190810184147554.png" alt="image-20190810184147554"></p>
-<p><img src="/2019/03/08/数据科学-基础知识/image-20190810184330500.png" alt="image-20190810184330500"></p>
+<li><p>支持操作：all 4 properties/operations</p>
+<p>  <img src="/2019/03/08/数据科学-基础知识/image-20190810184147554.png" alt="image-20190810184147554"></p>
+<p>  <img src="/2019/03/08/数据科学-基础知识/image-20190810184330500.png" alt="image-20190810184330500"></p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="属性上的操作"><a class="header-anchor" href="#属性上的操作">¶</a>属性上的操作</h3>
-<ul>
+<h3 id="属性上的操作"><a href="#属性上的操作" class="headerlink" title="属性上的操作"></a>属性上的操作</h3><ul>
 <li>Distinctness：=，不等号</li>
 <li>Order：&lt;，&gt;</li>
 <li>Differences are meaningful：+，-</li>
 <li>Ratios are meaningful：*，\</li>
 </ul>
-<h3 id="其他属性"><a class="header-anchor" href="#其他属性">¶</a>其他属性</h3>
-<ul>
-<li>
-<p>Discrete Attribute</p>
+<h3 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h3><ul>
+<li>Discrete Attribute</li>
+<li><p>Continuous Attribute</p>
 </li>
-<li>
-<p>Continuous Attribute</p>
-</li>
-<li>
-<p>Asymmetric Attributes</p>
-<p>只有存在的（非0属性）才被视为是重要的</p>
+<li><p>Asymmetric Attributes</p>
+<p>  只有存在的（非0属性）才被视为是重要的</p>
 <ul>
 <li>一篇文档中出现的单词</li>
-<li>购物篮中的商品</li>
-</ul>
+<li><p>购物篮中的商品</p>
 <p>Asymmetric attributes通常从对象集合中产生</p>
 </li>
 </ul>
-<h3 id="数据集种类"><a class="header-anchor" href="#数据集种类">¶</a>数据集种类</h3>
-<ul>
-<li>记录类 record
-<ul>
+</li>
+</ul>
+<h3 id="数据集种类"><a href="#数据集种类" class="headerlink" title="数据集种类"></a>数据集种类</h3><ul>
+<li>记录类 record<ul>
 <li>Data Matrix</li>
 <li>Document Data</li>
 <li>Transaction Data</li>
 </ul>
 </li>
-<li>图类 graph
-<ul>
+<li>图类 graph<ul>
 <li>World Wide Web</li>
 <li>Molecular Structures</li>
 </ul>
 </li>
-<li>顺序类 ordered
-<ul>
+<li>顺序类 ordered<ul>
 <li>Spatial Data</li>
 <li>Temporal Data</li>
 <li>Sequential Data</li>
@@ -400,40 +380,32 @@
 </ul>
 </li>
 </ul>
-<h3 id="数据质量"><a class="header-anchor" href="#数据质量">¶</a>数据质量</h3>
-<ul>
-<li>噪声和离群点 Noise and outliers
-<ul>
+<h3 id="数据质量"><a href="#数据质量" class="headerlink" title="数据质量"></a>数据质量</h3><ul>
+<li>噪声和离群点 Noise and outliers<ul>
 <li>离群点也许是噪声，也许正是要检测和分析的数据</li>
 </ul>
 </li>
-<li>数据（属性）丢失 Missing values
-<ul>
-<li>处理方式（更多内容见<code>数据科学-数据预处理</code>）
-<ul>
+<li>数据（属性）丢失 Missing values<ul>
+<li>处理方式（更多内容见<code>数据科学-数据预处理</code>）<ul>
 <li>删除该数据</li>
 <li>估计丢失的属性值</li>
 <li>分析时略过该属性</li>
 </ul>
 </li>
-<li>四种产生机制
-<ul>
-<li>完全随机缺失（Missing Completely at Random，MCAR）
-<ul>
+<li>四种产生机制<ul>
+<li>完全随机缺失（Missing Completely at Random，MCAR）<ul>
 <li>某个变量是否缺失与它自身的值无关，也与其他任何变量的值无关（Missingness of a value is independent of attributes）。例如，由于测量设备出故障导致某些值缺失</li>
 <li>Fill in values based on the attribute</li>
 <li>关于它的分析可能是无偏差的（unbiased）</li>
 </ul>
 </li>
-<li>随机缺失（Missing at Random，MAR）
-<ul>
+<li>随机缺失（Missing at Random，MAR）<ul>
 <li>在控制了其他变量已观测到的值后（Missingness is related to other variables），某个变量是否缺失与它自身的值无关。例如，人们是否透露收入可能与性别、教育程度、职业等因素有关系。如果这些因素都观测到了，而且尽管收入缺失的比例在不同性别、教育程度、职业的人群之间有差异，但是在每一类人群内收入是否缺失与收入本身的值无关，那么收入就是随机缺失的</li>
 <li>Fill in values based other values</li>
 <li>关于它的分析大多是有偏差的（biased）</li>
 </ul>
 </li>
-<li>非随机缺失（Missing Not at Random，MNAR）
-<ul>
+<li>非随机缺失（Missing Not at Random，MNAR）<ul>
 <li>即使控制了其他变量已观测到的值，某个变量是否缺失仍然与它自身的值有关（Missingness is related to unobserved measurements）。例如，在控制了性别、教育程度、职业等已观测因素之后，如果收入是否缺失还依赖于收入本身的值，那么收入就是非随机缺失的</li>
 </ul>
 </li>
@@ -441,66 +413,52 @@
 </li>
 </ul>
 </li>
-<li>数据重复 Duplicate data
-<ul>
+<li>数据重复 Duplicate data<ul>
 <li>比如合并数据的时候，一个人有很多邮箱</li>
 </ul>
 </li>
 <li>数据错误 Wrong data</li>
 </ul>
-<h3 id="数据度量"><a class="header-anchor" href="#数据度量">¶</a>数据度量</h3>
-<p>见<code>数据科学-数据度量</code></p>
-<h3 id="数据纬度的影响"><a class="header-anchor" href="#数据纬度的影响">¶</a>数据纬度的影响</h3>
-<p>见<code>数据科学-特征工程</code></p>
-<h2 id="空间"><a class="header-anchor" href="#空间">¶</a>空间</h2>
-<p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
+<h3 id="数据度量"><a href="#数据度量" class="headerlink" title="数据度量"></a>数据度量</h3><p>见<code>数据科学-数据度量</code></p>
+<h3 id="数据纬度的影响"><a href="#数据纬度的影响" class="headerlink" title="数据纬度的影响"></a>数据纬度的影响</h3><p>见<code>数据科学-特征工程</code></p>
+<h2 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h2><p>输入空间，输出空间，可以是有限元素的集合，也可以是一个欧氏空间</p>
 <p>每个具体的输入是一个实例，通常由特征向量表示，这时，所有特征向量存在的空间成为特征空间</p>
 <p>假设空间：输入空间到输出空间的映射的集合</p>
-<h2 id="学习三要素"><a class="header-anchor" href="#学习三要素">¶</a>学习三要素</h2>
-<ul>
+<h2 id="学习三要素"><a href="#学习三要素" class="headerlink" title="学习三要素"></a>学习三要素</h2><ul>
 <li>模型：确定模型空间</li>
 <li>策略：确定模型空间中什么是好的模型</li>
 <li>算法：在模型空间中怎么得到好的模型</li>
 </ul>
-<h2 id="学习任务分类"><a class="header-anchor" href="#学习任务分类">¶</a>学习任务分类</h2>
-<ul>
-<li>
-<p>监督学习 supervised learning</p>
+<h2 id="学习任务分类"><a href="#学习任务分类" class="headerlink" title="学习任务分类"></a>学习任务分类</h2><ul>
+<li><p>监督学习 supervised learning</p>
 <ul>
 <li>生成模型 Generative models</li>
 <li>判别模型 Discriminative Model</li>
 </ul>
 </li>
-<li>
-<p>无监督学习 unsupervised learning</p>
+<li><p>无监督学习 unsupervised learning</p>
 </li>
-<li>
-<p>强化学习 reinforcement learning</p>
+<li><p>强化学习 reinforcement learning</p>
 </li>
-<li>
-<p>半监督学习 semisupervised learning</p>
+<li><p>半监督学习 semisupervised learning</p>
 <ul>
 <li>低密度分离假设 Low-density separation</li>
 <li>联合训练 Co-training</li>
 </ul>
 </li>
-<li>
-<p>迁移学习 Transfer learning</p>
+<li><p>迁移学习 Transfer learning</p>
 <ul>
 <li>传递式迁移学习 Transitive Transfer Learning</li>
 </ul>
 </li>
 </ul>
-<h2 id="问题分类"><a class="header-anchor" href="#问题分类">¶</a>问题分类</h2>
-<ul>
-<li>预测类 Predictive
-<ul>
+<h2 id="问题分类"><a href="#问题分类" class="headerlink" title="问题分类"></a>问题分类</h2><ul>
+<li>预测类 Predictive<ul>
 <li>分类问题 Classification</li>
 <li>回归问题 Regression</li>
 </ul>
 </li>
-<li>描述类 Descriptive
-<ul>
+<li>描述类 Descriptive<ul>
 <li>聚类问题 Clustering</li>
 <li>(关联)规则发掘 Association Rule Discovery</li>
 <li>序列模式发掘 Sequential Pattern Discovery</li>
@@ -508,42 +466,30 @@
 <li>标注问题 labeling（也可以是预测类）</li>
 </ul>
 </li>
-<li>生成类 Generative
-<ul>
+<li>生成类 Generative<ul>
 <li>生成问题 Generative</li>
 </ul>
 </li>
 </ul>
-<h1>(优化)策略</h1>
-<h2 id="损失函数"><a class="header-anchor" href="#损失函数">¶</a>损失函数</h2>
-<p>损失函数度量模型一次预测的好坏</p>
+<h1 id="优化-策略"><a href="#优化-策略" class="headerlink" title="(优化)策略"></a>(优化)策略</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数度量模型一次预测的好坏</p>
 <p>0-1损失函数，平方损失函数，绝对损失函数，对数损失函数（对数似然损失函数）</p>
-<h2 id="风险函数"><a class="header-anchor" href="#风险函数">¶</a>风险函数</h2>
-<p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
+<h2 id="风险函数"><a href="#风险函数" class="headerlink" title="风险函数"></a>风险函数</h2><p>风险函数度量平均意义下模型预测的好坏，也叫期望损失</p>
 <p>经验风险（经验损失）</p>
-<h2 id="经验风险最小化"><a class="header-anchor" href="#经验风险最小化">¶</a>经验风险最小化</h2>
-<h2 id="结构风险最小化"><a class="header-anchor" href="#结构风险最小化">¶</a>结构风险最小化</h2>
-<p>为了防止过拟合而提出的策略，等价于正则化</p>
-<h1>过拟合/欠拟合：</h1>
-<p>过拟合：把误差，噪声也拟合进去了</p>
+<h2 id="经验风险最小化"><a href="#经验风险最小化" class="headerlink" title="经验风险最小化"></a>经验风险最小化</h2><h2 id="结构风险最小化"><a href="#结构风险最小化" class="headerlink" title="结构风险最小化"></a>结构风险最小化</h2><p>为了防止过拟合而提出的策略，等价于正则化</p>
+<h1 id="过拟合-欠拟合："><a href="#过拟合-欠拟合：" class="headerlink" title="过拟合/欠拟合："></a>过拟合/欠拟合：</h1><p>过拟合：把误差，噪声也拟合进去了</p>
 <p>Errors on training data are small</p>
 <p>But errors on new points are likely to be large</p>
-<h2 id="正则化"><a class="header-anchor" href="#正则化">¶</a>正则化</h2>
-<p>L1L2范数（模型参数向量的范数）</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>L1L2范数（模型参数向量的范数）</p>
 <p>奥卡姆剃刀模型</p>
-<h2 id="交叉验证"><a class="header-anchor" href="#交叉验证">¶</a>交叉验证</h2>
-<p>见<code>数据科学-模型评估与选择</code></p>
-<h2 id="dropout"><a class="header-anchor" href="#dropout">¶</a>dropout</h2>
-<p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
-<h1>泛化能力</h1>
-<p>泛化误差上界，推导</p>
-<h1>生成模型/判别模型</h1>
-<p>高斯马尔科夫定理：</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>见<code>数据科学-模型评估与选择</code></p>
+<h2 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h2><p><a href="https://blog.csdn.net/crazy_scott/article/details/80343324" target="_blank" rel="noopener">https://blog.csdn.net/crazy_scott/article/details/80343324</a></p>
+<h1 id="泛化能力"><a href="#泛化能力" class="headerlink" title="泛化能力"></a>泛化能力</h1><p>泛化误差上界，推导</p>
+<h1 id="生成模型-判别模型"><a href="#生成模型-判别模型" class="headerlink" title="生成模型/判别模型"></a>生成模型/判别模型</h1><p>高斯马尔科夫定理：</p>
 <p>数据质量：</p>
 <p>缺失值</p>
 <p>异常值（3σ原则，箱形图分析）</p>
 <p>一致性分析/检验</p>
-<p>数据特征/探索性数据分析EDAhttps://www.cnblogs.com/shencc3/p/7851340.html：</p>
+<p>数据特征/探索性数据分析EDA<a href="https://www.cnblogs.com/shencc3/p/7851340.html：" target="_blank" rel="noopener">https://www.cnblogs.com/shencc3/p/7851340.html：</a></p>
 <p>分布分析</p>
 <p>定性（条形图，饼图）</p>
 <p>定量（求极差-分组-决定分点-列出频率分布表-绘出频率直方分布图）</p>
@@ -558,8 +504,7 @@
 <p>相关性分析</p>
 <p>绘制散点图，绘制散点图矩阵</p>
 <p>相关系数：pearson相关系数，spearman秩相关系数，判定系数</p>
-<h1>异常点/离群点检测</h1>
-<p><strong>异常检测 Anomaly detection</strong></p>
+<h1 id="异常点-离群点检测"><a href="#异常点-离群点检测" class="headerlink" title="异常点/离群点检测"></a>异常点/离群点检测</h1><p><strong>异常检测 Anomaly detection</strong></p>
 <p>离群点分类（从数据范围，从数据类型，从属性个数）</p>
 <p>检测方法（基于统计，基于邻近度，基于密度，基于聚类）</p>
 <p>基于统计（一元正态分布的离群点检测，混合模型xxxx，）</p>
@@ -569,12 +514,10 @@
 <p><a href="https://blog.csdn.net/littlely_ll/article/details/68486537" target="_blank" rel="noopener">https://blog.csdn.net/littlely_ll/article/details/68486537</a></p>
 <p>局部异常因子 Local outlier factor</p>
 <p>离群点检测</p>
-<h1>陷阱与挑战</h1>
-<p>过拟合</p>
+<h1 id="陷阱与挑战"><a href="#陷阱与挑战" class="headerlink" title="陷阱与挑战"></a>陷阱与挑战</h1><p>过拟合</p>
 <p>维度灾难</p>
 <p>泛化能力</p>
-<h1>检验</h1>
-<p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
+<h1 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h1><p>out-of-sample testing 和 in-sample testing（out-of-sample 样本外，in-sample样本内）</p>
 <p><a href="https://blog.csdn.net/occamo/article/details/84957692" target="_blank" rel="noopener">https://blog.csdn.net/occamo/article/details/84957692</a></p>
 <p>Ground Truth翻译的意思是地面实况，放到机器学习里面，再抽象点可以把它理解为真值、真实的有效值或者是标准的答案</p>
 <p>shallow learning</p>
@@ -747,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">1.1.</span> <span class="nav-text">¶数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性attributes"><span class="nav-number">1.1.2.</span> <span class="nav-text">¶属性Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的种类"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">¶属性的种类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性上的操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">¶属性上的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">¶其他属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集种类"><span class="nav-number">1.1.5.</span> <span class="nav-text">¶数据集种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据质量"><span class="nav-number">1.1.6.</span> <span class="nav-text">¶数据质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据度量"><span class="nav-number">1.1.7.</span> <span class="nav-text">¶数据度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据纬度的影响"><span class="nav-number">1.1.8.</span> <span class="nav-text">¶数据纬度的影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间"><span class="nav-number">1.2.</span> <span class="nav-text">¶空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习三要素"><span class="nav-number">1.3.</span> <span class="nav-text">¶学习三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习任务分类"><span class="nav-number">1.4.</span> <span class="nav-text">¶学习任务分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分类"><span class="nav-number">1.5.</span> <span class="nav-text">¶问题分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">(优化)策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">2.1.</span> <span class="nav-text">¶损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险函数"><span class="nav-number">2.2.</span> <span class="nav-text">¶风险函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化"><span class="nav-number">2.3.</span> <span class="nav-text">¶经验风险最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构风险最小化"><span class="nav-number">2.4.</span> <span class="nav-text">¶结构风险最小化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">过拟合/欠拟合：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">3.1.</span> <span class="nav-text">¶正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-number">3.2.</span> <span class="nav-text">¶交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout"><span class="nav-number">3.3.</span> <span class="nav-text">¶dropout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">泛化能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">生成模型/判别模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">异常点/离群点检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">陷阱与挑战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">检验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">1.1.</span> <span class="nav-text">数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性Attributes"><span class="nav-number">1.1.2.</span> <span class="nav-text">属性Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的种类"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">属性的种类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性上的操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">属性上的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">其他属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集种类"><span class="nav-number">1.1.5.</span> <span class="nav-text">数据集种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据质量"><span class="nav-number">1.1.6.</span> <span class="nav-text">数据质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据度量"><span class="nav-number">1.1.7.</span> <span class="nav-text">数据度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据纬度的影响"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据纬度的影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间"><span class="nav-number">1.2.</span> <span class="nav-text">空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习三要素"><span class="nav-number">1.3.</span> <span class="nav-text">学习三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习任务分类"><span class="nav-number">1.4.</span> <span class="nav-text">学习任务分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分类"><span class="nav-number">1.5.</span> <span class="nav-text">问题分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化-策略"><span class="nav-number">2.</span> <span class="nav-text">(优化)策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">2.1.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险函数"><span class="nav-number">2.2.</span> <span class="nav-text">风险函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化"><span class="nav-number">2.3.</span> <span class="nav-text">经验风险最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构风险最小化"><span class="nav-number">2.4.</span> <span class="nav-text">结构风险最小化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过拟合-欠拟合："><span class="nav-number">3.</span> <span class="nav-text">过拟合/欠拟合：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">3.1.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-number">3.2.</span> <span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropout"><span class="nav-number">3.3.</span> <span class="nav-text">dropout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泛化能力"><span class="nav-number">4.</span> <span class="nav-text">泛化能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成模型-判别模型"><span class="nav-number">5.</span> <span class="nav-text">生成模型/判别模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常点-离群点检测"><span class="nav-number">6.</span> <span class="nav-text">异常点/离群点检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#陷阱与挑战"><span class="nav-number">7.</span> <span class="nav-text">陷阱与挑战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检验"><span class="nav-number">8.</span> <span class="nav-text">检验</span></a></li></ol></div>
             
 
           </div>

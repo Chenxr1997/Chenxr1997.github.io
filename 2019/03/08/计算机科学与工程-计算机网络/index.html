@@ -342,46 +342,26 @@
 <p>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</p>
 <p>请求报文：HTTP协议是以ASCII码传输，建立在TCP/IP协议之上的应用层规范。规范把HTTP请求分为三个部分：状态行、请求头、消息主体</p>
 <p>一个URL地址，它用于描述一个网络上的资源，而 HTTP 中的GET，POST，PUT，DELETE就对应着对这个资源的查，增，改，删4个操作。</p>
-<p><method> <request-url> <version><br>
-<headers></headers></version></request-url></method></p>
-<entity-body>
-GET：信息获取，安全的（不修改，不产生副作用）、幂等的（对同一个URL的多个请求应该返回同样的结果）
-<p>GET /books/?sex=man&amp;name=Professional HTTP/1.1<br>
-Host: <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a><br>
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br>
-Gecko/20050225 Firefox/1.0.1<br>
-Connection: Keep-Alive<br>
-POST表示可能修改服务器上的资源的请求</p>
-<p>POST / HTTP/1.1<br>
-Host: <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a><br>
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br>
-Gecko/20050225 Firefox/1.0.1<br>
-Content-Type: application/x-www-form-urlencoded<br>
-Content-Length: 40<br>
-Connection: Keep-Alive</p>
-<p>sex=man&amp;name=Professional<br>
-GET提交的数据收到URL长度的限制，HTTP协议规范设有对URL长度进行限制。这个限制是特定的浏览器及服务器对于它的限制</p>
+<p><method> <request-url> <version></version></request-url></method></p>
+<headers>
+
+<p><entity-body><br>GET：信息获取，安全的（不修改，不产生副作用）、幂等的（对同一个URL的多个请求应该返回同样的结果）</entity-body></p>
+<p>GET /books/?sex=man&amp;name=Professional HTTP/1.1<br> Host: www.example.com<br> User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br> Gecko/20050225 Firefox/1.0.1<br> Connection: Keep-Alive<br>POST表示可能修改服务器上的资源的请求</p>
+<p>POST / HTTP/1.1<br> Host: www.example.com<br> User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)<br> Gecko/20050225 Firefox/1.0.1<br> Content-Type: application/x-www-form-urlencoded<br> Content-Length: 40<br> Connection: Keep-Alive</p>
+<p> sex=man&amp;name=Professional<br>GET提交的数据收到URL长度的限制，HTTP协议规范设有对URL长度进行限制。这个限制是特定的浏览器及服务器对于它的限制</p>
 <p>POST是没有大小限制的，HTTP协议规范也没有进行大小限制。但是出于安全考虑，服务器软件实现的时候会做一定的限制</p>
 <p>GET和POST的数据是一样的，知识位置不同，一个在URL里面，一个在HTTP包的包体里</p>
 <p>POST提交的数据必须在body部分中，但是协议中没有规定数据使用哪种编码方式或者数据格式。客户端可以自己决定消息主题的格式。但是服务端一般根据请求头中的Content-Type字段来获知请求中的消息是用什么编码方式</p>
-<p>application/x-www-form-urlencoded<br>
-最常见的POST数据提交方式，浏览器原生的<form>表单。如果不设置enctype属性，最终就会以application/x-www-form-urlencoded 方式提交数据。<br>
-multipart/form-data<br>
-我们使用表单上传文件时，必须让 <form> 表单的 enctype 等于 multipart/form-data<br>
-首先生成了一个 boundary 用于分割不同的字段，为了避免与正文内容重复，boundary 很长很复杂。<br>
-Content-Type 里指明了数据是以 multipart/form-data 来编码<br>
-每部分都是以 --boundary 开始，紧接着是内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）<br>
-如果传输的是文件，还要包含文件名和文件类型信息。<br>
-application/json，text/xml，乃至 application/x-protobuf 这种二进制格式，只要服务器可以根据 Content-Type和 Content-Encoding 正确地解析出请求，都是没有问题的</form></form></p>
+<p>application/x-www-form-urlencoded<br>最常见的POST数据提交方式，浏览器原生的<form>表单。如果不设置enctype属性，最终就会以application/x-www-form-urlencoded 方式提交数据。<br>multipart/form-data<br>我们使用表单上传文件时，必须让 <form> 表单的 enctype 等于 multipart/form-data<br>首先生成了一个 boundary 用于分割不同的字段，为了避免与正文内容重复，boundary 很长很复杂。<br>Content-Type 里指明了数据是以 multipart/form-data 来编码<br>每部分都是以 —boundary 开始，紧接着是内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）<br>如果传输的是文件，还要包含文件名和文件类型信息。<br>application/json，text/xml，乃至 application/x-protobuf 这种二进制格式，只要服务器可以根据 Content-Type和 Content-Encoding 正确地解析出请求，都是没有问题的</form></form></p>
 <p>相应报文</p>
 <p>状态行</p>
 <p>第一行为状态行，（HTTP/1.1）表明HTTP版本为1.1版本，状态码为200，状态消息为（ok）</p>
 <p>状态代码：</p>
-<p>1xx：指示信息–表示请求已接收，继续处理</p>
-<p>2xx：成功–表示请求已被成功接收、理解、接受</p>
-<p>3xx：重定向–要完成请求必须进行更进一步的操作</p>
-<p>4xx：客户端错误–请求有语法错误或请求无法实现</p>
-<p>5xx：服务器端错误–服务器未能实现合法的请求</p>
+<p>1xx：指示信息—表示请求已接收，继续处理</p>
+<p>2xx：成功—表示请求已被成功接收、理解、接受</p>
+<p>3xx：重定向—要完成请求必须进行更进一步的操作</p>
+<p>4xx：客户端错误—请求有语法错误或请求无法实现</p>
+<p>5xx：服务器端错误—服务器未能实现合法的请求</p>
 <p>消息报头：说明客户端要使用的一些附加信息</p>
 <p>Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(text/html),编码类型是UTF-8</p>
 <p>空行：消息报头后面的空行是必须的</p>
@@ -489,7 +469,7 @@ application/json，text/xml，乃至 application/x-protobuf 这种二进制格�
 <p>第三次握手：192.168.1.116收到后检查ack number是否正确，即第一次发送的seq number+1,以及位码ack是否为1，若正确，192.168.1.116会再发送ack number=1739326487,ack=1，192.168.1.123收到后确认seq=seq+1,ack=1则连接建立成功。</p>
 <p>图解： 一个三次握手的过程（图1，图2）</p>
 <p>（图1） （图2）</p>
-<p>第一次握手的标志位（图3） 我们可以看到标志位里面只有个同步位，也就是在做请求(SYN) （图3） 第二次握手的标志位（图4） 我们可以看到标志位里面有个确认位和同步位，也就是在做应答(SYN + ACK) （图4） 第三次握手的标志位（图5） 我们可以看到标志位里面只有个确认位，也就是再做再次确认(ACK) （图5） 一个完整的三次握手也就是 请求—应答—再次确认</p>
+<p>第一次握手的标志位（图3） 我们可以看到标志位里面只有个同步位，也就是在做请求(SYN) （图3） 第二次握手的标志位（图4） 我们可以看到标志位里面有个确认位和同步位，也就是在做应答(SYN + ACK) （图4） 第三次握手的标志位（图5） 我们可以看到标志位里面只有个确认位，也就是再做再次确认(ACK) （图5） 一个完整的三次握手也就是 请求—-应答—-再次确认</p>
 <p>UDP</p>
 <p>UDP特性：</p>
 <p>缺乏可靠性：UDP本身不提供确认、序列号、超时重传等机制。因此UDP不保证数据报能够到达、不保证数据报的先后顺序、不保证每个数据报只到达一次</p>
@@ -503,18 +483,14 @@ application/json，text/xml，乃至 application/x-protobuf 这种二进制格�
 <p>四种广播地址：</p>
 <p>受限广播：255.255.255.255。该地址用于主机配置过程中IP数据报的目的地址，在任何情况下，router不转发目的地址为255.255.255.255的数据报，这样的数据报仅出现在本地网络中。</p>
 <p>指向网络的广播：</p>
-<h1>应用层</h1>
-<p>HTTP，FTP，IMAP/POP3/SMTP，DNS</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>HTTP，FTP，IMAP/POP3/SMTP，DNS</p>
 <p>P2P</p>
-<h1>传输层</h1>
-<p>TCP，UDP</p>
-<h1>网络层</h1>
-<p>交换机，路由器，路由表</p>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p>TCP，UDP</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>交换机，路由器，路由表</p>
 <p>私有网络，子网</p>
 <p>反向代理</p>
 <p>NAT网关</p>
-<h1>链路层</h1>
-<p>LTE，WIFI，蓝牙，IPv4/6，NFV，VLAN，IPQoS</p>
+<h1 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h1><p>LTE，WIFI，蓝牙，IPv4/6，NFV，VLAN，IPQoS</p>
 <p>PPP</p>
 <p>SDN（OpenFlow）</p>
 <p>DHCP</p>
@@ -531,7 +507,7 @@ application/json，text/xml，乃至 application/x-protobuf 这种二进制格�
 <p>边界网关协议（BGP）</p>
 <p>ACL访问控制策略</p>
 <p>ISP</p>
-</entity-body>
+</headers>
       
     </div>
     
@@ -699,7 +675,7 @@ application/json，text/xml，乃至 application/x-protobuf 这种二进制格�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">网络层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">链路层</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">1.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传输层"><span class="nav-number">2.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">3.</span> <span class="nav-text">网络层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链路层"><span class="nav-number">4.</span> <span class="nav-text">链路层</span></a></li></ol></div>
             
 
           </div>

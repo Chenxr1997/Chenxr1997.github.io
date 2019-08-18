@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="[TOC] 概念 ¶分类器要素 有标签的数据集 距离计算方式（Distance Metric） k值 ¶分类方法   计算和其他数据的距离 比如欧式距离Euclidean distance   $$ d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} $$   找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感    根据这k个样本的">
+<meta name="description" content="[TOC] 概念分类器要素有标签的数据集 距离计算方式（Distance Metric） k值 分类方法 计算和其他数据的距离   比如欧式距离Euclidean distance    d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} 找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感   根据这k个样本的label，确定数据的类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-KNN">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-KNN/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 概念 ¶分类器要素 有标签的数据集 距离计算方式（Distance Metric） k值 ¶分类方法   计算和其他数据的距离 比如欧式距离Euclidean distance   $$ d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} $$   找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感    根据这k个样本的">
+<meta property="og:description" content="[TOC] 概念分类器要素有标签的数据集 距离计算方式（Distance Metric） k值 分类方法 计算和其他数据的距离   比如欧式距离Euclidean distance    d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} 找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感   根据这k个样本的label，确定数据的类">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-KNN/image-20190815145953441.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-KNN/image-20190815150758319.png">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-KNN">
-<meta name="twitter:description" content="[TOC] 概念 ¶分类器要素 有标签的数据集 距离计算方式（Distance Metric） k值 ¶分类方法   计算和其他数据的距离 比如欧式距离Euclidean distance   $$ d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} $$   找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感    根据这k个样本的">
+<meta name="twitter:description" content="[TOC] 概念分类器要素有标签的数据集 距离计算方式（Distance Metric） k值 分类方法 计算和其他数据的距离   比如欧式距离Euclidean distance    d(p,q) = \sqrt{\sum_i (p_i-q_i)^2} 找出距离最近的k个训练样本  太大，紧邻可能会包含其他类别的点 太小，对噪声（noise）很敏感   根据这k个样本的label，确定数据的类">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-KNN/image-20190815145953441.png">
 
 
@@ -303,85 +303,62 @@
 
       
         <p>[TOC]</p>
-<h1>概念</h1>
-<h2 id="分类器要素"><a class="header-anchor" href="#分类器要素">¶</a>分类器要素</h2>
-<p>有标签的数据集</p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="分类器要素"><a href="#分类器要素" class="headerlink" title="分类器要素"></a>分类器要素</h2><p>有标签的数据集</p>
 <p>距离计算方式（Distance Metric）</p>
 <p>k值</p>
-<h2 id="分类方法"><a class="header-anchor" href="#分类方法">¶</a>分类方法</h2>
-<ul>
-<li>
-<p>计算和其他数据的距离</p>
-<p>比如欧式距离Euclidean distance</p>
+<h2 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h2><ul>
+<li><p>计算和其他数据的距离</p>
+<p>  比如欧式距离Euclidean distance</p>
 </li>
 </ul>
-<p>$$<br>
-d(p,q) = \sqrt{\sum_i (p_i-q_i)^2}<br>
-$$</p>
-<ul>
-<li>
-<p>找出距离最近的k个训练样本</p>
+<script type="math/tex; mode=display">
+d(p,q) = \sqrt{\sum_i (p_i-q_i)^2}</script><ul>
+<li><p>找出距离最近的k个训练样本</p>
 <ul>
 <li>太大，紧邻可能会包含其他类别的点</li>
 <li>太小，对噪声（noise）很敏感</li>
 </ul>
 </li>
-<li>
-<p>根据这k个样本的label，确定数据的类别</p>
-<p>​	可能会有权值</p>
-<p>​	比如</p>
+<li><p>根据这k个样本的label，确定数据的类别</p>
+<p>  ​    可能会有权值</p>
+<p>  ​    比如</p>
 </li>
 </ul>
-<p>$$<br>
-w = \frac{1}{d^2}<br>
-$$</p>
-<h2 id="voronoi-diagram"><a class="header-anchor" href="#voronoi-diagram">¶</a>Voronoi Diagram</h2>
-<p><img src="/2019/03/08/机器学习-KNN/image-20190815145953441.png" alt="image-20190815145953441"></p>
-<h1>问题</h1>
-<ul>
-<li>
-<p>k-近邻方法是一种懒惰学习方法，它存放样本，直到需要分类时才进行分类（Rote-learner），如果样本集比较复杂，可能会导致很大的计算开销，因此无法应用到实时性很强的场合</p>
+<script type="math/tex; mode=display">
+w = \frac{1}{d^2}</script><h2 id="Voronoi-Diagram"><a href="#Voronoi-Diagram" class="headerlink" title="Voronoi Diagram"></a>Voronoi Diagram</h2><p><img src="/2019/03/08/机器学习-KNN/image-20190815145953441.png" alt="image-20190815145953441"></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><p>k-近邻方法是一种懒惰学习方法，它存放样本，直到需要分类时才进行分类（Rote-learner），如果样本集比较复杂，可能会导致很大的计算开销，因此无法应用到实时性很强的场合</p>
 </li>
-<li>
-<p>Scaling issues</p>
-<p>计算距离的时候，不同属性的尺度可能不同</p>
-<p>比如身高（1.5m-1.8m），体重（90lb-300lb），收入（10k-1M）</p>
+<li><p>Scaling issues</p>
+<p>  计算距离的时候，不同属性的尺度可能不同</p>
+<p>  比如身高（1.5m-1.8m），体重（90lb-300lb），收入（10k-1M）</p>
 </li>
-<li>
-<p>需要选择合适的相似度度量方式</p>
-<p><img src="/2019/03/08/机器学习-KNN/image-20190815150758319.png" alt="image-20190815150758319"></p>
+<li><p>需要选择合适的相似度度量方式</p>
+<p>  <img src="/2019/03/08/机器学习-KNN/image-20190815150758319.png" alt="image-20190815150758319"></p>
 </li>
-<li>
-<p>产生的决策边界各种各样</p>
+<li><p>产生的决策边界各种各样</p>
 </li>
-<li>
-<p>丢失属性值时，很难处理</p>
+<li><p>丢失属性值时，很难处理</p>
 </li>
-<li>
-<p>多余或冗余的属性会造成问题</p>
+<li><p>多余或冗余的属性会造成问题</p>
 </li>
 </ul>
-<h1>提升效率</h1>
-<ul>
-<li>
-<p>避免和所有的数据计算距离</p>
+<h1 id="提升效率"><a href="#提升效率" class="headerlink" title="提升效率"></a>提升效率</h1><ul>
+<li><p>避免和所有的数据计算距离</p>
 <ul>
 <li>多维访问方法 Multi-dimensional access methods (k-d trees)</li>
 <li>快速近似搜索 Fast approximate similarity search</li>
 <li>局部敏感哈希 Locality Sensitive Hashing (LSH)</li>
 </ul>
 </li>
-<li>
-<p>浓缩数据 Condensing</p>
-<p>选取更小的数据集，但是有相同的表现</p>
+<li><p>浓缩数据 Condensing</p>
+<p>  选取更小的数据集，但是有相同的表现</p>
 </li>
 </ul>
-<h1>KD树</h1>
-<p>KD树是一个二叉树，表示对K维空间的一个划分，可以进行快速检索（那KNN计算的时候不需要对全样本进行距离的计算了）</p>
+<h1 id="KD树"><a href="#KD树" class="headerlink" title="KD树"></a>KD树</h1><p>KD树是一个二叉树，表示对K维空间的一个划分，可以进行快速检索（那KNN计算的时候不需要对全样本进行距离的计算了）</p>
 <p>KD树更加适用于实例数量远大于空间维度的KNN搜索</p>
 <p>构建过程：根据样本的每一个特征的中位数作为且分点，将举行区域划分成两个区域，再对下一个特征两两划分，不断重复2的操作，直到两个子区域没有实例的时候停止</p>
-<h1>近邻图 Proximity Graphs</h1>
-<p>当且仅当两个顶点满足特定的几何要求时才会有边连接的图</p>
+<h1 id="近邻图-Proximity-Graphs"><a href="#近邻图-Proximity-Graphs" class="headerlink" title="近邻图 Proximity Graphs"></a>近邻图 Proximity Graphs</h1><p>当且仅当两个顶点满足特定的几何要求时才会有边连接的图</p>
 <ul>
 <li>最近邻图 nearest neighbor graphs,</li>
 <li>最小支撑树minimum spanning trees</li>
@@ -390,28 +367,12 @@ $$</p>
 <li>Gabriel graphs</li>
 </ul>
 <p>三要素：</p>
-<p>k值的选择<br>
-距离的度量（常见的距离度量有欧式距离，马氏距离等）<br>
-分类决策规则 （多数表决规则）<br>
-k值的选择</p>
-<p>k值越小表明模型越复杂，更加容易过拟合<br>
-但是k值越大，模型越简单，如果k=N的时候就表明无论什么点都是训练集中类别最多的那个类<br>
-所以一般k会取一个较小的值，然后用过交叉验证来确定<br>
-这里所谓的交叉验证就是将样本划分一部分出来为预测样本，比如95%训练，5%预测，然后k分别取1，2，3，4，5之类的，进行预测，计算最后的分类误差，选择误差最小的k</p>
+<p>k值的选择<br>距离的度量（常见的距离度量有欧式距离，马氏距离等）<br>分类决策规则 （多数表决规则）<br>k值的选择</p>
+<p>k值越小表明模型越复杂，更加容易过拟合<br>但是k值越大，模型越简单，如果k=N的时候就表明无论什么点都是训练集中类别最多的那个类<br>所以一般k会取一个较小的值，然后用过交叉验证来确定<br>这里所谓的交叉验证就是将样本划分一部分出来为预测样本，比如95%训练，5%预测，然后k分别取1，2，3，4，5之类的，进行预测，计算最后的分类误差，选择误差最小的k</p>
 <p>KNN算法的优点：</p>
-<p>思想简单，理论成熟，既可以用来做分类也可以用来做回归；<br>
-可用于非线性分类；<br>
-训练时间复杂度为O(n)；<br>
-准确度高，对数据没有假设，对outlier不敏感；<br>
-缺点：</p>
-<p>计算量大；<br>
-样本不平衡问题（即有些类别的样本数量很多，而其它样本的数量很少）；<br>
-需要大量的内存；<br>
-KNN中的K值选取对K近邻算法的结果会产生重大影响。如李航博士的一书「统计学习方法」上所说：</p>
-<p>**如果选择较小的K值，**就相当于用较小的领域中的训练实例进行预测，“学习”近似误差会减小，只有与输入实例较近或相似的训练实例才会对预测结果起作用，与此同时带来的问题是“学习”的估计误差会增大，换句话说，K值的减小就意味着整体模型变得复杂，容易发生过拟合；<br>
-如果选择较大的K值，就相当于用较大领域中的训练实例进行预测，其优点是可以减少学习的估计误差，但缺点是学习的近似误差会增大。这时候，与输入实例较远（不相似的）训练实例也会对预测器作用，使预测发生错误，且K值的增大就意味着整体的模型变得简单。<br>
-K=N，则完全不足取，因为此时无论输入实例是什么，都只是简单的预测它属于在训练实例中最多的累，模型过于简单，忽略了训练实例中大量有用信息。<br>
-在实际应用中，K值一般取一个比较小的数值，例如采用交叉验证法（简单来说，就是一部分样本做训练集，一部分做测试集）来选择最优的K值。</p>
+<p>思想简单，理论成熟，既可以用来做分类也可以用来做回归；<br>可用于非线性分类；<br>训练时间复杂度为O(n)；<br>准确度高，对数据没有假设，对outlier不敏感；<br>缺点：</p>
+<p>计算量大；<br>样本不平衡问题（即有些类别的样本数量很多，而其它样本的数量很少）；<br>需要大量的内存；<br>KNN中的K值选取对K近邻算法的结果会产生重大影响。如李航博士的一书「统计学习方法」上所说：</p>
+<p><strong>如果选择较小的K值，</strong>就相当于用较小的领域中的训练实例进行预测，“学习”近似误差会减小，只有与输入实例较近或相似的训练实例才会对预测结果起作用，与此同时带来的问题是“学习”的估计误差会增大，换句话说，K值的减小就意味着整体模型变得复杂，容易发生过拟合；<br>如果选择较大的K值，就相当于用较大领域中的训练实例进行预测，其优点是可以减少学习的估计误差，但缺点是学习的近似误差会增大。这时候，与输入实例较远（不相似的）训练实例也会对预测器作用，使预测发生错误，且K值的增大就意味着整体的模型变得简单。<br>K=N，则完全不足取，因为此时无论输入实例是什么，都只是简单的预测它属于在训练实例中最多的累，模型过于简单，忽略了训练实例中大量有用信息。<br> 在实际应用中，K值一般取一个比较小的数值，例如采用交叉验证法（简单来说，就是一部分样本做训练集，一部分做测试集）来选择最优的K值。</p>
 
       
     </div>
@@ -436,8 +397,8 @@ K=N，则完全不足取，因为此时无论输入实例是什么，都只是�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/机器学习-EM/" rel="next" title="机器学习-EM">
-                <i class="fa fa-chevron-left"></i> 机器学习-EM
+              <a href="/2019/03/08/机器学习-Overfitting/" rel="next" title="机器学习-Overfitting">
+                <i class="fa fa-chevron-left"></i> 机器学习-Overfitting
               </a>
             
           </div>
@@ -446,8 +407,8 @@ K=N，则完全不足取，因为此时无论输入实例是什么，都只是�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/深度学习-CNN/" rel="prev" title="深度学习-CNN">
-                深度学习-CNN <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/深度学习-迁移学习/" rel="prev" title="深度学习-迁移学习">
+                深度学习-迁移学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -580,7 +541,7 @@ K=N，则完全不足取，因为此时无论输入实例是什么，都只是�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类器要素"><span class="nav-number">1.1.</span> <span class="nav-text">¶分类器要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类方法"><span class="nav-number">1.2.</span> <span class="nav-text">¶分类方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#voronoi-diagram"><span class="nav-number">1.3.</span> <span class="nav-text">¶Voronoi Diagram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">提升效率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">KD树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">近邻图 Proximity Graphs</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类器要素"><span class="nav-number">1.1.</span> <span class="nav-text">分类器要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类方法"><span class="nav-number">1.2.</span> <span class="nav-text">分类方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Voronoi-Diagram"><span class="nav-number">1.3.</span> <span class="nav-text">Voronoi Diagram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提升效率"><span class="nav-number">3.</span> <span class="nav-text">提升效率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KD树"><span class="nav-number">4.</span> <span class="nav-text">KD树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#近邻图-Proximity-Graphs"><span class="nav-number">5.</span> <span class="nav-text">近邻图 Proximity Graphs</span></a></li></ol></div>
             
 
           </div>

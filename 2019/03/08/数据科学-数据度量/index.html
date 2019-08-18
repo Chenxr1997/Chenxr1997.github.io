@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 相似度度量 Similarity measure  ¶距离  欧式/欧几里得距离 Euclidean Distance  $$ d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}{n}(x_k-y_k)2} $$ ​	如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance">
+<meta name="description" content="[TOC] 相似度度量 Similarity measure 距离 欧式/欧几里得距离 Euclidean Distance   d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}^{n}(x_k-y_k)^2}​    如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance   d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-数据度量">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-数据度量/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 相似度度量 Similarity measure  ¶距离  欧式/欧几里得距离 Euclidean Distance  $$ d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}{n}(x_k-y_k)2} $$ ​	如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance">
+<meta property="og:description" content="[TOC] 相似度度量 Similarity measure 距离 欧式/欧几里得距离 Euclidean Distance   d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}^{n}(x_k-y_k)^2}​    如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance   d">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-数据度量/image-20190811092503711.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-数据度量/image-20190811110755946.png">
@@ -93,7 +93,7 @@
 <meta property="og:updated_time" content="2019-08-18T09:07:40.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-数据度量">
-<meta name="twitter:description" content="[TOC] 相似度度量 Similarity measure  ¶距离  欧式/欧几里得距离 Euclidean Distance  $$ d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}{n}(x_k-y_k)2} $$ ​	如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance">
+<meta name="twitter:description" content="[TOC] 相似度度量 Similarity measure 距离 欧式/欧几里得距离 Euclidean Distance   d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}^{n}(x_k-y_k)^2}​    如果比例（scale）不同，需要标准化（Standardization）  明氏/明可夫斯基距离 Minkowski Distance   d">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-数据度量/image-20190811092503711.png">
 
 
@@ -305,178 +305,117 @@
 
       
         <p>[TOC]</p>
-<h1>相似度度量 Similarity measure</h1>
-<p><img src="/2019/03/08/数据科学-数据度量/image-20190811092503711.png" alt="image-20190811092503711"></p>
-<h2 id="距离"><a class="header-anchor" href="#距离">¶</a>距离</h2>
-<ul>
+<h1 id="相似度度量-Similarity-measure"><a href="#相似度度量-Similarity-measure" class="headerlink" title="相似度度量 Similarity measure"></a>相似度度量 Similarity measure</h1><p><img src="/2019/03/08/数据科学-数据度量/image-20190811092503711.png" alt="image-20190811092503711"></p>
+<h2 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h2><ul>
 <li>欧式/欧几里得距离 Euclidean Distance</li>
 </ul>
-<p>$$<br>
-d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}<sup>{n}(x_k-y_k)</sup>2}<br>
-$$</p>
-<p>​	如果比例（scale）不同，需要标准化（Standardization）</p>
+<script type="math/tex; mode=display">
+d(\mathbf{x},\mathbf{y}) = \sqrt{\sum_{k=1}^{n}(x_k-y_k)^2}</script><p>​    如果比例（scale）不同，需要标准化（Standardization）</p>
 <ul>
 <li>明氏/明可夫斯基距离 Minkowski Distance</li>
 </ul>
-<p>$$<br>
-d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}<sup>{n}|x_k-y_k|</sup>r)^{1/r}<br>
-$$</p>
-<ul>
-<li>
-<ul>
-<li>r = 1，曼哈顿距离Manhattan，L1范数 norm
-<ul>
+<script type="math/tex; mode=display">
+d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}^{n}|x_k-y_k|^r)^{1/r}</script><ul>
+<li><ul>
+<li>r = 1，曼哈顿距离Manhattan，L1范数 norm<ul>
 <li>比如汉明吗中的Hamming distance</li>
 </ul>
 </li>
 <li>r = 2，欧式距离，L2 norm</li>
-<li>r = ∞，supremum/切比雪夫Chebyshev distance，L_max norm, L_∞ norm)</li>
+<li><p>r = ∞，supremum/切比雪夫Chebyshev distance，L_max norm, L_∞ norm)</p>
+<script type="math/tex; mode=display">
+{\lim_{r \to +\infty}} (\sum_{k=1}^{n}|x_k-y_k|^r)^{1/r} = \max_{k=1}^n|x_k-y_k|</script></li>
 </ul>
-<p>$$<br>
-{\lim_{r \to +\infty}} (\sum_{k=1}<sup>{n}|x_k-y_k|</sup>r)^{1/r} = \max_{k=1}^n|x_k-y_k|<br>
-$$</p>
 </li>
-<li>
-<p>马哈拉诺比斯距离 Mahalanobis Distance</p>
+<li><p>马哈拉诺比斯距离 Mahalanobis Distance</p>
 </li>
 </ul>
-<p>$$<br>
-mahalanobis(\mathbf{x},\mathbf{y}) = (\mathbf{x} -\mathbf{y})<sup>\mathsf{T}\Sigma</sup>{-1}(\mathbf{x} - \mathbf{y})<br>
-$$</p>
-<p>​	中间的\Sigma是协方差矩阵</p>
+<script type="math/tex; mode=display">
+mahalanobis(\mathbf{x},\mathbf{y}) = (\mathbf{x} -\mathbf{y})^\mathsf{T}\Sigma^{-1}(\mathbf{x} - \mathbf{y})</script><p>​    中间的\Sigma是协方差矩阵</p>
 <ul>
 <li>距离应该满足的属性</li>
 </ul>
-<p>$$<br>
-d(\mathbf{x},\mathbf{y}) \ge 0 \<br>
-d(\mathbf{x},\mathbf{y}) = d(\mathbf{y},\mathbf{x})\<br>
-d(\mathbf{x},\mathbf{x}) \le d(\mathbf{x},\mathbf{y}) + d(\mathbf{y},\mathbf{z})<br>
-$$</p>
-<ul>
+<script type="math/tex; mode=display">
+d(\mathbf{x},\mathbf{y}) \ge 0 \\
+d(\mathbf{x},\mathbf{y}) = d(\mathbf{y},\mathbf{x})\\
+d(\mathbf{x},\mathbf{x}) \le d(\mathbf{x},\mathbf{y}) + d(\mathbf{y},\mathbf{z})</script><ul>
 <li>相似度应该满足的属性</li>
 </ul>
-<p>$$<br>
-d(\mathbf{x},\mathbf{y}) = 0 \  only \ if \ \mathbf{x} = \mathbf{y}\<br>
-s(\mathbf{x},\mathbf{y}) = s(\mathbf{y},\mathbf{x})<br>
-$$</p>
-<h2 id="二进制串相似度度量"><a class="header-anchor" href="#二进制串相似度度量">¶</a>二进制串相似度度量</h2>
-<p>比较p和q</p>
-<p>f01 = 该属性中p为0，q为1<br>
-f10 = 该属性中p为1，q为0<br>
-f00 = 该属性中p为0，q为1<br>
-f11 = 该属性中p为1，q为1</p>
+<script type="math/tex; mode=display">
+d(\mathbf{x},\mathbf{y}) = 0 \  only \ if \ \mathbf{x} = \mathbf{y}\\
+s(\mathbf{x},\mathbf{y}) = s(\mathbf{y},\mathbf{x})</script><h2 id="二进制串相似度度量"><a href="#二进制串相似度度量" class="headerlink" title="二进制串相似度度量"></a>二进制串相似度度量</h2><p>比较p和q</p>
+<p>f01 = 该属性中p为0，q为1<br>f10 = 该属性中p为1，q为0<br>f00 = 该属性中p为0，q为1<br>f11 = 该属性中p为1，q为1</p>
 <ul>
-<li>
-<p>Simple Matching Coefficients = number of matches / number of attributes = = (f11 + f00) / (f01 + f10 + f11 + f00)</p>
+<li><p>Simple Matching Coefficients = number of matches / number of attributes = = (f11 + f00) / (f01 + f10 + f11 + f00)</p>
 </li>
-<li>
-<p>Jaccard雅卡尔 Coefficients = number of 11 matches / number of non-zero attributes = (f11) / (f01 + f10 + f11)</p>
+<li><p>Jaccard雅卡尔 Coefficients = number of 11 matches / number of non-zero attributes = (f11) / (f01 + f10 + f11)</p>
 </li>
 </ul>
-<h2 id="余弦相似度cosine-similarity"><a class="header-anchor" href="#余弦相似度cosine-similarity">¶</a>余弦相似度Cosine Similarity</h2>
-<p>$$<br>
-\cos(\mathbf{d_1},\mathbf{d_2}) = &lt;\mathbf{d_1},\mathbf{d_2}&gt; / |\mathbf{d_1}||\mathbf{d_2}|\<br>
-$$</p>
-<h2 id="皮尔逊-相关系数correlation"><a class="header-anchor" href="#皮尔逊-相关系数correlation">¶</a>（皮尔逊）相关系数Correlation</h2>
-<p>​	用于度量两个变量的线性关系，区间为[-1,1]，1表示正比例，-1表示反比例<br>
-$$<br>
-corr(\mathbf{x},\mathbf{y}) = \frac{covariance(\mathbf{x},\mathbf{y})}{standard_deviation(\mathbf{x})*standard_deviation(\mathbf{y})} = \frac{S_{xy}}{S_xS_y} \<br>
-covariance(\mathbf{x},\mathbf{y}) = S_{xy} = \frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)(y_k-\bar y)\<br>
-standard_deviation(\mathbf{x}) = S_x = \sqrt{\frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)^2}<br>
-$$</p>
-<h2 id="多属性相关度量"><a class="header-anchor" href="#多属性相关度量">¶</a>多属性相关度量</h2>
-<p>$$<br>
-similarity(\mathbf{x},\mathbf{y}) = \frac {\sum_{k=1}^n \delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \delta_k}<br>
-$$</p>
-<p>其中<br>
-$$<br>
-s_k(\mathbf{x},\mathbf{y})<br>
-$$<br>
-表示第k个属性的相似度</p>
-<p>而<br>
-$$<br>
-\delta_k<br>
-$$<br>
-一般情况下为1，只有在该属性有丢失值的情况或者为非对称属性而两个数据的该属性均为0时，为0</p>
-<p>也可以加上权值<br>
-$$<br>
-similarity(\mathbf{x},\mathbf{y}) = \frac { \sum_{k=1}^n \omega_i\delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \omega_i \delta_k}<br>
-$$</p>
-<p>$$<br>
-d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}<sup>{n}\omega_i|x_k-y_k|</sup>r)^{1/r}<br>
-$$</p>
-<h1>信息论度量</h1>
-<p>信息的量取决于事件发生的概率，概率越大，信息量越少，反之亦然</p>
-<h2 id="熵-entropy"><a class="header-anchor" href="#熵-entropy">¶</a>熵 entropy</h2>
-<p>对于一个随机事件X，有n个可能的输出x1,xn，每一个输出概率为p1,pn，熵定义为<br>
-$$<br>
-H(X) = -\sum_{i=1}^np_i\log_2p_i<br>
-$$<br>
-介于0到log2n之间，是表示X事件的平均bit数目</p>
+<h2 id="余弦相似度Cosine-Similarity"><a href="#余弦相似度Cosine-Similarity" class="headerlink" title="余弦相似度Cosine Similarity"></a>余弦相似度Cosine Similarity</h2><script type="math/tex; mode=display">
+\cos(\mathbf{d_1},\mathbf{d_2}) = <\mathbf{d_1},\mathbf{d_2}> / |\mathbf{d_1}||\mathbf{d_2}|\\</script><h2 id="（皮尔逊）相关系数Correlation"><a href="#（皮尔逊）相关系数Correlation" class="headerlink" title="（皮尔逊）相关系数Correlation"></a>（皮尔逊）相关系数Correlation</h2><p>​    用于度量两个变量的线性关系，区间为[-1,1]，1表示正比例，-1表示反比例</p>
+<script type="math/tex; mode=display">
+corr(\mathbf{x},\mathbf{y}) = \frac{covariance(\mathbf{x},\mathbf{y})}{standard\_deviation(\mathbf{x})*standard\_deviation(\mathbf{y})} = \frac{S_{xy}}{S_xS_y} \\
+covariance(\mathbf{x},\mathbf{y}) = S_{xy} = \frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)(y_k-\bar y)\\
+standard\_deviation(\mathbf{x}) = S_x = \sqrt{\frac{1}{n-1}\sum_{k=1}^{n}(x_k-\bar x)^2}</script><h2 id="多属性相关度量"><a href="#多属性相关度量" class="headerlink" title="多属性相关度量"></a>多属性相关度量</h2><script type="math/tex; mode=display">
+similarity(\mathbf{x},\mathbf{y}) = \frac {\sum_{k=1}^n \delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \delta_k}</script><p>其中</p>
+<script type="math/tex; mode=display">
+s_k(\mathbf{x},\mathbf{y})</script><p>表示第k个属性的相似度</p>
+<p>而</p>
+<script type="math/tex; mode=display">
+\delta_k</script><p>一般情况下为1，只有在该属性有丢失值的情况或者为非对称属性而两个数据的该属性均为0时，为0</p>
+<p>也可以加上权值</p>
+<script type="math/tex; mode=display">
+similarity(\mathbf{x},\mathbf{y}) = \frac { \sum_{k=1}^n \omega_i\delta_k s_k(\mathbf{x},\mathbf{y})} {\sum_{k=1}^n \omega_i \delta_k}</script><script type="math/tex; mode=display">
+d(\mathbf{x},\mathbf{y}) = (\sum_{k=1}^{n}\omega_i|x_k-y_k|^r)^{1/r}</script><h1 id="信息论度量"><a href="#信息论度量" class="headerlink" title="信息论度量"></a>信息论度量</h1><p>信息的量取决于事件发生的概率，概率越大，信息量越少，反之亦然</p>
+<h2 id="熵-entropy"><a href="#熵-entropy" class="headerlink" title="熵 entropy"></a>熵 entropy</h2><p>对于一个随机事件X，有n个可能的输出x1,,,xn，每一个输出概率为p1,,,pn，熵定义为</p>
+<script type="math/tex; mode=display">
+H(X) = -\sum_{i=1}^np_i\log_2p_i</script><p>介于0到log2n之间，是表示X事件的平均bit数目</p>
 <p>或者也可以解释为一个数据集的信息熵（information entropy），度量样本集合纯度，p则为每一类样本所占的比率，信息熵越小，纯度越高</p>
-<p>$$<br>
-熵的计算方式来源\<br>
-假设我们已经知道衡量不确定性大小的这个量已经存在了，不妨就叫做“信息量”,他应该有3个性质：\<br>
-• 不会是负数\<br>
-• 不确定性函数f是概率p的单调递减函数；\<br>
-• 可加性： 两个独立符号所产生的不确定性应等于各自不确定性之和，即\<br>
-f(p_1 \times p_2) = f(p_1)+f(P_2)\<br>
-同时满足这三个条件的函数f是负的对数函数，即\<br>
-f(p_i) = \log \frac{1}{p_i} = -\log p_i\<br>
-信息熵是跟所有事件的可能性有关的，是平均而言发生一个事件得到<br>
-的信息量大小。所以信息熵其实是信息量的期望<br>
-$$</p>
-<p>采样数据的熵（总数为m，每一种的数目为m_i）<br>
-$$<br>
-H(X) = -\sum_{i=1}^n\frac{m_i}{m}\log_2\frac{m_i}{m}<br>
-$$</p>
-<h2 id="条件熵-conditional-entropy"><a class="header-anchor" href="#条件熵-conditional-entropy">¶</a>条件熵 Conditional Entropy</h2>
-<p>$$<br>
-H(Y|X) = \sum_{x \in \mathcal X} p(x)H(Y|X=x)\<br>
-= -\sum_{x \in \mathcal X} p(x) \sum_{y \in \mathcal Y} p(y|x) \log_2p(y|x)\<br>
-= -\sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2p(y|x)\<br>
-= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2p(y|x)\<br>
-= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)}\<br>
-= \sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x)}{p(x,y)}<br>
-$$</p>
-<h2 id="互信息-mutual-information"><a class="header-anchor" href="#互信息-mutual-information">¶</a>互信息 Mutual Information</h2>
-<p>表示一个事件（变量）给另一个事件提供的信息<br>
-$$<br>
-I(X,Y) = H(X) + H(Y) - H(X,Y) \<br>
-= \sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)(y)}<br>
-$$<br>
-H(X, Y)表示联合熵<br>
-$$<br>
-H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}<br>
-$$<br>
-互信息的最大值为log(min(n_x,n_Y))，n_x(n_Y)表示X(Y)的值的数目</p>
+<script type="math/tex; mode=display">
+熵的计算方式来源\\
+假设我们已经知道衡量不确定性大小的这个量已经存在了，不妨就叫做“信息量”,他应该有3个性质：\\
+• 不会是负数\\
+• 不确定性函数f是概率p的单调递减函数；\\
+• 可加性： 两个独立符号所产生的不确定性应等于各自不确定性之和，即\\
+f(p_1 \times p_2) = f(p_1)+f(P_2)\\
+同时满足这三个条件的函数f是负的对数函数，即\\
+f(p_i) = \log \frac{1}{p_i} = -\log p_i\\
+信息熵是跟所有事件的可能性有关的，是平均而言发生一个事件得到
+的信息量大小。所以信息熵其实是信息量的期望</script><p>采样数据的熵（总数为m，每一种的数目为m_i）</p>
+<script type="math/tex; mode=display">
+H(X) = -\sum_{i=1}^n\frac{m_i}{m}\log_2\frac{m_i}{m}</script><h2 id="条件熵-Conditional-Entropy"><a href="#条件熵-Conditional-Entropy" class="headerlink" title="条件熵 Conditional Entropy"></a>条件熵 Conditional Entropy</h2><script type="math/tex; mode=display">
+H(Y|X) = \sum_{x \in \mathcal X} p(x)H(Y|X=x)\\
+= -\sum_{x \in \mathcal X} p(x) \sum_{y \in \mathcal Y} p(y|x) \log_2p(y|x)\\
+= -\sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2p(y|x)\\
+= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2p(y|x)\\
+= -\sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)}\\
+= \sum_{x \in \mathcal X,y \in \mathcal Y} p(x,y) \log_2 \frac{p(x)}{p(x,y)}</script><h2 id="互信息-Mutual-Information"><a href="#互信息-Mutual-Information" class="headerlink" title="互信息 Mutual Information"></a>互信息 Mutual Information</h2><p>表示一个事件（变量）给另一个事件提供的信息</p>
+<script type="math/tex; mode=display">
+I(X,Y) = H(X) + H(Y) - H(X,Y) \\
+= \sum_{x \in \mathcal X} \sum_{y \in \mathcal Y} p(x,y) \log_2 \frac{p(x,y)}{p(x)(y)}</script><p>H(X, Y)表示联合熵</p>
+<script type="math/tex; mode=display">
+H(X,Y) = -\sum_i \sum_j p_{ij} \log_2p_{ij}</script><p>互信息的最大值为log(min(n_x,n_Y))，n_x(n_Y)表示X(Y)的值的数目</p>
 <p><img src="/2019/03/08/数据科学-数据度量/image-20190811110755946.png" alt="image-20190811110755946"></p>
-<h1>密度度量</h1>
-<p>度量在一个区域内，数据见接近的程度</p>
+<h1 id="密度度量"><a href="#密度度量" class="headerlink" title="密度度量"></a>密度度量</h1><p>度量在一个区域内，数据见接近的程度</p>
 <ul>
-<li>
-<p>Euclidean density</p>
-<p>单位空间内的数据点个数</p>
+<li><p>Euclidean density</p>
+<p>  单位空间内的数据点个数</p>
 <ul>
-<li>
-<p>Grid-based Approach</p>
-<p>将区域划分为一个个矩形，统计每个矩形中的点数</p>
-<p><img src="/2019/03/08/数据科学-数据度量/image-20190811122615714.png" alt="image-20190811122615714"></p>
+<li><p>Grid-based Approach</p>
+<p>  将区域划分为一个个矩形，统计每个矩形中的点数</p>
+<p>  <img src="/2019/03/08/数据科学-数据度量/image-20190811122615714.png" alt="image-20190811122615714"></p>
 </li>
-<li>
-<p>Center-Based</p>
-<p>半径范围内的点数</p>
-<p><img src="/2019/03/08/数据科学-数据度量/image-20190811122646615.png" alt="image-20190811122646615"></p>
+<li><p>Center-Based</p>
+<p>  半径范围内的点数</p>
+<p>  <img src="/2019/03/08/数据科学-数据度量/image-20190811122646615.png" alt="image-20190811122646615"></p>
 </li>
 </ul>
 </li>
-<li>
-<p>Probability density</p>
-<p>Estimate what the distribution of the data looks like</p>
+<li><p>Probability density</p>
+<p>  Estimate what the distribution of the data looks like</p>
 </li>
-<li>
-<p>Graph-based density</p>
-<p>Connectivity</p>
+<li><p>Graph-based density</p>
+<p>  Connectivity</p>
 </li>
 </ul>
 
@@ -647,7 +586,7 @@ $$<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">相似度度量 Similarity measure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#距离"><span class="nav-number">1.1.</span> <span class="nav-text">¶距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制串相似度度量"><span class="nav-number">1.2.</span> <span class="nav-text">¶二进制串相似度度量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#余弦相似度cosine-similarity"><span class="nav-number">1.3.</span> <span class="nav-text">¶余弦相似度Cosine Similarity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#皮尔逊-相关系数correlation"><span class="nav-number">1.4.</span> <span class="nav-text">¶（皮尔逊）相关系数Correlation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多属性相关度量"><span class="nav-number">1.5.</span> <span class="nav-text">¶多属性相关度量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">信息论度量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#熵-entropy"><span class="nav-number">2.1.</span> <span class="nav-text">¶熵 entropy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件熵-conditional-entropy"><span class="nav-number">2.2.</span> <span class="nav-text">¶条件熵 Conditional Entropy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互信息-mutual-information"><span class="nav-number">2.3.</span> <span class="nav-text">¶互信息 Mutual Information</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">密度度量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相似度度量-Similarity-measure"><span class="nav-number">1.</span> <span class="nav-text">相似度度量 Similarity measure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#距离"><span class="nav-number">1.1.</span> <span class="nav-text">距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制串相似度度量"><span class="nav-number">1.2.</span> <span class="nav-text">二进制串相似度度量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#余弦相似度Cosine-Similarity"><span class="nav-number">1.3.</span> <span class="nav-text">余弦相似度Cosine Similarity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（皮尔逊）相关系数Correlation"><span class="nav-number">1.4.</span> <span class="nav-text">（皮尔逊）相关系数Correlation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多属性相关度量"><span class="nav-number">1.5.</span> <span class="nav-text">多属性相关度量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息论度量"><span class="nav-number">2.</span> <span class="nav-text">信息论度量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#熵-entropy"><span class="nav-number">2.1.</span> <span class="nav-text">熵 entropy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件熵-Conditional-Entropy"><span class="nav-number">2.2.</span> <span class="nav-text">条件熵 Conditional Entropy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互信息-Mutual-Information"><span class="nav-number">2.3.</span> <span class="nav-text">互信息 Mutual Information</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#密度度量"><span class="nav-number">3.</span> <span class="nav-text">密度度量</span></a></li></ol></div>
             
 
           </div>

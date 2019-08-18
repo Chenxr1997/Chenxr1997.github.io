@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
+<meta name="description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-贝叶斯">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-贝叶斯:朴素贝叶斯/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
+<meta property="og:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-贝叶斯">
-<meta name="twitter:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
+<meta name="twitter:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的">
 
 
 
@@ -300,8 +300,7 @@
 
       
         <p>[TOC]</p>
-<h1>朴素贝叶斯分类Naïve Bayes Classifier</h1>
-<p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的</p>
+<h1 id="朴素贝叶斯分类Naive-Bayes-Classifier"><a href="#朴素贝叶斯分类Naive-Bayes-Classifier" class="headerlink" title="朴素贝叶斯分类Naïve Bayes Classifier"></a>朴素贝叶斯分类Naïve Bayes Classifier</h1><p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的</p>
 <p>时间A和B同时发生的概率为A发生的情况下发生B或者B发生的情况下发生A，对于给出的待分类项，求解在此项目条件下各个目标类别出现的概率，哪个最大就认为此待分类项属于哪个类别。</p>
 <p>假如现在有样本x=(a1,a2,a3…,an)，有分类目标Y={y1,y2,…,yn}</p>
 <p>那么max(P(y1|x),P(y2|x)…)就是分类结果</p>
@@ -309,32 +308,19 @@
 <p>相当于从样本中统计出来</p>
 <p>P(ai|yi)代表该类别下该特征出现的概率</p>
 <p>P(yi)代表全部类别中，该类别出现的概率</p>
-<p>如果输入是连续值，考虑满足高斯分布，用高斯分布的概率来做<br>
-如果某个类别中某个特征没有出现，会导致0，引入拉普拉斯校验，对于每类别下面的所有划分计数加一。<br>
-要求特征之间独立，可以使用DAG进行概率图的描述<br>
-优点：对小规模数据表现好，适合多分类任务，适合增量训练</p>
+<p>如果输入是连续值，考虑满足高斯分布，用高斯分布的概率来做<br>如果某个类别中某个特征没有出现，会导致0，引入拉普拉斯校验，对于每类别下面的所有划分计数加一。<br>要求特征之间独立，可以使用DAG进行概率图的描述<br>优点：对小规模数据表现好，适合多分类任务，适合增量训练</p>
 <p>缺点：对于输入的数据很敏感</p>
-<p>$$<br>
-拥有先验概率P(Y)\<br>
-n个条件独立的特征/数据x_i决定了Y\<br>
-对于每一个x_i，可以计算P(x_i|Y)\<br>
-y* = h_{NB}(x) = \mathop{\arg\min}<em>{y} P(x)P(x_1,…,x_n|y)\<br>
-= \mathop{\arg\min}</em>{y}P(y)\prod_iP(x_i|y)<br>
-$$</p>
-<h1>贝叶斯估计</h1>
-<h1>高斯贝叶斯</h1>
-<p>Gaussian Naive Bayes</p>
-<h1>多项朴素贝叶斯</h1>
-<p>Multinomial Naive Bayes</p>
-<h1>平均一依赖性评估</h1>
-<p>Averaged One-Dependence Estimators</p>
-<h1>贝叶斯信念网络</h1>
-<p>Bayesian Belief Network</p>
-<h1>贝叶斯网络</h1>
-<p>Bayesian Network</p>
-<h1>EM算法</h1>
-<h1>垃圾邮件分类</h1>
-<p>朴素 贝叶斯垃圾邮件分类器是在对邮件关键字进行统计分析到基础上利用贝叶斯公式进行分类到方法。相比其他模型，朴素贝叶斯模型到搭建比较简单，并且具有良好到分类效果。</p>
+<script type="math/tex; mode=display">
+拥有先验概率P(Y)\\
+n个条件独立的特征/数据x_i决定了Y\\
+对于每一个x_i，可以计算P(x_i|Y)\\
+y* = h_{NB}(x) = \mathop{\arg\min}_{y} P(x)P(x_1,...,x_n|y)\\
+= \mathop{\arg\min}_{y}P(y)\prod_iP(x_i|y)</script><h1 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h1><h1 id="高斯贝叶斯"><a href="#高斯贝叶斯" class="headerlink" title="高斯贝叶斯"></a>高斯贝叶斯</h1><p>Gaussian Naive Bayes</p>
+<h1 id="多项朴素贝叶斯"><a href="#多项朴素贝叶斯" class="headerlink" title="多项朴素贝叶斯"></a>多项朴素贝叶斯</h1><p>Multinomial Naive Bayes</p>
+<h1 id="平均一依赖性评估"><a href="#平均一依赖性评估" class="headerlink" title="平均一依赖性评估"></a>平均一依赖性评估</h1><p>Averaged One-Dependence Estimators</p>
+<h1 id="贝叶斯信念网络"><a href="#贝叶斯信念网络" class="headerlink" title="贝叶斯信念网络"></a>贝叶斯信念网络</h1><p>Bayesian Belief Network</p>
+<h1 id="贝叶斯网络"><a href="#贝叶斯网络" class="headerlink" title="贝叶斯网络"></a>贝叶斯网络</h1><p>Bayesian Network</p>
+<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><h1 id="垃圾邮件分类"><a href="#垃圾邮件分类" class="headerlink" title="垃圾邮件分类"></a>垃圾邮件分类</h1><p>朴素 贝叶斯垃圾邮件分类器是在对邮件关键字进行统计分析到基础上利用贝叶斯公式进行分类到方法。相比其他模型，朴素贝叶斯模型到搭建比较简单，并且具有良好到分类效果。</p>
 <p>朴素真贝叶斯分类器通过对邮件关键字进行统计，然后使用贝叶斯推理来计算一封电子邮件是或不是垃圾邮件的概率。</p>
 <p>1.特征量的选择</p>
 <p>对于文本信息而言，文本中的关键字更能代表文本到内容，因此在此分类器中我们对邮件内容进行分词处理，选取邮件中出现频率最高的10个词作为这封邮件到特征量。</p>
@@ -520,7 +506,7 @@ $$</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">垃圾邮件分类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#朴素贝叶斯分类Naive-Bayes-Classifier"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯估计"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高斯贝叶斯"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多项朴素贝叶斯"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平均一依赖性评估"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯信念网络"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯网络"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM算法"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾邮件分类"><span class="nav-number">9.</span> <span class="nav-text">垃圾邮件分类</span></a></li></ol></div>
             
 
           </div>

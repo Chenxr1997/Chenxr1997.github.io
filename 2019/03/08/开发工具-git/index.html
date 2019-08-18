@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
+<meta name="description" content="[TOC] git提交在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;first c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发工具-git&#x2F;github">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/开发工具-git/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
+<meta property="og:description" content="[TOC] git提交在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;first c">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-18T09:07:40.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发工具-git&#x2F;github">
-<meta name="twitter:description" content="[TOC] git ¶提交 在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;firs">
+<meta name="twitter:description" content="[TOC] git提交在git add 命令后撤销已经加入到暂存区的文件 123git reset HEAD -- . 撤销所有git reset HEAD -- filename 撤销特定目标git rm -cached filepath 将文件从缓存中删除 将添加的文件提交到仓库 12git commit -m &apos;initial commit&apos;git commit -a -m &quot;first c">
 
 
 
@@ -300,9 +300,7 @@
 
       
         <p>[TOC]</p>
-<h1>git</h1>
-<h2 id="提交"><a class="header-anchor" href="#提交">¶</a>提交</h2>
-<p>在git add 命令后撤销已经加入到暂存区的文件</p>
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>在git add 命令后撤销已经加入到暂存区的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD -- . 撤销所有</span><br><span class="line">git reset HEAD -- filename 撤销特定目标</span><br><span class="line">git rm -cached filepath 将文件从缓存中删除</span><br></pre></td></tr></table></figure>
 <p>将添加的文件提交到仓库</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">'initial commit'</span></span><br><span class="line">git commit -a -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
@@ -312,19 +310,16 @@
 <p>或者</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f -u origin master</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h2 id="版本回退"><a class="header-anchor" href="#版本回退">¶</a>版本回退</h2>
-<p>查询历史对应不同版本的ID ，用于回退使用</p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>查询历史对应不同版本的ID ，用于回退使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
 <p>恢复到历史版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard fae6966548e3ae76cfa7f38a461c438cf75ba965</span><br></pre></td></tr></table></figure>
 <p>然后push后就可以把GitHub上面都代码回退了</p>
 <p><a href="https://blog.csdn.net/asoar/article/details/84111841" target="_blank" rel="noopener">https://blog.csdn.net/asoar/article/details/84111841</a></p>
-<h2 id="分支管理"><a class="header-anchor" href="#分支管理">¶</a>分支管理</h2>
-<p>合并分支</p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>合并分支</p>
 <p><a href="http://baijiahao.baidu.com/s?id=1599307015836362675&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">http://baijiahao.baidu.com/s?id=1599307015836362675&amp;wfr=spider&amp;for=pc</a></p>
 <p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000</a></p>
-<h1>github</h1>
-<p><a href="https://blog.csdn.net/xingqingly/article/details/83823800" target="_blank" rel="noopener">https://blog.csdn.net/xingqingly/article/details/83823800</a></p>
+<h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p><a href="https://blog.csdn.net/xingqingly/article/details/83823800" target="_blank" rel="noopener">https://blog.csdn.net/xingqingly/article/details/83823800</a></p>
 
       
     </div>
@@ -493,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">1.1.</span> <span class="nav-text">¶提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">1.2.</span> <span class="nav-text">¶版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">1.3.</span> <span class="nav-text">¶分支管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-number">1.</span> <span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提交"><span class="nav-number">1.1.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">1.2.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">1.3.</span> <span class="nav-text">分支管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">2.</span> <span class="nav-text">github</span></a></li></ol></div>
             
 
           </div>
