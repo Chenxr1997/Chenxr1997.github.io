@@ -79,17 +79,48 @@
 
 
 
-<meta name="description" content="[TOC] 划分（分裂）方法 k-means（k平均），二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians 层次分析方法 birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类） 基于密度的方法 均值漂移聚类，dbscan算法（基于高密度连接区域），denclue">
+<meta name="description" content="[TOC] 划分（分裂）方法k-means1.确定分类个数k 2.随机选择k个聚类中心点  3.每个数据点找到离它最近的中心点，划为一类  4.每一类中找到新的中心点  5.一直迭代直到没有变化为止  加速Dan Pelleg and Andrew Moore. Accelerating Exact k-means Algorithms with Geometric Reasoning. Proc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-聚类">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-聚类/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 划分（分裂）方法 k-means（k平均），二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians 层次分析方法 birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类） 基于密度的方法 均值漂移聚类，dbscan算法（基于高密度连接区域），denclue">
+<meta property="og:description" content="[TOC] 划分（分裂）方法k-means1.确定分类个数k 2.随机选择k个聚类中心点  3.每个数据点找到离它最近的中心点，划为一类  4.每一类中找到新的中心点  5.一直迭代直到没有变化为止  加速Dan Pelleg and Andrew Moore. Accelerating Exact k-means Algorithms with Geometric Reasoning. Proc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.727Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815153538284.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815153637062.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815153813468.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815153846268.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815165806306.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815191732179.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815191756913.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815192930910.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815193248733.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815193300131.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816124414229.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816133553960.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816132249423.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816092159244.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190818170636452.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816094725656.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816103504535.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816112217966.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816112246905.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816123721853.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816122918909.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816123028119.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816123056818.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816123148217.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816123354152.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816140740743.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816143720499.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816144709727.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816170446342.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190816170527446.png">
+<meta property="og:updated_time" content="2019-08-18T09:29:45.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-聚类">
-<meta name="twitter:description" content="[TOC] 划分（分裂）方法 k-means（k平均），二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians 层次分析方法 birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类） 基于密度的方法 均值漂移聚类，dbscan算法（基于高密度连接区域），denclue">
+<meta name="twitter:description" content="[TOC] 划分（分裂）方法k-means1.确定分类个数k 2.随机选择k个聚类中心点  3.每个数据点找到离它最近的中心点，划为一类  4.每一类中找到新的中心点  5.一直迭代直到没有变化为止  加速Dan Pelleg and Andrew Moore. Accelerating Exact k-means Algorithms with Geometric Reasoning. Proc">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-聚类/image-20190815153538284.png">
 
 
 
@@ -300,38 +331,493 @@
 
       
         <p>[TOC]</p>
-<h1>划分（分裂）方法</h1>
-<p>k-means（k平均），二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians</p>
-<h1>层次分析方法</h1>
-<p>birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类）</p>
-<h1>基于密度的方法</h1>
-<p>均值漂移聚类，dbscan算法（基于高密度连接区域），denclue算法（密度分布函数），optics算法（对象排序识别）</p>
-<h1>基于网格的方法</h1>
-<p>sting算法（统计信息网络），clioue算法（聚类高维空间），wave-cluster算法（小波变换）</p>
-<h1>基于模型的方法</h1>
-<p>统计学方法，深度学习</p>
-<h1>混合高斯模型（GMM）</h1>
-<p>首先假设数据点是呈高斯分布的，相对应K-Means假设数据点是圆形的，高斯分布（椭圆形）给出了更多的可能性。我们有两个参数来描述簇的形状：均值和标准差。所以这些簇可以采取任何形状的椭圆形，因为在x，y方向上都有标准差。因此，每个高斯分布被分配给单个簇。所以要做聚类首先应该找到数据集的均值和标准差，我们将采用一个叫做最大期望(EM)的优化算法</p>
+<h1 id="划分（分裂）方法"><a href="#划分（分裂）方法" class="headerlink" title="划分（分裂）方法"></a>划分（分裂）方法</h1><h2 id="k-means"><a href="#k-means" class="headerlink" title="k-means"></a>k-means</h2><p>1.确定分类个数k</p>
+<p>2.随机选择k个聚类中心点</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153538284.png" alt="image-20190815153538284"></p>
+<p>3.每个数据点找到离它最近的中心点，划为一类</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153637062.png" alt="image-20190815153637062"></p>
+<p>4.每一类中找到新的中心点</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153813468.png" alt="image-20190815153813468"></p>
+<p>5.一直迭代直到没有变化为止</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153846268.png" alt="image-20190815153846268"></p>
+<h3 id="加速"><a href="#加速" class="headerlink" title="加速"></a>加速</h3><p>Dan Pelleg and Andrew Moore. Accelerating Exact k-means Algorithms with Geometric Reasoning. Proc. Conference on Knowledge Discovery in Databases 1999, (KDD99) </p>
+<h3 id="优化方面"><a href="#优化方面" class="headerlink" title="优化方面"></a>优化方面</h3><p>现在假设进行数据传输，但是由于资源限制，只能传输中心点数据，怎样才能使误差平方之和最小？</p>
+<script type="math/tex; mode=display">
+encoder \ function: ENCODE: \mathfrak R^m \to [1..k]\\
+decoder \ function: DECODE: \mathfrak [1..k] \to R^m\\
+定义失真:\\
+Distortion = \sum_{i=1}^R (x_i-DECODE[ENCODE(x_i)])^2\\
+可写作：DECODE[j] = C_j \ 即数据j所对应的中心点\\
+Distortion = \sum_{i=1}^R (x_i-C_{ENCODE(x_i)})^2</script><p>为了让失真Distortion最小，我们需要</p>
+<p>(1)xi需要被编码到最近的中心点</p>
+<script type="math/tex; mode=display">
+C_{ENCODE(x_i)} = {\arg \min}_{c_j \in \{c_1,...,c_k\}} (x_i - c_j)^2</script><p>(2)对于每一个中心点c_j的偏差，它关于c_j的偏导数为0</p>
+<script type="math/tex; mode=display">
+Distortion = \sum_{i=1}^R (x_i-C_{ENCODE(x_i)})^2\\
+= \sum_{j=1}^k \sum_{i \in OwnedBy(c_j)}(x_i-c_j)^2 \quad k个中心点\\
+\frac{\partial Distortion}{\partial c_j} = \frac{\partial}{\partial c_j} \sum_{i \in OwnedBy(c_j)}(x_i-c_j)^2\\
+= -2c_j\sum_{i \in OwnedBy(c_j)}(x_i-c_j)\\
+= 0(for \ a \ minimum)\\
+因此c_j = \frac{1}{|OwnedBy(c_j)|}\sum_{i \in OwnedBy(c_j)}x_i</script><p>因此中心点时改类别中，所有数据的质心</p>
+<h4 id="算法是否停止"><a href="#算法是否停止" class="headerlink" title="算法是否停止"></a>算法是否停止</h4><p>当失真Distortion不是最小的时候，通过反复执行下面两步改变中心点c1,c2,,,ck</p>
+<p>(1)改变编码，使得x_i归属于最近的中心点</p>
+<p>(2) 设置每一类的中心点为数据的质心</p>
+<p>很容易证明这个过程最终会停止(1,2两步不再改变中心点)</p>
+<p>因为当数据有限时，把它们划分为K组的方案也是有限的，因此可能的中心点(质心)组合是有限的</p>
+<p>而如果某一次迭代中改变了中心点，那么失真Distortion是下降的，因此最终会走到一个界限上，不能再往前进</p>
+<h4 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h4><p>虽然算法一定会停止，但是不一定是最优解</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815165806306.png" alt="image-20190815165806306"></p>
+<p>一些找到尽量好的解的方法：</p>
+<ul>
+<li><p>初始化时注意一下</p>
+<p>  将第一个中心放在随机选择的数据点上</p>
+<p>  将第二个中心放在距离第一个中心尽可能远的位置</p>
+<p>  ：</p>
+<p>  将第J个中心放在距离第1-j-1个中心尽可能远的位置</p>
+</li>
+<li><p>运行多次k-means，获得不同的结果</p>
+</li>
+</ul>
+<h4 id="K的选择"><a href="#K的选择" class="headerlink" title="K的选择"></a>K的选择</h4><p>是一个困难的问题</p>
+<p>普遍的反法是找到一个使Schwarz Criterion (也叫贝叶斯信息度量/准则 BIC)较小的解</p>
+<script type="math/tex; mode=display">
+Distortion + \lambda(\#parameters)\log R\\
+= Distortion + \lambda mk\log R\\
+m = \#dimensions\\
+k = \#Centers\\
+R = \#Records</script><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>矢量量化</p>
+<p>二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians</p>
+<h1 id="层次分析方法"><a href="#层次分析方法" class="headerlink" title="层次分析方法"></a>层次分析方法</h1><p>1)单链(Single-link):不同两个聚类中离得最近的两个点之间的距离,即MIN</p>
+<p>​    容易受到异常值，噪声的影响</p>
+<p>2)全链(Complete-link):不同两个聚类中离得最远的两个点之间的距离,即MAX</p>
+<p>​    对于非球状簇的表现不好</p>
+<p>3)平均链(Average-link，GROUP-AVERAGE):不同两个聚类中所有点对距离的平均值,即AVERAGE</p>
+<p>​    对于非球状簇的表现不好</p>
+<h2 id="层次凝聚聚类-Hierarchical-Agglomerative-Clustering-AGNES-AGglomerative-NESting"><a href="#层次凝聚聚类-Hierarchical-Agglomerative-Clustering-AGNES-AGglomerative-NESting" class="headerlink" title="层次凝聚聚类 Hierarchical Agglomerative Clustering (AGNES(AGglomerative NESting))"></a>层次凝聚聚类 Hierarchical Agglomerative Clustering (AGNES(AGglomerative NESting))</h2><p>是一种单链接聚类方法 Single Linkage Hierarchical Clustering</p>
+<p>1.每个点都是一个簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815191732179.png" alt="image-20190815191732179"></p>
+<p>2.找到最接近的两个簇，并且合并为父级簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815191756913.png" alt="image-20190815191756913"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815192930910.png" alt="image-20190815192930910"></p>
+<p>3.重复上述过程，直到将整个数据集合并为一个簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815193248733.png" alt="image-20190815193248733"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815193300131.png" alt="image-20190815193300131"></p>
+<p>如何确定簇之间的相似度：</p>
+<ul>
+<li>簇中的点之间的最小距离（可使用Euclidian Minimum Spanning Trees）</li>
+<li>簇中的点之间的最大距离</li>
+<li>簇中的点之间的平均距离</li>
+</ul>
+<p>最终得到的是一个树状图dendrogram, or taxonomy, or hierarchy</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>得到的是一个层次结构，而不是没有结构的组织</li>
+<li>如果想得到k个组，只需要剪掉k-1个最长的链即可</li>
+<li>没有太多的统计或信息论基础在里面</li>
+</ul>
+<h2 id="BIRCH"><a href="#BIRCH" class="headerlink" title="BIRCH"></a>BIRCH</h2><h2 id="最小生成树聚类-MST"><a href="#最小生成树聚类-MST" class="headerlink" title="最小生成树聚类(MST)"></a>最小生成树聚类(MST)</h2><p>birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类）</p>
+<h1 id="基于密度的方法"><a href="#基于密度的方法" class="headerlink" title="基于密度的方法"></a>基于密度的方法</h1><h2 id="Grid-based-clustering"><a href="#Grid-based-clustering" class="headerlink" title="Grid-based clustering"></a>Grid-based clustering</h2><ul>
+<li><p>定义一个网格集（grid set）</p>
+</li>
+<li><p>将数据点分配到合适的网格cell中，计算每个网格的密度density</p>
+</li>
+<li><p>淘汰密度小于阈值的网格</p>
+</li>
+<li><p>从相邻的网格中组成簇</p>
+<p>  <img src="/2019/03/08/机器学习-聚类/image-20190816124414229.png" alt="image-20190816124414229"></p>
+</li>
+</ul>
+<h3 id="DENCLUE-Density-Clustering"><a href="#DENCLUE-Density-Clustering" class="headerlink" title="DENCLUE Density Clustering"></a>DENCLUE Density Clustering</h3><p>基于统计学和模式识别领域里的“核密度估计”（Kernel Density Estimate）</p>
+<p>每个点对总密度函数的贡献用一个“影响函数”（Influence Function）或“核函数”（Kernel Function）来表示</p>
+<p>例如高斯核函数</p>
+<script type="math/tex; mode=display">
+K(y) = \exp(-dist(x,y)^2/2\sigma^2)</script><p>属性空间中某一点的总密度是与该点相关联的每个点的影响函数之和</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816133553960.png" alt="image-20190816133553960"></p>
+<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><ul>
+<li>对数据点占据的空间推倒密度函数</li>
+<li>识别局部最大点（这些是密度吸引点）</li>
+<li>通过沿密度增长最大的方向移动，将每个点关联到一个密度最大点</li>
+<li>定义与特定的密度吸引点相关联的点构成的簇</li>
+<li>丢弃密度吸引点的密度小于用户指定阈值的簇</li>
+<li>合并密度大于等于阈值的点路径连接的簇</li>
+</ul>
+<h2 id="子空间聚类-Subspace-Clustering"><a href="#子空间聚类-Subspace-Clustering" class="headerlink" title="子空间聚类 Subspace Clustering"></a>子空间聚类 Subspace Clustering</h2><p>只考虑一部分属性，而不是全部</p>
+<h3 id="CLIQUE-Clustering-in-quest"><a href="#CLIQUE-Clustering-in-quest" class="headerlink" title="CLIQUE  Clustering in quest"></a>CLIQUE  Clustering in quest</h3><p>是密度聚类和网格聚类的结合</p>
+<p>对于之前的网格算法，并不适合检查每一个网格，因为它的个数随着维度的增长而指数级增长</p>
+<p>有一个重要的<strong>单调性性质Monotone property</strong>：</p>
+<p>如果一组数据点在k维中形成基于密度的簇，那么这一组点也存在于这些维度的所有可能子集中基于密度组成的簇（是一个簇的子集）</p>
+<p>和Apriori很像</p>
+<h4 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h4><p><img src="/2019/03/08/机器学习-聚类/image-20190816132249423.png" alt="image-20190816132249423"> </p>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
+<li>时间复杂度是指数级，随着维度的增加而增加<ul>
+<li>尤其是当低纬度时产生太多的网格cell/unit</li>
+</ul>
+</li>
+<li>由于阈值时固定的，当簇的密度范围很广时，会影响效果<ul>
+<li>选择一个好的阈值和网格长度不容易</li>
+</ul>
+</li>
+</ul>
+<p>均值漂移聚类，dbscan算法（基于高密度连接区域），optics算法（对象排序识别）</p>
+<h1 id="基于网格的方法"><a href="#基于网格的方法" class="headerlink" title="基于网格的方法"></a>基于网格的方法</h1><p>sting算法（统计信息网络），clioue算法（聚类高维空间），wave-cluster算法（小波变换）</p>
+<h1 id="基于原型-模型的方法-Prototype-based"><a href="#基于原型-模型的方法-Prototype-based" class="headerlink" title="基于原型/模型的方法 Prototype-based"></a>基于原型/模型的方法 Prototype-based</h1><p>此类算法假设聚类结构可以通过一组原型刻画，在现实任务中极为常见。（“原型”是指样本空间中具有代表性的点）通常情况下，算法先对原型进行初始化，然后对原型进行迭代更新求解</p>
+<h2 id="模糊fuzzy-c-means"><a href="#模糊fuzzy-c-means" class="headerlink" title="模糊fuzzy c-means"></a>模糊fuzzy c-means</h2><h3 id="硬hard聚类和软soft聚类"><a href="#硬hard聚类和软soft聚类" class="headerlink" title="硬hard聚类和软soft聚类"></a>硬hard聚类和软soft聚类</h3><p>软聚类允许一个数据点属于多个簇</p>
+<p>比如对于k-means，软聚类的目标函数为</p>
+<script type="math/tex; mode=display">
+SSE(Error \ of \ Sum \ of \ Squares) = \sum_{j=1}^k \sum_{i=1}^m w_{ij} dist(x_i,c_j)^2\\
+其中\sum_{j=1}^kw_{ij} = 1,表示x_i属于某个簇的权值\\
+为了最小化SSE，要迭代进行下面两步\\
+(1)固定c_j，计算w_{ij}\\
+(2)固定w_{ij}，计算c_j\\</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816092159244.png" alt="image-20190816092159244"></p>
+<p>对于硬聚类，w等于0或者1</p>
+<h3 id="算法描述-2"><a href="#算法描述-2" class="headerlink" title="算法描述"></a>算法描述</h3><p>目标函数</p>
+<script type="math/tex; mode=display">
+SSE = \sum_{j=1}^k \sum_{i=1}^m w_{ij}^p dist(x_i,c_j)^2\\
+其中\sum_{j=1}^kw_{ij} = 1,w_{ij} \in [0,1]\\
+p表示fuzzifier(p>1),控制着聚类的模糊fuzzy程度\\</script><p>当p = 2</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190818170636452.png" alt="image-20190818170636452"></p>
+<script type="math/tex; mode=display">
+初始化：随机初始化w_{ij}\\
+不断重复：\\
+(1)更新质心：c_j = \frac{\sum_{i=1}^m w_{ij}x_i}{\sum_{i=1}^m w_{ij}}\\
+(2)更新权值：w_{ij} = \frac {(1/dist(x_i,c_j)^2)^{\frac{1}{p-1}}}{\sum_{j=1}^k(1/dist(x_i,c_j)^2)^{\frac{1}{p-1}}}\\</script><h2 id="k-means（见上面）"><a href="#k-means（见上面）" class="headerlink" title="k-means（见上面）"></a>k-means（见上面）</h2><h2 id="混合高斯模型（GMM）"><a href="#混合高斯模型（GMM）" class="headerlink" title="混合高斯模型（GMM）"></a>混合高斯模型（GMM）</h2><p>首先假设数据点是呈高斯分布的，相对应K-Means假设数据点是圆形spherical的，高斯分布（椭圆形elliptical）给出了更多的可能性。</p>
+<p>有两个参数来描述簇的形状：均值和标准差。所以这些簇可以采取任何形状的椭圆形，因为在x，y方向上都有标准差。因此，每个高斯分布被分配给单个簇。所以要做聚类首先应该找到数据集的均值和标准差，将采用EM算法</p>
 <p><a href="https://blog.csdn.net/u014665013/article/details/78970184" target="_blank" rel="noopener">https://blog.csdn.net/u014665013/article/details/78970184</a></p>
-<h1>谱聚类</h1>
-<p>图团体检测(Graph Community Detection)</p>
+<h3 id="硬hard聚类和软soft聚类-1"><a href="#硬hard聚类和软soft聚类-1" class="headerlink" title="硬hard聚类和软soft聚类"></a>硬hard聚类和软soft聚类</h3><p>思想是用混合的分布给数据建立模型，通常用正态(高斯)分布</p>
+<p>聚类的过程就是估计统计分布的参数的过程</p>
+<p>通常使用EM算法</p>
+<p>ex：下图中看起来像是两个正态分布的混合</p>
+<p>就需要估计每一个正态分布的均值和方差</p>
+<p>计算每个点属于每个分布的概率</p>
+<script type="math/tex; mode=display">
+prob(x_i;\Theta) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816094725656.png" alt="image-20190816094725656"></p>
+<h3 id="多元高斯建模-Multivariate-Gaussian-models"><a href="#多元高斯建模-Multivariate-Gaussian-models" class="headerlink" title="多元高斯建模 Multivariate Gaussian models"></a>多元高斯建模 Multivariate Gaussian models</h3><p>即给多维的变量进行高斯建模</p>
+<script type="math/tex; mode=display">
+\hat \mu = \frac{1}{N}\sum_i x^{(i)}\\
+\hat \Sigma = \frac{1}{N}\sum_i (x^{(i)}-\hat \mu)^T(x^{(i)}-\hat \mu)\\
+\mathcal N(x;\mu,\Sigma) = \frac{1}{(2\pi)^{(d/2)}}|\Sigma|^{-1/2}e^{-\frac{1}{2}(x- \mu)^T\Sigma^{-1}(x- \mu)}\\
+其中|\Sigma|表示\Sigma的行列式，d表示变量维度</script><p>对于单个簇的高斯建模</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816103504535.png" alt="image-20190816103504535"></p>
+<p>要最大化的目标函数为</p>
+<script type="math/tex; mode=display">
+p(X) = \prod_ip(x_i)\\
+= \prod_i \mathcal N(x_i;\mu,\Sigma)\\
+\log p(X) = \sum_i\log \mathcal N(x_i;\mu,\Sigma)</script><h3 id="算法描述-3"><a href="#算法描述-3" class="headerlink" title="算法描述"></a>算法描述</h3><p>使用正态分布对簇建模</p>
+<p>在多个正态分布下，要最大化的目标函数为</p>
+<script type="math/tex; mode=display">
+p(X) = \prod_i p(x_i)\\
+\prod_i \sum_c p(c)P(x_i|c)\\
+\prod_i \sum_c \pi_c \mathcal N(x_i;\mu_c,\Sigma_c)\\
+\log p(X) = \sum_i\log [\sum_c \pi_c \mathcal N(x_i;\mu_c,\Sigma_c)]</script><p>如果我们获得了所有参数（均值，协方差，簇的大小，数据集），可以对数据进行聚类</p>
+<script type="math/tex; mode=display">
+r_{ic} = p(c|x_i) = \frac{p(c)p(x_i|c)}{p(x_i)}\\
+
+= \frac{\pi_c \mathcal N(x_i;\mu_c,\Sigma_c)}
+{\sum_j \pi_{ {c}_j} \mathcal N(x_i;\mu_{ {c}_j},\Sigma_{ {c}_j})}\\
+
+= \frac{\pi_c \mathcal N(x_i;\mu_c,\Sigma_c)}{\sum_{c'} \pi_{c'} \mathcal N(x_i;\mu_{c'},\Sigma_{c'})}\\
+然后将x_i划分为c_{j*}\\
+c_{j*} = {\arg \max}_{j \in 1,2,...,J} r_{ij}</script><p>使用EM算法优化（关于EM见<code>机器学习-EM</code>）</p>
+<ul>
+<li><p>初始化簇，设置初始参数</p>
+</li>
+<li><p>E步</p>
+<script type="math/tex; mode=display">
+  对于每一个数据，每一个簇c\\
+  计算r_{ic}</script></li>
+<li><p>M步</p>
+<script type="math/tex; mode=display">
+  对于每一个簇c，更新它的参数：\\
+  \pi_c = \frac{\sum_i r_{ic}}{N}\\
+  \mu_c = \frac{\sum_i r_{ic}x_i}{\sum_i r_{ic}}\\
+  \Sigma_c = \frac{\sum_i r_{ic}(x_i-\mu_c)^T(x_i-\mu_c)}{\sum_i r_{ic}}</script></li>
+<li><p>可以证明一次迭代都在增加log p(X)</p>
+</li>
+<li><p>一直迭代直到收敛，可以证明一定能保证收敛</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>EM的问题见<code>机器学习-EM</code></p>
+</li>
+<li><p>高斯分布的参数复杂度为O(d^2)，主要是和协方差矩阵相关，而k-means只有O(d)</p>
+</li>
+</ul>
+<h3 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h3><ul>
+<li><p>Method of moments / Spectral methods</p>
+<ul>
+<li><a href="https://sites.google.com/site/momentsicml2014/bibliography" target="_blank" rel="noopener">https://sites.google.com/site/momentsicml2014/bibliography</a></li>
+</ul>
+</li>
+<li><p>马尔可夫链蒙特卡洛方法Markov chain Monte Carlo (MCMC)</p>
+</li>
+</ul>
+<h2 id="自组织网络-SOM-Self-Organizing-Maps"><a href="#自组织网络-SOM-Self-Organizing-Maps" class="headerlink" title="自组织网络 SOM Self-Organizing Maps"></a>自组织网络 SOM Self-Organizing Maps</h2><p><img src="/2019/03/08/机器学习-聚类/image-20190816112217966.png" alt="image-20190816112217966"></p>
+<p>一种SOM是Kohonen Network</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816112246905.png" alt="image-20190816112246905"></p>
+<p>和k-means相同的是簇的数量在一开始就决定了，不同的是还指定了簇之间的空间关系</p>
+<h3 id="算法描述-4"><a href="#算法描述-4" class="headerlink" title="算法描述"></a>算法描述</h3><ul>
+<li><p>初始化initialization</p>
+<p>  所有的连接权值初始化为一个小的随机数</p>
+</li>
+<li><p>竞争competition/matching</p>
+<p>  对于每种输入模式，神经元neurons计算它们各自的判别函数值discriminate function，为竞争提供基础。具有最小判别函数值的特定神经元被宣布为胜利者winner</p>
+</li>
+<li><p>合作cooperation</p>
+<p>  获胜的神经元决定了兴奋神经元拓扑邻域的空间位置，从而为相邻神经元之间的合作提供了基础</p>
+</li>
+<li><p>适应adaptation</p>
+<p>  受激神经元通过适当调整相关的连接权重，减少与输入模式相关的判别函数值，使得获胜的神经元对相似输入模式的后续应用的响应增强</p>
+</li>
+</ul>
+<h4 id="竞争过程"><a href="#竞争过程" class="headerlink" title="竞争过程"></a>竞争过程</h4><script type="math/tex; mode=display">
+如果输入空间是𝐷维（即有𝐷个输入单元），我们可以把输入模式写x=\{x_i: i=1,...,𝐷\}\\输入单元𝑖和神经元𝑗之间在计算层的连接权重可以写成W_j=\{w_{ji}:j=1,...,N;i=1,...,𝐷\}，其中𝑁是神经元的总数\\
+然后，我们可以将我们的判别函数定义为输入向量x和每个神经元j的权向量W_j之间的平方欧氏距离\\
+d_j(x) = \sum_{i=1}^D (x_i-w_{ji})^2\\
+换句话说，权重向量最接近输入向量（即与其最相似）的神经元被宣告为胜利者\\这样，连续的输入空间可以通过神经元之间的一个简单的竞争过程被映射到神经元的离散输出空间</script><h4 id="合作过程"><a href="#合作过程" class="headerlink" title="合作过程"></a>合作过程</h4><p>在神经生物学研究中，我们发现在一组兴奋神经元内存在<strong>横向的相互作用</strong>。当一个神经元被激活时，最近的邻居节点往往比那些远离的邻居节点更兴奋。并且存在一个随距离衰减的<strong>拓扑邻域</strong>（也会随时间衰减）</p>
+<p>我们想为我们的SOM中的神经元定义一个类似的拓扑邻域</p>
+<script type="math/tex; mode=display">
+如果S_{ij}是神经元网格上神经元i和j之间的横向距离，我们取\\
+T_{j,I(x)} = e^{-\frac{S_{j,I(x)}^2}{2\sigma^2}} = \exp(-\frac{S_{j,I(x)}^2}{2\sigma^2})\\
+作为我们的拓扑邻域，其中I(X)是获胜神经元的索引\\
+该函数有几个重要的特性：它在获胜的神经元中是最大的，且关于该神经元对称\\
+当距离达到无穷大时，它单调地衰减到零，它是平移不变的（即不依赖于获胜的神经元的位置）\\
+SOM的一个特点是\sigma需要随着时间的推移而减少。常见的时间依赖性关系是指数型衰减：\sigma(t)=\sigma_0\exp(−t/\tau_\sigma)</script><h4 id="适应过程"><a href="#适应过程" class="headerlink" title="适应过程"></a>适应过程</h4><p>显然，SOM必须涉及某种自适应或学习过程，通过这个过程，输出节点自组织，形成输入和输出之间的<strong>特征映射</strong></p>
+<p>地形邻域topographic neighborhood的一点是，不仅获胜的神经元能够得到权重更新，它的邻居也将更新它们的权重，尽管不如获胜神经元更新的幅度大。在实践中，适当的权重更新方式是</p>
+<script type="math/tex; mode=display">
+\Delta w_{ji} = \eta(t) T_{j,I(x)}(t) (x_i-w_{ji})\\
+其中我们有一个依赖于时间的学习率\eta(t) = \eta_0\exp(−t/\tau_\eta),该更新适用于在多轮迭代中的所有训练模式x\\
+每个学习权重更新的效果是将获胜的神经元及其邻居的权向量W_i向输入向量x移动。对该过程的迭代进行会使得网络的拓扑有序</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816123721853.png" alt="image-20190816123721853"></p>
+<h3 id="排序和收敛"><a href="#排序和收敛" class="headerlink" title="排序和收敛"></a>排序和收敛</h3><p>如果正确选择参数（𝜎_0,𝜏_𝜎,𝜂_0,𝜏_𝜂），我们可以从完全无序的初始状态开始，并且SOM算法将逐步使得从输入空间得到的激活模式表示有序化。（但是，可能最终处于特征映射具有拓扑缺陷的<strong>亚稳态</strong>）</p>
+<p>这个自适应过程有两个显著的阶段：</p>
+<ul>
+<li><strong>排序或自组织阶段</strong>：在这期间，权重向量进行拓扑排序。通常这将需要多达1000次的SOM算法迭代，并且需要仔细考虑邻域和学习速率参数的选择</li>
+<li><strong>收敛阶段</strong>：在此期间特征映射被微调（fine tune），并提供输入空间的精确统计量化。通常这个阶段的迭代次数至少是网络中神经元数量的500倍，而且参数必须仔细选择</li>
+</ul>
+<h3 id="可视化例子"><a href="#可视化例子" class="headerlink" title="可视化例子"></a>可视化例子</h3><p>假设我们在连续的二维输入空间中有四个数据点（叉），并且希望将其映射到离散一维输出空间中的四个点上。输出节点映射到输入空间中的点（圆圈）。随机初始化权重使得圆圈的起始位置落在随机落在输入空间的中心</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816122918909.png" alt="image-20190816122918909"></p>
+<p>我们随机选择一个数据点进行训练（带圈的叉）。最接近的输出点表示获胜的神经元（方块）。获胜的神经元向数据点移动一定量，并且两个相邻的神经元以较小的量移动（箭头指示方向）</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123028119.png" alt="image-20190816123028119"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123056818.png" alt="image-20190816123056818"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123148217.png" alt="image-20190816123148217"></p>
+<p>最终整个输出网格将自身重新组织以表征输入空间</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123354152.png" alt="image-20190816123354152"></p>
+<p>一个自组织映射训练的例证。蓝色斑点是训练数据的分布，而小白色斑点是从该分布中抽取得到的当前训练数据。首先（左图）SOM节点被任意地定位在数据空间中。我们选择最接近训练数据的节点作为获胜节点（用黄色突出显示）。它被移向训练数据，包括（在较小的范围内）其网格上的相邻节点。经过多次迭代后，网格趋于接近数据分布</p>
+<h3 id="问题-issue"><a href="#问题-issue" class="headerlink" title="问题 issue"></a>问题 issue</h3><ul>
+<li>计算复杂度较高</li>
+<li>局部最优</li>
+<li>空间关系（grid）的决定有些随意</li>
+</ul>
+<h1 id="基于图的聚类-Graph-Based-Clustering"><a href="#基于图的聚类-Graph-Based-Clustering" class="headerlink" title="基于图的聚类 Graph-Based Clustering"></a>基于图的聚类 Graph-Based Clustering</h1><p>图聚类算法使用邻近图 (proximity graph)</p>
+<ul>
+<li>从一个邻近图开始，将每一个数据点视为图中的节点，图中的每条边表示两个节点的邻近程度</li>
+<li>最初邻近图是全连接的</li>
+<li>单链和全链（见层次聚类）可以以图的形式查看</li>
+<li>一个簇就是图中的一个连通部分</li>
+</ul>
+<h2 id="CURE算法"><a href="#CURE算法" class="headerlink" title="CURE算法"></a>CURE算法</h2><p>层次聚类算法的表现会因为距离的计算方式而不同（max，min），CURE试图解决它们的问题，可以处理大型数据、离群点和具有非球形大小和非均匀大小的簇的数据</p>
+<p>对于一个簇，选择其中的一部分数据点来作为该簇的代表</p>
+<ul>
+<li>第一个点为距离簇中心最远的点</li>
+<li>之后的点选择距离当前选择的点集最远的点</li>
+</ul>
+<p>然后将这些选取到的点根据参数α （0≤α≤1）向该簇的质心收缩Shrink，距离质心越远的点（例如离群点）的收缩程度越大，因此CURE对离群点是不太敏感的，这种方法可以有效的降低离群点和噪声带来的不利影响</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816140740743.png" alt="image-20190816140740743"></p>
+<p>在得到上述缩减后的代表点后，两个簇之间的距离就可以定义为这两个簇中距离最近的两个代表点之间的距离</p>
+<p>当α =0，就是基于质心的聚类centroid-based</p>
+<p>当α =1，就喝单链聚类很像</p>
+<h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>CURE处理大数据（大量，多维）的能力更强</p>
+<h2 id="Chameleon"><a href="#Chameleon" class="headerlink" title="Chameleon"></a>Chameleon</h2><p>使用稀疏化的近邻图</p>
+<p>将数据划分为真正的簇（ground true）的子簇</p>
+<p>在保留簇特征的基础上合并</p>
+<h3 id="稀疏化"><a href="#稀疏化" class="headerlink" title="稀疏化"></a>稀疏化</h3><ul>
+<li>在近邻矩阵中的稀疏化能减少99%的数据<ul>
+<li>处理时间急剧下降</li>
+<li>适合处理大规模数据</li>
+</ul>
+</li>
+<li>可能会使聚类效果更好<ul>
+<li>稀疏化保留了最相似邻居的连接，切断了不太相似的</li>
+<li>最近距离的邻居更倾向于属于同一类</li>
+<li>减小了异常值和噪声的影响</li>
+</ul>
+</li>
+<li>稀疏化促进了图分割算法<ul>
+<li>比如chameleon，Hypergraph-based Clustering</li>
+</ul>
+</li>
+</ul>
+<p>稀疏化示例图</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816143720499.png" alt="image-20190816143720499"></p>
+<h3 id="合并方案-Merging-Schemes"><a href="#合并方案-Merging-Schemes" class="headerlink" title="合并方案 Merging Schemes"></a>合并方案 Merging Schemes</h3><p>目前层次聚类的合并方案的问题</p>
+<p>它们是固定的，比如MIN，CURE，GROUP-AVERAGE</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816144709727.png" alt="image-20190816144709727"></p>
+<p>在Chameleon中，是根据数据集特点，自适应地发现自然簇</p>
+<p>使用动态模型来度量簇之间的相似度</p>
+<p>特征主要是指簇里面的相对接近度relative closeness以及相对互联度relative interconnectivity</p>
+<p>如果合并的新簇共享了子簇的某些特征，那么可以合并起来</p>
+<p>合并方案保持了自相似性self-similarity</p>
+<ul>
+<li><p>相对互联性relative interconnectivity（RI）</p>
+<p>  相对互联度是被簇的内部互连度规范化的两个簇的绝对互连度。如果结果簇中的点之间的连接几乎与原来的每个簇一样强，两个簇合并，数学表述为</p>
+<script type="math/tex; mode=display">
+  RI = \frac{EC(C_i,C_j)}{\frac{1}{2}(EC(C_i)+EC(c_j))}\\
+  其中EC(C_i,C_j)表示连接簇C_i和C_j（k-最近邻图的）的边之和\\
+  EC(C)表示二分簇C时割边最小和</script></li>
+<li><p>相对接近度relative closeness（RC）</p>
+<p>  相对接近度是被簇的内部接近度规范化的两个簇的绝对接近度。两个簇合并，仅当结果簇中的点之间的接近程度几乎与原来的每个簇一样，数学表述为</p>
+<script type="math/tex; mode=display">
+  RC(C_i,C_j) = \frac{\bar S_{EC}(C_i,C_j)}{\frac{m_i}{m_i+m_j}S_{EC}(C_i)+\frac{m_j}{m_i+m_j}S_{EC}(C_j)}\\
+  其中m_i和m_j分别是C_i和C_j的大小\\
+  \bar S_{EC}(C_i,C_j)是连接簇C_i和C_j的（k-最近邻图的）边的平均权值\\
+  S_{EC}(C)表示二分簇C时的边的平均权值\\
+  EC表示割边</script></li>
+</ul>
+<h3 id="算法描述-5"><a href="#算法描述-5" class="headerlink" title="算法描述"></a>算法描述</h3><ul>
+<li><p>预处理：</p>
+<p>  将数据以图的形式表示，构建k最近邻图k-nearestneighbor (k-NN) graph，去捕捉数据点和它最近的k个邻居的关系</p>
+</li>
+<li><p>阶段1</p>
+<p>  使用多层次图的分割算法去找到内部连接良好的簇（每一个簇最好是“真”簇的子集，或大部分点属于某一个“真”簇）</p>
+</li>
+<li><p>阶段2</p>
+<p>  使用层次凝聚聚类Hierarchical Agglomerative Clustering将子簇合并</p>
+<p>  如果合并的新簇共享了子簇的某些特征（RI，RC），那么可以合并起来</p>
+</li>
+</ul>
+<h2 id="SNN-Shared-Nearest-Neighbor-graph"><a href="#SNN-Shared-Nearest-Neighbor-graph" class="headerlink" title="SNN Shared Nearest Neighbor graph"></a>SNN Shared Nearest Neighbor graph</h2><p>是一个将图聚类和密度聚类（比如DBSCAN-like）结合的算法</p>
+<p>SNN密度测量一个点周围是否有相似的点</p>
+<p>在SNN图中，两点vertices之间边的权重取等于他们的共有邻居</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816170446342.png" alt="image-20190816170446342"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816170527446.png" alt="image-20190816170527446"></p>
+<p>对于稀疏图，边的权重表示两个数据点的相似度，SNN中表示共有邻居数量</p>
+<h3 id="算法描述-6"><a href="#算法描述-6" class="headerlink" title="算法描述"></a>算法描述</h3><p>1.计算相似矩阵</p>
+<p>这对应于一个相似度图 similarity matrix,节点是数据点，边的权重是数据点之间的相似度</p>
+<p>2.通过只保留k个最相似的邻局来稀疏相似矩阵</p>
+<p>这对应于保持相似度图的k个权重最大的连接</p>
+<p>3.利用稀疏相似矩阵构造共有最近邻图</p>
+<p>在这一步，我们可以应用相似度阈值并找到连接的组件来获得簇（jarvis-patrick算法思路）</p>
+<p>4-8步时DBSCAN</p>
+<p>4.找出每个点的SNN密度</p>
+<p>使用用户指定的参数Eps，查找与每个点相似度大于等于eps的点数，这就是该点的SNN密度</p>
+<p>5.找到核心点</p>
+<p>使用用户指定的参数minpts，去查找核心点，即所有snn密度大于minpts的点</p>
+<p>6.从核心点形成簇</p>
+<p>如果两个核心点在一个“半径”（Eps）内，则它们彼此放置在同一个簇中</p>
+<p>7.丢弃所有噪声点</p>
+<p>所有不在核心点Eps半径范围内的非核心点都将被丢弃。</p>
+<p>8.将所有非噪波、非核心点划分给簇</p>
+<p>这可以通过将这些点指定给最近的核心点来实现</p>
+<h3 id="Jarvis-Patrick聚类"><a href="#Jarvis-Patrick聚类" class="headerlink" title="Jarvis-Patrick聚类"></a>Jarvis-Patrick聚类</h3><ul>
+<li>首先找到每个数据点最近的k个邻居</li>
+<li>然后进行聚类，两个点归为一个簇当且仅当<ul>
+<li>它们的共有邻居超过T个</li>
+<li>它们都出现在对方的k近邻中</li>
+</ul>
+</li>
+</ul>
+<h3 id="讨论-2"><a href="#讨论-2" class="headerlink" title="讨论"></a>讨论</h3><p>不足</p>
+<ul>
+<li><p>没有将所有点都聚类</p>
+</li>
+<li><p>复杂度很高</p>
+<p>  O(n * 在Eps参数下找到邻居的时间)</p>
+<p>  最坏情况下，复杂度为O(n^2)</p>
+<p>  如果是低维空间，有一些高效的办法</p>
+<ul>
+<li>R*树</li>
+<li>k-d树</li>
+</ul>
+</li>
+</ul>
+<h2 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h2><p>图团体检测(Graph Community Detection) </p>
 <p>当我们的数据可以被表示为网络或图是，可以使用图团体检测方法完成聚类</p>
-<h1>数据相似度度量</h1>
-<p>（欧式距离，曼哈顿距离，闵可夫距离，文档数据相似度，余弦相似度）</p>
-<h1>评价指标</h1>
-<p>purity评价法，RI评价法，F值评价法</p>
-<p>期望最大化（EM） Expectation-maximization(EM)</p>
-<p>模糊聚类 Fuzzy clustering</p>
+<h1 id="数据相似度度量"><a href="#数据相似度度量" class="headerlink" title="数据相似度度量"></a>数据相似度度量</h1><p>（欧式距离，曼哈顿距离，闵可夫距离，文档数据相似度，余弦相似度）</p>
+<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><p>purity评价法，RI评价法，F值评价法</p>
+<h1 id="讨论-3"><a href="#讨论-3" class="headerlink" title="讨论"></a>讨论</h1><h2 id="数据，簇，聚类算法的特征"><a href="#数据，簇，聚类算法的特征" class="headerlink" title="数据，簇，聚类算法的特征"></a>数据，簇，聚类算法的特征</h2><p>聚类分析受到这些元素特征的影响：</p>
+<ul>
+<li>数据</li>
+<li>簇</li>
+<li>聚类算法</li>
+</ul>
+<h3 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h3><ul>
+<li>维度</li>
+<li>数据集大小</li>
+<li>属性值的稀疏性</li>
+<li>噪声和异常值</li>
+<li>属性类型和数据集类型</li>
+<li>属性尺度的差异</li>
+<li>数据空间属性</li>
+</ul>
+<h3 id="簇特征"><a href="#簇特征" class="headerlink" title="簇特征"></a>簇特征</h3><ul>
+<li><p>数据分布</p>
+</li>
+<li><p>形状</p>
+</li>
+<li><p>不同尺寸</p>
+</li>
+<li><p>不同密度</p>
+</li>
+<li><p>分离不良</p>
+</li>
+<li><p>簇之间的关系</p>
+</li>
+<li><p>簇类型</p>
+<p>  –基于中心、基于连续性、基于密度</p>
+</li>
+<li><p>子空间簇</p>
+</li>
+</ul>
+<h3 id="聚类算法特征"><a href="#聚类算法特征" class="headerlink" title="聚类算法特征"></a>聚类算法特征</h3><ul>
+<li>顺序依赖性</li>
+<li>不确定性</li>
+<li>参数选择</li>
+<li>可扩展性</li>
+<li>基于的基础模型</li>
+<li>基于的优化方法</li>
+</ul>
+<h2 id="MIN和EM-聚类的比较"><a href="#MIN和EM-聚类的比较" class="headerlink" title="MIN和EM-聚类的比较"></a>MIN和EM-聚类的比较</h2><p><em>假设EM使用高斯分布</em></p>
+<ul>
+<li>MIN是层次hierarchical聚类，EM是划分partitional聚类</li>
+<li>两个算法都可最终收敛性</li>
+<li>Min有一个基于图（基于连续性）的簇概念，而Em集群有一个原型（或基于模型）的簇概念</li>
+<li>Min将无法区分分离不良的簇，但Em可以在许多情况下能做到这一点</li>
+<li>Min可以发现不同形状和大小的簇；Em簇更偏向球形簇，并且可能会遇到不同大小的簇的问题</li>
+<li>Min对于不同密度的簇的处理有困难，而Em通常可以处理这个问题</li>
+<li>Min和Em集群都找不到子空间簇</li>
+<li>Min可以处理异常值，但噪声容易加入簇；EM可以容忍噪声，但会受到异常值的强烈影响</li>
+<li>EM只能应用于质心有意义的数据；MIN只需要有意义的接近度定义</li>
+<li>当维数增加时，EM会遇到麻烦，其参数（协方差矩阵中的条目数）随着维数的平方增加而增加；定义好合适邻近度，MIN依然可以很好地工作</li>
+<li>EM是为欧几里得数据设计的，尽管已经为其他类型的数据开发了EM聚类的版本。Min使用相似性矩阵来屏蔽数据类型</li>
+<li>Min不做分布假设；我们考虑的Em的假设为高斯分布</li>
+<li>EM时间复杂度为O(n)（这里应该是O(n * 迭代次数)），MIN为O(n^2 logn)</li>
+<li>由于随机初始化，EM可以生成不同的簇；Min始终会生成相同的簇</li>
+<li>Min和EM都不能自动确定簇的数量</li>
+<li>Min没有任何用户指定的参数；Em有簇的数量，可能还有簇的权重</li>
+<li>EM聚类可以看作是一个优化问题；MIN使用数据的图模型</li>
+<li>EM或Min均不依赖于数据的顺序</li>
+</ul>
+<h2 id="DBSCAN和K-means的比较"><a href="#DBSCAN和K-means的比较" class="headerlink" title="DBSCAN和K-means的比较"></a>DBSCAN和K-means的比较</h2><ul>
+<li>二者都是分裂性的partitional聚类</li>
+<li>k-means能完成；DBSCAN不一定能完成</li>
+<li>k-means有基于原型的簇概念；DBSCAN使用基于密度的概念</li>
+<li>k-means可以找到没有很好分离的簇。DBSCAN将合并有连接的簇</li>
+<li>DBSCAN可以处理不同形状和大小的簇；K-Means更偏向球形簇</li>
+<li>DBSCAN可以处理噪声和异常值；K-Means在异常值存在时表现不佳</li>
+<li>K-Means只能应用于质心有意义的数据；DBSCAN要求有意义的密度定义</li>
+<li>DBSCAN在高维数据上效果较差；KMeans在某些类型的高维数据上效果较好</li>
+<li>这两种技术都是为欧几里得数据设计的，但可以扩展到其他类型的数据</li>
+<li>DBSCAN不做分布假设；K-means的假设为球面高斯分布spherical Gaussian distributions</li>
+<li>k-means具有O(n)时间复杂性；DBSCAN为O（n^2）</li>
+<li>由于随机初始化，kmeans发可以生成不同的簇；dbscan总是生成相同的簇</li>
+<li>DBSCAN能自动确定簇数；K-means不行</li>
+<li>k-means只有一个参数(k)，DBSCAN有两个</li>
+<li>k-means聚类可以看作是一个优化问题，也是EM聚类的一个特例；DBSCAN不是基于形式模型的</li>
+</ul>
 <p>平均移 Mean-shift</p>
 <p>OPTICS算法 OPTICS algorithm</p>
-<p>单连锁聚类 Single-linkage clustering</p>
-<p>概念聚类 Conceptual clustering</p>
+<p>概念聚类 Conceptual clustering                                                                               </p>
 <p><a href="https://en.wikipedia.org/wiki/Conceptual_clustering" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Conceptual_clustering</a></p>
-<p>原型聚类</p>
-<p>SOM</p>
 <p>FCM聚类算法</p>
 <p>簇评估</p>
-<p>图聚类</p>
 
       
     </div>
@@ -366,8 +852,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/机器学习-sklearn/" rel="prev" title="机器学习-sklearn">
-                机器学习-sklearn <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-决策树/" rel="prev" title="机器学习-决策树">
+                机器学习-决策树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -445,7 +931,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +986,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">划分（分裂）方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">层次分析方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">基于密度的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">基于网格的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">基于模型的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">混合高斯模型（GMM）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">谱聚类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">数据相似度度量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">评价指标</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#划分（分裂）方法"><span class="nav-number">1.</span> <span class="nav-text">划分（分裂）方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means"><span class="nav-number">1.1.</span> <span class="nav-text">k-means</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加速"><span class="nav-number">1.1.1.</span> <span class="nav-text">加速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化方面"><span class="nav-number">1.1.2.</span> <span class="nav-text">优化方面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法是否停止"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">算法是否停止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最优解"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">最优解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K的选择"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">K的选择</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">1.1.3.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#层次分析方法"><span class="nav-number">2.</span> <span class="nav-text">层次分析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#层次凝聚聚类-Hierarchical-Agglomerative-Clustering-AGNES-AGglomerative-NESting"><span class="nav-number">2.1.</span> <span class="nav-text">层次凝聚聚类 Hierarchical Agglomerative Clustering (AGNES(AGglomerative NESting))</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.1.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BIRCH"><span class="nav-number">2.2.</span> <span class="nav-text">BIRCH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小生成树聚类-MST"><span class="nav-number">2.3.</span> <span class="nav-text">最小生成树聚类(MST)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于密度的方法"><span class="nav-number">3.</span> <span class="nav-text">基于密度的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Grid-based-clustering"><span class="nav-number">3.1.</span> <span class="nav-text">Grid-based clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DENCLUE-Density-Clustering"><span class="nav-number">3.1.1.</span> <span class="nav-text">DENCLUE Density Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">算法描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子空间聚类-Subspace-Clustering"><span class="nav-number">3.2.</span> <span class="nav-text">子空间聚类 Subspace Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CLIQUE-Clustering-in-quest"><span class="nav-number">3.2.1.</span> <span class="nav-text">CLIQUE  Clustering in quest</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法描述-1"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讨论"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">讨论</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于网格的方法"><span class="nav-number">4.</span> <span class="nav-text">基于网格的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于原型-模型的方法-Prototype-based"><span class="nav-number">5.</span> <span class="nav-text">基于原型/模型的方法 Prototype-based</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊fuzzy-c-means"><span class="nav-number">5.1.</span> <span class="nav-text">模糊fuzzy c-means</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬hard聚类和软soft聚类"><span class="nav-number">5.1.1.</span> <span class="nav-text">硬hard聚类和软soft聚类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述-2"><span class="nav-number">5.1.2.</span> <span class="nav-text">算法描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means（见上面）"><span class="nav-number">5.2.</span> <span class="nav-text">k-means（见上面）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合高斯模型（GMM）"><span class="nav-number">5.3.</span> <span class="nav-text">混合高斯模型（GMM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬hard聚类和软soft聚类-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">硬hard聚类和软soft聚类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多元高斯建模-Multivariate-Gaussian-models"><span class="nav-number">5.3.2.</span> <span class="nav-text">多元高斯建模 Multivariate Gaussian models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述-3"><span class="nav-number">5.3.3.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">5.3.4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他算法"><span class="nav-number">5.3.5.</span> <span class="nav-text">其他算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自组织网络-SOM-Self-Organizing-Maps"><span class="nav-number">5.4.</span> <span class="nav-text">自组织网络 SOM Self-Organizing Maps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述-4"><span class="nav-number">5.4.1.</span> <span class="nav-text">算法描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#竞争过程"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">竞争过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合作过程"><span class="nav-number">5.4.1.2.</span> <span class="nav-text">合作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适应过程"><span class="nav-number">5.4.1.3.</span> <span class="nav-text">适应过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序和收敛"><span class="nav-number">5.4.2.</span> <span class="nav-text">排序和收敛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化例子"><span class="nav-number">5.4.3.</span> <span class="nav-text">可视化例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题-issue"><span class="nav-number">5.4.4.</span> <span class="nav-text">问题 issue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于图的聚类-Graph-Based-Clustering"><span class="nav-number">6.</span> <span class="nav-text">基于图的聚类 Graph-Based Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CURE算法"><span class="nav-number">6.1.</span> <span class="nav-text">CURE算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论-1"><span class="nav-number">6.1.1.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chameleon"><span class="nav-number">6.2.</span> <span class="nav-text">Chameleon</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#稀疏化"><span class="nav-number">6.2.1.</span> <span class="nav-text">稀疏化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并方案-Merging-Schemes"><span class="nav-number">6.2.2.</span> <span class="nav-text">合并方案 Merging Schemes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述-5"><span class="nav-number">6.2.3.</span> <span class="nav-text">算法描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SNN-Shared-Nearest-Neighbor-graph"><span class="nav-number">6.3.</span> <span class="nav-text">SNN Shared Nearest Neighbor graph</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述-6"><span class="nav-number">6.3.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jarvis-Patrick聚类"><span class="nav-number">6.3.2.</span> <span class="nav-text">Jarvis-Patrick聚类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论-2"><span class="nav-number">6.3.3.</span> <span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谱聚类"><span class="nav-number">6.4.</span> <span class="nav-text">谱聚类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据相似度度量"><span class="nav-number">7.</span> <span class="nav-text">数据相似度度量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评价指标"><span class="nav-number">8.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#讨论-3"><span class="nav-number">9.</span> <span class="nav-text">讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据，簇，聚类算法的特征"><span class="nav-number">9.1.</span> <span class="nav-text">数据，簇，聚类算法的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据特征"><span class="nav-number">9.1.1.</span> <span class="nav-text">数据特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簇特征"><span class="nav-number">9.1.2.</span> <span class="nav-text">簇特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类算法特征"><span class="nav-number">9.1.3.</span> <span class="nav-text">聚类算法特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIN和EM-聚类的比较"><span class="nav-number">9.2.</span> <span class="nav-text">MIN和EM-聚类的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DBSCAN和K-means的比较"><span class="nav-number">9.3.</span> <span class="nav-text">DBSCAN和K-means的比较</span></a></li></ol></li></ol></div>
             
 
           </div>

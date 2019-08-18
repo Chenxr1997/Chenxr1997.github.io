@@ -157,7 +157,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/08/深度学习-基础篇/71.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/深度学习-基础篇/72.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/深度学习-基础篇/50.png">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.734Z">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习-基础篇">
 <meta name="twitter:description" content="[TOC] 介绍 人工神经网络(Artificial Neural Networks, ANN)是一种种应用类似于大脑神经突触联接的结构进行信息处理的数学模型。在这种模型中，大量的节点(或称”神经元”，或”单元&amp;quot;)之间相互联接构成网络，即&amp;quot;神经网络”，以达到处理信息的目的。神经网络通常需要进行训练，训练的过程就是网络进行学习的过程。训练改变了网络节点的连接权的值使其具有分类的功">
@@ -375,6 +375,8 @@
 <h1>介绍</h1>
 <p>人工神经网络(Artificial Neural Networks, ANN)是一种种应用类似于大脑神经突触联接的结构进行信息处理的数学模型。在这种模型中，大量的节点(或称”神经元”，或”单元&quot;)之间相互联接构成网络，即&quot;神经网络”，以达到处理信息的目的。神经网络通常需要进行训练，训练的过程就是网络进行学习的过程。训练改变了网络节点的连接权的值使其具有分类的功能，经过训练的网络就可用于对象的识别。</p>
 <p>目前，神经网络已有上百种不同的模型，常见的有BP网络、径向基RBF网络、Hopfield网络、 随机神经网络(Boltzmann机) 、竞争神经网络(Hamming网络，自组织映射网络)等。但是当前的神经网络仍普遍存在计算量大、收敛速度慢、训练时间长和不可解释等缺点。</p>
+<p>与浅层学习的区别</p>
+<p>深度学习实质：多隐层+海量数据——&gt;学习有用特征—–&gt;提高分类或预测准确性 区别：（1）DL强调模型深度 (2）DL突出特征学习的重要性：特征变换+非人工</p>
 <h1>基础</h1>
 <p>深度学习也叫多层感知机（MLP，Multilayer Perceptron）</p>
 <p><img src="/2019/03/08/深度学习-基础篇/1.png" alt="1"></p>
@@ -389,6 +391,13 @@
 <p><img src="/2019/03/08/深度学习-基础篇/11.png" alt="11"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/12.png" alt="12"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/13.png" alt="13"></p>
+<p>激活函数<br>
+（1）sigmoid：易饱和（梯度消失），非0均值</p>
+<p>（2）tanh，改进了sigmoid的第二个缺点，即它是0均值的</p>
+<p>（3）ReLU，收敛快（不容易饱和），求梯度简单（没有指数计算，只需要阈值就可以），有稀疏特性。缺点是神经元容易坏死。</p>
+<p>由于ReLU在x&lt;0时梯度为0，这样就导致负的梯度在这个ReLU被置零，而且这个神经元有可能再也不会被任何数据激活。如果这个情况发生了，那么这个神经元之后的梯度就永远是0了，也就是ReLU神经元坏死了，不再对任何数据有所响应。实际操作中，如果你的learning rate 很大，那么很有可能你网络中的40%的神经元都坏死了</p>
+<p>leaky-relu</p>
+<p>不是0</p>
 <h1>损失函数-交叉熵</h1>
 <p><img src="/2019/03/08/深度学习-基础篇/14.png" alt="14"></p>
 <p><img src="/2019/03/08/深度学习-基础篇/15.png" alt="15"></p>
@@ -612,8 +621,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/深度学习-CNN/" rel="prev" title="深度学习-CNN">
-                深度学习-CNN <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-EM/" rel="prev" title="机器学习-EM">
+                机器学习-EM <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -691,7 +700,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

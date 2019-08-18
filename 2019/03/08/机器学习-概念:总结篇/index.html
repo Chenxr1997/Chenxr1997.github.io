@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="[TOC] 模型分类 ¶判别模型 SVM，深度学习，线性判别分析，线性回归 ¶产生式模型 高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场 ¶分类模型/回归模型 模型比较">
+<meta name="description" content="[TOC] 分类回归的区别 定量输出称为回归，或者说是连续变量预测； 定性输出称为分类，或者说是离散变量预测。 生成模型和判别模型的区别 判别方法：由数据直接学习决策函数 Y = f（X），或者由条件分布概率 P（Y|X）作为预测模型，即判别模型。 生成方法：由数据学习联合概率密度分布函数 P（X,Y）,然后求出条件概率分布P(Y|X)作为预测的模型，即生成模型。 由生成模型可以得到判别模型，但由">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-概念&#x2F;总结篇">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-概念:总结篇/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="[TOC] 模型分类 ¶判别模型 SVM，深度学习，线性判别分析，线性回归 ¶产生式模型 高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场 ¶分类模型/回归模型 模型比较">
+<meta property="og:description" content="[TOC] 分类回归的区别 定量输出称为回归，或者说是连续变量预测； 定性输出称为分类，或者说是离散变量预测。 生成模型和判别模型的区别 判别方法：由数据直接学习决策函数 Y = f（X），或者由条件分布概率 P（Y|X）作为预测模型，即判别模型。 生成方法：由数据学习联合概率密度分布函数 P（X,Y）,然后求出条件概率分布P(Y|X)作为预测的模型，即生成模型。 由生成模型可以得到判别模型，但由">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-概念:总结篇/1.png">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.723Z">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-概念&#x2F;总结篇">
-<meta name="twitter:description" content="[TOC] 模型分类 ¶判别模型 SVM，深度学习，线性判别分析，线性回归 ¶产生式模型 高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场 ¶分类模型/回归模型 模型比较">
+<meta name="twitter:description" content="[TOC] 分类回归的区别 定量输出称为回归，或者说是连续变量预测； 定性输出称为分类，或者说是离散变量预测。 生成模型和判别模型的区别 判别方法：由数据直接学习决策函数 Y = f（X），或者由条件分布概率 P（Y|X）作为预测模型，即判别模型。 生成方法：由数据学习联合概率密度分布函数 P（X,Y）,然后求出条件概率分布P(Y|X)作为预测的模型，即生成模型。 由生成模型可以得到判别模型，但由">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-概念:总结篇/1.png">
 
 
@@ -302,11 +302,52 @@
 
       
         <p>[TOC]</p>
+<p>分类回归的区别<br>
+定量输出称为回归，或者说是连续变量预测；</p>
+<p>定性输出称为分类，或者说是离散变量预测。</p>
+<p>生成模型和判别模型的区别<br>
+判别方法：由数据直接学习决策函数 Y = f（X），或者由条件分布概率 P（Y|X）作为预测模型，即判别模型。</p>
+<p>生成方法：由数据学习联合概率密度分布函数 P（X,Y）,然后求出条件概率分布P(Y|X)作为预测的模型，即生成模型。</p>
+<p>由生成模型可以得到判别模型，但由判别模型得不到生成模型。</p>
+<p>常见的判别模型有：K近邻、SVM、决策树、感知机、线性判别分析（LDA）、线性回归、传统的神经网络、逻辑斯蒂回归、boosting、条件随机场</p>
+<p>常见的生成模型有：朴素贝叶斯、隐马尔可夫模型、高斯混合模型、文档主题生成模型（LDA）、限制玻尔兹曼机</p>
+<p>有监督机器学习方法可以分为生成方法和判别方法（常见的生成方法有混合高斯模型、朴素贝叶斯法和隐形马尔科夫模型等，常见的判别方法有SVM、LR等），生成方法学习出的是生成模型，判别方法学习出的是判别模型。</p>
+<p>监督学习，预测时，一般都是在求p(Y|X)生成模型： 从数据中学习联合概率分布p(X,Y)，然后利用贝叶斯公式求：</p>
+<p>判别模型：直接学习P(Y|X)， 它直观输入什么特征X，就直接预测出最可能的Y; 典型的模型包括：LR, SVM,CRF,Boosting,Decision tree…</p>
+<p>生成方法的特点：生成方法可以还原联合概率分布，而判别方法则不能；生成方法的学习收敛速度更快，即当样本容量增加的时候，学习的模型可以更快的收敛于真实的模型；当存在隐变量时，仍可以用生成方法学习，此时判别方法就不能用。</p>
+<p>判别方法的特点：判别方法直接学习的是条件概率或者决策函数，直接面对预测，往往学习的准确率更高；由于直接学习或者，可以对数据进行各种程度上的抽象、定义特征并使用特征，因此可以简化学习问题。</p>
+<p>精确率（Precision）为TP/(TP+FP)</p>
+<p>召回率（Recall）为TP/(TP+FN)</p>
+<p>F1值是精确率和召回率的调和均值，即F1=2PR/(P+R）</p>
+<p>所以AUC表征的是模型的分类能力。</p>
+<p>线性分类器和非线性分类器<br>
+常见的线性分类器有：LR,贝叶斯分类，单层感知机、线性回归<br>
+常见的非线性分类器：决策树、RF、GBDT、多层感知机<br>
+SVM两种都有(看线性核还是高斯核)</p>
+<p>线性分类器速度快、编程方便，但是可能拟合效果不会很好<br>
+非线性分类器编程复杂，但是效果拟合能力强</p>
+<p>特征比数据量还大时，选择什么样的分类器？<br>
+线性分类器，因为维度高的时候，数据一般在维度空间里面会比较稀疏，很有可能线性可分<br>
+对于维度很高的特征，你是选择线性还是非线性分类器？<br>
+理由同上<br>
+对于维度极低的特征，你是选择线性还是非线性分类器？</p>
+<p>非线性分类器，因为低维空间可能很多特征都跑到一起了，导致线性不可分</p>
 <h1>模型分类</h1>
-<h2 id="判别模型"><a class="header-anchor" href="#判别模型">¶</a>判别模型</h2>
-<p>SVM，深度学习，线性判别分析，线性回归</p>
-<h2 id="产生式模型"><a class="header-anchor" href="#产生式模型">¶</a>产生式模型</h2>
-<p>高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场</p>
+<h2 id="判别模型-discriminative-classifier"><a class="header-anchor" href="#判别模型-discriminative-classifier">¶</a>判别模型 Discriminative classifier</h2>
+<p>SVM，深度学习，线性判别分析，线性回归，逻辑回归<br>
+$$<br>
+假设存在P(Y|X)这样的函数形式\<br>
+直接从训练数据中估计出P(Y|X)\<br>
+不能对数据的分布进行估计(采样)，因为不能计算P(X) = \sum_y P(y)P(X|y)\<br>
+$$</p>
+<h2 id="产生式模型-generative-classifier"><a class="header-anchor" href="#产生式模型-generative-classifier">¶</a>产生式模型 Generative classifier</h2>
+<p>高斯，贝叶斯，混合多项式，混合高斯模型，混合专家系统，隐马尔可夫模型，马尔可夫随机场<br>
+$$<br>
+假设存在P(X|Y),P(Y)这样的函数形式\<br>
+从训练数据中估计出P(X|Y),P(Y)，然后使用贝叶斯定理计算P(Y|X=x)\<br>
+通过贝叶斯定理间接的计算P(Y|X=x)\<br>
+可以对数据的分布进行估计(采样)P(X) = \sum_y P(y)P(X|y)\<br>
+$$</p>
 <h2 id="分类模型-回归模型"><a class="header-anchor" href="#分类模型-回归模型">¶</a>分类模型/回归模型</h2>
 <h1>模型比较</h1>
 <p><img src="/2019/03/08/机器学习-概念:总结篇/1.png" alt="1"></p>
@@ -334,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/机器学习-马尔可夫模型/" rel="next" title="机器学习-马尔可夫模型">
-                <i class="fa fa-chevron-left"></i> 机器学习-马尔可夫模型
+              <a href="/2019/03/08/机器学习-概率图模型/" rel="next" title="机器学习-概率图模型">
+                <i class="fa fa-chevron-left"></i> 机器学习-概率图模型
               </a>
             
           </div>
@@ -344,8 +385,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/项目管理-产品经理:项目经理:系统分析:工作流:软件测试/" rel="prev" title="项目管理-产品经理/项目经理/系统分析/工作流/软件测试">
-                项目管理-产品经理/项目经理/系统分析/工作流/软件测试 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/系分博客-git篇/" rel="prev" title="系分博客-git篇">
+                系分博客-git篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,7 +464,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -478,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">模型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判别模型"><span class="nav-number">1.1.</span> <span class="nav-text">¶判别模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生式模型"><span class="nav-number">1.2.</span> <span class="nav-text">¶产生式模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类模型-回归模型"><span class="nav-number">1.3.</span> <span class="nav-text">¶分类模型/回归模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">模型比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">模型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判别模型-discriminative-classifier"><span class="nav-number">1.1.</span> <span class="nav-text">¶判别模型 Discriminative classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生式模型-generative-classifier"><span class="nav-number">1.2.</span> <span class="nav-text">¶产生式模型 Generative classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类模型-回归模型"><span class="nav-number">1.3.</span> <span class="nav-text">¶分类模型/回归模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">模型比较</span></a></li></ol></div>
             
 
           </div>

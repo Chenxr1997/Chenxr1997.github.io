@@ -86,10 +86,20 @@
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
 <meta property="og:description" content="[TOC] 决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。 主要的决策树算法有ID3、C4.5 (">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.736Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815140411606.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815140650466.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815140757822.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815140915514.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815144727591.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815144954840.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815145239610.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815145138196.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815145157742.png">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-决策树">
 <meta name="twitter:description" content="[TOC] 决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。 主要的决策树算法有ID3、C4.5 (">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/机器学习-决策树/image-20190815140411606.png">
 
 
 
@@ -302,20 +312,186 @@
         <p>[TOC]</p>
 <p>决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。</p>
 <p>主要的决策树算法有ID3、C4.5 (C5.0) 、CART、PUBLIC、SLIQ和SPRINT算法等。它们在选择测试属性采用的技术、生成的决策树的结构、剪枝的方法以及时刻，能否处理大数据集等方面都有各自的不同之处。</p>
-<h1>ID3</h1>
+<p>ID3：计算信息增益，选择信息增益最大的特征作为当前节点的决策特征，信息增益表示分类目标的熵减去当前属性的熵，增益越大，分类能力越强</p>
+<p>熵等于负的概率乘以log概率<br>
+C4.5：使用信息增益率来进行属性的选择，准确率高，但是子构造树的过程中需要进行多次的扫描和排序，所以它的运算效率较低</p>
+<p>cart：根据当前特征计算他们的基尼增益，选择基尼增益最小的特征作为划分特征，总体的类别越杂乱，GINI指数越大</p>
+<p>等于1-概率平方和<br>
+好的决策树</p>
+<p>叶子节点数尽量少<br>
+叶子节点的深度尽量小(太深可能会过拟合)<br>
+解决过拟合</p>
+<p>剪枝：<br>
+前置剪枝：在分裂节点的时候设计比较苛刻的条件，如果不满足就直接停止分裂<br>
+后置剪枝：建立完树以后，用单个节点代替子树<br>
+交叉验证<br>
+随机森林<br>
+优点：</p>
+<p>计算量简单，可解释性强，比较适合处理有缺失属性值的样本，能够处理不相关的特征；<br>
+缺点：</p>
+<p>单颗决策树分类能力弱，并且对连续值变量难以处理；<br>
+容易过拟合（后续出现了随机森林，减小了过拟合现象）</p>
+<h1>Hunt算法</h1>
+<p>hunt算法是一种采用局部最优策略的决策树构建算法,它同时也是许多决策树算法的基础,包括ID3、C4.5和CART等<br>
+$$<br>
+\begin{align}<br>
+训练机D =&amp; {(x_1,y_1),(x_2,y_2),…,(x_n,y_n)} \tag{1}\<br>
+属性集A =&amp; {a_1,a_2,…,a_n}\<br>
+TreeGen&amp;etare(D,A):\<br>
+生成节&amp;点node\<br>
+if \ D&amp;中样本属于同一种类C(case \ 1)\<br>
+&amp;将node标记为C类叶结点\<br>
+&amp;return\<br>
+end \ i&amp;f\<br>
+if \ A&amp; = \empty \ OR \ D中样本属于在A上取值相同(case \ 2)\<br>
+&amp;将node标记为叶结点,类别为D中种类最多的类别\<br>
+&amp;return\<br>
+end \ i&amp;f\<br>
+从A中&amp;选择最优划分属性a_<em>\<br>
+for \ a&amp;_</em> 的每一个属性值a_<em>^v\<br>
+&amp;为node生成一个分支，令D_v表示D在a_<em>上取值为a_</em>^v的样本子集\<br>
+&amp;if \ D_v为空(case \ 3)\<br>
+&amp; \quad 将分支节点标记为叶结点，其类别标记为D中样本最多的类\<br>
+&amp;else\<br>
+&amp; \quad 以TreeGenetare(D_v,A \backslash {a_</em>})为分支结点\<br>
+&amp;end \ if\</p>
+<p>end \ &amp;for\<br>
+\end{align}<br>
+$$<br>
+对于case2：设定为该结点所含样本最多的类别，利用当前结点的<strong>后验分布</strong></p>
+<p>对于case3：设定为其父结点所含样本最多的类别，把父结点的样本分布作为当前结点的<strong>先验分布</strong></p>
+<p>决策树学习的关键是算法的这一行：选择最优划分属性</p>
+<p>什么样的划分属性是最优的：我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的“纯度”越来越高，可以高效地从根结点到达叶结点，得到决策结果</p>
+<p>三种度量结点“纯度”的指标：</p>
+<ul>
+<li>
+<p>信息增益</p>
+</li>
+<li>
+<p>增益率</p>
+</li>
+<li>
+<p>基尼指数</p>
+</li>
+</ul>
+<h2 id="信息熵"><a class="header-anchor" href="#信息熵">¶</a>信息熵</h2>
+<p>香农提出了“信息熵”的概念，解决了对信息的量化度量问题。香农用“信息熵”的概念来描述信源的不确定性</p>
+<p>可以解释为一个数据集的信息熵（information entropy），度量样本集合纯度，p则为每一类样本所占的比率<br>
+$$<br>
+Ent(D) = -\sum_{k=1}^{|y|}p_k \log_2p_k<br>
+$$<br>
+信息熵越小，纯度越高</p>
+<p>具体详见数据科学-数据度量-信息论度量</p>
+<h2 id="信息增益-information-gain"><a class="header-anchor" href="#信息增益-information-gain">¶</a>信息增益 information gain</h2>
+<p>$$<br>
+假设对样本集D在离散属性a上进行划分，产生V个分支节点\<br>
+其中第v个分支节点包含了D中所有在属性a上取值为a<sup>v的样本，记为D</sup>v\<br>
+那么属性a对样本集D进行划分所获得的信息增益为\<br>
+Gain(D,a) = Ent(D) - \sum_{v=1}^V \frac{|D<sup>v|}{|D|}Ent(D</sup>v)<br>
+$$</p>
+<p>一般而言，信息增益越大，则意味着使用属性a来进行划分所获得的“纯度提升”越大</p>
+<h3 id="id3-iterative-dichotomiser"><a class="header-anchor" href="#id3-iterative-dichotomiser">¶</a>ID3 Iterative Dichotomiser</h3>
+<p>ID3算法中，“选择最优划分属性”为<br>
+$$<br>
+a_* = {\arg \max}_{a \in A} Gain(D,a)<br>
+$$<br>
+不足：</p>
+<p>若把“编号”也作为一个候选划分属性，则属性“编号”的信息增益通常远大于其他候选属性，信息增益准则通常对可取值数目较多的属性有所偏好</p>
 <p>用的信息增益gain</p>
-<h1>C4.5</h1>
-<p>用的信息增益率</p>
-<h1>剪枝方法</h1>
-<h1>CART</h1>
-<h2 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h2>
-<h2 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h2>
-<p>用的gini</p>
-<h2 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h2>
+<h2 id="增益率-information-gain-ratio"><a class="header-anchor" href="#增益率-information-gain-ratio">¶</a>增益率 information gain ratio</h2>
+<p>$$<br>
+Gain_ratio = \frac{Gain(D,a)}{IV(a)}\<br>
+其中\<br>
+IV(A) = -\sum_{v=1}^V \frac{|D^v|}{|D|} \log_2\frac{|D^v|}{|D|}<br>
+$$</p>
+<p>增益率准对可取值数目较少的属性有所偏好</p>
+<h3 id="c4-5"><a class="header-anchor" href="#c4-5">¶</a>C4.5</h3>
+<p>C4.5决策树算法综合了信息增益准则和信息率准则的特点：先从候选划分属性中找出信息增益高于平均水平的属性，再从中选择增益率最高的</p>
+<p>使用连续属性离散化技术</p>
+<h2 id="基尼指数-gini-index"><a class="header-anchor" href="#基尼指数-gini-index">¶</a>基尼指数 gini index</h2>
+<p>$$<br>
+基尼值\<br>
+Gini(D) = \sum_{k=1}^{|y|} \sum_{k’\ne k}p_kp_{k’}\<br>
+= 1-\sum_{k=1}<sup>{|y|}p_k</sup>2\<br>
+直观来说，Gini(D)反映了数据集D中随机抽取两个样本，其类别标记不一致的概率\<br>
+因此Gini(D)越小,则数据集D的纯度越高<br>
+$$</p>
+<p>$$<br>
+基尼指数\<br>
+Gini_index(D,a) = \sum_{v=1}^{|V|} \frac{|D<sup>v|}{|D|}Gini(D</sup>v)\<br>
+$$</p>
+<h3 id="cart-classification-and-regression-tree"><a class="header-anchor" href="#cart-classification-and-regression-tree">¶</a>CART Classification And Regression Tree</h3>
+<h4 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h4>
+<p>CART算法中，“选择最优划分属性”为<br>
+$$<br>
+a_* = {\arg \max}_{a \in A} Gini_index(D,a)<br>
+$$</p>
+<h4 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h4>
+<h4 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h4>
 <p>entropy，条件熵</p>
 <p>卡方自动交互检测（CHAID） Chi-squared Automatic Interaction Detection</p>
 <p>决策树桩/单层决策树 Decision stump</p>
 <p>SLIQ</p>
+<h1>剪枝</h1>
+<p>通过主动去掉一些分支来降低过拟合的风险</p>
+<p>使用留出法，将数据集D划分为两个互斥的集合：训练集S和测试集T</p>
+<h2 id="预剪枝"><a class="header-anchor" href="#预剪枝">¶</a>预剪枝</h2>
+<p>在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140411606.png" alt="image-20190815140411606"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140650466.png" alt="image-20190815140650466"></p>
+<p>优点：</p>
+<ul>
+<li>降低过拟合的风险</li>
+<li>减少了训练时间开销和<br>
+测试时间开销</li>
+</ul>
+<p>不足：</p>
+<ul>
+<li>基于“贪心”本质禁止某些分支展开，带来了欠拟合的风险</li>
+</ul>
+<h2 id="后剪枝"><a class="header-anchor" href="#后剪枝">¶</a>后剪枝</h2>
+<p>先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140757822.png" alt="image-20190815140757822"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140915514.png" alt="image-20190815140915514"></p>
+<p>优点：</p>
+<ul>
+<li>保留了更多的分支</li>
+<li>欠拟合风险很小</li>
+<li>泛化能力优于预剪枝决策树</li>
+</ul>
+<p>不足：</p>
+<p>训练时间开销比未减枝和预剪枝决策树大得多，因为需要生产完全决策树，还要所有非叶节点逐一考察</p>
+<h1>数据处理</h1>
+<h2 id="连续属性离散化技术"><a class="header-anchor" href="#连续属性离散化技术">¶</a>连续属性离散化技术</h2>
+<p>使用二分法（C4.5决策树算法的方法）<br>
+$$<br>
+对于连续属性a，有n个不同的取值，将n个取值从小到大排序:\<br>
+{a_1,a_2,…,a_n}\<br>
+划分点t(数值)将D划分为两个子集D_t<sup>-和D_t</sup>+\<br>
+{ \underbrace{a_1,a_2,…a_i}<em>{D_t^-} ,\underbrace{|}<em>t \underbrace{a</em>{i+1}…,a_n}</em>{D_t^+}}\<br>
+t \in [a_i,a_{i+1})\<br>
+$$</p>
+<p>$$<br>
+可考察包含n-1个元素的候选划分集合\<br>
+T_a = {\frac{a_i+a_{i+1}}{2}|1\le i \le n-1}\<br>
+然后可以像离散属性值来考察这些划分点，选取最优的划分点进行样本集合的划分，比如信息增益：\<br>
+Gain(D,a) = \max_{t \in T_a} Gain(D,a,t) = \max_{t \in T_a}Ent(D) - \sum_{\lambda \in {-,+}} \frac{|D<sup>\lambda_t|}{|D|}Ent(D</sup>\lambda_t)<br>
+$$</p>
+<p>与离散属性不同，若当前结点划分属性为连续属性，该连续属性还可被再次选作后代结点的最优划分属性</p>
+<h1>特点</h1>
+<p>如果把每个属性看作坐标空间中的一个坐标轴<br>
+d个属性描述的样本看作d维空间中的一个数据点<br>
+对样本分类看作在坐标空间中寻找不同类样本之间的分类边界</p>
+<p>决策树形成的分类边界的明显特点：轴平行，分类边界由若干个与坐标轴平行的分段组成</p>
+<p>优点： 学习结果解释性强，每个划分都对应一个属性取值</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815144727591.png" alt="image-20190815144727591"></p>
+<p>不足：复杂分类时，决策树会很复杂，要进行大量的属性测试，预测时间开销大</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815144954840.png" alt="image-20190815144954840"></p>
+<h1>多变量决策树</h1>
+<p>可以实现红线这样的斜划分</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145239610.png" alt="image-20190815145239610"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145138196.png" alt="image-20190815145138196"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145157742.png" alt="image-20190815145157742"></p>
 
       
     </div>
@@ -340,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/深度学习-pytorch/" rel="next" title="深度学习-pytorch">
-                <i class="fa fa-chevron-left"></i> 深度学习-pytorch
+              <a href="/2019/03/08/机器学习-聚类/" rel="next" title="机器学习-聚类">
+                <i class="fa fa-chevron-left"></i> 机器学习-聚类
               </a>
             
           </div>
@@ -350,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/数据挖掘-推荐系统/" rel="prev" title="数据挖掘-推荐系统">
-                数据挖掘-推荐系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-Sklearn/" rel="prev" title="机器学习-Sklearn">
+                机器学习-Sklearn <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -484,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">ID3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">剪枝方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">CART</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回归"><span class="nav-number">4.1.</span> <span class="nav-text">¶回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">¶分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪枝"><span class="nav-number">4.3.</span> <span class="nav-text">¶剪枝</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Hunt算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信息熵"><span class="nav-number">1.1.</span> <span class="nav-text">¶信息熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息增益-information-gain"><span class="nav-number">1.2.</span> <span class="nav-text">¶信息增益 information gain</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#id3-iterative-dichotomiser"><span class="nav-number">1.2.1.</span> <span class="nav-text">¶ID3 Iterative Dichotomiser</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增益率-information-gain-ratio"><span class="nav-number">1.3.</span> <span class="nav-text">¶增益率 information gain ratio</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c4-5"><span class="nav-number">1.3.1.</span> <span class="nav-text">¶C4.5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基尼指数-gini-index"><span class="nav-number">1.4.</span> <span class="nav-text">¶基尼指数 gini index</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cart-classification-and-regression-tree"><span class="nav-number">1.4.1.</span> <span class="nav-text">¶CART Classification And Regression Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">¶分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回归"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">¶回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#剪枝"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">¶剪枝</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#预剪枝"><span class="nav-number">2.1.</span> <span class="nav-text">¶预剪枝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后剪枝"><span class="nav-number">2.2.</span> <span class="nav-text">¶后剪枝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连续属性离散化技术"><span class="nav-number">3.1.</span> <span class="nav-text">¶连续属性离散化技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">多变量决策树</span></a></li></ol></div>
             
 
           </div>

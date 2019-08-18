@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC] 异常情况 脏读(Dirty Read)：当一个事务读取另一个事务尚未提交的修改时，产生脏读。 非重复读(Nonrepeatable Read) 一个事务对同一行数据重复读取两次，但是却得到了不同的结果。同一查询在同一事务中多次进行，由于其他提交事务所做的修改或删除，每次返回不同的结果集，此时发生非重复读。 幻像读(Phantom Reads) 事务在操作过程中进行两次查询，第二次查询的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机科学与工程-数据库">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/index.html">
+<meta property="og:site_name" content="Chenxr&#39;s blogs">
+<meta property="og:description" content="[TOC] 异常情况 脏读(Dirty Read)：当一个事务读取另一个事务尚未提交的修改时，产生脏读。 非重复读(Nonrepeatable Read) 一个事务对同一行数据重复读取两次，但是却得到了不同的结果。同一查询在同一事务中多次进行，由于其他提交事务所做的修改或删除，每次返回不同的结果集，此时发生非重复读。 幻像读(Phantom Reads) 事务在操作过程中进行两次查询，第二次查询的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/image-20190814191053543.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/image-20190814191333257.png">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机科学与工程-数据库">
+<meta name="twitter:description" content="[TOC] 异常情况 脏读(Dirty Read)：当一个事务读取另一个事务尚未提交的修改时，产生脏读。 非重复读(Nonrepeatable Read) 一个事务对同一行数据重复读取两次，但是却得到了不同的结果。同一查询在同一事务中多次进行，由于其他提交事务所做的修改或删除，每次返回不同的结果集，此时发生非重复读。 幻像读(Phantom Reads) 事务在操作过程中进行两次查询，第二次查询的">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/image-20190814191053543.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/">
+
+
+
+
+
+  <title>计算机科学与工程-数据库 | Chenxr's blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chenxr's blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/计算机科学与工程-数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机科学与工程-数据库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:40:28+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p>异常情况</p>
+<p>脏读(Dirty Read)：当一个事务读取另一个事务尚未提交的修改时，产生脏读。</p>
+<p>非重复读(Nonrepeatable Read) 一个事务对同一行数据重复读取两次，但是却得到了不同的结果。同一查询在同一事务中多次进行，由于其他提交事务所做的修改或删除，每次返回不同的结果集，此时发生非重复读。</p>
+<p>幻像读(Phantom Reads) 事务在操作过程中进行两次查询，第二次查询的结果包含了第一次查询中未出现的数据（这里并不要求两次查询的SQL语句相同）。这是因为在两次查询过程中有另外一个事务插入数据造成的。</p>
+<p>丢失修改(Lost Update)</p>
+<p>第一类：当两个事务更新相同的数据源，如果第一个事务被提交，第二个却被撤销，那么连同第一个事务做的更新也被撤销。</p>
+<p>第二类：有两个并发事务同时读取同一行数据，然后其中一个对它进行修改提交，而另一个也进行了修改提交。这就会造成第一次写操作失效。</p>
+<p>隔离级别</p>
+<p>未提交读(Read Uncommitted)</p>
+<p>直译就是&quot;读未提交&quot;，意思就是即使一个更新语句没有提交，但是别的事务可以读到这个改变。</p>
+<p>Read Uncommitted允许脏读。</p>
+<p>Read Uncommited 如果一个事务已经开始写数据，则另外一个数据则不允许同时进行写操作，但允许其他事务读此行数据。该隔离级别可以通过“排他写锁”实现。</p>
+<p>已提交读(Read Committed)</p>
+<p>直译就是&quot;读提交&quot;，意思就是语句提交以后，即执行了 Commit 以后别的事务就能读到这个改变，只能读取到已经提交的数据。Oracle等多数数据库默认都是该级别。</p>
+<p>Read Commited 不允许脏读，但会出现非重复读。</p>
+<p>Read Committed 读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务访问该行。可以通过“瞬间共享读锁”和“排他写锁”实现。</p>
+<p>可重复读(Repeatable Read)：</p>
+<p>直译就是&quot;可以重复读&quot;，这是说在同一个事务里面先后执行同一个查询语句的时候，得到的结果是一样的。</p>
+<p>Repeatable Read 不允许脏读，不允许非重复读，但是会出现幻象读。</p>
+<p>Repeatable Read 读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务。可以通过“共享读锁”和“排他写锁”实现。</p>
+<p>串行读(Serializable)</p>
+<p>直译就是&quot;序列化&quot;，意思是说这个事务执行的时候不允许别的事务并发执行。完全串行化的读，每次读都需要获得表级共享锁，读写相互都会阻塞。</p>
+<p>Serializable 不允许不一致现象的出现。</p>
+<p>Serializable 读加共享锁，写加排他锁，读写互斥。</p>
+<p>海量数据怎么存储</p>
+<p>索引</p>
+<p>数据库创建索引能够大大提高系统的性能。</p>
+<p>第一，通过创建唯一性的索引，可以保证数据库表中每一行数据的唯一性。</p>
+<p>第二，可以大大加快数据的检索速度，这也使创建索引的最主要的原因。</p>
+<p>第三，可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。</p>
+<p>第四，在使用分组和排序子句进行数据检索时，同样可以显著的减少查询中查询中分组和排序的时间。</p>
+<p>第五，通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。</p>
+<p>增加索引也有许多不利的方面。</p>
+<p>第一，创建索引和维护索引需要消耗时间，这种时间随着数量的增加而增加</p>
+<p>第二，索引需要占物理空间，除了数据表占据数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要额空间就会更大。</p>
+<p>第三，当对表中的数据进行增加，删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。</p>
+<p>应该对如下的列建立索引</p>
+<p>在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构。</p>
+<p>在经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度。</p>
+<p>在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的。</p>
+<p>在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间。</p>
+<p>在经常使用在where子句中的列上面创建索引，加快条件的判断速度。</p>
+<p>有些列不应该创建索引</p>
+<p>在查询中很少使用或者作为参考的列不应该创建索引。</p>
+<p>对于那些只有很少数据值的列也不应该增加索引（比如性别，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度）。</p>
+<p>对于那些定义为text，image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。</p>
+<p>当修改性能远远大于检索性能时，不应该创建索引，因为修改性能和检索性能是矛盾的。</p>
+<p>创建索引的方法：直接创建和间接创建（在表中定义主键约束或者唯一性约束时，同时也创建了索引）。</p>
+<p>索引的特征：</p>
+<p>唯一性索引和复合索引。唯一性索引保证在索引列中的全部数据是唯一的，不会包含冗余数据。复合索引就是一个索引创建在两个列或者多个列上。可以减少一在一个表中所创建的索引数量。</p>
+<p>高维空间相交的线映射在低维空间，是否一定相交（直接取部分坐标，线性映射，必然相交）</p>
+<p>生产者消费者模型</p>
+<p>几个范式</p>
+<p>锁：</p>
+<p>共享锁(S锁)：用于只读操作(SELECT)，锁定共享的资源。共享锁不会阻止其他用户读，但是阻止其他的用户写和修改。</p>
+<p>更新锁(U锁)：用于可更新的资源中。防止当多个会话在读取、锁定以及随后可能进行的资源更新时发生常见形式的死锁。</p>
+<p>独占锁(X锁，也叫排他锁)：一次只能有一个独占锁用在一个资源上，并且阻止其他所有的锁包括共享缩。写是独占锁，可以有效的防止“脏读”。</p>
+<p>图数据库</p>
+<p><a href="http://blog.csdn.net/hzw05103020/article/details/51288992" target="_blank" rel="noopener">http://blog.csdn.net/hzw05103020/article/details/51288992</a></p>
+<p>也可能存在这样的调度，它们产生的结果相同，但却不是冲突等价的。考虑两个调度S和S’，其中参与两个调度的事务集是相同的。若调度S和S’满足下面三个条件，则称S和S’是视图等价的。</p>
+<p>⑴　对于每个数据项Q，若事务Ti在调度S中读取了Q的初始值，那么Ti在调度S’中也必须读取Q的初始值；</p>
+<p>⑵　对于每个数据项Q，若事务Ti在调度S中执行了read(Q)并且读取的值是由Tj产生的(write(Q))，则Ti在调度S’中读取的值也必须是由Tj产生的(write(Q))；</p>
+<p>⑶　对于每个数据项Q，若在调度S中有事务执行了最后的写操作write(Q)，则在调度S’中该事务也必须执行最后的写操作write(Q)。</p>
+<p>在视图等价的三个条件中，前两个条件保证了两个调度中的每个事务都读取了相同的值，从而才能进行相同的计算。第三个条件和前两个条件一起保证了两个调度能够得到相同的最终结果。</p>
+<p><a href="http://www.educity.cn/zk/sjkyl/201306141646051747.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141646051747.htm</a></p>
+<p><a href="http://www.educity.cn/zk/sjkyl/201306141542141835.htm" target="_blank" rel="noopener">http://www.educity.cn/zk/sjkyl/201306141542141835.htm</a></p>
+<p><a href="https://www.zhihu.com/question/24696366" target="_blank" rel="noopener">https://www.zhihu.com/question/24696366</a></p>
+<p>OLTP，OLAP</p>
+<p>产品：</p>
+<p>Oracle、MySQL、HBase，Cassandra，MongeDB，MariaDB，PostgreSQL，NoSQL，Redis</p>
+<p>RDB：SQL</p>
+<p>NoSQL：Redis</p>
+<h1>概念</h1>
+<h2 id="典型应用"><a class="header-anchor" href="#典型应用">¶</a>典型应用</h2>
+<p>Online Transaction Processing (OLTP)</p>
+<p>Online analytical processing (OLAP) and Data Warehousing</p>
+<p>数据挖掘</p>
+<p>大数据（Volume，Velocity，Variety）</p>
+<h2 id="模型"><a class="header-anchor" href="#模型">¶</a>模型</h2>
+<p>网状数据模型Network data model</p>
+<ul>
+<li>Integrated Data Store (IDS), by Charles Bachman, early 1960s</li>
+</ul>
+<p>层次数据模型Hierarchical data model</p>
+<ul>
+<li>Information Management System (IMS), by IBM, late 1960s</li>
+</ul>
+<p>关系数据模型Relational Data Model</p>
+<ul>
+<li>Codd, E.F. (1970). “A Relational Model of Data for Large Shared Data Banks”. Communications of the ACM 13 (6): 377–387.</li>
+</ul>
+<p>SQL语言 Structured Query Language</p>
+<ul>
+<li>System R, by IBM, started in 1974</li>
+</ul>
+<p>面向对象关系数据库 Object-Relational DBMS</p>
+<ul>
+<li>Stonebraker, Michael with Moore, Dorothy. ObjectRelational DBMSs: The Next Great Wave. 1996</li>
+</ul>
+<h2 id="dbms的结构"><a class="header-anchor" href="#dbms的结构">¶</a>DBMS的结构</h2>
+<p><img src="/2019/03/08/计算机科学与工程-数据库/image-20190814191053543.png" alt="image-20190814191053543"></p>
+<p>views describe how users see the data</p>
+<p>Conceptual schema defines logical structure（存储了哪些关系relations）</p>
+<p>Physical schema specifies physical structure（How the “logical” relations are physically stored on external storage such as disk）</p>
+<p><img src="/2019/03/08/计算机科学与工程-数据库/image-20190814191333257.png" alt="image-20190814191333257"></p>
+<h1>ER模型</h1>
+<p>实体entity</p>
+<p>关系relationship</p>
+<h2 id="关系模型"><a class="header-anchor" href="#关系模型">¶</a>关系模型</h2>
+<p>关系数据模型是目前最广泛使用的模型</p>
+<p>关系relation：一个表格table（有行rows和列columns）</p>
+<p>schema：用来描述列（名字，类型，限制等）</p>
+<h1>sql</h1>
+<h1>存储</h1>
+<h2 id="索引"><a class="header-anchor" href="#索引">¶</a>索引</h2>
+<p>哈希索引，B+树索引</p>
+<h2 id="和文件对比"><a class="header-anchor" href="#和文件对比">¶</a>和文件对比</h2>
+<p>Good data modeling</p>
+<ul>
+<li>Data Independence</li>
+<li>Data Integrity and Security</li>
+</ul>
+<p>Simple and efficient ad-hoc queries，减少了应用开发时间</p>
+<p>Concurrency control</p>
+<p>Crash recovery</p>
+<h1>查询优化</h1>
+<p>连接，排序</p>
+<h1>事务处理</h1>
+<p>ACID，并发处理</p>
+<p>事务的特性ACID</p>
+<p>A，atomacity：原子性，事务必须是原子工作单元，对于数据的执行要不是全部执行，要不都不执行。如果只执行一个子集，可能会破坏事务的总体目标。</p>
+<p>C，consistency：一致性。事务将数据库从一种一致状态变为下一种一致状态（各种约束不被破坏）</p>
+<p>I，isolation：隔离性。由并发事务所作的修改必须与任何其它并发事务所作的修改隔离。事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看中间状态的数据。换句话说，一个事务的影响在该事务提交前对其他事务都不可见。</p>
+<p>D，durability，持久性：事务完成之后，它对于系统的影响是永久性的。该修改即使出现致命的系统故障也将一直保持。</p>
+<h1>崩溃恢复</h1>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/计算机科学与工程-计算机网络/" rel="next" title="计算机科学与工程-计算机网络">
+                <i class="fa fa-chevron-left"></i> 计算机科学与工程-计算机网络
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/计算机科学与工程-编译原理/" rel="prev" title="计算机科学与工程-编译原理">
+                计算机科学与工程-编译原理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chenxr</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#典型应用"><span class="nav-number">1.1.</span> <span class="nav-text">¶典型应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.2.</span> <span class="nav-text">¶模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dbms的结构"><span class="nav-number">1.3.</span> <span class="nav-text">¶DBMS的结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">ER模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系模型"><span class="nav-number">2.1.</span> <span class="nav-text">¶关系模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-number">4.1.</span> <span class="nav-text">¶索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和文件对比"><span class="nav-number">4.2.</span> <span class="nav-text">¶和文件对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">查询优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">事务处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">崩溃恢复</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chenxr</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

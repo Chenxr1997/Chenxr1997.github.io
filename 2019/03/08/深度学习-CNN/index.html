@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="基础 ¶padding ¶stride 卷积，跨度，边界填充，卷积核，反卷积https://blog.csdn.net/weixin_38776853/article/details/72636422 池化pooling 著名模型 Alexnet VGG GoogleNet Resnet Wide ResNet ResNeXt DenseNet LeNet SENet PNASNet FaceNe">
+<meta name="description" content="卷积层：特征提取 子采样层/池化层：缩减输入数据的规模 卷积 对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。 3.1 卷积层 卷积层是一种线性的、平移不变性的运算。 线性 卷积核过滤的结果相当于一次线性计算 平移不变性 识别结果不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习-CNN">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/深度学习-CNN/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="基础 ¶padding ¶stride 卷积，跨度，边界填充，卷积核，反卷积https://blog.csdn.net/weixin_38776853/article/details/72636422 池化pooling 著名模型 Alexnet VGG GoogleNet Resnet Wide ResNet ResNeXt DenseNet LeNet SENet PNASNet FaceNe">
+<meta property="og:description" content="卷积层：特征提取 子采样层/池化层：缩减输入数据的规模 卷积 对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。 3.1 卷积层 卷积层是一种线性的、平移不变性的运算。 线性 卷积核过滤的结果相当于一次线性计算 平移不变性 识别结果不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.738Z">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习-CNN">
-<meta name="twitter:description" content="基础 ¶padding ¶stride 卷积，跨度，边界填充，卷积核，反卷积https://blog.csdn.net/weixin_38776853/article/details/72636422 池化pooling 著名模型 Alexnet VGG GoogleNet Resnet Wide ResNet ResNeXt DenseNet LeNet SENet PNASNet FaceNe">
+<meta name="twitter:description" content="卷积层：特征提取 子采样层/池化层：缩减输入数据的规模 卷积 对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。 3.1 卷积层 卷积层是一种线性的、平移不变性的运算。 线性 卷积核过滤的结果相当于一次线性计算 平移不变性 识别结果不">
 
 
 
@@ -299,7 +299,27 @@
       
 
       
-        <h1>基础</h1>
+        <p>卷积层：特征提取 子采样层/池化层：缩减输入数据的规模</p>
+<p>卷积<br>
+对图像（不同的数据窗口数据）和滤波矩阵（一组固定的权重：因为每个神经元的多个权重固定，所以又可以看做一个恒定的滤波器filter）做内积（逐个元素相乘再求和）的操作就是所谓的『卷积』操作，也是卷积神经网络的名字来源。</p>
+<p>3.1 卷积层</p>
+<p>卷积层是一种线性的、平移不变性的运算。</p>
+<p>线性<br>
+卷积核过滤的结果相当于一次线性计算<br>
+平移不变性<br>
+识别结果不依赖物体的位置<br>
+卷积核扫过图片，只要DNA是不变的，那么它在图片上下左右的哪个位置看到的结果都相同，这便是卷积本身具有平移不变形的原理。<br>
+卷积的kernel本质</p>
+<p>kernel具有局域性，只对图像中的局部区域敏感<br>
+权重共享，一个kernel扫描整个图像，过程kernel的值是不变的<br>
+池化<br>
+池化，简言之，即取区域平均或最大</p>
+<p>上图所展示的是取区域最大，即上图左边部分中 左上角2x2的矩阵中6最大，右上角2x2的矩阵中8最大，左下角2x2的矩阵中3最大，右下角2x2的矩阵中4最大，所以得到上图右边部分的结果：6 8 3 4。</p>
+<p>池化</p>
+<p>扔掉周边长得差不多那些像素</p>
+<p>本质：降采样，提升统计效率，局部特征不变性降维</p>
+<p>在pooling的终结点， 我们得到的是一个降低维度了的图像，这个图像的含义是告诉你在原有的图像的每个区域里是含有1还是不含有1， 又叫做特征图。</p>
+<h1>基础</h1>
 <h2 id="padding"><a class="header-anchor" href="#padding">¶</a>padding</h2>
 <h2 id="stride"><a class="header-anchor" href="#stride">¶</a>stride</h2>
 <p>卷积，跨度，边界填充，卷积核，反卷积<a href="https://blog.csdn.net/weixin_38776853/article/details/72636422" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38776853/article/details/72636422</a></p>
@@ -345,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/深度学习-基础篇/" rel="next" title="深度学习-基础篇">
-                <i class="fa fa-chevron-left"></i> 深度学习-基础篇
+              <a href="/2019/03/08/机器学习-KNN/" rel="next" title="机器学习-KNN">
+                <i class="fa fa-chevron-left"></i> 机器学习-KNN
               </a>
             
           </div>
@@ -355,8 +375,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/机器学习-KNN/" rel="prev" title="机器学习-KNN">
-                机器学习-KNN <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/机器学习-计算学习理论/" rel="prev" title="机器学习-计算学习理论">
+                机器学习-计算学习理论 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -434,7 +454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

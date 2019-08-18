@@ -81,14 +81,14 @@
 
 <meta name="description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习-贝叶斯&#x2F;朴素贝叶斯">
+<meta property="og:title" content="机器学习-贝叶斯">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/机器学习-贝叶斯:朴素贝叶斯/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
 <meta property="og:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.729Z">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习-贝叶斯&#x2F;朴素贝叶斯">
+<meta name="twitter:title" content="机器学习-贝叶斯">
 <meta name="twitter:description" content="[TOC] 朴素贝叶斯分类Naïve Bayes Classifier 贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>机器学习-贝叶斯/朴素贝叶斯 | Chenxr's blogs</title>
+  <title>机器学习-贝叶斯 | Chenxr's blogs</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习-贝叶斯/朴素贝叶斯</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习-贝叶斯</h1>
         
 
         <div class="post-meta">
@@ -301,7 +301,26 @@
       
         <p>[TOC]</p>
 <h1>朴素贝叶斯分类Naïve Bayes Classifier</h1>
-<p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的。</p>
+<p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的</p>
+<p>时间A和B同时发生的概率为A发生的情况下发生B或者B发生的情况下发生A，对于给出的待分类项，求解在此项目条件下各个目标类别出现的概率，哪个最大就认为此待分类项属于哪个类别。</p>
+<p>假如现在有样本x=(a1,a2,a3…,an)，有分类目标Y={y1,y2,…,yn}</p>
+<p>那么max(P(y1|x),P(y2|x)…)就是分类结果</p>
+<p>P(yi|x)=P(x|yi)*P(yi)/P(x)，而样本可以看成由特征组成，因此可以把x换成对特征求相同值以后的求和</p>
+<p>相当于从样本中统计出来</p>
+<p>P(ai|yi)代表该类别下该特征出现的概率</p>
+<p>P(yi)代表全部类别中，该类别出现的概率</p>
+<p>如果输入是连续值，考虑满足高斯分布，用高斯分布的概率来做<br>
+如果某个类别中某个特征没有出现，会导致0，引入拉普拉斯校验，对于每类别下面的所有划分计数加一。<br>
+要求特征之间独立，可以使用DAG进行概率图的描述<br>
+优点：对小规模数据表现好，适合多分类任务，适合增量训练</p>
+<p>缺点：对于输入的数据很敏感</p>
+<p>$$<br>
+拥有先验概率P(Y)\<br>
+n个条件独立的特征/数据x_i决定了Y\<br>
+对于每一个x_i，可以计算P(x_i|Y)\<br>
+y* = h_{NB}(x) = \mathop{\arg\min}<em>{y} P(x)P(x_1,…,x_n|y)\<br>
+= \mathop{\arg\min}</em>{y}P(y)\prod_iP(x_i|y)<br>
+$$</p>
 <h1>贝叶斯估计</h1>
 <h1>高斯贝叶斯</h1>
 <p>Gaussian Naive Bayes</p>
@@ -314,6 +333,25 @@
 <h1>贝叶斯网络</h1>
 <p>Bayesian Network</p>
 <h1>EM算法</h1>
+<h1>垃圾邮件分类</h1>
+<p>朴素 贝叶斯垃圾邮件分类器是在对邮件关键字进行统计分析到基础上利用贝叶斯公式进行分类到方法。相比其他模型，朴素贝叶斯模型到搭建比较简单，并且具有良好到分类效果。</p>
+<p>朴素真贝叶斯分类器通过对邮件关键字进行统计，然后使用贝叶斯推理来计算一封电子邮件是或不是垃圾邮件的概率。</p>
+<p>1.特征量的选择</p>
+<p>对于文本信息而言，文本中的关键字更能代表文本到内容，因此在此分类器中我们对邮件内容进行分词处理，选取邮件中出现频率最高的10个词作为这封邮件到特征量。</p>
+<p>2.样本分类</p>
+<p>对于垃圾邮件分类器而言样本到分类比较简单，垃圾邮件类和非垃圾邮件类。</p>
+<p>3.训练</p>
+<p>词分类器中到样本数据来源于</p>
+<p>SpamAssassin公共语料库。对语料库中的垃圾邮件和非垃圾邮件做分词然后统计对应到词频，对相关数据进行统计计算关键字后验概率形成分类器。</p>
+<p>实现细节</p>
+<p>1）分词</p>
+<p>英文分词主要以空格作为分词到手段从中提取关键字，但是此方法对中文并不适用。因为中文词之间没有明确到分隔，并且中文的词大部分都是有多字词构成这就无法从字的角度进行分词。</p>
+<p>此处的分词我们选择了“庖丁解牛”这个中文分词工具对邮件文本进行分词。分词之前先做了一些预处理，去掉了文本中的非中文字符。</p>
+<p>2）训练中数据的平滑处理</p>
+<p>在非类器训练过程中可能会遇到待评估邮件中包含到关键字在非类器中不存在到情况，为了防止零概率情况到发生我们把不存在到关键字的词频设为0.5。然后再放入分类器中进行相关计算。</p>
+<p>3）假设条件</p>
+<p>假设特征变量之间相互。</p>
+<p>假设邮件为垃圾或者非垃圾邮件到概率各为50%。</p>
 
       
     </div>
@@ -338,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/深度学习-RNN/" rel="next" title="深度学习-RNN">
-                <i class="fa fa-chevron-left"></i> 深度学习-RNN
+              <a href="/2019/03/08/深度学习-Attention/" rel="next" title="深度学习-Attention">
+                <i class="fa fa-chevron-left"></i> 深度学习-Attention
               </a>
             
           </div>
@@ -427,7 +465,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -482,7 +520,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯分类Naïve Bayes Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">高斯贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">多项朴素贝叶斯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">平均一依赖性评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯信念网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">贝叶斯网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">EM算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">垃圾邮件分类</span></a></li></ol></div>
             
 
           </div>

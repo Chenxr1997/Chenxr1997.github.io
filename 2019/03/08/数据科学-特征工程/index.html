@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="特征工程： 包括特征构建、特征提取、特征选择 稀疏学习 降维 主成分分析（PCA） Principal component analysis(PCA) 主成分回归（PCR） Principal component regression(PCR) 因子分析 Factor analysis 核化线性降维（核PCA） 流形学习 度量学习 独立成分分析 非线性成分分析 维数灾难 线性判别分析（LDA）（L">
+<meta name="description" content="[TOC] 降维 ¶维数灾难 Curse of Dimensionality 当维度增加时，数据会变得稀疏 因此数据密度（density）和距离的意义会降低，尤其对于聚类和离群点检测   ¶主成分分析（PCA） Principal component analysis(PCA) 通过正交变换将一组可能存在相关性的变量转换为一组线性不相关的变量，转换后的这组变量叫主成分（Goal is to fin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学-特征工程">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/数据科学-特征工程/index.html">
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
-<meta property="og:description" content="特征工程： 包括特征构建、特征提取、特征选择 稀疏学习 降维 主成分分析（PCA） Principal component analysis(PCA) 主成分回归（PCR） Principal component regression(PCR) 因子分析 Factor analysis 核化线性降维（核PCA） 流形学习 度量学习 独立成分分析 非线性成分分析 维数灾难 线性判别分析（LDA）（L">
+<meta property="og:description" content="[TOC] 降维 ¶维数灾难 Curse of Dimensionality 当维度增加时，数据会变得稀疏 因此数据密度（density）和距离的意义会降低，尤其对于聚类和离群点检测   ¶主成分分析（PCA） Principal component analysis(PCA) 通过正交变换将一组可能存在相关性的变量转换为一组线性不相关的变量，转换后的这组变量叫主成分（Goal is to fin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.732Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-特征工程/image-20190811133934360.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/08/数据科学-特征工程/image-20190811134006388.png">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学-特征工程">
-<meta name="twitter:description" content="特征工程： 包括特征构建、特征提取、特征选择 稀疏学习 降维 主成分分析（PCA） Principal component analysis(PCA) 主成分回归（PCR） Principal component regression(PCR) 因子分析 Factor analysis 核化线性降维（核PCA） 流形学习 度量学习 独立成分分析 非线性成分分析 维数灾难 线性判别分析（LDA）（L">
+<meta name="twitter:description" content="[TOC] 降维 ¶维数灾难 Curse of Dimensionality 当维度增加时，数据会变得稀疏 因此数据密度（density）和距离的意义会降低，尤其对于聚类和离群点检测   ¶主成分分析（PCA） Principal component analysis(PCA) 通过正交变换将一组可能存在相关性的变量转换为一组线性不相关的变量，转换后的这组变量叫主成分（Goal is to fin">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/08/数据科学-特征工程/image-20190811133934360.png">
 
 
 
@@ -299,11 +302,15 @@
       
 
       
-        <p>特征工程：</p>
-<p>包括特征构建、特征提取、特征选择</p>
-<p>稀疏学习</p>
+        <p>[TOC]</p>
 <h1>降维</h1>
-<p>主成分分析（PCA） Principal component analysis(PCA)</p>
+<h2 id="维数灾难-curse-of-dimensionality"><a class="header-anchor" href="#维数灾难-curse-of-dimensionality">¶</a>维数灾难 Curse of Dimensionality</h2>
+<p>当维度增加时，数据会变得稀疏</p>
+<p>因此数据密度（density）和距离的意义会降低，尤其对于聚类和离群点检测</p>
+<p><img src="/2019/03/08/数据科学-特征工程/image-20190811133934360.png" alt="image-20190811133934360"></p>
+<p><img src="/2019/03/08/数据科学-特征工程/image-20190811134006388.png" alt="image-20190811134006388"></p>
+<h2 id="主成分分析-pca-principal-component-analysis-pca"><a class="header-anchor" href="#主成分分析-pca-principal-component-analysis-pca">¶</a>主成分分析（PCA） Principal component analysis(PCA)</h2>
+<p>通过正交变换将一组可能存在相关性的变量转换为一组线性不相关的变量，转换后的这组变量叫主成分（Goal is to find a projection that captures the largest amount of variation in data）</p>
 <p>主成分回归（PCR） Principal component regression(PCR)</p>
 <p>因子分析 Factor analysis</p>
 <p>核化线性降维（核PCA）</p>
@@ -311,13 +318,13 @@
 <p>度量学习</p>
 <p>独立成分分析</p>
 <p>非线性成分分析</p>
-<p>维数灾难</p>
+<p>奇异值分解</p>
+<p>稀疏学习</p>
+<p>降纬与度量学习</p>
 <p>线性判别分析（LDA）（Linear Discriminate Analysis）</p>
 <p>FM，FFM算法</p>
 <p><a href="https://www.cnblogs.com/peizhe123/p/7412364.html" target="_blank" rel="noopener">https://www.cnblogs.com/peizhe123/p/7412364.html</a></p>
 <p>SIFT feature（图像）</p>
-<p>过拟合：把误差，噪声也拟合进去了</p>
-<p>小波变换，傅立叶变换，短时傅立叶变换<a href="https://www.sohu.com/a/154009298_465219" target="_blank" rel="noopener">https://www.sohu.com/a/154009298_465219</a></p>
 <p>张量分解</p>
 <p>模型训练复杂度很大程度上依赖于特征维数，通常情况下，我们可以通过<strong>特征选择</strong>和<strong>数据降维</strong>的方法降低特征维数，以降低模型的训练复杂度。下面是对特征降维的简要概要介绍。</p>
 <p>特征降维(feature dimension reduction)是一个从初始高维特征集合中选出低维特征集合，以便根据一定的评估准则最优化缩小特征空间的过程，通常是机器学习的预处理步骤。当面临高维数据时，特征降维对于机器学习任务非常必要，通过降维有效地消除无关和冗余特征，提高挖掘任务的效率，改善预测精确性等学习性能，增强学习结果的易理解性。</p>
@@ -395,6 +402,31 @@
 互信息是另一种常用的信息度量,用于评测随机变量间的依赖性，它总是具有对称、非负性，互信息的值越大说明变量间的依赖性越强。互信息取值为0当且仅当变量间相互独立。MIFS算法利用变量间的互信息在有指导的神经网络学习中进行特征选择，并且使用贪心策略进行搜索。</p>
 <p>4、总结<br>
 总的来说，特征降维模型，可以分为过滤模型和包裹模型两类，其区别在于是基于特征的内在特性还是基于学习算法的性能对特征进行选取。特征子集的搜索过程和选用的特征评价标准是特征降维的两个关键问题,根据具体应用环境制定适当的搜索策略与一定特征度量准则相结合能够有效地去除无关特征、冗余特征，实现高效的特征降维，提高机器学习的效率。随着自然语言处理技术的发展，以语义分析为基础的特征抽取技术必将得到进一步发展;如何捕捉现实世界中非线性的关联，将特征判别从距离空间转向相关度度量空间依然是机器学习的研究热点。特征降维的应用领域也从传统的静态文本分类、聚类转向对半结构化网络资源的数据挖掘，对音频、视频等多媒体资源的机器学习，以及对生物基因特征的分析识别等。</p>
+<p>特征选择：</p>
+<p>Filter：过滤法，按照发散性或者相关性对各个特征进行评分，设定阈值或者待选择阈值的个数，选择特征。</p>
+<p>Wrapper：包装法，根据目标函数（通常是预测效果评分），每次选择若干特征，或者排除若干特征。</p>
+<p>Embedded：集成方法，先使用某些机器学习的算法和模型进行训练，得到各个特征的权值系数，根据系数从大到小选择特征。类似于Filter方法，但是是通过训练来确定特征的优劣。</p>
+<h1>特征选择</h1>
+<p>特征选择是从特征集T={1… ,ts}中选择一个真子集T’={t1’,… ,ts’},满足(s’&lt;&lt;s) 。其中: s为原始特征集的大小; s’是选择后的特征集大小。特征选择不改变原始特征空间的性质，只是从原始特征空间中选择一部分重要的特征，组成一个新的低维空间</p>
+<ul>
+<li>冗余特征 Redundant features
+<ul>
+<li>purchase price of a product and the amount of sales tax paid</li>
+</ul>
+</li>
+<li>无关特征 Irrelevant features
+<ul>
+<li>students’ ID is often irrelevant to the task of predicting students’ GPA</li>
+</ul>
+</li>
+</ul>
+<h2 id="特征创建-feature-creation"><a class="header-anchor" href="#特征创建-feature-creation">¶</a>特征创建 Feature Creation</h2>
+<h3 id="特征抽取-feature-extraction"><a class="header-anchor" href="#特征抽取-feature-extraction">¶</a>特征抽取 Feature extraction</h3>
+<p>Example: extracting edges from images</p>
+<h3 id="特征构造-feature-construction"><a class="header-anchor" href="#特征构造-feature-construction">¶</a>特征构造 Feature construction</h3>
+<p>Example: dividing mass by volume to get density</p>
+<h3 id="映射到新空间-mapping-data-to-new-space"><a class="header-anchor" href="#映射到新空间-mapping-data-to-new-space">¶</a>映射到新空间 Mapping data to new space</h3>
+<p>小波变换，傅立叶变换，短时傅立叶变换&lt;<a href="https://www.sohu.com/a/154009298_465219" target="_blank" rel="noopener">https://www.sohu.com/a/154009298_465219</a></p>
 
       
     </div>
@@ -419,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/数据科学-微积分知识/" rel="next" title="数据科学-微积分知识">
-                <i class="fa fa-chevron-left"></i> 数据科学-微积分知识
+              <a href="/2019/03/08/数学-微积分/" rel="next" title="数学-微积分">
+                <i class="fa fa-chevron-left"></i> 数学-微积分
               </a>
             
           </div>
@@ -429,7 +461,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/数据科学-优化知识/" rel="prev" title="数据科学-优化知识">
+              <a href="/2019/03/08/数学-优化/" rel="prev" title="数据科学-优化知识">
                 数据科学-优化知识 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -508,7 +540,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -563,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">降维</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">降维</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#维数灾难-curse-of-dimensionality"><span class="nav-number">1.1.</span> <span class="nav-text">¶维数灾难 Curse of Dimensionality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主成分分析-pca-principal-component-analysis-pca"><span class="nav-number">1.2.</span> <span class="nav-text">¶主成分分析（PCA） Principal component analysis(PCA)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征创建-feature-creation"><span class="nav-number">2.1.</span> <span class="nav-text">¶特征创建 Feature Creation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特征抽取-feature-extraction"><span class="nav-number">2.1.1.</span> <span class="nav-text">¶特征抽取 Feature extraction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征构造-feature-construction"><span class="nav-number">2.1.2.</span> <span class="nav-text">¶特征构造 Feature construction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射到新空间-mapping-data-to-new-space"><span class="nav-number">2.1.3.</span> <span class="nav-text">¶映射到新空间 Mapping data to new space</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

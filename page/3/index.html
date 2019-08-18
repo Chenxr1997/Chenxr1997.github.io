@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-pytorch/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据挖掘-数据(预)处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -248,7 +248,392 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/深度学习-pytorch/" itemprop="url">深度学习-pytorch</a></h1>
+                <a class="post-title-link" href="/2019/03/08/数据挖掘-数据(预)处理/" itemprop="url">数据挖掘-数据(预)处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<p>数据清洗</p>
+<p>​	缺失值处理</p>
+<p>​	不处理</p>
+<p>​	删除记录</p>
+<p>​	插补（均值/中位数/众数，使用固定值，最近邻插补，回归方法，插值法）（拉格朗日，牛顿，hermite，分段，样条）</p>
+<p>异常值处理</p>
+<p>​	不处理，删除记录，视为缺失值，平均值修正</p>
+<p>数据集成</p>
+<p>实体识别（同名同义，异名同义，单位不统一）</p>
+<p>冗余属性识别</p>
+<p>数据变换</p>
+<p>​	简单函数变化</p>
+<p>​	数据规范化/标准化（最大-最小规范化，零-均值规范化，小数定标规范化，归一化）</p>
+<p>​	连续属性离散化（等宽法，等频法，聚类法）</p>
+<p>属性构造</p>
+<p>​	小波变换</p>
+<p>数据规约</p>
+<p>​	属性规约（合并属性，逐步向前选择，逐步向后删除，决策树归纳，主成分分析）</p>
+<p>​	数值规约（直方图，聚类，抽样，参数回归）</p>
+<p>数据融合</p>
+<h1>聚集 Aggregation</h1>
+<p>将两个或多个对象合并成单个对象，用于精简数据，但是难免会丢失细节</p>
+<p>但是可以让数据变得“稳定”，即更小的方差</p>
+<p>比如将月降水量聚集为年降水量</p>
+<p><img src="/2019/03/08/数据挖掘-数据(预)处理/image-20190811124005265.png" alt="image-20190811124005265"></p>
+<h1>采样 Sampling</h1>
+<p>初步调查中获取全部的数据太难，因此需要采样</p>
+<p>数据挖掘/分析时使用所有数据太耗费时间和资源，因此也需要采样</p>
+<p>一个样本是<strong>representative</strong>的，如果它能够有近似于整体数据的性质</p>
+<h2 id="采样方法"><a class="header-anchor" href="#采样方法">¶</a>采样方法</h2>
+<ul>
+<li>简单随机抽样 Simple Random Sampling
+<ul>
+<li>无放回 Sampling without replacement</li>
+<li>有放回 Sampling with replacement</li>
+</ul>
+</li>
+<li>分层抽样 Stratified sampling</li>
+<li>蒙特卡洛方法（见<code>数据科学-蒙塔卡洛方法</code>）</li>
+</ul>
+<h1>降维 Dimensionality Reduction</h1>
+<h2 id="目的"><a class="header-anchor" href="#目的">¶</a>目的</h2>
+<ul>
+<li>
+<p>避免维度灾难</p>
+</li>
+<li>
+<p>减少分析所用的时间和资源</p>
+</li>
+<li>
+<p>更容易可视化</p>
+</li>
+<li>
+<p>可能会减少冗余的特征</p>
+</li>
+</ul>
+<h2 id="方法"><a class="header-anchor" href="#方法">¶</a>方法</h2>
+<ul>
+<li>主成分分析 Principal Components Analysis (PCA)</li>
+<li>奇异值分解Singular Value Decomposition(SVD)</li>
+</ul>
+<p>详见<code>数据科学-特征工程</code></p>
+<h1>特征子集选择 Feature subset selection</h1>
+<p>另一种降维方法</p>
+<p>详见<code>数据科学-特征工程</code></p>
+<h1>特征创建 Feature creation</h1>
+<p>详见``数据科学-特征工程`</p>
+<h1>离散化和二值化 Discretization and Binarization</h1>
+<p>离散化将连续属性变为离散属性，常用于分类任务中</p>
+<p>二值化将连续属性或类别属性变为(一个或一串)二进制变量，通常用于关联分析</p>
+<p>通常先将连续属性变为类别属性，再变为二进制变量，比如身高变为高中矮</p>
+<h1>属性转换 Attribute Transformation</h1>
+<p>属性转换是指通过一个函数，将某个属性的值映射为新的值，比如指数函数，对数函数，绝对值，e的指数函数等</p>
+<h2 id="归一化-normalization"><a class="header-anchor" href="#归一化-normalization">¶</a>归一化 Normalization</h2>
+<h3 id="作用"><a class="header-anchor" href="#作用">¶</a>作用</h3>
+<ul>
+<li>
+<p>归一化后加快了梯度下降求最优解的速度</p>
+</li>
+<li>
+<p>归一化有可能提高精度</p>
+</li>
+</ul>
+<h3 id="方法-v2"><a class="header-anchor" href="#方法-v2">¶</a>方法</h3>
+<ul>
+<li>线性归一化</li>
+</ul>
+<p>这种归一化方法比较适用在数值比较集中的情况。这种方法有个缺陷，如果max和min不稳定，很容易使得归一化结果不稳定，使得后续使用效果也不稳定。实际使用中可以用经验常量值来替代max和min</p>
+<ul>
+<li>标准差标准化 standardization</li>
+</ul>
+<p>经过处理的数据符合标准正态分布，即均值为0，标准差为1，其转化函数为：</p>
+<p>其中μ为所有样本数据的均值，σ为所有样本数据的标准差</p>
+<ul>
+<li>
+<p>非线性归一化</p>
+<p>经常用在数据分化比较大的场景，有些数值很大，有些很小。通过一些数学函数，将原始值进行映射。该方法包括 log、指数，正切等。需要根据数据分布的情况，决定非线性函数的曲线，比如log(V, 2)还是log(V, 10)等</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据挖掘-蒙塔卡洛方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/数据挖掘-蒙塔卡洛方法/" itemprop="url">数据挖掘-蒙塔卡洛方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h1>求积分 Evaluating Integrals</h1>
+<p>函数的期望值为<br>
+$$<br>
+E[f(X)] = \int f(X)P_X(X)dX<br>
+$$<br>
+方差为<br>
+$$<br>
+Var(X) = E[(X-E(X))^2]\<br>
+= E(X^2) - E(X)^2<br>
+$$<br>
+要求的积分为<br>
+$$<br>
+F = \int_a^b f(x)dx<br>
+$$</p>
+<p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125540738.png" alt="image-20190811125540738"></p>
+<p>蒙特卡洛的思想</p>
+<p><img src="/2019/03/08/数据挖掘-蒙塔卡洛方法/image-20190811125710932.png" alt="image-20190811125710932"><br>
+$$<br>
+&lt;F^N&gt; = (b-a)\frac1{N}\sum_{i=1}^Nf(X_i)\<br>
+X_i = a + \xi(b-a)\<br>
+\xi 是[0,1]中均匀分布的随机数<br>
+$$<br>
+其中<br>
+$$<br>
+Pr(\lim_{N \to \infty}&lt;F^N&gt; = F) = 1<br>
+$$</p>
+<p>$$<br>
+E[&lt;F^N&gt;] = E[(b-a)\frac1{N}\sum_{i=1}^Nf(x_i)] \<br>
+= (b-a)\frac1{N}\sum_{i=1}^NE[f(x_i)] \<br>
+= (b-a)\frac1{N}\sum_{i=1}^N \int_a^bf(x)pdf(x)dx \<br>
+= \frac1{N}\sum_{i=1}^N \int_a^bf(x)dx \<br>
+= \int_a^bf(x)dx \<br>
+= F<br>
+$$</p>
+<p>还可以泛化到任意pdf中<br>
+$$<br>
+&lt;F^N&gt; = \frac1{N}\sum_{i=1}^N \frac {f(X_i)}{pdf(X_i)}\<br>
+$$</p>
+<p>$$<br>
+E[&lt;F^N&gt;] = E[\frac1{N}\sum_{i=1}^N\frac {f(X_i)}{pdf(X_i)}] \<br>
+= \frac1{N}\sum_{i=1}^NE[\frac {f(X_i)}{pdf(X_i)}] \<br>
+= \frac1{N}\sum_{i=1}^N \int_\Omega \frac {f(x)pdf(x)}{pdf(x)}dx \<br>
+= \frac1{N}\sum_{i=1}^N \int_\Omega f(x)dx \<br>
+= \int_\Omega f(x)dx \<br>
+= F<br>
+$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-Pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/深度学习-Pytorch/" itemprop="url">深度学习-Pytorch</a></h1>
         
 
         <div class="post-meta">
@@ -318,6 +703,11 @@
 <h2 id="cpu与gpu"><a class="header-anchor" href="#cpu与gpu">¶</a>cpu与gpu</h2>
 <p><a href="https://blog.csdn.net/liulina603/article/details/80180355" target="_blank" rel="noopener">https://blog.csdn.net/liulina603/article/details/80180355</a></p>
 <p><a href="https://ptorch.com/news/160.html" target="_blank" rel="noopener">https://ptorch.com/news/160.html</a></p>
+<h2 id="随即种子设定"><a class="header-anchor" href="#随即种子设定">¶</a>随即种子设定</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">torch.manual_seed(<span class="number">7</span>) <span class="comment"># cpu</span></span><br><span class="line">torch.cuda.manual_seed(<span class="number">7</span>) <span class="comment"># gpu</span></span><br><span class="line">np.random.seed(<span class="number">7</span>) <span class="comment"># numpy</span></span><br><span class="line">random.seed(<span class="number">7</span>) <span class="comment"># random and transforms</span></span><br><span class="line">torch.backends.cudnn.deterministic=<span class="literal">True</span> <span class="comment"># cudnn</span></span><br></pre></td></tr></table></figure>
+<h2 id="variable"><a class="header-anchor" href="#variable">¶</a>Variable</h2>
+<p><a href="https://blog.csdn.net/github_39611196/article/details/82998092" target="_blank" rel="noopener">https://blog.csdn.net/github_39611196/article/details/82998092</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</span><br><span class="line">output, next_hidden = rnn(Variable(input, Variable(hidden))</span><br></pre></td></tr></table></figure>
 <h1>数据集</h1>
 <h2 id="dataset-dataloader"><a class="header-anchor" href="#dataset-dataloader">¶</a>Dataset &amp;&amp; Dataloader</h2>
 <p>torch.utils.data.Dataset</p>
@@ -452,7 +842,7 @@
 <h2 id="resnet"><a class="header-anchor" href="#resnet">¶</a>ResNet</h2>
 <h2 id="squeezenet"><a class="header-anchor" href="#squeezenet">¶</a>SqueezeNet</h2>
 <h2 id="densenet"><a class="header-anchor" href="#densenet">¶</a>DenseNet</h2>
-<p>##Inception v3</p>
+<h2 id="inception-v3"><a class="header-anchor" href="#inception-v3">¶</a>Inception v3</h2>
 
           
         
@@ -501,7 +891,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-其他框架/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-编程框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -520,7 +910,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/深度学习-其他框架/" itemprop="url">深度学习-其他框架</a></h1>
+                <a class="post-title-link" href="/2019/03/08/深度学习-编程框架/" itemprop="url">深度学习-编程框架</a></h1>
         
 
         <div class="post-meta">
@@ -627,7 +1017,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-sklearn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/面试-AI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -646,7 +1036,304 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/机器学习-sklearn/" itemprop="url">机器学习-sklearn</a></h1>
+                <a class="post-title-link" href="/2019/03/08/面试-AI/" itemprop="url">面试-AI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>如何从100个特征中选20个特征，有哪些方法
+<ul>
+<li>PCA</li>
+</ul>
+</li>
+<li>解释一下主成分分析算法（PCA），简述下使用PCA算法的数学步骤</li>
+<li>使用 PCA算法有哪些缺点</li>
+<li>垃圾短信多分类任务(如何分开发票，广告，商铺信息等)，有什么思路</li>
+<li>朴素贝叶斯为什么被称为“朴素”？详细介绍一下朴素贝叶斯分类器</li>
+<li>L1正则和L2正则的区别</li>
+<li>什么是深度学习，深度学习和机器学习的区别是什么</li>
+<li>在无监督学习中，如何进行文件聚类</li>
+<li>谈一谈无监督学习；都有哪些算法</li>
+<li>如何找到与某些查询语句/搜索相关的文件</li>
+<li>简述支持向量机（SVM）的工作原理；解释SVM如何学习非线性边界；什么是Kernal，解释一下；SVM中用到了哪些内核？SVM的优化技术有哪些；SVM如何学习超平面？论述下其数学运算细节</li>
+<li>训练决策树时，其参数是什么</li>
+<li>在决策树的某个节点处进行分割，其分割标准是什么</li>
+<li>基尼系数的计算公式是什么</li>
+<li>熵的计算公式是什么</li>
+<li>决策树如何决定在哪个特征处必须进行分割</li>
+<li>简述随机森林及其优点</li>
+<li>简述boosting算法；你所了解的Boosting技术有哪些？</li>
+<li>梯度提升算法（gradient boosting）是怎样工作的</li>
+<li>简述AdaBoost算法工作原理</li>
+<li>在不平衡数据集中，你会选择什么模型：随机森林还是Boosting？为什么</li>
+<li>简述LSTM的工作原理，它是如何记住文本的</li>
+<li>你怎样使用Ensemble技术</li>
+<li>决策树和随机森林，你更喜欢哪一个；你会用决策树还是随机森林来解决分类问题？随机森林有什么优点</li>
+<li>逻辑回归和随机森林有什么区别</li>
+<li>如何定义K-Means聚类算法中K的值；列举至少3中定义K-Means聚类算法中K的方法</li>
+<li>你还知道哪些聚类算法</li>
+<li>介绍一下DB-SCAM算法</li>
+<li>简述下分层凝聚聚类（Hierarchical Agglomerativeclustering）的工作原理</li>
+<li>谈谈卷积神经网络的工作原理？详细说明其实现细节</li>
+<li>如何设计一个神经网络？如何做到“深度”</li>
+<li>解释一下卷积神经网络中的反向传播</li>
+<li>采用监督学习解决分类问题，你会选择哪个模型？假设有 40-50个分类</li>
+<li>如何部署机器学习模型</li>
+<li>我们大部分情况下都要用C++从零开始搭建一个机器学习模型，这一点你能做到吗</li>
+<li>如何实现非线性回归</li>
+<li>什么是Lasso回归和Ridge回归</li>
+<li>Sigmoid 函数的范围是什么</li>
+<li>标准正态分布的均值和方差分别是多少</li>
+<li>抛10次硬币，4次是正面的概率是多少？</li>
+<li>从用户行为来看，你需要模拟一个欺诈活动，你会如何解决这个问题？这是可能是一个异常检测问题或分类问题</li>
+<li>文本分类的方法有哪些？你会怎么做分类</li>
+<li>什么是双词搭配(Bigrams)和三词搭配(Trigrams）？用一个文本语句解释一下双词搭配和三词搭配的TF-IDF技术</li>
+<li>解释下TF-IDF技术，如何克服TF-IDF的缺点</li>
+<li>根据经验来看，TF-IDF技术在文件分类或聚类上效果并不好，你将如何改进</li>
+<li>什么是word2vec模型，有哪些应用</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/面试-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/面试-Python/" itemprop="url">面试-Python</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>解释下python中的可变对象和不可变对象</li>
+<li>你在python中使用过什么数据结构</li>
+<li>说出scikit-learn能够实现逻辑回归的包的名称</li>
+<li>如何获取Python列表中元素的索引</li>
+<li>如果合并两个pandas数据集</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-Sklearn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/机器学习-Sklearn/" itemprop="url">机器学习-Sklearn</a></h1>
         
 
         <div class="post-meta">
@@ -703,11 +1390,11 @@
 <h2 id="基础"><a class="header-anchor" href="#基础">¶</a>基础</h2>
 <p>sklearn为所有模型提供了非常相似的接口，这样使得我们可以更加快速的熟悉所有模型的用法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拟合模型</span></span><br><span class="line">model.fit(X_train, y_train)</span><br><span class="line"><span class="comment"># 模型预测</span></span><br><span class="line">model.predict(X_test)</span><br><span class="line"><span class="comment"># 返回预测属于某标签的概率</span></span><br><span class="line">model.predict_proba(X_test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获得这个模型的参数</span></span><br><span class="line">model.get_params()</span><br><span class="line"><span class="comment"># 为模型进行打分</span></span><br><span class="line">model.score(data_X, data_y) <span class="comment"># 线性回归：R square； 分类问题： acc</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2019/03/08/机器学习-sklearn/4.png" alt="4"></p>
+<p><img src="/2019/03/08/机器学习-Sklearn/4.png" alt="4"></p>
 <h2 id="datesets"><a class="header-anchor" href="#datesets">¶</a>datesets</h2>
 <p>sklearn包含了一些经典数据集，可以使用datasets加载</p>
-<p><img src="/2019/03/08/机器学习-sklearn/1.png" alt="1"></p>
-<p><img src="/2019/03/08/机器学习-sklearn/2.png" alt="1"></p>
+<p><img src="/2019/03/08/机器学习-Sklearn/1.png" alt="1"></p>
+<p><img src="/2019/03/08/机器学习-Sklearn/2.png" alt="1"></p>
 <p>以iris为例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris() <span class="comment"># 导入数据集</span></span><br><span class="line">X = iris.data <span class="comment"># 获得其特征向量</span></span><br><span class="line">y = iris.target <span class="comment"># 获得样本label</span></span><br></pre></td></tr></table></figure>
 <h3 id="make-classification-产生分类数据和类别"><a class="header-anchor" href="#make-classification-产生分类数据和类别">¶</a>make_classification 产生分类数据和类别</h3>
@@ -768,7 +1455,7 @@
 <h2 id="linear-model"><a class="header-anchor" href="#linear-model">¶</a>linear_model</h2>
 <h3 id="linearregression-线性回归"><a class="header-anchor" href="#linearregression-线性回归">¶</a>LinearRegression 线性回归</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"><span class="comment"># 定义线性回归模型</span></span><br><span class="line">model = LinearRegression(fit_intercept=<span class="literal">True</span>, normalize=<span class="literal">False</span>, </span><br><span class="line">    copy_X=<span class="literal">True</span>, n_jobs=<span class="number">1</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">参数</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">    fit_intercept：是否计算截距。False-模型没有截距</span></span><br><span class="line"><span class="string">    normalize： 当fit_intercept设置为False时，该参数将被忽略。 如果为真，则回归前的回归系数X将通过减去平均值并除以l2-范数而归一化。</span></span><br><span class="line"><span class="string">     n_jobs：指定线程数</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2019/03/08/机器学习-sklearn/3.png" alt="3"></p>
+<p><img src="/2019/03/08/机器学习-Sklearn/3.png" alt="3"></p>
 <h3 id="logisticregression-逻辑回归"><a class="header-anchor" href="#logisticregression-逻辑回归">¶</a>LogisticRegression 逻辑回归</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="comment"># 定义逻辑回归模型</span></span><br><span class="line">model = LogisticRegression(penalty=<span class="string">'l2'</span>, dual=<span class="literal">False</span>, tol=<span class="number">0.0001</span>, C=<span class="number">1.0</span>, </span><br><span class="line">    fit_intercept=<span class="literal">True</span>, intercept_scaling=<span class="number">1</span>, class_weight=<span class="literal">None</span>, </span><br><span class="line">    random_state=<span class="literal">None</span>, solver=<span class="string">'liblinear'</span>, max_iter=<span class="number">100</span>, multi_class=<span class="string">'ovr'</span>, </span><br><span class="line">    verbose=<span class="number">0</span>, warm_start=<span class="literal">False</span>, n_jobs=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">"""参数</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">    penalty：使用指定正则化项（默认：l2）</span></span><br><span class="line"><span class="string">    dual: n_samples &gt; n_features取False（默认）</span></span><br><span class="line"><span class="string">    C：正则化强度的反，值越小正则化强度越大</span></span><br><span class="line"><span class="string">    n_jobs: 指定线程数</span></span><br><span class="line"><span class="string">    random_state：随机数生成器</span></span><br><span class="line"><span class="string">    fit_intercept: 是否需要常量</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
 <h2 id="naive-bayes"><a class="header-anchor" href="#naive-bayes">¶</a>naive_bayes</h2>
@@ -896,6 +1583,308 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-决策树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/机器学习-决策树/" itemprop="url">机器学习-决策树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<p>决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。</p>
+<p>主要的决策树算法有ID3、C4.5 (C5.0) 、CART、PUBLIC、SLIQ和SPRINT算法等。它们在选择测试属性采用的技术、生成的决策树的结构、剪枝的方法以及时刻，能否处理大数据集等方面都有各自的不同之处。</p>
+<p>ID3：计算信息增益，选择信息增益最大的特征作为当前节点的决策特征，信息增益表示分类目标的熵减去当前属性的熵，增益越大，分类能力越强</p>
+<p>熵等于负的概率乘以log概率<br>
+C4.5：使用信息增益率来进行属性的选择，准确率高，但是子构造树的过程中需要进行多次的扫描和排序，所以它的运算效率较低</p>
+<p>cart：根据当前特征计算他们的基尼增益，选择基尼增益最小的特征作为划分特征，总体的类别越杂乱，GINI指数越大</p>
+<p>等于1-概率平方和<br>
+好的决策树</p>
+<p>叶子节点数尽量少<br>
+叶子节点的深度尽量小(太深可能会过拟合)<br>
+解决过拟合</p>
+<p>剪枝：<br>
+前置剪枝：在分裂节点的时候设计比较苛刻的条件，如果不满足就直接停止分裂<br>
+后置剪枝：建立完树以后，用单个节点代替子树<br>
+交叉验证<br>
+随机森林<br>
+优点：</p>
+<p>计算量简单，可解释性强，比较适合处理有缺失属性值的样本，能够处理不相关的特征；<br>
+缺点：</p>
+<p>单颗决策树分类能力弱，并且对连续值变量难以处理；<br>
+容易过拟合（后续出现了随机森林，减小了过拟合现象）</p>
+<h1>Hunt算法</h1>
+<p>hunt算法是一种采用局部最优策略的决策树构建算法,它同时也是许多决策树算法的基础,包括ID3、C4.5和CART等<br>
+$$<br>
+\begin{align}<br>
+训练机D =&amp; {(x_1,y_1),(x_2,y_2),…,(x_n,y_n)} \tag{1}\<br>
+属性集A =&amp; {a_1,a_2,…,a_n}\<br>
+TreeGen&amp;etare(D,A):\<br>
+生成节&amp;点node\<br>
+if \ D&amp;中样本属于同一种类C(case \ 1)\<br>
+&amp;将node标记为C类叶结点\<br>
+&amp;return\<br>
+end \ i&amp;f\<br>
+if \ A&amp; = \empty \ OR \ D中样本属于在A上取值相同(case \ 2)\<br>
+&amp;将node标记为叶结点,类别为D中种类最多的类别\<br>
+&amp;return\<br>
+end \ i&amp;f\<br>
+从A中&amp;选择最优划分属性a_<em>\<br>
+for \ a&amp;_</em> 的每一个属性值a_<em>^v\<br>
+&amp;为node生成一个分支，令D_v表示D在a_<em>上取值为a_</em>^v的样本子集\<br>
+&amp;if \ D_v为空(case \ 3)\<br>
+&amp; \quad 将分支节点标记为叶结点，其类别标记为D中样本最多的类\<br>
+&amp;else\<br>
+&amp; \quad 以TreeGenetare(D_v,A \backslash {a_</em>})为分支结点\<br>
+&amp;end \ if\</p>
+<p>end \ &amp;for\<br>
+\end{align}<br>
+$$<br>
+对于case2：设定为该结点所含样本最多的类别，利用当前结点的<strong>后验分布</strong></p>
+<p>对于case3：设定为其父结点所含样本最多的类别，把父结点的样本分布作为当前结点的<strong>先验分布</strong></p>
+<p>决策树学习的关键是算法的这一行：选择最优划分属性</p>
+<p>什么样的划分属性是最优的：我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的“纯度”越来越高，可以高效地从根结点到达叶结点，得到决策结果</p>
+<p>三种度量结点“纯度”的指标：</p>
+<ul>
+<li>
+<p>信息增益</p>
+</li>
+<li>
+<p>增益率</p>
+</li>
+<li>
+<p>基尼指数</p>
+</li>
+</ul>
+<h2 id="信息熵"><a class="header-anchor" href="#信息熵">¶</a>信息熵</h2>
+<p>香农提出了“信息熵”的概念，解决了对信息的量化度量问题。香农用“信息熵”的概念来描述信源的不确定性</p>
+<p>可以解释为一个数据集的信息熵（information entropy），度量样本集合纯度，p则为每一类样本所占的比率<br>
+$$<br>
+Ent(D) = -\sum_{k=1}^{|y|}p_k \log_2p_k<br>
+$$<br>
+信息熵越小，纯度越高</p>
+<p>具体详见数据科学-数据度量-信息论度量</p>
+<h2 id="信息增益-information-gain"><a class="header-anchor" href="#信息增益-information-gain">¶</a>信息增益 information gain</h2>
+<p>$$<br>
+假设对样本集D在离散属性a上进行划分，产生V个分支节点\<br>
+其中第v个分支节点包含了D中所有在属性a上取值为a<sup>v的样本，记为D</sup>v\<br>
+那么属性a对样本集D进行划分所获得的信息增益为\<br>
+Gain(D,a) = Ent(D) - \sum_{v=1}^V \frac{|D<sup>v|}{|D|}Ent(D</sup>v)<br>
+$$</p>
+<p>一般而言，信息增益越大，则意味着使用属性a来进行划分所获得的“纯度提升”越大</p>
+<h3 id="id3-iterative-dichotomiser"><a class="header-anchor" href="#id3-iterative-dichotomiser">¶</a>ID3 Iterative Dichotomiser</h3>
+<p>ID3算法中，“选择最优划分属性”为<br>
+$$<br>
+a_* = {\arg \max}_{a \in A} Gain(D,a)<br>
+$$<br>
+不足：</p>
+<p>若把“编号”也作为一个候选划分属性，则属性“编号”的信息增益通常远大于其他候选属性，信息增益准则通常对可取值数目较多的属性有所偏好</p>
+<p>用的信息增益gain</p>
+<h2 id="增益率-information-gain-ratio"><a class="header-anchor" href="#增益率-information-gain-ratio">¶</a>增益率 information gain ratio</h2>
+<p>$$<br>
+Gain_ratio = \frac{Gain(D,a)}{IV(a)}\<br>
+其中\<br>
+IV(A) = -\sum_{v=1}^V \frac{|D^v|}{|D|} \log_2\frac{|D^v|}{|D|}<br>
+$$</p>
+<p>增益率准对可取值数目较少的属性有所偏好</p>
+<h3 id="c4-5"><a class="header-anchor" href="#c4-5">¶</a>C4.5</h3>
+<p>C4.5决策树算法综合了信息增益准则和信息率准则的特点：先从候选划分属性中找出信息增益高于平均水平的属性，再从中选择增益率最高的</p>
+<p>使用连续属性离散化技术</p>
+<h2 id="基尼指数-gini-index"><a class="header-anchor" href="#基尼指数-gini-index">¶</a>基尼指数 gini index</h2>
+<p>$$<br>
+基尼值\<br>
+Gini(D) = \sum_{k=1}^{|y|} \sum_{k’\ne k}p_kp_{k’}\<br>
+= 1-\sum_{k=1}<sup>{|y|}p_k</sup>2\<br>
+直观来说，Gini(D)反映了数据集D中随机抽取两个样本，其类别标记不一致的概率\<br>
+因此Gini(D)越小,则数据集D的纯度越高<br>
+$$</p>
+<p>$$<br>
+基尼指数\<br>
+Gini_index(D,a) = \sum_{v=1}^{|V|} \frac{|D<sup>v|}{|D|}Gini(D</sup>v)\<br>
+$$</p>
+<h3 id="cart-classification-and-regression-tree"><a class="header-anchor" href="#cart-classification-and-regression-tree">¶</a>CART Classification And Regression Tree</h3>
+<h4 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h4>
+<p>CART算法中，“选择最优划分属性”为<br>
+$$<br>
+a_* = {\arg \max}_{a \in A} Gini_index(D,a)<br>
+$$</p>
+<h4 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h4>
+<h4 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h4>
+<p>entropy，条件熵</p>
+<p>卡方自动交互检测（CHAID） Chi-squared Automatic Interaction Detection</p>
+<p>决策树桩/单层决策树 Decision stump</p>
+<p>SLIQ</p>
+<h1>剪枝</h1>
+<p>通过主动去掉一些分支来降低过拟合的风险</p>
+<p>使用留出法，将数据集D划分为两个互斥的集合：训练集S和测试集T</p>
+<h2 id="预剪枝"><a class="header-anchor" href="#预剪枝">¶</a>预剪枝</h2>
+<p>在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140411606.png" alt="image-20190815140411606"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140650466.png" alt="image-20190815140650466"></p>
+<p>优点：</p>
+<ul>
+<li>降低过拟合的风险</li>
+<li>减少了训练时间开销和<br>
+测试时间开销</li>
+</ul>
+<p>不足：</p>
+<ul>
+<li>基于“贪心”本质禁止某些分支展开，带来了欠拟合的风险</li>
+</ul>
+<h2 id="后剪枝"><a class="header-anchor" href="#后剪枝">¶</a>后剪枝</h2>
+<p>先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140757822.png" alt="image-20190815140757822"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815140915514.png" alt="image-20190815140915514"></p>
+<p>优点：</p>
+<ul>
+<li>保留了更多的分支</li>
+<li>欠拟合风险很小</li>
+<li>泛化能力优于预剪枝决策树</li>
+</ul>
+<p>不足：</p>
+<p>训练时间开销比未减枝和预剪枝决策树大得多，因为需要生产完全决策树，还要所有非叶节点逐一考察</p>
+<h1>数据处理</h1>
+<h2 id="连续属性离散化技术"><a class="header-anchor" href="#连续属性离散化技术">¶</a>连续属性离散化技术</h2>
+<p>使用二分法（C4.5决策树算法的方法）<br>
+$$<br>
+对于连续属性a，有n个不同的取值，将n个取值从小到大排序:\<br>
+{a_1,a_2,…,a_n}\<br>
+划分点t(数值)将D划分为两个子集D_t<sup>-和D_t</sup>+\<br>
+{ \underbrace{a_1,a_2,…a_i}<em>{D_t^-} ,\underbrace{|}<em>t \underbrace{a</em>{i+1}…,a_n}</em>{D_t^+}}\<br>
+t \in [a_i,a_{i+1})\<br>
+$$</p>
+<p>$$<br>
+可考察包含n-1个元素的候选划分集合\<br>
+T_a = {\frac{a_i+a_{i+1}}{2}|1\le i \le n-1}\<br>
+然后可以像离散属性值来考察这些划分点，选取最优的划分点进行样本集合的划分，比如信息增益：\<br>
+Gain(D,a) = \max_{t \in T_a} Gain(D,a,t) = \max_{t \in T_a}Ent(D) - \sum_{\lambda \in {-,+}} \frac{|D<sup>\lambda_t|}{|D|}Ent(D</sup>\lambda_t)<br>
+$$</p>
+<p>与离散属性不同，若当前结点划分属性为连续属性，该连续属性还可被再次选作后代结点的最优划分属性</p>
+<h1>特点</h1>
+<p>如果把每个属性看作坐标空间中的一个坐标轴<br>
+d个属性描述的样本看作d维空间中的一个数据点<br>
+对样本分类看作在坐标空间中寻找不同类样本之间的分类边界</p>
+<p>决策树形成的分类边界的明显特点：轴平行，分类边界由若干个与坐标轴平行的分段组成</p>
+<p>优点： 学习结果解释性强，每个划分都对应一个属性取值</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815144727591.png" alt="image-20190815144727591"></p>
+<p>不足：复杂分类时，决策树会很复杂，要进行大量的属性测试，预测时间开销大</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815144954840.png" alt="image-20190815144954840"></p>
+<h1>多变量决策树</h1>
+<p>可以实现红线这样的斜划分</p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145239610.png" alt="image-20190815145239610"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145138196.png" alt="image-20190815145138196"></p>
+<p><img src="/2019/03/08/机器学习-决策树/image-20190815145157742.png" alt="image-20190815145157742"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-聚类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -968,38 +1957,493 @@
         
           
             <p>[TOC]</p>
-<h1>划分（分裂）方法</h1>
-<p>k-means（k平均），二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians</p>
-<h1>层次分析方法</h1>
-<p>birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类）</p>
-<h1>基于密度的方法</h1>
-<p>均值漂移聚类，dbscan算法（基于高密度连接区域），denclue算法（密度分布函数），optics算法（对象排序识别）</p>
-<h1>基于网格的方法</h1>
-<p>sting算法（统计信息网络），clioue算法（聚类高维空间），wave-cluster算法（小波变换）</p>
-<h1>基于模型的方法</h1>
-<p>统计学方法，深度学习</p>
-<h1>混合高斯模型（GMM）</h1>
-<p>首先假设数据点是呈高斯分布的，相对应K-Means假设数据点是圆形的，高斯分布（椭圆形）给出了更多的可能性。我们有两个参数来描述簇的形状：均值和标准差。所以这些簇可以采取任何形状的椭圆形，因为在x，y方向上都有标准差。因此，每个高斯分布被分配给单个簇。所以要做聚类首先应该找到数据集的均值和标准差，我们将采用一个叫做最大期望(EM)的优化算法</p>
+<h1 id="划分（分裂）方法"><a href="#划分（分裂）方法" class="headerlink" title="划分（分裂）方法"></a>划分（分裂）方法</h1><h2 id="k-means"><a href="#k-means" class="headerlink" title="k-means"></a>k-means</h2><p>1.确定分类个数k</p>
+<p>2.随机选择k个聚类中心点</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153538284.png" alt="image-20190815153538284"></p>
+<p>3.每个数据点找到离它最近的中心点，划为一类</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153637062.png" alt="image-20190815153637062"></p>
+<p>4.每一类中找到新的中心点</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153813468.png" alt="image-20190815153813468"></p>
+<p>5.一直迭代直到没有变化为止</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815153846268.png" alt="image-20190815153846268"></p>
+<h3 id="加速"><a href="#加速" class="headerlink" title="加速"></a>加速</h3><p>Dan Pelleg and Andrew Moore. Accelerating Exact k-means Algorithms with Geometric Reasoning. Proc. Conference on Knowledge Discovery in Databases 1999, (KDD99) </p>
+<h3 id="优化方面"><a href="#优化方面" class="headerlink" title="优化方面"></a>优化方面</h3><p>现在假设进行数据传输，但是由于资源限制，只能传输中心点数据，怎样才能使误差平方之和最小？</p>
+<script type="math/tex; mode=display">
+encoder \ function: ENCODE: \mathfrak R^m \to [1..k]\\
+decoder \ function: DECODE: \mathfrak [1..k] \to R^m\\
+定义失真:\\
+Distortion = \sum_{i=1}^R (x_i-DECODE[ENCODE(x_i)])^2\\
+可写作：DECODE[j] = C_j \ 即数据j所对应的中心点\\
+Distortion = \sum_{i=1}^R (x_i-C_{ENCODE(x_i)})^2</script><p>为了让失真Distortion最小，我们需要</p>
+<p>(1)xi需要被编码到最近的中心点</p>
+<script type="math/tex; mode=display">
+C_{ENCODE(x_i)} = {\arg \min}_{c_j \in \{c_1,...,c_k\}} (x_i - c_j)^2</script><p>(2)对于每一个中心点c_j的偏差，它关于c_j的偏导数为0</p>
+<script type="math/tex; mode=display">
+Distortion = \sum_{i=1}^R (x_i-C_{ENCODE(x_i)})^2\\
+= \sum_{j=1}^k \sum_{i \in OwnedBy(c_j)}(x_i-c_j)^2 \quad k个中心点\\
+\frac{\partial Distortion}{\partial c_j} = \frac{\partial}{\partial c_j} \sum_{i \in OwnedBy(c_j)}(x_i-c_j)^2\\
+= -2c_j\sum_{i \in OwnedBy(c_j)}(x_i-c_j)\\
+= 0(for \ a \ minimum)\\
+因此c_j = \frac{1}{|OwnedBy(c_j)|}\sum_{i \in OwnedBy(c_j)}x_i</script><p>因此中心点时改类别中，所有数据的质心</p>
+<h4 id="算法是否停止"><a href="#算法是否停止" class="headerlink" title="算法是否停止"></a>算法是否停止</h4><p>当失真Distortion不是最小的时候，通过反复执行下面两步改变中心点c1,c2,,,ck</p>
+<p>(1)改变编码，使得x_i归属于最近的中心点</p>
+<p>(2) 设置每一类的中心点为数据的质心</p>
+<p>很容易证明这个过程最终会停止(1,2两步不再改变中心点)</p>
+<p>因为当数据有限时，把它们划分为K组的方案也是有限的，因此可能的中心点(质心)组合是有限的</p>
+<p>而如果某一次迭代中改变了中心点，那么失真Distortion是下降的，因此最终会走到一个界限上，不能再往前进</p>
+<h4 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h4><p>虽然算法一定会停止，但是不一定是最优解</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815165806306.png" alt="image-20190815165806306"></p>
+<p>一些找到尽量好的解的方法：</p>
+<ul>
+<li><p>初始化时注意一下</p>
+<p>  将第一个中心放在随机选择的数据点上</p>
+<p>  将第二个中心放在距离第一个中心尽可能远的位置</p>
+<p>  ：</p>
+<p>  将第J个中心放在距离第1-j-1个中心尽可能远的位置</p>
+</li>
+<li><p>运行多次k-means，获得不同的结果</p>
+</li>
+</ul>
+<h4 id="K的选择"><a href="#K的选择" class="headerlink" title="K的选择"></a>K的选择</h4><p>是一个困难的问题</p>
+<p>普遍的反法是找到一个使Schwarz Criterion (也叫贝叶斯信息度量/准则 BIC)较小的解</p>
+<script type="math/tex; mode=display">
+Distortion + \lambda(\#parameters)\log R\\
+= Distortion + \lambda mk\log R\\
+m = \#dimensions\\
+k = \#Centers\\
+R = \#Records</script><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>矢量量化</p>
+<p>二分k-means，k-medoids（k中心点），clarans算法（基于选择的算法）,k-位数 K-medians</p>
+<h1 id="层次分析方法"><a href="#层次分析方法" class="headerlink" title="层次分析方法"></a>层次分析方法</h1><p>1)单链(Single-link):不同两个聚类中离得最近的两个点之间的距离,即MIN</p>
+<p>​    容易受到异常值，噪声的影响</p>
+<p>2)全链(Complete-link):不同两个聚类中离得最远的两个点之间的距离,即MAX</p>
+<p>​    对于非球状簇的表现不好</p>
+<p>3)平均链(Average-link，GROUP-AVERAGE):不同两个聚类中所有点对距离的平均值,即AVERAGE</p>
+<p>​    对于非球状簇的表现不好</p>
+<h2 id="层次凝聚聚类-Hierarchical-Agglomerative-Clustering-AGNES-AGglomerative-NESting"><a href="#层次凝聚聚类-Hierarchical-Agglomerative-Clustering-AGNES-AGglomerative-NESting" class="headerlink" title="层次凝聚聚类 Hierarchical Agglomerative Clustering (AGNES(AGglomerative NESting))"></a>层次凝聚聚类 Hierarchical Agglomerative Clustering (AGNES(AGglomerative NESting))</h2><p>是一种单链接聚类方法 Single Linkage Hierarchical Clustering</p>
+<p>1.每个点都是一个簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815191732179.png" alt="image-20190815191732179"></p>
+<p>2.找到最接近的两个簇，并且合并为父级簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815191756913.png" alt="image-20190815191756913"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815192930910.png" alt="image-20190815192930910"></p>
+<p>3.重复上述过程，直到将整个数据集合并为一个簇</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815193248733.png" alt="image-20190815193248733"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190815193300131.png" alt="image-20190815193300131"></p>
+<p>如何确定簇之间的相似度：</p>
+<ul>
+<li>簇中的点之间的最小距离（可使用Euclidian Minimum Spanning Trees）</li>
+<li>簇中的点之间的最大距离</li>
+<li>簇中的点之间的平均距离</li>
+</ul>
+<p>最终得到的是一个树状图dendrogram, or taxonomy, or hierarchy</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>得到的是一个层次结构，而不是没有结构的组织</li>
+<li>如果想得到k个组，只需要剪掉k-1个最长的链即可</li>
+<li>没有太多的统计或信息论基础在里面</li>
+</ul>
+<h2 id="BIRCH"><a href="#BIRCH" class="headerlink" title="BIRCH"></a>BIRCH</h2><h2 id="最小生成树聚类-MST"><a href="#最小生成树聚类-MST" class="headerlink" title="最小生成树聚类(MST)"></a>最小生成树聚类(MST)</h2><p>birch算法（平衡迭代规约和聚类），cure算法（代表点聚类），chameleon算法（动态模型），系统聚类（多层次聚类）</p>
+<h1 id="基于密度的方法"><a href="#基于密度的方法" class="headerlink" title="基于密度的方法"></a>基于密度的方法</h1><h2 id="Grid-based-clustering"><a href="#Grid-based-clustering" class="headerlink" title="Grid-based clustering"></a>Grid-based clustering</h2><ul>
+<li><p>定义一个网格集（grid set）</p>
+</li>
+<li><p>将数据点分配到合适的网格cell中，计算每个网格的密度density</p>
+</li>
+<li><p>淘汰密度小于阈值的网格</p>
+</li>
+<li><p>从相邻的网格中组成簇</p>
+<p>  <img src="/2019/03/08/机器学习-聚类/image-20190816124414229.png" alt="image-20190816124414229"></p>
+</li>
+</ul>
+<h3 id="DENCLUE-Density-Clustering"><a href="#DENCLUE-Density-Clustering" class="headerlink" title="DENCLUE Density Clustering"></a>DENCLUE Density Clustering</h3><p>基于统计学和模式识别领域里的“核密度估计”（Kernel Density Estimate）</p>
+<p>每个点对总密度函数的贡献用一个“影响函数”（Influence Function）或“核函数”（Kernel Function）来表示</p>
+<p>例如高斯核函数</p>
+<script type="math/tex; mode=display">
+K(y) = \exp(-dist(x,y)^2/2\sigma^2)</script><p>属性空间中某一点的总密度是与该点相关联的每个点的影响函数之和</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816133553960.png" alt="image-20190816133553960"></p>
+<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><ul>
+<li>对数据点占据的空间推倒密度函数</li>
+<li>识别局部最大点（这些是密度吸引点）</li>
+<li>通过沿密度增长最大的方向移动，将每个点关联到一个密度最大点</li>
+<li>定义与特定的密度吸引点相关联的点构成的簇</li>
+<li>丢弃密度吸引点的密度小于用户指定阈值的簇</li>
+<li>合并密度大于等于阈值的点路径连接的簇</li>
+</ul>
+<h2 id="子空间聚类-Subspace-Clustering"><a href="#子空间聚类-Subspace-Clustering" class="headerlink" title="子空间聚类 Subspace Clustering"></a>子空间聚类 Subspace Clustering</h2><p>只考虑一部分属性，而不是全部</p>
+<h3 id="CLIQUE-Clustering-in-quest"><a href="#CLIQUE-Clustering-in-quest" class="headerlink" title="CLIQUE  Clustering in quest"></a>CLIQUE  Clustering in quest</h3><p>是密度聚类和网格聚类的结合</p>
+<p>对于之前的网格算法，并不适合检查每一个网格，因为它的个数随着维度的增长而指数级增长</p>
+<p>有一个重要的<strong>单调性性质Monotone property</strong>：</p>
+<p>如果一组数据点在k维中形成基于密度的簇，那么这一组点也存在于这些维度的所有可能子集中基于密度组成的簇（是一个簇的子集）</p>
+<p>和Apriori很像</p>
+<h4 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h4><p><img src="/2019/03/08/机器学习-聚类/image-20190816132249423.png" alt="image-20190816132249423"> </p>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
+<li>时间复杂度是指数级，随着维度的增加而增加<ul>
+<li>尤其是当低纬度时产生太多的网格cell/unit</li>
+</ul>
+</li>
+<li>由于阈值时固定的，当簇的密度范围很广时，会影响效果<ul>
+<li>选择一个好的阈值和网格长度不容易</li>
+</ul>
+</li>
+</ul>
+<p>均值漂移聚类，dbscan算法（基于高密度连接区域），optics算法（对象排序识别）</p>
+<h1 id="基于网格的方法"><a href="#基于网格的方法" class="headerlink" title="基于网格的方法"></a>基于网格的方法</h1><p>sting算法（统计信息网络），clioue算法（聚类高维空间），wave-cluster算法（小波变换）</p>
+<h1 id="基于原型-模型的方法-Prototype-based"><a href="#基于原型-模型的方法-Prototype-based" class="headerlink" title="基于原型/模型的方法 Prototype-based"></a>基于原型/模型的方法 Prototype-based</h1><p>此类算法假设聚类结构可以通过一组原型刻画，在现实任务中极为常见。（“原型”是指样本空间中具有代表性的点）通常情况下，算法先对原型进行初始化，然后对原型进行迭代更新求解</p>
+<h2 id="模糊fuzzy-c-means"><a href="#模糊fuzzy-c-means" class="headerlink" title="模糊fuzzy c-means"></a>模糊fuzzy c-means</h2><h3 id="硬hard聚类和软soft聚类"><a href="#硬hard聚类和软soft聚类" class="headerlink" title="硬hard聚类和软soft聚类"></a>硬hard聚类和软soft聚类</h3><p>软聚类允许一个数据点属于多个簇</p>
+<p>比如对于k-means，软聚类的目标函数为</p>
+<script type="math/tex; mode=display">
+SSE(Error \ of \ Sum \ of \ Squares) = \sum_{j=1}^k \sum_{i=1}^m w_{ij} dist(x_i,c_j)^2\\
+其中\sum_{j=1}^kw_{ij} = 1,表示x_i属于某个簇的权值\\
+为了最小化SSE，要迭代进行下面两步\\
+(1)固定c_j，计算w_{ij}\\
+(2)固定w_{ij}，计算c_j\\</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816092159244.png" alt="image-20190816092159244"></p>
+<p>对于硬聚类，w等于0或者1</p>
+<h3 id="算法描述-2"><a href="#算法描述-2" class="headerlink" title="算法描述"></a>算法描述</h3><p>目标函数</p>
+<script type="math/tex; mode=display">
+SSE = \sum_{j=1}^k \sum_{i=1}^m w_{ij}^p dist(x_i,c_j)^2\\
+其中\sum_{j=1}^kw_{ij} = 1,w_{ij} \in [0,1]\\
+p表示fuzzifier(p>1),控制着聚类的模糊fuzzy程度\\</script><p>当p = 2</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190818170636452.png" alt="image-20190818170636452"></p>
+<script type="math/tex; mode=display">
+初始化：随机初始化w_{ij}\\
+不断重复：\\
+(1)更新质心：c_j = \frac{\sum_{i=1}^m w_{ij}x_i}{\sum_{i=1}^m w_{ij}}\\
+(2)更新权值：w_{ij} = \frac {(1/dist(x_i,c_j)^2)^{\frac{1}{p-1}}}{\sum_{j=1}^k(1/dist(x_i,c_j)^2)^{\frac{1}{p-1}}}\\</script><h2 id="k-means（见上面）"><a href="#k-means（见上面）" class="headerlink" title="k-means（见上面）"></a>k-means（见上面）</h2><h2 id="混合高斯模型（GMM）"><a href="#混合高斯模型（GMM）" class="headerlink" title="混合高斯模型（GMM）"></a>混合高斯模型（GMM）</h2><p>首先假设数据点是呈高斯分布的，相对应K-Means假设数据点是圆形spherical的，高斯分布（椭圆形elliptical）给出了更多的可能性。</p>
+<p>有两个参数来描述簇的形状：均值和标准差。所以这些簇可以采取任何形状的椭圆形，因为在x，y方向上都有标准差。因此，每个高斯分布被分配给单个簇。所以要做聚类首先应该找到数据集的均值和标准差，将采用EM算法</p>
 <p><a href="https://blog.csdn.net/u014665013/article/details/78970184" target="_blank" rel="noopener">https://blog.csdn.net/u014665013/article/details/78970184</a></p>
-<h1>谱聚类</h1>
-<p>图团体检测(Graph Community Detection)</p>
+<h3 id="硬hard聚类和软soft聚类-1"><a href="#硬hard聚类和软soft聚类-1" class="headerlink" title="硬hard聚类和软soft聚类"></a>硬hard聚类和软soft聚类</h3><p>思想是用混合的分布给数据建立模型，通常用正态(高斯)分布</p>
+<p>聚类的过程就是估计统计分布的参数的过程</p>
+<p>通常使用EM算法</p>
+<p>ex：下图中看起来像是两个正态分布的混合</p>
+<p>就需要估计每一个正态分布的均值和方差</p>
+<p>计算每个点属于每个分布的概率</p>
+<script type="math/tex; mode=display">
+prob(x_i;\Theta) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816094725656.png" alt="image-20190816094725656"></p>
+<h3 id="多元高斯建模-Multivariate-Gaussian-models"><a href="#多元高斯建模-Multivariate-Gaussian-models" class="headerlink" title="多元高斯建模 Multivariate Gaussian models"></a>多元高斯建模 Multivariate Gaussian models</h3><p>即给多维的变量进行高斯建模</p>
+<script type="math/tex; mode=display">
+\hat \mu = \frac{1}{N}\sum_i x^{(i)}\\
+\hat \Sigma = \frac{1}{N}\sum_i (x^{(i)}-\hat \mu)^T(x^{(i)}-\hat \mu)\\
+\mathcal N(x;\mu,\Sigma) = \frac{1}{(2\pi)^{(d/2)}}|\Sigma|^{-1/2}e^{-\frac{1}{2}(x- \mu)^T\Sigma^{-1}(x- \mu)}\\
+其中|\Sigma|表示\Sigma的行列式，d表示变量维度</script><p>对于单个簇的高斯建模</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816103504535.png" alt="image-20190816103504535"></p>
+<p>要最大化的目标函数为</p>
+<script type="math/tex; mode=display">
+p(X) = \prod_ip(x_i)\\
+= \prod_i \mathcal N(x_i;\mu,\Sigma)\\
+\log p(X) = \sum_i\log \mathcal N(x_i;\mu,\Sigma)</script><h3 id="算法描述-3"><a href="#算法描述-3" class="headerlink" title="算法描述"></a>算法描述</h3><p>使用正态分布对簇建模</p>
+<p>在多个正态分布下，要最大化的目标函数为</p>
+<script type="math/tex; mode=display">
+p(X) = \prod_i p(x_i)\\
+\prod_i \sum_c p(c)P(x_i|c)\\
+\prod_i \sum_c \pi_c \mathcal N(x_i;\mu_c,\Sigma_c)\\
+\log p(X) = \sum_i\log [\sum_c \pi_c \mathcal N(x_i;\mu_c,\Sigma_c)]</script><p>如果我们获得了所有参数（均值，协方差，簇的大小，数据集），可以对数据进行聚类</p>
+<script type="math/tex; mode=display">
+r_{ic} = p(c|x_i) = \frac{p(c)p(x_i|c)}{p(x_i)}\\
+
+= \frac{\pi_c \mathcal N(x_i;\mu_c,\Sigma_c)}
+{\sum_j \pi_{ {c}_j} \mathcal N(x_i;\mu_{ {c}_j},\Sigma_{ {c}_j})}\\
+
+= \frac{\pi_c \mathcal N(x_i;\mu_c,\Sigma_c)}{\sum_{c'} \pi_{c'} \mathcal N(x_i;\mu_{c'},\Sigma_{c'})}\\
+然后将x_i划分为c_{j*}\\
+c_{j*} = {\arg \max}_{j \in 1,2,...,J} r_{ij}</script><p>使用EM算法优化（关于EM见<code>机器学习-EM</code>）</p>
+<ul>
+<li><p>初始化簇，设置初始参数</p>
+</li>
+<li><p>E步</p>
+<script type="math/tex; mode=display">
+  对于每一个数据，每一个簇c\\
+  计算r_{ic}</script></li>
+<li><p>M步</p>
+<script type="math/tex; mode=display">
+  对于每一个簇c，更新它的参数：\\
+  \pi_c = \frac{\sum_i r_{ic}}{N}\\
+  \mu_c = \frac{\sum_i r_{ic}x_i}{\sum_i r_{ic}}\\
+  \Sigma_c = \frac{\sum_i r_{ic}(x_i-\mu_c)^T(x_i-\mu_c)}{\sum_i r_{ic}}</script></li>
+<li><p>可以证明一次迭代都在增加log p(X)</p>
+</li>
+<li><p>一直迭代直到收敛，可以证明一定能保证收敛</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>EM的问题见<code>机器学习-EM</code></p>
+</li>
+<li><p>高斯分布的参数复杂度为O(d^2)，主要是和协方差矩阵相关，而k-means只有O(d)</p>
+</li>
+</ul>
+<h3 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h3><ul>
+<li><p>Method of moments / Spectral methods</p>
+<ul>
+<li><a href="https://sites.google.com/site/momentsicml2014/bibliography" target="_blank" rel="noopener">https://sites.google.com/site/momentsicml2014/bibliography</a></li>
+</ul>
+</li>
+<li><p>马尔可夫链蒙特卡洛方法Markov chain Monte Carlo (MCMC)</p>
+</li>
+</ul>
+<h2 id="自组织网络-SOM-Self-Organizing-Maps"><a href="#自组织网络-SOM-Self-Organizing-Maps" class="headerlink" title="自组织网络 SOM Self-Organizing Maps"></a>自组织网络 SOM Self-Organizing Maps</h2><p><img src="/2019/03/08/机器学习-聚类/image-20190816112217966.png" alt="image-20190816112217966"></p>
+<p>一种SOM是Kohonen Network</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816112246905.png" alt="image-20190816112246905"></p>
+<p>和k-means相同的是簇的数量在一开始就决定了，不同的是还指定了簇之间的空间关系</p>
+<h3 id="算法描述-4"><a href="#算法描述-4" class="headerlink" title="算法描述"></a>算法描述</h3><ul>
+<li><p>初始化initialization</p>
+<p>  所有的连接权值初始化为一个小的随机数</p>
+</li>
+<li><p>竞争competition/matching</p>
+<p>  对于每种输入模式，神经元neurons计算它们各自的判别函数值discriminate function，为竞争提供基础。具有最小判别函数值的特定神经元被宣布为胜利者winner</p>
+</li>
+<li><p>合作cooperation</p>
+<p>  获胜的神经元决定了兴奋神经元拓扑邻域的空间位置，从而为相邻神经元之间的合作提供了基础</p>
+</li>
+<li><p>适应adaptation</p>
+<p>  受激神经元通过适当调整相关的连接权重，减少与输入模式相关的判别函数值，使得获胜的神经元对相似输入模式的后续应用的响应增强</p>
+</li>
+</ul>
+<h4 id="竞争过程"><a href="#竞争过程" class="headerlink" title="竞争过程"></a>竞争过程</h4><script type="math/tex; mode=display">
+如果输入空间是𝐷维（即有𝐷个输入单元），我们可以把输入模式写x=\{x_i: i=1,...,𝐷\}\\输入单元𝑖和神经元𝑗之间在计算层的连接权重可以写成W_j=\{w_{ji}:j=1,...,N;i=1,...,𝐷\}，其中𝑁是神经元的总数\\
+然后，我们可以将我们的判别函数定义为输入向量x和每个神经元j的权向量W_j之间的平方欧氏距离\\
+d_j(x) = \sum_{i=1}^D (x_i-w_{ji})^2\\
+换句话说，权重向量最接近输入向量（即与其最相似）的神经元被宣告为胜利者\\这样，连续的输入空间可以通过神经元之间的一个简单的竞争过程被映射到神经元的离散输出空间</script><h4 id="合作过程"><a href="#合作过程" class="headerlink" title="合作过程"></a>合作过程</h4><p>在神经生物学研究中，我们发现在一组兴奋神经元内存在<strong>横向的相互作用</strong>。当一个神经元被激活时，最近的邻居节点往往比那些远离的邻居节点更兴奋。并且存在一个随距离衰减的<strong>拓扑邻域</strong>（也会随时间衰减）</p>
+<p>我们想为我们的SOM中的神经元定义一个类似的拓扑邻域</p>
+<script type="math/tex; mode=display">
+如果S_{ij}是神经元网格上神经元i和j之间的横向距离，我们取\\
+T_{j,I(x)} = e^{-\frac{S_{j,I(x)}^2}{2\sigma^2}} = \exp(-\frac{S_{j,I(x)}^2}{2\sigma^2})\\
+作为我们的拓扑邻域，其中I(X)是获胜神经元的索引\\
+该函数有几个重要的特性：它在获胜的神经元中是最大的，且关于该神经元对称\\
+当距离达到无穷大时，它单调地衰减到零，它是平移不变的（即不依赖于获胜的神经元的位置）\\
+SOM的一个特点是\sigma需要随着时间的推移而减少。常见的时间依赖性关系是指数型衰减：\sigma(t)=\sigma_0\exp(−t/\tau_\sigma)</script><h4 id="适应过程"><a href="#适应过程" class="headerlink" title="适应过程"></a>适应过程</h4><p>显然，SOM必须涉及某种自适应或学习过程，通过这个过程，输出节点自组织，形成输入和输出之间的<strong>特征映射</strong></p>
+<p>地形邻域topographic neighborhood的一点是，不仅获胜的神经元能够得到权重更新，它的邻居也将更新它们的权重，尽管不如获胜神经元更新的幅度大。在实践中，适当的权重更新方式是</p>
+<script type="math/tex; mode=display">
+\Delta w_{ji} = \eta(t) T_{j,I(x)}(t) (x_i-w_{ji})\\
+其中我们有一个依赖于时间的学习率\eta(t) = \eta_0\exp(−t/\tau_\eta),该更新适用于在多轮迭代中的所有训练模式x\\
+每个学习权重更新的效果是将获胜的神经元及其邻居的权向量W_i向输入向量x移动。对该过程的迭代进行会使得网络的拓扑有序</script><p><img src="/2019/03/08/机器学习-聚类/image-20190816123721853.png" alt="image-20190816123721853"></p>
+<h3 id="排序和收敛"><a href="#排序和收敛" class="headerlink" title="排序和收敛"></a>排序和收敛</h3><p>如果正确选择参数（𝜎_0,𝜏_𝜎,𝜂_0,𝜏_𝜂），我们可以从完全无序的初始状态开始，并且SOM算法将逐步使得从输入空间得到的激活模式表示有序化。（但是，可能最终处于特征映射具有拓扑缺陷的<strong>亚稳态</strong>）</p>
+<p>这个自适应过程有两个显著的阶段：</p>
+<ul>
+<li><strong>排序或自组织阶段</strong>：在这期间，权重向量进行拓扑排序。通常这将需要多达1000次的SOM算法迭代，并且需要仔细考虑邻域和学习速率参数的选择</li>
+<li><strong>收敛阶段</strong>：在此期间特征映射被微调（fine tune），并提供输入空间的精确统计量化。通常这个阶段的迭代次数至少是网络中神经元数量的500倍，而且参数必须仔细选择</li>
+</ul>
+<h3 id="可视化例子"><a href="#可视化例子" class="headerlink" title="可视化例子"></a>可视化例子</h3><p>假设我们在连续的二维输入空间中有四个数据点（叉），并且希望将其映射到离散一维输出空间中的四个点上。输出节点映射到输入空间中的点（圆圈）。随机初始化权重使得圆圈的起始位置落在随机落在输入空间的中心</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816122918909.png" alt="image-20190816122918909"></p>
+<p>我们随机选择一个数据点进行训练（带圈的叉）。最接近的输出点表示获胜的神经元（方块）。获胜的神经元向数据点移动一定量，并且两个相邻的神经元以较小的量移动（箭头指示方向）</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123028119.png" alt="image-20190816123028119"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123056818.png" alt="image-20190816123056818"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123148217.png" alt="image-20190816123148217"></p>
+<p>最终整个输出网格将自身重新组织以表征输入空间</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816123354152.png" alt="image-20190816123354152"></p>
+<p>一个自组织映射训练的例证。蓝色斑点是训练数据的分布，而小白色斑点是从该分布中抽取得到的当前训练数据。首先（左图）SOM节点被任意地定位在数据空间中。我们选择最接近训练数据的节点作为获胜节点（用黄色突出显示）。它被移向训练数据，包括（在较小的范围内）其网格上的相邻节点。经过多次迭代后，网格趋于接近数据分布</p>
+<h3 id="问题-issue"><a href="#问题-issue" class="headerlink" title="问题 issue"></a>问题 issue</h3><ul>
+<li>计算复杂度较高</li>
+<li>局部最优</li>
+<li>空间关系（grid）的决定有些随意</li>
+</ul>
+<h1 id="基于图的聚类-Graph-Based-Clustering"><a href="#基于图的聚类-Graph-Based-Clustering" class="headerlink" title="基于图的聚类 Graph-Based Clustering"></a>基于图的聚类 Graph-Based Clustering</h1><p>图聚类算法使用邻近图 (proximity graph)</p>
+<ul>
+<li>从一个邻近图开始，将每一个数据点视为图中的节点，图中的每条边表示两个节点的邻近程度</li>
+<li>最初邻近图是全连接的</li>
+<li>单链和全链（见层次聚类）可以以图的形式查看</li>
+<li>一个簇就是图中的一个连通部分</li>
+</ul>
+<h2 id="CURE算法"><a href="#CURE算法" class="headerlink" title="CURE算法"></a>CURE算法</h2><p>层次聚类算法的表现会因为距离的计算方式而不同（max，min），CURE试图解决它们的问题，可以处理大型数据、离群点和具有非球形大小和非均匀大小的簇的数据</p>
+<p>对于一个簇，选择其中的一部分数据点来作为该簇的代表</p>
+<ul>
+<li>第一个点为距离簇中心最远的点</li>
+<li>之后的点选择距离当前选择的点集最远的点</li>
+</ul>
+<p>然后将这些选取到的点根据参数α （0≤α≤1）向该簇的质心收缩Shrink，距离质心越远的点（例如离群点）的收缩程度越大，因此CURE对离群点是不太敏感的，这种方法可以有效的降低离群点和噪声带来的不利影响</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816140740743.png" alt="image-20190816140740743"></p>
+<p>在得到上述缩减后的代表点后，两个簇之间的距离就可以定义为这两个簇中距离最近的两个代表点之间的距离</p>
+<p>当α =0，就是基于质心的聚类centroid-based</p>
+<p>当α =1，就喝单链聚类很像</p>
+<h3 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h3><p>CURE处理大数据（大量，多维）的能力更强</p>
+<h2 id="Chameleon"><a href="#Chameleon" class="headerlink" title="Chameleon"></a>Chameleon</h2><p>使用稀疏化的近邻图</p>
+<p>将数据划分为真正的簇（ground true）的子簇</p>
+<p>在保留簇特征的基础上合并</p>
+<h3 id="稀疏化"><a href="#稀疏化" class="headerlink" title="稀疏化"></a>稀疏化</h3><ul>
+<li>在近邻矩阵中的稀疏化能减少99%的数据<ul>
+<li>处理时间急剧下降</li>
+<li>适合处理大规模数据</li>
+</ul>
+</li>
+<li>可能会使聚类效果更好<ul>
+<li>稀疏化保留了最相似邻居的连接，切断了不太相似的</li>
+<li>最近距离的邻居更倾向于属于同一类</li>
+<li>减小了异常值和噪声的影响</li>
+</ul>
+</li>
+<li>稀疏化促进了图分割算法<ul>
+<li>比如chameleon，Hypergraph-based Clustering</li>
+</ul>
+</li>
+</ul>
+<p>稀疏化示例图</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816143720499.png" alt="image-20190816143720499"></p>
+<h3 id="合并方案-Merging-Schemes"><a href="#合并方案-Merging-Schemes" class="headerlink" title="合并方案 Merging Schemes"></a>合并方案 Merging Schemes</h3><p>目前层次聚类的合并方案的问题</p>
+<p>它们是固定的，比如MIN，CURE，GROUP-AVERAGE</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816144709727.png" alt="image-20190816144709727"></p>
+<p>在Chameleon中，是根据数据集特点，自适应地发现自然簇</p>
+<p>使用动态模型来度量簇之间的相似度</p>
+<p>特征主要是指簇里面的相对接近度relative closeness以及相对互联度relative interconnectivity</p>
+<p>如果合并的新簇共享了子簇的某些特征，那么可以合并起来</p>
+<p>合并方案保持了自相似性self-similarity</p>
+<ul>
+<li><p>相对互联性relative interconnectivity（RI）</p>
+<p>  相对互联度是被簇的内部互连度规范化的两个簇的绝对互连度。如果结果簇中的点之间的连接几乎与原来的每个簇一样强，两个簇合并，数学表述为</p>
+<script type="math/tex; mode=display">
+  RI = \frac{EC(C_i,C_j)}{\frac{1}{2}(EC(C_i)+EC(c_j))}\\
+  其中EC(C_i,C_j)表示连接簇C_i和C_j（k-最近邻图的）的边之和\\
+  EC(C)表示二分簇C时割边最小和</script></li>
+<li><p>相对接近度relative closeness（RC）</p>
+<p>  相对接近度是被簇的内部接近度规范化的两个簇的绝对接近度。两个簇合并，仅当结果簇中的点之间的接近程度几乎与原来的每个簇一样，数学表述为</p>
+<script type="math/tex; mode=display">
+  RC(C_i,C_j) = \frac{\bar S_{EC}(C_i,C_j)}{\frac{m_i}{m_i+m_j}S_{EC}(C_i)+\frac{m_j}{m_i+m_j}S_{EC}(C_j)}\\
+  其中m_i和m_j分别是C_i和C_j的大小\\
+  \bar S_{EC}(C_i,C_j)是连接簇C_i和C_j的（k-最近邻图的）边的平均权值\\
+  S_{EC}(C)表示二分簇C时的边的平均权值\\
+  EC表示割边</script></li>
+</ul>
+<h3 id="算法描述-5"><a href="#算法描述-5" class="headerlink" title="算法描述"></a>算法描述</h3><ul>
+<li><p>预处理：</p>
+<p>  将数据以图的形式表示，构建k最近邻图k-nearestneighbor (k-NN) graph，去捕捉数据点和它最近的k个邻居的关系</p>
+</li>
+<li><p>阶段1</p>
+<p>  使用多层次图的分割算法去找到内部连接良好的簇（每一个簇最好是“真”簇的子集，或大部分点属于某一个“真”簇）</p>
+</li>
+<li><p>阶段2</p>
+<p>  使用层次凝聚聚类Hierarchical Agglomerative Clustering将子簇合并</p>
+<p>  如果合并的新簇共享了子簇的某些特征（RI，RC），那么可以合并起来</p>
+</li>
+</ul>
+<h2 id="SNN-Shared-Nearest-Neighbor-graph"><a href="#SNN-Shared-Nearest-Neighbor-graph" class="headerlink" title="SNN Shared Nearest Neighbor graph"></a>SNN Shared Nearest Neighbor graph</h2><p>是一个将图聚类和密度聚类（比如DBSCAN-like）结合的算法</p>
+<p>SNN密度测量一个点周围是否有相似的点</p>
+<p>在SNN图中，两点vertices之间边的权重取等于他们的共有邻居</p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816170446342.png" alt="image-20190816170446342"></p>
+<p><img src="/2019/03/08/机器学习-聚类/image-20190816170527446.png" alt="image-20190816170527446"></p>
+<p>对于稀疏图，边的权重表示两个数据点的相似度，SNN中表示共有邻居数量</p>
+<h3 id="算法描述-6"><a href="#算法描述-6" class="headerlink" title="算法描述"></a>算法描述</h3><p>1.计算相似矩阵</p>
+<p>这对应于一个相似度图 similarity matrix,节点是数据点，边的权重是数据点之间的相似度</p>
+<p>2.通过只保留k个最相似的邻局来稀疏相似矩阵</p>
+<p>这对应于保持相似度图的k个权重最大的连接</p>
+<p>3.利用稀疏相似矩阵构造共有最近邻图</p>
+<p>在这一步，我们可以应用相似度阈值并找到连接的组件来获得簇（jarvis-patrick算法思路）</p>
+<p>4-8步时DBSCAN</p>
+<p>4.找出每个点的SNN密度</p>
+<p>使用用户指定的参数Eps，查找与每个点相似度大于等于eps的点数，这就是该点的SNN密度</p>
+<p>5.找到核心点</p>
+<p>使用用户指定的参数minpts，去查找核心点，即所有snn密度大于minpts的点</p>
+<p>6.从核心点形成簇</p>
+<p>如果两个核心点在一个“半径”（Eps）内，则它们彼此放置在同一个簇中</p>
+<p>7.丢弃所有噪声点</p>
+<p>所有不在核心点Eps半径范围内的非核心点都将被丢弃。</p>
+<p>8.将所有非噪波、非核心点划分给簇</p>
+<p>这可以通过将这些点指定给最近的核心点来实现</p>
+<h3 id="Jarvis-Patrick聚类"><a href="#Jarvis-Patrick聚类" class="headerlink" title="Jarvis-Patrick聚类"></a>Jarvis-Patrick聚类</h3><ul>
+<li>首先找到每个数据点最近的k个邻居</li>
+<li>然后进行聚类，两个点归为一个簇当且仅当<ul>
+<li>它们的共有邻居超过T个</li>
+<li>它们都出现在对方的k近邻中</li>
+</ul>
+</li>
+</ul>
+<h3 id="讨论-2"><a href="#讨论-2" class="headerlink" title="讨论"></a>讨论</h3><p>不足</p>
+<ul>
+<li><p>没有将所有点都聚类</p>
+</li>
+<li><p>复杂度很高</p>
+<p>  O(n * 在Eps参数下找到邻居的时间)</p>
+<p>  最坏情况下，复杂度为O(n^2)</p>
+<p>  如果是低维空间，有一些高效的办法</p>
+<ul>
+<li>R*树</li>
+<li>k-d树</li>
+</ul>
+</li>
+</ul>
+<h2 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h2><p>图团体检测(Graph Community Detection) </p>
 <p>当我们的数据可以被表示为网络或图是，可以使用图团体检测方法完成聚类</p>
-<h1>数据相似度度量</h1>
-<p>（欧式距离，曼哈顿距离，闵可夫距离，文档数据相似度，余弦相似度）</p>
-<h1>评价指标</h1>
-<p>purity评价法，RI评价法，F值评价法</p>
-<p>期望最大化（EM） Expectation-maximization(EM)</p>
-<p>模糊聚类 Fuzzy clustering</p>
+<h1 id="数据相似度度量"><a href="#数据相似度度量" class="headerlink" title="数据相似度度量"></a>数据相似度度量</h1><p>（欧式距离，曼哈顿距离，闵可夫距离，文档数据相似度，余弦相似度）</p>
+<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><p>purity评价法，RI评价法，F值评价法</p>
+<h1 id="讨论-3"><a href="#讨论-3" class="headerlink" title="讨论"></a>讨论</h1><h2 id="数据，簇，聚类算法的特征"><a href="#数据，簇，聚类算法的特征" class="headerlink" title="数据，簇，聚类算法的特征"></a>数据，簇，聚类算法的特征</h2><p>聚类分析受到这些元素特征的影响：</p>
+<ul>
+<li>数据</li>
+<li>簇</li>
+<li>聚类算法</li>
+</ul>
+<h3 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h3><ul>
+<li>维度</li>
+<li>数据集大小</li>
+<li>属性值的稀疏性</li>
+<li>噪声和异常值</li>
+<li>属性类型和数据集类型</li>
+<li>属性尺度的差异</li>
+<li>数据空间属性</li>
+</ul>
+<h3 id="簇特征"><a href="#簇特征" class="headerlink" title="簇特征"></a>簇特征</h3><ul>
+<li><p>数据分布</p>
+</li>
+<li><p>形状</p>
+</li>
+<li><p>不同尺寸</p>
+</li>
+<li><p>不同密度</p>
+</li>
+<li><p>分离不良</p>
+</li>
+<li><p>簇之间的关系</p>
+</li>
+<li><p>簇类型</p>
+<p>  –基于中心、基于连续性、基于密度</p>
+</li>
+<li><p>子空间簇</p>
+</li>
+</ul>
+<h3 id="聚类算法特征"><a href="#聚类算法特征" class="headerlink" title="聚类算法特征"></a>聚类算法特征</h3><ul>
+<li>顺序依赖性</li>
+<li>不确定性</li>
+<li>参数选择</li>
+<li>可扩展性</li>
+<li>基于的基础模型</li>
+<li>基于的优化方法</li>
+</ul>
+<h2 id="MIN和EM-聚类的比较"><a href="#MIN和EM-聚类的比较" class="headerlink" title="MIN和EM-聚类的比较"></a>MIN和EM-聚类的比较</h2><p><em>假设EM使用高斯分布</em></p>
+<ul>
+<li>MIN是层次hierarchical聚类，EM是划分partitional聚类</li>
+<li>两个算法都可最终收敛性</li>
+<li>Min有一个基于图（基于连续性）的簇概念，而Em集群有一个原型（或基于模型）的簇概念</li>
+<li>Min将无法区分分离不良的簇，但Em可以在许多情况下能做到这一点</li>
+<li>Min可以发现不同形状和大小的簇；Em簇更偏向球形簇，并且可能会遇到不同大小的簇的问题</li>
+<li>Min对于不同密度的簇的处理有困难，而Em通常可以处理这个问题</li>
+<li>Min和Em集群都找不到子空间簇</li>
+<li>Min可以处理异常值，但噪声容易加入簇；EM可以容忍噪声，但会受到异常值的强烈影响</li>
+<li>EM只能应用于质心有意义的数据；MIN只需要有意义的接近度定义</li>
+<li>当维数增加时，EM会遇到麻烦，其参数（协方差矩阵中的条目数）随着维数的平方增加而增加；定义好合适邻近度，MIN依然可以很好地工作</li>
+<li>EM是为欧几里得数据设计的，尽管已经为其他类型的数据开发了EM聚类的版本。Min使用相似性矩阵来屏蔽数据类型</li>
+<li>Min不做分布假设；我们考虑的Em的假设为高斯分布</li>
+<li>EM时间复杂度为O(n)（这里应该是O(n * 迭代次数)），MIN为O(n^2 logn)</li>
+<li>由于随机初始化，EM可以生成不同的簇；Min始终会生成相同的簇</li>
+<li>Min和EM都不能自动确定簇的数量</li>
+<li>Min没有任何用户指定的参数；Em有簇的数量，可能还有簇的权重</li>
+<li>EM聚类可以看作是一个优化问题；MIN使用数据的图模型</li>
+<li>EM或Min均不依赖于数据的顺序</li>
+</ul>
+<h2 id="DBSCAN和K-means的比较"><a href="#DBSCAN和K-means的比较" class="headerlink" title="DBSCAN和K-means的比较"></a>DBSCAN和K-means的比较</h2><ul>
+<li>二者都是分裂性的partitional聚类</li>
+<li>k-means能完成；DBSCAN不一定能完成</li>
+<li>k-means有基于原型的簇概念；DBSCAN使用基于密度的概念</li>
+<li>k-means可以找到没有很好分离的簇。DBSCAN将合并有连接的簇</li>
+<li>DBSCAN可以处理不同形状和大小的簇；K-Means更偏向球形簇</li>
+<li>DBSCAN可以处理噪声和异常值；K-Means在异常值存在时表现不佳</li>
+<li>K-Means只能应用于质心有意义的数据；DBSCAN要求有意义的密度定义</li>
+<li>DBSCAN在高维数据上效果较差；KMeans在某些类型的高维数据上效果较好</li>
+<li>这两种技术都是为欧几里得数据设计的，但可以扩展到其他类型的数据</li>
+<li>DBSCAN不做分布假设；K-means的假设为球面高斯分布spherical Gaussian distributions</li>
+<li>k-means具有O(n)时间复杂性；DBSCAN为O（n^2）</li>
+<li>由于随机初始化，kmeans发可以生成不同的簇；dbscan总是生成相同的簇</li>
+<li>DBSCAN能自动确定簇数；K-means不行</li>
+<li>k-means只有一个参数(k)，DBSCAN有两个</li>
+<li>k-means聚类可以看作是一个优化问题，也是EM聚类的一个特例；DBSCAN不是基于形式模型的</li>
+</ul>
 <p>平均移 Mean-shift</p>
 <p>OPTICS算法 OPTICS algorithm</p>
-<p>单连锁聚类 Single-linkage clustering</p>
-<p>概念聚类 Conceptual clustering</p>
+<p>概念聚类 Conceptual clustering                                                                               </p>
 <p><a href="https://en.wikipedia.org/wiki/Conceptual_clustering" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Conceptual_clustering</a></p>
-<p>原型聚类</p>
-<p>SOM</p>
 <p>FCM聚类算法</p>
 <p>簇评估</p>
-<p>图聚类</p>
 
           
         
@@ -1120,662 +2564,283 @@
         
           
             <p>[TOC]</p>
-<h1>介绍</h1>
-<p>集成学习(Ensemble Learning)</p>
-<p>实际应用的复杂性和数据的多样性往往使得单一的分类方法不够有效。因此，学者们对多种分类方法的融合即集成学习进行了广泛的研究。集成学习已成为国际机器学习界的研究热点，并被称为当前机器学习四个主要研究方向之一。</p>
-<p>集成学习是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。</p>
-<h1>算法</h1>
-<h2 id="lightbgm"><a class="header-anchor" href="#lightbgm">¶</a>lightBGM</h2>
-<h2 id="catboost"><a class="header-anchor" href="#catboost">¶</a>Catboost</h2>
-<h2 id="extratree"><a class="header-anchor" href="#extratree">¶</a>Extratree</h2>
-<h2 id="regularized-greedy-forest-rgf"><a class="header-anchor" href="#regularized-greedy-forest-rgf">¶</a>Regularized Greedy Forest(RGF)</h2>
-<h2 id="gradient-boosting"><a class="header-anchor" href="#gradient-boosting">¶</a>Gradient Boosting</h2>
+<h1>概念</h1>
+<p>集成学习(Ensemble Learning)是一种机器学习范式，它试图通过连续调用单个的学习算法，获得不同的基学习器，然后根据规则组合这些学习器来解决同一个问题，可以显著的提高学习系统的泛化能力。组合多个基学习器主要采用(加权)投票的方法，常见的算法有装袋(Bagging) , 提升/推进(Boosting) 等。可应用在分类classification, 聚类clustering, 协同过滤collaborative filtering, 异常检测anomaly detection中</p>
+<p>思想是将多个弱分类器组合起来：</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814194548900.png" alt="image-20190814194548900"></p>
+<h2 id="弱分类器"><a class="header-anchor" href="#弱分类器">¶</a>弱分类器</h2>
+<h3 id="如何得到弱分类器"><a class="header-anchor" href="#如何得到弱分类器">¶</a>如何得到弱分类器</h3>
+<ul>
+<li>使用不同的弱学习算法得到不同基本学习器</li>
+<li>使用相同的弱学习算法，但用不同的参数</li>
+<li>相同输入对象的不同表示凸显事物不同的特征</li>
+<li>使用不同的训练集：装袋bagging也称为自举汇聚法boostrap aggregating与提升boosting</li>
+</ul>
+<h3 id="如何组合弱分类器"><a class="header-anchor" href="#如何组合弱分类器">¶</a>如何组合弱分类器</h3>
+<ul>
+<li>多专家组合：一种并行结构，所有的弱分类器都给出各自的预测结果，通过“ 组合器” 把这些预<br>
+测结果转换为最终结果。eg.投票（voting）及其变种、混合专家模型</li>
+<li>多级组合：一种串行结构，其中下一个分类器只在前一个分类器预测不够准（不够自信）的实例上进行训练或检测。eg.级联算法（cascading）</li>
+</ul>
+<h2 id="集成work的原因"><a class="header-anchor" href="#集成work的原因">¶</a>集成work的原因</h2>
+<ul>
+<li>
+<p>直觉上</p>
+<p>就像人类在决策中会将各种各样的观点结合起来</p>
+</li>
+<li>
+<p>减少不相关的错误</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814195952459.png" alt="image-20190814195952459"></p>
+</li>
+<li>
+<p>克服单一假设hypothesis的局限性</p>
+<p>目标函数可能不能用单个分类器实现，但可以通过模型平均来近似</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814195844353.png" alt="image-20190814195844353"></p>
+</li>
+</ul>
+<h2 id="研究关注点"><a class="header-anchor" href="#研究关注点">¶</a>研究关注点</h2>
+<ul>
+<li>
+<p>基础模型<br>
+提升多样性diversity</p>
+</li>
+<li>
+<p>组合方案</p>
+<p>一致性Consensus（无监督）</p>
+<p>Learn to combine（有监督）</p>
+</li>
+<li>
+<p>任务</p>
+<p>分类（有监督或半监督）</p>
+<p>聚类（无监督）</p>
+</li>
+</ul>
+<h2 id="集成学习种类"><a class="header-anchor" href="#集成学习种类">¶</a>集成学习种类</h2>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814200601088.png" alt="image-20190814200601088"></p>
+<h3 id="分类集成学习-learn-to-combine"><a class="header-anchor" href="#分类集成学习-learn-to-combine">¶</a>分类集成学习-Learn to Combine</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201300907.png" alt="image-20190814201300907"></p>
+<p>boosting, stacked generalization, rule ensemble, Bayesian model averaging</p>
+<h3 id="分类集成学习-一致性consensus"><a class="header-anchor" href="#分类集成学习-一致性consensus">¶</a>分类集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201318255.png" alt="image-20190814201318255"></p>
+<p>bagging, random forest, random decision tree, model averaging of probabilities</p>
+<h3 id="聚类集成学习-一致性consensus"><a class="header-anchor" href="#聚类集成学习-一致性consensus">¶</a>聚类集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201419599.png" alt="image-20190814201419599"></p>
+<p>direct approach, object-based, cluster-based, objectcluster-based approaches, generative models</p>
+<h3 id="半监督集成学习-一learn-to-combine"><a class="header-anchor" href="#半监督集成学习-一learn-to-combine">¶</a>半监督集成学习-一Learn to Combine</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201504280.png" alt="image-20190814201504280"></p>
+<p>multi-view learning</p>
+<h3 id="半监督集成学习-一致性consensus"><a class="header-anchor" href="#半监督集成学习-一致性consensus">¶</a>半监督集成学习-一致性Consensus</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814201652183.png" alt="image-20190814201652183"></p>
+<p>consensus maximization</p>
+<h3 id="比较"><a class="header-anchor" href="#比较">¶</a>比较</h3>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190814200725610.png" alt="image-20190814200725610"></p>
+<h1>有监督集成学习</h1>
+<p>$$<br>
+给定数据集D = {x_1,x_2,…,x_n}以及标签L = {l_1,l_2,…,l_3}\<br>
+集成算法计算出一系列分类器{f_1,f_2,…,f_k}\<br>
+组成成分类器f<em>减小泛化误差:f^</em>(x) = w_1f(x_1) + w_2f_2(x)+ …+w_kf_k(x)<br>
+$$</p>
+<p>使用集成的目的是减少variance</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190816191229638.png" alt="image-20190816191229638"></p>
+<p>产生分类器的方法</p>
+<ul>
+<li>对训练集采样（比如采样出k个子集，训练k个分类器）</li>
+<li>使用不同的学习模型/算法</li>
+<li>对特征采样（比如采样出k个特征子集，训练k个分类器）</li>
+<li>在学习过程中加入随机因素</li>
+</ul>
 <h2 id="boosting"><a class="header-anchor" href="#boosting">¶</a>Boosting</h2>
-<h2 id="adaboost"><a class="header-anchor" href="#adaboost">¶</a>AdaBoost</h2>
-<h2 id="gbdt"><a class="header-anchor" href="#gbdt">¶</a>GBDT</h2>
-<h2 id="xgboost"><a class="header-anchor" href="#xgboost">¶</a>XGBOOST</h2>
+<p>将一组弱分类器提升为强分类器，每一步增加了当前分错instance的权重，而对已经对的instance趋向于0，这样后面的树就可以更加关注错分的instance的训练了</p>
+<p>boosting在训练的时候会给样本加一个权重，然后使loss function尽量去考虑那些分错类的样本（比如给分错类的样本的权重值加大）</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817151647764.png" alt="image-20190817151647764"></p>
+<p>在机器学习中往往是最终要求解某个函数的最优值，但是一般情况下，任意一个函数的最优值求解比较困难，但是对于凸函数来说就可以有效的求解出全局最优值。</p>
+<p>学习器之间存在强依赖关系、必须串行生成, 集成方式为加权和;</p>
+<p>Adaboost属于Boosting, 采用指数损失函数替代原本分类任务的0/1损失函数;</p>
+<p>GBDT属于Boosting的优秀代表, 对函数残差近似值进行梯度下降, 用CART回归树做学习器, 集成为回归模型;</p>
+<p>xgboost属于Boosting的集大成者, 对函数残差近似值进行梯度下降, 迭代时利用了二阶梯度信息, 集成模型可分类也可回归. 由于它可在特征粒度上并行计算, 结构风险和工程实现都做了很多优化, 泛化, 性能和扩展性都比GBDT要好</p>
+<h3 id="adaboost"><a class="header-anchor" href="#adaboost">¶</a>AdaBoost</h3>
+<p>初始时，所有数据设置统一的权重</p>
+<p>在每一轮迭代中</p>
+<ul>
+<li>使用基于当前权重的数据样本</li>
+<li>训练一个弱分类器，并在原始的训练集上面测试</li>
+<li>分类错误的数据权重会增加，正确的会减少</li>
+<li>如果错误率大于0.5，则重新开始</li>
+</ul>
+<p>最终的预测是所有分类器的加权平均（权值由训练中的准确率决定）</p>
+<p>$$<br>
+初始时每一条数据权重为\frac{1}{N} \quad N为数据总数\<br>
+对于分类器，它的错误率为\varepsilon_i = \frac{\sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)}{\sum_{j=1}^{N}w_j} = \sum_{j=1}^{N}w_j \delta(C_i(x_j)\ne y_j)\<br>
+分类器的重要度importance为\alpha_i = \frac{1}{2}\ln (\frac{1-\varepsilon_i}{\varepsilon_i})\<br>
+每条数据的权重更新方式w_j^{(i+1)} = \frac{w_j<sup>{(i)}\exp(-\alpha_iy_jC_i(x_j))}{Z</sup>{(i)}}\<br>
+=  \begin{cases}<br>
+\frac{w_j<sup>{(i)}\exp(-\alpha_i)}{Z</sup>{(i)}}&amp; {y_j = C_i(x_j)}\<br>
+\frac{w_j<sup>{(i)}\exp(\alpha_i))}{Z</sup>{(i)}}&amp; {y_j \ne C_i(x_j)}<br>
+\end{cases}\<br>
+Z^{(i)} 是规范化因子，用于使所有数据权值和为1\<br>
+Z^{(i)}  = \sum_{j=1}^N w_j^{(i)}\exp(-\alpha_iy_jC_i(x_j))\<br>
+最终预测C^*(x) = {\arg \max}<em>y \sum</em>{i=1}^K \alpha_i \delta(C_i(x)=y)\<br>
+$$</p>
+<h4 id="讨论"><a class="header-anchor" href="#讨论">¶</a>讨论</h4>
+<p>优点：</p>
+<ul>
+<li>容易理解、实现简单</li>
+<li>易编码</li>
+<li>分类精度高</li>
+<li>可以使用各种回归模型构建基分类器，非常灵活</li>
+<li>作为二元分类器是，构造简单、结果可理解、参数少</li>
+<li>相对来说，不易过拟合</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>只能<strong>串行</strong></li>
+<li>对<strong>异常值敏感</strong>（ boosting对异常值都敏感）</li>
+</ul>
+<h3 id="gbdt-gradient-boosting-decision-tree"><a class="header-anchor" href="#gbdt-gradient-boosting-decision-tree">¶</a>GBDT Gradient Boosting Decision Tree</h3>
+<p>这里的GBDT泛指所有梯度提升树算法，包括XGBoost，它也是GBDT的一种变种<br>
+$$<br>
+从Gradient \ Descend 到 Gradient \ Boosting\<br>
+参数空间|函数空间<br>
+$$</p>
+<h4 id="gbdt"><a class="header-anchor" href="#gbdt">¶</a>GBDT</h4>
+<p>这里的GBDT特指“ Greedy Function Approximation： A Gradient Boosting Machine” 里提出的算法，它只用了一阶导数信息</p>
+<p>GBDT的精髓在于训练的时候都是以上一颗树的残差为目标，这个残差就是上一个树的预测值与真实值的差值</p>
+<p>和随机森林的区别</p>
+<p>区别：</p>
+<p>（1）取样方式</p>
+<p>（2）预测时，RF多数投票，GBDT加权累加</p>
+<p>（3）样本的关系—&gt;并行和串行</p>
+<p>（4）学习器的种类，<strong>GBDT只能用CART回归树</strong> (因为要计算连续梯度)</p>
+<p>（5）对异常值的敏感性</p>
+<p>（6）通过减少方差/偏差提高性能</p>
+<h4 id="gbrt"><a class="header-anchor" href="#gbrt">¶</a>GBRT</h4>
+<h4 id="xgboost"><a class="header-anchor" href="#xgboost">¶</a>XGBOOST</h4>
+<h4 id="catboost"><a class="header-anchor" href="#catboost">¶</a>Catboost</h4>
+<h4 id="gradient-boosting-machine-gbm"><a class="header-anchor" href="#gradient-boosting-machine-gbm">¶</a>Gradient boosting machine(GBM)</h4>
+<h4 id="lightgbm"><a class="header-anchor" href="#lightgbm">¶</a>lightGBM</h4>
+<h4 id="正则化贪心森林-regularized-greedy-forest-rgf"><a class="header-anchor" href="#正则化贪心森林-regularized-greedy-forest-rgf">¶</a>正则化贪心森林 Regularized Greedy Forest(RGF)</h4>
 <h2 id="bootstrap-aggregating-bagging"><a class="header-anchor" href="#bootstrap-aggregating-bagging">¶</a>Bootstrap aggregating (Bagging)</h2>
-<h2 id="随机森林"><a class="header-anchor" href="#随机森林">¶</a>随机森林</h2>
-<h2 id="深度森林"><a class="header-anchor" href="#深度森林">¶</a>深度森林</h2>
-<h2 id="梯度提升机"><a class="header-anchor" href="#梯度提升机">¶</a>梯度提升机</h2>
-<p>Gradient boosting machine(GBM)</p>
-<h2 id="梯度提升决策树"><a class="header-anchor" href="#梯度提升决策树">¶</a>梯度提升决策树</h2>
-<p>Gradient boosted decision tree(GBRT)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-贝叶斯:朴素贝叶斯/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/机器学习-贝叶斯:朴素贝叶斯/" itemprop="url">机器学习-贝叶斯/朴素贝叶斯</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:43:41+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<h1>朴素贝叶斯分类Naïve Bayes Classifier</h1>
-<p>贝叶斯(Bayes) 分类算法是一类利用概率统计知识进行分类的算法，如朴素贝叶斯(Naive Bayes)算法。这些算法主要利用Bayes定理来预测一个未知类别的样本属于各个类别的可能性，选择其中可能性最大的一个类别作为该样本的最终类别。由于贝叶斯定理的成立本身需要一个很强的条件独立性假设前提，而此假设在实际情况中经常是不成立的，因而其分类准确性就会下降。为此就出现了许多降低独立性假设的贝叶斯分类算法，如TAN (Tree Augmented Naive Bayes)算法，它是在贝叶斯网络结构的基础上增加属性对之间的关联来实现的。</p>
-<h1>贝叶斯估计</h1>
-<h1>高斯贝叶斯</h1>
-<p>Gaussian Naive Bayes</p>
-<h1>多项朴素贝叶斯</h1>
-<p>Multinomial Naive Bayes</p>
-<h1>平均一依赖性评估</h1>
-<p>Averaged One-Dependence Estimators</p>
-<h1>贝叶斯信念网络</h1>
-<p>Bayesian Belief Network</p>
-<h1>贝叶斯网络</h1>
-<p>Bayesian Network</p>
-<h1>EM算法</h1>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-RNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-RNN/" itemprop="url">深度学习-RNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:53+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-其他模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-其他模型/" itemprop="url">深度学习-其他模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:53+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>deep hashing</p>
-<p>深度信念网络<a href="https://www.sohu.com/a/167221030_714863" target="_blank" rel="noopener">https://www.sohu.com/a/167221030_714863</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-KNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/机器学习-KNN/" itemprop="url">机器学习-KNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:38+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>k近邻(kNN, k-Nearest Neighbors)算法是一种基于实例的分类方法。该方法就是找出与未知样本x距离最近的k个训练样本，看这k个样本中多数属于哪一类，就把x归为那一类。k-近邻方法是一种懒惰学习方法，它存放样本，直到需要分类时才进行分类，如果样本集比较复杂，可能会导致很大的计算开销，因此无法应用到实时性很强的场合。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/深度学习-CNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/深度学习-CNN/" itemprop="url">深度学习-CNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:42:38+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1>基础</h1>
-<h2 id="padding"><a class="header-anchor" href="#padding">¶</a>padding</h2>
-<h2 id="stride"><a class="header-anchor" href="#stride">¶</a>stride</h2>
-<p>卷积，跨度，边界填充，卷积核，反卷积<a href="https://blog.csdn.net/weixin_38776853/article/details/72636422" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38776853/article/details/72636422</a></p>
-<h1>池化pooling</h1>
-<h1>著名模型</h1>
-<p>Alexnet</p>
-<p>VGG</p>
-<p>GoogleNet</p>
-<p>Resnet</p>
-<p>Wide ResNet</p>
-<p>ResNeXt</p>
-<p>DenseNet</p>
-<p>LeNet</p>
-<p>SENet</p>
-<p>PNASNet</p>
-<p>FaceNet</p>
-<p>Inception</p>
-<p>SSD<a href="https://github.com/amdegroot/ssd.pytorch" target="_blank" rel="noopener">https://github.com/amdegroot/ssd.pytorch</a></p>
-<h1>应用</h1>
-<h2 id="style-transfer"><a class="header-anchor" href="#style-transfer">¶</a>style transfer</h2>
-<h2 id="文本分类-情感分析"><a class="header-anchor" href="#文本分类-情感分析">¶</a>文本分类/情感分析</h2>
+<ol>
+<li>
+<p>从N样本中有放回的采样N个样本（大约包含总数据的63.2%）</p>
+</li>
+<li>
+<p>对这N个样本在全属性上建立分类器(CART,SVM)</p>
+</li>
+<li>
+<p>重复上面的步骤，建立m个分类器</p>
+</li>
+<li>
+<p>预测的时候Aggregation使用投票的方法得到结果</p>
+</li>
+</ol>
+<p>学习器间不存在强依赖关系, 学习器可并行训练生成, 集成方式一般为投票</p>
+<p>在以均方误差作为误差的考虑下，bagging可以减少方差variance，让偏差不变<br>
+$$<br>
+在理想的情况下，总分类器的输出是弱分类器的输出的期望\<br>
+\bar f(x) = E(\hat f_z(x))<br>
+误差为\<br>
+E[(Y-\hat f_z(x))^2] = E[(Y-\bar f(x)+\bar f(x)-\hat f_z(x))^2]\<br>
+= E[(Y-\bar f(x))^2] + E[(\bar f(x)-\bar f_z(x))^2] \ge E[(Y-\bar f(x))^2]<br>
+$$</p>
+<h3 id="随机森林"><a class="header-anchor" href="#随机森林">¶</a>随机森林</h3>
+<p>Random Forest属于Bagging的代表, 放回抽样, 每个学习器随机选择部分特征去优化</p>
+<p>随机森林是有很多随机得决策树构成，它们之间没有关联。得到RF以后，在预测时分别对每一个决策树进行判断，最后使用Bagging的思想进行结果的输出（也就是投票的思想）</p>
+<h4 id="算法描述"><a class="header-anchor" href="#算法描述">¶</a>算法描述</h4>
+<p>现在有N个训练样本，每个样本的特征为M个，需要建T颗树<br>
+对于每一棵树：</p>
+<ul>
+<li>从N个训练样本中有放回的取N个样本作为一组训练集（其余未取到的样本作为预测分类，评估其误差）</li>
+<li>从M个特征中取m个特征左右子集特征(m&lt;&lt;M)（通常m=sqrt(M)或者20%）</li>
+<li>对采样的数据使用完全分裂的方式来建立决策树</li>
+</ul>
+<p>建立森林后，预测时使用投票的方法</p>
+<p>使用oob（out-of-bag）进行泛化误差的估计，将各个树的未采样样本作为预测样本（大约有36.8%），使用已经建立好的森林对各个预测样本进行预测，预测完之后最后统计误分得个数占总预测样本的比率作为RF的oob误分率</p>
+<h4 id="讨论-v2"><a class="header-anchor" href="#讨论-v2">¶</a>讨论</h4>
+<ul>
+<li>
+<p>随机性体现在：bagging和特征上的随机选择</p>
+</li>
+<li>
+<p>通过增加多样性diversity，减小方差variances来增加准确率</p>
+</li>
+<li>
+<p>能够处理大量特征的分类，并且还不用做特征选择</p>
+</li>
+<li>
+<p>在训练完成之后能给出哪些feature的比较重要</p>
+</li>
+<li>
+<p>训练速度很快，很容易并行</p>
+</li>
+<li>
+<p>实现相对来说较为简单</p>
+</li>
+</ul>
+<h4 id="深度森林"><a class="header-anchor" href="#深度森林">¶</a>深度森林</h4>
+<h3 id="随机决策树"><a class="header-anchor" href="#随机决策树">¶</a>随机决策树</h3>
+<p><a href="https://www.linuxidc.com/Linux/2016-12/138376.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-12/138376.htm</a></p>
+<ul>
+<li>在每一个节点上，随机选择一个un-used特征
+<ul>
+<li>如果是离散特征，如果从根root到当前节点的路径上还没有使用过，就是un-used的</li>
+<li>连续型特征可以使用多次，不过每次的阈值不一样</li>
+</ul>
+</li>
+<li>停止条件
+<ul>
+<li>一个节点的数据很少（比如小于等于3个）</li>
+<li>树的高度超过某个阈值（比如特征数）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817153748937.png" alt="image-20190817153748937"></p>
+<h3 id="extratree"><a class="header-anchor" href="#extratree">¶</a>extraTree</h3>
+<h1>无监督集成</h1>
+<h2 id="聚类集成"><a class="header-anchor" href="#聚类集成">¶</a>聚类集成</h2>
+<p>$$<br>
+给定没有标签的数据集D = {x_1,x_2,…,x_n}\<br>
+集成算法计算出一系列聚类方案{C_1,C_2,…,C_k},将数据映射为一个簇f_j(x)=m\<br>
+一个统一的聚类方案f*结合consensus了基本的聚类解决方案\<br>
+$$</p>
+<p>目的是将弱聚类组合成一个</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817160257099.png" alt="image-20190817160257099"></p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817160334714.png" alt="image-20190817160334714"></p>
+<p>挑战：</p>
+<ul>
+<li>不同方案中的簇之间的对应关系很难找</li>
+<li>组合优化问题是np完全的</li>
+</ul>
+<p>如何得到基本模型：</p>
+<ul>
+<li>自助Bootstrap采样</li>
+<li>不同的特征子集</li>
+<li>不同的聚类算法</li>
+<li>随机的簇数量</li>
+<li>k-maens的随机初始化</li>
+<li>将随机噪声加入到簇标签中</li>
+<li>对于在线算法online（比如BIRCH），改变数据的顺序</li>
+</ul>
+<p>如何组合模型：</p>
+<p>Correspondence：对应</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817160643741.png" alt="image-20190817160643741"></p>
+<h3 id="对应-correspondence"><a class="header-anchor" href="#对应-correspondence">¶</a>对应 Correspondence</h3>
+<h4 id="硬对应-hard-correspondence"><a class="header-anchor" href="#硬对应-hard-correspondence">¶</a>硬对应 hard Correspondence</h4>
+<p>使用Re-labeling+voting</p>
+<p>找到划分结果中标签之间的对应关系，并通过投票将具有相同标签的簇融合在一起</p>
+<p><img src="/2019/03/08/机器学习-集成学习/image-20190817161017684.png" alt="image-20190817161017684"></p>
+<p>具体而言</p>
+<ul>
+<li>使用匈牙利法在两个不同的聚类解决方案中匹配簇</li>
+<li>以成对方式匹配簇</li>
+</ul>
+<p>困难</p>
+<ul>
+<li>在很多情况下，簇并没有一对一的对应关系</li>
+</ul>
+<h4 id="软对应-soft-correspondence"><a class="header-anchor" href="#软对应-soft-correspondence">¶</a>软对应 soft Correspondence</h4>
+<h1>半监督集成</h1>
+<h2 id="多视角学习"><a class="header-anchor" href="#多视角学习">¶</a>多视角学习</h2>
 
           
         
@@ -1815,7 +2880,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1861,7 +2926,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

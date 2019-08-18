@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Chenxr&#39;s blogs">
 <meta property="og:description" content="[TOC] 基础 变量和基本类型 命名空间 类型转换 内存分配 运行时类型识别 常用库 万能头文件#include&amp;lt;bits/stdc++.h&amp;gt; C++库https://www.cnblogs.com/miki-52/p/5625840.html VS添加第三方C/C++库https://blog.csdn.net/tjq980303/article/details/54585369">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:21:07.713Z">
+<meta property="og:updated_time" content="2019-08-18T09:07:40.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程序语言-C++">
 <meta name="twitter:description" content="[TOC] 基础 变量和基本类型 命名空间 类型转换 内存分配 运行时类型识别 常用库 万能头文件#include&amp;lt;bits/stdc++.h&amp;gt; C++库https://www.cnblogs.com/miki-52/p/5625840.html VS添加第三方C/C++库https://blog.csdn.net/tjq980303/article/details/54585369">
@@ -351,6 +351,11 @@
 <p>类：模板/泛型编程，容器，继承，虚函数，抽象基类，拷贝/赋值/销毁，重载运算，类型转换，多重继承，虚继承，多态，友元</p>
 <h1>函数</h1>
 <h1>动态内存</h1>
+<p>new和malloc的区别<br>
+malloc与free是C++/C语言的标准库函数，new/delete是C<ins>的运算符。它们都可用于申请动态内存和释放内存。<br>
+对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。<br>
+因此C</ins>语言需要一个能完成动态内存分配和初始化工作的运算符new，以一个能完成清理与释放内存工作的运算符delete。注意new/delete不是库函数。<br>
+C++程序经常要调用C函数，而C程序只能用malloc/free管理动态内存</p>
 <h1>泛型编程</h1>
 <p>lamda</p>
 <h1>异常处理</h1>
@@ -467,7 +472,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

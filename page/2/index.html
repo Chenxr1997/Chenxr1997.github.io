@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-条件随机场/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chenxr">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/机器学习-条件随机场/" itemprop="url">机器学习-条件随机场</a></h1>
+                <a class="post-title-link" href="/2019/03/08/机器学习-SVM/" itemprop="url">机器学习-SVM</a></h1>
         
 
         <div class="post-meta">
@@ -300,7 +300,372 @@
       
         
           
-            
+            <p>[TOC]</p>
+<p>斯坦福大学机器学习笔记</p>
+<p><a href="https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details" target="_blank" rel="noopener">https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details</a></p>
+<p>SVM希望求得每类元素最近的距离最远</p>
+<p>训练数据线性可分：硬间隔最大化<br>
+训练集近似线性可分：软间隔最大化<br>
+线性不可分：和技巧及软间隔最大化<br>
+离散集合：核函数表示将输入从输入空间映射到特征空间得到的特征向量之间的内积<br>
+核方法：隐式的从高维的特征空间中学习线性支持向量机。<br>
+感知机利用误分类最小的策略，求得分离超平面，不过这时的解有无穷多个。线性可分支持向量机利用间隔最大化求解最优分离超平面。</p>
+<p>一个点距离分离平面的远近可以表示分类预测的确信程度，在超平面wx+b=0确定的情况下，|wx+b|能够相对的表示点x距离超平面的远近，而wx+b的符号与标记y的符号是否一致能够表示分类是否正确。</p>
+<p>函数间隔就是y(wx+b)，但是随着w的改变，可能平面不变，但是函数间隔会变，因此几何间隔提取出了真正的距离，除以一个权重的值。</p>
+<h1>概念</h1>
+<p>支持向量机(SVM, Support Vector Machine)是Vapnik在92年根据统计学习理论提出的一种新的学习方法更贴近于统计学习方法，在手写数字识别中获得了较大成功</p>
+<p>它的最大特点是根据<strong>结构风险最小化准则</strong>，以<strong>最大化分类间隔</strong>构造最优分类超平面来提高学习机的泛化能力，较好地解决了非线性、高维数、局部极小点等问题。对于分类问题，支持向量机算法根据区域中的样本计算该区域的决策曲面，由此确定该区域中未知样本的类别</p>
+<p>一组数据集也许有很多线性可分的方案</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817173116038.png" alt="image-20190817173116038"></p>
+<p>线性分类器的margin：将数据正确分成两边的一条无限长的线，它的最大可扩展宽度（和点有接触之前）就是margin</p>
+<p>求一个最大margin的线性分类器就是线性SVM的任务</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817173435368.png" alt="image-20190817173435368"></p>
+<p>求一个最大margin的线性分类器就是线性SVM的任务</p>
+<p>margin碰到的点，就是支持向量</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817173712738.png" alt="image-20190817173712738"></p>
+<h1>优化目标</h1>
+<p>$$<br>
+分割线表示为WX + b = 0\<br>
+X表示分隔线上的点\<br>
+W表示法向量normal \ vector,它垂直于分割线\<br>
+b表示分割线的偏移量\<br>
+在下图中:w_1<em>x_1 + w_2</em>x_2 + b = 0<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817174003874.png" alt="image-20190817174003874"><br>
+$$<br>
+怎样求空间中的一个点到分割线的距离\<br>
+设P为空间中的一个点(x_0,y_0),Q为分割线上的一点(x_1,y_1)\<br>
+那么P到分割线的距离就等于\overrightarrow{QP}在W上的投影长度\<br>
+计算方式为d = \frac{\overrightarrow{QP}\cdot W}{||W||}\<br>
+= \frac{w_1(x_0-x_1)+w_2(y_0-y_1)}{\sqrt{w_1<sup>2+w_2</sup>2}}\<br>
+= \frac{w_1x_0+w_2y_0-w_1x_1-w_2y_1}{\sqrt{w_1<sup>2+w_2</sup>2}}\<br>
+= \frac{w_1x_0+w_2y_0+b}{\sqrt{w_1<sup>2+w_2</sup>2}} (因为Q在分割线上)\<br>
+= \frac{P\cdot W+b}{||W||}<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817174632501.png" alt="image-20190817174632501"></p>
+<p>为了让margin最大化，我们不妨设分割线在margin的中间，并且分割线两边的支持向量分别满足<br>
+$$<br>
+W^TX + b = 1\<br>
+W^TX + b = -1\<br>
+这里只是一个为了方便计算的假设，因为W^TX + b的结果同[W \ b]成正比，因此是可以缩放的，并不影响实际的效果\<br>
+那么根据上面的距离计算公式，它们到分割线的距离均为\frac{1}{||W||}\<br>
+因此margin大小为\frac{2}{||W||}<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817184559300.png" alt="image-20190817184559300"></p>
+<p>为了使得分割线能够把所有数据都分类正确，且在margin之外，那么需要满足<br>
+$$<br>
+y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+那么优化目标可以写作<br>
+$$<br>
+Minimize \ ||w||/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+等价于<br>
+$$<br>
+Minimize \ ||w||\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$<br>
+等价于<br>
+$$<br>
+Minimize \ ||w||^2/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$</p>
+<h1>对偶问题</h1>
+<p>在数学优化理论中，对偶性意味着优化问题可以从两个角度来看待，一个是原始问题，另一个是对偶问题（对偶原理）。对偶问题的解为原问题（最小化）的解提供了一个下界</p>
+<h2 id="下界-上界-lower-bound-upper-bound"><a class="header-anchor" href="#下界-上界-lower-bound-upper-bound">¶</a>下界/上界 lower bound/upper bound</h2>
+<p>$$<br>
+存在一个实数a和一个实数集合B，使得对∀x∈B，都有x≥a，则称a为B的下界（lower bound）\<br>
+相反，在数学中，特别是在秩序理论中，在某些部分有序集合（K，≤）的子集S里面\<br>
+大于或等于S的每个元素的K的那个元素，叫做上界\<br>
+而下界被定义为K的元素小于或等于S的每个元素<br>
+$$</p>
+<p>$$<br>
+比如对于S = {2,4,8,12}\<br>
+因此S的下界可以是2,1,-1等<br>
+$$</p>
+<p>上面的例子中，由于2是最大的下界，因此称为最大下界/下确界<strong>infimum</strong></p>
+<p>同样最小上界/上确界称为<strong>supremum</strong></p>
+<h2 id="对偶问题"><a class="header-anchor" href="#对偶问题">¶</a>对偶问题</h2>
+<p>在对偶问题中，可以把原问题（最小化）视为一个最大化问题，并且当找到这个问题的最大值时，它是原问题的一个下界</p>
+<p>有时解决对偶问题比解决原问题更简单，并且有时对偶问题给出的下界就是原问题的最小值</p>
+<p>下图中对偶问题给出的下界，就比原问题的最小值更小</p>
+<p>我们称原问题的解为P，对偶问题解为D，P-D为<strong>duality gap</strong>，当P-D&gt;0时称为<strong>弱对偶 week duality holds</strong></p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817192738685.png" alt="image-20190817192738685"></p>
+<p>下图中对偶问题给出的下界，就是原问题的最小值，我们称之为<strong>强对偶 strong duality holds</strong></p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817192907367.png" alt="image-20190817192907367"><br>
+$$<br>
+一个优化问题，通常写作\<br>
+minimize_x \quad f(x)\<br>
+subject \ to \quad g_i(x) = 0, \ i=1,…,p\<br>
+\quad\quad \quad \quad \quad \quad h_i(x) \le 0, \ i=1,…,m\<br>
+f称为目标函数\<br>
+x^* = inf{f(x)|g_i(x)=0,i=1,…,p,h_i(x)\le 0,i=1,…,m}<br>
+$$</p>
+<h2 id="拉格朗日乘子-lagrange-multiplier"><a class="header-anchor" href="#拉格朗日乘子-lagrange-multiplier">¶</a>拉格朗日乘子 Lagrange Multiplier</h2>
+<p>在数学优化中，拉格朗日乘数法是一种寻找受等式约束的函数的局部极大值和极小值的策略（即在一个或多个条件下的等式必须完全由变量的值来满足）</p>
+<p>一个关键点是拉格朗日乘子只适用于等式限制</p>
+<ul>
+<li>
+<p>等值线 Contour Lines</p>
+<p>等值线图是将三维函数可视化为二维的一种方法</p>
+<p>比如x+y</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200101447.png" alt="image-20190817200101447"></p>
+</li>
+<li>
+<p>矢量场 Vector Field</p>
+<p>函数的梯度可以可视化为向量场，箭头指向函数递增的方向</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200405379.png" alt="image-20190817200405379"></p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200419092.png" alt="image-20190817200419092"></p>
+</li>
+</ul>
+<p>以下面的优化问题为例<br>
+$$<br>
+minimize_{x,y} \quad f(x,y) = x<sup>2+y</sup>2\<br>
+subject \ to \quad g_i(x,y) = x+y-1\<br>
+$$<br>
+两个方程的等值线为</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200823571.png" alt="image-20190817200823571"></p>
+<p>如果组合起来，并且只关注满足等式约束的地方，则为</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817200934530.png" alt="image-20190817200934530"></p>
+<p>然后拉格朗日发现，在g(x,y)的限制下f(x,y)取得最小值的时候，他们梯度的指向同一个方向或者反方向</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190817201226717.png" alt="image-20190817201226717"></p>
+<p>用数学表达，即为<br>
+$$<br>
+\nabla f(x,y) = \lambda \nabla g(x,y)\<br>
+\lambda 称为拉格朗日乘子\<br>
+这里\lambda 可以是负数，即两个梯度可以不用是一个方向，只要平行就可以<br>
+$$</p>
+<p>$$<br>
+step1:\<br>
+我们定义L(x,y,\lambda) = f(x,y) - \lambda  g(x,y)\<br>
+那么\nabla L(x,y,\lambda) = \nabla f(x,y) - \lambda \nabla g(x,y)\<br>
+L称为拉格朗日函数Lagrangian,L的梯度方程就是寻找f和g梯度平行的点<br>
+$$</p>
+<p>$$<br>
+step2:\<br>
+解方程\nabla L(x,y,\lambda) = 0\<br>
+意味着\\begin{cases}<br>
+\frac{\partial L}{\partial x} = 0&amp;\<br>
+\frac{\partial L}{\partial y} = 0&amp;\<br>
+\frac{\partial L}{\partial \lambda} = 0&amp;\<br>
+\end{cases}\<br>
+即\<br>
+\begin{cases}<br>
+2x-\lambda=0\<br>
+2y-\lambda = 0\<br>
+-x-y+1=0<br>
+\end{cases}\<br>
+$$</p>
+<p>这样解出方程，即是最优解</p>
+<h2 id="svm对偶"><a class="header-anchor" href="#svm对偶">¶</a>SVM对偶</h2>
+<p>SVM优化目标<br>
+$$<br>
+Minimize \ ||w||^2/2\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1 \quad \forall i\<br>
+$$</p>
+<p>$$<br>
+原始问题是一个凸二次规划问题，将这个问题一般化\<br>
+\min_{x \in R^n} f(x)\<br>
+s.t. \quad c_i(x) \le 0 \quad i=1,2,…,k\<br>
+\quad \quad \quad h_j(x) = 0 \quad j=1,2,…,l\<br>
+$$</p>
+<p>$$<br>
+拉格朗日函数可写为\<br>
+L(x,\alpha,\beta) = f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad \alpha_i &gt; 0\<br>
+这里参数\alpha和\beta总共k+l个，果全部求偏导工作量太大，不太现实\<br>
+并且这个问题可能根本就没有最优解这种情况存在\<br>
+$$</p>
+<p>因此换一个思路，将原问题变为对偶问题<br>
+$$<br>
+对L(x,\alpha,\beta)再定义一个函数:\<br>
+\theta_p(x) = \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)\<br>
+= \max_{\alpha,\beta,\alpha_i&gt;0}f(x)+\sum_{i=1}^k \alpha_ic_i(x) + \sum_{j=1}^l \beta_jh_j(x) \quad 注意这里x是常数\<br>
+$$</p>
+<p>$$<br>
+如果x不满足原条件约束，即c_i(x)\ge0或者h_j(x)\ne0,由于有\alpha_i &gt; 0,可取\alpha_i = +\infty,\beta_ih_j(x)= +\infty\<br>
+这样\theta_p(x) \to +\infty\<br>
+而如果满足所有条件约束，即c_i(x) &lt; 0,h_j(x)=0,此时\sum_{j=1}<sup>l\beta_jh_j(x)=0,\sum_{i=1}</sup>k\alpha_ic_i(x)\le0\<br>
+要使得\theta_p(x)最大,\sum_{i=1}^k\alpha_ic_i(x)=0\<br>
+此时\theta_p(x) = f(x),且x为常数，因此\max f(x) = f(x)\<br>
+所以原最小化问题\min_{w,b}f(x)可以变为\min_{w,b}\theta_p(x),然后可以推出\min_x \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)<br>
+$$</p>
+<p>至此，我们将SVM要求得最大间隔的凸二次规划问题转变成了拉格朗日函数求解问题(一个没有限制条件的极值问题)<br>
+$$<br>
+通常情况下求最小值更方便（因为可以使导数为0）\<br>
+于是将上述式子转为其对偶问题，即将\min \max对调\<br>
+\max_{\alpha,\beta,\alpha_i&gt;0} \min_x L(x,\alpha,\beta) \le \min_x \max_{\alpha,\beta,\alpha_i&gt;0} L(x,\alpha,\beta)<br>
+$$<br>
+然后回到SVM的优化上面<br>
+$$<br>
+先最小化L(W,b,\alpha):\<br>
+L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))\<br>
+在\min_{W,b} \max_{\alpha,\alpha_i&gt;0} L(W,b,\alpha)中，根据前面的推导，实际上隐含了这样的限制:\<br>
+\begin{cases}<br>
+\alpha_i&gt;0\<br>
+1-y_i(W^TX_i+b) &gt; 0\<br>
+\alpha_i(1-y_i(W^TX_i+b))=0<br>
+\end{cases}\<br>
+$$</p>
+<p>$$<br>
+在\max_{\alpha,\alpha_i&gt;0} \min_{W,b} L(W,b,\alpha)中，先对W，b求结果为0的偏导，有：\<br>
+\frac{\partial L(W,b,\alpha)}{\partial W} = \frac{\partial}{\partial W} [\frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))]\<br>
+= W - \sum_{i=1}^m\alpha_iy_iX_i = 0\<br>
+\frac{\partial L(W,b,\alpha)}{\partial b} = \frac{\partial}{\partial b} [\frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))]\<br>
+= \sum_{i=1}^m \alpha_iy_i = 0\<br>
+因此W = \sum_{i=1}^m\alpha_iy_iX_i\<br>
+b = \sum_{i=1}^m \alpha_iy_i<br>
+$$</p>
+<p>将上述结果代入拉格朗日函数中<br>
+$$<br>
+L(W,b,\alpha) = \frac{1}{2}||W||^2 + \sum_{i=1}<sup>m\alpha_i(1-y_i(W</sup>TX_i+b))\<br>
+= \frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i-\sum_{i=1}<sup>m\alpha_iy_i(\sum_{j=1}</sup>m\alpha_jy_jX_j)X_i-b\sum_{i=1}^m\alpha_iy_i\<br>
+= \frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i-\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i^TX_j\<br>
+= -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i<br>
+$$</p>
+<p>$$<br>
+于是在对偶问题\max_{\alpha,\beta,\alpha_i&gt;0} \min_x L(x,\alpha,\beta)中，有\<br>
+\max_\alpha -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i\<br>
+s.t. \quad \alpha_i \ge 0 \<br>
+\sum_{i=1}^m \alpha_iy_i = 0\<br>
+可以用二次规划quadratic \ programming去求解<br>
+$$</p>
+<p>$$<br>
+求出\alpha后，可求得\<br>
+W^* = \sum_{i=1}^m \alpha_iy_iX_i\<br>
+b^* = - \frac{\max_{i:y_i=-1}W<sup>{*T}X_i+\min_{i:y_i=1}W</sup>{*T}X_i}{2}\<br>
+f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b<br>
+$$</p>
+<p>因为优化函数是凸函数，因此最优解满足KKT条件(充分必要条件)<br>
+$$<br>
+\begin{cases}<br>
+\alpha_i&gt;0\<br>
+1-y_i(W^TX_i+b) &gt; 0\<br>
+\alpha_i(1-y_i(W^TX_i+b))=0<br>
+\end{cases}\<br>
+因此对于训练样本，总有\alpha_i = 0或y_if(X_i)=1\<br>
+若\alpha_i=0，则样本不会在f(x) = \sum_{i=1}^m \alpha_iy_iX_i^Tx + b中出现\<br>
+若\alpha_i&gt;0，则y_if(X_i)=1,所对应的样本出现在最大间隔边界上，是一个支持向量<br>
+$$<br>
+因此训练完成后，大部分训练样本都不会保留，最终模型仅与支持向量有关<br>
+$$<br>
+对于一个新数据z\<br>
+f(z)为正数时就预测为正例，为负数时预测为负例<br>
+$$<br>
+<img src="/2019/03/08/机器学习-SVM/image-20190818154621861.png" alt="image-20190818154621861"></p>
+<h1>软间隔</h1>
+<p>$$<br>
+有时线性不可分时，可以允许一部分误差\xi_i<br>
+$$</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818155040991.png" alt="image-20190818155040991"><br>
+$$<br>
+对于数据点的限制，可以设为\<br>
+\begin{cases}<br>
+W^TX_i+b \ge 1-\xi_i \quad y_i=1\<br>
+W^TX_i+b \le -1+\xi_i \quad y_i=-1\<br>
+\xi_i&gt;0 \quad \forall i<br>
+\end{cases}\<br>
+\xi_i表示松弛变量slack \ variables\<br>
+当\xi_i为0时，表示没有误差<br>
+$$</p>
+<p>$$<br>
+优化目标可写为\<br>
+Minimize \ \frac{1}{2}||w||<sup>2+C\sum_{i=1}</sup>m\xi_i\<br>
+subject \ to \ y_i(W^TX_i+b) \ge 1-\xi_i,\ \xi_i\ge0 \quad \forall i\<br>
+C表示了在margin和error中的trade-off<br>
+$$</p>
+<h1>核函数</h1>
+<p>将间隔边界变为非线性的，将X转移transform到高维空间</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818155919853.png" alt="image-20190818155919853"></p>
+<p>但是在高维空间中的运算代价更大，且通常是无限维的空间，这时可以用核技巧来解决<br>
+$$<br>
+在SVM的对偶问题优化目标中\<br>
+\max_\alpha -\frac{1}{2}\sum_{i=1}<sup>m\sum_{j=1}</sup>m\alpha_i\alpha_jy_iy_jX_i<sup>TX_j+\sum_{i=1}</sup>m\alpha_i\<br>
+s.t. \quad \alpha_i \ge 0 \<br>
+\sum_{i=1}^m \alpha_iy_i = 0\<br>
+数据点只在X_i^TX_j出现，是一个内积inner \ product\<br>
+$$</p>
+<p>$$<br>
+因此只要能计算特征空间的内积，就不用显式地explicitly转换到高维空间\<br>
+K(X_i,X_j) = \phi(X_i)^T\phi(X_j)<br>
+$$</p>
+<p>例如<br>
+$$<br>
+\phi(\left[\begin{array}{c} x_1 \ x_2 \end{array}\right]) = (1,\sqrt2 x_1,\sqrt2 x_2,x_1<sup>2,x_2</sup>2,\sqrt2 x_1x_2)\<br>
+于是特征空间上的内积为\<br>
+&lt;\phi(\left[\begin{array}{c} x_1 \ x_2 \end{array}\right]),\phi(\left[\begin{array}{c} y_1 \ y_2 \end{array}\right])&gt; = (1+x_iy_1+x_2y_2)^2\<br>
+因此我们可以这样定义核函数\<br>
+K(x,y) = (1+x_iy_1+x_2y_2)^2\<br>
+而不用显式地计算\phi\<br>
+这就是核技巧<br>
+$$</p>
+<p>$$<br>
+核函数要满足的条件是Mercer’s\ condition\<br>
+任何总是半正定的函数都可以作为核函数。所谓半正定的函数f(X_i,X_j)，是指拥有训练数据集合（X_1,X_2,…X_n)\<br>
+我们定义一个矩阵的元素a_{ij} = f(x_i,x_j)，这个矩阵式n*n的，如果这个矩阵是半正定的，那么f(X_i,X_j)就称为半正定的函数\<br>
+这个mercer定理是核函数必要条件<br>
+$$</p>
+<p>这也意味着优化问题可以在多项式时间内解决（这里还不是很懂）<br>
+$$<br>
+线性核\<br>
+K(x,y) = (x<sup>Ty+1)</sup>d\<br>
+径向基函数核(无限维空间)\<br>
+K(x,y) = \exp(-||x-y||<sup>2/(2\sigma</sup>2))\<br>
+sigmoid\<br>
+K(x,y) = \tanh(kx^Ty+\theta) \quad 并不是所有的k,\theta都满足Mercer \ condition<br>
+$$<br>
+原始输入空间的数据总能够转移到某个可以线性可分的高维空间</p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818163756686.png" alt="image-20190818163756686"></p>
+<p>高斯核<br>
+高斯核（此处应有公式），这个核就是最开始提到过的会将原始空间映射为无穷维空间的那个家伙。不过，如果delta选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上（数值上近似一下）相当于一个低维的子空间；反过来，如果delta选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数delta，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。下图所示的例子便是把低维线性不可分的数据通过高斯核函数映射到了高维空间：</p>
+<p>线性核<br>
+线性核（此处应有公式），这实际上就是原始空间中的内积。这个核存在的主要目的是使得“映射后空间中的问题”和“映射前空间中的问题”两者在形式上统一起来了(意思是说，咱们有的时候，写代码，或写公式的时候，只要写个模板或通用表达式，然后再代入不同的核，便可以了，于此，便在形式上统一了起来，不用再分别写一个线性的，和一个非线性的)</p>
+<h1>SVR</h1>
+<p>支持向量回归–&gt;可用线性或高斯核（RBF）</p>
+<h1>和LR比较</h1>
+<p>逻辑回归和SVM的联系<br>
+1、LR和SVM都可以处理分类问题，且一般都用于处理线性二分类问题（在改进的情况下可以处理多分类问题）</p>
+<p>2、两个方法都可以增加不同的正则化项，如l1、l2等等。所以在很多实验中，两种算法的结果是很接近的。</p>
+<p>区别<br>
+1、LR是参数模型，SVM是非参数模型。</p>
+<p>2、从目标函数来看，区别在于逻辑回归采用的是logistical loss，SVM采用的是hinge loss，这两个损失函数的目的都是增加对分类影响较大的数据点的权重，减少与分类关系较小的数据点的权重。</p>
+<p>3、SVM的处理方法是只考虑support vectors，也就是和分类最相关的少数点，去学习分类器。而逻辑回归通过非线性映射，大大减小了离分类平面较远的点的权重，相对提升了与分类最相关的数据点的权重。</p>
+<p>4、逻辑回归相对来说模型更简单，好理解，特别是大规模线性分类时比较方便。而SVM的理解和优化相对来说复杂一些，SVM转化为对偶问题后,分类只需要计算与少数几个支持向量的距离,这个在进行复杂核函数计算时优势很明显,能够大大简化模型和计算。</p>
+<p>5、logic 能做的 svm能做，但可能在准确率上有问题，svm能做的logic有的做不了。</p>
+<p>数据方面<br>
+Linear SVM不直接依赖数据分布，分类平面不受一类点影响；LR则受所有数据点的影响，如果数据不同类别strongly unbalance一般需要先对数据做balancing。<br>
+Linear SVM依赖数据表达的距离测度，所以需要对数据先做normalization；LR不受其影响<br>
+过拟合方面<br>
+LR容易欠拟合，准确度低。<br>
+SVM不太容易过拟合：松弛因子+损失函数形式<br>
+注意SVM的求解方法叫拉格朗日乘子法，而对于均方误差的优化方法是最小二乘法。<br>
+选择：<br>
+如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM<br>
+如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel<br>
+如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况<br>
+svm适合处理的数据<br>
+高维稀疏，样本少。<br>
+【参数只与支持向量有关，数量少，所以需要的样本少，<br>
+由于参数跟维度没有关系，所以可以处理高维问题】<br>
+优点：</p>
+<p>使用核函数可以向高维空间进行映射<br>
+使用核函数可以解决非线性的分类<br>
+分类思想很简单，就是将样本与决策面的间隔最大化<br>
+分类效果较好<br>
+缺点：</p>
+<p>对大规模数据训练比较困难<br>
+无法直接支持多分类，但是可以使用间接的方法来做<br>
+SVM多分类的问题：</p>
+<p>直接法：直接在目标函数上进行修改，将多个分类面的参数求解合并到一个最优化问题中，计算复杂度比较高，实现起来困难<br>
+简介法：<br>
+一对多：其中某个类为一类，剩下n-1一个类为另一个类，一次遍历所有的类，每个类都有单独成为一个类的机会，训练和类别数量相等的分类器，最后在测试的时候将分类器取最大值为分类器。</p>
+<p>一对一：每两个类都拿出来训练一个分类器，但是最后代价太大。</p>
+<h1>例子</h1>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818164257835.png" alt="image-20190818164257835"></p>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818164309211.png" alt="image-20190818164309211"></p>
+<h1>讨论</h1>
+<p><img src="/2019/03/08/机器学习-SVM/image-20190818164358060.png" alt="image-20190818164358060"></p>
+
           
         
       
@@ -419,7 +784,8 @@
       
         
           
-            <p>dqn</p>
+            <p>[TOC]</p>
+<p>dqn</p>
 <p>DRL</p>
 <p><a href="https://blog.csdn.net/u013236946/article/details/72871858" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/72871858</a></p>
 <p><a href="https://blog.csdn.net/u013236946/article/details/73195035" target="_blank" rel="noopener">https://blog.csdn.net/u013236946/article/details/73195035</a></p>
@@ -429,11 +795,100 @@
 <p>RL</p>
 <p><a href="http://www.cnblogs.com/steven-yang/p/6481772.html" target="_blank" rel="noopener">http://www.cnblogs.com/steven-yang/p/6481772.html</a></p>
 <p>时间差分学习 Temporal difference learning</p>
-<p>Q学习 Q-learning</p>
 <p>自动学习机 Learning Automata</p>
 <p>状态-行动-回馈-状态-行动（SARSA） State-Action-Reward-State-Action(SARSA)</p>
 <p>policy gradient method</p>
 <p>Temporal Difference</p>
+<p>强化学习 371<br>
+16.1 任务与奖赏 371<br>
+16.2 K KK-摇臂赌博机 373<br>
+16.2.1 探索与利用 373<br>
+16.2.2 $\epsilon $-贪心 374<br>
+16.2.3 Softmax 375<br>
+16.3 有模型学习 377<br>
+16.3.1 策略评估 377<br>
+16.3.2 策略改进 379<br>
+16.3.3 策略迭代与值迭代 381<br>
+16.4 免模型学习 382<br>
+16.4.1 蒙特卡罗强化学习 383<br>
+16.4.2 时序差分学习 386<br>
+16.5 值函数近似 388<br>
+16.6 模仿学习 390<br>
+16.6.1 直接模仿学习 391<br>
+16.6.2 逆强化学习 391</p>
+<h1>概念</h1>
+<p>强化学习的中心思想，就是让智能体agent在环境environment里探索explore和学习。每个行动action会对应各自的奖励reward，智能体通过分析数据来学习，怎样的情况下应该做怎样的事情。没有teacher（label）来说是好还是坏</p>
+<p><img src="/2019/03/08/人工智能-强化学习/image-20190815200735566.png" alt="image-20190815200735566"></p>
+<p>agent的目标是让预期累计reward最大化，强化学习就是建立在奖励假说的基础之上</p>
+<p>每一个时间步（time step）的累积奖励可以表示为<br>
+$$<br>
+G_t = R_{t+1} + R_{t+2} + …\<br>
+= \sum_{k=0}^T R_{t+k+1}<br>
+$$<br>
+不过，我们并不能把奖励直接相加。因为游戏里，越接近游戏开始处的奖励，就越容易获得；而随着游戏的进行，后面的奖励就没有那么容易拿到了，因此需要一个折扣<br>
+$$<br>
+用\gamma 表示折扣率，在0-1之间\<br>
+\gamma 越大，折扣越小，表示agent越在意长期的奖励\<br>
+\gamma 越小，折扣越大，表示agent越在意短期的奖励\<br>
+$$<br>
+这样累积奖励为<br>
+$$<br>
+G_t = \sum_{k=0}^\infty \gamma^k R_{t+k+1} \quad \gamma \in [0,1)\<br>
+= R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}…<br>
+$$<br>
+策略solution/policy：</p>
+<p>将状态state映射为动作action<br>
+$$<br>
+a = \pi(s)<br>
+$$</p>
+<h2 id="片刻性任务-episodic-tasks"><a class="header-anchor" href="#片刻性任务-episodic-tasks">¶</a>片刻性任务 episodic tasks</h2>
+<p>这类任务，有个<strong>起点</strong>，有个<strong>终点</strong>。两者之间有一堆状态，一堆行动，一堆奖励，和一堆新的状态，它们共同构成了一“集”</p>
+<p>当一集结束，也就是到达终止状态的时候，智能体会看一下奖励累积了多少，以此<strong>评估自己的表现</strong></p>
+<p>然后，它就带着之前的经验开始一局新游戏。这一次，智能体做决定的依据会充分一些</p>
+<p><strong>集数越多</strong>，<strong>智能体的表现会越好</strong></p>
+<h2 id="连续性任务-continuing-tasks"><a class="header-anchor" href="#连续性任务-continuing-tasks">¶</a>连续性任务 Continuing Tasks</h2>
+<p><strong>永远不会有游戏结束的时候</strong>。智能体要学习如何选择最佳的行动，和环境进行实时交互。就像自动驾驶汽车，并没有过关拔旗子的事</p>
+<p>这样的任务是通过时间<strong>差分学习</strong>(Temporal Difference Learning) 来训练的。每一个时间步，都会有总结学习，等不到一集结束再分析结果</p>
+<h2 id="探索exploration和开发exploitation之间的权衡"><a class="header-anchor" href="#探索exploration和开发exploitation之间的权衡">¶</a>探索Exploration和开发Exploitation之间的权衡</h2>
+<p><strong>探索</strong> (Exploration) 是找到关于环境的更多信息</p>
+<p><strong>开发</strong> (Exploitation) 是利用已知信息来得到最多的奖励</p>
+<p>要记住，目标是将预期累积奖励最大化。正因如此，它有时候<strong>会陷入一种困境</strong></p>
+<h1>三种方法</h1>
+<h2 id="基于价值-value-based"><a class="header-anchor" href="#基于价值-value-based">¶</a>基于价值（value-based）</h2>
+<p>这种方法，目标是<strong>优化价值函数V(s)</strong></p>
+<p>价值函数会告诉我们，智能体在<strong>每个状态里</strong>得出的未来奖励最大预期 (maximum expected future reward)</p>
+<p><strong>一个状态下的函数值</strong>，是智能体<strong>可以预期的未来奖励积累总值</strong>，从当前状态开始算<br>
+$$<br>
+V_\pi (s) = \mathbb E_\pi[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+…|S_t = s]<br>
+$$<br>
+智能体要用这个价值函数来决定，每一步要选择哪个行动。它会采取函数值 (就是<strong>Q值</strong>) 最大的那个行动</p>
+<p><img src="/2019/03/08/人工智能-强化学习/image-20190815203726587.png" alt="image-20190815203726587"></p>
+<p>在迷宫问题中，每一步我们都选取最大函数值：-7，-6，-5，以此类推，达到目标</p>
+<h2 id="基于策略-policy-based"><a class="header-anchor" href="#基于策略-policy-based">¶</a>基于策略（policy-based）</h2>
+<p>这种方式，会<strong>直接优化策略函数π(s)</strong>，抛弃价值函数</p>
+<p>策略就是评判智能体在特定时间点的表现<br>
+$$<br>
+a = \pi(s)<br>
+$$<br>
+把每一个状态和它所<strong>对应</strong>的最佳行动建立联系</p>
+<p>策略分为两种</p>
+<p><strong>确定性</strong>策略：某一个特定状态下的策略，永远都会给出同样的行动</p>
+<p><strong>随机性</strong>策略：策略给出的是多种行动的可能性分布<br>
+$$<br>
+Stochastic \ policy: \pi(a|s) = \mathbb P(A_t = a|S_t=s)<br>
+$$<br>
+<img src="/2019/03/08/人工智能-强化学习/image-20190815204449361.png" alt="image-20190815204449361"></p>
+<p>从图中我们可以看到，策略<strong>直接指出</strong>了每一步的最佳行动</p>
+<h2 id="基于模型-model-based"><a class="header-anchor" href="#基于模型-model-based">¶</a>基于模型（model-based）</h2>
+<p>这种方法是对环境建模。这表示，我们要创建一个模型，来表示环境的行为</p>
+<p>问题是，<strong>每个环境</strong>都会需要一个不同的模型 (马里奥每走一步，都会有一个新环境) 。这也是这个方法在强化学习中并不太常用的原因</p>
+<h1>Q学习 Q-learning</h1>
+<p>利用一个传统算法创建Q-table，来帮助智能体找到下一步要采取的行动</p>
+<h1>深度强化学习 DRL</h1>
+<p><strong>所谓深度强化学习</strong>，<strong>就是在强化学习里</strong>，<strong>加入深度神经网络</strong></p>
+<p>如图，拿Q学习和深度Q网络 (DQN) 来举例</p>
+<p><img src="/2019/03/08/人工智能-强化学习/image-20190815204711228.png" alt="image-20190815204711228"></p>
+<p>利用深度神经网络来近似Q值</p>
 
           
         
@@ -676,22 +1131,36 @@
       
         
           
-            <h1>模型</h1>
+            <p>知识抽取，知识挖掘</p>
+<p>知识表示，知识建模</p>
+<h1>知识图谱嵌入（KGE）</h1>
 <h2 id="trans系列"><a class="header-anchor" href="#trans系列">¶</a>Trans系列</h2>
 <ul>
-<li>TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data)</li>
-<li>TransH, AAAI2014, Knowledge graph embedding by translating on hyperplanes</li>
-<li>TransR, AAAI2015, Learning Entity and Relation Embeddings for Knowledge Graph Completion</li>
-<li>TransD, ACL2015, Knowledge graph embedding via dynamic mapping matrix</li>
-<li>TransA, arXiv2015, An adaptive approach for knowledge graph embedding</li>
-<li>TranSparse, AAAI2016, Knowledge graph completion with adaptive sparse transfer matrix</li>
-<li>TransG, arXiv2015, A Generative Mixture Model for Knowledge Graph Embedding</li>
+<li>
+<p>TransE, NIPS2013, Translating embeddings for modeling multi-relational data(Translation embeddings for modeling multi-relation data)</p>
+</li>
+<li>
+<p>TransH, AAAI2014, Knowledge graph embedding by translating on hyperplanes</p>
+</li>
+<li>
+<p>TransR, AAAI2015, Learning Entity and Relation Embeddings for Knowledge Graph Completion</p>
+</li>
+<li>
+<p>TransD, ACL2015, Knowledge graph embedding via dynamic mapping matrix</p>
+</li>
+<li>
+<p>TransA, arXiv2015, An adaptive approach for knowledge graph embedding</p>
+</li>
+<li>
+<p>TranSparse, AAAI2016, Knowledge graph completion with adaptive sparse transfer matrix</p>
+</li>
+<li>
+<p>TransG, arXiv2015, A Generative Mixture Model for Knowledge Graph Embedding</p>
+</li>
+<li>
+<p>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</p>
+</li>
 </ul>
-<h2 id="kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding"><a class="header-anchor" href="#kg2e-cikm2015-learning-to-represent-knowledge-graphs-with-gaussian-embedding">¶</a>KG2E, CIKM2015, Learning to represent knowledge graphs with gaussian embedding</h2>
-<p>作者：wp_csdn<br>
-来源：CSDN<br>
-原文：<a href="https://blog.csdn.net/wp_csdn/article/details/79607727" target="_blank" rel="noopener">https://blog.csdn.net/wp_csdn/article/details/79607727</a><br>
-版权声明：本文为博主原创文章，转载请附上博文链接！</p>
 <h1>评价指标</h1>
 <h2 id="mr-mean-rank"><a class="header-anchor" href="#mr-mean-rank">¶</a>mr(Mean Rank)</h2>
 <p>对于每个 testing triple，以预测tail entity为例，我们将（h,r,t）中的t用知识图谱中的每个实体来代替，然后通过fr（h,t）函数来计算分数，这样我们可以得到一系列的分数，之后按照 升序将这些分数排列。</p>
@@ -950,6 +1419,8 @@
 <h1>word2vec</h1>
 <p>词向量<a href="https://www.cnblogs.com/peghoty/p/3798528.html" target="_blank" rel="noopener">https://www.cnblogs.com/peghoty/p/3798528.html</a></p>
 <p>分布表示（distributional representation），分布式表示（distributed representation），n元语法模型(n-gram model)</p>
+<p>Bert,xnet</p>
+<p>机器翻译，问答，情感分析，语义分析，句法分析，正则表达式，分词与词性标注，语言模型</p>
 
           
         
@@ -1100,6 +1571,134 @@
 <p>RPC</p>
 <p>YARN</p>
 <p>Hive</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/学术英语/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chenxr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chenxr's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/学术英语/" itemprop="url">学术英语</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<p>miscellaneous 其他</p>
+<p>magnetic resonance 磁共振</p>
+<p>spatial location 空间位置</p>
+<p>proximity 邻近</p>
+<p>Sparsification 稀疏化</p>
+<p>perpendicular 垂直的</p>
+<p>contradictory 矛盾的</p>
+<p>stationary point 驻点</p>
 
           
         
@@ -1381,147 +1980,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/机器学习-决策树/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chenxr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chenxr's blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/机器学习-决策树/" itemprop="url">机器学习-决策树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T22:44:59+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<p>决策树是用于分类和预测的主要技术之一，决策树学习是以实例为基础的归纳学习算法，它着眼于从一组无次序、无规则的实例中推理出以决策树表示的分类规则。构造决策树的目的是找出属性和类别间的关系，用它来预测将来未知类别的记录的类别。它采用自顶向下的递归方式，在决策树的内部节点进行属性的比较，并根据不同属性值判断从该节点向下的分支，在决策树的叶节点得到结论。</p>
-<p>主要的决策树算法有ID3、C4.5 (C5.0) 、CART、PUBLIC、SLIQ和SPRINT算法等。它们在选择测试属性采用的技术、生成的决策树的结构、剪枝的方法以及时刻，能否处理大数据集等方面都有各自的不同之处。</p>
-<h1>ID3</h1>
-<p>用的信息增益gain</p>
-<h1>C4.5</h1>
-<p>用的信息增益率</p>
-<h1>剪枝方法</h1>
-<h1>CART</h1>
-<h2 id="回归"><a class="header-anchor" href="#回归">¶</a>回归</h2>
-<h2 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h2>
-<p>用的gini</p>
-<h2 id="剪枝"><a class="header-anchor" href="#剪枝">¶</a>剪枝</h2>
-<p>entropy，条件熵</p>
-<p>卡方自动交互检测（CHAID） Chi-squared Automatic Interaction Detection</p>
-<p>决策树桩/单层决策树 Decision stump</p>
-<p>SLIQ</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1567,7 +2030,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
